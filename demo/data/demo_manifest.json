@@ -1,0 +1,78 @@
+{
+  "name": "IRIS examiner demo datasets",
+  "version": "1.0",
+  "created_date": "2026-10-25",
+  "data_provenance": "synthetic",
+  "seed": 20261025,
+  "purpose": "Integration and role-workflow demonstration only; not training or independent model evaluation.",
+  "activity_start_utc": "2026-10-19T08:03:00+00:00",
+  "activity_end_date_utc": "2026-10-23",
+  "unique_assets": 30,
+  "asset_snapshots": 36,
+  "unique_risks": 60,
+  "risk_snapshots": 72,
+  "siem_alert_rows": 2367,
+  "expected_sessions": 132,
+  "showcase_sessions": 12,
+  "background_sessions": 120,
+  "historical_sessions_using_v1": 6,
+  "inputs": [
+    {
+      "upload_field": "asset_inventory",
+      "filename": "asset_inventory.json",
+      "format": "JSON object with records array",
+      "bytes": 15352,
+      "sha256": "0c19b01e5065e4decb155a0dc847526623b0d30e346deb4f381a39469c0975c4"
+    },
+    {
+      "upload_field": "risk_register",
+      "filename": "risk_register.json",
+      "format": "JSON object with records array",
+      "bytes": 39083,
+      "sha256": "83e44a23c66a1226e4626cedd0fd4c8fd188d824df0675ce4b4b372a5bf3560f"
+    },
+    {
+      "upload_field": "siem_alerts",
+      "filename": "siem_alerts.jsonl",
+      "format": "JSON Lines (one object per line)",
+      "bytes": 933305,
+      "sha256": "7f2ab225213ab8cab612ab70d6cf3b01abc40c4a8ec1f7db7362b97bb12b992b"
+    }
+  ],
+  "training_labels_included": false,
+  "labels_required_for_runtime": false,
+  "intentional_quality_examples": {
+    "exact_duplicate_rows": 6,
+    "unresolved_asset_events": 3,
+    "invalid_timestamp_rows": 1,
+    "conflicting_event_ids": 1,
+    "conflicting_id_rows_excluded": 2
+  },
+  "expected_primary_counts": {
+    "ABSTAINED": 2,
+    "benign": 62,
+    "credential_access": 35,
+    "reconnaissance": 33
+  },
+  "expected_priority_counts": {
+    "Critical": 16,
+    "High": 33,
+    "Low": 63,
+    "Medium": 13,
+    "Needs Review": 7
+  },
+  "expected_risk_mapping_counts": {
+    "AMBIGUOUS": 2,
+    "MATCHED": 63,
+    "NOT_APPLICABLE": 62,
+    "UNMAPPED": 5
+  },
+  "observed_ml_shadow_counts": {
+    "benign": 62,
+    "credential_access": 35,
+    "reconnaissance": 34,
+    "ML_UNAVAILABLE": 1
+  },
+  "model_sha256_used_for_verification": "12e76f280bcaa4854e9f08df9ea05839ea43cbb7691a7d44bfbd9d473eb39950",
+  "warning": "Shadow outputs may disagree with primary rules. Demo agreement is not scientific validation. No production-release status changes."
+}

@@ -1,5 +1,7 @@
 # Run IRIS locally: step by step
 
+**For the active examiner demo, use [`demo.py` and the active demo guide](ACTIVE_DEMO.md).** It applies approved changes to a synthetic risk register and alert queue on port **8010**. The instructions below describe the **earlier passive FastAPI prototype** on port **8000**. The two servers have separate keys and state.
+
 ## Read this first
 
 This is a **local, shadow-only prototype**, not a production deployment.

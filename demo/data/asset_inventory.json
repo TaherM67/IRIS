@@ -1,0 +1,547 @@
+{
+  "schema_version": "iris-asset-inventory-v1",
+  "data_provenance": "synthetic",
+  "notice": "Entirely artificial demonstration data. No real organization, people, incident evidence, expert labels, or live SIEM export. Not an independent ML evaluation or training set.",
+  "records": [
+    {
+      "asset_id": "DEMO-A001",
+      "asset_version_id": "DEMO-A001-V1",
+      "hostname": "identity-server",
+      "asset_type": "server",
+      "ip_addresses": [
+        "10.70.9.11"
+      ],
+      "criticality": 4,
+      "zone": "service_zone",
+      "owner": "Identity Operations",
+      "valid_from": "2026-10-01T00:00:00+00:00",
+      "valid_to": "2026-10-20T00:00:00+00:00",
+      "recorded_at": "2026-10-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "DEMO-A001",
+      "asset_version_id": "DEMO-A001-V2",
+      "hostname": "identity-server",
+      "asset_type": "server",
+      "ip_addresses": [
+        "10.70.10.11"
+      ],
+      "criticality": 5,
+      "zone": "service_zone",
+      "owner": "Identity Operations",
+      "valid_from": "2026-10-20T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-10-20T00:00:00+00:00"
+    },
+    {
+      "asset_id": "DEMO-A002",
+      "asset_version_id": "DEMO-A002-V1",
+      "hostname": "finance-db",
+      "asset_type": "server",
+      "ip_addresses": [
+        "10.70.9.12"
+      ],
+      "criticality": 4,
+      "zone": "service_zone",
+      "owner": "Finance IT",
+      "valid_from": "2026-10-01T00:00:00+00:00",
+      "valid_to": "2026-10-20T00:00:00+00:00",
+      "recorded_at": "2026-10-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "DEMO-A002",
+      "asset_version_id": "DEMO-A002-V2",
+      "hostname": "finance-db",
+      "asset_type": "server",
+      "ip_addresses": [
+        "10.70.10.12"
+      ],
+      "criticality": 5,
+      "zone": "service_zone",
+      "owner": "Finance IT",
+      "valid_from": "2026-10-20T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-10-20T00:00:00+00:00"
+    },
+    {
+      "asset_id": "DEMO-A003",
+      "asset_version_id": "DEMO-A003-V1",
+      "hostname": "payment-api",
+      "asset_type": "server",
+      "ip_addresses": [
+        "10.70.9.13"
+      ],
+      "criticality": 4,
+      "zone": "service_zone",
+      "owner": "Application Operations",
+      "valid_from": "2026-10-01T00:00:00+00:00",
+      "valid_to": "2026-10-20T00:00:00+00:00",
+      "recorded_at": "2026-10-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "DEMO-A003",
+      "asset_version_id": "DEMO-A003-V2",
+      "hostname": "payment-api",
+      "asset_type": "server",
+      "ip_addresses": [
+        "10.70.10.13"
+      ],
+      "criticality": 5,
+      "zone": "service_zone",
+      "owner": "Application Operations",
+      "valid_from": "2026-10-20T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-10-20T00:00:00+00:00"
+    },
+    {
+      "asset_id": "DEMO-A004",
+      "asset_version_id": "DEMO-A004-V1",
+      "hostname": "hr-server",
+      "asset_type": "server",
+      "ip_addresses": [
+        "10.70.9.14"
+      ],
+      "criticality": 3,
+      "zone": "service_zone",
+      "owner": "HR IT",
+      "valid_from": "2026-10-01T00:00:00+00:00",
+      "valid_to": "2026-10-20T00:00:00+00:00",
+      "recorded_at": "2026-10-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "DEMO-A004",
+      "asset_version_id": "DEMO-A004-V2",
+      "hostname": "hr-server",
+      "asset_type": "server",
+      "ip_addresses": [
+        "10.70.10.14"
+      ],
+      "criticality": 4,
+      "zone": "service_zone",
+      "owner": "HR IT",
+      "valid_from": "2026-10-20T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-10-20T00:00:00+00:00"
+    },
+    {
+      "asset_id": "DEMO-A005",
+      "asset_version_id": "DEMO-A005-V1",
+      "hostname": "web-portal",
+      "asset_type": "server",
+      "ip_addresses": [
+        "10.70.9.15"
+      ],
+      "criticality": 3,
+      "zone": "service_zone",
+      "owner": "Web Operations",
+      "valid_from": "2026-10-01T00:00:00+00:00",
+      "valid_to": "2026-10-20T00:00:00+00:00",
+      "recorded_at": "2026-10-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "DEMO-A005",
+      "asset_version_id": "DEMO-A005-V2",
+      "hostname": "web-portal",
+      "asset_type": "server",
+      "ip_addresses": [
+        "10.70.10.15"
+      ],
+      "criticality": 4,
+      "zone": "service_zone",
+      "owner": "Web Operations",
+      "valid_from": "2026-10-20T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-10-20T00:00:00+00:00"
+    },
+    {
+      "asset_id": "DEMO-A006",
+      "asset_version_id": "DEMO-A006-V1",
+      "hostname": "backup-server",
+      "asset_type": "server",
+      "ip_addresses": [
+        "10.70.9.16"
+      ],
+      "criticality": 4,
+      "zone": "service_zone",
+      "owner": "Infrastructure",
+      "valid_from": "2026-10-01T00:00:00+00:00",
+      "valid_to": "2026-10-20T00:00:00+00:00",
+      "recorded_at": "2026-10-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "DEMO-A006",
+      "asset_version_id": "DEMO-A006-V2",
+      "hostname": "backup-server",
+      "asset_type": "server",
+      "ip_addresses": [
+        "10.70.10.16"
+      ],
+      "criticality": 5,
+      "zone": "service_zone",
+      "owner": "Infrastructure",
+      "valid_from": "2026-10-20T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-10-20T00:00:00+00:00"
+    },
+    {
+      "asset_id": "DEMO-A007",
+      "asset_version_id": "DEMO-A007-V2",
+      "hostname": "file-server",
+      "asset_type": "server",
+      "ip_addresses": [
+        "10.70.10.17"
+      ],
+      "criticality": 3,
+      "zone": "service_zone",
+      "owner": "Infrastructure",
+      "valid_from": "2026-10-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-10-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "DEMO-A008",
+      "asset_version_id": "DEMO-A008-V2",
+      "hostname": "mail-gateway",
+      "asset_type": "server",
+      "ip_addresses": [
+        "10.70.10.18"
+      ],
+      "criticality": 4,
+      "zone": "service_zone",
+      "owner": "Messaging Operations",
+      "valid_from": "2026-10-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-10-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "DEMO-A009",
+      "asset_version_id": "DEMO-A009-V2",
+      "hostname": "dev-server",
+      "asset_type": "server",
+      "ip_addresses": [
+        "10.70.10.19"
+      ],
+      "criticality": 2,
+      "zone": "service_zone",
+      "owner": "Development",
+      "valid_from": "2026-10-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-10-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "DEMO-A010",
+      "asset_version_id": "DEMO-A010-V2",
+      "hostname": "engineering-ws",
+      "asset_type": "workstation",
+      "ip_addresses": [
+        "10.70.10.20"
+      ],
+      "criticality": 3,
+      "zone": "user_zone",
+      "owner": "Engineering IT",
+      "valid_from": "2026-10-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-10-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "DEMO-A011",
+      "asset_version_id": "DEMO-A011-V2",
+      "hostname": "helpdesk-ws",
+      "asset_type": "workstation",
+      "ip_addresses": [
+        "10.70.10.21"
+      ],
+      "criticality": 2,
+      "zone": "user_zone",
+      "owner": "IT Support",
+      "valid_from": "2026-10-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-10-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "DEMO-A012",
+      "asset_version_id": "DEMO-A012-V2",
+      "hostname": "training-ws",
+      "asset_type": "workstation",
+      "ip_addresses": [
+        "10.70.10.22"
+      ],
+      "criticality": 1,
+      "zone": "user_zone",
+      "owner": "Training IT",
+      "valid_from": "2026-10-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-10-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "DEMO-A013",
+      "asset_version_id": "DEMO-A013-V2",
+      "hostname": "app-server",
+      "asset_type": "server",
+      "ip_addresses": [
+        "10.70.10.23"
+      ],
+      "criticality": 4,
+      "zone": "service_zone",
+      "owner": "Application Operations",
+      "valid_from": "2026-10-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-10-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "DEMO-A014",
+      "asset_version_id": "DEMO-A014-V2",
+      "hostname": "procurement-ws",
+      "asset_type": "workstation",
+      "ip_addresses": [
+        "10.70.10.24"
+      ],
+      "criticality": 3,
+      "zone": "user_zone",
+      "owner": "Procurement IT",
+      "valid_from": "2026-10-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-10-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "DEMO-A015",
+      "asset_version_id": "DEMO-A015-V2",
+      "hostname": "logistics-api",
+      "asset_type": "server",
+      "ip_addresses": [
+        "10.70.10.25"
+      ],
+      "criticality": 4,
+      "zone": "service_zone",
+      "owner": "Application Operations",
+      "valid_from": "2026-10-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-10-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "DEMO-A016",
+      "asset_version_id": "DEMO-A016-V2",
+      "hostname": "monitoring-server",
+      "asset_type": "server",
+      "ip_addresses": [
+        "10.70.10.26"
+      ],
+      "criticality": 4,
+      "zone": "service_zone",
+      "owner": "Security Operations",
+      "valid_from": "2026-10-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-10-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "DEMO-A017",
+      "asset_version_id": "DEMO-A017-V2",
+      "hostname": "jump-server",
+      "asset_type": "server",
+      "ip_addresses": [
+        "10.70.10.27"
+      ],
+      "criticality": 5,
+      "zone": "service_zone",
+      "owner": "Infrastructure",
+      "valid_from": "2026-10-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-10-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "DEMO-A018",
+      "asset_version_id": "DEMO-A018-V2",
+      "hostname": "print-server",
+      "asset_type": "server",
+      "ip_addresses": [
+        "10.70.10.28"
+      ],
+      "criticality": 2,
+      "zone": "service_zone",
+      "owner": "IT Support",
+      "valid_from": "2026-10-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-10-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "DEMO-A019",
+      "asset_version_id": "DEMO-A019-V2",
+      "hostname": "analytics-db",
+      "asset_type": "server",
+      "ip_addresses": [
+        "10.70.10.29"
+      ],
+      "criticality": 4,
+      "zone": "service_zone",
+      "owner": "Data Operations",
+      "valid_from": "2026-10-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-10-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "DEMO-A020",
+      "asset_version_id": "DEMO-A020-V2",
+      "hostname": "build-server",
+      "asset_type": "server",
+      "ip_addresses": [
+        "10.70.10.30"
+      ],
+      "criticality": 3,
+      "zone": "service_zone",
+      "owner": "Development",
+      "valid_from": "2026-10-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-10-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "DEMO-A021",
+      "asset_version_id": "DEMO-A021-V2",
+      "hostname": "qa-server",
+      "asset_type": "server",
+      "ip_addresses": [
+        "10.70.10.31"
+      ],
+      "criticality": 2,
+      "zone": "service_zone",
+      "owner": "Quality Assurance IT",
+      "valid_from": "2026-10-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-10-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "DEMO-A022",
+      "asset_version_id": "DEMO-A022-V2",
+      "hostname": "research-ws",
+      "asset_type": "workstation",
+      "ip_addresses": [
+        "10.70.10.32"
+      ],
+      "criticality": 3,
+      "zone": "user_zone",
+      "owner": "Research IT",
+      "valid_from": "2026-10-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-10-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "DEMO-A023",
+      "asset_version_id": "DEMO-A023-V2",
+      "hostname": "reception-ws",
+      "asset_type": "workstation",
+      "ip_addresses": [
+        "10.70.10.33"
+      ],
+      "criticality": 1,
+      "zone": "user_zone",
+      "owner": "IT Support",
+      "valid_from": "2026-10-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-10-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "DEMO-A024",
+      "asset_version_id": "DEMO-A024-V2",
+      "hostname": "branch-server",
+      "asset_type": "server",
+      "ip_addresses": [
+        "10.70.10.34"
+      ],
+      "criticality": 3,
+      "zone": "service_zone",
+      "owner": "Branch IT",
+      "valid_from": "2026-10-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-10-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "DEMO-A025",
+      "asset_version_id": "DEMO-A025-V2",
+      "hostname": "security-ws",
+      "asset_type": "workstation",
+      "ip_addresses": [
+        "10.70.10.35"
+      ],
+      "criticality": 4,
+      "zone": "user_zone",
+      "owner": "Security Operations",
+      "valid_from": "2026-10-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-10-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "DEMO-A026",
+      "asset_version_id": "DEMO-A026-V2",
+      "hostname": "vpn-gateway",
+      "asset_type": "server",
+      "ip_addresses": [
+        "10.70.10.36"
+      ],
+      "criticality": 5,
+      "zone": "service_zone",
+      "owner": "Network Operations",
+      "valid_from": "2026-10-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-10-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "DEMO-A027",
+      "asset_version_id": "DEMO-A027-V2",
+      "hostname": "bastion-server",
+      "asset_type": "server",
+      "ip_addresses": [
+        "10.70.10.37"
+      ],
+      "criticality": 5,
+      "zone": "service_zone",
+      "owner": "Infrastructure",
+      "valid_from": "2026-10-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-10-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "DEMO-A028",
+      "asset_version_id": "DEMO-A028-V2",
+      "hostname": "operations-ws",
+      "asset_type": "workstation",
+      "ip_addresses": [
+        "10.70.10.38"
+      ],
+      "criticality": 3,
+      "zone": "user_zone",
+      "owner": "Operations IT",
+      "valid_from": "2026-10-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-10-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "DEMO-A029",
+      "asset_version_id": "DEMO-A029-V2",
+      "hostname": "legacy-server",
+      "asset_type": "server",
+      "ip_addresses": [
+        "10.70.10.39"
+      ],
+      "criticality": 3,
+      "zone": "service_zone",
+      "owner": "Infrastructure",
+      "valid_from": "2026-10-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-10-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "DEMO-A030",
+      "asset_version_id": "DEMO-A030-V2",
+      "hostname": "shared-server",
+      "asset_type": "server",
+      "ip_addresses": [
+        "10.70.10.40"
+      ],
+      "criticality": 4,
+      "zone": "service_zone",
+      "owner": "Infrastructure",
+      "valid_from": "2026-10-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-10-01T00:00:00+00:00"
+    }
+  ]
+}

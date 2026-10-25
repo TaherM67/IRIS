@@ -2,16 +2,18 @@
 
 Integrated Risk Intelligence System: a research prototype connecting SOC/SIEM evidence with asset and GRC risk context.
 
-This repository contains the **three-input advisory ML package**, the user's Colab-trained artifact, linked synthetic samples, a training notebook, and a prepared FastAPI backend with a small HTML dashboard. It is not a finished live SOC/GRC platform.
+This repository contains the **three-input advisory ML package**, the user's Colab-trained artifact, linked synthetic samples, a training notebook, a prepared FastAPI backend, and an **active, approval-gated demonstration** with Admin/SOC/GRC dashboards. It is not a finished live SOC/GRC platform.
+
+**For the examiner demonstration, start with [`demo.py`](demo.py) and [the active demo instructions](docs/ACTIVE_DEMO.md).** GRC approval actually changes the synthetic working risk register; SOC approval actually reprioritizes stored alerts. Changes persist, can be exported, and have before/after audit records. The demo reuses the real shared model core and has **37 passing tests including real HTTP/API approval tests**. No real organization or security controls are modified. Browser click-through still needs a rehearsal on your computer.
 
 **Verification boundary:** 79 ML tests and 33 backend-core tests passed, and a fresh batch persisted 900 shadow cases. The actual FastAPI/Uvicorn HTTP server and browser interactions were **not run here**, because PyPI downloads were denied. Run the target-computer HTTP tests before using that interface. See [the verification record](backend/VERIFICATION.md).
 
 ## Start here
 
-1. Follow [the step-by-step backend setup guide](docs/BACKEND_SETUP.md) to use the already-trained models.
-2. Open [the Colab training notebook](notebooks/IRIS_Colab_Training.ipynb).
-3. Read [the three-input schemas and joining rules](IRIS_Models_v2/docs/THREE_INPUTS_GUIDE.md).
-4. Read [the full model explanation](IRIS_Models_v2/docs/MODEL_GUIDE.md).
+1. Follow [the active demo guide](docs/ACTIVE_DEMO.md): run `python demo.py`, open the three dashboards on port 8010, analyze, then approve and show real synthetic record changes.
+2. For the older passive FastAPI prototype, follow [the backend setup guide](docs/BACKEND_SETUP.md).
+3. Open [the Colab training notebook](notebooks/IRIS_Colab_Training.ipynb) if you want to train again; the saved models are already included.
+4. Read [the three-input schemas and joining rules](IRIS_Models_v2/docs/THREE_INPUTS_GUIDE.md) and [the full model explanation](IRIS_Models_v2/docs/MODEL_GUIDE.md).
 
 The repository is private. To use Colab without putting a GitHub token in a notebook, download this repository with **Code > Download ZIP**, upload the notebook to Colab, and upload the repository ZIP when its first cell asks for it. The notebook also accepts the original `IRIS_Model_Code_v2.zip` package.
 
@@ -30,6 +32,21 @@ The samples contain 60 assets, 120 registered risks and 26,086 alert rows. They 
 Validation and exact point-in-time enrichment produce one unified event dataset before session feature engineering. Both training and inference use the same preparation function. The models use tabular features, not raw JSON documents.
 
 ## Run the backend locally
+
+### Active demo (recommended for the examination)
+
+From the project root with Python 3.12, install `IRIS_Models_v2/requirements.txt` and run:
+
+```bash
+python -m unittest demo_app.tests.test_demo -v
+python demo.py
+```
+
+In a second private terminal run `python demo.py keys`. Open `http://127.0.0.1:8010/admin`, `/soc`, and `/grc` with their separate demo keys. Admin analyzes; each team reviews and applies its own proposed changes to **persisted synthetic records**. See [the complete steps](docs/ACTIVE_DEMO.md).
+
+The new [three demo datasets](demo/data/) contain 30 assets, 60 risks and 2,367 alert rows. They produce 132 cases. Demo state and credentials stay in `.local/active_demo/`, excluded from Git. No FastAPI install, Colab runtime or Node.js is needed for this local demo.
+
+### Earlier passive FastAPI interface
 
 Use Python 3.12. From the repository root, install `requirements-backend.txt`, run both backend test suites, generate local role keys, and start `python -m backend serve`. The same server serves the website at `http://127.0.0.1:8000`; Colab is not needed during inference.
 
@@ -65,6 +82,7 @@ Use fresh output directories when repeating experiments. No GPU, cloud account o
 - Complete sample training artifacts and a clearly limited five-session prediction preview.
 - Prepared FastAPI adapter using the user's pinned Colab bundle, SQLite cases/audit, local role-key guards and three-source batch submission.
 - A small HTML SOC/GRC/Admin interface and local-only GRC follow-up reviews; HTTP/UI runtime verification remains pending on the target computer.
+- A separate active synthetic-system demo: role-gated approval writes, persistent working risk register, reprioritized alert queue, before/after audit and current-state JSON exports. Its loopback HTTP/API workflow is tested; browser rehearsal remains necessary.
 
 ## What is not implemented here
 
@@ -80,7 +98,7 @@ In the recorded sample run, Model 1's benign false-positive rate was **7/45 = 15
 
 Model 2 has positive held-out examples for only six catalogue controls. Its synthetic micro-F1 does not establish complete catalogue coverage or actual control effectiveness.
 
-No security control is automatically executed. No official GRC risk value is changed by this model package. Any future operational change requires an authorized human review and an explicit connector workflow.
+No security control is automatically executed. No official company GRC value is changed. **The active demo does change its own synthetic working risk records and alert priorities after the appropriate human approval**; this must not be confused with a live company connector or production release of the ML models.
 
 See [the verification report](IRIS_Models_v2/docs/THREE_INPUT_VERIFICATION.md) for actual counts, tests, metrics and limitations. Never load untrusted `joblib`/pickle files: loading them can execute code.
 
@@ -90,6 +108,9 @@ See [the verification report](IRIS_Models_v2/docs/THREE_INPUT_VERIFICATION.md) f
 IRIS_Models_v2/     Model source, tests, schemas, samples and recorded examples
 artifacts/          The user's pinned, synthetic Colab-trained model bundle
 backend/            Batch model adapter, SQLite store, API source, HTML UI, tests
+demo.py             One-command active demonstration launcher
+demo_app/           Local demo HTTP adapter, working records, approvals, UI, tests
+demo/               Three new synthetic demo inputs and verification record
 notebooks/          Google Colab training and shadow-prediction notebook
 docs/               Simple training, engine and demonstration guide
 ```
