@@ -1,0 +1,954 @@
+{
+  "package_version": "1.0.0",
+  "trained_at_utc": "2026-10-24T19:35:24.348492+00:00",
+  "feature_schema": "iris-telemetry-session-v1",
+  "aggregation_schema": "iris-synthetic-session-v1",
+  "scikit_learn_version": "1.8.0",
+  "features": [
+    "event_family",
+    "primary_protocol",
+    "event_count",
+    "duration_seconds",
+    "max_rule_level",
+    "mean_rule_level",
+    "distinct_rules",
+    "distinct_sources",
+    "distinct_accounts",
+    "failed_count",
+    "success_count",
+    "failure_ratio",
+    "success_after_failures",
+    "max_events_in_10s",
+    "external_source_fraction",
+    "event_rate_per_minute"
+  ],
+  "data_quality": {
+    "accepted_sessions": 180,
+    "independent_runs_per_class": {
+      "benign": 60,
+      "credential_access": 60,
+      "reconnaissance": 60
+    },
+    "quarantined": [],
+    "exact_duplicate_feature_rows": 0,
+    "sessions_sha256": "a9814e69c80775ba117845b2dd771a43011bb9130b9e98fa025669100d042919",
+    "reviews_sha256": "cbcc3fded4d3569b7fbf91d76c2bdb4cf5d1ed9b5d923dd84516d265b0ee89e0",
+    "synthetic": true,
+    "aggregation_schema": "iris-synthetic-session-v1"
+  },
+  "split": {
+    "seed": 42,
+    "group_by": "campaign_id",
+    "groups": {
+      "test": [
+        "synthetic-campaign-09",
+        "synthetic-campaign-14",
+        "synthetic-campaign-15"
+      ],
+      "threshold": [
+        "synthetic-campaign-07",
+        "synthetic-campaign-12"
+      ],
+      "calibration": [
+        "synthetic-campaign-06",
+        "synthetic-campaign-10"
+      ],
+      "selection": [
+        "synthetic-campaign-00",
+        "synthetic-campaign-03",
+        "synthetic-campaign-19"
+      ],
+      "train": [
+        "synthetic-campaign-01",
+        "synthetic-campaign-02",
+        "synthetic-campaign-04",
+        "synthetic-campaign-05",
+        "synthetic-campaign-08",
+        "synthetic-campaign-11",
+        "synthetic-campaign-13",
+        "synthetic-campaign-16",
+        "synthetic-campaign-17",
+        "synthetic-campaign-18"
+      ]
+    },
+    "rows": {
+      "test": 27,
+      "threshold": 18,
+      "calibration": 18,
+      "selection": 27,
+      "train": 90
+    },
+    "class_counts": {
+      "test": {
+        "benign": 9,
+        "credential_access": 9,
+        "reconnaissance": 9
+      },
+      "threshold": {
+        "benign": 6,
+        "credential_access": 6,
+        "reconnaissance": 6
+      },
+      "calibration": {
+        "benign": 6,
+        "credential_access": 6,
+        "reconnaissance": 6
+      },
+      "selection": {
+        "benign": 9,
+        "credential_access": 9,
+        "reconnaissance": 9
+      },
+      "train": {
+        "benign": 30,
+        "credential_access": 30,
+        "reconnaissance": 30
+      }
+    },
+    "claim": "unseen campaign holdout"
+  },
+  "catalog_sha256": "7fb36f67ff05668fe44ce3f122abef7f344cf0e6196bd5be87ab50897bf8978d",
+  "model1": {
+    "algorithm": "random_forest",
+    "selection_scores": {
+      "logistic_regression": 0.8857142857142857,
+      "random_forest": 1.0,
+      "hist_gradient_boosting": 1.0
+    },
+    "threshold": 0.7,
+    "classes": [
+      "benign",
+      "credential_access",
+      "reconnaissance"
+    ],
+    "metrics": {
+      "n": 27,
+      "coverage": 1.0,
+      "macro_f1": 0.9249999999999999,
+      "accuracy_all_sessions": 0.9259259259259259,
+      "accepted_accuracy": 0.9259259259259259,
+      "benign_false_positive_rate": 0.2222222222222222,
+      "benign_false_alarms": 2,
+      "benign_support": 9,
+      "benign_fpr_wilson_95_percent": [
+        0.06322376231222723,
+        0.5474166563271946
+      ],
+      "per_class": {
+        "benign": {
+          "precision": 1.0,
+          "recall": 0.7777777777777778,
+          "f1": 0.875,
+          "support": 9
+        },
+        "credential_access": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 9
+        },
+        "reconnaissance": {
+          "precision": 0.8181818181818182,
+          "recall": 1.0,
+          "f1": 0.9,
+          "support": 9
+        }
+      },
+      "confusion_labels": [
+        "benign",
+        "credential_access",
+        "reconnaissance",
+        "ABSTAINED"
+      ],
+      "confusion_matrix": [
+        [
+          7,
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          9,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          9,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "metric_semantics": "Abstentions count as missed true classes (false negatives), never dropped from recall/F1. FPR excludes abstentions and must be read together with coverage."
+    },
+    "rule_baseline": {
+      "n": 27,
+      "coverage": 0.6666666666666666,
+      "macro_f1": 0.6777777777777777,
+      "accuracy_all_sessions": 0.5925925925925926,
+      "accepted_accuracy": 0.8888888888888888,
+      "benign_false_positive_rate": 0.2222222222222222,
+      "benign_false_alarms": 2,
+      "benign_support": 9,
+      "benign_fpr_wilson_95_percent": [
+        0.06322376231222723,
+        0.5474166563271946
+      ],
+      "per_class": {
+        "benign": {
+          "precision": 1.0,
+          "recall": 0.3333333333333333,
+          "f1": 0.5,
+          "support": 9
+        },
+        "credential_access": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 9
+        },
+        "reconnaissance": {
+          "precision": 0.6666666666666666,
+          "recall": 0.4444444444444444,
+          "f1": 0.5333333333333333,
+          "support": 9
+        }
+      },
+      "confusion_labels": [
+        "benign",
+        "credential_access",
+        "reconnaissance",
+        "ABSTAINED"
+      ],
+      "confusion_matrix": [
+        [
+          3,
+          0,
+          2,
+          4
+        ],
+        [
+          0,
+          9,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          4,
+          5
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "metric_semantics": "Abstentions count as missed true classes (false negatives), never dropped from recall/F1. FPR excludes abstentions and must be read together with coverage."
+    },
+    "checks": {
+      "macro_f1_at_least_0_80": true,
+      "attack_recall_at_least_0_75": true,
+      "benign_fpr_at_most_0_05": false,
+      "coverage_at_least_0_80": true,
+      "improvement_over_frozen_rules_at_least_0_05": true,
+      "minimum_10_test_sessions_per_class": false,
+      "real_reviewed_cyber_range_data": false,
+      "campaign_or_template_holdout": true
+    },
+    "eligible_for_reviewed_advisory_release": false,
+    "categorical_vocab": {
+      "event_family": [
+        "authentication",
+        "network"
+      ],
+      "primary_protocol": [
+        "SSH",
+        "TCP"
+      ]
+    },
+    "numeric_train_ranges": {
+      "event_count": [
+        3.0,
+        158.0
+      ],
+      "duration_seconds": [
+        5.678608384388587,
+        88.23265133214579
+      ],
+      "max_rule_level": [
+        2.0,
+        11.0
+      ],
+      "mean_rule_level": [
+        1.2762734515170266,
+        10.777233575357416
+      ],
+      "distinct_rules": [
+        1.0,
+        7.0
+      ],
+      "distinct_sources": [
+        1.0,
+        1.0
+      ],
+      "distinct_accounts": [
+        0.0,
+        1.0
+      ],
+      "failed_count": [
+        0.0,
+        64.0
+      ],
+      "success_count": [
+        0.0,
+        3.0
+      ],
+      "failure_ratio": [
+        0.0,
+        1.0
+      ],
+      "success_after_failures": [
+        0.0,
+        1.0
+      ],
+      "max_events_in_10s": [
+        1.0,
+        117.0
+      ],
+      "external_source_fraction": [
+        0.0,
+        0.0
+      ],
+      "event_rate_per_minute": [
+        2.1716810792618144,
+        1008.6361193059504
+      ]
+    }
+  },
+  "model2": {
+    "status": "trained_shadow",
+    "algorithm": "binary_relevance_logistic_regression",
+    "scenario_inputs": "grouped out-of-fold predictions for fitting; frozen Model 1 predictions for threshold/test, never oracle classes",
+    "score_meaning": "Uncalibrated membership score, not probability of efficacy or causal risk reduction",
+    "support": {
+      "SC001": {
+        "train_positive": 0,
+        "train_negative": 117,
+        "threshold_positive": 0,
+        "test_positive": 0
+      },
+      "SC002": {
+        "train_positive": 0,
+        "train_negative": 117,
+        "threshold_positive": 0,
+        "test_positive": 0
+      },
+      "SC003": {
+        "train_positive": 0,
+        "train_negative": 117,
+        "threshold_positive": 0,
+        "test_positive": 0
+      },
+      "SC004": {
+        "train_positive": 0,
+        "train_negative": 117,
+        "threshold_positive": 0,
+        "test_positive": 0
+      },
+      "SC005": {
+        "train_positive": 39,
+        "train_negative": 78,
+        "threshold_positive": 6,
+        "test_positive": 9
+      },
+      "SC006": {
+        "train_positive": 30,
+        "train_negative": 87,
+        "threshold_positive": 5,
+        "test_positive": 9
+      },
+      "SC007": {
+        "train_positive": 39,
+        "train_negative": 78,
+        "threshold_positive": 6,
+        "test_positive": 9
+      },
+      "SC008": {
+        "train_positive": 0,
+        "train_negative": 117,
+        "threshold_positive": 0,
+        "test_positive": 0
+      },
+      "SC009": {
+        "train_positive": 0,
+        "train_negative": 117,
+        "threshold_positive": 0,
+        "test_positive": 0
+      },
+      "SC010": {
+        "train_positive": 0,
+        "train_negative": 117,
+        "threshold_positive": 0,
+        "test_positive": 0
+      },
+      "SC011": {
+        "train_positive": 0,
+        "train_negative": 117,
+        "threshold_positive": 0,
+        "test_positive": 0
+      },
+      "SC012": {
+        "train_positive": 39,
+        "train_negative": 78,
+        "threshold_positive": 6,
+        "test_positive": 9
+      },
+      "SC013": {
+        "train_positive": 0,
+        "train_negative": 117,
+        "threshold_positive": 0,
+        "test_positive": 0
+      },
+      "SC014": {
+        "train_positive": 0,
+        "train_negative": 117,
+        "threshold_positive": 0,
+        "test_positive": 0
+      },
+      "SC015": {
+        "train_positive": 0,
+        "train_negative": 117,
+        "threshold_positive": 0,
+        "test_positive": 0
+      },
+      "SC016": {
+        "train_positive": 0,
+        "train_negative": 117,
+        "threshold_positive": 0,
+        "test_positive": 0
+      },
+      "SC017": {
+        "train_positive": 0,
+        "train_negative": 117,
+        "threshold_positive": 0,
+        "test_positive": 0
+      },
+      "SC018": {
+        "train_positive": 0,
+        "train_negative": 117,
+        "threshold_positive": 0,
+        "test_positive": 0
+      },
+      "SC019": {
+        "train_positive": 0,
+        "train_negative": 117,
+        "threshold_positive": 0,
+        "test_positive": 0
+      },
+      "SC020": {
+        "train_positive": 0,
+        "train_negative": 117,
+        "threshold_positive": 0,
+        "test_positive": 0
+      },
+      "SC021": {
+        "train_positive": 0,
+        "train_negative": 117,
+        "threshold_positive": 0,
+        "test_positive": 0
+      },
+      "SC022": {
+        "train_positive": 0,
+        "train_negative": 117,
+        "threshold_positive": 0,
+        "test_positive": 0
+      },
+      "SC023": {
+        "train_positive": 0,
+        "train_negative": 117,
+        "threshold_positive": 0,
+        "test_positive": 0
+      },
+      "SC024": {
+        "train_positive": 0,
+        "train_negative": 117,
+        "threshold_positive": 0,
+        "test_positive": 0
+      },
+      "SC025": {
+        "train_positive": 0,
+        "train_negative": 117,
+        "threshold_positive": 0,
+        "test_positive": 0
+      },
+      "SC026": {
+        "train_positive": 31,
+        "train_negative": 86,
+        "threshold_positive": 5,
+        "test_positive": 5
+      },
+      "SC027": {
+        "train_positive": 0,
+        "train_negative": 117,
+        "threshold_positive": 0,
+        "test_positive": 0
+      },
+      "SC028": {
+        "train_positive": 0,
+        "train_negative": 117,
+        "threshold_positive": 0,
+        "test_positive": 0
+      },
+      "SC029": {
+        "train_positive": 39,
+        "train_negative": 78,
+        "threshold_positive": 6,
+        "test_positive": 9
+      },
+      "SC030": {
+        "train_positive": 0,
+        "train_negative": 117,
+        "threshold_positive": 0,
+        "test_positive": 0
+      }
+    },
+    "unsupported_controls": [
+      "SC001",
+      "SC002",
+      "SC003",
+      "SC004",
+      "SC008",
+      "SC009",
+      "SC010",
+      "SC011",
+      "SC013",
+      "SC014",
+      "SC015",
+      "SC016",
+      "SC017",
+      "SC018",
+      "SC019",
+      "SC020",
+      "SC021",
+      "SC022",
+      "SC023",
+      "SC024",
+      "SC025",
+      "SC027",
+      "SC028",
+      "SC030"
+    ],
+    "validation_suppressed_controls": [],
+    "metrics": {
+      "n": 27,
+      "micro_precision": 0.9038461538461539,
+      "micro_recall": 0.94,
+      "micro_f1": 0.9215686274509803,
+      "macro_f1_all_catalogue_controls": 0.1821322537112011,
+      "hamming_loss": 0.009876543209876543,
+      "exact_set_accuracy": 0.7777777777777778,
+      "per_control": {
+        "SC001": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "test_positive_support": 0
+        },
+        "SC002": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "test_positive_support": 0
+        },
+        "SC003": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "test_positive_support": 0
+        },
+        "SC004": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "test_positive_support": 0
+        },
+        "SC005": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "test_positive_support": 9
+        },
+        "SC006": {
+          "precision": 1.0,
+          "recall": 0.6666666666666666,
+          "f1": 0.8,
+          "test_positive_support": 9
+        },
+        "SC007": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "test_positive_support": 9
+        },
+        "SC008": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "test_positive_support": 0
+        },
+        "SC009": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "test_positive_support": 0
+        },
+        "SC010": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "test_positive_support": 0
+        },
+        "SC011": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "test_positive_support": 0
+        },
+        "SC012": {
+          "precision": 0.9,
+          "recall": 1.0,
+          "f1": 0.9473684210526315,
+          "test_positive_support": 9
+        },
+        "SC013": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "test_positive_support": 0
+        },
+        "SC014": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "test_positive_support": 0
+        },
+        "SC015": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "test_positive_support": 0
+        },
+        "SC016": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "test_positive_support": 0
+        },
+        "SC017": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "test_positive_support": 0
+        },
+        "SC018": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "test_positive_support": 0
+        },
+        "SC019": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "test_positive_support": 0
+        },
+        "SC020": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "test_positive_support": 0
+        },
+        "SC021": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "test_positive_support": 0
+        },
+        "SC022": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "test_positive_support": 0
+        },
+        "SC023": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "test_positive_support": 0
+        },
+        "SC024": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "test_positive_support": 0
+        },
+        "SC025": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "test_positive_support": 0
+        },
+        "SC026": {
+          "precision": 0.625,
+          "recall": 1.0,
+          "f1": 0.7692307692307693,
+          "test_positive_support": 5
+        },
+        "SC027": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "test_positive_support": 0
+        },
+        "SC028": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "test_positive_support": 0
+        },
+        "SC029": {
+          "precision": 0.9,
+          "recall": 1.0,
+          "f1": 0.9473684210526315,
+          "test_positive_support": 9
+        },
+        "SC030": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "test_positive_support": 0
+        }
+      }
+    },
+    "checks": {
+      "at_least_one_supported_control": true,
+      "micro_precision_at_least_0_80": true,
+      "micro_f1_at_least_0_80": true,
+      "not_worse_than_scenario_frequency_baseline": true,
+      "reviewed_training_support": true,
+      "heldout_positive_support": true
+    },
+    "scenario_frequency_baseline": {
+      "n": 27,
+      "micro_precision": 0.9183673469387755,
+      "micro_recall": 0.9,
+      "micro_f1": 0.9090909090909091,
+      "macro_f1_all_catalogue_controls": 0.16,
+      "hamming_loss": 0.011111111111111112,
+      "exact_set_accuracy": 0.7407407407407407,
+      "per_control": {
+        "SC001": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "test_positive_support": 0
+        },
+        "SC002": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "test_positive_support": 0
+        },
+        "SC003": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "test_positive_support": 0
+        },
+        "SC004": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "test_positive_support": 0
+        },
+        "SC005": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "test_positive_support": 9
+        },
+        "SC006": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "test_positive_support": 9
+        },
+        "SC007": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "test_positive_support": 9
+        },
+        "SC008": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "test_positive_support": 0
+        },
+        "SC009": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "test_positive_support": 0
+        },
+        "SC010": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "test_positive_support": 0
+        },
+        "SC011": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "test_positive_support": 0
+        },
+        "SC012": {
+          "precision": 0.8181818181818182,
+          "recall": 1.0,
+          "f1": 0.9,
+          "test_positive_support": 9
+        },
+        "SC013": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "test_positive_support": 0
+        },
+        "SC014": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "test_positive_support": 0
+        },
+        "SC015": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "test_positive_support": 0
+        },
+        "SC016": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "test_positive_support": 0
+        },
+        "SC017": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "test_positive_support": 0
+        },
+        "SC018": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "test_positive_support": 0
+        },
+        "SC019": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "test_positive_support": 0
+        },
+        "SC020": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "test_positive_support": 0
+        },
+        "SC021": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "test_positive_support": 0
+        },
+        "SC022": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "test_positive_support": 0
+        },
+        "SC023": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "test_positive_support": 0
+        },
+        "SC024": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "test_positive_support": 0
+        },
+        "SC025": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "test_positive_support": 0
+        },
+        "SC026": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "test_positive_support": 5
+        },
+        "SC027": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "test_positive_support": 0
+        },
+        "SC028": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "test_positive_support": 0
+        },
+        "SC029": {
+          "precision": 0.8181818181818182,
+          "recall": 1.0,
+          "f1": 0.9,
+          "test_positive_support": 9
+        },
+        "SC030": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "test_positive_support": 0
+        }
+      }
+    },
+    "proposed_control_gate_passed": true,
+    "note": "Control gate is a proposed engineering minimum requiring project-owner agreement, not an established compliance standard.",
+    "eligible_for_reviewed_advisory_release": false
+  },
+  "safety": {
+    "requires_human_review": true,
+    "automatic_execution": false,
+    "official_risk_register_write": false,
+    "default_mode": "shadow",
+    "no_claim": "No production validation, unknown-attack guarantee, control effectiveness estimate, or autonomous response"
+  },
+  "model_sha256": "29e31da0529aa25af501cd9af20dd4b3eae7c2455b3926758487a2354eb91454"
+}

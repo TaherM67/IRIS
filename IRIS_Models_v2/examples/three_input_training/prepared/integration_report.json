@@ -1,0 +1,31 @@
+{
+  "data_provenance": "synthetic",
+  "input_alert_rows": 26086,
+  "deduplicated_alerts": 26073,
+  "exact_duplicate_rows_removed": 12,
+  "conflicting_event_ids_excluded": [],
+  "ignored_non_alert_sensor_records": 0,
+  "quarantine": [
+    {
+      "line": 4919,
+      "reason": "Invalid isoformat string: 'not-a-timestamp'"
+    }
+  ],
+  "unresolved_asset_events": 2,
+  "matched_events_without_risk_context": 0,
+  "unified_event_rows": 26073,
+  "model_sessions": 900,
+  "asset_snapshots": 120,
+  "risk_snapshots": 240,
+  "join_does_not_multiply_alerts": true,
+  "risk_selection_policy": "highest_preexisting_likelihood_times_impact_then_risk_id",
+  "session_window_seconds": 60,
+  "source_sha256": {
+    "asset_inventory": "a4b1d4e4ed9e07594f9d489468fc0f7f17b72c7c80cbe0df52931fc1a85172c6",
+    "risk_register": "30b54b800f311c20f2fcea2c797ca517a98f80be0f8e343b92f20312545b582d",
+    "siem_alerts": "61dbdfdfe089686f28fa1c9bd0bbd0c215a02c562a72386cdf0b3cb885ba0645"
+  },
+  "elapsed_seconds": 1.490034,
+  "training_labels_read": false,
+  "memory_model": "Indexed snapshots and deduplicated alerts retained in memory; batch O(E log E) sorting, no cartesian event-risk expansion. Not a streaming production connector."
+}

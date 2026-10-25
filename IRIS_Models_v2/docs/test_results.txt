@@ -1,0 +1,51 @@
+test_25_rows_not_25_runs (test_models.ContractTests.test_25_rows_not_25_runs) ... ok
+test_abstentions_reduce_attack_recall (test_models.ContractTests.test_abstentions_reduce_attack_recall) ... ok
+test_bad_failure_ratio_rejected (test_models.ContractTests.test_bad_failure_ratio_rejected) ... ok
+test_bad_rate_rejected (test_models.ContractTests.test_bad_rate_rejected) ... ok
+test_duplicate_review_rejected (test_models.ContractTests.test_duplicate_review_rejected) ... ok
+test_fractional_count_rejected (test_models.ContractTests.test_fractional_count_rejected) ... ok
+test_group_splits_disjoint (test_models.ContractTests.test_group_splits_disjoint) ... ok
+test_inconsistent_counts_rejected (test_models.ContractTests.test_inconsistent_counts_rejected) ... ok
+test_missing_feature_rejected (test_models.ContractTests.test_missing_feature_rejected) ... ok
+test_model1_does_not_require_fabricated_grc_context (test_models.ContractTests.test_model1_does_not_require_fabricated_grc_context) ... ok
+test_nonfinite_feature_rejected (test_models.ContractTests.test_nonfinite_feature_rejected) ... ok
+test_reproducible_split (test_models.ContractTests.test_reproducible_split) ... ok
+test_sensor_down_and_unreviewed_rows_quarantined (test_models.ContractTests.test_sensor_down_and_unreviewed_rows_quarantined) ... ok
+test_single_campaign_is_not_campaign_validation (test_models.ContractTests.test_single_campaign_is_not_campaign_validation) ... ok
+test_synthetic_cannot_be_called_real (test_models.ContractTests.test_synthetic_cannot_be_called_real) ... ok
+test_truth_feature_rejected (test_models.ContractTests.test_truth_feature_rejected) ... ok
+test_valid_features (test_models.ContractTests.test_valid_features) ... ok
+test_advisory_without_approval_stays_fallback (test_models.ModelIntegrationTests.test_advisory_without_approval_stays_fallback) ... ok
+test_artifact_loads (test_models.ModelIntegrationTests.test_artifact_loads) ... ok
+test_bridge_assessment_and_recommender_interfaces (test_models.ModelIntegrationTests.test_bridge_assessment_and_recommender_interfaces) ... ok
+test_bridge_builds_telemetry_only_features (test_models.ModelIntegrationTests.test_bridge_builds_telemetry_only_features) ... ok
+test_bridge_missing_health_fails_closed (test_models.ModelIntegrationTests.test_bridge_missing_health_fails_closed) ... ok
+test_catalogue_state_and_exception_policy (test_models.ModelIntegrationTests.test_catalogue_state_and_exception_policy) ... ok
+test_grc_criticality_does_not_change_scenario (test_models.ModelIntegrationTests.test_grc_criticality_does_not_change_scenario) ... ok
+test_malformed_policy_context_does_not_recommend_actions (test_models.ModelIntegrationTests.test_malformed_policy_context_does_not_recommend_actions) ... ok
+test_missing_artifact_uses_rules (test_models.ModelIntegrationTests.test_missing_artifact_uses_rules) ... ok
+test_model2_uses_crossfit_predictions (test_models.ModelIntegrationTests.test_model2_uses_crossfit_predictions) ... ok
+test_no_overwrite_of_existing_experiment (test_models.ModelIntegrationTests.test_no_overwrite_of_existing_experiment) ... ok
+test_prediction_failure_retains_rules (test_models.ModelIntegrationTests.test_prediction_failure_retains_rules) ... ok
+test_rules_mode_does_not_infer_ml (test_models.ModelIntegrationTests.test_rules_mode_does_not_infer_ml) ... ok
+test_sensor_gap_never_assessed_benign (test_models.ModelIntegrationTests.test_sensor_gap_never_assessed_benign) ... ok
+test_shadow_default_does_not_replace_rules (test_models.ModelIntegrationTests.test_shadow_default_does_not_replace_rules) ... ok
+test_synthetic_release_blocked (test_models.ModelIntegrationTests.test_synthetic_release_blocked) ... ok
+test_tamper_rejected_before_unpickle (test_models.ModelIntegrationTests.test_tamper_rejected_before_unpickle) ... ok
+test_three_candidates_compared (test_models.ModelIntegrationTests.test_three_candidates_compared) ... ok
+test_train_serve_sessionizer_mismatch_disables_ml (test_models.ModelIntegrationTests.test_train_serve_sessionizer_mismatch_disables_ml) ... ok
+test_unseen_category_abstains_ml (test_models.ModelIntegrationTests.test_unseen_category_abstains_ml) ... ok
+test_version_mismatch_rejected_before_load (test_models.ModelIntegrationTests.test_version_mismatch_rejected_before_load) ... ok
+test_bad_time_quarantined (test_models.RangeAdapterTests.test_bad_time_quarantined) ... ok
+test_benign_success_after_failures_feature (test_models.RangeAdapterTests.test_benign_success_after_failures_feature) ... ok
+test_complete_runtime_hashes_allow_import_without_truth (test_models.RangeAdapterTests.test_complete_runtime_hashes_allow_import_without_truth) ... ok
+test_hash_tamper_blocks_import (test_models.RangeAdapterTests.test_hash_tamper_blocks_import) ... ok
+test_missing_manifest_blocks_training_health (test_models.RangeAdapterTests.test_missing_manifest_blocks_training_health) ... ok
+test_suricata_severity_mapping (test_models.RangeAdapterTests.test_suricata_severity_mapping) ... ok
+test_timezone_required (test_models.RangeAdapterTests.test_timezone_required) ... ok
+test_truth_independent_import_and_dedup (test_models.RangeAdapterTests.test_truth_independent_import_and_dedup) ... ok
+
+----------------------------------------------------------------------
+Ran 46 tests in 3.168s
+
+OK

@@ -1,0 +1,194 @@
+{
+  "session_id": "DEMO-00-credential_access-0",
+  "generated_at_utc": "2026-10-24T19:35:24.436579+00:00",
+  "mode": "shadow",
+  "soc_assessment": {
+    "scenario_class": "credential_access",
+    "confidence": null,
+    "status": "ASSESSED",
+    "method": "rule_baseline"
+  },
+  "grc_control_review": {
+    "source": "catalogue_fallback",
+    "recommendations": [
+      {
+        "control_id": "SC005",
+        "model_score": null,
+        "name": "Multi-Factor Authentication",
+        "catalogue_action": "Require MFA for privileged and remote access",
+        "current_state": "implemented",
+        "action_type": "verify",
+        "requires_human_approval": true,
+        "warnings": [
+          "Verify effectiveness and coverage; do not reinstall blindly"
+        ]
+      },
+      {
+        "control_id": "SC006",
+        "model_score": null,
+        "name": "Account Lockout",
+        "catalogue_action": "Temporarily lock accounts after repeated failed authentication",
+        "current_state": "unknown",
+        "action_type": "review",
+        "requires_human_approval": true,
+        "warnings": [
+          "Active policy exception; review authorization/compensating controls first",
+          "No asset-specific control-state record; analyst review required"
+        ]
+      },
+      {
+        "control_id": "SC007",
+        "model_score": null,
+        "name": "Credential Monitoring",
+        "catalogue_action": "Detect abnormal authentication frequency and source patterns",
+        "current_state": "unknown",
+        "action_type": "review",
+        "requires_human_approval": true,
+        "warnings": [
+          "No asset-specific control-state record; analyst review required"
+        ]
+      },
+      {
+        "control_id": "SC013",
+        "model_score": null,
+        "name": "Least Privilege",
+        "catalogue_action": "Restrict user permissions to minimum required",
+        "current_state": "unknown",
+        "action_type": "review",
+        "requires_human_approval": true,
+        "warnings": [
+          "No asset-specific control-state record; analyst review required"
+        ]
+      },
+      {
+        "control_id": "SC026",
+        "model_score": null,
+        "name": "Incident Escalation",
+        "catalogue_action": "Escalate critical incidents to SOC lead and risk owner",
+        "current_state": "unknown",
+        "action_type": "review",
+        "requires_human_approval": true,
+        "warnings": [
+          "No asset-specific control-state record; analyst review required"
+        ]
+      }
+    ],
+    "warnings": []
+  },
+  "shadow_candidate": {
+    "scenario_class": "credential_access",
+    "top_candidate": "credential_access",
+    "confidence": 0.7692988382662681,
+    "status": "ASSESSED",
+    "method": "calibrated_model1",
+    "threshold": 0.7,
+    "class_probabilities": {
+      "benign": 0.16417514382192616,
+      "credential_access": 0.7692988382662681,
+      "reconnaissance": 0.0665260179118058
+    },
+    "explanation": {
+      "kind": "observed_evidence_only",
+      "note": "Nonlinear model; observed inputs are evidence, not a per-case attribution."
+    },
+    "controls": {
+      "source": "catalogue_fallback",
+      "recommendations": [
+        {
+          "control_id": "SC005",
+          "model_score": null,
+          "name": "Multi-Factor Authentication",
+          "catalogue_action": "Require MFA for privileged and remote access",
+          "current_state": "implemented",
+          "action_type": "verify",
+          "requires_human_approval": true,
+          "warnings": [
+            "Verify effectiveness and coverage; do not reinstall blindly"
+          ]
+        },
+        {
+          "control_id": "SC006",
+          "model_score": null,
+          "name": "Account Lockout",
+          "catalogue_action": "Temporarily lock accounts after repeated failed authentication",
+          "current_state": "unknown",
+          "action_type": "review",
+          "requires_human_approval": true,
+          "warnings": [
+            "Active policy exception; review authorization/compensating controls first",
+            "No asset-specific control-state record; analyst review required"
+          ]
+        },
+        {
+          "control_id": "SC007",
+          "model_score": null,
+          "name": "Credential Monitoring",
+          "catalogue_action": "Detect abnormal authentication frequency and source patterns",
+          "current_state": "unknown",
+          "action_type": "review",
+          "requires_human_approval": true,
+          "warnings": [
+            "No asset-specific control-state record; analyst review required"
+          ]
+        },
+        {
+          "control_id": "SC013",
+          "model_score": null,
+          "name": "Least Privilege",
+          "catalogue_action": "Restrict user permissions to minimum required",
+          "current_state": "unknown",
+          "action_type": "review",
+          "requires_human_approval": true,
+          "warnings": [
+            "No asset-specific control-state record; analyst review required"
+          ]
+        },
+        {
+          "control_id": "SC026",
+          "model_score": null,
+          "name": "Incident Escalation",
+          "catalogue_action": "Escalate critical incidents to SOC lead and risk owner",
+          "current_state": "unknown",
+          "action_type": "review",
+          "requires_human_approval": true,
+          "warnings": [
+            "No asset-specific control-state record; analyst review required"
+          ]
+        }
+      ],
+      "warnings": [
+        "Membership scores are not calibrated efficacy probabilities or predicted risk reduction",
+        "No learned label exceeded its threshold; conservative catalogue fallback used"
+      ]
+    }
+  },
+  "evidence_features": {
+    "event_family": "authentication",
+    "primary_protocol": "SSH",
+    "event_count": 15.0,
+    "duration_seconds": 82.9554186665462,
+    "max_rule_level": 5.0,
+    "mean_rule_level": 4.661725627734437,
+    "distinct_rules": 4.0,
+    "distinct_sources": 1.0,
+    "distinct_accounts": 1.0,
+    "failed_count": 12.0,
+    "success_count": 2.0,
+    "failure_ratio": 0.8571428571428571,
+    "success_after_failures": 1.0,
+    "max_events_in_10s": 3.0,
+    "external_source_fraction": 0.0,
+    "event_rate_per_minute": 10.84920086556018
+  },
+  "evidence_refs": [
+    "synthetic fixture; no actual telemetry"
+  ],
+  "warnings": [],
+  "requires_human_review": true,
+  "automatic_execution": false,
+  "official_risk_register_write": false,
+  "risk_scoring": "Delegate to the explicit versioned IRIS risk policy; ML does not set official likelihood/impact",
+  "model1_released": false,
+  "model2_released": false,
+  "model_sha256": "29e31da0529aa25af501cd9af20dd4b3eae7c2455b3926758487a2354eb91454"
+}

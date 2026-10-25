@@ -1,0 +1,4115 @@
+{
+  "schema_version": "iris-risk-register-v1",
+  "data_provenance": "synthetic",
+  "notice": "Artificial development/training samples. Not actual SIEM, hospital or expert-review evidence.",
+  "records": [
+    {
+      "risk_id": "RSK-001-1",
+      "risk_version_id": "RSK-001-1-V1",
+      "asset_id": "AST-001",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 1,
+      "impact": 4,
+      "control_states": {
+        "SC005": "missing",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [
+        "SC006"
+      ],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-001-2",
+      "risk_version_id": "RSK-001-2-V1",
+      "asset_id": "AST-001",
+      "risk_category": "Reconnaissance",
+      "likelihood": 1,
+      "impact": 4,
+      "control_states": {
+        "SC012": "missing",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-001-1",
+      "risk_version_id": "RSK-001-1-V2",
+      "asset_id": "AST-001",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 4,
+      "impact": 4,
+      "control_states": {
+        "SC005": "missing",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [
+        "SC006"
+      ],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-001-2",
+      "risk_version_id": "RSK-001-2-V2",
+      "asset_id": "AST-001",
+      "risk_category": "Reconnaissance",
+      "likelihood": 2,
+      "impact": 1,
+      "control_states": {
+        "SC012": "missing",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-002-1",
+      "risk_version_id": "RSK-002-1-V1",
+      "asset_id": "AST-002",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 3,
+      "impact": 1,
+      "control_states": {
+        "SC005": "partial",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-002-2",
+      "risk_version_id": "RSK-002-2-V1",
+      "asset_id": "AST-002",
+      "risk_category": "Reconnaissance",
+      "likelihood": 2,
+      "impact": 2,
+      "control_states": {
+        "SC012": "partial",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-002-1",
+      "risk_version_id": "RSK-002-1-V2",
+      "asset_id": "AST-002",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 3,
+      "impact": 4,
+      "control_states": {
+        "SC005": "partial",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-002-2",
+      "risk_version_id": "RSK-002-2-V2",
+      "asset_id": "AST-002",
+      "risk_category": "Reconnaissance",
+      "likelihood": 5,
+      "impact": 4,
+      "control_states": {
+        "SC012": "partial",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-003-1",
+      "risk_version_id": "RSK-003-1-V1",
+      "asset_id": "AST-003",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 5,
+      "impact": 1,
+      "control_states": {
+        "SC005": "implemented",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-003-2",
+      "risk_version_id": "RSK-003-2-V1",
+      "asset_id": "AST-003",
+      "risk_category": "Reconnaissance",
+      "likelihood": 1,
+      "impact": 4,
+      "control_states": {
+        "SC012": "implemented",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-003-1",
+      "risk_version_id": "RSK-003-1-V2",
+      "asset_id": "AST-003",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 5,
+      "impact": 1,
+      "control_states": {
+        "SC005": "implemented",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-003-2",
+      "risk_version_id": "RSK-003-2-V2",
+      "asset_id": "AST-003",
+      "risk_category": "Reconnaissance",
+      "likelihood": 1,
+      "impact": 3,
+      "control_states": {
+        "SC012": "implemented",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-004-1",
+      "risk_version_id": "RSK-004-1-V1",
+      "asset_id": "AST-004",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 5,
+      "impact": 3,
+      "control_states": {
+        "SC005": "missing",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-004-2",
+      "risk_version_id": "RSK-004-2-V1",
+      "asset_id": "AST-004",
+      "risk_category": "Reconnaissance",
+      "likelihood": 2,
+      "impact": 4,
+      "control_states": {
+        "SC012": "missing",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-004-1",
+      "risk_version_id": "RSK-004-1-V2",
+      "asset_id": "AST-004",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 5,
+      "impact": 5,
+      "control_states": {
+        "SC005": "missing",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-004-2",
+      "risk_version_id": "RSK-004-2-V2",
+      "asset_id": "AST-004",
+      "risk_category": "Reconnaissance",
+      "likelihood": 3,
+      "impact": 4,
+      "control_states": {
+        "SC012": "missing",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-005-1",
+      "risk_version_id": "RSK-005-1-V1",
+      "asset_id": "AST-005",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 2,
+      "impact": 2,
+      "control_states": {
+        "SC005": "partial",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-005-2",
+      "risk_version_id": "RSK-005-2-V1",
+      "asset_id": "AST-005",
+      "risk_category": "Reconnaissance",
+      "likelihood": 5,
+      "impact": 3,
+      "control_states": {
+        "SC012": "partial",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-005-1",
+      "risk_version_id": "RSK-005-1-V2",
+      "asset_id": "AST-005",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 4,
+      "impact": 3,
+      "control_states": {
+        "SC005": "partial",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-005-2",
+      "risk_version_id": "RSK-005-2-V2",
+      "asset_id": "AST-005",
+      "risk_category": "Reconnaissance",
+      "likelihood": 1,
+      "impact": 4,
+      "control_states": {
+        "SC012": "partial",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-006-1",
+      "risk_version_id": "RSK-006-1-V1",
+      "asset_id": "AST-006",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 3,
+      "impact": 1,
+      "control_states": {
+        "SC005": "implemented",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-006-2",
+      "risk_version_id": "RSK-006-2-V1",
+      "asset_id": "AST-006",
+      "risk_category": "Reconnaissance",
+      "likelihood": 4,
+      "impact": 4,
+      "control_states": {
+        "SC012": "implemented",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-006-1",
+      "risk_version_id": "RSK-006-1-V2",
+      "asset_id": "AST-006",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 3,
+      "impact": 4,
+      "control_states": {
+        "SC005": "implemented",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-006-2",
+      "risk_version_id": "RSK-006-2-V2",
+      "asset_id": "AST-006",
+      "risk_category": "Reconnaissance",
+      "likelihood": 3,
+      "impact": 5,
+      "control_states": {
+        "SC012": "implemented",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-007-1",
+      "risk_version_id": "RSK-007-1-V1",
+      "asset_id": "AST-007",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 2,
+      "impact": 2,
+      "control_states": {
+        "SC005": "missing",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-007-2",
+      "risk_version_id": "RSK-007-2-V1",
+      "asset_id": "AST-007",
+      "risk_category": "Reconnaissance",
+      "likelihood": 3,
+      "impact": 2,
+      "control_states": {
+        "SC012": "missing",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-007-1",
+      "risk_version_id": "RSK-007-1-V2",
+      "asset_id": "AST-007",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 1,
+      "impact": 4,
+      "control_states": {
+        "SC005": "missing",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-007-2",
+      "risk_version_id": "RSK-007-2-V2",
+      "asset_id": "AST-007",
+      "risk_category": "Reconnaissance",
+      "likelihood": 2,
+      "impact": 5,
+      "control_states": {
+        "SC012": "missing",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-008-1",
+      "risk_version_id": "RSK-008-1-V1",
+      "asset_id": "AST-008",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 4,
+      "impact": 3,
+      "control_states": {
+        "SC005": "partial",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-008-2",
+      "risk_version_id": "RSK-008-2-V1",
+      "asset_id": "AST-008",
+      "risk_category": "Reconnaissance",
+      "likelihood": 1,
+      "impact": 1,
+      "control_states": {
+        "SC012": "partial",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-008-1",
+      "risk_version_id": "RSK-008-1-V2",
+      "asset_id": "AST-008",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 2,
+      "impact": 4,
+      "control_states": {
+        "SC005": "partial",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-008-2",
+      "risk_version_id": "RSK-008-2-V2",
+      "asset_id": "AST-008",
+      "risk_category": "Reconnaissance",
+      "likelihood": 3,
+      "impact": 3,
+      "control_states": {
+        "SC012": "partial",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-009-1",
+      "risk_version_id": "RSK-009-1-V1",
+      "asset_id": "AST-009",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 5,
+      "impact": 5,
+      "control_states": {
+        "SC005": "implemented",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-009-2",
+      "risk_version_id": "RSK-009-2-V1",
+      "asset_id": "AST-009",
+      "risk_category": "Reconnaissance",
+      "likelihood": 3,
+      "impact": 5,
+      "control_states": {
+        "SC012": "implemented",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-009-1",
+      "risk_version_id": "RSK-009-1-V2",
+      "asset_id": "AST-009",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 5,
+      "impact": 3,
+      "control_states": {
+        "SC005": "implemented",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-009-2",
+      "risk_version_id": "RSK-009-2-V2",
+      "asset_id": "AST-009",
+      "risk_category": "Reconnaissance",
+      "likelihood": 3,
+      "impact": 3,
+      "control_states": {
+        "SC012": "implemented",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-010-1",
+      "risk_version_id": "RSK-010-1-V1",
+      "asset_id": "AST-010",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 3,
+      "impact": 4,
+      "control_states": {
+        "SC005": "missing",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [
+        "SC006"
+      ],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-010-2",
+      "risk_version_id": "RSK-010-2-V1",
+      "asset_id": "AST-010",
+      "risk_category": "Reconnaissance",
+      "likelihood": 5,
+      "impact": 4,
+      "control_states": {
+        "SC012": "missing",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-010-1",
+      "risk_version_id": "RSK-010-1-V2",
+      "asset_id": "AST-010",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 2,
+      "impact": 1,
+      "control_states": {
+        "SC005": "missing",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [
+        "SC006"
+      ],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-010-2",
+      "risk_version_id": "RSK-010-2-V2",
+      "asset_id": "AST-010",
+      "risk_category": "Reconnaissance",
+      "likelihood": 3,
+      "impact": 5,
+      "control_states": {
+        "SC012": "missing",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-011-1",
+      "risk_version_id": "RSK-011-1-V1",
+      "asset_id": "AST-011",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 2,
+      "impact": 5,
+      "control_states": {
+        "SC005": "partial",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-011-2",
+      "risk_version_id": "RSK-011-2-V1",
+      "asset_id": "AST-011",
+      "risk_category": "Reconnaissance",
+      "likelihood": 3,
+      "impact": 1,
+      "control_states": {
+        "SC012": "partial",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-011-1",
+      "risk_version_id": "RSK-011-1-V2",
+      "asset_id": "AST-011",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 2,
+      "impact": 1,
+      "control_states": {
+        "SC005": "partial",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-011-2",
+      "risk_version_id": "RSK-011-2-V2",
+      "asset_id": "AST-011",
+      "risk_category": "Reconnaissance",
+      "likelihood": 5,
+      "impact": 5,
+      "control_states": {
+        "SC012": "partial",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-012-1",
+      "risk_version_id": "RSK-012-1-V1",
+      "asset_id": "AST-012",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 1,
+      "impact": 2,
+      "control_states": {
+        "SC005": "implemented",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-012-2",
+      "risk_version_id": "RSK-012-2-V1",
+      "asset_id": "AST-012",
+      "risk_category": "Reconnaissance",
+      "likelihood": 5,
+      "impact": 3,
+      "control_states": {
+        "SC012": "implemented",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-012-1",
+      "risk_version_id": "RSK-012-1-V2",
+      "asset_id": "AST-012",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 5,
+      "impact": 4,
+      "control_states": {
+        "SC005": "implemented",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-012-2",
+      "risk_version_id": "RSK-012-2-V2",
+      "asset_id": "AST-012",
+      "risk_category": "Reconnaissance",
+      "likelihood": 4,
+      "impact": 3,
+      "control_states": {
+        "SC012": "implemented",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-013-1",
+      "risk_version_id": "RSK-013-1-V1",
+      "asset_id": "AST-013",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 3,
+      "impact": 2,
+      "control_states": {
+        "SC005": "missing",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-013-2",
+      "risk_version_id": "RSK-013-2-V1",
+      "asset_id": "AST-013",
+      "risk_category": "Reconnaissance",
+      "likelihood": 3,
+      "impact": 1,
+      "control_states": {
+        "SC012": "missing",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-013-1",
+      "risk_version_id": "RSK-013-1-V2",
+      "asset_id": "AST-013",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 4,
+      "impact": 2,
+      "control_states": {
+        "SC005": "missing",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-013-2",
+      "risk_version_id": "RSK-013-2-V2",
+      "asset_id": "AST-013",
+      "risk_category": "Reconnaissance",
+      "likelihood": 2,
+      "impact": 3,
+      "control_states": {
+        "SC012": "missing",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-014-1",
+      "risk_version_id": "RSK-014-1-V1",
+      "asset_id": "AST-014",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 4,
+      "impact": 5,
+      "control_states": {
+        "SC005": "partial",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-014-2",
+      "risk_version_id": "RSK-014-2-V1",
+      "asset_id": "AST-014",
+      "risk_category": "Reconnaissance",
+      "likelihood": 5,
+      "impact": 5,
+      "control_states": {
+        "SC012": "partial",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-014-1",
+      "risk_version_id": "RSK-014-1-V2",
+      "asset_id": "AST-014",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 3,
+      "impact": 4,
+      "control_states": {
+        "SC005": "partial",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-014-2",
+      "risk_version_id": "RSK-014-2-V2",
+      "asset_id": "AST-014",
+      "risk_category": "Reconnaissance",
+      "likelihood": 2,
+      "impact": 1,
+      "control_states": {
+        "SC012": "partial",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-015-1",
+      "risk_version_id": "RSK-015-1-V1",
+      "asset_id": "AST-015",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 2,
+      "impact": 3,
+      "control_states": {
+        "SC005": "implemented",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-015-2",
+      "risk_version_id": "RSK-015-2-V1",
+      "asset_id": "AST-015",
+      "risk_category": "Reconnaissance",
+      "likelihood": 3,
+      "impact": 2,
+      "control_states": {
+        "SC012": "implemented",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-015-1",
+      "risk_version_id": "RSK-015-1-V2",
+      "asset_id": "AST-015",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 3,
+      "impact": 2,
+      "control_states": {
+        "SC005": "implemented",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-015-2",
+      "risk_version_id": "RSK-015-2-V2",
+      "asset_id": "AST-015",
+      "risk_category": "Reconnaissance",
+      "likelihood": 5,
+      "impact": 2,
+      "control_states": {
+        "SC012": "implemented",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-016-1",
+      "risk_version_id": "RSK-016-1-V1",
+      "asset_id": "AST-016",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 5,
+      "impact": 1,
+      "control_states": {
+        "SC005": "missing",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-016-2",
+      "risk_version_id": "RSK-016-2-V1",
+      "asset_id": "AST-016",
+      "risk_category": "Reconnaissance",
+      "likelihood": 4,
+      "impact": 5,
+      "control_states": {
+        "SC012": "missing",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-016-1",
+      "risk_version_id": "RSK-016-1-V2",
+      "asset_id": "AST-016",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 2,
+      "impact": 1,
+      "control_states": {
+        "SC005": "missing",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-016-2",
+      "risk_version_id": "RSK-016-2-V2",
+      "asset_id": "AST-016",
+      "risk_category": "Reconnaissance",
+      "likelihood": 5,
+      "impact": 5,
+      "control_states": {
+        "SC012": "missing",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-017-1",
+      "risk_version_id": "RSK-017-1-V1",
+      "asset_id": "AST-017",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 1,
+      "impact": 4,
+      "control_states": {
+        "SC005": "partial",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-017-2",
+      "risk_version_id": "RSK-017-2-V1",
+      "asset_id": "AST-017",
+      "risk_category": "Reconnaissance",
+      "likelihood": 4,
+      "impact": 3,
+      "control_states": {
+        "SC012": "partial",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-017-1",
+      "risk_version_id": "RSK-017-1-V2",
+      "asset_id": "AST-017",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 4,
+      "impact": 2,
+      "control_states": {
+        "SC005": "partial",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-017-2",
+      "risk_version_id": "RSK-017-2-V2",
+      "asset_id": "AST-017",
+      "risk_category": "Reconnaissance",
+      "likelihood": 2,
+      "impact": 2,
+      "control_states": {
+        "SC012": "partial",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-018-1",
+      "risk_version_id": "RSK-018-1-V1",
+      "asset_id": "AST-018",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 4,
+      "impact": 1,
+      "control_states": {
+        "SC005": "implemented",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-018-2",
+      "risk_version_id": "RSK-018-2-V1",
+      "asset_id": "AST-018",
+      "risk_category": "Reconnaissance",
+      "likelihood": 3,
+      "impact": 2,
+      "control_states": {
+        "SC012": "implemented",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-018-1",
+      "risk_version_id": "RSK-018-1-V2",
+      "asset_id": "AST-018",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 3,
+      "impact": 2,
+      "control_states": {
+        "SC005": "implemented",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-018-2",
+      "risk_version_id": "RSK-018-2-V2",
+      "asset_id": "AST-018",
+      "risk_category": "Reconnaissance",
+      "likelihood": 3,
+      "impact": 3,
+      "control_states": {
+        "SC012": "implemented",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-019-1",
+      "risk_version_id": "RSK-019-1-V1",
+      "asset_id": "AST-019",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 4,
+      "impact": 5,
+      "control_states": {
+        "SC005": "missing",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [
+        "SC006"
+      ],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-019-2",
+      "risk_version_id": "RSK-019-2-V1",
+      "asset_id": "AST-019",
+      "risk_category": "Reconnaissance",
+      "likelihood": 1,
+      "impact": 3,
+      "control_states": {
+        "SC012": "missing",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-019-1",
+      "risk_version_id": "RSK-019-1-V2",
+      "asset_id": "AST-019",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 5,
+      "impact": 3,
+      "control_states": {
+        "SC005": "missing",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [
+        "SC006"
+      ],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-019-2",
+      "risk_version_id": "RSK-019-2-V2",
+      "asset_id": "AST-019",
+      "risk_category": "Reconnaissance",
+      "likelihood": 2,
+      "impact": 5,
+      "control_states": {
+        "SC012": "missing",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-020-1",
+      "risk_version_id": "RSK-020-1-V1",
+      "asset_id": "AST-020",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 1,
+      "impact": 2,
+      "control_states": {
+        "SC005": "partial",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-020-2",
+      "risk_version_id": "RSK-020-2-V1",
+      "asset_id": "AST-020",
+      "risk_category": "Reconnaissance",
+      "likelihood": 1,
+      "impact": 3,
+      "control_states": {
+        "SC012": "partial",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-020-1",
+      "risk_version_id": "RSK-020-1-V2",
+      "asset_id": "AST-020",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 5,
+      "impact": 4,
+      "control_states": {
+        "SC005": "partial",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-020-2",
+      "risk_version_id": "RSK-020-2-V2",
+      "asset_id": "AST-020",
+      "risk_category": "Reconnaissance",
+      "likelihood": 4,
+      "impact": 5,
+      "control_states": {
+        "SC012": "partial",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-021-1",
+      "risk_version_id": "RSK-021-1-V1",
+      "asset_id": "AST-021",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 3,
+      "impact": 5,
+      "control_states": {
+        "SC005": "implemented",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-021-2",
+      "risk_version_id": "RSK-021-2-V1",
+      "asset_id": "AST-021",
+      "risk_category": "Reconnaissance",
+      "likelihood": 2,
+      "impact": 3,
+      "control_states": {
+        "SC012": "implemented",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-021-1",
+      "risk_version_id": "RSK-021-1-V2",
+      "asset_id": "AST-021",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 2,
+      "impact": 4,
+      "control_states": {
+        "SC005": "implemented",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-021-2",
+      "risk_version_id": "RSK-021-2-V2",
+      "asset_id": "AST-021",
+      "risk_category": "Reconnaissance",
+      "likelihood": 5,
+      "impact": 5,
+      "control_states": {
+        "SC012": "implemented",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-022-1",
+      "risk_version_id": "RSK-022-1-V1",
+      "asset_id": "AST-022",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 2,
+      "impact": 1,
+      "control_states": {
+        "SC005": "missing",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-022-2",
+      "risk_version_id": "RSK-022-2-V1",
+      "asset_id": "AST-022",
+      "risk_category": "Reconnaissance",
+      "likelihood": 2,
+      "impact": 5,
+      "control_states": {
+        "SC012": "missing",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-022-1",
+      "risk_version_id": "RSK-022-1-V2",
+      "asset_id": "AST-022",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 5,
+      "impact": 4,
+      "control_states": {
+        "SC005": "missing",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-022-2",
+      "risk_version_id": "RSK-022-2-V2",
+      "asset_id": "AST-022",
+      "risk_category": "Reconnaissance",
+      "likelihood": 1,
+      "impact": 2,
+      "control_states": {
+        "SC012": "missing",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-023-1",
+      "risk_version_id": "RSK-023-1-V1",
+      "asset_id": "AST-023",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 1,
+      "impact": 4,
+      "control_states": {
+        "SC005": "partial",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-023-2",
+      "risk_version_id": "RSK-023-2-V1",
+      "asset_id": "AST-023",
+      "risk_category": "Reconnaissance",
+      "likelihood": 1,
+      "impact": 3,
+      "control_states": {
+        "SC012": "partial",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-023-1",
+      "risk_version_id": "RSK-023-1-V2",
+      "asset_id": "AST-023",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 4,
+      "impact": 5,
+      "control_states": {
+        "SC005": "partial",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-023-2",
+      "risk_version_id": "RSK-023-2-V2",
+      "asset_id": "AST-023",
+      "risk_category": "Reconnaissance",
+      "likelihood": 1,
+      "impact": 5,
+      "control_states": {
+        "SC012": "partial",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-024-1",
+      "risk_version_id": "RSK-024-1-V1",
+      "asset_id": "AST-024",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 4,
+      "impact": 5,
+      "control_states": {
+        "SC005": "implemented",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-024-2",
+      "risk_version_id": "RSK-024-2-V1",
+      "asset_id": "AST-024",
+      "risk_category": "Reconnaissance",
+      "likelihood": 3,
+      "impact": 3,
+      "control_states": {
+        "SC012": "implemented",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-024-1",
+      "risk_version_id": "RSK-024-1-V2",
+      "asset_id": "AST-024",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 4,
+      "impact": 1,
+      "control_states": {
+        "SC005": "implemented",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-024-2",
+      "risk_version_id": "RSK-024-2-V2",
+      "asset_id": "AST-024",
+      "risk_category": "Reconnaissance",
+      "likelihood": 5,
+      "impact": 2,
+      "control_states": {
+        "SC012": "implemented",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-025-1",
+      "risk_version_id": "RSK-025-1-V1",
+      "asset_id": "AST-025",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 2,
+      "impact": 3,
+      "control_states": {
+        "SC005": "missing",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-025-2",
+      "risk_version_id": "RSK-025-2-V1",
+      "asset_id": "AST-025",
+      "risk_category": "Reconnaissance",
+      "likelihood": 4,
+      "impact": 1,
+      "control_states": {
+        "SC012": "missing",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-025-1",
+      "risk_version_id": "RSK-025-1-V2",
+      "asset_id": "AST-025",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 3,
+      "impact": 1,
+      "control_states": {
+        "SC005": "missing",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-025-2",
+      "risk_version_id": "RSK-025-2-V2",
+      "asset_id": "AST-025",
+      "risk_category": "Reconnaissance",
+      "likelihood": 2,
+      "impact": 3,
+      "control_states": {
+        "SC012": "missing",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-026-1",
+      "risk_version_id": "RSK-026-1-V1",
+      "asset_id": "AST-026",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 1,
+      "impact": 1,
+      "control_states": {
+        "SC005": "partial",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-026-2",
+      "risk_version_id": "RSK-026-2-V1",
+      "asset_id": "AST-026",
+      "risk_category": "Reconnaissance",
+      "likelihood": 1,
+      "impact": 1,
+      "control_states": {
+        "SC012": "partial",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-026-1",
+      "risk_version_id": "RSK-026-1-V2",
+      "asset_id": "AST-026",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 5,
+      "impact": 2,
+      "control_states": {
+        "SC005": "partial",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-026-2",
+      "risk_version_id": "RSK-026-2-V2",
+      "asset_id": "AST-026",
+      "risk_category": "Reconnaissance",
+      "likelihood": 5,
+      "impact": 1,
+      "control_states": {
+        "SC012": "partial",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-027-1",
+      "risk_version_id": "RSK-027-1-V1",
+      "asset_id": "AST-027",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 3,
+      "impact": 2,
+      "control_states": {
+        "SC005": "implemented",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-027-2",
+      "risk_version_id": "RSK-027-2-V1",
+      "asset_id": "AST-027",
+      "risk_category": "Reconnaissance",
+      "likelihood": 2,
+      "impact": 3,
+      "control_states": {
+        "SC012": "implemented",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-027-1",
+      "risk_version_id": "RSK-027-1-V2",
+      "asset_id": "AST-027",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 4,
+      "impact": 5,
+      "control_states": {
+        "SC005": "implemented",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-027-2",
+      "risk_version_id": "RSK-027-2-V2",
+      "asset_id": "AST-027",
+      "risk_category": "Reconnaissance",
+      "likelihood": 5,
+      "impact": 1,
+      "control_states": {
+        "SC012": "implemented",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-028-1",
+      "risk_version_id": "RSK-028-1-V1",
+      "asset_id": "AST-028",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 3,
+      "impact": 3,
+      "control_states": {
+        "SC005": "missing",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [
+        "SC006"
+      ],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-028-2",
+      "risk_version_id": "RSK-028-2-V1",
+      "asset_id": "AST-028",
+      "risk_category": "Reconnaissance",
+      "likelihood": 2,
+      "impact": 1,
+      "control_states": {
+        "SC012": "missing",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-028-1",
+      "risk_version_id": "RSK-028-1-V2",
+      "asset_id": "AST-028",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 1,
+      "impact": 5,
+      "control_states": {
+        "SC005": "missing",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [
+        "SC006"
+      ],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-028-2",
+      "risk_version_id": "RSK-028-2-V2",
+      "asset_id": "AST-028",
+      "risk_category": "Reconnaissance",
+      "likelihood": 2,
+      "impact": 3,
+      "control_states": {
+        "SC012": "missing",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-029-1",
+      "risk_version_id": "RSK-029-1-V1",
+      "asset_id": "AST-029",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 4,
+      "impact": 4,
+      "control_states": {
+        "SC005": "partial",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-029-2",
+      "risk_version_id": "RSK-029-2-V1",
+      "asset_id": "AST-029",
+      "risk_category": "Reconnaissance",
+      "likelihood": 1,
+      "impact": 1,
+      "control_states": {
+        "SC012": "partial",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-029-1",
+      "risk_version_id": "RSK-029-1-V2",
+      "asset_id": "AST-029",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 3,
+      "impact": 2,
+      "control_states": {
+        "SC005": "partial",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-029-2",
+      "risk_version_id": "RSK-029-2-V2",
+      "asset_id": "AST-029",
+      "risk_category": "Reconnaissance",
+      "likelihood": 4,
+      "impact": 4,
+      "control_states": {
+        "SC012": "partial",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-030-1",
+      "risk_version_id": "RSK-030-1-V1",
+      "asset_id": "AST-030",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 5,
+      "impact": 2,
+      "control_states": {
+        "SC005": "implemented",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-030-2",
+      "risk_version_id": "RSK-030-2-V1",
+      "asset_id": "AST-030",
+      "risk_category": "Reconnaissance",
+      "likelihood": 1,
+      "impact": 3,
+      "control_states": {
+        "SC012": "implemented",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-030-1",
+      "risk_version_id": "RSK-030-1-V2",
+      "asset_id": "AST-030",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 3,
+      "impact": 2,
+      "control_states": {
+        "SC005": "implemented",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-030-2",
+      "risk_version_id": "RSK-030-2-V2",
+      "asset_id": "AST-030",
+      "risk_category": "Reconnaissance",
+      "likelihood": 4,
+      "impact": 4,
+      "control_states": {
+        "SC012": "implemented",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-031-1",
+      "risk_version_id": "RSK-031-1-V1",
+      "asset_id": "AST-031",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 3,
+      "impact": 5,
+      "control_states": {
+        "SC005": "missing",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-031-2",
+      "risk_version_id": "RSK-031-2-V1",
+      "asset_id": "AST-031",
+      "risk_category": "Reconnaissance",
+      "likelihood": 1,
+      "impact": 2,
+      "control_states": {
+        "SC012": "missing",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-031-1",
+      "risk_version_id": "RSK-031-1-V2",
+      "asset_id": "AST-031",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 5,
+      "impact": 2,
+      "control_states": {
+        "SC005": "missing",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-031-2",
+      "risk_version_id": "RSK-031-2-V2",
+      "asset_id": "AST-031",
+      "risk_category": "Reconnaissance",
+      "likelihood": 4,
+      "impact": 5,
+      "control_states": {
+        "SC012": "missing",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-032-1",
+      "risk_version_id": "RSK-032-1-V1",
+      "asset_id": "AST-032",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 5,
+      "impact": 2,
+      "control_states": {
+        "SC005": "partial",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-032-2",
+      "risk_version_id": "RSK-032-2-V1",
+      "asset_id": "AST-032",
+      "risk_category": "Reconnaissance",
+      "likelihood": 4,
+      "impact": 4,
+      "control_states": {
+        "SC012": "partial",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-032-1",
+      "risk_version_id": "RSK-032-1-V2",
+      "asset_id": "AST-032",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 1,
+      "impact": 3,
+      "control_states": {
+        "SC005": "partial",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-032-2",
+      "risk_version_id": "RSK-032-2-V2",
+      "asset_id": "AST-032",
+      "risk_category": "Reconnaissance",
+      "likelihood": 3,
+      "impact": 1,
+      "control_states": {
+        "SC012": "partial",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-033-1",
+      "risk_version_id": "RSK-033-1-V1",
+      "asset_id": "AST-033",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 4,
+      "impact": 2,
+      "control_states": {
+        "SC005": "implemented",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-033-2",
+      "risk_version_id": "RSK-033-2-V1",
+      "asset_id": "AST-033",
+      "risk_category": "Reconnaissance",
+      "likelihood": 2,
+      "impact": 2,
+      "control_states": {
+        "SC012": "implemented",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-033-1",
+      "risk_version_id": "RSK-033-1-V2",
+      "asset_id": "AST-033",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 2,
+      "impact": 4,
+      "control_states": {
+        "SC005": "implemented",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-033-2",
+      "risk_version_id": "RSK-033-2-V2",
+      "asset_id": "AST-033",
+      "risk_category": "Reconnaissance",
+      "likelihood": 4,
+      "impact": 1,
+      "control_states": {
+        "SC012": "implemented",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-034-1",
+      "risk_version_id": "RSK-034-1-V1",
+      "asset_id": "AST-034",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 2,
+      "impact": 3,
+      "control_states": {
+        "SC005": "missing",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-034-2",
+      "risk_version_id": "RSK-034-2-V1",
+      "asset_id": "AST-034",
+      "risk_category": "Reconnaissance",
+      "likelihood": 2,
+      "impact": 4,
+      "control_states": {
+        "SC012": "missing",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-034-1",
+      "risk_version_id": "RSK-034-1-V2",
+      "asset_id": "AST-034",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 1,
+      "impact": 5,
+      "control_states": {
+        "SC005": "missing",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-034-2",
+      "risk_version_id": "RSK-034-2-V2",
+      "asset_id": "AST-034",
+      "risk_category": "Reconnaissance",
+      "likelihood": 4,
+      "impact": 3,
+      "control_states": {
+        "SC012": "missing",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-035-1",
+      "risk_version_id": "RSK-035-1-V1",
+      "asset_id": "AST-035",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 4,
+      "impact": 4,
+      "control_states": {
+        "SC005": "partial",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-035-2",
+      "risk_version_id": "RSK-035-2-V1",
+      "asset_id": "AST-035",
+      "risk_category": "Reconnaissance",
+      "likelihood": 3,
+      "impact": 4,
+      "control_states": {
+        "SC012": "partial",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-035-1",
+      "risk_version_id": "RSK-035-1-V2",
+      "asset_id": "AST-035",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 3,
+      "impact": 2,
+      "control_states": {
+        "SC005": "partial",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-035-2",
+      "risk_version_id": "RSK-035-2-V2",
+      "asset_id": "AST-035",
+      "risk_category": "Reconnaissance",
+      "likelihood": 4,
+      "impact": 5,
+      "control_states": {
+        "SC012": "partial",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-036-1",
+      "risk_version_id": "RSK-036-1-V1",
+      "asset_id": "AST-036",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 5,
+      "impact": 4,
+      "control_states": {
+        "SC005": "implemented",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-036-2",
+      "risk_version_id": "RSK-036-2-V1",
+      "asset_id": "AST-036",
+      "risk_category": "Reconnaissance",
+      "likelihood": 5,
+      "impact": 4,
+      "control_states": {
+        "SC012": "implemented",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-036-1",
+      "risk_version_id": "RSK-036-1-V2",
+      "asset_id": "AST-036",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 5,
+      "impact": 2,
+      "control_states": {
+        "SC005": "implemented",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-036-2",
+      "risk_version_id": "RSK-036-2-V2",
+      "asset_id": "AST-036",
+      "risk_category": "Reconnaissance",
+      "likelihood": 5,
+      "impact": 3,
+      "control_states": {
+        "SC012": "implemented",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-037-1",
+      "risk_version_id": "RSK-037-1-V1",
+      "asset_id": "AST-037",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 5,
+      "impact": 3,
+      "control_states": {
+        "SC005": "missing",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [
+        "SC006"
+      ],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-037-2",
+      "risk_version_id": "RSK-037-2-V1",
+      "asset_id": "AST-037",
+      "risk_category": "Reconnaissance",
+      "likelihood": 5,
+      "impact": 4,
+      "control_states": {
+        "SC012": "missing",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-037-1",
+      "risk_version_id": "RSK-037-1-V2",
+      "asset_id": "AST-037",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 4,
+      "impact": 5,
+      "control_states": {
+        "SC005": "missing",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [
+        "SC006"
+      ],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-037-2",
+      "risk_version_id": "RSK-037-2-V2",
+      "asset_id": "AST-037",
+      "risk_category": "Reconnaissance",
+      "likelihood": 1,
+      "impact": 4,
+      "control_states": {
+        "SC012": "missing",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-038-1",
+      "risk_version_id": "RSK-038-1-V1",
+      "asset_id": "AST-038",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 3,
+      "impact": 4,
+      "control_states": {
+        "SC005": "partial",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-038-2",
+      "risk_version_id": "RSK-038-2-V1",
+      "asset_id": "AST-038",
+      "risk_category": "Reconnaissance",
+      "likelihood": 4,
+      "impact": 2,
+      "control_states": {
+        "SC012": "partial",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-038-1",
+      "risk_version_id": "RSK-038-1-V2",
+      "asset_id": "AST-038",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 2,
+      "impact": 3,
+      "control_states": {
+        "SC005": "partial",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-038-2",
+      "risk_version_id": "RSK-038-2-V2",
+      "asset_id": "AST-038",
+      "risk_category": "Reconnaissance",
+      "likelihood": 5,
+      "impact": 5,
+      "control_states": {
+        "SC012": "partial",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-039-1",
+      "risk_version_id": "RSK-039-1-V1",
+      "asset_id": "AST-039",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 4,
+      "impact": 1,
+      "control_states": {
+        "SC005": "implemented",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-039-2",
+      "risk_version_id": "RSK-039-2-V1",
+      "asset_id": "AST-039",
+      "risk_category": "Reconnaissance",
+      "likelihood": 1,
+      "impact": 4,
+      "control_states": {
+        "SC012": "implemented",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-039-1",
+      "risk_version_id": "RSK-039-1-V2",
+      "asset_id": "AST-039",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 1,
+      "impact": 5,
+      "control_states": {
+        "SC005": "implemented",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-039-2",
+      "risk_version_id": "RSK-039-2-V2",
+      "asset_id": "AST-039",
+      "risk_category": "Reconnaissance",
+      "likelihood": 4,
+      "impact": 2,
+      "control_states": {
+        "SC012": "implemented",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-040-1",
+      "risk_version_id": "RSK-040-1-V1",
+      "asset_id": "AST-040",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 4,
+      "impact": 4,
+      "control_states": {
+        "SC005": "missing",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-040-2",
+      "risk_version_id": "RSK-040-2-V1",
+      "asset_id": "AST-040",
+      "risk_category": "Reconnaissance",
+      "likelihood": 3,
+      "impact": 2,
+      "control_states": {
+        "SC012": "missing",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-040-1",
+      "risk_version_id": "RSK-040-1-V2",
+      "asset_id": "AST-040",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 1,
+      "impact": 2,
+      "control_states": {
+        "SC005": "missing",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-040-2",
+      "risk_version_id": "RSK-040-2-V2",
+      "asset_id": "AST-040",
+      "risk_category": "Reconnaissance",
+      "likelihood": 3,
+      "impact": 1,
+      "control_states": {
+        "SC012": "missing",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-041-1",
+      "risk_version_id": "RSK-041-1-V1",
+      "asset_id": "AST-041",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 2,
+      "impact": 2,
+      "control_states": {
+        "SC005": "partial",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-041-2",
+      "risk_version_id": "RSK-041-2-V1",
+      "asset_id": "AST-041",
+      "risk_category": "Reconnaissance",
+      "likelihood": 1,
+      "impact": 1,
+      "control_states": {
+        "SC012": "partial",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-041-1",
+      "risk_version_id": "RSK-041-1-V2",
+      "asset_id": "AST-041",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 5,
+      "impact": 2,
+      "control_states": {
+        "SC005": "partial",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-041-2",
+      "risk_version_id": "RSK-041-2-V2",
+      "asset_id": "AST-041",
+      "risk_category": "Reconnaissance",
+      "likelihood": 4,
+      "impact": 3,
+      "control_states": {
+        "SC012": "partial",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-042-1",
+      "risk_version_id": "RSK-042-1-V1",
+      "asset_id": "AST-042",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 1,
+      "impact": 4,
+      "control_states": {
+        "SC005": "implemented",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-042-2",
+      "risk_version_id": "RSK-042-2-V1",
+      "asset_id": "AST-042",
+      "risk_category": "Reconnaissance",
+      "likelihood": 3,
+      "impact": 1,
+      "control_states": {
+        "SC012": "implemented",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-042-1",
+      "risk_version_id": "RSK-042-1-V2",
+      "asset_id": "AST-042",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 1,
+      "impact": 3,
+      "control_states": {
+        "SC005": "implemented",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-042-2",
+      "risk_version_id": "RSK-042-2-V2",
+      "asset_id": "AST-042",
+      "risk_category": "Reconnaissance",
+      "likelihood": 3,
+      "impact": 1,
+      "control_states": {
+        "SC012": "implemented",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-043-1",
+      "risk_version_id": "RSK-043-1-V1",
+      "asset_id": "AST-043",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 2,
+      "impact": 2,
+      "control_states": {
+        "SC005": "missing",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-043-2",
+      "risk_version_id": "RSK-043-2-V1",
+      "asset_id": "AST-043",
+      "risk_category": "Reconnaissance",
+      "likelihood": 5,
+      "impact": 4,
+      "control_states": {
+        "SC012": "missing",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-043-1",
+      "risk_version_id": "RSK-043-1-V2",
+      "asset_id": "AST-043",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 4,
+      "impact": 4,
+      "control_states": {
+        "SC005": "missing",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-043-2",
+      "risk_version_id": "RSK-043-2-V2",
+      "asset_id": "AST-043",
+      "risk_category": "Reconnaissance",
+      "likelihood": 4,
+      "impact": 1,
+      "control_states": {
+        "SC012": "missing",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-044-1",
+      "risk_version_id": "RSK-044-1-V1",
+      "asset_id": "AST-044",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 2,
+      "impact": 1,
+      "control_states": {
+        "SC005": "partial",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-044-2",
+      "risk_version_id": "RSK-044-2-V1",
+      "asset_id": "AST-044",
+      "risk_category": "Reconnaissance",
+      "likelihood": 4,
+      "impact": 1,
+      "control_states": {
+        "SC012": "partial",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-044-1",
+      "risk_version_id": "RSK-044-1-V2",
+      "asset_id": "AST-044",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 4,
+      "impact": 3,
+      "control_states": {
+        "SC005": "partial",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-044-2",
+      "risk_version_id": "RSK-044-2-V2",
+      "asset_id": "AST-044",
+      "risk_category": "Reconnaissance",
+      "likelihood": 5,
+      "impact": 3,
+      "control_states": {
+        "SC012": "partial",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-045-1",
+      "risk_version_id": "RSK-045-1-V1",
+      "asset_id": "AST-045",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 3,
+      "impact": 4,
+      "control_states": {
+        "SC005": "implemented",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-045-2",
+      "risk_version_id": "RSK-045-2-V1",
+      "asset_id": "AST-045",
+      "risk_category": "Reconnaissance",
+      "likelihood": 3,
+      "impact": 1,
+      "control_states": {
+        "SC012": "implemented",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-045-1",
+      "risk_version_id": "RSK-045-1-V2",
+      "asset_id": "AST-045",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 1,
+      "impact": 5,
+      "control_states": {
+        "SC005": "implemented",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-045-2",
+      "risk_version_id": "RSK-045-2-V2",
+      "asset_id": "AST-045",
+      "risk_category": "Reconnaissance",
+      "likelihood": 2,
+      "impact": 2,
+      "control_states": {
+        "SC012": "implemented",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-046-1",
+      "risk_version_id": "RSK-046-1-V1",
+      "asset_id": "AST-046",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 5,
+      "impact": 1,
+      "control_states": {
+        "SC005": "missing",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [
+        "SC006"
+      ],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-046-2",
+      "risk_version_id": "RSK-046-2-V1",
+      "asset_id": "AST-046",
+      "risk_category": "Reconnaissance",
+      "likelihood": 5,
+      "impact": 4,
+      "control_states": {
+        "SC012": "missing",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-046-1",
+      "risk_version_id": "RSK-046-1-V2",
+      "asset_id": "AST-046",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 5,
+      "impact": 5,
+      "control_states": {
+        "SC005": "missing",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [
+        "SC006"
+      ],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-046-2",
+      "risk_version_id": "RSK-046-2-V2",
+      "asset_id": "AST-046",
+      "risk_category": "Reconnaissance",
+      "likelihood": 2,
+      "impact": 3,
+      "control_states": {
+        "SC012": "missing",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-047-1",
+      "risk_version_id": "RSK-047-1-V1",
+      "asset_id": "AST-047",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 3,
+      "impact": 2,
+      "control_states": {
+        "SC005": "partial",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-047-2",
+      "risk_version_id": "RSK-047-2-V1",
+      "asset_id": "AST-047",
+      "risk_category": "Reconnaissance",
+      "likelihood": 4,
+      "impact": 4,
+      "control_states": {
+        "SC012": "partial",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-047-1",
+      "risk_version_id": "RSK-047-1-V2",
+      "asset_id": "AST-047",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 5,
+      "impact": 2,
+      "control_states": {
+        "SC005": "partial",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-047-2",
+      "risk_version_id": "RSK-047-2-V2",
+      "asset_id": "AST-047",
+      "risk_category": "Reconnaissance",
+      "likelihood": 4,
+      "impact": 1,
+      "control_states": {
+        "SC012": "partial",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-048-1",
+      "risk_version_id": "RSK-048-1-V1",
+      "asset_id": "AST-048",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 3,
+      "impact": 5,
+      "control_states": {
+        "SC005": "implemented",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-048-2",
+      "risk_version_id": "RSK-048-2-V1",
+      "asset_id": "AST-048",
+      "risk_category": "Reconnaissance",
+      "likelihood": 5,
+      "impact": 2,
+      "control_states": {
+        "SC012": "implemented",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-048-1",
+      "risk_version_id": "RSK-048-1-V2",
+      "asset_id": "AST-048",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 3,
+      "impact": 3,
+      "control_states": {
+        "SC005": "implemented",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-048-2",
+      "risk_version_id": "RSK-048-2-V2",
+      "asset_id": "AST-048",
+      "risk_category": "Reconnaissance",
+      "likelihood": 1,
+      "impact": 5,
+      "control_states": {
+        "SC012": "implemented",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-049-1",
+      "risk_version_id": "RSK-049-1-V1",
+      "asset_id": "AST-049",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 5,
+      "impact": 2,
+      "control_states": {
+        "SC005": "missing",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-049-2",
+      "risk_version_id": "RSK-049-2-V1",
+      "asset_id": "AST-049",
+      "risk_category": "Reconnaissance",
+      "likelihood": 1,
+      "impact": 3,
+      "control_states": {
+        "SC012": "missing",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-049-1",
+      "risk_version_id": "RSK-049-1-V2",
+      "asset_id": "AST-049",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 2,
+      "impact": 1,
+      "control_states": {
+        "SC005": "missing",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-049-2",
+      "risk_version_id": "RSK-049-2-V2",
+      "asset_id": "AST-049",
+      "risk_category": "Reconnaissance",
+      "likelihood": 5,
+      "impact": 1,
+      "control_states": {
+        "SC012": "missing",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-050-1",
+      "risk_version_id": "RSK-050-1-V1",
+      "asset_id": "AST-050",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 2,
+      "impact": 5,
+      "control_states": {
+        "SC005": "partial",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-050-2",
+      "risk_version_id": "RSK-050-2-V1",
+      "asset_id": "AST-050",
+      "risk_category": "Reconnaissance",
+      "likelihood": 5,
+      "impact": 2,
+      "control_states": {
+        "SC012": "partial",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-050-1",
+      "risk_version_id": "RSK-050-1-V2",
+      "asset_id": "AST-050",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 5,
+      "impact": 4,
+      "control_states": {
+        "SC005": "partial",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-050-2",
+      "risk_version_id": "RSK-050-2-V2",
+      "asset_id": "AST-050",
+      "risk_category": "Reconnaissance",
+      "likelihood": 4,
+      "impact": 5,
+      "control_states": {
+        "SC012": "partial",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-051-1",
+      "risk_version_id": "RSK-051-1-V1",
+      "asset_id": "AST-051",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 2,
+      "impact": 5,
+      "control_states": {
+        "SC005": "implemented",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-051-2",
+      "risk_version_id": "RSK-051-2-V1",
+      "asset_id": "AST-051",
+      "risk_category": "Reconnaissance",
+      "likelihood": 3,
+      "impact": 1,
+      "control_states": {
+        "SC012": "implemented",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-051-1",
+      "risk_version_id": "RSK-051-1-V2",
+      "asset_id": "AST-051",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 1,
+      "impact": 5,
+      "control_states": {
+        "SC005": "implemented",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-051-2",
+      "risk_version_id": "RSK-051-2-V2",
+      "asset_id": "AST-051",
+      "risk_category": "Reconnaissance",
+      "likelihood": 4,
+      "impact": 5,
+      "control_states": {
+        "SC012": "implemented",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-052-1",
+      "risk_version_id": "RSK-052-1-V1",
+      "asset_id": "AST-052",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 1,
+      "impact": 5,
+      "control_states": {
+        "SC005": "missing",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-052-2",
+      "risk_version_id": "RSK-052-2-V1",
+      "asset_id": "AST-052",
+      "risk_category": "Reconnaissance",
+      "likelihood": 3,
+      "impact": 4,
+      "control_states": {
+        "SC012": "missing",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-052-1",
+      "risk_version_id": "RSK-052-1-V2",
+      "asset_id": "AST-052",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 2,
+      "impact": 1,
+      "control_states": {
+        "SC005": "missing",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-052-2",
+      "risk_version_id": "RSK-052-2-V2",
+      "asset_id": "AST-052",
+      "risk_category": "Reconnaissance",
+      "likelihood": 5,
+      "impact": 4,
+      "control_states": {
+        "SC012": "missing",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-053-1",
+      "risk_version_id": "RSK-053-1-V1",
+      "asset_id": "AST-053",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 2,
+      "impact": 2,
+      "control_states": {
+        "SC005": "partial",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-053-2",
+      "risk_version_id": "RSK-053-2-V1",
+      "asset_id": "AST-053",
+      "risk_category": "Reconnaissance",
+      "likelihood": 4,
+      "impact": 4,
+      "control_states": {
+        "SC012": "partial",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-053-1",
+      "risk_version_id": "RSK-053-1-V2",
+      "asset_id": "AST-053",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 3,
+      "impact": 2,
+      "control_states": {
+        "SC005": "partial",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-053-2",
+      "risk_version_id": "RSK-053-2-V2",
+      "asset_id": "AST-053",
+      "risk_category": "Reconnaissance",
+      "likelihood": 1,
+      "impact": 2,
+      "control_states": {
+        "SC012": "partial",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-054-1",
+      "risk_version_id": "RSK-054-1-V1",
+      "asset_id": "AST-054",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 1,
+      "impact": 2,
+      "control_states": {
+        "SC005": "implemented",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-054-2",
+      "risk_version_id": "RSK-054-2-V1",
+      "asset_id": "AST-054",
+      "risk_category": "Reconnaissance",
+      "likelihood": 2,
+      "impact": 5,
+      "control_states": {
+        "SC012": "implemented",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-054-1",
+      "risk_version_id": "RSK-054-1-V2",
+      "asset_id": "AST-054",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 4,
+      "impact": 2,
+      "control_states": {
+        "SC005": "implemented",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-054-2",
+      "risk_version_id": "RSK-054-2-V2",
+      "asset_id": "AST-054",
+      "risk_category": "Reconnaissance",
+      "likelihood": 4,
+      "impact": 4,
+      "control_states": {
+        "SC012": "implemented",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-055-1",
+      "risk_version_id": "RSK-055-1-V1",
+      "asset_id": "AST-055",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 5,
+      "impact": 1,
+      "control_states": {
+        "SC005": "missing",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [
+        "SC006"
+      ],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-055-2",
+      "risk_version_id": "RSK-055-2-V1",
+      "asset_id": "AST-055",
+      "risk_category": "Reconnaissance",
+      "likelihood": 5,
+      "impact": 5,
+      "control_states": {
+        "SC012": "missing",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-055-1",
+      "risk_version_id": "RSK-055-1-V2",
+      "asset_id": "AST-055",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 4,
+      "impact": 5,
+      "control_states": {
+        "SC005": "missing",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [
+        "SC006"
+      ],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-055-2",
+      "risk_version_id": "RSK-055-2-V2",
+      "asset_id": "AST-055",
+      "risk_category": "Reconnaissance",
+      "likelihood": 2,
+      "impact": 1,
+      "control_states": {
+        "SC012": "missing",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-056-1",
+      "risk_version_id": "RSK-056-1-V1",
+      "asset_id": "AST-056",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 4,
+      "impact": 2,
+      "control_states": {
+        "SC005": "partial",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-056-2",
+      "risk_version_id": "RSK-056-2-V1",
+      "asset_id": "AST-056",
+      "risk_category": "Reconnaissance",
+      "likelihood": 3,
+      "impact": 3,
+      "control_states": {
+        "SC012": "partial",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-056-1",
+      "risk_version_id": "RSK-056-1-V2",
+      "asset_id": "AST-056",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 4,
+      "impact": 1,
+      "control_states": {
+        "SC005": "partial",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-056-2",
+      "risk_version_id": "RSK-056-2-V2",
+      "asset_id": "AST-056",
+      "risk_category": "Reconnaissance",
+      "likelihood": 5,
+      "impact": 5,
+      "control_states": {
+        "SC012": "partial",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-057-1",
+      "risk_version_id": "RSK-057-1-V1",
+      "asset_id": "AST-057",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 3,
+      "impact": 1,
+      "control_states": {
+        "SC005": "implemented",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-057-2",
+      "risk_version_id": "RSK-057-2-V1",
+      "asset_id": "AST-057",
+      "risk_category": "Reconnaissance",
+      "likelihood": 3,
+      "impact": 3,
+      "control_states": {
+        "SC012": "implemented",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-057-1",
+      "risk_version_id": "RSK-057-1-V2",
+      "asset_id": "AST-057",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 5,
+      "impact": 4,
+      "control_states": {
+        "SC005": "implemented",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-057-2",
+      "risk_version_id": "RSK-057-2-V2",
+      "asset_id": "AST-057",
+      "risk_category": "Reconnaissance",
+      "likelihood": 4,
+      "impact": 5,
+      "control_states": {
+        "SC012": "implemented",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-058-1",
+      "risk_version_id": "RSK-058-1-V1",
+      "asset_id": "AST-058",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 2,
+      "impact": 1,
+      "control_states": {
+        "SC005": "missing",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-058-2",
+      "risk_version_id": "RSK-058-2-V1",
+      "asset_id": "AST-058",
+      "risk_category": "Reconnaissance",
+      "likelihood": 1,
+      "impact": 4,
+      "control_states": {
+        "SC012": "missing",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-058-1",
+      "risk_version_id": "RSK-058-1-V2",
+      "asset_id": "AST-058",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 4,
+      "impact": 3,
+      "control_states": {
+        "SC005": "missing",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-058-2",
+      "risk_version_id": "RSK-058-2-V2",
+      "asset_id": "AST-058",
+      "risk_category": "Reconnaissance",
+      "likelihood": 4,
+      "impact": 5,
+      "control_states": {
+        "SC012": "missing",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-059-1",
+      "risk_version_id": "RSK-059-1-V1",
+      "asset_id": "AST-059",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 1,
+      "impact": 5,
+      "control_states": {
+        "SC005": "partial",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-059-2",
+      "risk_version_id": "RSK-059-2-V1",
+      "asset_id": "AST-059",
+      "risk_category": "Reconnaissance",
+      "likelihood": 3,
+      "impact": 5,
+      "control_states": {
+        "SC012": "partial",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-059-1",
+      "risk_version_id": "RSK-059-1-V2",
+      "asset_id": "AST-059",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 4,
+      "impact": 2,
+      "control_states": {
+        "SC005": "partial",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-059-2",
+      "risk_version_id": "RSK-059-2-V2",
+      "asset_id": "AST-059",
+      "risk_category": "Reconnaissance",
+      "likelihood": 2,
+      "impact": 1,
+      "control_states": {
+        "SC012": "partial",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-060-1",
+      "risk_version_id": "RSK-060-1-V1",
+      "asset_id": "AST-060",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 1,
+      "impact": 2,
+      "control_states": {
+        "SC005": "implemented",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-060-2",
+      "risk_version_id": "RSK-060-2-V1",
+      "asset_id": "AST-060",
+      "risk_category": "Reconnaissance",
+      "likelihood": 5,
+      "impact": 3,
+      "control_states": {
+        "SC012": "implemented",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-060-1",
+      "risk_version_id": "RSK-060-1-V2",
+      "asset_id": "AST-060",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 2,
+      "impact": 2,
+      "control_states": {
+        "SC005": "implemented",
+        "SC007": "partial",
+        "SC006": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "RSK-060-2",
+      "risk_version_id": "RSK-060-2-V2",
+      "asset_id": "AST-060",
+      "risk_category": "Reconnaissance",
+      "likelihood": 3,
+      "impact": 4,
+      "control_states": {
+        "SC012": "implemented",
+        "SC029": "partial",
+        "SC011": "implemented"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "seed": 42,
+  "group_by": "campaign_id",
+  "groups": {
+    "test": [
+      "synthetic-campaign-09",
+      "synthetic-campaign-14",
+      "synthetic-campaign-15"
+    ],
+    "threshold": [
+      "synthetic-campaign-07",
+      "synthetic-campaign-12"
+    ],
+    "calibration": [
+      "synthetic-campaign-06",
+      "synthetic-campaign-10"
+    ],
+    "selection": [
+      "synthetic-campaign-00",
+      "synthetic-campaign-03",
+      "synthetic-campaign-19"
+    ],
+    "train": [
+      "synthetic-campaign-01",
+      "synthetic-campaign-02",
+      "synthetic-campaign-04",
+      "synthetic-campaign-05",
+      "synthetic-campaign-08",
+      "synthetic-campaign-11",
+      "synthetic-campaign-13",
+      "synthetic-campaign-16",
+      "synthetic-campaign-17",
+      "synthetic-campaign-18"
+    ]
+  },
+  "rows": {
+    "test": 27,
+    "threshold": 18,
+    "calibration": 18,
+    "selection": 27,
+    "train": 90
+  },
+  "class_counts": {
+    "test": {
+      "benign": 9,
+      "credential_access": 9,
+      "reconnaissance": 9
+    },
+    "threshold": {
+      "benign": 6,
+      "credential_access": 6,
+      "reconnaissance": 6
+    },
+    "calibration": {
+      "benign": 6,
+      "credential_access": 6,
+      "reconnaissance": 6
+    },
+    "selection": {
+      "benign": 9,
+      "credential_access": 9,
+      "reconnaissance": 9
+    },
+    "train": {
+      "benign": 30,
+      "credential_access": 30,
+      "reconnaissance": 30
+    }
+  },
+  "claim": "unseen campaign holdout"
+}

@@ -1,0 +1,1635 @@
+[
+  {
+    "threshold": 0.4,
+    "metrics": {
+      "n": 18,
+      "coverage": 1.0,
+      "macro_f1": 0.8857142857142857,
+      "accuracy_all_sessions": 0.8888888888888888,
+      "accepted_accuracy": 0.8888888888888888,
+      "benign_false_positive_rate": 0.3333333333333333,
+      "benign_false_alarms": 2,
+      "benign_support": 6,
+      "benign_fpr_wilson_95_percent": [
+        0.09676933255921683,
+        0.7000116786584712
+      ],
+      "per_class": {
+        "benign": {
+          "precision": 1.0,
+          "recall": 0.6666666666666666,
+          "f1": 0.8,
+          "support": 6
+        },
+        "credential_access": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 6
+        },
+        "reconnaissance": {
+          "precision": 0.75,
+          "recall": 1.0,
+          "f1": 0.8571428571428571,
+          "support": 6
+        }
+      },
+      "confusion_labels": [
+        "benign",
+        "credential_access",
+        "reconnaissance",
+        "ABSTAINED"
+      ],
+      "confusion_matrix": [
+        [
+          4,
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          6,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          6,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "metric_semantics": "Abstentions count as missed true classes (false negatives), never dropped from recall/F1. FPR excludes abstentions and must be read together with coverage."
+    },
+    "meets_operational_checks": false
+  },
+  {
+    "threshold": 0.425,
+    "metrics": {
+      "n": 18,
+      "coverage": 1.0,
+      "macro_f1": 0.8857142857142857,
+      "accuracy_all_sessions": 0.8888888888888888,
+      "accepted_accuracy": 0.8888888888888888,
+      "benign_false_positive_rate": 0.3333333333333333,
+      "benign_false_alarms": 2,
+      "benign_support": 6,
+      "benign_fpr_wilson_95_percent": [
+        0.09676933255921683,
+        0.7000116786584712
+      ],
+      "per_class": {
+        "benign": {
+          "precision": 1.0,
+          "recall": 0.6666666666666666,
+          "f1": 0.8,
+          "support": 6
+        },
+        "credential_access": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 6
+        },
+        "reconnaissance": {
+          "precision": 0.75,
+          "recall": 1.0,
+          "f1": 0.8571428571428571,
+          "support": 6
+        }
+      },
+      "confusion_labels": [
+        "benign",
+        "credential_access",
+        "reconnaissance",
+        "ABSTAINED"
+      ],
+      "confusion_matrix": [
+        [
+          4,
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          6,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          6,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "metric_semantics": "Abstentions count as missed true classes (false negatives), never dropped from recall/F1. FPR excludes abstentions and must be read together with coverage."
+    },
+    "meets_operational_checks": false
+  },
+  {
+    "threshold": 0.45,
+    "metrics": {
+      "n": 18,
+      "coverage": 1.0,
+      "macro_f1": 0.8857142857142857,
+      "accuracy_all_sessions": 0.8888888888888888,
+      "accepted_accuracy": 0.8888888888888888,
+      "benign_false_positive_rate": 0.3333333333333333,
+      "benign_false_alarms": 2,
+      "benign_support": 6,
+      "benign_fpr_wilson_95_percent": [
+        0.09676933255921683,
+        0.7000116786584712
+      ],
+      "per_class": {
+        "benign": {
+          "precision": 1.0,
+          "recall": 0.6666666666666666,
+          "f1": 0.8,
+          "support": 6
+        },
+        "credential_access": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 6
+        },
+        "reconnaissance": {
+          "precision": 0.75,
+          "recall": 1.0,
+          "f1": 0.8571428571428571,
+          "support": 6
+        }
+      },
+      "confusion_labels": [
+        "benign",
+        "credential_access",
+        "reconnaissance",
+        "ABSTAINED"
+      ],
+      "confusion_matrix": [
+        [
+          4,
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          6,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          6,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "metric_semantics": "Abstentions count as missed true classes (false negatives), never dropped from recall/F1. FPR excludes abstentions and must be read together with coverage."
+    },
+    "meets_operational_checks": false
+  },
+  {
+    "threshold": 0.475,
+    "metrics": {
+      "n": 18,
+      "coverage": 1.0,
+      "macro_f1": 0.8857142857142857,
+      "accuracy_all_sessions": 0.8888888888888888,
+      "accepted_accuracy": 0.8888888888888888,
+      "benign_false_positive_rate": 0.3333333333333333,
+      "benign_false_alarms": 2,
+      "benign_support": 6,
+      "benign_fpr_wilson_95_percent": [
+        0.09676933255921683,
+        0.7000116786584712
+      ],
+      "per_class": {
+        "benign": {
+          "precision": 1.0,
+          "recall": 0.6666666666666666,
+          "f1": 0.8,
+          "support": 6
+        },
+        "credential_access": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 6
+        },
+        "reconnaissance": {
+          "precision": 0.75,
+          "recall": 1.0,
+          "f1": 0.8571428571428571,
+          "support": 6
+        }
+      },
+      "confusion_labels": [
+        "benign",
+        "credential_access",
+        "reconnaissance",
+        "ABSTAINED"
+      ],
+      "confusion_matrix": [
+        [
+          4,
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          6,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          6,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "metric_semantics": "Abstentions count as missed true classes (false negatives), never dropped from recall/F1. FPR excludes abstentions and must be read together with coverage."
+    },
+    "meets_operational_checks": false
+  },
+  {
+    "threshold": 0.5,
+    "metrics": {
+      "n": 18,
+      "coverage": 0.9444444444444444,
+      "macro_f1": 0.9076923076923077,
+      "accuracy_all_sessions": 0.8888888888888888,
+      "accepted_accuracy": 0.9411764705882353,
+      "benign_false_positive_rate": 0.16666666666666666,
+      "benign_false_alarms": 1,
+      "benign_support": 6,
+      "benign_fpr_wilson_95_percent": [
+        0.03005258587173032,
+        0.563509436563646
+      ],
+      "per_class": {
+        "benign": {
+          "precision": 1.0,
+          "recall": 0.6666666666666666,
+          "f1": 0.8,
+          "support": 6
+        },
+        "credential_access": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 6
+        },
+        "reconnaissance": {
+          "precision": 0.8571428571428571,
+          "recall": 1.0,
+          "f1": 0.9230769230769231,
+          "support": 6
+        }
+      },
+      "confusion_labels": [
+        "benign",
+        "credential_access",
+        "reconnaissance",
+        "ABSTAINED"
+      ],
+      "confusion_matrix": [
+        [
+          4,
+          0,
+          1,
+          1
+        ],
+        [
+          0,
+          6,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          6,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "metric_semantics": "Abstentions count as missed true classes (false negatives), never dropped from recall/F1. FPR excludes abstentions and must be read together with coverage."
+    },
+    "meets_operational_checks": false
+  },
+  {
+    "threshold": 0.525,
+    "metrics": {
+      "n": 18,
+      "coverage": 0.9444444444444444,
+      "macro_f1": 0.9076923076923077,
+      "accuracy_all_sessions": 0.8888888888888888,
+      "accepted_accuracy": 0.9411764705882353,
+      "benign_false_positive_rate": 0.16666666666666666,
+      "benign_false_alarms": 1,
+      "benign_support": 6,
+      "benign_fpr_wilson_95_percent": [
+        0.03005258587173032,
+        0.563509436563646
+      ],
+      "per_class": {
+        "benign": {
+          "precision": 1.0,
+          "recall": 0.6666666666666666,
+          "f1": 0.8,
+          "support": 6
+        },
+        "credential_access": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 6
+        },
+        "reconnaissance": {
+          "precision": 0.8571428571428571,
+          "recall": 1.0,
+          "f1": 0.9230769230769231,
+          "support": 6
+        }
+      },
+      "confusion_labels": [
+        "benign",
+        "credential_access",
+        "reconnaissance",
+        "ABSTAINED"
+      ],
+      "confusion_matrix": [
+        [
+          4,
+          0,
+          1,
+          1
+        ],
+        [
+          0,
+          6,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          6,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "metric_semantics": "Abstentions count as missed true classes (false negatives), never dropped from recall/F1. FPR excludes abstentions and must be read together with coverage."
+    },
+    "meets_operational_checks": false
+  },
+  {
+    "threshold": 0.55,
+    "metrics": {
+      "n": 18,
+      "coverage": 0.9444444444444444,
+      "macro_f1": 0.9076923076923077,
+      "accuracy_all_sessions": 0.8888888888888888,
+      "accepted_accuracy": 0.9411764705882353,
+      "benign_false_positive_rate": 0.16666666666666666,
+      "benign_false_alarms": 1,
+      "benign_support": 6,
+      "benign_fpr_wilson_95_percent": [
+        0.03005258587173032,
+        0.563509436563646
+      ],
+      "per_class": {
+        "benign": {
+          "precision": 1.0,
+          "recall": 0.6666666666666666,
+          "f1": 0.8,
+          "support": 6
+        },
+        "credential_access": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 6
+        },
+        "reconnaissance": {
+          "precision": 0.8571428571428571,
+          "recall": 1.0,
+          "f1": 0.9230769230769231,
+          "support": 6
+        }
+      },
+      "confusion_labels": [
+        "benign",
+        "credential_access",
+        "reconnaissance",
+        "ABSTAINED"
+      ],
+      "confusion_matrix": [
+        [
+          4,
+          0,
+          1,
+          1
+        ],
+        [
+          0,
+          6,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          6,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "metric_semantics": "Abstentions count as missed true classes (false negatives), never dropped from recall/F1. FPR excludes abstentions and must be read together with coverage."
+    },
+    "meets_operational_checks": false
+  },
+  {
+    "threshold": 0.575,
+    "metrics": {
+      "n": 18,
+      "coverage": 0.9444444444444444,
+      "macro_f1": 0.9076923076923077,
+      "accuracy_all_sessions": 0.8888888888888888,
+      "accepted_accuracy": 0.9411764705882353,
+      "benign_false_positive_rate": 0.16666666666666666,
+      "benign_false_alarms": 1,
+      "benign_support": 6,
+      "benign_fpr_wilson_95_percent": [
+        0.03005258587173032,
+        0.563509436563646
+      ],
+      "per_class": {
+        "benign": {
+          "precision": 1.0,
+          "recall": 0.6666666666666666,
+          "f1": 0.8,
+          "support": 6
+        },
+        "credential_access": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 6
+        },
+        "reconnaissance": {
+          "precision": 0.8571428571428571,
+          "recall": 1.0,
+          "f1": 0.9230769230769231,
+          "support": 6
+        }
+      },
+      "confusion_labels": [
+        "benign",
+        "credential_access",
+        "reconnaissance",
+        "ABSTAINED"
+      ],
+      "confusion_matrix": [
+        [
+          4,
+          0,
+          1,
+          1
+        ],
+        [
+          0,
+          6,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          6,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "metric_semantics": "Abstentions count as missed true classes (false negatives), never dropped from recall/F1. FPR excludes abstentions and must be read together with coverage."
+    },
+    "meets_operational_checks": false
+  },
+  {
+    "threshold": 0.6,
+    "metrics": {
+      "n": 18,
+      "coverage": 0.9444444444444444,
+      "macro_f1": 0.9076923076923077,
+      "accuracy_all_sessions": 0.8888888888888888,
+      "accepted_accuracy": 0.9411764705882353,
+      "benign_false_positive_rate": 0.16666666666666666,
+      "benign_false_alarms": 1,
+      "benign_support": 6,
+      "benign_fpr_wilson_95_percent": [
+        0.03005258587173032,
+        0.563509436563646
+      ],
+      "per_class": {
+        "benign": {
+          "precision": 1.0,
+          "recall": 0.6666666666666666,
+          "f1": 0.8,
+          "support": 6
+        },
+        "credential_access": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 6
+        },
+        "reconnaissance": {
+          "precision": 0.8571428571428571,
+          "recall": 1.0,
+          "f1": 0.9230769230769231,
+          "support": 6
+        }
+      },
+      "confusion_labels": [
+        "benign",
+        "credential_access",
+        "reconnaissance",
+        "ABSTAINED"
+      ],
+      "confusion_matrix": [
+        [
+          4,
+          0,
+          1,
+          1
+        ],
+        [
+          0,
+          6,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          6,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "metric_semantics": "Abstentions count as missed true classes (false negatives), never dropped from recall/F1. FPR excludes abstentions and must be read together with coverage."
+    },
+    "meets_operational_checks": false
+  },
+  {
+    "threshold": 0.625,
+    "metrics": {
+      "n": 18,
+      "coverage": 0.9444444444444444,
+      "macro_f1": 0.9076923076923077,
+      "accuracy_all_sessions": 0.8888888888888888,
+      "accepted_accuracy": 0.9411764705882353,
+      "benign_false_positive_rate": 0.16666666666666666,
+      "benign_false_alarms": 1,
+      "benign_support": 6,
+      "benign_fpr_wilson_95_percent": [
+        0.03005258587173032,
+        0.563509436563646
+      ],
+      "per_class": {
+        "benign": {
+          "precision": 1.0,
+          "recall": 0.6666666666666666,
+          "f1": 0.8,
+          "support": 6
+        },
+        "credential_access": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 6
+        },
+        "reconnaissance": {
+          "precision": 0.8571428571428571,
+          "recall": 1.0,
+          "f1": 0.9230769230769231,
+          "support": 6
+        }
+      },
+      "confusion_labels": [
+        "benign",
+        "credential_access",
+        "reconnaissance",
+        "ABSTAINED"
+      ],
+      "confusion_matrix": [
+        [
+          4,
+          0,
+          1,
+          1
+        ],
+        [
+          0,
+          6,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          6,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "metric_semantics": "Abstentions count as missed true classes (false negatives), never dropped from recall/F1. FPR excludes abstentions and must be read together with coverage."
+    },
+    "meets_operational_checks": false
+  },
+  {
+    "threshold": 0.65,
+    "metrics": {
+      "n": 18,
+      "coverage": 0.9444444444444444,
+      "macro_f1": 0.9076923076923077,
+      "accuracy_all_sessions": 0.8888888888888888,
+      "accepted_accuracy": 0.9411764705882353,
+      "benign_false_positive_rate": 0.16666666666666666,
+      "benign_false_alarms": 1,
+      "benign_support": 6,
+      "benign_fpr_wilson_95_percent": [
+        0.03005258587173032,
+        0.563509436563646
+      ],
+      "per_class": {
+        "benign": {
+          "precision": 1.0,
+          "recall": 0.6666666666666666,
+          "f1": 0.8,
+          "support": 6
+        },
+        "credential_access": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 6
+        },
+        "reconnaissance": {
+          "precision": 0.8571428571428571,
+          "recall": 1.0,
+          "f1": 0.9230769230769231,
+          "support": 6
+        }
+      },
+      "confusion_labels": [
+        "benign",
+        "credential_access",
+        "reconnaissance",
+        "ABSTAINED"
+      ],
+      "confusion_matrix": [
+        [
+          4,
+          0,
+          1,
+          1
+        ],
+        [
+          0,
+          6,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          6,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "metric_semantics": "Abstentions count as missed true classes (false negatives), never dropped from recall/F1. FPR excludes abstentions and must be read together with coverage."
+    },
+    "meets_operational_checks": false
+  },
+  {
+    "threshold": 0.675,
+    "metrics": {
+      "n": 18,
+      "coverage": 0.9444444444444444,
+      "macro_f1": 0.9076923076923077,
+      "accuracy_all_sessions": 0.8888888888888888,
+      "accepted_accuracy": 0.9411764705882353,
+      "benign_false_positive_rate": 0.16666666666666666,
+      "benign_false_alarms": 1,
+      "benign_support": 6,
+      "benign_fpr_wilson_95_percent": [
+        0.03005258587173032,
+        0.563509436563646
+      ],
+      "per_class": {
+        "benign": {
+          "precision": 1.0,
+          "recall": 0.6666666666666666,
+          "f1": 0.8,
+          "support": 6
+        },
+        "credential_access": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 6
+        },
+        "reconnaissance": {
+          "precision": 0.8571428571428571,
+          "recall": 1.0,
+          "f1": 0.9230769230769231,
+          "support": 6
+        }
+      },
+      "confusion_labels": [
+        "benign",
+        "credential_access",
+        "reconnaissance",
+        "ABSTAINED"
+      ],
+      "confusion_matrix": [
+        [
+          4,
+          0,
+          1,
+          1
+        ],
+        [
+          0,
+          6,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          6,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "metric_semantics": "Abstentions count as missed true classes (false negatives), never dropped from recall/F1. FPR excludes abstentions and must be read together with coverage."
+    },
+    "meets_operational_checks": false
+  },
+  {
+    "threshold": 0.7,
+    "metrics": {
+      "n": 18,
+      "coverage": 0.9444444444444444,
+      "macro_f1": 0.9076923076923077,
+      "accuracy_all_sessions": 0.8888888888888888,
+      "accepted_accuracy": 0.9411764705882353,
+      "benign_false_positive_rate": 0.16666666666666666,
+      "benign_false_alarms": 1,
+      "benign_support": 6,
+      "benign_fpr_wilson_95_percent": [
+        0.03005258587173032,
+        0.563509436563646
+      ],
+      "per_class": {
+        "benign": {
+          "precision": 1.0,
+          "recall": 0.6666666666666666,
+          "f1": 0.8,
+          "support": 6
+        },
+        "credential_access": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 6
+        },
+        "reconnaissance": {
+          "precision": 0.8571428571428571,
+          "recall": 1.0,
+          "f1": 0.9230769230769231,
+          "support": 6
+        }
+      },
+      "confusion_labels": [
+        "benign",
+        "credential_access",
+        "reconnaissance",
+        "ABSTAINED"
+      ],
+      "confusion_matrix": [
+        [
+          4,
+          0,
+          1,
+          1
+        ],
+        [
+          0,
+          6,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          6,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "metric_semantics": "Abstentions count as missed true classes (false negatives), never dropped from recall/F1. FPR excludes abstentions and must be read together with coverage."
+    },
+    "meets_operational_checks": false
+  },
+  {
+    "threshold": 0.725,
+    "metrics": {
+      "n": 18,
+      "coverage": 0.8888888888888888,
+      "macro_f1": 0.8777777777777778,
+      "accuracy_all_sessions": 0.8333333333333334,
+      "accepted_accuracy": 0.9375,
+      "benign_false_positive_rate": 0.16666666666666666,
+      "benign_false_alarms": 1,
+      "benign_support": 6,
+      "benign_fpr_wilson_95_percent": [
+        0.03005258587173032,
+        0.563509436563646
+      ],
+      "per_class": {
+        "benign": {
+          "precision": 1.0,
+          "recall": 0.6666666666666666,
+          "f1": 0.8,
+          "support": 6
+        },
+        "credential_access": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 6
+        },
+        "reconnaissance": {
+          "precision": 0.8333333333333334,
+          "recall": 0.8333333333333334,
+          "f1": 0.8333333333333334,
+          "support": 6
+        }
+      },
+      "confusion_labels": [
+        "benign",
+        "credential_access",
+        "reconnaissance",
+        "ABSTAINED"
+      ],
+      "confusion_matrix": [
+        [
+          4,
+          0,
+          1,
+          1
+        ],
+        [
+          0,
+          6,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          5,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "metric_semantics": "Abstentions count as missed true classes (false negatives), never dropped from recall/F1. FPR excludes abstentions and must be read together with coverage."
+    },
+    "meets_operational_checks": false
+  },
+  {
+    "threshold": 0.75,
+    "metrics": {
+      "n": 18,
+      "coverage": 0.8333333333333334,
+      "macro_f1": 0.8424242424242424,
+      "accuracy_all_sessions": 0.7777777777777778,
+      "accepted_accuracy": 0.9333333333333333,
+      "benign_false_positive_rate": 0.16666666666666666,
+      "benign_false_alarms": 1,
+      "benign_support": 6,
+      "benign_fpr_wilson_95_percent": [
+        0.03005258587173032,
+        0.563509436563646
+      ],
+      "per_class": {
+        "benign": {
+          "precision": 1.0,
+          "recall": 0.6666666666666666,
+          "f1": 0.8,
+          "support": 6
+        },
+        "credential_access": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 6
+        },
+        "reconnaissance": {
+          "precision": 0.8,
+          "recall": 0.6666666666666666,
+          "f1": 0.7272727272727273,
+          "support": 6
+        }
+      },
+      "confusion_labels": [
+        "benign",
+        "credential_access",
+        "reconnaissance",
+        "ABSTAINED"
+      ],
+      "confusion_matrix": [
+        [
+          4,
+          0,
+          1,
+          1
+        ],
+        [
+          0,
+          6,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          4,
+          2
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "metric_semantics": "Abstentions count as missed true classes (false negatives), never dropped from recall/F1. FPR excludes abstentions and must be read together with coverage."
+    },
+    "meets_operational_checks": false
+  },
+  {
+    "threshold": 0.775,
+    "metrics": {
+      "n": 18,
+      "coverage": 0.6666666666666666,
+      "macro_f1": 0.7666666666666666,
+      "accuracy_all_sessions": 0.6666666666666666,
+      "accepted_accuracy": 1.0,
+      "benign_false_positive_rate": 0.0,
+      "benign_false_alarms": 0,
+      "benign_support": 6,
+      "benign_fpr_wilson_95_percent": [
+        0.0,
+        0.3903430336530645
+      ],
+      "per_class": {
+        "benign": {
+          "precision": 1.0,
+          "recall": 0.6666666666666666,
+          "f1": 0.8,
+          "support": 6
+        },
+        "credential_access": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 6
+        },
+        "reconnaissance": {
+          "precision": 1.0,
+          "recall": 0.3333333333333333,
+          "f1": 0.5,
+          "support": 6
+        }
+      },
+      "confusion_labels": [
+        "benign",
+        "credential_access",
+        "reconnaissance",
+        "ABSTAINED"
+      ],
+      "confusion_matrix": [
+        [
+          4,
+          0,
+          0,
+          2
+        ],
+        [
+          0,
+          6,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          2,
+          4
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "metric_semantics": "Abstentions count as missed true classes (false negatives), never dropped from recall/F1. FPR excludes abstentions and must be read together with coverage."
+    },
+    "meets_operational_checks": false
+  },
+  {
+    "threshold": 0.8,
+    "metrics": {
+      "n": 18,
+      "coverage": 0.6111111111111112,
+      "macro_f1": 0.6952380952380953,
+      "accuracy_all_sessions": 0.6111111111111112,
+      "accepted_accuracy": 1.0,
+      "benign_false_positive_rate": 0.0,
+      "benign_false_alarms": 0,
+      "benign_support": 6,
+      "benign_fpr_wilson_95_percent": [
+        0.0,
+        0.3903430336530645
+      ],
+      "per_class": {
+        "benign": {
+          "precision": 1.0,
+          "recall": 0.6666666666666666,
+          "f1": 0.8,
+          "support": 6
+        },
+        "credential_access": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 6
+        },
+        "reconnaissance": {
+          "precision": 1.0,
+          "recall": 0.16666666666666666,
+          "f1": 0.2857142857142857,
+          "support": 6
+        }
+      },
+      "confusion_labels": [
+        "benign",
+        "credential_access",
+        "reconnaissance",
+        "ABSTAINED"
+      ],
+      "confusion_matrix": [
+        [
+          4,
+          0,
+          0,
+          2
+        ],
+        [
+          0,
+          6,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          5
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "metric_semantics": "Abstentions count as missed true classes (false negatives), never dropped from recall/F1. FPR excludes abstentions and must be read together with coverage."
+    },
+    "meets_operational_checks": false
+  },
+  {
+    "threshold": 0.825,
+    "metrics": {
+      "n": 18,
+      "coverage": 0.5555555555555556,
+      "macro_f1": 0.6,
+      "accuracy_all_sessions": 0.5555555555555556,
+      "accepted_accuracy": 1.0,
+      "benign_false_positive_rate": 0.0,
+      "benign_false_alarms": 0,
+      "benign_support": 6,
+      "benign_fpr_wilson_95_percent": [
+        0.0,
+        0.3903430336530645
+      ],
+      "per_class": {
+        "benign": {
+          "precision": 1.0,
+          "recall": 0.6666666666666666,
+          "f1": 0.8,
+          "support": 6
+        },
+        "credential_access": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 6
+        },
+        "reconnaissance": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 6
+        }
+      },
+      "confusion_labels": [
+        "benign",
+        "credential_access",
+        "reconnaissance",
+        "ABSTAINED"
+      ],
+      "confusion_matrix": [
+        [
+          4,
+          0,
+          0,
+          2
+        ],
+        [
+          0,
+          6,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          6
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "metric_semantics": "Abstentions count as missed true classes (false negatives), never dropped from recall/F1. FPR excludes abstentions and must be read together with coverage."
+    },
+    "meets_operational_checks": false
+  },
+  {
+    "threshold": 0.85,
+    "metrics": {
+      "n": 18,
+      "coverage": 0.0,
+      "macro_f1": 0.0,
+      "accuracy_all_sessions": 0.0,
+      "accepted_accuracy": null,
+      "benign_false_positive_rate": 0.0,
+      "benign_false_alarms": 0,
+      "benign_support": 6,
+      "benign_fpr_wilson_95_percent": [
+        0.0,
+        0.3903430336530645
+      ],
+      "per_class": {
+        "benign": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 6
+        },
+        "credential_access": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 6
+        },
+        "reconnaissance": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 6
+        }
+      },
+      "confusion_labels": [
+        "benign",
+        "credential_access",
+        "reconnaissance",
+        "ABSTAINED"
+      ],
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          0,
+          6
+        ],
+        [
+          0,
+          0,
+          0,
+          6
+        ],
+        [
+          0,
+          0,
+          0,
+          6
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "metric_semantics": "Abstentions count as missed true classes (false negatives), never dropped from recall/F1. FPR excludes abstentions and must be read together with coverage."
+    },
+    "meets_operational_checks": false
+  },
+  {
+    "threshold": 0.875,
+    "metrics": {
+      "n": 18,
+      "coverage": 0.0,
+      "macro_f1": 0.0,
+      "accuracy_all_sessions": 0.0,
+      "accepted_accuracy": null,
+      "benign_false_positive_rate": 0.0,
+      "benign_false_alarms": 0,
+      "benign_support": 6,
+      "benign_fpr_wilson_95_percent": [
+        0.0,
+        0.3903430336530645
+      ],
+      "per_class": {
+        "benign": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 6
+        },
+        "credential_access": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 6
+        },
+        "reconnaissance": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 6
+        }
+      },
+      "confusion_labels": [
+        "benign",
+        "credential_access",
+        "reconnaissance",
+        "ABSTAINED"
+      ],
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          0,
+          6
+        ],
+        [
+          0,
+          0,
+          0,
+          6
+        ],
+        [
+          0,
+          0,
+          0,
+          6
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "metric_semantics": "Abstentions count as missed true classes (false negatives), never dropped from recall/F1. FPR excludes abstentions and must be read together with coverage."
+    },
+    "meets_operational_checks": false
+  },
+  {
+    "threshold": 0.9,
+    "metrics": {
+      "n": 18,
+      "coverage": 0.0,
+      "macro_f1": 0.0,
+      "accuracy_all_sessions": 0.0,
+      "accepted_accuracy": null,
+      "benign_false_positive_rate": 0.0,
+      "benign_false_alarms": 0,
+      "benign_support": 6,
+      "benign_fpr_wilson_95_percent": [
+        0.0,
+        0.3903430336530645
+      ],
+      "per_class": {
+        "benign": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 6
+        },
+        "credential_access": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 6
+        },
+        "reconnaissance": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 6
+        }
+      },
+      "confusion_labels": [
+        "benign",
+        "credential_access",
+        "reconnaissance",
+        "ABSTAINED"
+      ],
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          0,
+          6
+        ],
+        [
+          0,
+          0,
+          0,
+          6
+        ],
+        [
+          0,
+          0,
+          0,
+          6
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "metric_semantics": "Abstentions count as missed true classes (false negatives), never dropped from recall/F1. FPR excludes abstentions and must be read together with coverage."
+    },
+    "meets_operational_checks": false
+  },
+  {
+    "threshold": 0.925,
+    "metrics": {
+      "n": 18,
+      "coverage": 0.0,
+      "macro_f1": 0.0,
+      "accuracy_all_sessions": 0.0,
+      "accepted_accuracy": null,
+      "benign_false_positive_rate": 0.0,
+      "benign_false_alarms": 0,
+      "benign_support": 6,
+      "benign_fpr_wilson_95_percent": [
+        0.0,
+        0.3903430336530645
+      ],
+      "per_class": {
+        "benign": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 6
+        },
+        "credential_access": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 6
+        },
+        "reconnaissance": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 6
+        }
+      },
+      "confusion_labels": [
+        "benign",
+        "credential_access",
+        "reconnaissance",
+        "ABSTAINED"
+      ],
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          0,
+          6
+        ],
+        [
+          0,
+          0,
+          0,
+          6
+        ],
+        [
+          0,
+          0,
+          0,
+          6
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "metric_semantics": "Abstentions count as missed true classes (false negatives), never dropped from recall/F1. FPR excludes abstentions and must be read together with coverage."
+    },
+    "meets_operational_checks": false
+  },
+  {
+    "threshold": 0.95,
+    "metrics": {
+      "n": 18,
+      "coverage": 0.0,
+      "macro_f1": 0.0,
+      "accuracy_all_sessions": 0.0,
+      "accepted_accuracy": null,
+      "benign_false_positive_rate": 0.0,
+      "benign_false_alarms": 0,
+      "benign_support": 6,
+      "benign_fpr_wilson_95_percent": [
+        0.0,
+        0.3903430336530645
+      ],
+      "per_class": {
+        "benign": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 6
+        },
+        "credential_access": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 6
+        },
+        "reconnaissance": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 6
+        }
+      },
+      "confusion_labels": [
+        "benign",
+        "credential_access",
+        "reconnaissance",
+        "ABSTAINED"
+      ],
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          0,
+          6
+        ],
+        [
+          0,
+          0,
+          0,
+          6
+        ],
+        [
+          0,
+          0,
+          0,
+          6
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "metric_semantics": "Abstentions count as missed true classes (false negatives), never dropped from recall/F1. FPR excludes abstentions and must be read together with coverage."
+    },
+    "meets_operational_checks": false
+  }
+]

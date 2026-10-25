@@ -1,0 +1,1807 @@
+{
+  "schema_version": "iris-asset-inventory-v1",
+  "data_provenance": "synthetic",
+  "notice": "Artificial development/training samples. Not actual SIEM, hospital or expert-review evidence.",
+  "records": [
+    {
+      "asset_id": "AST-001",
+      "asset_version_id": "AST-001-V1",
+      "hostname": "server-001",
+      "asset_type": "server",
+      "ip_addresses": [
+        "10.44.0.11"
+      ],
+      "criticality": 1,
+      "zone": "service_zone",
+      "owner": "Infrastructure",
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-001",
+      "asset_version_id": "AST-001-V2",
+      "hostname": "server-001",
+      "asset_type": "server",
+      "ip_addresses": [
+        "10.45.0.11"
+      ],
+      "criticality": 2,
+      "zone": "service_zone",
+      "owner": "Infrastructure",
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-002",
+      "asset_version_id": "AST-002-V1",
+      "hostname": "workstation-002",
+      "asset_type": "workstation",
+      "ip_addresses": [
+        "10.44.0.12"
+      ],
+      "criticality": 5,
+      "zone": "user_zone",
+      "owner": "IT Operations",
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-002",
+      "asset_version_id": "AST-002-V2",
+      "hostname": "workstation-002",
+      "asset_type": "workstation",
+      "ip_addresses": [
+        "10.45.0.12"
+      ],
+      "criticality": 3,
+      "zone": "user_zone",
+      "owner": "IT Operations",
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-003",
+      "asset_version_id": "AST-003-V1",
+      "hostname": "workstation-003",
+      "asset_type": "workstation",
+      "ip_addresses": [
+        "10.44.0.13"
+      ],
+      "criticality": 4,
+      "zone": "user_zone",
+      "owner": "IT Operations",
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-003",
+      "asset_version_id": "AST-003-V2",
+      "hostname": "workstation-003",
+      "asset_type": "workstation",
+      "ip_addresses": [
+        "10.45.0.13"
+      ],
+      "criticality": 5,
+      "zone": "user_zone",
+      "owner": "IT Operations",
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-004",
+      "asset_version_id": "AST-004-V1",
+      "hostname": "server-004",
+      "asset_type": "server",
+      "ip_addresses": [
+        "10.44.0.14"
+      ],
+      "criticality": 2,
+      "zone": "service_zone",
+      "owner": "Infrastructure",
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-004",
+      "asset_version_id": "AST-004-V2",
+      "hostname": "server-004",
+      "asset_type": "server",
+      "ip_addresses": [
+        "10.45.0.14"
+      ],
+      "criticality": 5,
+      "zone": "service_zone",
+      "owner": "Infrastructure",
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-005",
+      "asset_version_id": "AST-005-V1",
+      "hostname": "workstation-005",
+      "asset_type": "workstation",
+      "ip_addresses": [
+        "10.44.0.15"
+      ],
+      "criticality": 4,
+      "zone": "user_zone",
+      "owner": "IT Operations",
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-005",
+      "asset_version_id": "AST-005-V2",
+      "hostname": "workstation-005",
+      "asset_type": "workstation",
+      "ip_addresses": [
+        "10.45.0.15"
+      ],
+      "criticality": 1,
+      "zone": "user_zone",
+      "owner": "IT Operations",
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-006",
+      "asset_version_id": "AST-006-V1",
+      "hostname": "workstation-006",
+      "asset_type": "workstation",
+      "ip_addresses": [
+        "10.44.0.16"
+      ],
+      "criticality": 1,
+      "zone": "user_zone",
+      "owner": "IT Operations",
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-006",
+      "asset_version_id": "AST-006-V2",
+      "hostname": "workstation-006",
+      "asset_type": "workstation",
+      "ip_addresses": [
+        "10.45.0.16"
+      ],
+      "criticality": 2,
+      "zone": "user_zone",
+      "owner": "IT Operations",
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-007",
+      "asset_version_id": "AST-007-V1",
+      "hostname": "server-007",
+      "asset_type": "server",
+      "ip_addresses": [
+        "10.44.0.17"
+      ],
+      "criticality": 2,
+      "zone": "service_zone",
+      "owner": "Infrastructure",
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-007",
+      "asset_version_id": "AST-007-V2",
+      "hostname": "server-007",
+      "asset_type": "server",
+      "ip_addresses": [
+        "10.45.0.17"
+      ],
+      "criticality": 1,
+      "zone": "service_zone",
+      "owner": "Infrastructure",
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-008",
+      "asset_version_id": "AST-008-V1",
+      "hostname": "workstation-008",
+      "asset_type": "workstation",
+      "ip_addresses": [
+        "10.44.0.18"
+      ],
+      "criticality": 4,
+      "zone": "user_zone",
+      "owner": "IT Operations",
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-008",
+      "asset_version_id": "AST-008-V2",
+      "hostname": "workstation-008",
+      "asset_type": "workstation",
+      "ip_addresses": [
+        "10.45.0.18"
+      ],
+      "criticality": 5,
+      "zone": "user_zone",
+      "owner": "IT Operations",
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-009",
+      "asset_version_id": "AST-009-V1",
+      "hostname": "workstation-009",
+      "asset_type": "workstation",
+      "ip_addresses": [
+        "10.44.0.19"
+      ],
+      "criticality": 5,
+      "zone": "user_zone",
+      "owner": "IT Operations",
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-009",
+      "asset_version_id": "AST-009-V2",
+      "hostname": "workstation-009",
+      "asset_type": "workstation",
+      "ip_addresses": [
+        "10.45.0.19"
+      ],
+      "criticality": 1,
+      "zone": "user_zone",
+      "owner": "IT Operations",
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-010",
+      "asset_version_id": "AST-010-V1",
+      "hostname": "server-010",
+      "asset_type": "server",
+      "ip_addresses": [
+        "10.44.0.20"
+      ],
+      "criticality": 4,
+      "zone": "service_zone",
+      "owner": "Infrastructure",
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-010",
+      "asset_version_id": "AST-010-V2",
+      "hostname": "server-010",
+      "asset_type": "server",
+      "ip_addresses": [
+        "10.45.0.20"
+      ],
+      "criticality": 3,
+      "zone": "service_zone",
+      "owner": "Infrastructure",
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-011",
+      "asset_version_id": "AST-011-V1",
+      "hostname": "workstation-011",
+      "asset_type": "workstation",
+      "ip_addresses": [
+        "10.44.0.21"
+      ],
+      "criticality": 5,
+      "zone": "user_zone",
+      "owner": "IT Operations",
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-011",
+      "asset_version_id": "AST-011-V2",
+      "hostname": "workstation-011",
+      "asset_type": "workstation",
+      "ip_addresses": [
+        "10.45.0.21"
+      ],
+      "criticality": 5,
+      "zone": "user_zone",
+      "owner": "IT Operations",
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-012",
+      "asset_version_id": "AST-012-V1",
+      "hostname": "workstation-012",
+      "asset_type": "workstation",
+      "ip_addresses": [
+        "10.44.0.22"
+      ],
+      "criticality": 3,
+      "zone": "user_zone",
+      "owner": "IT Operations",
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-012",
+      "asset_version_id": "AST-012-V2",
+      "hostname": "workstation-012",
+      "asset_type": "workstation",
+      "ip_addresses": [
+        "10.45.0.22"
+      ],
+      "criticality": 5,
+      "zone": "user_zone",
+      "owner": "IT Operations",
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-013",
+      "asset_version_id": "AST-013-V1",
+      "hostname": "server-013",
+      "asset_type": "server",
+      "ip_addresses": [
+        "10.44.0.23"
+      ],
+      "criticality": 4,
+      "zone": "service_zone",
+      "owner": "Infrastructure",
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-013",
+      "asset_version_id": "AST-013-V2",
+      "hostname": "server-013",
+      "asset_type": "server",
+      "ip_addresses": [
+        "10.45.0.23"
+      ],
+      "criticality": 1,
+      "zone": "service_zone",
+      "owner": "Infrastructure",
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-014",
+      "asset_version_id": "AST-014-V1",
+      "hostname": "workstation-014",
+      "asset_type": "workstation",
+      "ip_addresses": [
+        "10.44.0.24"
+      ],
+      "criticality": 3,
+      "zone": "user_zone",
+      "owner": "IT Operations",
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-014",
+      "asset_version_id": "AST-014-V2",
+      "hostname": "workstation-014",
+      "asset_type": "workstation",
+      "ip_addresses": [
+        "10.45.0.24"
+      ],
+      "criticality": 3,
+      "zone": "user_zone",
+      "owner": "IT Operations",
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-015",
+      "asset_version_id": "AST-015-V1",
+      "hostname": "workstation-015",
+      "asset_type": "workstation",
+      "ip_addresses": [
+        "10.44.0.25"
+      ],
+      "criticality": 5,
+      "zone": "user_zone",
+      "owner": "IT Operations",
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-015",
+      "asset_version_id": "AST-015-V2",
+      "hostname": "workstation-015",
+      "asset_type": "workstation",
+      "ip_addresses": [
+        "10.45.0.25"
+      ],
+      "criticality": 4,
+      "zone": "user_zone",
+      "owner": "IT Operations",
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-016",
+      "asset_version_id": "AST-016-V1",
+      "hostname": "server-016",
+      "asset_type": "server",
+      "ip_addresses": [
+        "10.44.0.26"
+      ],
+      "criticality": 2,
+      "zone": "service_zone",
+      "owner": "Infrastructure",
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-016",
+      "asset_version_id": "AST-016-V2",
+      "hostname": "server-016",
+      "asset_type": "server",
+      "ip_addresses": [
+        "10.45.0.26"
+      ],
+      "criticality": 3,
+      "zone": "service_zone",
+      "owner": "Infrastructure",
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-017",
+      "asset_version_id": "AST-017-V1",
+      "hostname": "workstation-017",
+      "asset_type": "workstation",
+      "ip_addresses": [
+        "10.44.0.27"
+      ],
+      "criticality": 5,
+      "zone": "user_zone",
+      "owner": "IT Operations",
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-017",
+      "asset_version_id": "AST-017-V2",
+      "hostname": "workstation-017",
+      "asset_type": "workstation",
+      "ip_addresses": [
+        "10.45.0.27"
+      ],
+      "criticality": 1,
+      "zone": "user_zone",
+      "owner": "IT Operations",
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-018",
+      "asset_version_id": "AST-018-V1",
+      "hostname": "workstation-018",
+      "asset_type": "workstation",
+      "ip_addresses": [
+        "10.44.0.28"
+      ],
+      "criticality": 3,
+      "zone": "user_zone",
+      "owner": "IT Operations",
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-018",
+      "asset_version_id": "AST-018-V2",
+      "hostname": "workstation-018",
+      "asset_type": "workstation",
+      "ip_addresses": [
+        "10.45.0.28"
+      ],
+      "criticality": 1,
+      "zone": "user_zone",
+      "owner": "IT Operations",
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-019",
+      "asset_version_id": "AST-019-V1",
+      "hostname": "server-019",
+      "asset_type": "server",
+      "ip_addresses": [
+        "10.44.0.29"
+      ],
+      "criticality": 1,
+      "zone": "service_zone",
+      "owner": "Infrastructure",
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-019",
+      "asset_version_id": "AST-019-V2",
+      "hostname": "server-019",
+      "asset_type": "server",
+      "ip_addresses": [
+        "10.45.0.29"
+      ],
+      "criticality": 1,
+      "zone": "service_zone",
+      "owner": "Infrastructure",
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-020",
+      "asset_version_id": "AST-020-V1",
+      "hostname": "workstation-020",
+      "asset_type": "workstation",
+      "ip_addresses": [
+        "10.44.0.30"
+      ],
+      "criticality": 3,
+      "zone": "user_zone",
+      "owner": "IT Operations",
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-020",
+      "asset_version_id": "AST-020-V2",
+      "hostname": "workstation-020",
+      "asset_type": "workstation",
+      "ip_addresses": [
+        "10.45.0.30"
+      ],
+      "criticality": 1,
+      "zone": "user_zone",
+      "owner": "IT Operations",
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-021",
+      "asset_version_id": "AST-021-V1",
+      "hostname": "workstation-021",
+      "asset_type": "workstation",
+      "ip_addresses": [
+        "10.44.0.31"
+      ],
+      "criticality": 1,
+      "zone": "user_zone",
+      "owner": "IT Operations",
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-021",
+      "asset_version_id": "AST-021-V2",
+      "hostname": "workstation-021",
+      "asset_type": "workstation",
+      "ip_addresses": [
+        "10.45.0.31"
+      ],
+      "criticality": 2,
+      "zone": "user_zone",
+      "owner": "IT Operations",
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-022",
+      "asset_version_id": "AST-022-V1",
+      "hostname": "server-022",
+      "asset_type": "server",
+      "ip_addresses": [
+        "10.44.0.32"
+      ],
+      "criticality": 4,
+      "zone": "service_zone",
+      "owner": "Infrastructure",
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-022",
+      "asset_version_id": "AST-022-V2",
+      "hostname": "server-022",
+      "asset_type": "server",
+      "ip_addresses": [
+        "10.45.0.32"
+      ],
+      "criticality": 1,
+      "zone": "service_zone",
+      "owner": "Infrastructure",
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-023",
+      "asset_version_id": "AST-023-V1",
+      "hostname": "workstation-023",
+      "asset_type": "workstation",
+      "ip_addresses": [
+        "10.44.0.33"
+      ],
+      "criticality": 4,
+      "zone": "user_zone",
+      "owner": "IT Operations",
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-023",
+      "asset_version_id": "AST-023-V2",
+      "hostname": "workstation-023",
+      "asset_type": "workstation",
+      "ip_addresses": [
+        "10.45.0.33"
+      ],
+      "criticality": 3,
+      "zone": "user_zone",
+      "owner": "IT Operations",
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-024",
+      "asset_version_id": "AST-024-V1",
+      "hostname": "workstation-024",
+      "asset_type": "workstation",
+      "ip_addresses": [
+        "10.44.0.34"
+      ],
+      "criticality": 4,
+      "zone": "user_zone",
+      "owner": "IT Operations",
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-024",
+      "asset_version_id": "AST-024-V2",
+      "hostname": "workstation-024",
+      "asset_type": "workstation",
+      "ip_addresses": [
+        "10.45.0.34"
+      ],
+      "criticality": 2,
+      "zone": "user_zone",
+      "owner": "IT Operations",
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-025",
+      "asset_version_id": "AST-025-V1",
+      "hostname": "server-025",
+      "asset_type": "server",
+      "ip_addresses": [
+        "10.44.0.35"
+      ],
+      "criticality": 2,
+      "zone": "service_zone",
+      "owner": "Infrastructure",
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-025",
+      "asset_version_id": "AST-025-V2",
+      "hostname": "server-025",
+      "asset_type": "server",
+      "ip_addresses": [
+        "10.45.0.35"
+      ],
+      "criticality": 3,
+      "zone": "service_zone",
+      "owner": "Infrastructure",
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-026",
+      "asset_version_id": "AST-026-V1",
+      "hostname": "workstation-026",
+      "asset_type": "workstation",
+      "ip_addresses": [
+        "10.44.0.36"
+      ],
+      "criticality": 1,
+      "zone": "user_zone",
+      "owner": "IT Operations",
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-026",
+      "asset_version_id": "AST-026-V2",
+      "hostname": "workstation-026",
+      "asset_type": "workstation",
+      "ip_addresses": [
+        "10.45.0.36"
+      ],
+      "criticality": 3,
+      "zone": "user_zone",
+      "owner": "IT Operations",
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-027",
+      "asset_version_id": "AST-027-V1",
+      "hostname": "workstation-027",
+      "asset_type": "workstation",
+      "ip_addresses": [
+        "10.44.0.37"
+      ],
+      "criticality": 2,
+      "zone": "user_zone",
+      "owner": "IT Operations",
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-027",
+      "asset_version_id": "AST-027-V2",
+      "hostname": "workstation-027",
+      "asset_type": "workstation",
+      "ip_addresses": [
+        "10.45.0.37"
+      ],
+      "criticality": 3,
+      "zone": "user_zone",
+      "owner": "IT Operations",
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-028",
+      "asset_version_id": "AST-028-V1",
+      "hostname": "server-028",
+      "asset_type": "server",
+      "ip_addresses": [
+        "10.44.0.38"
+      ],
+      "criticality": 5,
+      "zone": "service_zone",
+      "owner": "Infrastructure",
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-028",
+      "asset_version_id": "AST-028-V2",
+      "hostname": "server-028",
+      "asset_type": "server",
+      "ip_addresses": [
+        "10.45.0.38"
+      ],
+      "criticality": 5,
+      "zone": "service_zone",
+      "owner": "Infrastructure",
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-029",
+      "asset_version_id": "AST-029-V1",
+      "hostname": "workstation-029",
+      "asset_type": "workstation",
+      "ip_addresses": [
+        "10.44.0.39"
+      ],
+      "criticality": 2,
+      "zone": "user_zone",
+      "owner": "IT Operations",
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-029",
+      "asset_version_id": "AST-029-V2",
+      "hostname": "workstation-029",
+      "asset_type": "workstation",
+      "ip_addresses": [
+        "10.45.0.39"
+      ],
+      "criticality": 5,
+      "zone": "user_zone",
+      "owner": "IT Operations",
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-030",
+      "asset_version_id": "AST-030-V1",
+      "hostname": "workstation-030",
+      "asset_type": "workstation",
+      "ip_addresses": [
+        "10.44.0.40"
+      ],
+      "criticality": 1,
+      "zone": "user_zone",
+      "owner": "IT Operations",
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-030",
+      "asset_version_id": "AST-030-V2",
+      "hostname": "workstation-030",
+      "asset_type": "workstation",
+      "ip_addresses": [
+        "10.45.0.40"
+      ],
+      "criticality": 4,
+      "zone": "user_zone",
+      "owner": "IT Operations",
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-031",
+      "asset_version_id": "AST-031-V1",
+      "hostname": "server-031",
+      "asset_type": "server",
+      "ip_addresses": [
+        "10.44.0.41"
+      ],
+      "criticality": 1,
+      "zone": "service_zone",
+      "owner": "Infrastructure",
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-031",
+      "asset_version_id": "AST-031-V2",
+      "hostname": "server-031",
+      "asset_type": "server",
+      "ip_addresses": [
+        "10.45.0.41"
+      ],
+      "criticality": 3,
+      "zone": "service_zone",
+      "owner": "Infrastructure",
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-032",
+      "asset_version_id": "AST-032-V1",
+      "hostname": "workstation-032",
+      "asset_type": "workstation",
+      "ip_addresses": [
+        "10.44.0.42"
+      ],
+      "criticality": 3,
+      "zone": "user_zone",
+      "owner": "IT Operations",
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-032",
+      "asset_version_id": "AST-032-V2",
+      "hostname": "workstation-032",
+      "asset_type": "workstation",
+      "ip_addresses": [
+        "10.45.0.42"
+      ],
+      "criticality": 1,
+      "zone": "user_zone",
+      "owner": "IT Operations",
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-033",
+      "asset_version_id": "AST-033-V1",
+      "hostname": "workstation-033",
+      "asset_type": "workstation",
+      "ip_addresses": [
+        "10.44.0.43"
+      ],
+      "criticality": 5,
+      "zone": "user_zone",
+      "owner": "IT Operations",
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-033",
+      "asset_version_id": "AST-033-V2",
+      "hostname": "workstation-033",
+      "asset_type": "workstation",
+      "ip_addresses": [
+        "10.45.0.43"
+      ],
+      "criticality": 3,
+      "zone": "user_zone",
+      "owner": "IT Operations",
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-034",
+      "asset_version_id": "AST-034-V1",
+      "hostname": "server-034",
+      "asset_type": "server",
+      "ip_addresses": [
+        "10.44.0.44"
+      ],
+      "criticality": 5,
+      "zone": "service_zone",
+      "owner": "Infrastructure",
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-034",
+      "asset_version_id": "AST-034-V2",
+      "hostname": "server-034",
+      "asset_type": "server",
+      "ip_addresses": [
+        "10.45.0.44"
+      ],
+      "criticality": 1,
+      "zone": "service_zone",
+      "owner": "Infrastructure",
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-035",
+      "asset_version_id": "AST-035-V1",
+      "hostname": "workstation-035",
+      "asset_type": "workstation",
+      "ip_addresses": [
+        "10.44.0.45"
+      ],
+      "criticality": 3,
+      "zone": "user_zone",
+      "owner": "IT Operations",
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-035",
+      "asset_version_id": "AST-035-V2",
+      "hostname": "workstation-035",
+      "asset_type": "workstation",
+      "ip_addresses": [
+        "10.45.0.45"
+      ],
+      "criticality": 5,
+      "zone": "user_zone",
+      "owner": "IT Operations",
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-036",
+      "asset_version_id": "AST-036-V1",
+      "hostname": "workstation-036",
+      "asset_type": "workstation",
+      "ip_addresses": [
+        "10.44.0.46"
+      ],
+      "criticality": 3,
+      "zone": "user_zone",
+      "owner": "IT Operations",
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-036",
+      "asset_version_id": "AST-036-V2",
+      "hostname": "workstation-036",
+      "asset_type": "workstation",
+      "ip_addresses": [
+        "10.45.0.46"
+      ],
+      "criticality": 4,
+      "zone": "user_zone",
+      "owner": "IT Operations",
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-037",
+      "asset_version_id": "AST-037-V1",
+      "hostname": "server-037",
+      "asset_type": "server",
+      "ip_addresses": [
+        "10.44.0.47"
+      ],
+      "criticality": 1,
+      "zone": "service_zone",
+      "owner": "Infrastructure",
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-037",
+      "asset_version_id": "AST-037-V2",
+      "hostname": "server-037",
+      "asset_type": "server",
+      "ip_addresses": [
+        "10.45.0.47"
+      ],
+      "criticality": 3,
+      "zone": "service_zone",
+      "owner": "Infrastructure",
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-038",
+      "asset_version_id": "AST-038-V1",
+      "hostname": "workstation-038",
+      "asset_type": "workstation",
+      "ip_addresses": [
+        "10.44.0.48"
+      ],
+      "criticality": 1,
+      "zone": "user_zone",
+      "owner": "IT Operations",
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-038",
+      "asset_version_id": "AST-038-V2",
+      "hostname": "workstation-038",
+      "asset_type": "workstation",
+      "ip_addresses": [
+        "10.45.0.48"
+      ],
+      "criticality": 1,
+      "zone": "user_zone",
+      "owner": "IT Operations",
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-039",
+      "asset_version_id": "AST-039-V1",
+      "hostname": "workstation-039",
+      "asset_type": "workstation",
+      "ip_addresses": [
+        "10.44.0.49"
+      ],
+      "criticality": 4,
+      "zone": "user_zone",
+      "owner": "IT Operations",
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-039",
+      "asset_version_id": "AST-039-V2",
+      "hostname": "workstation-039",
+      "asset_type": "workstation",
+      "ip_addresses": [
+        "10.45.0.49"
+      ],
+      "criticality": 2,
+      "zone": "user_zone",
+      "owner": "IT Operations",
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-040",
+      "asset_version_id": "AST-040-V1",
+      "hostname": "server-040",
+      "asset_type": "server",
+      "ip_addresses": [
+        "10.44.0.50"
+      ],
+      "criticality": 4,
+      "zone": "service_zone",
+      "owner": "Infrastructure",
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-040",
+      "asset_version_id": "AST-040-V2",
+      "hostname": "server-040",
+      "asset_type": "server",
+      "ip_addresses": [
+        "10.45.0.50"
+      ],
+      "criticality": 3,
+      "zone": "service_zone",
+      "owner": "Infrastructure",
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-041",
+      "asset_version_id": "AST-041-V1",
+      "hostname": "workstation-041",
+      "asset_type": "workstation",
+      "ip_addresses": [
+        "10.44.0.51"
+      ],
+      "criticality": 3,
+      "zone": "user_zone",
+      "owner": "IT Operations",
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-041",
+      "asset_version_id": "AST-041-V2",
+      "hostname": "workstation-041",
+      "asset_type": "workstation",
+      "ip_addresses": [
+        "10.45.0.51"
+      ],
+      "criticality": 2,
+      "zone": "user_zone",
+      "owner": "IT Operations",
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-042",
+      "asset_version_id": "AST-042-V1",
+      "hostname": "workstation-042",
+      "asset_type": "workstation",
+      "ip_addresses": [
+        "10.44.0.52"
+      ],
+      "criticality": 2,
+      "zone": "user_zone",
+      "owner": "IT Operations",
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-042",
+      "asset_version_id": "AST-042-V2",
+      "hostname": "workstation-042",
+      "asset_type": "workstation",
+      "ip_addresses": [
+        "10.45.0.52"
+      ],
+      "criticality": 3,
+      "zone": "user_zone",
+      "owner": "IT Operations",
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-043",
+      "asset_version_id": "AST-043-V1",
+      "hostname": "server-043",
+      "asset_type": "server",
+      "ip_addresses": [
+        "10.44.0.53"
+      ],
+      "criticality": 1,
+      "zone": "service_zone",
+      "owner": "Infrastructure",
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-043",
+      "asset_version_id": "AST-043-V2",
+      "hostname": "server-043",
+      "asset_type": "server",
+      "ip_addresses": [
+        "10.45.0.53"
+      ],
+      "criticality": 5,
+      "zone": "service_zone",
+      "owner": "Infrastructure",
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-044",
+      "asset_version_id": "AST-044-V1",
+      "hostname": "workstation-044",
+      "asset_type": "workstation",
+      "ip_addresses": [
+        "10.44.0.54"
+      ],
+      "criticality": 3,
+      "zone": "user_zone",
+      "owner": "IT Operations",
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-044",
+      "asset_version_id": "AST-044-V2",
+      "hostname": "workstation-044",
+      "asset_type": "workstation",
+      "ip_addresses": [
+        "10.45.0.54"
+      ],
+      "criticality": 1,
+      "zone": "user_zone",
+      "owner": "IT Operations",
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-045",
+      "asset_version_id": "AST-045-V1",
+      "hostname": "workstation-045",
+      "asset_type": "workstation",
+      "ip_addresses": [
+        "10.44.0.55"
+      ],
+      "criticality": 1,
+      "zone": "user_zone",
+      "owner": "IT Operations",
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-045",
+      "asset_version_id": "AST-045-V2",
+      "hostname": "workstation-045",
+      "asset_type": "workstation",
+      "ip_addresses": [
+        "10.45.0.55"
+      ],
+      "criticality": 5,
+      "zone": "user_zone",
+      "owner": "IT Operations",
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-046",
+      "asset_version_id": "AST-046-V1",
+      "hostname": "server-046",
+      "asset_type": "server",
+      "ip_addresses": [
+        "10.44.0.56"
+      ],
+      "criticality": 4,
+      "zone": "service_zone",
+      "owner": "Infrastructure",
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-046",
+      "asset_version_id": "AST-046-V2",
+      "hostname": "server-046",
+      "asset_type": "server",
+      "ip_addresses": [
+        "10.45.0.56"
+      ],
+      "criticality": 1,
+      "zone": "service_zone",
+      "owner": "Infrastructure",
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-047",
+      "asset_version_id": "AST-047-V1",
+      "hostname": "workstation-047",
+      "asset_type": "workstation",
+      "ip_addresses": [
+        "10.44.0.57"
+      ],
+      "criticality": 2,
+      "zone": "user_zone",
+      "owner": "IT Operations",
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-047",
+      "asset_version_id": "AST-047-V2",
+      "hostname": "workstation-047",
+      "asset_type": "workstation",
+      "ip_addresses": [
+        "10.45.0.57"
+      ],
+      "criticality": 5,
+      "zone": "user_zone",
+      "owner": "IT Operations",
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-048",
+      "asset_version_id": "AST-048-V1",
+      "hostname": "workstation-048",
+      "asset_type": "workstation",
+      "ip_addresses": [
+        "10.44.0.58"
+      ],
+      "criticality": 2,
+      "zone": "user_zone",
+      "owner": "IT Operations",
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-048",
+      "asset_version_id": "AST-048-V2",
+      "hostname": "workstation-048",
+      "asset_type": "workstation",
+      "ip_addresses": [
+        "10.45.0.58"
+      ],
+      "criticality": 4,
+      "zone": "user_zone",
+      "owner": "IT Operations",
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-049",
+      "asset_version_id": "AST-049-V1",
+      "hostname": "server-049",
+      "asset_type": "server",
+      "ip_addresses": [
+        "10.44.0.59"
+      ],
+      "criticality": 1,
+      "zone": "service_zone",
+      "owner": "Infrastructure",
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-049",
+      "asset_version_id": "AST-049-V2",
+      "hostname": "server-049",
+      "asset_type": "server",
+      "ip_addresses": [
+        "10.45.0.59"
+      ],
+      "criticality": 3,
+      "zone": "service_zone",
+      "owner": "Infrastructure",
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-050",
+      "asset_version_id": "AST-050-V1",
+      "hostname": "workstation-050",
+      "asset_type": "workstation",
+      "ip_addresses": [
+        "10.44.0.60"
+      ],
+      "criticality": 1,
+      "zone": "user_zone",
+      "owner": "IT Operations",
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-050",
+      "asset_version_id": "AST-050-V2",
+      "hostname": "workstation-050",
+      "asset_type": "workstation",
+      "ip_addresses": [
+        "10.45.0.60"
+      ],
+      "criticality": 2,
+      "zone": "user_zone",
+      "owner": "IT Operations",
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-051",
+      "asset_version_id": "AST-051-V1",
+      "hostname": "workstation-051",
+      "asset_type": "workstation",
+      "ip_addresses": [
+        "10.44.0.61"
+      ],
+      "criticality": 3,
+      "zone": "user_zone",
+      "owner": "IT Operations",
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-051",
+      "asset_version_id": "AST-051-V2",
+      "hostname": "workstation-051",
+      "asset_type": "workstation",
+      "ip_addresses": [
+        "10.45.0.61"
+      ],
+      "criticality": 5,
+      "zone": "user_zone",
+      "owner": "IT Operations",
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-052",
+      "asset_version_id": "AST-052-V1",
+      "hostname": "server-052",
+      "asset_type": "server",
+      "ip_addresses": [
+        "10.44.0.62"
+      ],
+      "criticality": 1,
+      "zone": "service_zone",
+      "owner": "Infrastructure",
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-052",
+      "asset_version_id": "AST-052-V2",
+      "hostname": "server-052",
+      "asset_type": "server",
+      "ip_addresses": [
+        "10.45.0.62"
+      ],
+      "criticality": 1,
+      "zone": "service_zone",
+      "owner": "Infrastructure",
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-053",
+      "asset_version_id": "AST-053-V1",
+      "hostname": "workstation-053",
+      "asset_type": "workstation",
+      "ip_addresses": [
+        "10.44.0.63"
+      ],
+      "criticality": 5,
+      "zone": "user_zone",
+      "owner": "IT Operations",
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-053",
+      "asset_version_id": "AST-053-V2",
+      "hostname": "workstation-053",
+      "asset_type": "workstation",
+      "ip_addresses": [
+        "10.45.0.63"
+      ],
+      "criticality": 4,
+      "zone": "user_zone",
+      "owner": "IT Operations",
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-054",
+      "asset_version_id": "AST-054-V1",
+      "hostname": "workstation-054",
+      "asset_type": "workstation",
+      "ip_addresses": [
+        "10.44.0.64"
+      ],
+      "criticality": 2,
+      "zone": "user_zone",
+      "owner": "IT Operations",
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-054",
+      "asset_version_id": "AST-054-V2",
+      "hostname": "workstation-054",
+      "asset_type": "workstation",
+      "ip_addresses": [
+        "10.45.0.64"
+      ],
+      "criticality": 5,
+      "zone": "user_zone",
+      "owner": "IT Operations",
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-055",
+      "asset_version_id": "AST-055-V1",
+      "hostname": "server-055",
+      "asset_type": "server",
+      "ip_addresses": [
+        "10.44.0.65"
+      ],
+      "criticality": 2,
+      "zone": "service_zone",
+      "owner": "Infrastructure",
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-055",
+      "asset_version_id": "AST-055-V2",
+      "hostname": "server-055",
+      "asset_type": "server",
+      "ip_addresses": [
+        "10.45.0.65"
+      ],
+      "criticality": 5,
+      "zone": "service_zone",
+      "owner": "Infrastructure",
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-056",
+      "asset_version_id": "AST-056-V1",
+      "hostname": "workstation-056",
+      "asset_type": "workstation",
+      "ip_addresses": [
+        "10.44.0.66"
+      ],
+      "criticality": 5,
+      "zone": "user_zone",
+      "owner": "IT Operations",
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-056",
+      "asset_version_id": "AST-056-V2",
+      "hostname": "workstation-056",
+      "asset_type": "workstation",
+      "ip_addresses": [
+        "10.45.0.66"
+      ],
+      "criticality": 4,
+      "zone": "user_zone",
+      "owner": "IT Operations",
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-057",
+      "asset_version_id": "AST-057-V1",
+      "hostname": "workstation-057",
+      "asset_type": "workstation",
+      "ip_addresses": [
+        "10.44.0.67"
+      ],
+      "criticality": 4,
+      "zone": "user_zone",
+      "owner": "IT Operations",
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-057",
+      "asset_version_id": "AST-057-V2",
+      "hostname": "workstation-057",
+      "asset_type": "workstation",
+      "ip_addresses": [
+        "10.45.0.67"
+      ],
+      "criticality": 4,
+      "zone": "user_zone",
+      "owner": "IT Operations",
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-058",
+      "asset_version_id": "AST-058-V1",
+      "hostname": "server-058",
+      "asset_type": "server",
+      "ip_addresses": [
+        "10.44.0.68"
+      ],
+      "criticality": 1,
+      "zone": "service_zone",
+      "owner": "Infrastructure",
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-058",
+      "asset_version_id": "AST-058-V2",
+      "hostname": "server-058",
+      "asset_type": "server",
+      "ip_addresses": [
+        "10.45.0.68"
+      ],
+      "criticality": 1,
+      "zone": "service_zone",
+      "owner": "Infrastructure",
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-059",
+      "asset_version_id": "AST-059-V1",
+      "hostname": "workstation-059",
+      "asset_type": "workstation",
+      "ip_addresses": [
+        "10.44.0.69"
+      ],
+      "criticality": 5,
+      "zone": "user_zone",
+      "owner": "IT Operations",
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-059",
+      "asset_version_id": "AST-059-V2",
+      "hostname": "workstation-059",
+      "asset_type": "workstation",
+      "ip_addresses": [
+        "10.45.0.69"
+      ],
+      "criticality": 5,
+      "zone": "user_zone",
+      "owner": "IT Operations",
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-060",
+      "asset_version_id": "AST-060-V1",
+      "hostname": "workstation-060",
+      "asset_type": "workstation",
+      "ip_addresses": [
+        "10.44.0.70"
+      ],
+      "criticality": 5,
+      "zone": "user_zone",
+      "owner": "IT Operations",
+      "valid_from": "2026-07-01T00:00:00+00:00",
+      "valid_to": "2026-08-01T00:00:00+00:00",
+      "recorded_at": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "asset_id": "AST-060",
+      "asset_version_id": "AST-060-V2",
+      "hostname": "workstation-060",
+      "asset_type": "workstation",
+      "ip_addresses": [
+        "10.45.0.70"
+      ],
+      "criticality": 2,
+      "zone": "user_zone",
+      "owner": "IT Operations",
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-08-01T00:00:00+00:00"
+    }
+  ]
+}

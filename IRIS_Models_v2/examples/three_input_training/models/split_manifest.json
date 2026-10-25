@@ -1,0 +1,111 @@
+{
+  "seed": 42,
+  "group_by": "campaign_id",
+  "groups": {
+    "test": [
+      "SYN-CAMPAIGN-008",
+      "SYN-CAMPAIGN-018",
+      "SYN-CAMPAIGN-019",
+      "SYN-CAMPAIGN-025",
+      "SYN-CAMPAIGN-028",
+      "SYN-CAMPAIGN-029",
+      "SYN-CAMPAIGN-051",
+      "SYN-CAMPAIGN-056",
+      "SYN-CAMPAIGN-060"
+    ],
+    "threshold": [
+      "SYN-CAMPAIGN-006",
+      "SYN-CAMPAIGN-026",
+      "SYN-CAMPAIGN-030",
+      "SYN-CAMPAIGN-040",
+      "SYN-CAMPAIGN-045",
+      "SYN-CAMPAIGN-058"
+    ],
+    "calibration": [
+      "SYN-CAMPAIGN-021",
+      "SYN-CAMPAIGN-032",
+      "SYN-CAMPAIGN-038",
+      "SYN-CAMPAIGN-043",
+      "SYN-CAMPAIGN-050",
+      "SYN-CAMPAIGN-053"
+    ],
+    "selection": [
+      "SYN-CAMPAIGN-005",
+      "SYN-CAMPAIGN-010",
+      "SYN-CAMPAIGN-016",
+      "SYN-CAMPAIGN-024",
+      "SYN-CAMPAIGN-027",
+      "SYN-CAMPAIGN-033",
+      "SYN-CAMPAIGN-041",
+      "SYN-CAMPAIGN-049",
+      "SYN-CAMPAIGN-055"
+    ],
+    "train": [
+      "SYN-CAMPAIGN-001",
+      "SYN-CAMPAIGN-002",
+      "SYN-CAMPAIGN-003",
+      "SYN-CAMPAIGN-004",
+      "SYN-CAMPAIGN-007",
+      "SYN-CAMPAIGN-009",
+      "SYN-CAMPAIGN-011",
+      "SYN-CAMPAIGN-012",
+      "SYN-CAMPAIGN-013",
+      "SYN-CAMPAIGN-014",
+      "SYN-CAMPAIGN-015",
+      "SYN-CAMPAIGN-017",
+      "SYN-CAMPAIGN-020",
+      "SYN-CAMPAIGN-022",
+      "SYN-CAMPAIGN-023",
+      "SYN-CAMPAIGN-031",
+      "SYN-CAMPAIGN-034",
+      "SYN-CAMPAIGN-035",
+      "SYN-CAMPAIGN-036",
+      "SYN-CAMPAIGN-037",
+      "SYN-CAMPAIGN-039",
+      "SYN-CAMPAIGN-042",
+      "SYN-CAMPAIGN-044",
+      "SYN-CAMPAIGN-046",
+      "SYN-CAMPAIGN-047",
+      "SYN-CAMPAIGN-048",
+      "SYN-CAMPAIGN-052",
+      "SYN-CAMPAIGN-054",
+      "SYN-CAMPAIGN-057",
+      "SYN-CAMPAIGN-059"
+    ]
+  },
+  "rows": {
+    "test": 135,
+    "threshold": 90,
+    "calibration": 90,
+    "selection": 135,
+    "train": 450
+  },
+  "class_counts": {
+    "test": {
+      "reconnaissance": 45,
+      "credential_access": 45,
+      "benign": 45
+    },
+    "threshold": {
+      "reconnaissance": 30,
+      "credential_access": 30,
+      "benign": 30
+    },
+    "calibration": {
+      "benign": 30,
+      "reconnaissance": 30,
+      "credential_access": 30
+    },
+    "selection": {
+      "credential_access": 45,
+      "reconnaissance": 45,
+      "benign": 45
+    },
+    "train": {
+      "reconnaissance": 150,
+      "benign": 150,
+      "credential_access": 150
+    }
+  },
+  "claim": "unseen campaign holdout"
+}

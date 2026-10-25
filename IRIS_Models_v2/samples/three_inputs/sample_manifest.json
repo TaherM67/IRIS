@@ -1,0 +1,28 @@
+{
+  "data_provenance": "synthetic",
+  "seed": 20261025,
+  "asset_count": 60,
+  "asset_snapshots": 120,
+  "risk_count": 120,
+  "risk_snapshots": 240,
+  "siem_alert_rows": 26086,
+  "labeled_sessions_expected": 900,
+  "campaign_count": 60,
+  "runs_per_class": {
+    "reconnaissance": 300,
+    "benign": 300,
+    "credential_access": 300
+  },
+  "qa_cases": {
+    "exact_duplicate_rows": 12,
+    "unresolved_asset_alerts": 2,
+    "invalid_timestamp_alerts": 1
+  },
+  "operational_inputs": [
+    "asset_inventory.json",
+    "risk_register.json",
+    "siem_alerts.jsonl"
+  ],
+  "offline_training_only": "training_labels.jsonl",
+  "release_allowed": false
+}

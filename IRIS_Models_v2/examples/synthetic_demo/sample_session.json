@@ -1,0 +1,44 @@
+{
+  "session_id": "DEMO-00-credential_access-0",
+  "run_id": "run-credential_access-0",
+  "campaign_id": "synthetic-campaign-00",
+  "data_provenance": "synthetic",
+  "sensor_healthy": true,
+  "aggregation_schema": "iris-synthetic-session-v1",
+  "features": {
+    "event_family": "authentication",
+    "primary_protocol": "SSH",
+    "event_count": 15.0,
+    "duration_seconds": 82.9554186665462,
+    "max_rule_level": 5.0,
+    "mean_rule_level": 4.661725627734437,
+    "distinct_rules": 4.0,
+    "distinct_sources": 1.0,
+    "distinct_accounts": 1.0,
+    "failed_count": 12.0,
+    "success_count": 2.0,
+    "failure_ratio": 0.8571428571428571,
+    "success_after_failures": 1.0,
+    "max_events_in_10s": 3.0,
+    "external_source_fraction": 0.0,
+    "event_rate_per_minute": 10.84920086556018
+  },
+  "context": {
+    "asset_type": "server",
+    "asset_criticality": 1,
+    "current_likelihood": 5,
+    "impact": 2,
+    "previous_similar_24h": 2,
+    "controls": {
+      "SC005": "implemented",
+      "SC012": "partial",
+      "SC029": "missing"
+    },
+    "active_exception_control_ids": [
+      "SC006"
+    ]
+  },
+  "evidence_refs": [
+    "synthetic fixture; no actual telemetry"
+  ]
+}

@@ -1,0 +1,31 @@
+Control_ID,Control_Name,Control_Domain,Recommended_Action,Reference
+SC001,DDoS Protection,Network,Enable upstream DDoS mitigation / scrubbing service,NIST PR.PT / DE.CM
+SC002,Rate Limiting,Application/Network,Apply rate limiting to exposed services,NIST PR.PT
+SC003,Traffic Filtering,Network,Block or filter clearly malicious traffic sources,NIST PR.PT
+SC004,Failover / Redundancy,Resilience,Use redundant service capacity and failover,NIST PR.IP
+SC005,Multi-Factor Authentication,Identity,Require MFA for privileged and remote access,ISO 27001 Annex A / NIST PR.AA
+SC006,Account Lockout,Identity,Temporarily lock accounts after repeated failed authentication,NIST PR.AA
+SC007,Credential Monitoring,Monitoring,Detect abnormal authentication frequency and source patterns,NIST DE.CM
+SC008,Endpoint Isolation,Endpoint,Isolate compromised endpoint from the network,NIST RS.MI
+SC009,Anti-Malware / EDR,Endpoint,Use endpoint detection and response controls,NIST DE.CM
+SC010,Malware Quarantine,Endpoint,Quarantine malicious files/processes,NIST RS.MI
+SC011,Network Segmentation,Network,Segment critical assets from user and guest networks,NIST PR.PT
+SC012,Scan Detection Rules,Monitoring,Tune SIEM rules for reconnaissance and scanning behavior,NIST DE.CM
+SC013,Least Privilege,Identity,Restrict user permissions to minimum required,ISO 27001 Annex A
+SC014,Session Review,Monitoring,Review suspicious sessions and access paths,NIST DE.AE
+SC015,Web Application Firewall,Application,Enable WAF rules for injection attempts,NIST PR.PT
+SC016,Parameterized Queries,Application,Use parameterized queries and input validation,OWASP / secure coding
+SC017,Application Logging,Application,Improve application security logging and alerting,NIST DE.CM
+SC018,Data Loss Prevention,Data,Deploy DLP controls around sensitive records,NIST PR.DS
+SC019,Egress Filtering,Network,Restrict unexpected outbound data flows,NIST PR.PT
+SC020,Encryption,Data,Encrypt sensitive data in transit and at rest,ISO 27001 Annex A
+SC021,Privileged Access Management,Identity,Control and monitor privileged accounts,NIST PR.AA
+SC022,Admin Activity Monitoring,Monitoring,Alert on abnormal privileged activity,NIST DE.CM
+SC023,Access Review,Governance,Review privileged role assignments,ISO 27001 Annex A
+SC024,Backup Validation,Resilience,Test backups and recovery procedures,NIST RC.RP
+SC025,Patch Management,Asset Management,Apply validated security patches,NIST PR.PS
+SC026,Incident Escalation,Response,Escalate critical incidents to SOC lead and risk owner,NIST RS.MA
+SC027,Risk Review,Governance,Trigger formal risk review when operational evidence increases,ISO 27005
+SC028,Asset Criticality Review,Governance,Validate criticality classification of impacted assets,ISO 27005
+SC029,Logging Retention,Monitoring,Retain logs for investigation and audit,NIST DE.CM
+SC030,Human Approval,Governance,Require human approval before changing official risk register values,ACM/IEEE ethics
