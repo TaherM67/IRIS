@@ -1,0 +1,13 @@
+<!-- GRC receives business risk/control context, not raw telemetry or the SOC queue. -->
+<section class="stats" aria-label="GRC summary">
+  <div class="stat"><span>Registered risks</span><strong data-count="risks">—</strong></div>
+  <div class="stat"><span>Risk reviews</span><strong data-count="pending_grc">—</strong></div>
+  <div class="stat"><span>Risks updated</span><strong data-count="changed_risks">—</strong></div>
+</section>
+<!-- IRIS: reviews -->
+<section id="risk-panel" class="card">
+  <div class="section-heading"><div><h2>Risk register</h2><p>Original and current values stay side by side.</p></div><button id="export-risks" type="button" class="secondary">Download register</button></div>
+  <div class="table-wrap"><table><thead><tr><th>Risk / asset</th><th>Likelihood</th><th>Impact</th><th>Risk score</th><th>Status</th></tr></thead><tbody id="risk-rows"></tbody></table></div>
+  <p class="small-help">Risk score = likelihood × impact ÷ 25. It is a policy score, not an attack probability.</p>
+</section>
+<details class="card history-panel"><summary>Recent register changes</summary><p id="changes-empty" class="muted">No risk updates have been approved yet.</p><div id="changes-table" class="table-wrap" hidden><table><thead><tr><th>Risk</th><th>Before</th><th>After</th><th>Review note</th></tr></thead><tbody id="change-rows"></tbody></table></div></details>

@@ -1,318 +1,74 @@
-/* IRIS EXPLAIN: Styles only: layout, visibility, focus and update highlighting do not compute or persist risk decisions.
-*//* IRIS EXPLAIN: Style selector :root; CSS chooses presentation only, not the authenticated role or stored data.
-*/:root{/* IRIS EXPLAIN: Declare browser-native control/theme colors: color-scheme = dark.
-*/color-scheme:dark;/* IRIS EXPLAIN: Define a reusable theme token: --bg = #0a101b.
-*/--bg:#0a101b;/* IRIS EXPLAIN: Define a reusable theme token: --panel = #111c2b.
-*/--panel:#111c2b;/* IRIS EXPLAIN: Define a reusable theme token: --line = #26354a.
-*/--line:#26354a;/* IRIS EXPLAIN: Define a reusable theme token: --text = #edf3fb.
-*/--text:#edf3fb;/* IRIS EXPLAIN: Define a reusable theme token: --muted = #a5b4c8.
-*/--muted:#a5b4c8;/* IRIS EXPLAIN: Define a reusable theme token: --accent = #59e1c1.
-*/--accent:#59e1c1;/* IRIS EXPLAIN: Define a reusable theme token: --gold = #ffd17b.
-*/--gold:#ffd17b}
-/* IRIS EXPLAIN: Style selector *; CSS chooses presentation only, not the authenticated role or stored data.
-*/*{/* IRIS EXPLAIN: Choose whether padding and borders count inside stated dimensions: box-sizing = border-box.
-*/box-sizing:border-box}/* IRIS EXPLAIN: Style selector body; CSS chooses presentation only, not the authenticated role or stored data.
-*/body{/* IRIS EXPLAIN: Set outer spacing: margin = 0.
-*/margin:0;/* IRIS EXPLAIN: Set the background color/layers: background = radial-gradient(ellipse at 80% 0,#152d3b 0,transparent 45%),var(--bg).
-*/background:radial-gradient(ellipse at 80% 0,#152d3b 0,transparent 45%),var(--bg);/* IRIS EXPLAIN: Set foreground/text color: color = var(--text).
-*/color:var(--text);/* IRIS EXPLAIN: Set the font shorthand: font = 15px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif.
-*/font:15px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif}/* IRIS EXPLAIN: Style selector a; CSS chooses presentation only, not the authenticated role or stored data.
-*/a{/* IRIS EXPLAIN: Set foreground/text color: color = var(--accent).
-*/color:var(--accent);/* IRIS EXPLAIN: Control link underlines/decorations: text-decoration = none.
-*/text-decoration:none}/* IRIS EXPLAIN: Style selector a:hover; CSS chooses presentation only, not the authenticated role or stored data.
-*/a:hover{/* IRIS EXPLAIN: Control link underlines/decorations: text-decoration = underline.
-*/text-decoration:underline}/* IRIS EXPLAIN: Style selector .topbar; CSS chooses presentation only, not the authenticated role or stored data.
-*/.topbar{/* IRIS EXPLAIN: Choose the layout/visibility mode: display = flex.
-*/display:flex;/* IRIS EXPLAIN: Align children on the cross axis: align-items = center.
-*/align-items:center;/* IRIS EXPLAIN: Set spacing between flex/grid children: gap = 24px.
-*/gap:24px;/* IRIS EXPLAIN: Set inner spacing: padding = 20px 5%.
-*/padding:20px 5%;/* IRIS EXPLAIN: Set the lower border: border-bottom = 1px solid var(--line).
-*/border-bottom:1px solid var(--line);/* IRIS EXPLAIN: Set the background color/layers: background = #0a111ce8.
-*/background:#0a111ce8}/* IRIS EXPLAIN: Style selector .brand; CSS chooses presentation only, not the authenticated role or stored data.
-*/.brand{/* IRIS EXPLAIN: Set text size: font-size = 25px.
-*/font-size:25px;/* IRIS EXPLAIN: Set spacing between letters: letter-spacing = 4px.
-*/letter-spacing:4px;/* IRIS EXPLAIN: Set text emphasis weight: font-weight = 800.
-*/font-weight:800;/* IRIS EXPLAIN: Set foreground/text color: color = var(--text).
-*/color:var(--text)}/* IRIS EXPLAIN: Style selector .brand span; CSS chooses presentation only, not the authenticated role or stored data.
-*/.brand span{/* IRIS EXPLAIN: Choose the layout/visibility mode: display = block.
-*/display:block;/* IRIS EXPLAIN: Set text size: font-size = 10px.
-*/font-size:10px;/* IRIS EXPLAIN: Set spacing between letters: letter-spacing = 1.1px.
-*/letter-spacing:1.1px;/* IRIS EXPLAIN: Set text emphasis weight: font-weight = 500.
-*/font-weight:500;/* IRIS EXPLAIN: Set foreground/text color: color = var(--muted).
-*/color:var(--muted)}/* IRIS EXPLAIN: Style selector nav; CSS chooses presentation only, not the authenticated role or stored data.
-*/nav{/* IRIS EXPLAIN: Choose the layout/visibility mode: display = flex.
-*/display:flex;/* IRIS EXPLAIN: Set spacing between flex/grid children: gap = 22px.
-*/gap:22px;/* IRIS EXPLAIN: Set this existing CSS property: margin-left = auto.
-*/margin-left:auto}/* IRIS EXPLAIN: Style selector main; CSS chooses presentation only, not the authenticated role or stored data.
-*/main{/* IRIS EXPLAIN: Limit width: max-width = 1440px.
-*/max-width:1440px;/* IRIS EXPLAIN: Set outer spacing: margin = 0 auto.
-*/margin:0 auto;/* IRIS EXPLAIN: Set inner spacing: padding = 28px 32px.
-*/padding:28px 32px}/* IRIS EXPLAIN: Style selector .hero; CSS chooses presentation only, not the authenticated role or stored data.
-*/.hero{/* IRIS EXPLAIN: Set inner spacing: padding = 10px 0 20px.
-*/padding:10px 0 20px}/* IRIS EXPLAIN: Style selector .eyebrow; CSS chooses presentation only, not the authenticated role or stored data.
-*/.eyebrow{/* IRIS EXPLAIN: Set foreground/text color: color = var(--accent).
-*/color:var(--accent);/* IRIS EXPLAIN: Set text size: font-size = 11px.
-*/font-size:11px;/* IRIS EXPLAIN: Set text emphasis weight: font-weight = 800.
-*/font-weight:800;/* IRIS EXPLAIN: Set spacing between letters: letter-spacing = 1.8px.
-*/letter-spacing:1.8px;/* IRIS EXPLAIN: Set outer spacing: margin = 0 0 8px.
-*/margin:0 0 8px}/* IRIS EXPLAIN: Style selector h1; CSS chooses presentation only, not the authenticated role or stored data.
-*/h1{/* IRIS EXPLAIN: Set text size: font-size = clamp(28px,3vw,42px).
-*/font-size:clamp(28px,3vw,42px);/* IRIS EXPLAIN: Set outer spacing: margin = 0 0 8px.
-*/margin:0 0 8px;/* IRIS EXPLAIN: Set spacing between letters: letter-spacing = -1px.
-*/letter-spacing:-1px}/* IRIS EXPLAIN: Style selector h2; CSS chooses presentation only, not the authenticated role or stored data.
-*/h2{/* IRIS EXPLAIN: Set text size: font-size = 21px.
-*/font-size:21px;/* IRIS EXPLAIN: Set outer spacing: margin = 0 0 12px.
-*/margin:0 0 12px}/* IRIS EXPLAIN: Style selector p; CSS chooses presentation only, not the authenticated role or stored data.
-*/p{/* IRIS EXPLAIN: Set outer spacing: margin = 8px 0 14px.
-*/margin:8px 0 14px}/* IRIS EXPLAIN: Style selector .hero>p:last-child,.muted; CSS chooses presentation only, not the authenticated role or stored data.
-*/.hero>p:last-child,.muted{/* IRIS EXPLAIN: Set foreground/text color: color = var(--muted).
-*/color:var(--muted)}/* IRIS EXPLAIN: Style selector .pill; CSS chooses presentation only, not the authenticated role or stored data.
-*/.pill{/* IRIS EXPLAIN: Choose the layout/visibility mode: display = inline-block.
-*/display:inline-block;/* IRIS EXPLAIN: Set border width/style/color: border = 1px solid #3d5d63.
-*/border:1px solid #3d5d63;/* IRIS EXPLAIN: Set foreground/text color: color = var(--accent).
-*/color:var(--accent);/* IRIS EXPLAIN: Round box corners: border-radius = 30px.
-*/border-radius:30px;/* IRIS EXPLAIN: Set inner spacing: padding = 5px 10px.
-*/padding:5px 10px;/* IRIS EXPLAIN: Set text size: font-size = 10px.
-*/font-size:10px;/* IRIS EXPLAIN: Set text emphasis weight: font-weight = 800.
-*/font-weight:800;/* IRIS EXPLAIN: Set spacing between letters: letter-spacing = .7px.
-*/letter-spacing:.7px;/* IRIS EXPLAIN: Control wrapping and preserved whitespace: white-space = nowrap.
-*/white-space:nowrap}/* IRIS EXPLAIN: Style selector .notice; CSS chooses presentation only, not the authenticated role or stored data.
-*/.notice{/* IRIS EXPLAIN: Set border width/style/color: border = 1px solid #67583c.
-*/border:1px solid #67583c;/* IRIS EXPLAIN: Set the background color/layers: background = #2b261b.
-*/background:#2b261b;/* IRIS EXPLAIN: Set foreground/text color: color = #f8dca9.
-*/color:#f8dca9;/* IRIS EXPLAIN: Set inner spacing: padding = 14px 18px.
-*/padding:14px 18px;/* IRIS EXPLAIN: Round box corners: border-radius = 10px.
-*/border-radius:10px;/* IRIS EXPLAIN: Set this existing CSS property: margin-bottom = 22px.
-*/margin-bottom:22px}/* IRIS EXPLAIN: Style selector .card; CSS chooses presentation only, not the authenticated role or stored data.
-*/.card{/* IRIS EXPLAIN: Set the background color/layers: background = var(--panel).
-*/background:var(--panel);/* IRIS EXPLAIN: Set border width/style/color: border = 1px solid var(--line).
-*/border:1px solid var(--line);/* IRIS EXPLAIN: Round box corners: border-radius = 14px.
-*/border-radius:14px;/* IRIS EXPLAIN: Set inner spacing: padding = 24px.
-*/padding:24px;/* IRIS EXPLAIN: Set this existing CSS property: margin-bottom = 22px.
-*/margin-bottom:22px;/* IRIS EXPLAIN: Add a box/inset highlight or shadow: box-shadow = 0 12px 24px #00000014.
-*/box-shadow:0 12px 24px #00000014}/* IRIS EXPLAIN: Style selector .login; CSS chooses presentation only, not the authenticated role or stored data.
-*/.login{/* IRIS EXPLAIN: Limit width: max-width = 620px.
-*/max-width:620px}/* IRIS EXPLAIN: Style selector .message; CSS chooses presentation only, not the authenticated role or stored data.
-*/.message{/* IRIS EXPLAIN: Require a minimum height: min-height = 26px.
-*/min-height:26px;/* IRIS EXPLAIN: Set foreground/text color: color = var(--accent).
-*/color:var(--accent)}/* IRIS EXPLAIN: Style selector .toolbar,.section-title; CSS chooses presentation only, not the authenticated role or stored data.
-*/.toolbar,.section-title{/* IRIS EXPLAIN: Choose the layout/visibility mode: display = flex.
-*/display:flex;/* IRIS EXPLAIN: Align children on the cross axis: align-items = center.
-*/align-items:center;/* IRIS EXPLAIN: Distribute children on the main axis: justify-content = space-between.
-*/justify-content:space-between;/* IRIS EXPLAIN: Set spacing between flex/grid children: gap = 16px.
-*/gap:16px}/* IRIS EXPLAIN: Style selector .toolbar; CSS chooses presentation only, not the authenticated role or stored data.
-*/.toolbar{/* IRIS EXPLAIN: Set outer spacing: margin = 0 0 16px.
-*/margin:0 0 16px}/* IRIS EXPLAIN: Style selector .toolbar>div; CSS chooses presentation only, not the authenticated role or stored data.
-*/.toolbar>div{/* IRIS EXPLAIN: Choose the layout/visibility mode: display = flex.
-*/display:flex;/* IRIS EXPLAIN: Align children on the cross axis: align-items = center.
-*/align-items:center;/* IRIS EXPLAIN: Set spacing between flex/grid children: gap = 14px.
-*/gap:14px;/* IRIS EXPLAIN: Allow flex children to wrap: flex-wrap = wrap.
-*/flex-wrap:wrap}/* IRIS EXPLAIN: Style selector .toolbar p; CSS chooses presentation only, not the authenticated role or stored data.
-*/.toolbar p{/* IRIS EXPLAIN: Set outer spacing: margin = 0.
-*/margin:0}/* IRIS EXPLAIN: Style selector .section-title; CSS chooses presentation only, not the authenticated role or stored data.
-*/.section-title{/* IRIS EXPLAIN: Set this existing CSS property: margin-bottom = 12px.
-*/margin-bottom:12px}/* IRIS EXPLAIN: Style selector .section-title h2; CSS chooses presentation only, not the authenticated role or stored data.
-*/.section-title h2{/* IRIS EXPLAIN: Set outer spacing: margin = 0.
-*/margin:0}/* IRIS EXPLAIN: Style selector .stats; CSS chooses presentation only, not the authenticated role or stored data.
-*/.stats{/* IRIS EXPLAIN: Choose the layout/visibility mode: display = grid.
-*/display:grid;/* IRIS EXPLAIN: Define responsive grid columns: grid-template-columns = repeat(5,1fr).
-*/grid-template-columns:repeat(5,1fr);/* IRIS EXPLAIN: Set spacing between flex/grid children: gap = 14px.
-*/gap:14px;/* IRIS EXPLAIN: Set outer spacing: margin = 20px 0 24px.
-*/margin:20px 0 24px}/* IRIS EXPLAIN: Style selector .stat; CSS chooses presentation only, not the authenticated role or stored data.
-*/.stat{/* IRIS EXPLAIN: Set the background color/layers: background = #142133.
-*/background:#142133;/* IRIS EXPLAIN: Set border width/style/color: border = 1px solid var(--line).
-*/border:1px solid var(--line);/* IRIS EXPLAIN: Round box corners: border-radius = 12px.
-*/border-radius:12px;/* IRIS EXPLAIN: Set inner spacing: padding = 18px.
-*/padding:18px}/* IRIS EXPLAIN: Style selector .stat span; CSS chooses presentation only, not the authenticated role or stored data.
-*/.stat span{/* IRIS EXPLAIN: Set text size: font-size = 12px.
-*/font-size:12px;/* IRIS EXPLAIN: Set foreground/text color: color = var(--muted).
-*/color:var(--muted)}/* IRIS EXPLAIN: Style selector .stat strong; CSS chooses presentation only, not the authenticated role or stored data.
-*/.stat strong{/* IRIS EXPLAIN: Choose the layout/visibility mode: display = block.
-*/display:block;/* IRIS EXPLAIN: Set text size: font-size = 34px.
-*/font-size:34px;/* IRIS EXPLAIN: Set this existing CSS property: margin-top = 8px.
-*/margin-top:8px}/* IRIS EXPLAIN: Style selector .stat.accent; CSS chooses presentation only, not the authenticated role or stored data.
-*/.stat.accent{/* IRIS EXPLAIN: Set border color: border-color = #365e60.
-*/border-color:#365e60;/* IRIS EXPLAIN: Set the background color/layers: background = #132e32.
-*/background:#132e32}/* IRIS EXPLAIN: Style selector .stat.accent strong; CSS chooses presentation only, not the authenticated role or stored data.
-*/.stat.accent strong{/* IRIS EXPLAIN: Set foreground/text color: color = var(--accent).
-*/color:var(--accent)}/* IRIS EXPLAIN: Style selector label; CSS chooses presentation only, not the authenticated role or stored data.
-*/label{/* IRIS EXPLAIN: Choose the layout/visibility mode: display = block.
-*/display:block;/* IRIS EXPLAIN: Set foreground/text color: color = var(--muted).
-*/color:var(--muted);/* IRIS EXPLAIN: Set text size: font-size = 13px.
-*/font-size:13px;/* IRIS EXPLAIN: Set outer spacing: margin = 12px 0.
-*/margin:12px 0}/* IRIS EXPLAIN: Style selector input,select,textarea; CSS chooses presentation only, not the authenticated role or stored data.
-*/input,select,textarea{/* IRIS EXPLAIN: Set the font shorthand: font = inherit.
-*/font:inherit;/* IRIS EXPLAIN: Set foreground/text color: color = var(--text).
-*/color:var(--text);/* IRIS EXPLAIN: Set the background color/layers: background = #0c1522.
-*/background:#0c1522;/* IRIS EXPLAIN: Set border width/style/color: border = 1px solid #354761.
-*/border:1px solid #354761;/* IRIS EXPLAIN: Round box corners: border-radius = 7px.
-*/border-radius:7px;/* IRIS EXPLAIN: Set inner spacing: padding = 11px.
-*/padding:11px;/* IRIS EXPLAIN: Set width: width = 100%.
-*/width:100%;/* IRIS EXPLAIN: Set this existing CSS property: margin-top = 6px.
-*/margin-top:6px}/* IRIS EXPLAIN: Style selector textarea; CSS chooses presentation only, not the authenticated role or stored data.
-*/textarea{/* IRIS EXPLAIN: Require a minimum height: min-height = 80px.
-*/min-height:80px;/* IRIS EXPLAIN: Control whether the textarea can be resized: resize = vertical.
-*/resize:vertical}/* IRIS EXPLAIN: Style selector .inline; CSS chooses presentation only, not the authenticated role or stored data.
-*/.inline{/* IRIS EXPLAIN: Choose the layout/visibility mode: display = inline-flex.
-*/display:inline-flex;/* IRIS EXPLAIN: Align children on the cross axis: align-items = center.
-*/align-items:center;/* IRIS EXPLAIN: Set spacing between flex/grid children: gap = 7px.
-*/gap:7px;/* IRIS EXPLAIN: Set outer spacing: margin = 0.
-*/margin:0;/* IRIS EXPLAIN: Control wrapping and preserved whitespace: white-space = nowrap.
-*/white-space:nowrap}/* IRIS EXPLAIN: Style selector .inline input; CSS chooses presentation only, not the authenticated role or stored data.
-*/.inline input{/* IRIS EXPLAIN: Set width: width = auto.
-*/width:auto;/* IRIS EXPLAIN: Set outer spacing: margin = 0.
-*/margin:0;/* IRIS EXPLAIN: Choose native checkbox/control accent color: accent-color = var(--accent).
-*/accent-color:var(--accent)}/* IRIS EXPLAIN: Style selector button; CSS chooses presentation only, not the authenticated role or stored data.
-*/button{/* IRIS EXPLAIN: Set the font shorthand: font = 700 13px system-ui,sans-serif.
-*/font:700 13px system-ui,sans-serif;/* IRIS EXPLAIN: Set the background color/layers: background = var(--accent).
-*/background:var(--accent);/* IRIS EXPLAIN: Set foreground/text color: color = #09221e.
-*/color:#09221e;/* IRIS EXPLAIN: Set border width/style/color: border = 1px solid transparent.
-*/border:1px solid transparent;/* IRIS EXPLAIN: Round box corners: border-radius = 7px.
-*/border-radius:7px;/* IRIS EXPLAIN: Set inner spacing: padding = 12px 16px.
-*/padding:12px 16px;/* IRIS EXPLAIN: Show the pointer/wait/text interaction affordance: cursor = pointer.
-*/cursor:pointer;/* IRIS EXPLAIN: Require a minimum height: min-height = 42px.
-*/min-height:42px}/* IRIS EXPLAIN: Style selector button:hover; CSS chooses presentation only, not the authenticated role or stored data.
-*/button:hover{/* IRIS EXPLAIN: Apply a visual filter without changing data: filter = brightness(1.08).
-*/filter:brightness(1.08)}/* IRIS EXPLAIN: Style selector button:disabled; CSS chooses presentation only, not the authenticated role or stored data.
-*/button:disabled{/* IRIS EXPLAIN: Set visual opacity: opacity = .45.
-*/opacity:.45;/* IRIS EXPLAIN: Show the pointer/wait/text interaction affordance: cursor = wait.
-*/cursor:wait}/* IRIS EXPLAIN: Style selector .secondary; CSS chooses presentation only, not the authenticated role or stored data.
-*/.secondary{/* IRIS EXPLAIN: Set the background color/layers: background = #1a293b.
-*/background:#1a293b;/* IRIS EXPLAIN: Set foreground/text color: color = var(--text).
-*/color:var(--text);/* IRIS EXPLAIN: Set border color: border-color = #3d5069.
-*/border-color:#3d5069}/* IRIS EXPLAIN: Style selector .danger; CSS chooses presentation only, not the authenticated role or stored data.
-*/.danger{/* IRIS EXPLAIN: Set the background color/layers: background = #462832.
-*/background:#462832;/* IRIS EXPLAIN: Set border color: border-color = #9e5b6b.
-*/border-color:#9e5b6b;/* IRIS EXPLAIN: Set foreground/text color: color = #ffced7.
-*/color:#ffced7}/* IRIS EXPLAIN: Style selector button:focus-visible,a:focus-visible,summary:focus-visible; CSS chooses presentation only, not the authenticated role or stored data.
-*/button:focus-visible,a:focus-visible,summary:focus-visible{/* IRIS EXPLAIN: Draw a keyboard-focus indicator: outline = 3px solid #76d8ff.
-*/outline:3px solid #76d8ff;/* IRIS EXPLAIN: Separate the focus outline from its element: outline-offset = 3px.
-*/outline-offset:3px}/* IRIS EXPLAIN: Style selector .button-row; CSS chooses presentation only, not the authenticated role or stored data.
-*/.button-row{/* IRIS EXPLAIN: Choose the layout/visibility mode: display = flex.
-*/display:flex;/* IRIS EXPLAIN: Set spacing between flex/grid children: gap = 12px.
-*/gap:12px;/* IRIS EXPLAIN: Allow flex children to wrap: flex-wrap = wrap.
-*/flex-wrap:wrap}/* IRIS EXPLAIN: Style selector #login-form button; CSS chooses presentation only, not the authenticated role or stored data.
-*/#login-form button{/* IRIS EXPLAIN: Set this existing CSS property: margin-top = 6px.
-*/margin-top:6px}/* IRIS EXPLAIN: Style selector details; CSS chooses presentation only, not the authenticated role or stored data.
-*/details{/* IRIS EXPLAIN: Set this existing CSS property: margin-top = 14px.
-*/margin-top:14px}/* IRIS EXPLAIN: Style selector summary; CSS chooses presentation only, not the authenticated role or stored data.
-*/summary{/* IRIS EXPLAIN: Show the pointer/wait/text interaction affordance: cursor = pointer.
-*/cursor:pointer;/* IRIS EXPLAIN: Set foreground/text color: color = var(--accent).
-*/color:var(--accent);/* IRIS EXPLAIN: Set text emphasis weight: font-weight = 600.
-*/font-weight:600;/* IRIS EXPLAIN: Set inner spacing: padding = 5px 0.
-*/padding:5px 0}/* IRIS EXPLAIN: Style selector pre; CSS chooses presentation only, not the authenticated role or stored data.
-*/pre{/* IRIS EXPLAIN: Set the background color/layers: background = #0b1421.
-*/background:#0b1421;/* IRIS EXPLAIN: Set foreground/text color: color = #c9d9ed.
-*/color:#c9d9ed;/* IRIS EXPLAIN: Control wrapping and preserved whitespace: white-space = pre-wrap.
-*/white-space:pre-wrap;/* IRIS EXPLAIN: Allow long evidence text to break safely: overflow-wrap = anywhere.
-*/overflow-wrap:anywhere;/* IRIS EXPLAIN: Set the font shorthand: font = 12px/1.6 ui-monospace,monospace.
-*/font:12px/1.6 ui-monospace,monospace;/* IRIS EXPLAIN: Set inner spacing: padding = 18px.
-*/padding:18px;/* IRIS EXPLAIN: Round box corners: border-radius = 8px.
-*/border-radius:8px;/* IRIS EXPLAIN: Limit height: max-height = 500px.
-*/max-height:500px;/* IRIS EXPLAIN: Control clipping/scrolling: overflow = auto.
-*/overflow:auto}/* IRIS EXPLAIN: Style selector code; CSS chooses presentation only, not the authenticated role or stored data.
-*/code{/* IRIS EXPLAIN: Set the background color/layers: background = #243247.
-*/background:#243247;/* IRIS EXPLAIN: Set inner spacing: padding = 2px 5px.
-*/padding:2px 5px;/* IRIS EXPLAIN: Round box corners: border-radius = 4px.
-*/border-radius:4px}/* IRIS EXPLAIN: Style selector .proposal-summary; CSS chooses presentation only, not the authenticated role or stored data.
-*/.proposal-summary{/* IRIS EXPLAIN: Set the background color/layers: background = #0d1928.
-*/background:#0d1928;/* IRIS EXPLAIN: Set the left-side accent border: border-left = 3px solid var(--accent).
-*/border-left:3px solid var(--accent);/* IRIS EXPLAIN: Set inner spacing: padding = 16px 20px.
-*/padding:16px 20px;/* IRIS EXPLAIN: Set outer spacing: margin = 16px 0.
-*/margin:16px 0;/* IRIS EXPLAIN: Round box corners: border-radius = 6px.
-*/border-radius:6px}/* IRIS EXPLAIN: Style selector .proposal-summary h3; CSS chooses presentation only, not the authenticated role or stored data.
-*/.proposal-summary h3{/* IRIS EXPLAIN: Set outer spacing: margin = 0 0 6px.
-*/margin:0 0 6px}/* IRIS EXPLAIN: Style selector .proposal-summary .big-change; CSS chooses presentation only, not the authenticated role or stored data.
-*/.proposal-summary .big-change{/* IRIS EXPLAIN: Set foreground/text color: color = var(--accent).
-*/color:var(--accent);/* IRIS EXPLAIN: Set text size: font-size = 23px.
-*/font-size:23px;/* IRIS EXPLAIN: Set text emphasis weight: font-weight = 700.
-*/font-weight:700;/* IRIS EXPLAIN: Set outer spacing: margin = 10px 0.
-*/margin:10px 0}/* IRIS EXPLAIN: Style selector .table-wrap; CSS chooses presentation only, not the authenticated role or stored data.
-*/.table-wrap{/* IRIS EXPLAIN: Control clipping/scrolling: overflow = auto.
-*/overflow:auto}/* IRIS EXPLAIN: Style selector table; CSS chooses presentation only, not the authenticated role or stored data.
-*/table{/* IRIS EXPLAIN: Join adjacent table-cell borders: border-collapse = collapse.
-*/border-collapse:collapse;/* IRIS EXPLAIN: Set width: width = 100%.
-*/width:100%;/* IRIS EXPLAIN: Set text size: font-size = 12px.
-*/font-size:12px;/* IRIS EXPLAIN: Align inline text: text-align = left.
-*/text-align:left}/* IRIS EXPLAIN: Style selector th; CSS chooses presentation only, not the authenticated role or stored data.
-*/th{/* IRIS EXPLAIN: Set foreground/text color: color = var(--muted).
-*/color:var(--muted);/* IRIS EXPLAIN: Set text size: font-size = 10px.
-*/font-size:10px;/* IRIS EXPLAIN: Set spacing between letters: letter-spacing = .4px.
-*/letter-spacing:.4px;/* IRIS EXPLAIN: Control visual text capitalization: text-transform = uppercase.
-*/text-transform:uppercase;/* IRIS EXPLAIN: Set the lower border: border-bottom = 2px solid var(--line).
-*/border-bottom:2px solid var(--line);/* IRIS EXPLAIN: Set inner spacing: padding = 12px 10px.
-*/padding:12px 10px;/* IRIS EXPLAIN: Control wrapping and preserved whitespace: white-space = nowrap.
-*/white-space:nowrap}/* IRIS EXPLAIN: Style selector td; CSS chooses presentation only, not the authenticated role or stored data.
-*/td{/* IRIS EXPLAIN: Set the lower border: border-bottom = 1px solid var(--line).
-*/border-bottom:1px solid var(--line);/* IRIS EXPLAIN: Set inner spacing: padding = 13px 10px.
-*/padding:13px 10px;/* IRIS EXPLAIN: Align table-cell contents: vertical-align = top.
-*/vertical-align:top}/* IRIS EXPLAIN: Style selector td .secondary-line; CSS chooses presentation only, not the authenticated role or stored data.
-*/td .secondary-line{/* IRIS EXPLAIN: Choose the layout/visibility mode: display = block.
-*/display:block;/* IRIS EXPLAIN: Set foreground/text color: color = var(--muted).
-*/color:var(--muted);/* IRIS EXPLAIN: Set text size: font-size = 11px.
-*/font-size:11px;/* IRIS EXPLAIN: Set this existing CSS property: margin-top = 4px.
-*/margin-top:4px}/* IRIS EXPLAIN: Style selector tr.changed; CSS chooses presentation only, not the authenticated role or stored data.
-*/tr.changed{/* IRIS EXPLAIN: Set the background color/layers: background = #17342f.
-*/background:#17342f}/* IRIS EXPLAIN: Style selector tr.changed td:first-child; CSS chooses presentation only, not the authenticated role or stored data.
-*/tr.changed td:first-child{/* IRIS EXPLAIN: Add a box/inset highlight or shadow: box-shadow = inset 3px 0 var(--accent).
-*/box-shadow:inset 3px 0 var(--accent)}/* IRIS EXPLAIN: Style selector .priority; CSS chooses presentation only, not the authenticated role or stored data.
-*/.priority{/* IRIS EXPLAIN: Choose the layout/visibility mode: display = inline-block.
-*/display:inline-block;/* IRIS EXPLAIN: Set text size: font-size = 10px.
-*/font-size:10px;/* IRIS EXPLAIN: Set text emphasis weight: font-weight = 800.
-*/font-weight:800;/* IRIS EXPLAIN: Set inner spacing: padding = 3px 8px.
-*/padding:3px 8px;/* IRIS EXPLAIN: Round box corners: border-radius = 5px.
-*/border-radius:5px;/* IRIS EXPLAIN: Set the background color/layers: background = #253349.
-*/background:#253349}/* IRIS EXPLAIN: Style selector .priority-critical; CSS chooses presentation only, not the authenticated role or stored data.
-*/.priority-critical{/* IRIS EXPLAIN: Set foreground/text color: color = #ffadbd.
-*/color:#ffadbd;/* IRIS EXPLAIN: Set the background color/layers: background = #482530.
-*/background:#482530}/* IRIS EXPLAIN: Style selector .priority-high; CSS chooses presentation only, not the authenticated role or stored data.
-*/.priority-high{/* IRIS EXPLAIN: Set foreground/text color: color = #ffc592.
-*/color:#ffc592;/* IRIS EXPLAIN: Set the background color/layers: background = #46311f.
-*/background:#46311f}/* IRIS EXPLAIN: Style selector .priority-medium; CSS chooses presentation only, not the authenticated role or stored data.
-*/.priority-medium{/* IRIS EXPLAIN: Set foreground/text color: color = #f2e6a6.
-*/color:#f2e6a6;/* IRIS EXPLAIN: Set the background color/layers: background = #403b26.
-*/background:#403b26}/* IRIS EXPLAIN: Style selector .priority-low; CSS chooses presentation only, not the authenticated role or stored data.
-*/.priority-low{/* IRIS EXPLAIN: Set foreground/text color: color = #a8d6ee.
-*/color:#a8d6ee;/* IRIS EXPLAIN: Set the background color/layers: background = #1d3443.
-*/background:#1d3443}/* IRIS EXPLAIN: Style selector .pager; CSS chooses presentation only, not the authenticated role or stored data.
-*/.pager{/* IRIS EXPLAIN: Choose the layout/visibility mode: display = flex.
-*/display:flex;/* IRIS EXPLAIN: Distribute children on the main axis: justify-content = flex-end.
-*/justify-content:flex-end;/* IRIS EXPLAIN: Set spacing between flex/grid children: gap = 10px.
-*/gap:10px;/* IRIS EXPLAIN: Set this existing CSS property: margin-top = 14px.
-*/margin-top:14px}/* IRIS EXPLAIN: Style selector footer; CSS chooses presentation only, not the authenticated role or stored data.
-*/footer{/* IRIS EXPLAIN: Set inner spacing: padding = 18px 32px 32px.
-*/padding:18px 32px 32px;/* IRIS EXPLAIN: Align inline text: text-align = center.
-*/text-align:center;/* IRIS EXPLAIN: Set foreground/text color: color = var(--muted).
-*/color:var(--muted);/* IRIS EXPLAIN: Set text size: font-size = 11px.
-*/font-size:11px}/* IRIS EXPLAIN: Style selector [hidden]; CSS chooses presentation only, not the authenticated role or stored data.
-*/[hidden]{/* IRIS EXPLAIN: Choose the layout/visibility mode: display = none!important.
-*/display:none!important}
-/* IRIS EXPLAIN: Responsive/accessibility condition @media(max-width:900px); apply its existing nested styling only when matched.
-*/@media(max-width:900px){/* IRIS EXPLAIN: Style selector .topbar; CSS chooses presentation only, not the authenticated role or stored data.
-*/.topbar{/* IRIS EXPLAIN: Allow flex children to wrap: flex-wrap = wrap.
-*/flex-wrap:wrap;/* IRIS EXPLAIN: Set spacing between flex/grid children: gap = 14px.
-*/gap:14px}/* IRIS EXPLAIN: Style selector .topbar>.pill; CSS chooses presentation only, not the authenticated role or stored data.
-*/.topbar>.pill{/* IRIS EXPLAIN: Choose the layout/visibility mode: display = none.
-*/display:none}/* IRIS EXPLAIN: Style selector main; CSS chooses presentation only, not the authenticated role or stored data.
-*/main{/* IRIS EXPLAIN: Set inner spacing: padding = 20px 16px.
-*/padding:20px 16px}/* IRIS EXPLAIN: Style selector .stats; CSS chooses presentation only, not the authenticated role or stored data.
-*/.stats{/* IRIS EXPLAIN: Define responsive grid columns: grid-template-columns = repeat(2,1fr).
-*/grid-template-columns:repeat(2,1fr)}/* IRIS EXPLAIN: Style selector .stats>.stat:last-child; CSS chooses presentation only, not the authenticated role or stored data.
-*/.stats>.stat:last-child{/* IRIS EXPLAIN: Choose the columns spanned by a grid item: grid-column = span 2.
-*/grid-column:span 2}/* IRIS EXPLAIN: Style selector .toolbar,.section-title; CSS chooses presentation only, not the authenticated role or stored data.
-*/.toolbar,.section-title{/* IRIS EXPLAIN: Align children on the cross axis: align-items = flex-start.
-*/align-items:flex-start;/* IRIS EXPLAIN: Choose the flex stacking direction: flex-direction = column.
-*/flex-direction:column}/* IRIS EXPLAIN: Style selector .card; CSS chooses presentation only, not the authenticated role or stored data.
-*/.card{/* IRIS EXPLAIN: Set inner spacing: padding = 18px.
-*/padding:18px}/* IRIS EXPLAIN: Style selector .stat strong; CSS chooses presentation only, not the authenticated role or stored data.
-*/.stat strong{/* IRIS EXPLAIN: Set text size: font-size = 28px.
-*/font-size:28px}}
-/* IRIS EXPLAIN: Responsive/accessibility condition @media(prefers-reduced-motion:no-preference); apply its existing nested styling only when matched.
-*/@media(prefers-reduced-motion:no-preference){/* IRIS EXPLAIN: Style selector tr.changed; CSS chooses presentation only, not the authenticated role or stored data.
-*/tr.changed{/* IRIS EXPLAIN: Apply the visual update animation: animation = arrive .5s ease-out.
-*/animation:arrive .5s ease-out}/* IRIS EXPLAIN: Define the existing visual-only animation @keyframes arrive; it does not apply backend changes.
-*/@keyframes arrive{/* IRIS EXPLAIN: Style selector from; CSS chooses presentation only, not the authenticated role or stored data.
-*/from{/* IRIS EXPLAIN: Set the background color/layers: background = #286254.
-*/background:#286254}/* IRIS EXPLAIN: Style selector to; CSS chooses presentation only, not the authenticated role or stored data.
-*/to{/* IRIS EXPLAIN: Set the background color/layers: background = #17342f.
-*/background:#17342f}}}
+/* Shared presentation only: backend roles and saved revisions control data. */
+:root { color-scheme: light; --bg: #f3f5f9; --panel: #fff; --ink: #182537; --muted: #64748b; --line: #e1e7ef; --brand: #156b64; --soft: #edf7f3; }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 15px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; }
+a { color: var(--brand); text-decoration: none; } a:hover { text-decoration: underline; }
+.topbar { min-height: 82px; display: flex; align-items: center; gap: 28px; padding: 15px max(24px, calc((100% - 1240px)/2)); background: var(--panel); border-bottom: 1px solid var(--line); }
+.brand { color: var(--ink); font-size: 25px; font-weight: 800; letter-spacing: 3px; }
+.brand span { display: block; font-size: 10px; font-weight: 500; letter-spacing: .2px; color: var(--muted); }
+.workspace-name { font-weight: 600; color: var(--muted); padding-left: 24px; border-left: 1px solid var(--line); }
+.demo-badge { margin-left: auto; color: #8a5a0b; background: #fff6de; border-radius: 20px; padding: 5px 11px; font-size: 11px; font-weight: 650; }
+main { max-width: 1240px; margin: auto; padding: 32px 24px 12px; }
+.page-heading { margin-bottom: 24px; }
+h1 { font-size: clamp(27px, 3vw, 35px); line-height: 1.2; letter-spacing: -.7px; margin: 0 0 8px; }
+h2 { font-size: 19px; margin: 0 0 5px; } h3 { font-size: 18px; margin: 16px 0 5px; } p { margin: 6px 0 14px; }
+.page-heading p, .section-heading p, .muted, .small-help { color: var(--muted); }
+.card { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 24px; margin-bottom: 20px; }
+.login-panel { max-width: 540px; }
+.login-row, .button-row, .tool-actions, .workspace-tools, .table-tools, .section-heading { display: flex; align-items: center; gap: 12px; }
+.login-row input { flex: 1; min-width: 0; }
+.workspace-tools, .section-heading, .table-tools { justify-content: space-between; }
+.workspace-tools { margin: 6px 0 20px; flex-wrap: wrap; }
+.workspace-tools>div:first-child { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+.connected { font-size: 12px; font-weight: 650; color: var(--brand); } #exercise { font-size: 12px; }
+.stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 20px; }
+.stat { border: 1px solid var(--line); border-radius: 10px; background: var(--panel); padding: 20px; }
+.stat span { color: var(--muted); font-size: 12px; }
+.stat strong { display: block; margin-top: 8px; font-size: 30px; line-height: 1.2; font-weight: 700; }
+.admin-stats { grid-template-columns: repeat(6, 1fr); }
+.admin-links { display: flex; gap: 18px; flex-wrap: wrap; margin-bottom: 20px; font-size: 12px; }
+.section-heading { margin-bottom: 16px; align-items: flex-start; }
+.section-heading p { margin-bottom: 0; font-size: 13px; }
+label { display: block; font-size: 13px; font-weight: 550; margin: 12px 0 6px; }
+input, select, textarea { color: var(--ink); background: #fff; border: 1px solid #cbd5e1; border-radius: 7px; padding: 10px 12px; width: 100%; font: inherit; }
+select { font-size: 14px; } textarea { resize: vertical; min-height: 78px; margin-bottom: 10px; }
+button { min-height: 41px; padding: 10px 15px; border: 1px solid var(--brand); background: var(--brand); color: #fff; border-radius: 7px; cursor: pointer; font: 600 13px system-ui, sans-serif; white-space: nowrap; }
+button:hover { filter: brightness(.94); } button:disabled { opacity: .45; cursor: default; }
+.secondary { color: var(--ink); border-color: #cbd5e1; background: #fff; } .quiet { color: var(--muted); border-color: transparent; background: transparent; }
+button:focus-visible, a:focus-visible, summary:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 3px solid #93c5fd; outline-offset: 2px; }
+.check { display: inline-flex; gap: 7px; align-items: center; font-weight: 400; font-size: 12px; margin: 0; white-space: nowrap; }
+.check input { width: auto; margin: 0; accent-color: var(--brand); }
+.count-badge { background: #eef2f7; color: #475569; padding: 4px 10px; border-radius: 20px; font-size: 12px; white-space: nowrap; }
+.message { color: var(--brand); min-height: 22px; font-size: 13px; margin: 4px 0 14px; } .message.error { color: #b42318; }
+.comparison { display: grid; grid-template-columns: 1fr auto 1fr; gap: 14px; align-items: center; margin: 16px 0; }
+.comparison>div { border: 1px solid var(--line); background: #f8fafc; border-radius: 8px; padding: 16px; }
+.comparison>div.recommended { background: var(--soft); border-color: #b9dbca; }
+.comparison span:not(.comparison-arrow), .comparison small { display: block; color: var(--muted); font-size: 12px; }
+.comparison strong { display: block; font-size: 25px; line-height: 1.3; margin: 6px 0; } .comparison-arrow { color: var(--muted); font-size: 23px; }
+details { margin-top: 12px; } summary { cursor: pointer; color: var(--brand); font-weight: 550; }
+.small-help { font-size: 12px; } .small-help p { margin-top: 10px; } .history-panel>summary { color: var(--ink); font-size: 15px; }
+.empty-state { padding: 20px 0 4px; color: var(--muted); font-size: 13px; }
+.fact-list { display: grid; grid-template-columns: max-content 1fr; gap: 7px 18px; font-size: 13px; }
+.fact-list dt { color: var(--muted); } .fact-list dd { margin: 0; }
+.technical-note { background: #f8fafc; padding: 12px; border-radius: 7px; margin-top: 12px; }
+.table-wrap { width: 100%; overflow: auto; } table { border-collapse: collapse; width: 100%; text-align: left; font-size: 13px; }
+th { color: var(--muted); font-size: 11px; font-weight: 600; padding: 12px 10px; border-bottom: 1px solid var(--line); white-space: nowrap; }
+td { padding: 13px 10px; border-bottom: 1px solid var(--line); vertical-align: top; } tbody tr:last-child td { border-bottom: 0; }
+.secondary-line { display: block; color: var(--muted); font-size: 11px; margin-top: 3px; }
+.changed { background: #f0f9f3; } .status-updated { color: #166534; font-weight: 600; font-size: 12px; }
+.priority { display: inline-block; padding: 3px 8px; border-radius: 5px; font-size: 11px; font-weight: 650; }
+.priority-critical { color: #9f1239; background: #fff0f3; } .priority-high { color: #9a3412; background: #fff3e8; }
+.priority-medium { color: #854d0e; background: #fff9da; } .priority-low { color: #1e40af; background: #edf4ff; }
+.table-tools { margin-bottom: 10px; font-size: 12px; } .pager { display: flex; gap: 10px; justify-content: flex-end; margin-top: 14px; }
+.inline-form { display: flex; gap: 10px; align-items: center; margin-top: 12px; } .inline-form input { max-width: 360px; } .inline-form label { margin: 0; }
+pre { background: #f6f8fb; padding: 16px; border-radius: 7px; color: #334155; white-space: pre-wrap; overflow-wrap: anywhere; max-height: 440px; overflow: auto; font: 12px/1.6 ui-monospace, monospace; }
+code { background: #eef2f7; padding: 2px 4px; border-radius: 4px; } footer { text-align: center; color: var(--muted); font-size: 11px; padding: 20px 24px 30px; }
+[hidden] { display: none !important; }
+/* Stack controls on small screens without hiding authorized data. */
+@media (max-width: 900px) { .admin-stats { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 600px) {
+  main { padding: 24px 14px 8px; } .topbar { padding: 14px 18px; gap: 12px; } .workspace-name { display: none; }
+  .card { padding: 18px; } .stats { gap: 9px; } .stat { padding: 14px; } .stat strong { font-size: 25px; }
+  .section-heading, .workspace-tools { flex-wrap: wrap; } .tool-actions { flex-wrap: wrap; } .inline-form { flex-wrap: wrap; }
+  .comparison { gap: 8px; } .comparison>div { padding: 12px; } .comparison strong { font-size: 22px; }
+}

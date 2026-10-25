@@ -8,6 +8,8 @@ from __future__ import annotations
 import http.client
 # IRIS EXPLAIN: Import json to encode and decode structured finite JSON payloads.
 import json
+# Standard-library markup inspection keeps GUI checks independent of browser packages.
+from html.parser import HTMLParser
 # IRIS EXPLAIN: Import shutil to copy immutable inputs or clean test-owned temporary directories.
 import shutil
 # IRIS EXPLAIN: Import tempfile to create fresh isolated run/upload/test directories.
@@ -39,6 +41,24 @@ from demo_app.server import DemoServer
 # IRIS EXPLAIN: Store the comprehension {role: ('SYNTHETIC-UNIT-TEST-FIXTURE-' + role).ljust(48, '0') for role in ('admin',
 # IRIS EXPLAIN: 'soc', 'grc')} in KEYS; later lines use this named result.
 KEYS = {role: ('SYNTHETIC-UNIT-TEST-FIXTURE-' + role).ljust(48, '0') for role in ('admin', 'soc', 'grc')}
+
+
+class PageStructure(HTMLParser):
+    """Inspect real served markup without a browser dependency."""
+    def __init__(self, markup):
+        super().__init__()
+        self.ids, self.counts, self.links = [], set(), set()
+        self.feed(markup)
+
+    def handle_starttag(self, tag, attrs):
+        # Comments are ignored; only actual element attributes count.
+        attributes = dict(attrs)
+        if 'id' in attributes:
+            self.ids.append(attributes['id'])
+        if 'data-count' in attributes:
+            self.counts.add(attributes['data-count'])
+        if tag == 'a':
+            self.links.add(attributes.get('href'))
 
 
 # IRIS EXPLAIN: Class Fixture: Groups regression checks and their isolated synthetic fixtures; unittest invokes test_ methods
@@ -205,16 +225,18 @@ class ActiveCoreTests(Fixture):
         # IRIS EXPLAIN: the stated condition is true.
         self.assertTrue(all(row['current_priority'] == 'Critical' for row in queue[:19]))
 
-    # IRIS EXPLAIN: Function ActiveCoreTests.test_both_teams_see_same_saved_change_counts: Regression test: verify that both
-    # IRIS EXPLAIN: teams see same saved change counts; the assertions below define the exact expected behavior.
-    def test_both_teams_see_same_saved_change_counts(self):
+    # Each team sees its own consistent counters; only Admin sees both domains.
+    def test_teams_see_only_their_own_consistent_change_counts(self):
         # IRIS EXPLAIN: Call self.approve('soc') using the existing explicit arguments.
         self.approve('soc')
         # IRIS EXPLAIN: Call self.approve('grc') using the existing explicit arguments.
         self.approve('grc')
-        # IRIS EXPLAIN: Call self.assertEqual(self.engine.status('soc')['counts'], self.engine.status('grc')['counts']): assert
-        # IRIS EXPLAIN: that the actual and expected values are equal.
-        self.assertEqual(self.engine.status('soc')['counts'], self.engine.status('grc')['counts'])
+        soc = self.engine.status('soc')['counts']
+        grc = self.engine.status('grc')['counts']
+        self.assertEqual(soc['reprioritized_alerts'], 19)
+        self.assertEqual(grc['changed_risks'], 1)
+        self.assertEqual(set(soc), {'alerts', 'reprioritized_alerts', 'pending_soc'})
+        self.assertEqual(set(grc), {'risks', 'changed_risks', 'pending_grc'})
         # IRIS EXPLAIN: Store self.engine.status('admin')['counts'] in counts; later lines use this named result.
         counts = self.engine.status('admin')['counts']
         # IRIS EXPLAIN: Call self.assertEqual((counts['changed_risks'], counts['reprioritized_alerts']), (1, 19)): assert that
@@ -620,6 +642,55 @@ class ActiveCoreTests(Fixture):
                 # IRIS EXPLAIN: Call function(role) using the existing explicit arguments.
                 function(role)
 
+    # Projection is enforced on server responses, not merely by hidden UI cards.
+    def test_team_status_omits_admin_diagnostics_and_other_team_counts(self):
+        for role, forbidden in (('soc', {'risks', 'changed_risks', 'pending_grc'}),
+                                ('grc', {'alerts', 'reprioritized_alerts', 'pending_soc'})):
+            state = self.engine.status(role)
+            self.assertFalse(forbidden & set(state['counts']))
+            self.assertFalse({'model', 'analysis', 'exercise_history'} & set(state))
+        self.assertTrue({'model', 'analysis', 'exercise_history'} <= set(self.engine.status('admin')))
+
+    def test_soc_proposals_exclude_grc_policy_risk_values_and_controls(self):
+        proposal = self.proposal('soc')
+        evidence = proposal['payload']['evidence']
+        self.assertIn('features', evidence)
+        self.assertIn('primary_assessment', evidence)
+        self.assertIn('priority_reason', evidence)
+        self.assertNotIn('policy', evidence)
+        self.assertNotIn('primary_controls', evidence)
+        self.assertNotIn('controls', evidence['ml_shadow'])
+        self.assertNotIn('risk_reason', evidence)
+
+    def test_grc_proposals_exclude_raw_telemetry_and_model_confidence(self):
+        evidence = self.proposal('grc')['payload']['evidence']
+        self.assertTrue({'controls', 'risk_category', 'risk_reason', 'observed_activity'} <= set(evidence))
+        self.assertFalse({'features', 'ml_shadow', 'primary_assessment', 'warnings'} & set(evidence))
+        self.assertTrue(evidence['controls'])
+        self.assertNotIn('model_score', evidence['controls'][0])
+
+    def test_admin_retains_full_proposal_evidence_for_both_teams(self):
+        proposals = self.engine.proposals('admin')['items']
+        self.assertEqual({item['kind'] for item in proposals}, {'soc', 'grc'})
+        for item in proposals:
+            self.assertTrue({'features', 'policy', 'ml_shadow', 'primary_controls'} <= set(item['payload']['evidence']))
+
+    def test_projection_does_not_rewrite_saved_analysis_evidence(self):
+        chosen = self.proposal('soc')
+        with self.engine.store.connection() as db:
+            before = db.execute('SELECT payload_json FROM demo_proposals WHERE proposal_id=?', (chosen['proposal_id'],)).fetchone()[0]
+        self.engine.proposals('soc')
+        self.engine.proposals('grc')
+        with self.engine.store.connection() as db:
+            after = db.execute('SELECT payload_json FROM demo_proposals WHERE proposal_id=?', (chosen['proposal_id'],)).fetchone()[0]
+        self.assertEqual(before, after)
+        self.assertIn('policy', json.loads(after)['evidence'])
+
+    def test_analysis_is_an_admin_action_for_both_team_roles(self):
+        for role in ('soc', 'grc'):
+            with self.assertRaises(PermissionError):
+                self.engine.analyze(role)
+
 
 # IRIS EXPLAIN: Class ActiveHTTPTests: Groups regression checks and their isolated synthetic fixtures; unittest invokes test_
 # IRIS EXPLAIN: methods independently.
@@ -920,6 +991,72 @@ class ActiveHTTPTests(Fixture):
 
 
 # IRIS EXPLAIN: Run the CLI/test entry point only when this file is executed directly, not when another module imports it.
+    def test_soc_html_has_only_soc_records_and_controls(self):
+        status, body, _ = self.request('/soc', None)
+        self.assertEqual(status, 200)
+        page = PageStructure(body.decode())
+        self.assertTrue({'alert-panel', 'export-alerts', 'review-panel'} <= set(page.ids))
+        self.assertFalse({'risk-panel', 'export-risks', 'admin-actions', 'model-status', 'audit', 'admin-evidence'} & set(page.ids))
+        self.assertEqual(page.counts, {'alerts', 'pending_soc', 'reprioritized_alerts'})
+        self.assertFalse({'/admin', '/grc'} & page.links)
+
+    def test_grc_html_has_only_grc_records_and_controls(self):
+        status, body, _ = self.request('/grc', None)
+        self.assertEqual(status, 200)
+        page = PageStructure(body.decode())
+        self.assertTrue({'risk-panel', 'export-risks', 'review-panel'} <= set(page.ids))
+        self.assertFalse({'alert-panel', 'export-alerts', 'admin-actions', 'model-status', 'audit', 'admin-evidence'} & set(page.ids))
+        self.assertEqual(page.counts, {'risks', 'pending_grc', 'changed_risks'})
+        self.assertFalse({'/admin', '/soc'} & page.links)
+
+    def test_admin_html_contains_both_working_systems_and_all_diagnostics(self):
+        status, body, _ = self.request('/admin', None)
+        self.assertEqual(status, 200)
+        page = PageStructure(body.decode())
+        self.assertTrue({'risk-panel', 'alert-panel', 'export-risks', 'export-alerts', 'admin-actions',
+                         'model-status', 'audit', 'integration', 'history', 'admin-evidence', 'proposal-status'} <= set(page.ids))
+        self.assertEqual(len(page.counts), 6)
+        self.assertTrue({'/soc', '/grc'} <= page.links)
+
+    def test_rendered_pages_have_unique_ids_and_resolved_template_slots(self):
+        for role in ('admin', 'soc', 'grc'):
+            _, body, _ = self.request('/' + role, None)
+            markup = body.decode()
+            page = PageStructure(markup)
+            self.assertEqual(len(page.ids), len(set(page.ids)))
+            self.assertNotIn('{{', markup)
+            self.assertNotIn('<!-- IRIS:', markup)
+            self.assertIn(f'data-role="{role}"', markup)
+
+    def test_http_team_status_does_not_deliver_admin_or_cross_team_fields(self):
+        for role in ('soc', 'grc'):
+            _, state, _ = self.request('/api/demo/state', role)
+            self.assertFalse({'model', 'analysis', 'exercise_history'} & set(state))
+            self.assertEqual(set(state['counts']), {'alerts', 'pending_soc', 'reprioritized_alerts'} if role == 'soc' else {'risks', 'pending_grc', 'changed_risks'})
+
+    def test_http_team_proposals_are_projected_by_authenticated_key(self):
+        _, soc, _ = self.request('/api/demo/proposals', 'soc')
+        self.assertTrue(all(item['kind'] == 'soc' for item in soc['items']))
+        self.assertTrue(all('policy' not in item['payload']['evidence'] and 'primary_controls' not in item['payload']['evidence'] for item in soc['items']))
+        _, grc, _ = self.request('/api/demo/proposals', 'grc')
+        self.assertTrue(all(item['kind'] == 'grc' for item in grc['items']))
+        self.assertTrue(all('features' not in item['payload']['evidence'] and 'ml_shadow' not in item['payload']['evidence'] for item in grc['items']))
+
+    def test_team_cannot_fetch_admin_analysis_response_or_rehearsal_commands(self):
+        for role in ('soc', 'grc'):
+            self.assertEqual(self.request('/api/demo/analyze', role, 'POST', {})[0], 403)
+            self.assertEqual(self.request('/api/demo/exercises', role, 'POST', {'label': 'Unauthorized demo reset'})[0], 403)
+
+    def test_query_parameters_cannot_expand_role_projection(self):
+        for role in ('soc', 'grc'):
+            self.assertEqual(self.request('/api/demo/proposals?actor=admin', role)[0], 422)
+            self.assertEqual(self.request('/api/demo/state?role=admin', role)[0], 422)
+
+    def test_raw_partial_templates_are_not_public_static_routes(self):
+        for name in ('admin', 'soc', 'grc', 'reviews', 'index'):
+            self.assertEqual(self.request('/demo-static/' + name + '.html', None)[0], 404)
+
+
 if __name__ == '__main__':
     # IRIS EXPLAIN: Call unittest.main() using the existing explicit arguments.
     unittest.main()

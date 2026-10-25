@@ -1,0 +1,14 @@
+<!-- SOC receives no risk-register panel, GRC counters or Admin links. -->
+<section class="stats" aria-label="SOC summary">
+  <div class="stat"><span>Alerts</span><strong data-count="alerts">—</strong></div>
+  <div class="stat"><span>Priority reviews</span><strong data-count="pending_soc">—</strong></div>
+  <div class="stat"><span>Alerts reprioritized</span><strong data-count="reprioritized_alerts">—</strong></div>
+</section>
+<!-- IRIS: reviews -->
+<section id="alert-panel" class="card">
+  <div class="section-heading"><div><h2>Alert queue</h2><p>Highest current priority first.</p></div><button id="export-alerts" type="button" class="secondary">Download alerts</button></div>
+  <div class="table-tools"><label class="check"><input id="changed-only" type="checkbox">Only changed alerts</label><span id="alert-page" class="muted"></span></div>
+  <div class="table-wrap"><table><thead><tr><th>Alert / asset</th><th>Original priority</th><th>Current priority</th><th>Status</th></tr></thead><tbody id="alert-rows"></tbody></table></div>
+  <div class="pager"><button id="previous" type="button" class="secondary">Previous</button><button id="next" type="button" class="secondary">Next</button></div>
+</section>
+<details class="card history-panel"><summary>Recent priority changes</summary><p id="changes-empty" class="muted">No priority changes have been approved yet.</p><div id="changes-table" class="table-wrap" hidden><table><thead><tr><th>Alert</th><th>Before</th><th>After</th><th>Review note</th></tr></thead><tbody id="change-rows"></tbody></table></div></details>

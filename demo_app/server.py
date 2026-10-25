@@ -39,6 +39,29 @@ STATIC = Path(__file__).with_name('static')
 MAX_BODY = 8192
 
 
+def dashboard_html(role):
+    """Compose a fixed, role-specific public page without exposing other panels.
+
+    Only this allowlisted role chooses a server-owned template. There is no
+    user-supplied path or HTML, and API access still requires the matching key.
+    """
+    if role not in {'admin', 'soc', 'grc'}:
+        raise ValueError('Unknown dashboard')
+    shell = (STATIC / 'index.html').read_text(encoding='utf-8')
+    content = (STATIC / f'{role}.html').read_text(encoding='utf-8')
+    reviews = (STATIC / 'reviews.html').read_text(encoding='utf-8')
+    content = content.replace('<!-- IRIS: reviews -->', reviews)
+    # Fixed labels are not interpolated from source data or credentials.
+    title = {'admin': 'Admin overview', 'soc': 'SOC workspace', 'grc': 'GRC workspace'}[role]
+    description = {'admin': 'Run IRIS and monitor both teams.',
+                   'soc': 'Review alerts and approve priority changes.',
+                   'grc': 'Review risk updates and maintain the register.'}[role]
+    for marker, value in {'{{ROLE}}': role, '{{TITLE}}': title, '{{DESCRIPTION}}': description,
+                          '<!-- IRIS: workspace -->': content}.items():
+        shell = shell.replace(marker, value)
+    return shell.encode('utf-8')
+
+
 # IRIS EXPLAIN: Class APIError: Local demo HTTP exception carrying an explicit status and safe public message.
 class APIError(Exception):
     # IRIS EXPLAIN: Function APIError.__init__: Keep the intended HTTP error status and safe client-facing detail for the local
@@ -282,10 +305,10 @@ class DemoHandler(BaseHTTPRequestHandler):
         path = parsed.path
         # IRIS EXPLAIN: Enter this branch only when method == 'GET' and path in {'/', '/admin', '/soc', '/grc'}.
         if method == 'GET' and path in {'/', '/admin', '/soc', '/grc'}:
-            # IRIS EXPLAIN: Return the result of self.send(200, (STATIC / 'index.html').read_bytes(), 'text/html;
-            # IRIS EXPLAIN: charset=utf-8') (send the already prepared response/message) to the caller; this ends the current
-            # IRIS EXPLAIN: function path.
-            return self.send(200, (STATIC / 'index.html').read_bytes(), 'text/html; charset=utf-8')
+            # Compose only this page's panels; no hidden cross-team tables or
+            # Admin controls are sent inside the SOC/GRC HTML response.
+            role = path.strip('/') or 'admin'
+            return self.send(200, dashboard_html(role), 'text/html; charset=utf-8')
         # IRIS EXPLAIN: Store a mapping containing /demo-static/app.js, /demo-static/style.css in files; later lines use this
         # IRIS EXPLAIN: named result.
         files = {'/demo-static/app.js': ('app.js', 'text/javascript; charset=utf-8'),

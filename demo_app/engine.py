@@ -475,8 +475,9 @@ class DemoEngine:
     # IRIS EXPLAIN: and queue explicit-policy proposals; analysis alone does not mutate current risk or priority values.
     # IRIS EXPLAIN: Inputs: actor: the server-authenticated role; tests use explicit synthetic fixture roles.
     def analyze(self, actor):
-        # IRIS EXPLAIN: Call require(actor, 'admin', 'soc') using the existing explicit arguments.
-        require(actor, 'admin', 'soc')
+        # Analysis is an IRIS administration action. Team workspaces only read
+        # their own results and approve their own saved proposals.
+        require(actor, 'admin')
         # IRIS EXPLAIN: Enter self.mutation(); its context manager supplies the existing cleanup/transaction/expected-exception
         # IRIS EXPLAIN: behavior.
         with self.mutation():
@@ -700,8 +701,8 @@ class DemoEngine:
             # IRIS EXPLAIN: must be nonnegative'); the caller's existing boundary determines rollback or the HTTP diagnostic.
             raise ValueError('limit must be 1..100 and offset must be nonnegative')
 
-    # IRIS EXPLAIN: Function DemoEngine.status: Read the current exercise, live changed/pending counts and loaded-model status
-    # IRIS EXPLAIN: for all three dashboards.
+    # Return only the authenticated team's counters. Full analysis, model
+    # diagnostics and exercise history are administration data, not team data.
     # IRIS EXPLAIN: Inputs: actor: the server-authenticated role; tests use explicit synthetic fixture roles.
     def status(self, actor):
         # IRIS EXPLAIN: Call require(actor, 'admin', 'soc', 'grc') using the existing explicit arguments.
@@ -741,19 +742,19 @@ class DemoEngine:
             # IRIS EXPLAIN: Store the comprehension [dict(item) for item in db.execute('SELECT exercise_id,label,created_at FROM
             # IRIS EXPLAIN: demo_exercises ORDER BY rowid DESC')] in history; later lines use this named result.
             history = [dict(item) for item in db.execute('SELECT exercise_id,label,created_at FROM demo_exercises ORDER BY rowid DESC')]
-        # IRIS EXPLAIN: Return a mapping containing role, exercise_id, label, analyzed, analysis, counts, exercise_history and
-        # IRIS EXPLAIN: additional fields to the caller; this ends the current function path.
-        return {'role': actor, 'exercise_id': eid, 'label': row['label'], 'analyzed': row['run_id'] is not None,
-                # IRIS EXPLAIN: Continue the current record with analysis, counts, exercise_history; each value comes from the
-                # IRIS EXPLAIN: expression shown on this unchanged line.
-                'analysis': json.loads(row['summary_json']), 'counts': counts, 'exercise_history': history,
-                # IRIS EXPLAIN: Set/describe these existing record fields: demo_only: explicitly marks synthetic-system
-                # IRIS EXPLAIN: operations as separate from real company systems; external_writes: whether any external system
-                # IRIS EXPLAIN: was modified; this local demo reports False.
-                'model': self.core.adapter.status(), 'demo_only': True, 'external_writes': False,
-                # IRIS EXPLAIN: Set/describe these existing record fields: security_control_execution: whether a defensive
-                # IRIS EXPLAIN: control was executed; the demo does not do this.
-                'security_control_execution': False, 'approval_writes_real_demo_records': True}
+        # Keep the shared exercise identity and safety boundary in all views.
+        result = {'role': actor, 'exercise_id': eid, 'label': row['label'],
+                  'analyzed': row['run_id'] is not None, 'demo_only': True,
+                  'external_writes': False, 'security_control_execution': False,
+                  'approval_writes_real_demo_records': True}
+        if actor == 'admin':
+            # Admin retains every original diagnostic and both teams' counters.
+            return {**result, 'counts': counts, 'analysis': json.loads(row['summary_json']),
+                    'exercise_history': history, 'model': self.core.adapter.status()}
+        # An allowlist prevents future administration counters leaking by default.
+        allowed = ('alerts', 'reprioritized_alerts', 'pending_soc') if actor == 'soc' else (
+            'risks', 'changed_risks', 'pending_grc')
+        return {**result, 'counts': {name: counts[name] for name in allowed}}
 
     # IRIS EXPLAIN: Function DemoEngine.risks: Authorize GRC/Admin reads and page current synthetic risks, placing actually
     # IRIS EXPLAIN: changed revisions first.
@@ -903,11 +904,52 @@ class DemoEngine:
             # IRIS EXPLAIN: Store the result of json.loads(item.pop('payload_json')) (decode the existing JSON text) in
             # IRIS EXPLAIN: item['payload']; later lines use this named result.
             item['payload'] = json.loads(item.pop('payload_json'))
+            # Project only the response. The full immutable evidence and saved
+            # proposal stay untouched for authorization, approval and Admin audit.
+            item['payload'] = self._team_payload(actor, item['payload'])
             # IRIS EXPLAIN: Call items.append(item): append one item to the working list.
             items.append(item)
         # IRIS EXPLAIN: Return a mapping containing exercise_id, items, total to the caller; this ends the current function
         # IRIS EXPLAIN: path.
         return {'exercise_id': eid, 'items': items, 'total': len(items)}
+
+    @staticmethod
+    def _team_payload(actor, payload):
+        """Keep SOC detection evidence and GRC business/control context separate.
+
+        actor comes from the authenticated key, never a browser role parameter.
+        This is a response-only allowlist: review() still loads the complete
+        saved proposal from SQLite and cannot accept replacement update values.
+        """
+        if actor == 'admin':
+            return payload
+        evidence = payload['evidence']
+        # Asset identity and event-time provenance explain either team's proposal.
+        common = {name: evidence[name] for name in (
+            'hostname', 'asset_id', 'asset_criticality', 'session_id', 'session_time', 'decision_basis')}
+        scenario = evidence['primary_assessment']['scenario_class']
+        if actor == 'soc':
+            shadow = evidence['ml_shadow']
+            # SOC gets telemetry and the scenario candidate, not Model 2 control
+            # recommendations, registered risk values or other GRC policy fields.
+            focused = {**common, 'primary_assessment': evidence['primary_assessment'],
+                       'features': evidence['features'], 'warnings': evidence['warnings'],
+                       'ml_shadow': ({name: shadow[name] for name in ('scenario', 'confidence', 'status')}
+                                     if shadow else None),
+                       'priority_reason': ('Routine activity remains Low priority.' if scenario == 'benign' else
+                                           'Observed alert severity is combined with asset business criticality.')}
+        else:
+            # GRC gets a high-level observation and matched-risk/control advice,
+            # not raw telemetry counts, event lists, model confidence or metrics.
+            recommendations = evidence['primary_controls']['recommendations']
+            focused = {**common, 'observed_activity': scenario,
+                       'risk_category': {'credential_access': 'Unauthorized Access',
+                                         'reconnaissance': 'Reconnaissance'}.get(scenario, 'Not applicable'),
+                       'risk_reason': 'The activity matches this registered risk. The explicit policy proposes a likelihood increase; impact stays unchanged.',
+                       'controls': [{name: item[name] for name in (
+                           'control_id', 'name', 'current_state', 'action_type', 'catalogue_action', 'warnings')}
+                                    for item in recommendations]}
+        return {**payload, 'evidence': focused}
 
     # IRIS EXPLAIN: Function DemoEngine.review: Validate the team, saved proposal and current revisions, then atomically apply
     # IRIS EXPLAIN: or reject a synthetic record change with before/after audit; stale/idempotent requests cannot double-apply.

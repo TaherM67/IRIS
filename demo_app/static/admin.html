@@ -1,0 +1,27 @@
+<!-- Admin can inspect everything; only the owning team can approve a change. -->
+<nav class="admin-links" aria-label="Admin navigation"><a href="#admin-actions">Analysis</a><a href="#alert-panel">SOC queue</a><a href="#risk-panel">GRC register</a><a href="#admin-detail">System details</a><a href="/soc" target="_blank" rel="noopener">Open SOC workspace ↗</a><a href="/grc" target="_blank" rel="noopener">Open GRC workspace ↗</a></nav>
+<section class="stats admin-stats" aria-label="Full system summary">
+  <div class="stat"><span>Alerts</span><strong data-count="alerts">—</strong></div><div class="stat"><span>Registered risks</span><strong data-count="risks">—</strong></div>
+  <div class="stat"><span>SOC reviews</span><strong data-count="pending_soc">—</strong></div><div class="stat"><span>GRC reviews</span><strong data-count="pending_grc">—</strong></div>
+  <div class="stat"><span>Alerts reprioritized</span><strong data-count="reprioritized_alerts">—</strong></div><div class="stat"><span>Risks updated</span><strong data-count="changed_risks">—</strong></div>
+</section>
+<section id="admin-actions" class="card">
+  <div class="section-heading"><div><h2>Analyze demo data</h2><p>Run the engine, then let each team review its proposed changes.</p></div><button id="analyze" type="button">Analyze data</button></div>
+  <p id="analysis-status" class="muted"></p>
+  <details class="small-help"><summary>Start a new rehearsal</summary><p>Creates fresh working records. Earlier exercises and their audit history are kept.</p><form id="exercise-form" class="inline-form"><label for="exercise-label">Name</label><input id="exercise-label" name="label" value="Examiner demonstration" minlength="3" maxlength="100" required><button type="submit" class="secondary">New rehearsal</button></form></details>
+</section>
+<label for="proposal-status">Team review status</label><select id="proposal-status"><option value="pending">Pending</option><option value="approved">Approved</option><option value="rejected">Rejected</option><option value="stale">Needs fresh evidence</option><option value="all">All reviews</option></select>
+<!-- IRIS: reviews -->
+<details class="card"><summary>Full evidence for the selected proposal</summary><pre id="admin-evidence"></pre></details>
+<section id="alert-panel" class="card">
+  <div class="section-heading"><div><h2>SOC alert queue</h2><p>Read-only monitoring. SOC approves priority changes in its own workspace.</p></div><button id="export-alerts" type="button" class="secondary">Download alerts</button></div>
+  <div class="table-tools"><label class="check"><input id="changed-only" type="checkbox">Only changed alerts</label><span id="alert-page" class="muted"></span></div>
+  <div class="table-wrap"><table><thead><tr><th>Alert / asset</th><th>Original priority</th><th>Current priority</th><th>Status</th></tr></thead><tbody id="alert-rows"></tbody></table></div>
+  <div class="pager"><button id="previous" type="button" class="secondary">Previous</button><button id="next" type="button" class="secondary">Next</button></div>
+</section>
+<section id="risk-panel" class="card">
+  <div class="section-heading"><div><h2>GRC risk register</h2><p>Read-only monitoring. GRC approves risk updates in its own workspace.</p></div><button id="export-risks" type="button" class="secondary">Download register</button></div>
+  <div class="table-wrap"><table><thead><tr><th>Risk / asset</th><th>Likelihood</th><th>Impact</th><th>Risk score</th><th>Status</th></tr></thead><tbody id="risk-rows"></tbody></table></div>
+</section>
+<section class="card"><h2>Applied changes · both teams</h2><p id="changes-empty" class="muted">No changes have been approved yet.</p><div id="changes-table" class="table-wrap" hidden><table><thead><tr><th>Record / team</th><th>Before</th><th>After</th><th>Review note</th></tr></thead><tbody id="change-rows"></tbody></table></div></section>
+<section id="admin-detail" class="card"><h2>System details</h2><details><summary>Audit log</summary><pre id="audit"></pre></details><details><summary>Analysis and data cleaning</summary><pre id="integration"></pre></details><details><summary>Model status and validation limits</summary><p>Models remain experimental shadow candidates. The explicit engine policy creates proposals; only the owning team's approval applies a demo change.</p><pre id="model-status"></pre></details><details><summary>Rehearsal history</summary><pre id="history"></pre></details></section>
