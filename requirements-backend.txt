@@ -1,0 +1,10 @@
+# Install from the repository root with Python 3.12.
+# ML pins match the user's Colab artifact. HTTP dependency installation/runtime
+# could not be tested in the build environment (PyPI access returned 403).
+-r IRIS_Models_v2/requirements.txt
+fastapi==0.128.2
+starlette==0.50.0
+pydantic==2.13.4
+uvicorn==0.48.0
+httpx==0.28.1
+python-multipart==0.0.32

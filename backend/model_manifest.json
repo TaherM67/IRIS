@@ -1,0 +1,16 @@
+{
+  "artifact_origin": "User-provided IRIS_Colab_Training.zip; synthetic training run",
+  "source_archive_sha256": "a4b2b9e4330c5297d2b0d635193311368eb003d1ed5e8a2f5b47815e6eb9e801",
+  "package_version": "1.1.0",
+  "aggregation_schema": "iris-three-source-session-v1-window60",
+  "catalogue_sha256": "7fb36f67ff05668fe44ce3f122abef7f344cf0e6196bd5be87ab50897bf8978d",
+  "files": {
+    "metadata.json": "9bdae9f6fb8db21b8c0af71ca3465e45c6bf599451f55e0bf440735bc693ed76",
+    "models.joblib": "12e76f280bcaa4854e9f08df9ea05839ea43cbb7691a7d44bfbd9d473eb39950",
+    "split_manifest.json": "f0305a0a8ffe4de43e87f2d788bb2ff0317a291a1a852fc90f57efc7eb908c62",
+    "threshold_search.json": "ab09b72c082bb42c0aaab57eaba8bf4e66cbceaea66c8ffc2fe9a63224ad832f"
+  },
+  "mode": "shadow_only",
+  "production_validated": false,
+  "note": "Hashes pin this operator-approved artifact, not an independent publisher signature. Never load untrusted joblib files."
+}

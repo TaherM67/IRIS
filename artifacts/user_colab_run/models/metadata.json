@@ -1,0 +1,1036 @@
+{
+  "package_version": "1.1.0",
+  "trained_at_utc": "2026-10-25T03:34:45.748513+00:00",
+  "feature_schema": "iris-telemetry-session-v1",
+  "aggregation_schema": "iris-three-source-session-v1-window60",
+  "scikit_learn_version": "1.8.0",
+  "features": [
+    "event_family",
+    "primary_protocol",
+    "event_count",
+    "duration_seconds",
+    "max_rule_level",
+    "mean_rule_level",
+    "distinct_rules",
+    "distinct_sources",
+    "distinct_accounts",
+    "failed_count",
+    "success_count",
+    "failure_ratio",
+    "success_after_failures",
+    "max_events_in_10s",
+    "external_source_fraction",
+    "event_rate_per_minute"
+  ],
+  "data_quality": {
+    "accepted_sessions": 900,
+    "independent_runs_per_class": {
+      "benign": 300,
+      "credential_access": 300,
+      "reconnaissance": 300
+    },
+    "quarantined": [],
+    "exact_duplicate_feature_rows": 0,
+    "sessions_sha256": "e845c49c6c2262de56e19b0b3de8fc10dbc0c0bbfc778b49fe93bf785a125c34",
+    "reviews_sha256": "a0e05f2d7a015927c117ff5b022d2b91de30388eadaec4bade3942db1bef4d23",
+    "synthetic": true,
+    "aggregation_schema": "iris-three-source-session-v1-window60"
+  },
+  "split": {
+    "seed": 42,
+    "group_by": "campaign_id",
+    "groups": {
+      "test": [
+        "SYN-CAMPAIGN-008",
+        "SYN-CAMPAIGN-018",
+        "SYN-CAMPAIGN-019",
+        "SYN-CAMPAIGN-025",
+        "SYN-CAMPAIGN-028",
+        "SYN-CAMPAIGN-029",
+        "SYN-CAMPAIGN-051",
+        "SYN-CAMPAIGN-056",
+        "SYN-CAMPAIGN-060"
+      ],
+      "threshold": [
+        "SYN-CAMPAIGN-006",
+        "SYN-CAMPAIGN-026",
+        "SYN-CAMPAIGN-030",
+        "SYN-CAMPAIGN-040",
+        "SYN-CAMPAIGN-045",
+        "SYN-CAMPAIGN-058"
+      ],
+      "calibration": [
+        "SYN-CAMPAIGN-021",
+        "SYN-CAMPAIGN-032",
+        "SYN-CAMPAIGN-038",
+        "SYN-CAMPAIGN-043",
+        "SYN-CAMPAIGN-050",
+        "SYN-CAMPAIGN-053"
+      ],
+      "selection": [
+        "SYN-CAMPAIGN-005",
+        "SYN-CAMPAIGN-010",
+        "SYN-CAMPAIGN-016",
+        "SYN-CAMPAIGN-024",
+        "SYN-CAMPAIGN-027",
+        "SYN-CAMPAIGN-033",
+        "SYN-CAMPAIGN-041",
+        "SYN-CAMPAIGN-049",
+        "SYN-CAMPAIGN-055"
+      ],
+      "train": [
+        "SYN-CAMPAIGN-001",
+        "SYN-CAMPAIGN-002",
+        "SYN-CAMPAIGN-003",
+        "SYN-CAMPAIGN-004",
+        "SYN-CAMPAIGN-007",
+        "SYN-CAMPAIGN-009",
+        "SYN-CAMPAIGN-011",
+        "SYN-CAMPAIGN-012",
+        "SYN-CAMPAIGN-013",
+        "SYN-CAMPAIGN-014",
+        "SYN-CAMPAIGN-015",
+        "SYN-CAMPAIGN-017",
+        "SYN-CAMPAIGN-020",
+        "SYN-CAMPAIGN-022",
+        "SYN-CAMPAIGN-023",
+        "SYN-CAMPAIGN-031",
+        "SYN-CAMPAIGN-034",
+        "SYN-CAMPAIGN-035",
+        "SYN-CAMPAIGN-036",
+        "SYN-CAMPAIGN-037",
+        "SYN-CAMPAIGN-039",
+        "SYN-CAMPAIGN-042",
+        "SYN-CAMPAIGN-044",
+        "SYN-CAMPAIGN-046",
+        "SYN-CAMPAIGN-047",
+        "SYN-CAMPAIGN-048",
+        "SYN-CAMPAIGN-052",
+        "SYN-CAMPAIGN-054",
+        "SYN-CAMPAIGN-057",
+        "SYN-CAMPAIGN-059"
+      ]
+    },
+    "rows": {
+      "test": 135,
+      "threshold": 90,
+      "calibration": 90,
+      "selection": 135,
+      "train": 450
+    },
+    "class_counts": {
+      "test": {
+        "reconnaissance": 45,
+        "credential_access": 45,
+        "benign": 45
+      },
+      "threshold": {
+        "reconnaissance": 30,
+        "credential_access": 30,
+        "benign": 30
+      },
+      "calibration": {
+        "benign": 30,
+        "reconnaissance": 30,
+        "credential_access": 30
+      },
+      "selection": {
+        "credential_access": 45,
+        "reconnaissance": 45,
+        "benign": 45
+      },
+      "train": {
+        "reconnaissance": 150,
+        "benign": 150,
+        "credential_access": 150
+      }
+    },
+    "claim": "unseen campaign holdout"
+  },
+  "catalog_sha256": "7fb36f67ff05668fe44ce3f122abef7f344cf0e6196bd5be87ab50897bf8978d",
+  "model1": {
+    "algorithm": "random_forest",
+    "selection_scores": {
+      "logistic_regression": 0.9332591768631814,
+      "random_forest": 0.9478325673829339,
+      "hist_gradient_boosting": 0.9259259259259259
+    },
+    "threshold": 0.5,
+    "calibration_strategy": "Frozen base; every disjoint calibration row scored once; no base refit",
+    "classes": [
+      "benign",
+      "credential_access",
+      "reconnaissance"
+    ],
+    "metrics": {
+      "n": 135,
+      "coverage": 1.0,
+      "macro_f1": 0.9404761904761904,
+      "accuracy_all_sessions": 0.9407407407407408,
+      "accepted_accuracy": 0.9407407407407408,
+      "benign_false_positive_rate": 0.15555555555555556,
+      "benign_false_alarms": 7,
+      "benign_support": 45,
+      "benign_fpr_wilson_95_percent": [
+        0.07745325311328677,
+        0.28784190511248803
+      ],
+      "per_class": {
+        "benign": {
+          "precision": 0.9743589743589743,
+          "recall": 0.8444444444444444,
+          "f1": 0.9047619047619048,
+          "support": 45
+        },
+        "credential_access": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 45
+        },
+        "reconnaissance": {
+          "precision": 0.8627450980392157,
+          "recall": 0.9777777777777777,
+          "f1": 0.9166666666666666,
+          "support": 45
+        }
+      },
+      "confusion_labels": [
+        "benign",
+        "credential_access",
+        "reconnaissance",
+        "ABSTAINED"
+      ],
+      "confusion_matrix": [
+        [
+          38,
+          0,
+          7,
+          0
+        ],
+        [
+          0,
+          45,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          44,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "metric_semantics": "Abstentions count as missed true classes (false negatives), never dropped from recall/F1. FPR excludes abstentions and must be read together with coverage."
+    },
+    "rule_baseline": {
+      "n": 135,
+      "coverage": 0.7555555555555555,
+      "macro_f1": 0.8317250260288235,
+      "accuracy_all_sessions": 0.7407407407407407,
+      "accepted_accuracy": 0.9803921568627451,
+      "benign_false_positive_rate": 0.044444444444444446,
+      "benign_false_alarms": 2,
+      "benign_support": 45,
+      "benign_fpr_wilson_95_percent": [
+        0.012273869040444335,
+        0.14827779183880616
+      ],
+      "per_class": {
+        "benign": {
+          "precision": 1.0,
+          "recall": 0.7555555555555555,
+          "f1": 0.8607594936708861,
+          "support": 45
+        },
+        "credential_access": {
+          "precision": 1.0,
+          "recall": 0.9555555555555556,
+          "f1": 0.9772727272727273,
+          "support": 45
+        },
+        "reconnaissance": {
+          "precision": 0.92,
+          "recall": 0.5111111111111111,
+          "f1": 0.6571428571428571,
+          "support": 45
+        }
+      },
+      "confusion_labels": [
+        "benign",
+        "credential_access",
+        "reconnaissance",
+        "ABSTAINED"
+      ],
+      "confusion_matrix": [
+        [
+          34,
+          0,
+          2,
+          9
+        ],
+        [
+          0,
+          43,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          23,
+          22
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "metric_semantics": "Abstentions count as missed true classes (false negatives), never dropped from recall/F1. FPR excludes abstentions and must be read together with coverage."
+    },
+    "checks": {
+      "macro_f1_at_least_0_80": true,
+      "attack_recall_at_least_0_75": true,
+      "benign_fpr_at_most_0_05": false,
+      "coverage_at_least_0_80": true,
+      "improvement_over_frozen_rules_at_least_0_05": true,
+      "minimum_10_test_sessions_per_class": true,
+      "real_reviewed_cyber_range_data": false,
+      "campaign_or_template_holdout": true,
+      "three_source_exclusions_need_review": false
+    },
+    "eligible_for_reviewed_advisory_release": false,
+    "categorical_vocab": {
+      "event_family": [
+        "authentication",
+        "network"
+      ],
+      "primary_protocol": [
+        "SSH",
+        "TCP"
+      ]
+    },
+    "numeric_train_ranges": {
+      "event_count": [
+        2.0,
+        80.0
+      ],
+      "duration_seconds": [
+        5.010839,
+        49.957192
+      ],
+      "max_rule_level": [
+        2.0,
+        11.0
+      ],
+      "mean_rule_level": [
+        2.0,
+        8.272727272727273
+      ],
+      "distinct_rules": [
+        1.0,
+        6.0
+      ],
+      "distinct_sources": [
+        1.0,
+        1.0
+      ],
+      "distinct_accounts": [
+        0.0,
+        1.0
+      ],
+      "failed_count": [
+        0.0,
+        45.0
+      ],
+      "success_count": [
+        0.0,
+        2.0
+      ],
+      "failure_ratio": [
+        0.0,
+        1.0
+      ],
+      "success_after_failures": [
+        0.0,
+        1.0
+      ],
+      "max_events_in_10s": [
+        1.0,
+        79.0
+      ],
+      "external_source_fraction": [
+        0.0,
+        0.0
+      ],
+      "event_rate_per_minute": [
+        2.6107430422718894,
+        741.4881385362648
+      ]
+    }
+  },
+  "model2": {
+    "status": "trained_shadow",
+    "algorithm": "binary_relevance_logistic_regression",
+    "scenario_inputs": "grouped out-of-fold predictions for fitting; frozen Model 1 predictions for threshold/test, never oracle classes",
+    "score_meaning": "Uncalibrated membership score, not probability of efficacy or causal risk reduction",
+    "support": {
+      "SC001": {
+        "train_positive": 0,
+        "train_negative": 585,
+        "threshold_positive": 0,
+        "test_positive": 0
+      },
+      "SC002": {
+        "train_positive": 0,
+        "train_negative": 585,
+        "threshold_positive": 0,
+        "test_positive": 0
+      },
+      "SC003": {
+        "train_positive": 0,
+        "train_negative": 585,
+        "threshold_positive": 0,
+        "test_positive": 0
+      },
+      "SC004": {
+        "train_positive": 0,
+        "train_negative": 585,
+        "threshold_positive": 0,
+        "test_positive": 0
+      },
+      "SC005": {
+        "train_positive": 195,
+        "train_negative": 390,
+        "threshold_positive": 30,
+        "test_positive": 45
+      },
+      "SC006": {
+        "train_positive": 132,
+        "train_negative": 453,
+        "threshold_positive": 23,
+        "test_positive": 32
+      },
+      "SC007": {
+        "train_positive": 195,
+        "train_negative": 390,
+        "threshold_positive": 30,
+        "test_positive": 45
+      },
+      "SC008": {
+        "train_positive": 0,
+        "train_negative": 585,
+        "threshold_positive": 0,
+        "test_positive": 0
+      },
+      "SC009": {
+        "train_positive": 0,
+        "train_negative": 585,
+        "threshold_positive": 0,
+        "test_positive": 0
+      },
+      "SC010": {
+        "train_positive": 0,
+        "train_negative": 585,
+        "threshold_positive": 0,
+        "test_positive": 0
+      },
+      "SC011": {
+        "train_positive": 0,
+        "train_negative": 585,
+        "threshold_positive": 0,
+        "test_positive": 0
+      },
+      "SC012": {
+        "train_positive": 195,
+        "train_negative": 390,
+        "threshold_positive": 30,
+        "test_positive": 45
+      },
+      "SC013": {
+        "train_positive": 0,
+        "train_negative": 585,
+        "threshold_positive": 0,
+        "test_positive": 0
+      },
+      "SC014": {
+        "train_positive": 0,
+        "train_negative": 585,
+        "threshold_positive": 0,
+        "test_positive": 0
+      },
+      "SC015": {
+        "train_positive": 0,
+        "train_negative": 585,
+        "threshold_positive": 0,
+        "test_positive": 0
+      },
+      "SC016": {
+        "train_positive": 0,
+        "train_negative": 585,
+        "threshold_positive": 0,
+        "test_positive": 0
+      },
+      "SC017": {
+        "train_positive": 0,
+        "train_negative": 585,
+        "threshold_positive": 0,
+        "test_positive": 0
+      },
+      "SC018": {
+        "train_positive": 0,
+        "train_negative": 585,
+        "threshold_positive": 0,
+        "test_positive": 0
+      },
+      "SC019": {
+        "train_positive": 0,
+        "train_negative": 585,
+        "threshold_positive": 0,
+        "test_positive": 0
+      },
+      "SC020": {
+        "train_positive": 0,
+        "train_negative": 585,
+        "threshold_positive": 0,
+        "test_positive": 0
+      },
+      "SC021": {
+        "train_positive": 0,
+        "train_negative": 585,
+        "threshold_positive": 0,
+        "test_positive": 0
+      },
+      "SC022": {
+        "train_positive": 0,
+        "train_negative": 585,
+        "threshold_positive": 0,
+        "test_positive": 0
+      },
+      "SC023": {
+        "train_positive": 0,
+        "train_negative": 585,
+        "threshold_positive": 0,
+        "test_positive": 0
+      },
+      "SC024": {
+        "train_positive": 0,
+        "train_negative": 585,
+        "threshold_positive": 0,
+        "test_positive": 0
+      },
+      "SC025": {
+        "train_positive": 0,
+        "train_negative": 585,
+        "threshold_positive": 0,
+        "test_positive": 0
+      },
+      "SC026": {
+        "train_positive": 139,
+        "train_negative": 446,
+        "threshold_positive": 24,
+        "test_positive": 28
+      },
+      "SC027": {
+        "train_positive": 0,
+        "train_negative": 585,
+        "threshold_positive": 0,
+        "test_positive": 0
+      },
+      "SC028": {
+        "train_positive": 0,
+        "train_negative": 585,
+        "threshold_positive": 0,
+        "test_positive": 0
+      },
+      "SC029": {
+        "train_positive": 195,
+        "train_negative": 390,
+        "threshold_positive": 30,
+        "test_positive": 45
+      },
+      "SC030": {
+        "train_positive": 0,
+        "train_negative": 585,
+        "threshold_positive": 0,
+        "test_positive": 0
+      }
+    },
+    "unsupported_controls": [
+      "SC001",
+      "SC002",
+      "SC003",
+      "SC004",
+      "SC008",
+      "SC009",
+      "SC010",
+      "SC011",
+      "SC013",
+      "SC014",
+      "SC015",
+      "SC016",
+      "SC017",
+      "SC018",
+      "SC019",
+      "SC020",
+      "SC021",
+      "SC022",
+      "SC023",
+      "SC024",
+      "SC025",
+      "SC027",
+      "SC028",
+      "SC030"
+    ],
+    "validation_suppressed_controls": [],
+    "metrics": {
+      "n": 135,
+      "micro_precision": 0.9541666666666667,
+      "micro_recall": 0.9541666666666667,
+      "micro_f1": 0.9541666666666667,
+      "macro_f1_all_catalogue_controls": 0.1905026455026455,
+      "hamming_loss": 0.005432098765432099,
+      "exact_set_accuracy": 0.9037037037037037,
+      "per_control": {
+        "SC001": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "test_positive_support": 0
+        },
+        "SC002": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "test_positive_support": 0
+        },
+        "SC003": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "test_positive_support": 0
+        },
+        "SC004": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "test_positive_support": 0
+        },
+        "SC005": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "test_positive_support": 45
+        },
+        "SC006": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "test_positive_support": 32
+        },
+        "SC007": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "test_positive_support": 45
+        },
+        "SC008": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "test_positive_support": 0
+        },
+        "SC009": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "test_positive_support": 0
+        },
+        "SC010": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "test_positive_support": 0
+        },
+        "SC011": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "test_positive_support": 0
+        },
+        "SC012": {
+          "precision": 0.9111111111111111,
+          "recall": 0.9111111111111111,
+          "f1": 0.9111111111111111,
+          "test_positive_support": 45
+        },
+        "SC013": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "test_positive_support": 0
+        },
+        "SC014": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "test_positive_support": 0
+        },
+        "SC015": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "test_positive_support": 0
+        },
+        "SC016": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "test_positive_support": 0
+        },
+        "SC017": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "test_positive_support": 0
+        },
+        "SC018": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "test_positive_support": 0
+        },
+        "SC019": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "test_positive_support": 0
+        },
+        "SC020": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "test_positive_support": 0
+        },
+        "SC021": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "test_positive_support": 0
+        },
+        "SC022": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "test_positive_support": 0
+        },
+        "SC023": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "test_positive_support": 0
+        },
+        "SC024": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "test_positive_support": 0
+        },
+        "SC025": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "test_positive_support": 0
+        },
+        "SC026": {
+          "precision": 0.8928571428571429,
+          "recall": 0.8928571428571429,
+          "f1": 0.8928571428571429,
+          "test_positive_support": 28
+        },
+        "SC027": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "test_positive_support": 0
+        },
+        "SC028": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "test_positive_support": 0
+        },
+        "SC029": {
+          "precision": 0.9111111111111111,
+          "recall": 0.9111111111111111,
+          "f1": 0.9111111111111111,
+          "test_positive_support": 45
+        },
+        "SC030": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "test_positive_support": 0
+        }
+      }
+    },
+    "checks": {
+      "at_least_one_supported_control": true,
+      "micro_precision_at_least_0_80": true,
+      "micro_f1_at_least_0_80": true,
+      "not_worse_than_scenario_frequency_baseline": true,
+      "reviewed_training_support": true,
+      "heldout_positive_support": true
+    },
+    "scenario_frequency_baseline": {
+      "n": 135,
+      "micro_precision": 0.8860759493670886,
+      "micro_recall": 0.875,
+      "micro_f1": 0.8805031446540881,
+      "macro_f1_all_catalogue_controls": 0.15548340548340547,
+      "hamming_loss": 0.014074074074074074,
+      "exact_set_accuracy": 0.6518518518518519,
+      "per_control": {
+        "SC001": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "test_positive_support": 0
+        },
+        "SC002": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "test_positive_support": 0
+        },
+        "SC003": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "test_positive_support": 0
+        },
+        "SC004": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "test_positive_support": 0
+        },
+        "SC005": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "test_positive_support": 45
+        },
+        "SC006": {
+          "precision": 0.7111111111111111,
+          "recall": 1.0,
+          "f1": 0.8311688311688312,
+          "test_positive_support": 32
+        },
+        "SC007": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "test_positive_support": 45
+        },
+        "SC008": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "test_positive_support": 0
+        },
+        "SC009": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "test_positive_support": 0
+        },
+        "SC010": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "test_positive_support": 0
+        },
+        "SC011": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "test_positive_support": 0
+        },
+        "SC012": {
+          "precision": 0.8627450980392157,
+          "recall": 0.9777777777777777,
+          "f1": 0.9166666666666666,
+          "test_positive_support": 45
+        },
+        "SC013": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "test_positive_support": 0
+        },
+        "SC014": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "test_positive_support": 0
+        },
+        "SC015": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "test_positive_support": 0
+        },
+        "SC016": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "test_positive_support": 0
+        },
+        "SC017": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "test_positive_support": 0
+        },
+        "SC018": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "test_positive_support": 0
+        },
+        "SC019": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "test_positive_support": 0
+        },
+        "SC020": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "test_positive_support": 0
+        },
+        "SC021": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "test_positive_support": 0
+        },
+        "SC022": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "test_positive_support": 0
+        },
+        "SC023": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "test_positive_support": 0
+        },
+        "SC024": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "test_positive_support": 0
+        },
+        "SC025": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "test_positive_support": 0
+        },
+        "SC026": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "test_positive_support": 28
+        },
+        "SC027": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "test_positive_support": 0
+        },
+        "SC028": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "test_positive_support": 0
+        },
+        "SC029": {
+          "precision": 0.8627450980392157,
+          "recall": 0.9777777777777777,
+          "f1": 0.9166666666666666,
+          "test_positive_support": 45
+        },
+        "SC030": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "test_positive_support": 0
+        }
+      }
+    },
+    "proposed_control_gate_passed": true,
+    "note": "Control gate is a proposed engineering minimum requiring project-owner agreement, not an established compliance standard.",
+    "eligible_for_reviewed_advisory_release": false
+  },
+  "safety": {
+    "requires_human_review": true,
+    "automatic_execution": false,
+    "official_risk_register_write": false,
+    "default_mode": "shadow",
+    "no_claim": "No production validation, unknown-attack guarantee, control effectiveness estimate, or autonomous response"
+  },
+  "model_sha256": "12e76f280bcaa4854e9f08df9ea05839ea43cbb7691a7d44bfbd9d473eb39950",
+  "three_source_integration": {
+    "report": {
+      "data_provenance": "synthetic",
+      "input_alert_rows": 26086,
+      "deduplicated_alerts": 26073,
+      "exact_duplicate_rows_removed": 12,
+      "conflicting_event_ids_excluded": [],
+      "ignored_non_alert_sensor_records": 0,
+      "quarantine": [
+        {
+          "line": 4919,
+          "reason": "Invalid isoformat string: 'not-a-timestamp'"
+        }
+      ],
+      "unresolved_asset_events": 2,
+      "matched_events_without_risk_context": 0,
+      "unified_event_rows": 26073,
+      "model_sessions": 900,
+      "asset_snapshots": 120,
+      "risk_snapshots": 240,
+      "join_does_not_multiply_alerts": true,
+      "risk_selection_policy": "highest_preexisting_likelihood_times_impact_then_risk_id",
+      "session_window_seconds": 60,
+      "source_sha256": {
+        "asset_inventory": "a4b1d4e4ed9e07594f9d489468fc0f7f17b72c7c80cbe0df52931fc1a85172c6",
+        "risk_register": "30b54b800f311c20f2fcea2c797ca517a98f80be0f8e343b92f20312545b582d",
+        "siem_alerts": "61dbdfdfe089686f28fa1c9bd0bbd0c215a02c562a72386cdf0b3cb885ba0645"
+      },
+      "elapsed_seconds": 2.761874,
+      "training_labels_read": false,
+      "memory_model": "Indexed snapshots and deduplicated alerts retained in memory; batch O(E log E) sorting, no cartesian event-risk expansion. Not a streaming production connector."
+    },
+    "annotation_join": {
+      "labels_written": 900,
+      "format": "synthetic_explicit_event_membership",
+      "omitted": []
+    },
+    "source_files_used": 3,
+    "labels_are_runtime_inputs": false
+  }
+}

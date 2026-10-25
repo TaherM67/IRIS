@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>IRIS — local shadow prototype</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <script src="/static/app.js" defer></script>
+</head>
+<body>
+  <header><div><h1>IRIS</h1><p>SOC · GRC · SIEM integration</p></div><span class="badge">SHADOW / SYNTHETIC MODEL</span></header>
+  <main>
+    <aside class="notice">Research prototype. ML candidates are not approved decisions. No controls are executed and no official risk register is changed. HTTP/UI runtime verification is pending on your computer.</aside>
+    <section id="login-panel">
+      <h2>Open a role view</h2>
+      <p>Run <code>python -m backend keys</code> in your private terminal. Paste one role key below. Keys stay in browser memory only; do not include them in screenshots.</p>
+      <form id="login-form"><label>Role key<input id="key" type="password" autocomplete="off" required maxlength="256"></label><button type="submit">Connect</button></form>
+    </section>
+    <p id="message" role="status" aria-live="polite">Start the backend, then connect with a local role key.</p>
+    <div id="workspace" hidden>
+      <nav><strong id="identity"></strong><label>View<select id="view"></select></label><button id="refresh" type="button">Refresh</button><label class="check"><input id="auto-refresh" type="checkbox" checked>Refresh every 10 seconds</label><button id="logout" type="button">Disconnect</button></nav>
+      <section id="processing" hidden>
+        <h2>Analyze a batch</h2>
+        <p>Use the bundled synthetic sample, or upload exactly the three operational files. Do not upload training labels or model files here.</p>
+        <button id="sample" type="button">Analyze bundled sample</button>
+        <form id="upload-form">
+          <label>Asset inventory (.json)<input name="asset_inventory" type="file" accept=".json" required></label>
+          <label>Risk register (.json)<input name="risk_register" type="file" accept=".json" required></label>
+          <label>SIEM alerts (.jsonl)<input name="siem_alerts" type="file" accept=".jsonl,.ndjson" required></label>
+          <button type="submit">Analyze the three files</button>
+        </form>
+        <p class="muted">One batch at a time. Processing 900 sessions may take a minute or more on a laptop. Identical completed inputs reuse the saved run.</p>
+      </section>
+      <section id="admin-panel" hidden><h2>Admin status</h2><pre id="admin-status"></pre><details><summary>Recent audit events</summary><pre id="audit"></pre></details></section>
+      <section id="cases-panel" hidden>
+        <div class="section-head"><h2 id="cases-title">Cases</h2><label>Run<select id="run"><option value="">All completed runs</option></select></label></div>
+        <div class="case-layout"><div><p id="case-count"></p><div id="case-list"></div><div class="pager"><button id="previous" type="button">Previous</button><button id="next" type="button">Next</button></div></div><div><h3>Selected case</h3><pre id="case-detail">Select a case.</pre>
+          <form id="review-form" hidden><h3>GRC local follow-up review</h3><p>This records a local review only. It does not send or apply a risk update.</p><label>Decision<select name="disposition"><option value="approve_follow_up">Approve follow-up for human action</option><option value="reject_suggestion">Reject suggestion</option></select></label><label>Reason<textarea name="comment" minlength="5" maxlength="2000" required></textarea></label><button type="submit">Save local review</button></form>
+        </div></div>
+      </section>
+      <details><summary>Loaded model and evaluation status</summary><pre id="model-status"></pre></details>
+    </div>
+  </main>
+  <footer>Local batch prototype · No live connectors · Stop the server with Ctrl+C</footer>
+</body>
+</html>

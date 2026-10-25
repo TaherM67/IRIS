@@ -6,7 +6,7 @@
 
 Once the trained files are downloaded, Colab can be closed. A running IRIS backend does not call Colab or retrain for every incoming alert.
 
-This repository contains the new three-input ML component. The older FastAPI/SQLite/Streamlit engine was a separate bundle; connecting these components is still a development task.
+This repository now also contains the user's pinned model and a prepared `backend/` adapter with SQLite persistence and a small HTML dashboard. Its core is testable here; FastAPI/Uvicorn HTTP and browser runtime verification must be completed on the target computer. **Use [BACKEND_SETUP.md](BACKEND_SETUP.md) for the current step-by-step instructions.** The older FastAPI/SQLite/Streamlit bundle is separate and is not the server used by the new setup.
 
 ## 1. Train in Google Colab
 
@@ -40,7 +40,7 @@ The engine is more than the classifier. It needs these responsibilities:
 7. Provide APIs for the dashboard and authorized approval/rejection actions.
 8. Deliver approved outbound messages through connectors with retries and acknowledgements.
 
-The current model library covers validation/preparation, training and guarded inference. It is a batch prototype, not a finished durable streaming service.
+The current model library covers validation/preparation, training and guarded inference. The new backend adds batch submission, local evidence/case storage, separate views and local-only reviews. HTTP/UI testing remains pending on the target computer. This is not a finished durable streaming service.
 
 ### Connect the new model correctly
 
@@ -51,7 +51,7 @@ The current model library covers validation/preparation, training and guarded in
 - Preserve the explicit registered-risk mapping/policy and approval workflow. A representative prior-risk context is not proof that an alert caused that particular risk.
 - Keep the synthetic model in shadow mode. The primary output and shadow candidate must be labelled separately.
 
-The new artifact is not a drop-in replacement for either older engine model file. A backend adapter and integration tests are required. Do not spawn a new training job or reload the model for each alert.
+The new artifact is not a drop-in replacement for either older engine model file. `backend/model_adapter.py` implements the matching three-source adapter; run both its core tests and its target-computer HTTP tests before use. Do not spawn a new training job or reload the model for each alert.
 
 ## 3. Where to run the demonstration
 
@@ -62,24 +62,18 @@ For the first examiner demonstration, use:
 | Training | Google Colab; needed only when training/evaluating a version |
 | IRIS backend and saved models | Your laptop, or one private lab VM |
 | Prototype database | A persistent SQLite file on that backend machine |
-| Dashboard | Streamlit on the backend machine, viewed in your browser |
+| Dashboard | The new HTML interface served by FastAPI on the backend machine |
 | Wazuh/Suricata and lab hosts | Your controlled lab VMs/GNS3 environment |
 
 A public domain or public-cloud deployment is not needed for an in-person examination. Keep the lab restricted; do not expose prototype administration endpoints to the internet.
 
-In the **separate older v0.3 engine folder**, after installing its own requirements, its existing demo starts with:
+For this repository, after following [the setup guide](BACKEND_SETUP.md), start the new adapter from the repository root with:
 
 ```bash
-python serve.py
+python -m backend serve
 ```
 
-In a second terminal, using that same environment:
-
-```bash
-streamlit run dashboard.py
-```
-
-Its normal local URLs are `http://localhost:8000/docs` for the API documentation and `http://localhost:8501` for the dashboard. These commands do not run inside the model-only directory in this repository and do not automatically load the new Colab artifact.
+Its dashboard is `http://127.0.0.1:8000`; API documentation is at `/docs`. The backend loads the uploaded Colab artifact once at startup. You do not need a second Streamlit process. These are prepared instructions; HTTP/UI execution was not verified in the build environment.
 
 If a custom HTML/JavaScript frontend is used, it is another client of the backend API. It does not contain or train the ML model, and it must not write directly to the database.
 
@@ -107,9 +101,9 @@ Use one application and one stored case, with different authorized views:
 - **GRC:** registered-risk context, proposed reassessment, control recommendations/states/exceptions and approval/rejection history.
 - **Admin:** connector status, last successful synchronization, failed jobs, unresolved assets, model version, release status and audit history.
 
-The frontend requests the latest results from the backend. Periodic API refresh is adequate for an initial demo. Automatic refresh is a feature to add; the existing thin dashboard should not be assumed to provide continuous updates.
+The prepared HTML frontend requests the latest results from the backend approximately every ten seconds while connected and visible. Browser runtime behavior still needs target-computer verification.
 
-The older Streamlit SOC/GRC/Admin selector only switches views. It is not authentication or access control. Real user accounts and permissions must be enforced by the backend, not merely by hiding buttons in HTML.
+The older Streamlit selector only switched views. The new adapter instead checks three separately generated local role keys in the backend; its keys are not stored in browser storage or committed to Git. This is a lab role-key scheme, not real individual user accounts or enterprise SSO. Run the HTTP authorization tests on the target computer; hiding buttons alone is not protection.
 
 Displaying results in IRIS is separate from sending them back into an external SIEM or GRC product. That second task needs outbound connectors.
 
@@ -125,7 +119,7 @@ For an approved GRC proposal, track a delivery lifecycle such as **queued > sent
 6. Approve or reject a proposal and show the audit trail. If testing delivery, show a real acknowledgement from the explicitly labelled test GRC endpoint.
 7. Change approved business context and show a new evaluation/priority for a relevant open case, retaining the prior decision and context version.
 
-Live inbound collection, external GRC delivery/acknowledgement, real role authentication and GRC-change-triggered re-evaluation are still to be built. Do not present local outbox records or screenshots as proof of those integrations.
+Live inbound collection, external GRC delivery/acknowledgement, enterprise user authentication and GRC-change-triggered re-evaluation are still to be built. The new backend records a local follow-up disposition, not an external update or an outbox delivery. Do not present its audit rows or screenshots as proof of live integrations.
 
 The current sample classifier fails the configured false-positive gate and is synthetic. It is appropriate for a transparent prototype demonstration, not a claim of production readiness. Compare real held-out predictions with analyst reviews before considering advisory release.
 
