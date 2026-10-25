@@ -1,19 +1,46 @@
+# IRIS EXPLAIN: Configuration comments only: every original setting, dependency pin and pattern below is unchanged.
+# IRIS EXPLAIN: Open the existing TOML section [build-system]; settings remain under this same section.
 [build-system]
+# IRIS EXPLAIN: Keep the existing TOML setting requires = ["setuptools>=68"]; package metadata, discovery and command entry
+# IRIS EXPLAIN: points are not changed.
 requires = ["setuptools>=68"]
+# IRIS EXPLAIN: Keep the existing TOML setting build-backend = "setuptools.build_meta"; package metadata, discovery and command
+# IRIS EXPLAIN: entry points are not changed.
 build-backend = "setuptools.build_meta"
 
+# IRIS EXPLAIN: Open the existing TOML section [project]; settings remain under this same section.
 [project]
+# IRIS EXPLAIN: Keep the existing TOML setting name = "iris-advisory-models"; package metadata, discovery and command entry
+# IRIS EXPLAIN: points are not changed.
 name = "iris-advisory-models"
+# IRIS EXPLAIN: Keep the existing TOML setting version = "1.1.0"; package metadata, discovery and command entry points are not
+# IRIS EXPLAIN: changed.
 version = "1.1.0"
+# IRIS EXPLAIN: Keep the existing TOML setting description = "IRIS grouped-holdout scenario classification and control
+# IRIS EXPLAIN: recommendation"; package metadata, discovery and command entry points are not changed.
 description = "IRIS grouped-holdout scenario classification and control recommendation"
+# IRIS EXPLAIN: Keep the existing TOML setting requires-python = ">=3.11,<3.15"; package metadata, discovery and command entry
+# IRIS EXPLAIN: points are not changed.
 requires-python = ">=3.11,<3.15"
+# IRIS EXPLAIN: Keep the existing TOML setting dependencies = ["numpy==2.3.5", "pandas==2.2.3", "scipy==1.17.0",
+# IRIS EXPLAIN: "scikit-learn==1.8.0", "joblib==1.5.3", "threadpoolctl==3.6.0"]; package metadata, discovery and command entry
+# IRIS EXPLAIN: points are not changed.
 dependencies = ["numpy==2.3.5", "pandas==2.2.3", "scipy==1.17.0", "scikit-learn==1.8.0", "joblib==1.5.3", "threadpoolctl==3.6.0"]
 
+# IRIS EXPLAIN: Open the existing TOML section [project.scripts]; settings remain under this same section.
 [project.scripts]
+# IRIS EXPLAIN: Keep the existing TOML setting iris-models = "iris_models.__main__:main"; package metadata, discovery and
+# IRIS EXPLAIN: command entry points are not changed.
 iris-models = "iris_models.__main__:main"
 
+# IRIS EXPLAIN: Open the existing TOML section [tool.setuptools.packages.find]; settings remain under this same section.
 [tool.setuptools.packages.find]
+# IRIS EXPLAIN: Keep the existing TOML setting include = ["iris_models*"]; package metadata, discovery and command entry points
+# IRIS EXPLAIN: are not changed.
 include = ["iris_models*"]
 
+# IRIS EXPLAIN: Open the existing TOML section [tool.setuptools.package-data]; settings remain under this same section.
 [tool.setuptools.package-data]
+# IRIS EXPLAIN: Keep the existing TOML setting iris_models = ["data/*.csv"]; package metadata, discovery and command entry
+# IRIS EXPLAIN: points are not changed.
 iris_models = ["data/*.csv"]

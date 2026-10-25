@@ -1,10 +1,24 @@
+# IRIS EXPLAIN: Configuration comments only: every original setting, dependency pin and pattern below is unchanged.
 # Install from the repository root with Python 3.12.
 # ML pins match the user's Colab artifact. HTTP dependency installation/runtime
 # could not be tested in the build environment (PyPI access returned 403).
+# IRIS EXPLAIN: Include the existing ML requirement file so serving uses the exact trained-model dependency pins.
 -r IRIS_Models_v2/requirements.txt
+# IRIS EXPLAIN: Keep fastapi==0.128.2 pinned to declare the earlier HTTP routes, uploads, authorization responses and schemas;
+# IRIS EXPLAIN: this is explanation, not a dependency upgrade.
 fastapi==0.128.2
+# IRIS EXPLAIN: Keep starlette==0.50.0 pinned to run synchronous batch work outside the earlier FastAPI event loop; this is
+# IRIS EXPLAIN: explanation, not a dependency upgrade.
 starlette==0.50.0
+# IRIS EXPLAIN: Keep pydantic==2.13.4 pinned to validate the earlier FastAPI request body without accepting extra fields; this
+# IRIS EXPLAIN: is explanation, not a dependency upgrade.
 pydantic==2.13.4
+# IRIS EXPLAIN: Keep uvicorn==0.48.0 pinned to declare the earlier HTTP routes, uploads, authorization responses and schemas;
+# IRIS EXPLAIN: this is explanation, not a dependency upgrade.
 uvicorn==0.48.0
+# IRIS EXPLAIN: Keep httpx==0.28.1 pinned to serve or test actual loopback HTTP requests using the standard library; this is
+# IRIS EXPLAIN: explanation, not a dependency upgrade.
 httpx==0.28.1
+# IRIS EXPLAIN: Keep python-multipart==0.0.32 pinned to declare the earlier HTTP routes, uploads, authorization responses and
+# IRIS EXPLAIN: schemas; this is explanation, not a dependency upgrade.
 python-multipart==0.0.32

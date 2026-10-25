@@ -1,7 +1,20 @@
+# IRIS EXPLAIN: Configuration comments only: every original setting, dependency pin and pattern below is unchanged.
 # Tested on Python 3.12.14. Pin model-training and inference environments alike.
+# IRIS EXPLAIN: Keep numpy==2.3.5 pinned to perform reproducible numeric sampling, vectorized predictions and array
+# IRIS EXPLAIN: calculations; this is explanation, not a dependency upgrade.
 numpy==2.3.5
+# IRIS EXPLAIN: Keep pandas==2.2.3 pinned to assemble allowlisted feature tables and catalogue records; this is explanation, not
+# IRIS EXPLAIN: a dependency upgrade.
 pandas==2.2.3
+# IRIS EXPLAIN: Keep scipy==1.17.0 pinned to support the existing application environment; this is explanation, not a dependency
+# IRIS EXPLAIN: upgrade.
 scipy==1.17.0
+# IRIS EXPLAIN: Keep scikit-learn==1.8.0 pinned to construct, fit, freeze, calibrate and evaluate the tabular ML estimators;
+# IRIS EXPLAIN: this is explanation, not a dependency upgrade.
 scikit-learn==1.8.0
+# IRIS EXPLAIN: Keep joblib==1.5.3 pinned to serialize/load trusted learned estimators; loading untrusted pickle content is
+# IRIS EXPLAIN: unsafe; this is explanation, not a dependency upgrade.
 joblib==1.5.3
+# IRIS EXPLAIN: Keep threadpoolctl==3.6.0 pinned to bound native ML thread usage during the experiment; this is explanation, not
+# IRIS EXPLAIN: a dependency upgrade.
 threadpoolctl==3.6.0

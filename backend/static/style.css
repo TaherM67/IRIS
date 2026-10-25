@@ -1,2 +1,174 @@
-:root{color-scheme:light dark;--bg:light-dark(#f4f6fa,#131923);--panel:light-dark(#fff,#1c2532);--fg:light-dark(#18283c,#edf2fa);--muted:light-dark(#506177,#b2bfd0);--border:light-dark(#d5deea,#3a485c);--brand:light-dark(#174e9b,#9cc2ff);--warning:light-dark(#fff2cd,#3f331b)}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.5 system-ui,sans-serif}header,main,footer{max-width:1200px;margin:auto;padding:24px}header{display:flex;align-items:center;justify-content:space-between;gap:16px}h1{margin:0;font-size:30px;letter-spacing:.08em}header p{margin:0;color:var(--muted)}h2{font-size:20px;margin-top:0}h3{font-size:17px}.badge{font-size:12px;font-weight:650;letter-spacing:.04em}.notice{background:var(--warning);padding:16px;border-radius:8px;margin-bottom:20px}section,details{background:var(--panel);border:1px solid var(--border);padding:20px;border-radius:10px;margin-bottom:20px}label{display:grid;gap:5px;margin:8px 0}input,select,textarea,button{font:inherit;color:inherit}input,select,textarea{padding:9px;border:1px solid var(--border);border-radius:5px;background:var(--bg);min-width:0;max-width:100%}input[type=file]{width:100%}button{border:1px solid var(--border);border-radius:6px;background:var(--panel);padding:9px 14px;cursor:pointer}button:hover{border-color:var(--brand)}button:disabled{opacity:.5;cursor:default}button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--brand);outline-offset:3px}#login-form{display:flex;gap:12px;align-items:end;flex-wrap:wrap}#login-form label{flex:1;min-width:220px}#login-form button{margin-bottom:8px}nav{display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin:0 0 20px}nav label{margin:0}.check{display:flex;align-items:center;gap:8px}.section-head{display:flex;gap:16px;align-items:center;justify-content:space-between;flex-wrap:wrap}#upload-form{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:16px}#upload-form button{grid-column:1/-1;justify-self:start}.muted,footer{color:var(--muted)}pre{white-space:pre-wrap;overflow-wrap:anywhere;font-size:12px;background:var(--bg);padding:14px;border-radius:6px;max-height:650px;overflow:auto}.case-layout{display:grid;grid-template-columns:minmax(260px,1fr) minmax(0,2fr);gap:22px}.case-button{display:block;text-align:left;width:100%;margin:8px 0;overflow-wrap:anywhere}.case-button[aria-pressed=true]{border:2px solid var(--brand)}.pager{display:flex;gap:10px;margin-top:14px}#message{overflow-wrap:anywhere}#review-form{border-top:1px solid var(--border);margin-top:20px;padding-top:18px}textarea{min-height:90px}summary{cursor:pointer}code{overflow-wrap:anywhere}[hidden]{display:none!important}@media(max-width:740px){header,main,footer{padding:16px}.case-layout,#upload-form{grid-template-columns:1fr}header{align-items:start;flex-direction:column}pre{max-height:480px}#login-form label{min-width:180px}}
+/* IRIS EXPLAIN: Styles only: layout, visibility, focus and update highlighting do not compute or persist risk decisions.
+*//* IRIS EXPLAIN: Style selector :root; CSS chooses presentation only, not the authenticated role or stored data.
+*/:root{/* IRIS EXPLAIN: Declare browser-native control/theme colors: color-scheme = light dark.
+*/color-scheme:light dark;/* IRIS EXPLAIN: Define a reusable theme token: --bg = light-dark(#f4f6fa,#131923).
+*/--bg:light-dark(#f4f6fa,#131923);/* IRIS EXPLAIN: Define a reusable theme token: --panel = light-dark(#fff,#1c2532).
+*/--panel:light-dark(#fff,#1c2532);/* IRIS EXPLAIN: Define a reusable theme token: --fg = light-dark(#18283c,#edf2fa).
+*/--fg:light-dark(#18283c,#edf2fa);/* IRIS EXPLAIN: Define a reusable theme token: --muted = light-dark(#506177,#b2bfd0).
+*/--muted:light-dark(#506177,#b2bfd0);/* IRIS EXPLAIN: Define a reusable theme token: --border = light-dark(#d5deea,#3a485c).
+*/--border:light-dark(#d5deea,#3a485c);/* IRIS EXPLAIN: Define a reusable theme token: --brand = light-dark(#174e9b,#9cc2ff).
+*/--brand:light-dark(#174e9b,#9cc2ff);/* IRIS EXPLAIN: Define a reusable theme token: --warning = light-dark(#fff2cd,#3f331b).
+*/--warning:light-dark(#fff2cd,#3f331b)}
+/* IRIS EXPLAIN: Style selector *; CSS chooses presentation only, not the authenticated role or stored data.
+*/*{/* IRIS EXPLAIN: Choose whether padding and borders count inside stated dimensions: box-sizing = border-box.
+*/box-sizing:border-box}/* IRIS EXPLAIN: Style selector body; CSS chooses presentation only, not the authenticated role or stored data.
+*/body{/* IRIS EXPLAIN: Set outer spacing: margin = 0.
+*/margin:0;/* IRIS EXPLAIN: Set the background color/layers: background = var(--bg).
+*/background:var(--bg);/* IRIS EXPLAIN: Set foreground/text color: color = var(--fg).
+*/color:var(--fg);/* IRIS EXPLAIN: Set the font shorthand: font = 15px/1.5 system-ui,sans-serif.
+*/font:15px/1.5 system-ui,sans-serif}/* IRIS EXPLAIN: Style selector header,main,footer; CSS chooses presentation only, not the authenticated role or stored data.
+*/header,main,footer{/* IRIS EXPLAIN: Limit width: max-width = 1200px.
+*/max-width:1200px;/* IRIS EXPLAIN: Set outer spacing: margin = auto.
+*/margin:auto;/* IRIS EXPLAIN: Set inner spacing: padding = 24px.
+*/padding:24px}/* IRIS EXPLAIN: Style selector header; CSS chooses presentation only, not the authenticated role or stored data.
+*/header{/* IRIS EXPLAIN: Choose the layout/visibility mode: display = flex.
+*/display:flex;/* IRIS EXPLAIN: Align children on the cross axis: align-items = center.
+*/align-items:center;/* IRIS EXPLAIN: Distribute children on the main axis: justify-content = space-between.
+*/justify-content:space-between;/* IRIS EXPLAIN: Set spacing between flex/grid children: gap = 16px.
+*/gap:16px}/* IRIS EXPLAIN: Style selector h1; CSS chooses presentation only, not the authenticated role or stored data.
+*/h1{/* IRIS EXPLAIN: Set outer spacing: margin = 0.
+*/margin:0;/* IRIS EXPLAIN: Set text size: font-size = 30px.
+*/font-size:30px;/* IRIS EXPLAIN: Set spacing between letters: letter-spacing = .08em.
+*/letter-spacing:.08em}/* IRIS EXPLAIN: Style selector header p; CSS chooses presentation only, not the authenticated role or stored data.
+*/header p{/* IRIS EXPLAIN: Set outer spacing: margin = 0.
+*/margin:0;/* IRIS EXPLAIN: Set foreground/text color: color = var(--muted).
+*/color:var(--muted)}/* IRIS EXPLAIN: Style selector h2; CSS chooses presentation only, not the authenticated role or stored data.
+*/h2{/* IRIS EXPLAIN: Set text size: font-size = 20px.
+*/font-size:20px;/* IRIS EXPLAIN: Set this existing CSS property: margin-top = 0.
+*/margin-top:0}/* IRIS EXPLAIN: Style selector h3; CSS chooses presentation only, not the authenticated role or stored data.
+*/h3{/* IRIS EXPLAIN: Set text size: font-size = 17px.
+*/font-size:17px}/* IRIS EXPLAIN: Style selector .badge; CSS chooses presentation only, not the authenticated role or stored data.
+*/.badge{/* IRIS EXPLAIN: Set text size: font-size = 12px.
+*/font-size:12px;/* IRIS EXPLAIN: Set text emphasis weight: font-weight = 650.
+*/font-weight:650;/* IRIS EXPLAIN: Set spacing between letters: letter-spacing = .04em.
+*/letter-spacing:.04em}/* IRIS EXPLAIN: Style selector .notice; CSS chooses presentation only, not the authenticated role or stored data.
+*/.notice{/* IRIS EXPLAIN: Set the background color/layers: background = var(--warning).
+*/background:var(--warning);/* IRIS EXPLAIN: Set inner spacing: padding = 16px.
+*/padding:16px;/* IRIS EXPLAIN: Round box corners: border-radius = 8px.
+*/border-radius:8px;/* IRIS EXPLAIN: Set this existing CSS property: margin-bottom = 20px.
+*/margin-bottom:20px}/* IRIS EXPLAIN: Style selector section,details; CSS chooses presentation only, not the authenticated role or stored data.
+*/section,details{/* IRIS EXPLAIN: Set the background color/layers: background = var(--panel).
+*/background:var(--panel);/* IRIS EXPLAIN: Set border width/style/color: border = 1px solid var(--border).
+*/border:1px solid var(--border);/* IRIS EXPLAIN: Set inner spacing: padding = 20px.
+*/padding:20px;/* IRIS EXPLAIN: Round box corners: border-radius = 10px.
+*/border-radius:10px;/* IRIS EXPLAIN: Set this existing CSS property: margin-bottom = 20px.
+*/margin-bottom:20px}/* IRIS EXPLAIN: Style selector label; CSS chooses presentation only, not the authenticated role or stored data.
+*/label{/* IRIS EXPLAIN: Choose the layout/visibility mode: display = grid.
+*/display:grid;/* IRIS EXPLAIN: Set spacing between flex/grid children: gap = 5px.
+*/gap:5px;/* IRIS EXPLAIN: Set outer spacing: margin = 8px 0.
+*/margin:8px 0}/* IRIS EXPLAIN: Style selector input,select,textarea,button; CSS chooses presentation only, not the authenticated role or stored data.
+*/input,select,textarea,button{/* IRIS EXPLAIN: Set the font shorthand: font = inherit.
+*/font:inherit;/* IRIS EXPLAIN: Set foreground/text color: color = inherit.
+*/color:inherit}/* IRIS EXPLAIN: Style selector input,select,textarea; CSS chooses presentation only, not the authenticated role or stored data.
+*/input,select,textarea{/* IRIS EXPLAIN: Set inner spacing: padding = 9px.
+*/padding:9px;/* IRIS EXPLAIN: Set border width/style/color: border = 1px solid var(--border).
+*/border:1px solid var(--border);/* IRIS EXPLAIN: Round box corners: border-radius = 5px.
+*/border-radius:5px;/* IRIS EXPLAIN: Set the background color/layers: background = var(--bg).
+*/background:var(--bg);/* IRIS EXPLAIN: Require a minimum width: min-width = 0.
+*/min-width:0;/* IRIS EXPLAIN: Limit width: max-width = 100%.
+*/max-width:100%}/* IRIS EXPLAIN: Style selector input[type=file]; CSS chooses presentation only, not the authenticated role or stored data.
+*/input[type=file]{/* IRIS EXPLAIN: Set width: width = 100%.
+*/width:100%}/* IRIS EXPLAIN: Style selector button; CSS chooses presentation only, not the authenticated role or stored data.
+*/button{/* IRIS EXPLAIN: Set border width/style/color: border = 1px solid var(--border).
+*/border:1px solid var(--border);/* IRIS EXPLAIN: Round box corners: border-radius = 6px.
+*/border-radius:6px;/* IRIS EXPLAIN: Set the background color/layers: background = var(--panel).
+*/background:var(--panel);/* IRIS EXPLAIN: Set inner spacing: padding = 9px 14px.
+*/padding:9px 14px;/* IRIS EXPLAIN: Show the pointer/wait/text interaction affordance: cursor = pointer.
+*/cursor:pointer}/* IRIS EXPLAIN: Style selector button:hover; CSS chooses presentation only, not the authenticated role or stored data.
+*/button:hover{/* IRIS EXPLAIN: Set border color: border-color = var(--brand).
+*/border-color:var(--brand)}/* IRIS EXPLAIN: Style selector button:disabled; CSS chooses presentation only, not the authenticated role or stored data.
+*/button:disabled{/* IRIS EXPLAIN: Set visual opacity: opacity = .5.
+*/opacity:.5;/* IRIS EXPLAIN: Show the pointer/wait/text interaction affordance: cursor = default.
+*/cursor:default}/* IRIS EXPLAIN: Style selector button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible; CSS chooses presentation only, not the authenticated role or stored data.
+*/button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{/* IRIS EXPLAIN: Draw a keyboard-focus indicator: outline = 2px solid var(--brand).
+*/outline:2px solid var(--brand);/* IRIS EXPLAIN: Separate the focus outline from its element: outline-offset = 3px.
+*/outline-offset:3px}/* IRIS EXPLAIN: Style selector #login-form; CSS chooses presentation only, not the authenticated role or stored data.
+*/#login-form{/* IRIS EXPLAIN: Choose the layout/visibility mode: display = flex.
+*/display:flex;/* IRIS EXPLAIN: Set spacing between flex/grid children: gap = 12px.
+*/gap:12px;/* IRIS EXPLAIN: Align children on the cross axis: align-items = end.
+*/align-items:end;/* IRIS EXPLAIN: Allow flex children to wrap: flex-wrap = wrap.
+*/flex-wrap:wrap}/* IRIS EXPLAIN: Style selector #login-form label; CSS chooses presentation only, not the authenticated role or stored data.
+*/#login-form label{/* IRIS EXPLAIN: Set this existing CSS property: flex = 1.
+*/flex:1;/* IRIS EXPLAIN: Require a minimum width: min-width = 220px.
+*/min-width:220px}/* IRIS EXPLAIN: Style selector #login-form button; CSS chooses presentation only, not the authenticated role or stored data.
+*/#login-form button{/* IRIS EXPLAIN: Set this existing CSS property: margin-bottom = 8px.
+*/margin-bottom:8px}/* IRIS EXPLAIN: Style selector nav; CSS chooses presentation only, not the authenticated role or stored data.
+*/nav{/* IRIS EXPLAIN: Choose the layout/visibility mode: display = flex.
+*/display:flex;/* IRIS EXPLAIN: Allow flex children to wrap: flex-wrap = wrap.
+*/flex-wrap:wrap;/* IRIS EXPLAIN: Align children on the cross axis: align-items = center.
+*/align-items:center;/* IRIS EXPLAIN: Set spacing between flex/grid children: gap = 14px.
+*/gap:14px;/* IRIS EXPLAIN: Set outer spacing: margin = 0 0 20px.
+*/margin:0 0 20px}/* IRIS EXPLAIN: Style selector nav label; CSS chooses presentation only, not the authenticated role or stored data.
+*/nav label{/* IRIS EXPLAIN: Set outer spacing: margin = 0.
+*/margin:0}/* IRIS EXPLAIN: Style selector .check; CSS chooses presentation only, not the authenticated role or stored data.
+*/.check{/* IRIS EXPLAIN: Choose the layout/visibility mode: display = flex.
+*/display:flex;/* IRIS EXPLAIN: Align children on the cross axis: align-items = center.
+*/align-items:center;/* IRIS EXPLAIN: Set spacing between flex/grid children: gap = 8px.
+*/gap:8px}/* IRIS EXPLAIN: Style selector .section-head; CSS chooses presentation only, not the authenticated role or stored data.
+*/.section-head{/* IRIS EXPLAIN: Choose the layout/visibility mode: display = flex.
+*/display:flex;/* IRIS EXPLAIN: Set spacing between flex/grid children: gap = 16px.
+*/gap:16px;/* IRIS EXPLAIN: Align children on the cross axis: align-items = center.
+*/align-items:center;/* IRIS EXPLAIN: Distribute children on the main axis: justify-content = space-between.
+*/justify-content:space-between;/* IRIS EXPLAIN: Allow flex children to wrap: flex-wrap = wrap.
+*/flex-wrap:wrap}/* IRIS EXPLAIN: Style selector #upload-form; CSS chooses presentation only, not the authenticated role or stored data.
+*/#upload-form{/* IRIS EXPLAIN: Choose the layout/visibility mode: display = grid.
+*/display:grid;/* IRIS EXPLAIN: Define responsive grid columns: grid-template-columns = repeat(3,minmax(0,1fr)).
+*/grid-template-columns:repeat(3,minmax(0,1fr));/* IRIS EXPLAIN: Set spacing between flex/grid children: gap = 12px.
+*/gap:12px;/* IRIS EXPLAIN: Set this existing CSS property: margin-top = 16px.
+*/margin-top:16px}/* IRIS EXPLAIN: Style selector #upload-form button; CSS chooses presentation only, not the authenticated role or stored data.
+*/#upload-form button{/* IRIS EXPLAIN: Choose the columns spanned by a grid item: grid-column = 1/-1.
+*/grid-column:1/-1;/* IRIS EXPLAIN: Set this existing CSS property: justify-self = start.
+*/justify-self:start}/* IRIS EXPLAIN: Style selector .muted,footer; CSS chooses presentation only, not the authenticated role or stored data.
+*/.muted,footer{/* IRIS EXPLAIN: Set foreground/text color: color = var(--muted).
+*/color:var(--muted)}/* IRIS EXPLAIN: Style selector pre; CSS chooses presentation only, not the authenticated role or stored data.
+*/pre{/* IRIS EXPLAIN: Control wrapping and preserved whitespace: white-space = pre-wrap.
+*/white-space:pre-wrap;/* IRIS EXPLAIN: Allow long evidence text to break safely: overflow-wrap = anywhere.
+*/overflow-wrap:anywhere;/* IRIS EXPLAIN: Set text size: font-size = 12px.
+*/font-size:12px;/* IRIS EXPLAIN: Set the background color/layers: background = var(--bg).
+*/background:var(--bg);/* IRIS EXPLAIN: Set inner spacing: padding = 14px.
+*/padding:14px;/* IRIS EXPLAIN: Round box corners: border-radius = 6px.
+*/border-radius:6px;/* IRIS EXPLAIN: Limit height: max-height = 650px.
+*/max-height:650px;/* IRIS EXPLAIN: Control clipping/scrolling: overflow = auto.
+*/overflow:auto}/* IRIS EXPLAIN: Style selector .case-layout; CSS chooses presentation only, not the authenticated role or stored data.
+*/.case-layout{/* IRIS EXPLAIN: Choose the layout/visibility mode: display = grid.
+*/display:grid;/* IRIS EXPLAIN: Define responsive grid columns: grid-template-columns = minmax(260px,1fr) minmax(0,2fr).
+*/grid-template-columns:minmax(260px,1fr) minmax(0,2fr);/* IRIS EXPLAIN: Set spacing between flex/grid children: gap = 22px.
+*/gap:22px}/* IRIS EXPLAIN: Style selector .case-button; CSS chooses presentation only, not the authenticated role or stored data.
+*/.case-button{/* IRIS EXPLAIN: Choose the layout/visibility mode: display = block.
+*/display:block;/* IRIS EXPLAIN: Align inline text: text-align = left.
+*/text-align:left;/* IRIS EXPLAIN: Set width: width = 100%.
+*/width:100%;/* IRIS EXPLAIN: Set outer spacing: margin = 8px 0.
+*/margin:8px 0;/* IRIS EXPLAIN: Allow long evidence text to break safely: overflow-wrap = anywhere.
+*/overflow-wrap:anywhere}/* IRIS EXPLAIN: Style selector .case-button[aria-pressed=true]; CSS chooses presentation only, not the authenticated role or stored data.
+*/.case-button[aria-pressed=true]{/* IRIS EXPLAIN: Set border width/style/color: border = 2px solid var(--brand).
+*/border:2px solid var(--brand)}/* IRIS EXPLAIN: Style selector .pager; CSS chooses presentation only, not the authenticated role or stored data.
+*/.pager{/* IRIS EXPLAIN: Choose the layout/visibility mode: display = flex.
+*/display:flex;/* IRIS EXPLAIN: Set spacing between flex/grid children: gap = 10px.
+*/gap:10px;/* IRIS EXPLAIN: Set this existing CSS property: margin-top = 14px.
+*/margin-top:14px}/* IRIS EXPLAIN: Style selector #message; CSS chooses presentation only, not the authenticated role or stored data.
+*/#message{/* IRIS EXPLAIN: Allow long evidence text to break safely: overflow-wrap = anywhere.
+*/overflow-wrap:anywhere}/* IRIS EXPLAIN: Style selector #review-form; CSS chooses presentation only, not the authenticated role or stored data.
+*/#review-form{/* IRIS EXPLAIN: Set this existing CSS property: border-top = 1px solid var(--border).
+*/border-top:1px solid var(--border);/* IRIS EXPLAIN: Set this existing CSS property: margin-top = 20px.
+*/margin-top:20px;/* IRIS EXPLAIN: Set this existing CSS property: padding-top = 18px.
+*/padding-top:18px}/* IRIS EXPLAIN: Style selector textarea; CSS chooses presentation only, not the authenticated role or stored data.
+*/textarea{/* IRIS EXPLAIN: Require a minimum height: min-height = 90px.
+*/min-height:90px}/* IRIS EXPLAIN: Style selector summary; CSS chooses presentation only, not the authenticated role or stored data.
+*/summary{/* IRIS EXPLAIN: Show the pointer/wait/text interaction affordance: cursor = pointer.
+*/cursor:pointer}/* IRIS EXPLAIN: Style selector code; CSS chooses presentation only, not the authenticated role or stored data.
+*/code{/* IRIS EXPLAIN: Allow long evidence text to break safely: overflow-wrap = anywhere.
+*/overflow-wrap:anywhere}/* IRIS EXPLAIN: Style selector [hidden]; CSS chooses presentation only, not the authenticated role or stored data.
+*/[hidden]{/* IRIS EXPLAIN: Choose the layout/visibility mode: display = none!important.
+*/display:none!important}/* IRIS EXPLAIN: Responsive/accessibility condition @media(max-width:740px); apply its existing nested styling only when matched.
+*/@media(max-width:740px){/* IRIS EXPLAIN: Style selector header,main,footer; CSS chooses presentation only, not the authenticated role or stored data.
+*/header,main,footer{/* IRIS EXPLAIN: Set inner spacing: padding = 16px.
+*/padding:16px}/* IRIS EXPLAIN: Style selector .case-layout,#upload-form; CSS chooses presentation only, not the authenticated role or stored data.
+*/.case-layout,#upload-form{/* IRIS EXPLAIN: Define responsive grid columns: grid-template-columns = 1fr.
+*/grid-template-columns:1fr}/* IRIS EXPLAIN: Style selector header; CSS chooses presentation only, not the authenticated role or stored data.
+*/header{/* IRIS EXPLAIN: Align children on the cross axis: align-items = start.
+*/align-items:start;/* IRIS EXPLAIN: Choose the flex stacking direction: flex-direction = column.
+*/flex-direction:column}/* IRIS EXPLAIN: Style selector pre; CSS chooses presentation only, not the authenticated role or stored data.
+*/pre{/* IRIS EXPLAIN: Limit height: max-height = 480px.
+*/max-height:480px}/* IRIS EXPLAIN: Style selector #login-form label; CSS chooses presentation only, not the authenticated role or stored data.
+*/#login-form label{/* IRIS EXPLAIN: Require a minimum width: min-width = 180px.
+*/min-width:180px}}

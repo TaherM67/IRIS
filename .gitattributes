@@ -1,3 +1,6 @@
+# IRIS EXPLAIN: Configuration comments only: every original setting, dependency pin and pattern below is unchanged.
 # Preserve byte-exact source manifests and model/catalogue integrity checks.
 # In particular, do not rewrite line endings on Windows checkout.
+# IRIS EXPLAIN: Disable automatic text/line-ending conversion for the existing paths; byte hashes must match across checkout
+# IRIS EXPLAIN: platforms.
 * -text

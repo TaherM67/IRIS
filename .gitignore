@@ -1,30 +1,90 @@
+# IRIS EXPLAIN: Configuration comments only: every original setting, dependency pin and pattern below is unchanged.
+# IRIS EXPLAIN: Ignore the existing __pycache__/ path pattern so generated, private, credential, environment or reproducible run
+# IRIS EXPLAIN: files are not accidentally committed.
 __pycache__/
+# IRIS EXPLAIN: Ignore the existing *.py[cod] path pattern so generated, private, credential, environment or reproducible run
+# IRIS EXPLAIN: files are not accidentally committed.
 *.py[cod]
+# IRIS EXPLAIN: Ignore the existing .venv/ path pattern so generated, private, credential, environment or reproducible run files
+# IRIS EXPLAIN: are not accidentally committed.
 .venv/
+# IRIS EXPLAIN: Ignore the existing venv/ path pattern so generated, private, credential, environment or reproducible run files
+# IRIS EXPLAIN: are not accidentally committed.
 venv/
+# IRIS EXPLAIN: Ignore the existing *.egg-info/ path pattern so generated, private, credential, environment or reproducible run
+# IRIS EXPLAIN: files are not accidentally committed.
 *.egg-info/
+# IRIS EXPLAIN: Ignore the existing .pytest_cache/ path pattern so generated, private, credential, environment or reproducible
+# IRIS EXPLAIN: run files are not accidentally committed.
 .pytest_cache/
+# IRIS EXPLAIN: Ignore the existing .ipynb_checkpoints/ path pattern so generated, private, credential, environment or
+# IRIS EXPLAIN: reproducible run files are not accidentally committed.
 .ipynb_checkpoints/
+# IRIS EXPLAIN: Ignore the existing .DS_Store path pattern so generated, private, credential, environment or reproducible run
+# IRIS EXPLAIN: files are not accidentally committed.
 .DS_Store
+# IRIS EXPLAIN: Ignore the existing .local/ path pattern so generated, private, credential, environment or reproducible run
+# IRIS EXPLAIN: files are not accidentally committed.
 .local/
+# IRIS EXPLAIN: Ignore the existing .env path pattern so generated, private, credential, environment or reproducible run files
+# IRIS EXPLAIN: are not accidentally committed.
 .env
+# IRIS EXPLAIN: Ignore the existing .env.* path pattern so generated, private, credential, environment or reproducible run files
+# IRIS EXPLAIN: are not accidentally committed.
 .env.*
+# IRIS EXPLAIN: Keep the existing explicit allowlist exception !.env.example.
 !.env.example
+# IRIS EXPLAIN: Ignore the existing *.sqlite path pattern so generated, private, credential, environment or reproducible run
+# IRIS EXPLAIN: files are not accidentally committed.
 *.sqlite
+# IRIS EXPLAIN: Ignore the existing *.sqlite3 path pattern so generated, private, credential, environment or reproducible run
+# IRIS EXPLAIN: files are not accidentally committed.
 *.sqlite3
+# IRIS EXPLAIN: Ignore the existing *.sqlite3-* path pattern so generated, private, credential, environment or reproducible run
+# IRIS EXPLAIN: files are not accidentally committed.
 *.sqlite3-*
+# IRIS EXPLAIN: Ignore the existing local_data/ path pattern so generated, private, credential, environment or reproducible run
+# IRIS EXPLAIN: files are not accidentally committed.
 local_data/
+# IRIS EXPLAIN: Ignore the existing private_data/ path pattern so generated, private, credential, environment or reproducible
+# IRIS EXPLAIN: run files are not accidentally committed.
 private_data/
+# IRIS EXPLAIN: Ignore the existing runs/ path pattern so generated, private, credential, environment or reproducible run files
+# IRIS EXPLAIN: are not accidentally committed.
 runs/
+# IRIS EXPLAIN: Ignore the existing experiments/ path pattern so generated, private, credential, environment or reproducible run
+# IRIS EXPLAIN: files are not accidentally committed.
 experiments/
+# IRIS EXPLAIN: Ignore the existing my_training/ path pattern so generated, private, credential, environment or reproducible run
+# IRIS EXPLAIN: files are not accidentally committed.
 my_training/
+# IRIS EXPLAIN: Ignore the existing my_predictions/ path pattern so generated, private, credential, environment or reproducible
+# IRIS EXPLAIN: run files are not accidentally committed.
 my_predictions/
+# IRIS EXPLAIN: Ignore the existing my_three_input_training/ path pattern so generated, private, credential, environment or
+# IRIS EXPLAIN: reproducible run files are not accidentally committed.
 my_three_input_training/
+# IRIS EXPLAIN: Ignore the existing my_three_input_predictions/ path pattern so generated, private, credential, environment or
+# IRIS EXPLAIN: reproducible run files are not accidentally committed.
 my_three_input_predictions/
+# IRIS EXPLAIN: Ignore the existing my_prepared_data/ path pattern so generated, private, credential, environment or
+# IRIS EXPLAIN: reproducible run files are not accidentally committed.
 my_prepared_data/
+# IRIS EXPLAIN: Ignore the existing colab_training/ path pattern so generated, private, credential, environment or reproducible
+# IRIS EXPLAIN: run files are not accidentally committed.
 colab_training/
+# IRIS EXPLAIN: Ignore the existing colab_predictions/ path pattern so generated, private, credential, environment or
+# IRIS EXPLAIN: reproducible run files are not accidentally committed.
 colab_predictions/
+# IRIS EXPLAIN: Ignore the existing **/unified_events.jsonl path pattern so generated, private, credential, environment or
+# IRIS EXPLAIN: reproducible run files are not accidentally committed.
 **/unified_events.jsonl
+# IRIS EXPLAIN: Ignore the existing IRIS_Model_Code*.zip path pattern so generated, private, credential, environment or
+# IRIS EXPLAIN: reproducible run files are not accidentally committed.
 IRIS_Model_Code*.zip
+# IRIS EXPLAIN: Ignore the existing IRIS_Colab*.zip path pattern so generated, private, credential, environment or reproducible
+# IRIS EXPLAIN: run files are not accidentally committed.
 IRIS_Colab*.zip
+# IRIS EXPLAIN: Ignore the existing IRIS-main.zip path pattern so generated, private, credential, environment or reproducible
+# IRIS EXPLAIN: run files are not accidentally committed.
 IRIS-main.zip
