@@ -1,46 +1,362 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#101b32">
-  <title>IRIS · {{TITLE}}</title>
-  <link rel="stylesheet" href="/demo-static/style.css">
-  <script src="/demo-static/app.js" defer></script>
-</head>
-<!-- The server selects this role. Other teams' panels are never in this page. -->
-<body data-role="{{ROLE}}">
-  <a class="skip-link" href="#main">Skip to content</a>
-  <!-- Navigation uses only sections present in this role's own workspace. -->
-  <aside class="sidebar" aria-label="Workspace navigation">
-    <a class="brand" href="/{{ROLE}}" aria-label="IRIS workspace"><span class="brand-mark" aria-hidden="true"><i></i></span><span>IRIS<small>RISK INTELLIGENCE</small></span></a>
-    <div class="sidebar-label">YOUR WORKSPACE</div>
-    <div class="role-card"><span class="role-icon" aria-hidden="true">{{ROLE}}</span><div><strong>{{TITLE}}</strong><span>Focused. Connected. In control.</span></div></div>
-    <nav class="side-nav" aria-label="Page sections">
-      <a href="#workspace" class="nav-overview"><span aria-hidden="true">◈</span>Overview</a>
-      <a href="#review-panel"><span aria-hidden="true">▣</span>Review center</a>
-      <a href="#records-section"><span aria-hidden="true">▤</span>Working records</a>
-      <a href="#activity-section"><span aria-hidden="true">↗</span>Applied changes</a>
-    </nav>
-    <div class="sidebar-note"><span class="status-dot" aria-hidden="true"></span><strong>Human-led decisions</strong><p>Evidence first.<br>Approval before any change.</p></div>
-    <div class="sidebar-bottom"><span class="demo-badge">SYNTHETIC DEMO</span><p>Private local workspace<br>No external system writes</p></div>
-  </aside>
-  <div class="app-shell">
-    <header class="topbar"><div class="breadcrumb">Workspace <span>/</span> <strong>{{TITLE}}</strong></div><div class="topbar-note"><span class="status-dot" aria-hidden="true"></span>Approval-gated engine</div></header>
-    <main id="main">
-      <div class="page-heading"><div><p class="eyebrow">CONNECTED RISK INTELLIGENCE</p><h1>{{TITLE}}</h1><p>{{DESCRIPTION}}</p></div><span class="page-emblem" aria-hidden="true">{{ROLE}}</span></div>
-      <!-- No records are read until this tab authenticates with its role key. -->
-      <section id="login-panel" class="card login-panel">
-        <div class="login-intro"><span class="section-kicker">SECURE WORKSPACE</span><h2>A clear view.<br>A confident decision.</h2><p>Connect to your workspace to review the evidence, see proposed changes, and follow the results.</p><div class="login-flow"><span>01 <strong>Review evidence</strong></span><span>02 <strong>Make a decision</strong></span><span>03 <strong>See the change</strong></span></div></div>
-        <div class="login-form-panel"><span class="login-lock" aria-hidden="true">↳</span><h2>Welcome to {{TITLE}}</h2><p>Use your <strong>{{ROLE}}</strong> demo access key.</p><form id="login-form"><label for="key">Workspace access key</label><div class="key-input-wrap"><input id="key" type="password" required autocomplete="off" maxlength="300" placeholder="Paste your private demo key" aria-describedby="key-help"><button id="toggle-key" type="button" class="quiet" aria-pressed="false">Show</button></div><p id="login-error" class="login-error" role="alert" hidden></p><button type="submit" class="connect-button">Connect to workspace →</button></form><p id="key-help" class="small-help">Your key stays in this tab. It is not saved in browser storage.</p><p id="access-profile" class="access-profile"></p><details class="small-help"><summary>Need help connecting?</summary><p>In the <strong>same project folder as the running server</strong>, open a second private terminal and run <code>python demo.py keys --role {{ROLE}}</code>. Copy only your role's key, not a different workspace's key.</p><p>Use <code>python demo.py doctor</code> to check this project's access configuration. Do not use <code>python -m backend keys</code>; those keys belong to the older prototype. Keep keys off screen when presenting.</p></details></div>
-      </section>
-      <p id="message" class="message" role="status" aria-live="polite">Connect to see your workspace.</p>
-      <div id="workspace" hidden>
-        <div class="workspace-tools"><div><span id="identity" class="connected"></span><span class="tool-divider" aria-hidden="true"></span><span id="exercise" class="muted"></span></div><div class="tool-actions"><label class="check"><input id="auto-refresh" type="checkbox" checked>Live updates</label><button id="refresh" type="button" class="secondary">Refresh</button><button id="logout" type="button" class="quiet">Disconnect</button></div></div>
-        <!-- IRIS: workspace -->
-      </div>
-    </main>
-    <footer><span class="footer-brand">IRIS</span><span>Demo records only · Human approval required · No external system is changed</span></footer>
-  </div>
-</body>
-</html>
+<!-- IRIS EXPLAIN: Keep the HTML5 document declaration so browser layout uses standards mode.
+--><!doctype html>
+<!-- IRIS EXPLAIN: Open <html>: retain this existing semantic/layout container and its original content/attributes.
+--><html lang="en">
+<!-- IRIS EXPLAIN: Open <head>: retain this existing semantic/layout container and its original content/attributes.
+--><head>
+  <!-- IRIS EXPLAIN: Open <meta>: declare character encoding for correct text/responsive rendering.
+--><meta charset="utf-8">
+  <!-- IRIS EXPLAIN: Open <meta>: declare viewport for correct text/responsive rendering.
+--><meta name="viewport" content="width=device-width,initial-scale=1">
+  <!-- IRIS EXPLAIN: Open <title>: retain this existing semantic/layout container and its original content/attributes.
+--><title>IRIS · Active demonstration</title>
+  <!-- IRIS EXPLAIN: Open <link>: load the local stylesheet; no remote frontend dependency is required.
+--><link rel="stylesheet" href="/demo-static/style.css">
+  <!-- IRIS EXPLAIN: Open <script>: load the local JavaScript after parsing because defer is set; there is no inline script.
+--><script src="/demo-static/app.js" defer></script>
+<!-- IRIS EXPLAIN: Close the existing <head> element; no rendered text or attributes are changed.
+--></head>
+<!-- IRIS EXPLAIN: Open <body data-role="{{ROLE}}">: retain this existing semantic/layout container and its original content/attributes.
+--><body>
+  <!-- IRIS EXPLAIN: Open <header>: retain this existing semantic/layout container and its original content/attributes.
+--><header class="topbar"><!-- IRIS EXPLAIN: Open <a>: existing navigation/download link; it never includes a role key.
+--><a class="brand" href="/{{ROLE}}">IRIS<!-- IRIS EXPLAIN: Open <span>: retain this existing semantic/layout container and its original content/attributes.
+--><span>Integrated Risk Intelligence<!-- IRIS EXPLAIN: Close the existing <span> element; no rendered text or attributes are changed.
+--></span><!-- IRIS EXPLAIN: Close the existing <a> element; no rendered text or attributes are changed.
+--></a><!-- IRIS EXPLAIN: Open <nav>: retain this existing semantic/layout container and its original content/attributes.
+--><nav aria-label="Dashboards"><!-- IRIS EXPLAIN: Open <a>: existing navigation/download link; it never includes a role key.
+--><!-- IRIS: roles=admin --><a href="/admin" target="_blank" rel="noopener">Admin<!-- IRIS EXPLAIN: Close the existing <a> element; no rendered text or attributes are changed.
+--></a><!-- IRIS: end --><!-- IRIS EXPLAIN: Open <a>: existing navigation/download link; it never includes a role key.
+--><!-- IRIS: roles=admin,soc --><a href="/soc" target="_blank" rel="noopener">SOC<!-- IRIS EXPLAIN: Close the existing <a> element; no rendered text or attributes are changed.
+--></a><!-- IRIS: end --><!-- IRIS EXPLAIN: Open <a>: existing navigation/download link; it never includes a role key.
+--><!-- IRIS: roles=admin,grc --><a href="/grc" target="_blank" rel="noopener">GRC<!-- IRIS EXPLAIN: Close the existing <a> element; no rendered text or attributes are changed.
+--></a><!-- IRIS: end --><!-- IRIS EXPLAIN: Close the existing <nav> element; no rendered text or attributes are changed.
+--></nav><!-- IRIS EXPLAIN: Open <span>: retain this existing semantic/layout container and its original content/attributes.
+--><span class="pill">ACTIVE DEMO · SYNTHETIC<!-- IRIS EXPLAIN: Close the existing <span> element; no rendered text or attributes are changed.
+--></span><!-- IRIS EXPLAIN: Close the existing <header> element; no rendered text or attributes are changed.
+--></header>
+  <!-- IRIS EXPLAIN: Open <main>: retain this existing semantic/layout container and its original content/attributes.
+--><main>
+    <!-- IRIS EXPLAIN: Open <section>: retain this existing semantic/layout container and its original content/attributes.
+--><section class="hero"><!-- IRIS EXPLAIN: Open <p>: retain this existing semantic/layout container and its original content/attributes.
+--><p class="eyebrow">EVIDENCE → HUMAN APPROVAL → PERSISTED CHANGE<!-- IRIS EXPLAIN: Close the existing <p> element; no rendered text or attributes are changed.
+--></p><!-- IRIS EXPLAIN: Open <h1>: id=title anchors the corresponding fixed dashboard control or status area.
+--><h1 id="title">IRIS active demonstration<!-- IRIS EXPLAIN: Close the existing <h1> element; no rendered text or attributes are changed.
+--></h1><!-- IRIS EXPLAIN: Open <p>: id=subtitle anchors the corresponding fixed dashboard control or status area.
+--><p id="subtitle">One backend. Three connected views. Real changes to fictional records.<!-- IRIS EXPLAIN: Close the existing <p> element; no rendered text or attributes are changed.
+--></p><!-- IRIS EXPLAIN: Close the existing <section> element; no rendered text or attributes are changed.
+--></section>
+    <!-- IRIS EXPLAIN: Open <aside>: retain this existing semantic/layout container and its original content/attributes.
+--><aside class="notice">{{NOTICE}}<!-- IRIS EXPLAIN: Close the existing <aside> element; no rendered text or attributes are changed.
+--></aside>
+    <!-- IRIS EXPLAIN: Open <section>: id=login-panel anchors role-key connection panel.
+--><section id="login-panel" class="card login"><!-- IRIS EXPLAIN: Open <h2>: retain this existing semantic/layout container and its original content/attributes.
+--><h2>Connect this dashboard<!-- IRIS EXPLAIN: Close the existing <h2> element; no rendered text or attributes are changed.
+--></h2><!-- IRIS EXPLAIN: Open <p>: id=login-hint anchors the corresponding fixed dashboard control or status area.
+--><p id="login-hint">In a private terminal, run <!-- IRIS EXPLAIN: Open <code>: retain this existing semantic/layout container and its original content/attributes.
+--><code>python demo.py keys<!-- IRIS EXPLAIN: Close the existing <code> element; no rendered text or attributes are changed.
+--></code>. Use this dashboard's separate role key.<!-- IRIS EXPLAIN: Close the existing <p> element; no rendered text or attributes are changed.
+--></p><!-- IRIS EXPLAIN: Open <form>: id=login-form anchors client-side login submission handler; the JavaScript submit handler sends an explicit backend command; this form is not itself authorization.
+--><form id="login-form"><!-- IRIS EXPLAIN: Open <label>: accessible label for the nested/existing form control.
+--><label>Local demo role key<!-- IRIS EXPLAIN: Open <input>: id=key anchors password-style local role-key input; input type password; existing required/length/accept constraints remain unchanged.
+--><input id="key" type="password" required autocomplete="off" maxlength="256"><!-- IRIS EXPLAIN: Close the existing <label> element; no rendered text or attributes are changed.
+--></label><!-- IRIS EXPLAIN: Open <button>: explicit user action; the backend still checks credentials and saved proposal revisions.
+--><button type="submit">Connect<!-- IRIS EXPLAIN: Close the existing <button> element; no rendered text or attributes are changed.
+--></button><!-- IRIS EXPLAIN: Close the existing <form> element; no rendered text or attributes are changed.
+--></form><!-- IRIS EXPLAIN: Open <p>: retain this existing semantic/layout container and its original content/attributes.
+--><p class="muted">Keys are held in this tab's memory only. Never include them in screenshots.<!-- IRIS EXPLAIN: Close the existing <p> element; no rendered text or attributes are changed.
+--></p><!-- IRIS EXPLAIN: Close the existing <section> element; no rendered text or attributes are changed.
+--></section>
+    <!-- IRIS EXPLAIN: Open <p>: id=message anchors accessible live progress/error message; announce progress through the existing accessible live status region.
+--><p id="message" class="message" role="status" aria-live="polite">Start with Admin. The risk register and alert queue are seeded automatically.<!-- IRIS EXPLAIN: Close the existing <p> element; no rendered text or attributes are changed.
+--></p>
+    <!-- IRIS EXPLAIN: Open <div>: id=workspace anchors authenticated dashboard container; initially hidden; existing JS controls visibility after authentication/state changes.
+--><div id="workspace" hidden>
+      <!-- IRIS EXPLAIN: Open <div>: retain this existing semantic/layout container and its original content/attributes.
+--><div class="toolbar"><!-- IRIS EXPLAIN: Open <div>: retain this existing semantic/layout container and its original content/attributes.
+--><div><!-- IRIS EXPLAIN: Open <strong>: id=identity anchors authenticated role label.
+--><strong id="identity"><!-- IRIS EXPLAIN: Close the existing <strong> element; no rendered text or attributes are changed.
+--></strong><!-- IRIS EXPLAIN: Open <span>: id=exercise anchors the corresponding fixed dashboard control or status area.
+--><span id="exercise" class="muted"><!-- IRIS EXPLAIN: Close the existing <span> element; no rendered text or attributes are changed.
+--></span><!-- IRIS EXPLAIN: Close the existing <div> element; no rendered text or attributes are changed.
+--></div><!-- IRIS EXPLAIN: Open <div>: retain this existing semantic/layout container and its original content/attributes.
+--><div><!-- IRIS EXPLAIN: Open <label>: accessible label for the nested/existing form control.
+--><label class="inline"><!-- IRIS EXPLAIN: Open <input>: id=auto-refresh anchors periodic GET/polling toggle; input type checkbox; existing required/length/accept constraints remain unchanged.
+--><input id="auto-refresh" type="checkbox" checked>Live refresh · 3 s<!-- IRIS EXPLAIN: Close the existing <label> element; no rendered text or attributes are changed.
+--></label><!-- IRIS EXPLAIN: Open <button>: id=refresh anchors manual backend refresh; explicit user action; the backend still checks credentials and saved proposal revisions.
+--><button id="refresh" type="button" class="secondary">Refresh<!-- IRIS EXPLAIN: Close the existing <button> element; no rendered text or attributes are changed.
+--></button><!-- IRIS EXPLAIN: Open <button>: id=logout anchors abort pending requests and clear this tab's in-memory key; explicit user action; the backend still checks credentials and saved proposal revisions.
+--><button id="logout" type="button" class="secondary">Disconnect<!-- IRIS EXPLAIN: Close the existing <button> element; no rendered text or attributes are changed.
+--></button><!-- IRIS EXPLAIN: Close the existing <div> element; no rendered text or attributes are changed.
+--></div><!-- IRIS EXPLAIN: Close the existing <div> element; no rendered text or attributes are changed.
+--></div>
+      <!-- IRIS EXPLAIN: Open <section>: retain this existing semantic/layout container and its original content/attributes.
+--><section class="stats" aria-label="Live demonstration counters"><!-- IRIS EXPLAIN: Open <div>: retain this existing semantic/layout container and its original content/attributes.
+--><!-- IRIS: roles=admin,grc --><div class="stat"><!-- IRIS EXPLAIN: Open <span>: retain this existing semantic/layout container and its original content/attributes.
+--><span>Working risks<!-- IRIS EXPLAIN: Close the existing <span> element; no rendered text or attributes are changed.
+--></span><!-- IRIS EXPLAIN: Open <strong>: id=risk-count anchors the corresponding fixed dashboard control or status area.
+--><strong id="risk-count" data-count="risks">—<!-- IRIS EXPLAIN: Close the existing <strong> element; no rendered text or attributes are changed.
+--></strong><!-- IRIS EXPLAIN: Close the existing <div> element; no rendered text or attributes are changed.
+--></div><!-- IRIS: end --><!-- IRIS EXPLAIN: Open <div>: retain this existing semantic/layout container and its original content/attributes.
+--><!-- IRIS: roles=admin,soc --><div class="stat"><!-- IRIS EXPLAIN: Open <span>: retain this existing semantic/layout container and its original content/attributes.
+--><span>Working alerts<!-- IRIS EXPLAIN: Close the existing <span> element; no rendered text or attributes are changed.
+--></span><!-- IRIS EXPLAIN: Open <strong>: id=alert-count anchors the corresponding fixed dashboard control or status area.
+--><strong id="alert-count" data-count="alerts">—<!-- IRIS EXPLAIN: Close the existing <strong> element; no rendered text or attributes are changed.
+--></strong><!-- IRIS EXPLAIN: Close the existing <div> element; no rendered text or attributes are changed.
+--></div><!-- IRIS: end --><!-- IRIS EXPLAIN: Open <div>: retain this existing semantic/layout container and its original content/attributes.
+--><!-- IRIS: roles=admin,grc --><div class="stat accent"><!-- IRIS EXPLAIN: Open <span>: retain this existing semantic/layout container and its original content/attributes.
+--><span>Risks actually changed<!-- IRIS EXPLAIN: Close the existing <span> element; no rendered text or attributes are changed.
+--></span><!-- IRIS EXPLAIN: Open <strong>: id=risk-changed anchors the corresponding fixed dashboard control or status area.
+--><strong id="risk-changed" data-count="changed_risks">0<!-- IRIS EXPLAIN: Close the existing <strong> element; no rendered text or attributes are changed.
+--></strong><!-- IRIS EXPLAIN: Close the existing <div> element; no rendered text or attributes are changed.
+--></div><!-- IRIS: end --><!-- IRIS EXPLAIN: Open <div>: retain this existing semantic/layout container and its original content/attributes.
+--><!-- IRIS: roles=admin,soc --><div class="stat accent"><!-- IRIS EXPLAIN: Open <span>: retain this existing semantic/layout container and its original content/attributes.
+--><span>Alerts reprioritized<!-- IRIS EXPLAIN: Close the existing <span> element; no rendered text or attributes are changed.
+--></span><!-- IRIS EXPLAIN: Open <strong>: id=alert-changed anchors the corresponding fixed dashboard control or status area.
+--><strong id="alert-changed" data-count="reprioritized_alerts">0<!-- IRIS EXPLAIN: Close the existing <strong> element; no rendered text or attributes are changed.
+--></strong><!-- IRIS EXPLAIN: Close the existing <div> element; no rendered text or attributes are changed.
+--></div><!-- IRIS: end --><!-- IRIS EXPLAIN: Open <div>: retain this existing semantic/layout container and its original content/attributes.
+--><div class="stat"><!-- IRIS EXPLAIN: Open <span>: retain this existing semantic/layout container and its original content/attributes.
+--><span>Waiting for approval<!-- IRIS EXPLAIN: Close the existing <span> element; no rendered text or attributes are changed.
+--></span><!-- IRIS EXPLAIN: Open <strong>: id=pending-count anchors the corresponding fixed dashboard control or status area.
+--><strong id="pending-count" data-count="{{PENDING_COUNT}}">0<!-- IRIS EXPLAIN: Close the existing <strong> element; no rendered text or attributes are changed.
+--></strong><!-- IRIS EXPLAIN: Close the existing <div> element; no rendered text or attributes are changed.
+--></div><!-- IRIS EXPLAIN: Close the existing <section> element; no rendered text or attributes are changed.
+--></section>
+      <!-- IRIS EXPLAIN: Open <section>: id=admin-actions anchors the corresponding fixed dashboard control or status area; initially hidden; existing JS controls visibility after authentication/state changes.
+--><!-- IRIS: roles=admin --><section id="admin-actions" class="card" hidden><!-- IRIS EXPLAIN: Open <div>: retain this existing semantic/layout container and its original content/attributes.
+--><div class="section-title"><!-- IRIS EXPLAIN: Open <div>: retain this existing semantic/layout container and its original content/attributes.
+--><div><!-- IRIS EXPLAIN: Open <p>: retain this existing semantic/layout container and its original content/attributes.
+--><p class="eyebrow">01 / ANALYZE<!-- IRIS EXPLAIN: Close the existing <p> element; no rendered text or attributes are changed.
+--></p><!-- IRIS EXPLAIN: Open <h2>: retain this existing semantic/layout container and its original content/attributes.
+--><h2>Run the engine<!-- IRIS EXPLAIN: Close the existing <h2> element; no rendered text or attributes are changed.
+--></h2><!-- IRIS EXPLAIN: Close the existing <div> element; no rendered text or attributes are changed.
+--></div><!-- IRIS EXPLAIN: Open <button>: id=analyze anchors active-demo analysis POST action; it queues proposals but does not approve them; explicit user action; the backend still checks credentials and saved proposal revisions.
+--><button id="analyze" type="button">Analyze the three demo datasets<!-- IRIS EXPLAIN: Close the existing <button> element; no rendered text or attributes are changed.
+--></button><!-- IRIS EXPLAIN: Close the existing <div> element; no rendered text or attributes are changed.
+--></div><!-- IRIS EXPLAIN: Open <p>: retain this existing semantic/layout container and its original content/attributes.
+--><p>The backend loads the pinned Colab models once, joins the three inputs, and prepares reviewable changes. Analysis alone does not change the working register or queue.<!-- IRIS EXPLAIN: Close the existing <p> element; no rendered text or attributes are changed.
+--></p><!-- IRIS EXPLAIN: Open <p>: id=analysis-status anchors the corresponding fixed dashboard control or status area.
+--><p id="analysis-status" class="muted"><!-- IRIS EXPLAIN: Close the existing <p> element; no rendered text or attributes are changed.
+--></p><!-- IRIS EXPLAIN: Open <details>: collapsible supporting evidence/instructions; opening it does not apply a change.
+--><details><!-- IRIS EXPLAIN: Open <summary>: retain this existing semantic/layout container and its original content/attributes.
+--><summary>Start a fresh rehearsal without deleting history<!-- IRIS EXPLAIN: Close the existing <summary> element; no rendered text or attributes are changed.
+--></summary><!-- IRIS EXPLAIN: Open <p>: retain this existing semantic/layout container and its original content/attributes.
+--><p>Creates another isolated copy of the original synthetic register and queue. Earlier exercises and their approvals remain in the database. Other tabs switch to the new current exercise on refresh.<!-- IRIS EXPLAIN: Close the existing <p> element; no rendered text or attributes are changed.
+--></p><!-- IRIS EXPLAIN: Open <form>: id=exercise-form anchors Admin action creating a new rehearsal while preserving history; the JavaScript submit handler sends an explicit backend command; this form is not itself authorization.
+--><form id="exercise-form"><!-- IRIS EXPLAIN: Open <label>: accessible label for the nested/existing form control.
+--><label>Exercise name<!-- IRIS EXPLAIN: Open <input>: id=exercise-label anchors the corresponding fixed dashboard control or status area; input type text; existing required/length/accept constraints remain unchanged.
+--><input name="label" id="exercise-label" value="Examiner demonstration" minlength="3" maxlength="100" required><!-- IRIS EXPLAIN: Close the existing <label> element; no rendered text or attributes are changed.
+--></label><!-- IRIS EXPLAIN: Open <button>: explicit user action; the backend still checks credentials and saved proposal revisions.
+--><button type="submit" class="secondary">Create new rehearsal<!-- IRIS EXPLAIN: Close the existing <button> element; no rendered text or attributes are changed.
+--></button><!-- IRIS EXPLAIN: Close the existing <form> element; no rendered text or attributes are changed.
+--></form><!-- IRIS EXPLAIN: Close the existing <details> element; no rendered text or attributes are changed.
+--></details><!-- IRIS EXPLAIN: Close the existing <section> element; no rendered text or attributes are changed.
+--></section><!-- IRIS: end -->
+      <!-- IRIS EXPLAIN: Open <section>: id=review-panel anchors the corresponding fixed dashboard control or status area; initially hidden; existing JS controls visibility after authentication/state changes.
+--><section id="review-panel" class="card" hidden><!-- IRIS EXPLAIN: Open <div>: retain this existing semantic/layout container and its original content/attributes.
+--><div class="section-title"><!-- IRIS EXPLAIN: Open <div>: retain this existing semantic/layout container and its original content/attributes.
+--><div><!-- IRIS EXPLAIN: Open <p>: retain this existing semantic/layout container and its original content/attributes.
+--><p class="eyebrow">02 / HUMAN REVIEW<!-- IRIS EXPLAIN: Close the existing <p> element; no rendered text or attributes are changed.
+--></p><!-- IRIS EXPLAIN: Open <h2>: id=proposal-title anchors the corresponding fixed dashboard control or status area.
+--><h2 id="proposal-title">Engine proposals<!-- IRIS EXPLAIN: Close the existing <h2> element; no rendered text or attributes are changed.
+--></h2><!-- IRIS EXPLAIN: Close the existing <div> element; no rendered text or attributes are changed.
+--></div><!-- IRIS EXPLAIN: Open <span>: id=proposal-count anchors the corresponding fixed dashboard control or status area.
+--><span id="proposal-count" class="pill"><!-- IRIS EXPLAIN: Close the existing <span> element; no rendered text or attributes are changed.
+--></span><!-- IRIS EXPLAIN: Close the existing <div> element; no rendered text or attributes are changed.
+--></div><!-- IRIS EXPLAIN: Open <p>: id=approval-note anchors the corresponding fixed dashboard control or status area.
+--><p id="approval-note"><!-- IRIS EXPLAIN: Close the existing <p> element; no rendered text or attributes are changed.
+--></p><!-- IRIS EXPLAIN: Open <label>: accessible label for the nested/existing form control.
+--><label>Choose a pending proposal<!-- IRIS EXPLAIN: Open <select>: id=proposal-select anchors pending saved proposal selection.
+--><select id="proposal-select"><!-- IRIS EXPLAIN: Open <option>: existing selectable value; the server validates the submitted command independently.
+--><option value="">No pending proposals<!-- IRIS EXPLAIN: Close the existing <option> element; no rendered text or attributes are changed.
+--></option><!-- IRIS EXPLAIN: Close the existing <select> element; no rendered text or attributes are changed.
+--></select><!-- IRIS EXPLAIN: Close the existing <label> element; no rendered text or attributes are changed.
+--></label><!-- IRIS EXPLAIN: Open <div>: id=proposal-summary anchors before/after proposal and separate ML shadow summary.
+--><div id="proposal-summary" class="proposal-summary"><!-- IRIS EXPLAIN: Close the existing <div> element; no rendered text or attributes are changed.
+--></div><!-- IRIS EXPLAIN: Open <details>: id=evidence-panel anchors the corresponding fixed dashboard control or status area; collapsible supporting evidence/instructions; opening it does not apply a change; initially hidden; existing JS controls visibility after authentication/state changes.
+--><details id="evidence-panel" hidden><!-- IRIS EXPLAIN: Open <summary>: retain this existing semantic/layout container and its original content/attributes.
+--><summary>{{EVIDENCE_TITLE}}<!-- IRIS EXPLAIN: Close the existing <summary> element; no rendered text or attributes are changed.
+--></summary><!-- IRIS EXPLAIN: Open <pre>: id=proposal-evidence anchors full saved technical/policy evidence for review; plain-text JSON/evidence display populated with textContent.
+--><pre id="proposal-evidence"><!-- IRIS EXPLAIN: Close the existing <pre> element; no rendered text or attributes are changed.
+--></pre><!-- IRIS EXPLAIN: Close the existing <details> element; no rendered text or attributes are changed.
+--></details><!-- IRIS EXPLAIN: Open <form>: id=review-form anchors human review command form; the JavaScript submit handler sends an explicit backend command; this form is not itself authorization; initially hidden; existing JS controls visibility after authentication/state changes.
+--><form id="review-form" hidden><!-- IRIS EXPLAIN: Open <label>: accessible label for the nested/existing form control.
+--><label>Reason for your decision<!-- IRIS EXPLAIN: Open <textarea>: id=reason anchors required human decision explanation.
+--><textarea id="reason" name="reason" minlength="5" maxlength="1000" placeholder="Reviewed the evidence; approve this change to the synthetic system." required></textarea><!-- IRIS EXPLAIN: Close the existing <label> element; no rendered text or attributes are changed.
+--></label><!-- IRIS EXPLAIN: Open <div>: retain this existing semantic/layout container and its original content/attributes.
+--><div class="button-row"><!-- IRIS EXPLAIN: Open <button>: id=approve anchors explicit approval that asks the backend to apply saved synthetic-record changes; explicit user action; the backend still checks credentials and saved proposal revisions.
+--><button id="approve" type="submit" name="decision" value="approve">Approve and apply to demo records<!-- IRIS EXPLAIN: Close the existing <button> element; no rendered text or attributes are changed.
+--></button><!-- IRIS EXPLAIN: Open <button>: id=reject anchors explicit rejection that leaves working records unchanged; explicit user action; the backend still checks credentials and saved proposal revisions.
+--><button id="reject" type="submit" name="decision" value="reject" class="danger">Reject — keep current records<!-- IRIS EXPLAIN: Close the existing <button> element; no rendered text or attributes are changed.
+--></button><!-- IRIS EXPLAIN: Close the existing <div> element; no rendered text or attributes are changed.
+--></div><!-- IRIS EXPLAIN: Close the existing <form> element; no rendered text or attributes are changed.
+--></form><!-- IRIS EXPLAIN: Open <p>: retain this existing semantic/layout container and its original content/attributes.
+--><p class="muted">The backend—not this page—checks the role, saved proposal and current record version, applies approved changes atomically, and records before/after evidence.<!-- IRIS EXPLAIN: Close the existing <p> element; no rendered text or attributes are changed.
+--></p><!-- IRIS EXPLAIN: Close the existing <section> element; no rendered text or attributes are changed.
+--></section>
+      <!-- IRIS EXPLAIN: Open <section>: id=risk-panel anchors the corresponding fixed dashboard control or status area; initially hidden; existing JS controls visibility after authentication/state changes.
+--><!-- IRIS: roles=admin,grc --><section id="risk-panel" class="card" hidden><!-- IRIS EXPLAIN: Open <div>: retain this existing semantic/layout container and its original content/attributes.
+--><div class="section-title"><!-- IRIS EXPLAIN: Open <div>: retain this existing semantic/layout container and its original content/attributes.
+--><div><!-- IRIS EXPLAIN: Open <p>: retain this existing semantic/layout container and its original content/attributes.
+--><p class="eyebrow">03 / GRC SYSTEM STATE<!-- IRIS EXPLAIN: Close the existing <p> element; no rendered text or attributes are changed.
+--></p><!-- IRIS EXPLAIN: Open <h2>: retain this existing semantic/layout container and its original content/attributes.
+--><h2>Live demo risk register<!-- IRIS EXPLAIN: Close the existing <h2> element; no rendered text or attributes are changed.
+--></h2><!-- IRIS EXPLAIN: Close the existing <div> element; no rendered text or attributes are changed.
+--></div><!-- IRIS EXPLAIN: Open <button>: id=export-risks anchors authorized current working-register download; explicit user action; the backend still checks credentials and saved proposal revisions.
+--><button id="export-risks" type="button" class="secondary">Download current register<!-- IRIS EXPLAIN: Close the existing <button> element; no rendered text or attributes are changed.
+--></button><!-- IRIS EXPLAIN: Close the existing <div> element; no rendered text or attributes are changed.
+--></div><!-- IRIS EXPLAIN: Open <p>: retain this existing semantic/layout container and its original content/attributes.
+--><p>Original values stay visible next to the current database values. Approved rows move to the top and remain changed after a server restart.<!-- IRIS EXPLAIN: Close the existing <p> element; no rendered text or attributes are changed.
+--></p><!-- IRIS EXPLAIN: Open <div>: retain this existing semantic/layout container and its original content/attributes.
+--><div class="table-wrap"><!-- IRIS EXPLAIN: Open <table>: tabular evidence rendered from authorized backend records.
+--><table><!-- IRIS EXPLAIN: Open <thead>: retain this existing semantic/layout container and its original content/attributes.
+--><thead><!-- IRIS EXPLAIN: Open <tr>: retain this existing semantic/layout container and its original content/attributes.
+--><tr><!-- IRIS EXPLAIN: Open <th>: retain this existing semantic/layout container and its original content/attributes.
+--><th>Risk / asset<!-- IRIS EXPLAIN: Close the existing <th> element; no rendered text or attributes are changed.
+--></th><!-- IRIS EXPLAIN: Open <th>: retain this existing semantic/layout container and its original content/attributes.
+--><th>Category<!-- IRIS EXPLAIN: Close the existing <th> element; no rendered text or attributes are changed.
+--></th><!-- IRIS EXPLAIN: Open <th>: retain this existing semantic/layout container and its original content/attributes.
+--><th>Likelihood<!-- IRIS EXPLAIN: Open <br>: retain this existing semantic/layout container and its original content/attributes.
+--><br>original → current<!-- IRIS EXPLAIN: Close the existing <th> element; no rendered text or attributes are changed.
+--></th><!-- IRIS EXPLAIN: Open <th>: retain this existing semantic/layout container and its original content/attributes.
+--><th>Impact<!-- IRIS EXPLAIN: Close the existing <th> element; no rendered text or attributes are changed.
+--></th><!-- IRIS EXPLAIN: Open <th>: retain this existing semantic/layout container and its original content/attributes.
+--><th>Score<!-- IRIS EXPLAIN: Open <br>: retain this existing semantic/layout container and its original content/attributes.
+--><br>original → current<!-- IRIS EXPLAIN: Close the existing <th> element; no rendered text or attributes are changed.
+--></th><!-- IRIS EXPLAIN: Open <th>: retain this existing semantic/layout container and its original content/attributes.
+--><th>Revision / approval<!-- IRIS EXPLAIN: Close the existing <th> element; no rendered text or attributes are changed.
+--></th><!-- IRIS EXPLAIN: Close the existing <tr> element; no rendered text or attributes are changed.
+--></tr><!-- IRIS EXPLAIN: Close the existing <thead> element; no rendered text or attributes are changed.
+--></thead><!-- IRIS EXPLAIN: Open <tbody>: id=risk-rows anchors live database-backed working risk rows.
+--><tbody id="risk-rows"><!-- IRIS EXPLAIN: Close the existing <tbody> element; no rendered text or attributes are changed.
+--></tbody><!-- IRIS EXPLAIN: Close the existing <table> element; no rendered text or attributes are changed.
+--></table><!-- IRIS EXPLAIN: Close the existing <div> element; no rendered text or attributes are changed.
+--></div><!-- IRIS EXPLAIN: Close the existing <section> element; no rendered text or attributes are changed.
+--></section><!-- IRIS: end -->
+      <!-- IRIS EXPLAIN: Open <section>: id=alert-panel anchors the corresponding fixed dashboard control or status area; initially hidden; existing JS controls visibility after authentication/state changes.
+--><!-- IRIS: roles=admin,soc --><section id="alert-panel" class="card" hidden><!-- IRIS EXPLAIN: Open <div>: retain this existing semantic/layout container and its original content/attributes.
+--><div class="section-title"><!-- IRIS EXPLAIN: Open <div>: retain this existing semantic/layout container and its original content/attributes.
+--><div><!-- IRIS EXPLAIN: Open <p>: retain this existing semantic/layout container and its original content/attributes.
+--><p class="eyebrow">03 / SOC SYSTEM STATE<!-- IRIS EXPLAIN: Close the existing <p> element; no rendered text or attributes are changed.
+--></p><!-- IRIS EXPLAIN: Open <h2>: retain this existing semantic/layout container and its original content/attributes.
+--><h2>Live demo alert queue<!-- IRIS EXPLAIN: Close the existing <h2> element; no rendered text or attributes are changed.
+--></h2><!-- IRIS EXPLAIN: Close the existing <div> element; no rendered text or attributes are changed.
+--></div><!-- IRIS EXPLAIN: Open <button>: id=export-alerts anchors authorized current alert-priority download; explicit user action; the backend still checks credentials and saved proposal revisions.
+--><button id="export-alerts" type="button" class="secondary">Download current priorities<!-- IRIS EXPLAIN: Close the existing <button> element; no rendered text or attributes are changed.
+--></button><!-- IRIS EXPLAIN: Close the existing <div> element; no rendered text or attributes are changed.
+--></div><!-- IRIS EXPLAIN: Open <div>: retain this existing semantic/layout container and its original content/attributes.
+--><div class="toolbar"><!-- IRIS EXPLAIN: Open <p>: retain this existing semantic/layout container and its original content/attributes.
+--><p>Sorted by current priority, then newest event. Original SIEM technical severity is preserved.<!-- IRIS EXPLAIN: Close the existing <p> element; no rendered text or attributes are changed.
+--></p><!-- IRIS EXPLAIN: Open <label>: accessible label for the nested/existing form control.
+--><label class="inline"><!-- IRIS EXPLAIN: Open <input>: id=changed-only anchors filter for genuinely reprioritized alert revisions; input type checkbox; existing required/length/accept constraints remain unchanged.
+--><input id="changed-only" type="checkbox">Only reprioritized alerts<!-- IRIS EXPLAIN: Close the existing <label> element; no rendered text or attributes are changed.
+--></label><!-- IRIS EXPLAIN: Close the existing <div> element; no rendered text or attributes are changed.
+--></div><!-- IRIS EXPLAIN: Open <p>: id=alert-page anchors the corresponding fixed dashboard control or status area.
+--><p id="alert-page" class="muted"><!-- IRIS EXPLAIN: Close the existing <p> element; no rendered text or attributes are changed.
+--></p><!-- IRIS EXPLAIN: Open <div>: retain this existing semantic/layout container and its original content/attributes.
+--><div class="table-wrap"><!-- IRIS EXPLAIN: Open <table>: tabular evidence rendered from authorized backend records.
+--><table><!-- IRIS EXPLAIN: Open <thead>: retain this existing semantic/layout container and its original content/attributes.
+--><thead><!-- IRIS EXPLAIN: Open <tr>: retain this existing semantic/layout container and its original content/attributes.
+--><tr><!-- IRIS EXPLAIN: Open <th>: retain this existing semantic/layout container and its original content/attributes.
+--><th>Event / asset<!-- IRIS EXPLAIN: Close the existing <th> element; no rendered text or attributes are changed.
+--></th><!-- IRIS EXPLAIN: Open <th>: retain this existing semantic/layout container and its original content/attributes.
+--><th>Event time (UTC)<!-- IRIS EXPLAIN: Close the existing <th> element; no rendered text or attributes are changed.
+--></th><!-- IRIS EXPLAIN: Open <th>: retain this existing semantic/layout container and its original content/attributes.
+--><th>Original priority<!-- IRIS EXPLAIN: Close the existing <th> element; no rendered text or attributes are changed.
+--></th><!-- IRIS EXPLAIN: Open <th>: retain this existing semantic/layout container and its original content/attributes.
+--><th>Current priority<!-- IRIS EXPLAIN: Close the existing <th> element; no rendered text or attributes are changed.
+--></th><!-- IRIS EXPLAIN: Open <th>: retain this existing semantic/layout container and its original content/attributes.
+--><th>Revision / approval<!-- IRIS EXPLAIN: Close the existing <th> element; no rendered text or attributes are changed.
+--></th><!-- IRIS EXPLAIN: Close the existing <tr> element; no rendered text or attributes are changed.
+--></tr><!-- IRIS EXPLAIN: Close the existing <thead> element; no rendered text or attributes are changed.
+--></thead><!-- IRIS EXPLAIN: Open <tbody>: id=alert-rows anchors current-priority-sorted working alert rows.
+--><tbody id="alert-rows"><!-- IRIS EXPLAIN: Close the existing <tbody> element; no rendered text or attributes are changed.
+--></tbody><!-- IRIS EXPLAIN: Close the existing <table> element; no rendered text or attributes are changed.
+--></table><!-- IRIS EXPLAIN: Close the existing <div> element; no rendered text or attributes are changed.
+--></div><!-- IRIS EXPLAIN: Open <div>: retain this existing semantic/layout container and its original content/attributes.
+--><div class="pager"><!-- IRIS EXPLAIN: Open <button>: id=previous anchors previous bounded results page; explicit user action; the backend still checks credentials and saved proposal revisions.
+--><button id="previous" type="button" class="secondary">Previous<!-- IRIS EXPLAIN: Close the existing <button> element; no rendered text or attributes are changed.
+--></button><!-- IRIS EXPLAIN: Open <button>: id=next anchors next bounded results page; explicit user action; the backend still checks credentials and saved proposal revisions.
+--><button id="next" type="button" class="secondary">Next<!-- IRIS EXPLAIN: Close the existing <button> element; no rendered text or attributes are changed.
+--></button><!-- IRIS EXPLAIN: Close the existing <div> element; no rendered text or attributes are changed.
+--></div><!-- IRIS EXPLAIN: Close the existing <section> element; no rendered text or attributes are changed.
+--></section><!-- IRIS: end -->
+      <!-- IRIS EXPLAIN: Open <section>: retain this existing semantic/layout container and its original content/attributes.
+--><section class="card"><!-- IRIS EXPLAIN: Open <div>: retain this existing semantic/layout container and its original content/attributes.
+--><div class="section-title"><!-- IRIS EXPLAIN: Open <div>: retain this existing semantic/layout container and its original content/attributes.
+--><div><!-- IRIS EXPLAIN: Open <p>: retain this existing semantic/layout container and its original content/attributes.
+--><p class="eyebrow">04 / PROOF<!-- IRIS EXPLAIN: Close the existing <p> element; no rendered text or attributes are changed.
+--></p><!-- IRIS EXPLAIN: Open <h2>: retain this existing semantic/layout container and its original content/attributes.
+--><h2>Applied before / after changes<!-- IRIS EXPLAIN: Close the existing <h2> element; no rendered text or attributes are changed.
+--></h2><!-- IRIS EXPLAIN: Close the existing <div> element; no rendered text or attributes are changed.
+--></div><!-- IRIS EXPLAIN: Open <span>: retain this existing semantic/layout container and its original content/attributes.
+--><span class="pill">DATABASE-BACKED<!-- IRIS EXPLAIN: Close the existing <span> element; no rendered text or attributes are changed.
+--></span><!-- IRIS EXPLAIN: Close the existing <div> element; no rendered text or attributes are changed.
+--></div><!-- IRIS EXPLAIN: Open <p>: id=changes-empty anchors the corresponding fixed dashboard control or status area.
+--><p id="changes-empty" class="muted">No changes yet. Analyze, then approve a proposal using the correct team key.<!-- IRIS EXPLAIN: Close the existing <p> element; no rendered text or attributes are changed.
+--></p><!-- IRIS EXPLAIN: Open <div>: retain this existing semantic/layout container and its original content/attributes.
+--><div class="table-wrap"><!-- IRIS EXPLAIN: Open <table>: id=changes-table anchors the corresponding fixed dashboard control or status area; tabular evidence rendered from authorized backend records; initially hidden; existing JS controls visibility after authentication/state changes.
+--><table id="changes-table" hidden><!-- IRIS EXPLAIN: Open <thead>: retain this existing semantic/layout container and its original content/attributes.
+--><thead><!-- IRIS EXPLAIN: Open <tr>: retain this existing semantic/layout container and its original content/attributes.
+--><tr><!-- IRIS EXPLAIN: Open <th>: retain this existing semantic/layout container and its original content/attributes.
+--><th>Target<!-- IRIS EXPLAIN: Close the existing <th> element; no rendered text or attributes are changed.
+--></th><!-- IRIS EXPLAIN: Open <th>: retain this existing semantic/layout container and its original content/attributes.
+--><th>Before<!-- IRIS EXPLAIN: Close the existing <th> element; no rendered text or attributes are changed.
+--></th><!-- IRIS EXPLAIN: Open <th>: retain this existing semantic/layout container and its original content/attributes.
+--><th>After<!-- IRIS EXPLAIN: Close the existing <th> element; no rendered text or attributes are changed.
+--></th><!-- IRIS EXPLAIN: Open <th>: retain this existing semantic/layout container and its original content/attributes.
+--><th>Approved by / reason<!-- IRIS EXPLAIN: Close the existing <th> element; no rendered text or attributes are changed.
+--></th><!-- IRIS EXPLAIN: Close the existing <tr> element; no rendered text or attributes are changed.
+--></tr><!-- IRIS EXPLAIN: Close the existing <thead> element; no rendered text or attributes are changed.
+--></thead><!-- IRIS EXPLAIN: Open <tbody>: id=change-rows anchors persisted before/after approval evidence.
+--><tbody id="change-rows"><!-- IRIS EXPLAIN: Close the existing <tbody> element; no rendered text or attributes are changed.
+--></tbody><!-- IRIS EXPLAIN: Close the existing <table> element; no rendered text or attributes are changed.
+--></table><!-- IRIS EXPLAIN: Close the existing <div> element; no rendered text or attributes are changed.
+--></div><!-- IRIS EXPLAIN: Close the existing <section> element; no rendered text or attributes are changed.
+--></section>
+      <!-- IRIS EXPLAIN: Open <section>: id=admin-detail anchors the corresponding fixed dashboard control or status area; initially hidden; existing JS controls visibility after authentication/state changes.
+--><!-- IRIS: roles=admin --><section id="admin-detail" class="card" hidden><!-- IRIS EXPLAIN: Open <h2>: retain this existing semantic/layout container and its original content/attributes.
+--><h2>Admin evidence<!-- IRIS EXPLAIN: Close the existing <h2> element; no rendered text or attributes are changed.
+--></h2><!-- IRIS EXPLAIN: Open <details>: collapsible supporting evidence/instructions; opening it does not apply a change.
+--><details><!-- IRIS EXPLAIN: Open <summary>: retain this existing semantic/layout container and its original content/attributes.
+--><summary>Recent audit events<!-- IRIS EXPLAIN: Close the existing <summary> element; no rendered text or attributes are changed.
+--></summary><!-- IRIS EXPLAIN: Open <pre>: id=audit anchors persisted Admin audit evidence; plain-text JSON/evidence display populated with textContent.
+--><pre id="audit"><!-- IRIS EXPLAIN: Close the existing <pre> element; no rendered text or attributes are changed.
+--></pre><!-- IRIS EXPLAIN: Close the existing <details> element; no rendered text or attributes are changed.
+--></details><!-- IRIS EXPLAIN: Open <details>: collapsible supporting evidence/instructions; opening it does not apply a change.
+--><details><!-- IRIS EXPLAIN: Open <summary>: retain this existing semantic/layout container and its original content/attributes.
+--><summary>Analysis and cleaning report<!-- IRIS EXPLAIN: Close the existing <summary> element; no rendered text or attributes are changed.
+--></summary><!-- IRIS EXPLAIN: Open <pre>: id=integration anchors the corresponding fixed dashboard control or status area; plain-text JSON/evidence display populated with textContent.
+--><pre id="integration"><!-- IRIS EXPLAIN: Close the existing <pre> element; no rendered text or attributes are changed.
+--></pre><!-- IRIS EXPLAIN: Close the existing <details> element; no rendered text or attributes are changed.
+--></details><!-- IRIS EXPLAIN: Open <details>: collapsible supporting evidence/instructions; opening it does not apply a change.
+--><details><!-- IRIS EXPLAIN: Open <summary>: retain this existing semantic/layout container and its original content/attributes.
+--><summary>Exercise history<!-- IRIS EXPLAIN: Close the existing <summary> element; no rendered text or attributes are changed.
+--></summary><!-- IRIS EXPLAIN: Open <pre>: id=history anchors the corresponding fixed dashboard control or status area; plain-text JSON/evidence display populated with textContent.
+--><pre id="history"><!-- IRIS EXPLAIN: Close the existing <pre> element; no rendered text or attributes are changed.
+--></pre><!-- IRIS EXPLAIN: Close the existing <details> element; no rendered text or attributes are changed.
+--></details><!-- IRIS EXPLAIN: Close the existing <section> element; no rendered text or attributes are changed.
+--></section><!-- IRIS: end -->
+      <!-- IRIS EXPLAIN: Open <section>: retain this existing semantic/layout container and its original content/attributes.
+--><!-- IRIS: roles=admin --><section class="card"><!-- IRIS EXPLAIN: Open <details>: collapsible supporting evidence/instructions; opening it does not apply a change.
+--><details><!-- IRIS EXPLAIN: Open <summary>: retain this existing semantic/layout container and its original content/attributes.
+--><summary>Loaded model identity and validation limits<!-- IRIS EXPLAIN: Close the existing <summary> element; no rendered text or attributes are changed.
+--></summary><!-- IRIS EXPLAIN: Open <p>: retain this existing semantic/layout container and its original content/attributes.
+--><p>ML candidates are experimental shadow comparisons. The executable proposals use the existing explicit rules and business-risk policy, not invented ML risk probabilities. Approvals affect synthetic demo records only.<!-- IRIS EXPLAIN: Close the existing <p> element; no rendered text or attributes are changed.
+--></p><!-- IRIS EXPLAIN: Open <pre>: id=model-status anchors traceable model metadata and release/validation limits; plain-text JSON/evidence display populated with textContent.
+--><pre id="model-status"><!-- IRIS EXPLAIN: Close the existing <pre> element; no rendered text or attributes are changed.
+--></pre><!-- IRIS EXPLAIN: Close the existing <details> element; no rendered text or attributes are changed.
+--></details><!-- IRIS EXPLAIN: Close the existing <section> element; no rendered text or attributes are changed.
+--></section><!-- IRIS: end -->
+    <!-- IRIS EXPLAIN: Close the existing <div> element; no rendered text or attributes are changed.
+--></div>
+  <!-- IRIS EXPLAIN: Close the existing <main> element; no rendered text or attributes are changed.
+--></main>
+  <!-- IRIS EXPLAIN: Open <footer>: retain this existing semantic/layout container and its original content/attributes.
+--><footer>IRIS · Loopback-only demonstration · No external connectors · No control execution · Original inputs remain unchanged<!-- IRIS EXPLAIN: Close the existing <footer> element; no rendered text or attributes are changed.
+--></footer>
+<!-- IRIS EXPLAIN: Close the existing <body> element; no rendered text or attributes are changed.
+--></body>
+<!-- IRIS EXPLAIN: Close the existing <html> element; no rendered text or attributes are changed.
+--></html>

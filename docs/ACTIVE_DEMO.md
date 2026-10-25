@@ -21,7 +21,7 @@ Windows PowerShell, from the project root:
 ```powershell
 py -3.12 -m venv .venv
 .\.venv\Scripts\python.exe -m pip install -r IRIS_Models_v2/requirements.txt
-.\.venv\Scripts\python.exe -m unittest demo_app.tests.test_demo demo_app.tests.test_access -v
+.\.venv\Scripts\python.exe -m unittest demo_app.tests.test_demo -v
 ```
 
 macOS/Linux:
@@ -29,10 +29,10 @@ macOS/Linux:
 ```bash
 python3.12 -m venv .venv
 .venv/bin/python -m pip install -r IRIS_Models_v2/requirements.txt
-.venv/bin/python -m unittest demo_app.tests.test_demo demo_app.tests.test_access -v
+.venv/bin/python -m unittest demo_app.tests.test_demo -v
 ```
 
-If a suitable `.venv` already exists, skip creating it. The **80 demo/access tests** should finish with `OK`. Do not proceed to the examination with a dependency error or failed test. Keep the ML dependency pins: the trusted saved models require the matching scikit-learn version.
+If a suitable `.venv` already exists, skip creating it. The **54 demo tests** should finish with `OK`. Do not proceed to the examination with a dependency error or failed test. Keep the ML dependency pins: the trusted saved models require the matching scikit-learn version.
 
 This demo server uses Python's standard HTTP library, so it does **not** need `requirements-backend.txt` or FastAPI. The older FastAPI interface on port 8000 has its own installation and verification requirements; it is not the active demo described here.
 
@@ -87,7 +87,7 @@ Open three browser tabs:
 
 Paste only that tab's key into its password field. Keys remain in the tab's memory, not browser storage or URLs. The earlier `python -m backend keys` command produces **different keys for the older passive prototype**: do not mix them up.
 
-For one key only, add `--role admin`, `--role soc` or `--role grc`. A labelled single-line paste is accepted on its matching page. The sign-in page's **Key profile** must match the private CLI's profile. If access fails, run `python demo.py doctor` in this same folder (with the same Python executable and any custom `--port`). It checks the running build and all roles without exposing keys or changing records. See [the simple recovery guide](ACCESS_HELP.md); do not delete `.local/` to troubleshoot.
+The original dark page and direct `/state` sign-in are restored. There is no build/profile/session prerequisite. The redesign-only `doctor` and `keys --role` commands are removed; use the original `demo.py keys` above. See [the access guide](ACCESS_HELP.md); do not delete `.local/` to troubleshoot.
 
 Hide the key terminal before sharing your screen. These are shared lab role keys, not individual enterprise identities or SSO. The Admin can inspect all proposals but **cannot impersonate the SOC or GRC approver**.
 
@@ -103,23 +103,23 @@ For a predictable example, find the `identity-server` access risk **`DEMO-R001-1
 
 ## 6. Run the actual analysis
 
-On **Admin**, click **Analyze data**. Only Admin runs analysis; each team receives only its own results.
+On **Admin**, click **Analyze the three demo datasets**. Only Admin runs analysis; each team receives only its own results.
 
 The backend reads the fixed files in `demo/data/`, combines context before feature engineering, cleans events, creates 60-second-window sessions, runs your saved model bundle, and evaluates the explicit risk policy. It saves **132 cases** and prepares **123 SOC proposals** and **63 GRC proposals** for this initial evidence batch.
 
 No working risk values or alert priorities change merely because analysis finished. Wait for proposals in the team tabs, or press **Refresh**. Visible, connected tabs poll the server every three seconds.
 
-The first pending proposal in each team inbox is the newest `identity-server` example. Its stable session ID is **`SES-65f5edbf869d111d265c`**. Other background sessions can reference the same hostname; use the first proposal. Admin can inspect the full identifiers under **Full evidence for the selected proposal**. Team pages show plain-language summaries, not raw JSON.
+The first pending proposal in each team inbox is the newest `identity-server` example. Its stable session ID is **`SES-65f5edbf869d111d265c`**. Other background sessions can reference the same hostname; use the first proposal. Expand the original evidence section for the selected proposal. SOC receives technical alert evidence; GRC receives registered-risk and control context, not raw telemetry/model confidence. Admin can inspect the full evidence.
 
 ## 7. Make the GRC register really change
 
 In the **GRC** tab:
 
 1. Select the first `identity-server` GRC proposal.
-2. Expand **Why this change?** to inspect the matched risk, proposed values and control advice. GRC does not receive the raw telemetry or model-confidence report.
+2. Expand **Inspect registered risk, control advice and update rationale** to inspect the matched risk, proposed values and control advice. GRC does not receive the raw telemetry or model-confidence report.
 3. Confirm the proposed likelihood **3 → 4** and score **0.60 → 0.80**. Impact remains **5**.
 4. Enter a reason, for example: `Reviewed the login burst. Approve this synthetic register change for the demonstration.`
-5. Click **Approve risk update**.
+5. Click **Approve and apply to demo records**.
 
 The backend checks that you are GRC and that the saved risk revision still matches the proposal, then atomically:
 
@@ -128,9 +128,9 @@ The backend checks that you are GRC and that the saved risk revision still match
 - Records before/after values and an audit event.
 - Marks other proposals based on the same old risk revision stale, preventing repeated increases from the same evidence.
 
-The register row turns green, moves to the top, and shows **0.60 → 0.80**. **Risks updated** becomes **1** in GRC and Admin. SOC does not receive this GRC counter. The original input JSON is deliberately unchanged; the simulated GRC system's working database is what changes.
+The register row turns green, moves to the top, and shows **0.60 → 0.80**. **Risks actually changed** becomes **1** in GRC and Admin. SOC does not receive this GRC counter. The original input JSON is deliberately unchanged; the simulated GRC system's working database is what changes.
 
-Click **Download register** to prove the backend export now contains likelihood **4**, not 3. Reloading the page requires reconnecting with the key, but the risk remains changed.
+Click **Download current register** to prove the backend export now contains likelihood **4**, not 3. Reloading the page requires reconnecting with the key, but the risk remains changed.
 
 ## 8. Make the SOC alert queue really change
 
@@ -139,11 +139,11 @@ In the **SOC** tab:
 1. Select the first `identity-server` SOC proposal for the same session.
 2. Inspect the proposed **Critical** priority and the saved technical/business evidence.
 3. Enter a reason, for example: `Reviewed the evidence and critical asset context. Approve reprioritization in the synthetic SOC queue.`
-4. Click **Approve priority change**.
+4. Click **Approve and apply to demo records**.
 
 There are 29 alerts in this session. **19** are lower than Critical and actually change; the remaining **10** were already Critical and are not needlessly rewritten. The backend updates the 19 records, increments their revisions and records their before/after priorities. The queue is sorted from the stored current priority on each read.
 
-The SOC view switches to **Only changed alerts**, making the **19 changed rows** easy to show. Their original priorities remain visible alongside current **Critical**. Uncheck the filter to see them in the whole reordered queue. **Alerts reprioritized** becomes **19** in SOC and Admin. GRC does not receive this SOC counter.
+The SOC view switches to **Only reprioritized alerts**, making the **19 changed rows** easy to show. Their original priorities remain visible alongside current **Critical**. Uncheck the filter to see them in the whole reordered queue. **Alerts reprioritized** becomes **19** in SOC and Admin. GRC does not receive this SOC counter.
 
 GRC approval does not secretly approve SOC changes, or vice versa: each team explicitly authorizes its own mutation.
 
@@ -157,11 +157,11 @@ GRC approval does not secretly approve SOC changes, or vice versa: each team exp
 
 ## 10. Rehearse again without deleting anything
 
-On Admin, expand **Start a new rehearsal**, name the exercise, and click **New rehearsal**. Confirm the dialog.
+On Admin, expand **Start a fresh rehearsal without deleting history**, name the exercise, and click **Create new rehearsal**. Confirm the dialog.
 
 This creates another seeded set of synthetic working records and makes it current. Older exercises, changes, immutable model cases and audit history remain saved. Other tabs switch on refresh; old proposals cannot mutate the new exercise.
 
-Click **Analyze data** again. Byte-identical evidence reuses the existing 132 saved model cases; it does not retrain, erase reviews or invent new predictions. New proposal identities belong to the new exercise, so you can repeat the approvals cleanly.
+Click **Analyze the three demo datasets** again. Byte-identical evidence reuses the existing 132 saved model cases; it does not retrain, erase reviews or invent new predictions. New proposal identities belong to the new exercise, so you can repeat the approvals cleanly.
 
 ## How the backend works, simply
 

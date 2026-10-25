@@ -1,49 +1,55 @@
-# Focused, role-specific dashboards
+# Original dashboard, team-related content only
 
-The active demo at port 8010 now has three focused workspaces. The saved models, three input datasets, approvals, database schema and existing demo keys are unchanged.
+The original working dark dashboard is restored from the pre-separation version. Its colours, top navigation, forms, proposal summaries, evidence sections, register, queue and before/after history remain in the original style. Both later redesigns have been removed.
 
-The refreshed interface uses a navy navigation rail, bright workspace, teal action buttons, clear status labels and compact comparison cards. Each role has its own navigation and workflow; data remains real backend state, not decorative sample counters. Detailed evidence stays expandable so the main screen is easy to explain.
+Only the content scope differs:
 
-**Cannot sign in? Start with [the access recovery steps](ACCESS_HELP.md).** The new `demo.py doctor` checks all three role keys against the running server without printing them. The sign-in page identifies old builds, shows a non-secret key-profile label and accepts a single labelled key paste.
+| Page | Content |
+| --- | --- |
+| Admin | Original five counters, engine controls, team proposals, full evidence/model/audit/history, plus both original working tables |
+| SOC | Alert count, reprioritized count, SOC pending count, priority proposals and technical evidence, alert queue and SOC changes |
+| GRC | Risk count, changed-risk count, GRC pending count, risk proposals and control context, risk register and GRC changes |
 
-| Workspace | Main content | Hidden from this team's API and page |
-| --- | --- | --- |
-| SOC | Alert count, priority reviews, reprioritized count, alert queue, technical evidence and priority-change history | Risk register/values, GRC controls/reviews/counters, model evaluation reports, Admin commands and audit |
-| GRC | Risk count, risk reviews, updated-risk count, register, likelihood/impact/score, control advice and register-change history | SOC queue/counters, raw telemetry features, scenario-model confidence, model evaluation reports and Admin commands/audit |
-| Admin | Both working systems and counters, all review statuses, analysis, full proposal evidence, model reports and audit/history | Team approval authority: Admin still cannot impersonate SOC or GRC |
+SOC receives no risk-register values, GRC control recommendations, cross-team counters or Admin commands. GRC receives no alert queue, raw telemetry, model confidence or Admin commands. Model reports are Admin-only. Each team sees only its own dashboard navigation link.
 
-This is not only visual filtering. The backend chooses a different HTML partial for each page and projects `/api/demo/state` and `/api/demo/proposals` from the **authenticated key**. Other-team table/export endpoints remain forbidden. The browser cannot request more access with a `role` or `actor` parameter.
+The backend omits unrelated blocks from the **original HTML**, and the existing key-derived API allowlists enforce the same separation. This is not an extra set of redesigned pages. Admin can see both teams but still cannot approve on their behalf.
 
-## How to explain each page
+## Sign-in is the original flow
 
-- **SOC:** “These are our alerts. IRIS proposes a new priority. We check the technical reason, approve it, and the queue updates.”
-- **GRC:** “This is our risk register. IRIS proposes a likelihood and score update. We review the risk and control context, approve it, and the register changes.”
-- **Admin:** “We run the analysis, monitor both teams' saved changes and show the full model/audit evidence.”
+Run `python demo.py`, then run `python demo.py keys` in a second private terminal **from the same project folder**. Paste only the matching role token into the original **Connect this dashboard** form.
 
-Each team starts with only three relevant counters. Its review card shows a clear **Current → Recommended** comparison. **Why this change?** expands the relevant explanation; no raw JSON or internal model report is shown on a team home page. Recent applied changes are collapsed by default. Admin keeps technical JSON under expandable system/evidence sections.
+The browser authenticates directly with `/api/demo/state`, as in the working version. The redesign's build/profile/session gates, new access module, `doctor` command and `keys --role` option have been removed. No key or database reset is needed. See [the access guide](ACCESS_HELP.md).
 
-The approvals still apply real changes to synthetic working records. In a fresh rehearsal, the first identity-server risk review changes **0.60 → 0.80**; its SOC review changes **19 alerts to Critical**. Only GRC/Admin see the risk-update count; only SOC/Admin see the alert-change count.
+## Update your existing working project
 
-GRC's control recommendations remain advice: approving a risk update does not install a control. SOC's optional model comparison remains an experimental shadow prediction, not an approved decision or risk probability.
-
-## Update the demo you already tried
-
-1. Stop the running server with **Ctrl+C**.
-2. If you cloned the repository, pull the updated source normally. If you use GitHub ZIP downloads, extract the new ZIP elsewhere and copy the updated **`demo.py`** and **`demo_app/`** into your existing project. Preserve any local source edits first. Both are required for the new access diagnostics.
-3. **Keep your existing `.local/` folder.** It contains your demo keys, approved records and history. No database reset or migration is needed.
-4. Start the demo with the same Python command as before, for example on Windows:
+1. Stop the server with **Ctrl+C**.
+2. Pull the latest source if you use Git. For ZIP downloads, extract the updated ZIP elsewhere and copy **`demo.py`** and **`demo_app/`** into your existing working folder, preserving your own edits first. The active page uses only `index.html`, `app.js` and `style.css`; old partial-template files are unused.
+3. **Keep `.local/` and your existing virtual environment.** They contain your keys, saved approvals/history and installed dependencies.
+4. Restart with the same Python executable as before, for example:
 
    ```powershell
    .\.venv\Scripts\python.exe demo.py
    ```
 
-5. In a second terminal, run `.\.venv\Scripts\python.exe demo.py doctor`. Then reload the three browser tabs with **Ctrl+F5** and reconnect with the same corresponding keys:
+5. In a second private terminal in that same folder:
+
+   ```powershell
+   .\.venv\Scripts\python.exe demo.py keys
+   ```
+
+6. Press **Ctrl+F5** in each tab and reconnect with its own key:
    - Admin: <http://127.0.0.1:8010/admin>
    - SOC: <http://127.0.0.1:8010/soc>
    - GRC: <http://127.0.0.1:8010/grc>
 
-You do not need Colab, retraining, a new dependency install or Node.js to run this update. If you intentionally start from a completely new extracted project folder, it will have fresh demo state/keys rather than automatically finding the old folder's `.local` state.
+No retraining, Colab session, dependency installation or migration is needed for this restoration. A completely new extracted folder has a different `.local` unless you deliberately preserve your prior state.
+
+## The engine still makes real demo changes
+
+The same models, datasets, explicit risk policy, approval transactions and database schema are used. GRC approval can change the demonstration risk score **0.60 → 0.80**; SOC approval can move **19 alerts to Critical**. The source JSON inputs are not overwritten. Control advice is not executed.
+
+The rejected redesign files remain recoverable in Git history. No user credentials or saved working records are deleted by this update.
 
 ## Verification boundary
 
-The actual model/core/HTTP suites pass, including new role-response and served-HTML isolation checks. Optional Node controller unit checks cover all three roles and their UI requests/rendering. A real-browser visual/layout test was not available in the build environment; rehearse the refreshed pages before presenting. The earlier passive FastAPI interface on port 8000 is unchanged.
+Core/model/real loopback HTTP regressions and controller unit checks cover the restored workflow and role separation. The original stylesheet rules are byte-identical, followed only by a team-only three-counter layout rule. Controller tests are not a real-browser visual check; rehearse locally before presenting.

@@ -6,6 +6,7 @@ from __future__ import annotations
 
 # IRIS EXPLAIN: Import http.client to serve or test actual loopback HTTP requests using the standard library.
 import http.client
+import hashlib
 # IRIS EXPLAIN: Import json to encode and decode structured finite JSON payloads.
 import json
 # Standard-library markup inspection keeps GUI checks independent of browser packages.
@@ -1014,8 +1015,10 @@ class ActiveHTTPTests(Fixture):
         self.assertEqual(status, 200)
         page = PageStructure(body.decode())
         self.assertTrue({'risk-panel', 'alert-panel', 'export-risks', 'export-alerts', 'admin-actions',
-                         'model-status', 'audit', 'integration', 'history', 'admin-evidence', 'proposal-status'} <= set(page.ids))
-        self.assertEqual(len(page.counts), 6)
+                         'model-status', 'audit', 'integration', 'history', 'proposal-evidence', 'proposal-summary'} <= set(page.ids))
+        # The restored design keeps its original five-card strip; the fifth
+        # card sums the two pending-team counts only for Admin.
+        self.assertEqual(page.counts, {'risks', 'alerts', 'changed_risks', 'reprioritized_alerts', 'pending_total'})
         self.assertTrue({'/soc', '/grc'} <= page.links)
 
     def test_rendered_pages_have_unique_ids_and_resolved_template_slots(self):
@@ -1055,6 +1058,36 @@ class ActiveHTTPTests(Fixture):
     def test_raw_partial_templates_are_not_public_static_routes(self):
         for name in ('admin', 'soc', 'grc', 'reviews', 'index'):
             self.assertEqual(self.request('/demo-static/' + name + '.html', None)[0], 404)
+
+    def test_original_dashboard_structure_is_restored_without_redesign_panels(self):
+        """Keep the original dark layout and original review/table controls."""
+        for role in ('admin', 'soc', 'grc'):
+            _, body, _ = self.request('/' + role, None)
+            markup = body.decode()
+            page = PageStructure(markup)
+            self.assertTrue({'title', 'subtitle', 'login-hint', 'proposal-title',
+                             'proposal-summary', 'proposal-evidence', 'evidence-panel'} <= set(page.ids))
+            self.assertFalse({'before-value', 'after-value', 'access-profile', 'toggle-key',
+                              'login-error', 'proposal-status'} & set(page.ids))
+            self.assertIn('class="hero"', markup)
+            self.assertIn('Connect this dashboard', markup)
+            self.assertNotIn('class="sidebar"', markup)
+        # All original annotated theme rules remain byte-identical; only the
+        # team-only three-counter rule is appended after this original prefix.
+        _, stylesheet, _ = self.request('/demo-static/style.css', None)
+        original = stylesheet.partition(b'\n/* Content-only scoping:')[0]
+        self.assertEqual(hashlib.sha256(original).hexdigest(),
+                         '94b07c7009dfa585037b3243670729463394b3d9c69f9d7157b08b4ce6deb11d')
+
+    def test_restored_login_uses_no_new_build_or_session_prerequisites(self):
+        """The original direct /state login works without the rejected gates."""
+        _, body, _ = self.request('/demo-static/app.js', None)
+        source = body.decode()
+        self.assertIn('await api("/state")', source)
+        self.assertNotIn('/api/demo/info', source)
+        self.assertNotIn('api("/session")', source)
+        self.assertEqual(self.request('/api/demo/info', None)[0], 401)
+        self.assertEqual(self.request('/api/demo/session', 'admin')[0], 404)
 
 
 if __name__ == '__main__':

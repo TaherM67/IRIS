@@ -1,62 +1,44 @@
-# Sign in to the active IRIS demo
+# Original demo sign-in
 
-Use the updated **`demo.py`** and **`demo_app/`** together. Keep your existing **`.local/`** folder: it contains your keys and saved approvals. This update does not reset either.
+The working dashboard and its original key flow are restored. **Do not delete `.local/` or regenerate your keys.** There is no build/profile/session prerequisite.
 
-## Windows: do this first
+## Windows
 
-1. Stop the old server with **Ctrl+C**. Update the project from GitHub, preserving `.local/` and any of your own source edits. Start in the same project folder you used successfully before.
-2. Start the server and leave this terminal open:
+1. Stop the old server with **Ctrl+C**, update **`demo.py`** and **`demo_app/`**, and keep your existing `.local/` folder.
+2. In your existing project folder, start:
 
    ```powershell
    .\.venv\Scripts\python.exe demo.py
    ```
 
-3. In a second terminal, **in that same folder**, run:
+3. Leave that terminal running. Open a second private terminal **in the same folder**:
 
    ```powershell
-   .\.venv\Scripts\python.exe demo.py doctor
+   .\.venv\Scripts\python.exe demo.py keys
    ```
 
-   It checks the running build, key profile and all three role keys. It does not print secrets, analyze data, or change records. If you used `--port 8011` for the server, also use `doctor --port 8011`.
+4. Open the matching page, press **Ctrl+F5**, and paste **only the token after the role label**, not `admin:`, `soc:` or `grc:`:
 
-4. Get one key at a time in a **private** terminal:
-
-   ```powershell
-   .\.venv\Scripts\python.exe demo.py keys --role admin
-   .\.venv\Scripts\python.exe demo.py keys --role soc
-   .\.venv\Scripts\python.exe demo.py keys --role grc
-   ```
-
-5. Open the matching page, press **Ctrl+F5**, paste its key and select **Connect**:
-
-   | Page | Local address | Required key |
+   | Page | Address | Required token |
    | --- | --- | --- |
    | Admin | <http://127.0.0.1:8010/admin> | Admin |
    | SOC | <http://127.0.0.1:8010/soc> | SOC |
    | GRC | <http://127.0.0.1:8010/grc> | GRC |
 
-On macOS/Linux replace `.\.venv\Scripts\python.exe` with `.venv/bin/python`. If your virtual environment is activated, `python` works on either platform. Do not open the HTML file directly.
+5. Click **Connect** in the original form. Hide the key terminal before screen sharing.
 
-## What to copy
+On macOS/Linux use `.venv/bin/python` instead. With the correct environment activated, `python` works on either platform. If you selected another server port, use that port in every URL. Open the HTTP page, not the HTML file directly.
 
-Copy the long token on the requested role's line. A single line such as `soc: TOKEN` is also accepted on the SOC page; optional surrounding quotes are handled. Do not copy the entire terminal output, the profile label, or a JSON field. **Show** reveals the input temporarily; hide it before presenting. The key is cleared after sign-in or failure and never stored in a URL or browser storage.
+## If access still fails
 
-The **Key profile** on the sign-in page must match `demo.py keys` and the server terminal. The profile is a non-secret short fingerprint, not a key; never paste it into the key field.
+- Use **`demo.py keys`**, not **`python -m backend keys`**. The older passive prototype uses different keys and normally runs on port 8000, not 8010.
+- Run both commands from the **same existing project folder**. A different extracted ZIP creates its own keys and database.
+- Use the matching role's token. Admin credentials do not sign in to the SOC or GRC page.
+- Copy the complete token only, without quotes, role labels, JSON punctuation or extra lines.
+- Restart the server after intentionally restoring/changing its access file. The running process uses the keys loaded at startup.
+- Keep the server terminal open and fix any startup error shown there.
+- If it still fails, share the exact page error and startup error, **never your token or access.json**.
 
-## If it still fails
+The redesign-only `doctor`, `keys --role`, key-profile labels and separate session endpoint are no longer part of this restored version.
 
-| Message or situation | What to do |
-| --- | --- |
-| Key profile mismatch | The command and running server use different credential sets: often two extracted project folders, or an edited access file. Stop the server and start it from the intended folder. Keep `.local/`. |
-| Older/different server or API | Close the old process, update both `demo.py` and `demo_app/`, restart, then Ctrl+F5. The active demo is normally port **8010**, not the older passive interface on **8000**. |
-| Wrong role | A working Admin key cannot sign in to the SOC/GRC page. Get that page's own key with `keys --role ...`. |
-| Key not accepted | Run `doctor`. Use **`demo.py keys`**, not **`python -m backend keys`**: they read different credential files. |
-| Cannot reach server | Leave the server terminal open. Use its printed HTTP loopback address and matching port. If startup failed, fix the terminal error first. |
-| Invalid/multiline key | Paste only one complete role token. Do not copy JSON punctuation or the whole output. |
-| Doctor succeeds, but the page fails | Ctrl+F5 and try again. Share the exact page error and the **doctor output only**, never your key or access.json. |
-
-Existing keys are read from `.local/active_demo/access.json`. A running server uses the keys it loaded at startup; restart after intentionally restoring that file. A completely separate extracted project has its own keys/state. The update never silently regenerates existing credentials, opens access without authentication, or deletes your database.
-
-## What was checked
-
-Exact configured keys work over real local HTTP for each role. Regressions cover labelled/quoted pastes, malformed input, wrong roles, failed initial dashboard loads, stale builds, mismatched key profiles and read-only diagnostics. The exact cause of an error on a different computer cannot be determined without that computer's diagnostic result. A local browser rehearsal remains necessary before the examination.
+Keys stay at `.local/active_demo/access.json`; approved records stay at `.local/active_demo/state/iris.sqlite3`. This update does not change either. The original page uses authenticated `GET /api/demo/state` directly and only opens after the initial role-related records load successfully.

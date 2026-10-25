@@ -32,7 +32,6 @@ from backend.core import BusyError
 # IRIS EXPLAIN: Import ConflictError, DemoEngine from .engine to reuse the shared project contract/implementation rather than
 # IRIS EXPLAIN: duplicate it.
 from .engine import ConflictError, DemoEngine
-from .access import public_info
 
 # IRIS EXPLAIN: Store the result of Path(__file__).with_name('static') in STATIC; later lines use this named result.
 STATIC = Path(__file__).with_name('static')
@@ -41,26 +40,33 @@ MAX_BODY = 8192
 
 
 def dashboard_html(role):
-    """Compose a fixed, role-specific public page without exposing other panels.
+    """Keep the original page and omit only sections outside this role.
 
-    Only this allowlisted role chooses a server-owned template. There is no
-    user-supplied path or HTML, and API access still requires the matching key.
+    The template and role are server-owned. Blocks cannot nest and never contain
+    uploaded values. API permissions and response projections remain key-derived.
     """
     if role not in {'admin', 'soc', 'grc'}:
         raise ValueError('Unknown dashboard')
-    shell = (STATIC / 'index.html').read_text(encoding='utf-8')
-    content = (STATIC / f'{role}.html').read_text(encoding='utf-8')
-    reviews = (STATIC / 'reviews.html').read_text(encoding='utf-8')
-    content = content.replace('<!-- IRIS: reviews -->', reviews)
-    # Fixed labels are not interpolated from source data or credentials.
-    title = {'admin': 'Admin overview', 'soc': 'SOC workspace', 'grc': 'GRC workspace'}[role]
-    description = {'admin': 'Run IRIS and monitor both teams.',
-                   'soc': 'Review alerts and approve priority changes.',
-                   'grc': 'Review risk updates and maintain the register.'}[role]
-    for marker, value in {'{{ROLE}}': role, '{{TITLE}}': title, '{{DESCRIPTION}}': description,
-                          '<!-- IRIS: workspace -->': content}.items():
-        shell = shell.replace(marker, value)
-    return shell.encode('utf-8')
+    markup = (STATIC / 'index.html').read_text(encoding='utf-8')
+    # Use fixed role markers instead of the two rejected redesigns' page partials.
+    markup = re.sub(r'<!-- IRIS: roles=([a-z,]+) -->(.*?)<!-- IRIS: end -->',
+                    lambda match: match[2] if role in match[1].split(',') else '',
+                    markup, flags=re.DOTALL)
+    labels = {
+        '{{ROLE}}': role,
+        '{{PENDING_COUNT}}': {'admin': 'pending_total', 'soc': 'pending_soc', 'grc': 'pending_grc'}[role],
+        '{{EVIDENCE_TITLE}}': {
+            'admin': 'Inspect technical evidence, ML shadow and policy rationale',
+            'soc': 'Inspect alert evidence and priority rationale',
+            'grc': 'Inspect registered risk, control advice and update rationale'}[role],
+        '{{NOTICE}}': {
+            'admin': 'Approvals actively update the demo database. No real company system is connected, no security controls are executed, and the unreleased ML predictions stay separately labeled as shadow results.',
+            'soc': 'SOC approval updates alert priorities in the demo database. No real SIEM is connected and no security control is executed.',
+            'grc': 'GRC approval updates the demo risk register. Control recommendations are advice only; no real GRC system or security control is changed.'}[role]
+    }
+    for marker, value in labels.items():
+        markup = markup.replace(marker, value)
+    return markup.encode('utf-8')
 
 
 # IRIS EXPLAIN: Class APIError: Local demo HTTP exception carrying an explicit status and safe public message.
@@ -306,10 +312,10 @@ class DemoHandler(BaseHTTPRequestHandler):
         path = parsed.path
         # IRIS EXPLAIN: Enter this branch only when method == 'GET' and path in {'/', '/admin', '/soc', '/grc'}.
         if method == 'GET' and path in {'/', '/admin', '/soc', '/grc'}:
-            # Compose only this page's panels; no hidden cross-team tables or
-            # Admin controls are sent inside the SOC/GRC HTML response.
-            role = path.strip('/') or 'admin'
-            return self.send(200, dashboard_html(role), 'text/html; charset=utf-8')
+            # IRIS EXPLAIN: Return the result of self.send(200, (STATIC / 'index.html').read_bytes(), 'text/html;
+            # IRIS EXPLAIN: charset=utf-8') (send the already prepared response/message) to the caller; this ends the current
+            # IRIS EXPLAIN: function path.
+            return self.send(200, dashboard_html(path.strip('/') or 'admin'), 'text/html; charset=utf-8')
         # IRIS EXPLAIN: Store a mapping containing /demo-static/app.js, /demo-static/style.css in files; later lines use this
         # IRIS EXPLAIN: named result.
         files = {'/demo-static/app.js': ('app.js', 'text/javascript; charset=utf-8'),
@@ -328,12 +334,6 @@ class DemoHandler(BaseHTTPRequestHandler):
             # IRIS EXPLAIN: Return the result of self.send(200, {'status': 'ok', 'demo_only': True}) (send the already prepared
             # IRIS EXPLAIN: response/message) to the caller; this ends the current function path.
             return self.send(200, {'status': 'ok', 'demo_only': True})
-        # A public non-secret build/profile label helps diagnose old servers and
-        # keys from another extracted folder. It exposes no key or working data.
-        if method == 'GET' and path == '/api/demo/info':
-            if parsed.query:
-                raise APIError(422, 'The demo info endpoint accepts no query fields')
-            return self.send(200, public_info(self.server.engine.settings))
         # IRIS EXPLAIN: Enter this branch only when not path.startswith('/api/demo/').
         if not path.startswith('/api/demo/'):
             # IRIS EXPLAIN: Stop this invalid/unauthorized/stale path by raising APIError(404, 'Not found'); the caller's
@@ -379,10 +379,6 @@ class DemoHandler(BaseHTTPRequestHandler):
             return int(value)
         # IRIS EXPLAIN: Enter this branch only when method == 'GET'.
         if method == 'GET':
-            # Authenticate before returning even a role label. The UI verifies
-            # this tiny response before requesting any dashboard records.
-            if path == '/api/demo/session':
-                return self.send(200, {'role': actor, **public_info(engine.settings)})
             # IRIS EXPLAIN: Enter this branch only when path == '/api/demo/state'.
             if path == '/api/demo/state':
                 # IRIS EXPLAIN: Return the result of self.send(200, engine.status(actor)) (send the already prepared
