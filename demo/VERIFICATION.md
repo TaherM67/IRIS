@@ -6,6 +6,7 @@ Verified 25 October 2026. Applies to `demo.py` and `demo_app/`, not the separate
 
 ```bash
 python -m unittest demo_app.tests.test_demo -v
+python -m unittest demo_app.tests.test_activity -v
 python -m unittest backend.tests.test_core -v
 # From IRIS_Models_v2:
 python -m unittest discover -s tests -v
@@ -13,7 +14,7 @@ python -m unittest discover -s tests -v
 node demo_app/tests/test_ui_controller.js
 ```
 
-**55 demo tests** (32 core and 23 real loopback HTTP), **33 backend-core tests**, and **79 model tests** pass: **167 Python regressions** total. The demo core/HTTP fixtures use the actual pinned user Colab model. Twelve controller scenarios execute the actual restored JavaScript against deliberate DOM/API doubles, not a real browser.
+**65 demo/activity tests** (32 core, 29 real loopback HTTP and four activity-unit tests), **33 backend-core tests**, and **79 model tests** pass: **177 Python regressions** total. The demo core/HTTP fixtures use the actual pinned user Colab model. Twenty controller scenarios execute the actual restored JavaScript against deliberate DOM/API doubles, not a real browser.
 
 ## Original UI restoration
 
@@ -26,6 +27,7 @@ node demo_app/tests/test_ui_controller.js
 - Removes unused redesigned page partials and the redesign-only access helper/commands. They remain recoverable in Git history. Existing keys and runtime records are not removed.
 - Controller checks cover role-only reads, working summary/table rendering, approvals, read-only Admin reviews, failed/wrong-role login and logout.
 - Three additional controller scenarios use the actual unfiltered HTML source with every panel present. Before the fix this reproduced the screenshot's exact SOC failure: “This action requires the ADMIN OR GRC role”. After the fix SOC/GRC/Admin connect successfully, team counters/model sections are hidden appropriately, and polling remains role-scoped. Requests now depend on authenticated identity, not HTML panel existence. Real API permissions remain unchanged.
+- Six GRC compatibility cases cover legacy nested recommendations, absent/null/non-array lists, invalid entries and missing legacy recommendations. Before the fix the legacy fixture reproduced “Cannot read properties of undefined (reading 'length')”. Afterward each case loads, polls and submits the unchanged risk-review command. A display-only allowlist omits telemetry/model fields from older full responses; no recommendation or risk value is invented when optional advice is absent.
 
 ## Engine and persistence
 
@@ -43,4 +45,4 @@ node demo_app/tests/test_ui_controller.js
 
 No real browser executable was available. Layout/click-through and download interaction still need a local rehearsal. Static HTML/controller tests are not visual browser verification.
 
-No vendor integrations, cloud deployment, production security assessment or real-world ML effectiveness were established. The separately prepared FastAPI HTTP tests remain unexecuted because its web dependencies were unavailable and are not included in the 167 tests above.
+No vendor integrations, cloud deployment, production security assessment or real-world ML effectiveness were established. The separately prepared FastAPI HTTP tests remain unexecuted because its web dependencies were unavailable and are not included in the 177 tests above.

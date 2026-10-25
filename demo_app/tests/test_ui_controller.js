@@ -103,6 +103,10 @@ function mockFetch(role, data, calls, behavior = {}) {
     else if (route === "/proposals") value = {exercise_id: "UI-TEST", items: data.pending, total: data.pending.length};
     else if (route === "/changes") value = {exercise_id: "UI-TEST", items: []};
     else if (route === "/audit") { assert.equal(role, "admin"); value = []; }
+    else if (route === '/activity') {
+      assert.equal(role, 'admin');
+      value = {active_commands: 1, events: [{time: '2026-10-25T12:00:00+00:00', role: 'admin', action: 'analysis', state: 'running', message: 'Real test backend event'}]};
+    }
     else if (route === "/risks") {
       if (role === 'soc') return response({detail: 'This action requires the ADMIN OR GRC role'}, 403);
       value = {exercise_id: "UI-TEST", items: [{risk_id: "DEMO-R001-1", hostname: "identity-server", category: "Unauthorized Access",
@@ -136,6 +140,16 @@ async function settle(context) {
 }
 function harness(role, behavior = {}) {
   const document = documentFor(role, behavior.unfiltered), data = fixture(role), calls = [];
+  if (role === 'grc' && behavior.controlsShape) {
+    const proposal = data.pending[0];
+    if (behavior.controlsShape.startsWith('legacy')) {
+      proposal.payload.evidence = fixture('admin').pending[1].payload.evidence;
+      if (behavior.controlsShape === 'legacy-missing') proposal.payload.evidence.primary_controls = {};
+    } else if (behavior.controlsShape === 'missing') delete proposal.payload.evidence.controls;
+    else if (behavior.controlsShape === 'null') proposal.payload.evidence.controls = null;
+    else if (behavior.controlsShape === 'object') proposal.payload.evidence.controls = {};
+    else if (behavior.controlsShape === 'bad-entries') proposal.payload.evidence.controls = [null, 'invalid'];
+  }
   const context = vm.createContext({document, location: {pathname: "/" + role}, fetch: mockFetch(role, data, calls, behavior), AbortController,
     Option: function(label, value) { const option = new Element("option"); option.textContent = label; option.value = value; return option; },
     setInterval() { return 1; }, setTimeout, URL, Blob, confirm: () => true, console});
@@ -167,12 +181,14 @@ async function check(role) {
   if (role === "soc") {
     for (const id of ["risk-panel", "risk-count", "risk-changed", "model-status"]) assert.equal(document.getElementById(id), null);
     assert.ok(!calls.includes("/risks") && !calls.includes("/audit"));
+    assert.ok(!calls.includes('/activity'));
     assert.equal(document.getElementById("alert-count").textContent, "2,355");
     assert.match(document.getElementById("proposal-summary").textContent, /19 alerts.*Critical/);
     assert.doesNotMatch(document.getElementById("proposal-evidence").textContent, /primary_controls|"controls"|"policy"/);
   } else if (role === "grc") {
     for (const id of ["alert-panel", "alert-count", "alert-changed", "model-status"]) assert.equal(document.getElementById(id), null);
     assert.ok(!calls.includes("/alerts") && !calls.includes("/audit"));
+    assert.ok(!calls.includes('/activity'));
     assert.equal(document.getElementById("risk-count").textContent, "60");
     assert.match(document.getElementById("proposal-summary").textContent, /0\.60 → 0\.80/);
     assert.match(document.getElementById("proposal-evidence").textContent, /Example access control/);
@@ -183,6 +199,8 @@ async function check(role) {
     assert.equal(document.getElementById("review-form").hidden, true);
     assert.match(document.getElementById("proposal-evidence").textContent, /"policy"/);
     assert.match(document.getElementById("model-status").textContent, /loaded/);
+    await vm.runInContext('refreshActivity()', context);
+    assert.match(document.getElementById('backend-events').textContent, /Real test backend event/);
   }
   if (role !== "admin") {
     document.getElementById("reason").value = "Reviewed synthetic evidence; approve this demo change.";
@@ -241,8 +259,52 @@ async function unfilteredChecks() {
   console.log('UNFILTERED: SOC, GRC and Admin load correctly even with every panel present');
 }
 
+async function grcControlChecks() {
+  for (const shape of ['legacy', 'missing', 'null', 'object', 'bad-entries', 'legacy-missing']) {
+    const test = harness('grc', {unfiltered: true, controlsShape: shape});
+    await login(test);
+    assert.equal(test.document.getElementById('login-panel').hidden, true,
+      shape + ': ' + test.document.getElementById('message').textContent);
+    const summary = test.document.getElementById('proposal-summary').textContent;
+    assert.match(summary, /0\.60 → 0\.80/);
+    assert.doesNotMatch(summary, /undefined|ML shadow|confidence/);
+    const evidence = test.document.getElementById('proposal-evidence').textContent;
+    assert.doesNotMatch(evidence, /ml_shadow|"features"|"policy"|confidence/);
+    if (shape === 'legacy') assert.match(summary, /Example access control/);
+    else assert.match(summary, /No control recommendations are available/);
+    await vm.runInContext('refresh()', test.context);
+    test.document.getElementById('reason').value = 'Reviewed the saved risk proposal for this synthetic example.';
+    test.document.getElementById('review-form').emit('submit', {submitter: {value: 'approve'}});
+    await settle(test.context);
+    assert.equal(test.data.changed, true);
+    assert.match(test.document.getElementById('risk-rows').textContent, /0\.60 → 0\.80/);
+  }
+  console.log('GRC CONTROLS: legacy, absent, null and malformed lists load, poll and review without a crash');
+}
+
+async function activityChecks() {
+  const test = harness('admin');
+  await login(test);
+  vm.runInContext('busy = true', test.context);
+  const before = test.calls.filter(route => route === '/activity').length;
+  await vm.runInContext('refreshActivity()', test.context);
+  assert.ok(test.calls.filter(route => route === '/activity').length > before);
+  assert.match(test.document.getElementById('backend-status').textContent, /running/);
+  vm.runInContext('busy = false', test.context);
+  test.document.getElementById('logout').emit('click');
+  assert.doesNotMatch(test.document.getElementById('backend-events').textContent, /Real test backend event/);
+  const failure = harness('admin', {failRoute: '/activity'});
+  await login(failure);
+  await vm.runInContext('refreshActivity()', failure.context);
+  assert.equal(failure.document.getElementById('login-panel').hidden, true);
+  assert.equal(failure.document.getElementById('backend-status').textContent, 'Monitor unavailable');
+  console.log('MONITOR: polls during commands, clears on logout, and failure does not block login');
+}
+
 (async () => {
   for (const role of ["soc", "grc", "admin"]) await check(role);
   await failureChecks();
   await unfilteredChecks();
+  await grcControlChecks();
+  await activityChecks();
 })().catch(error => { console.error(error); process.exitCode = 1; });

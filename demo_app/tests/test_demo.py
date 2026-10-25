@@ -1108,6 +1108,73 @@ class ActiveHTTPTests(Fixture):
         self.assertEqual(self.request('/api/demo/info', None)[0], 401)
         self.assertEqual(self.request('/api/demo/session', 'admin')[0], 404)
 
+    def test_activity_is_admin_only_and_read_only(self):
+        for role in (None, 'soc', 'grc'):
+            self.assertEqual(self.request('/api/demo/activity', role)[0], 401 if role is None else 403)
+        self.assertEqual(self.request('/api/demo/activity', 'admin')[0], 200)
+        self.assertEqual(self.request('/api/demo/activity?role=admin', 'soc')[0], 422)
+        self.assertEqual(self.request('/api/demo/activity', 'admin', 'POST', {})[0], 404)
+
+    def test_activity_polling_does_not_generate_command_events(self):
+        _, first, _ = self.request('/api/demo/activity')
+        _, second, _ = self.request('/api/demo/activity')
+        self.assertEqual(first, second)
+        self.assertEqual(first['active_commands'], 0)
+        self.assertTrue(first['process_only'])
+
+    def test_activity_reports_real_approval_writes(self):
+        selected = self.proposal('soc')
+        status, result, _ = self.request('/api/demo/proposals/' + selected['proposal_id'] + '/review',
+            'soc', 'POST', {'decision': 'approve', 'reason': 'PRIVATE-REVIEW-NOTE should not enter the live monitor'})
+        self.assertEqual(status, 200)
+        _, feed, _ = self.request('/api/demo/activity')
+        last = feed['events'][-1]
+        self.assertEqual(last['demo_records_written'], result['demo_records_written'])
+        self.assertEqual(last['demo_records_written'], 19)
+        self.assertEqual((last['role'], last['action'], last['state']), ('soc', 'review', 'completed'))
+        encoded = json.dumps(feed)
+        self.assertNotIn('PRIVATE-REVIEW-NOTE', encoded)
+        for key in KEYS.values():
+            self.assertNotIn(key, encoded)
+
+    def test_activity_failures_do_not_log_command_bodies(self):
+        self.assertEqual(self.request('/api/demo/analyze', 'admin', 'POST', {'PRIVATE-BODY': 'SECRET'})[0], 422)
+        _, feed, _ = self.request('/api/demo/activity')
+        self.assertEqual(feed['events'][-1]['state'], 'failed')
+        self.assertNotIn('PRIVATE-BODY', json.dumps(feed))
+        self.assertNotIn('SECRET', json.dumps(feed))
+
+    def test_activity_can_be_read_while_a_command_is_running(self):
+        started, release = threading.Event(), threading.Event()
+        result = []
+        def waiting_analysis(actor):
+            started.set()
+            if not release.wait(3):
+                raise ValueError('Test command not released')
+            return {'sessions': 132}
+        with mock.patch.object(self.engine, 'analyze', side_effect=waiting_analysis):
+            thread = threading.Thread(target=lambda: result.append(self.request('/api/demo/analyze', 'admin', 'POST', {})))
+            thread.start()
+            try:
+                self.assertTrue(started.wait(2))
+                _, feed, _ = self.request('/api/demo/activity')
+                self.assertEqual(feed['active_commands'], 1)
+                self.assertEqual(feed['events'][-1]['state'], 'running')
+            finally:
+                release.set()
+                thread.join(4)
+        self.assertFalse(thread.is_alive())
+        self.assertEqual(result[0][0], 200)
+        _, feed, _ = self.request('/api/demo/activity')
+        self.assertEqual(feed['active_commands'], 0)
+        self.assertEqual(feed['events'][-1]['sessions'], 132)
+
+    def test_activity_window_is_in_admin_html_only(self):
+        for role in ('admin', 'soc', 'grc'):
+            _, markup, _ = self.request('/' + role, None)
+            page = PageStructure(markup.decode())
+            self.assertEqual('backend-monitor' in page.ids, role == 'admin')
+
 
 if __name__ == '__main__':
     # IRIS EXPLAIN: Call unittest.main() using the existing explicit arguments.

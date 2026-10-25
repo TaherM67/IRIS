@@ -19,7 +19,7 @@ el("login-hint").textContent = `Run python demo.py keys in a private terminal. C
 // permission: hide unrelated blocks, and independently scope every API read.
 function applyRoleView() {
   document.body.dataset.role = pageRole;
-  for (const [id, roles] of Object.entries({"admin-actions":["admin"], "admin-detail":["admin"],
+  for (const [id, roles] of Object.entries({"admin-actions":["admin"], "admin-detail":["admin"], "backend-monitor":["admin"],
     "risk-panel":["admin", "grc"], "alert-panel":["admin", "soc"], "review-panel":["admin", "soc", "grc"]})) {
     if (el(id)) el(id).hidden = !roles.includes(pageRole);
   }
@@ -90,6 +90,24 @@ async function action(callback, silent = false) {
 }
 // IRIS EXPLAIN: Function pager: Enable alert pagination only within the backend-reported bounds and outside an active action.
 function pager() { if (el("previous")) el("previous").disabled = busy || offset === 0; if (el("next")) el("next").disabled = busy || offset + 50 >= totalAlerts; }
+// Display adapter for both saved-response shapes: new GRC responses have
+// controls[], older ones have primary_controls.recommendations[]. Optional
+// advice can be absent; it must not prevent reviewing a valid risk proposal.
+// This copies only GRC fields and never edits saved evidence or approval values.
+function grcEvidence(source) {
+  const pick = (record, names) => Object.fromEntries(names.filter(name => record[name] !== undefined).map(name => [name, record[name]]));
+  const raw = Array.isArray(source.controls) ? source.controls :
+    Array.isArray(source.primary_controls?.recommendations) ? source.primary_controls.recommendations : [];
+  const controls = raw.filter(item => item && typeof item === "object" &&
+    (typeof item.name === "string" || typeof item.control_id === "string"))
+    .map(item => pick(item, ["control_id", "name", "current_state", "action_type", "catalogue_action", "warnings"]));
+  const scenario = source.observed_activity || source.primary_assessment?.scenario_class;
+  return {...pick(source, ["hostname", "asset_id", "asset_criticality", "session_id", "session_time", "decision_basis"]),
+    observed_activity: scenario || "Not recorded",
+    risk_category: source.risk_category || {credential_access: "Unauthorized Access", reconnaissance: "Reconnaissance"}[scenario] || "Not recorded",
+    risk_reason: source.risk_reason || "Review the registered risk and saved before/after values. Control advice does not execute a security control.",
+    controls};
+}
 // IRIS EXPLAIN: Function renderProposal: Keep the original saved-proposal layout,
 // but describe only evidence returned for this team's authenticated role.
 function renderProposal() {
@@ -102,7 +120,7 @@ function renderProposal() {
     pretty("proposal-evidence", null);
     return;
   }
-  const data = p.payload, evidence = data.evidence;
+  const data = p.payload, evidence = pageRole === "grc" ? grcEvidence(data.evidence) : data.evidence;
   const summary = el("proposal-summary");
   summary.append(node("h3", evidence.hostname + " · " + (p.kind === "soc" ? "SOC reprioritization" : "GRC risk update")));
   // SOC has technical activity and the proposed priority, not GRC policy fields.
@@ -123,8 +141,10 @@ function renderProposal() {
   } else {
     summary.append(node("p", "Risk score " + data.before.score.toFixed(2) + " → " + data.after.score.toFixed(2), "big-change"));
     summary.append(node("p", data.risk_id + " · likelihood " + data.before.likelihood + " → " + data.after.likelihood + " · impact stays " + data.after.impact));
-    if (pageRole === "grc" && evidence.controls.length) {
-      summary.append(node("p", "Control recommendations: " + evidence.controls.map(control => control.name + " (" + control.current_state + "; " + control.action_type + ")").join(" · ")));
+    if (pageRole === "grc") {
+      summary.append(node("p", evidence.controls.length ? "Control recommendations: " + evidence.controls.map(control =>
+        (control.name || control.control_id) + " (" + (control.current_state || "not recorded") + "; " + (control.action_type || "review required") + ")").join(" · ") :
+        "No control recommendations are available for this proposal.", "muted"));
     }
   }
   if (pageRole !== "grc") {
@@ -132,7 +152,8 @@ function renderProposal() {
     summary.append(node("p", shadow ? "ML shadow: " + (shadow.scenario || "ABSTAINED") + " · confidence " + (shadow.confidence*100).toFixed(1) + "% (not an approved decision)" : "ML shadow: unavailable for this evidence; no prediction is invented.", "muted"));
   }
   summary.append(node("p", "Human approval changes synthetic system records only. It does not execute any suggested security control.", "muted"));
-  // Projection happens in the backend; pretty-printing cannot add another role's data.
+  // The current backend projects roles; the GRC adapter also filters old full
+  // responses so raw telemetry/model confidence never appear in this view.
   pretty("proposal-evidence", {proposal_id:p.proposal_id,case_id:p.case_id,...evidence});
 }
 
@@ -271,6 +292,7 @@ el("login-form").addEventListener("submit",event => {
       // Initial data must load successfully before the existing workspace opens.
       el("key").value = ""; el("workspace").hidden = false; el("login-panel").hidden = true;
       message("Connected. These tables read live backend records, not a static mockup.");
+      refreshActivity();
     } catch (error) { disconnect(); throw error; }
   });
 });
@@ -283,6 +305,8 @@ function disconnect() {
   for (const id of ["risk-rows","alert-rows","change-rows","audit","integration","history","model-status","proposal-evidence","proposal-summary"]) if (el(id)) el(id).replaceChildren();
   for (const id of ["identity","exercise","analysis-status","alert-page","proposal-count"]) if (el(id)) el(id).textContent = "";
   for (const id of ["risk-count","alert-count","risk-changed","alert-changed","pending-count"]) if (el(id)) el(id).textContent = "—";
+  if (el("backend-status")) el("backend-status").textContent = "Disconnected";
+  if (el("backend-events")) el("backend-events").textContent = "Connect as Admin to see real backend activity.";
   el("proposal-select").replaceChildren(new Option("No pending proposals",""));
   el("review-form").reset(); el("review-form").hidden = true; el("evidence-panel").hidden = true;
 }
@@ -344,3 +368,26 @@ if (el("export-alerts")) el("export-alerts").addEventListener("click",() => acti
 // IRIS EXPLAIN: Poll the backend every three seconds only while connected, idle, visible and opted into auto-refresh; this is
 // IRIS EXPLAIN: GET polling, not WebSockets.
 setInterval(() => { if (identity && !busy && !document.hidden && el("auto-refresh").checked) action(refresh,true); },3000);
+
+// Read-only polling is independent of command-busy, so Admin can see an analysis
+// request running while its POST is pending. Monitor failure never blocks login.
+let activityLoading = false;
+async function refreshActivity() {
+  if (identity !== "admin" || !el("backend-monitor") || activityLoading) return;
+  const current = generation;
+  activityLoading = true;
+  try {
+    const result = await api("/activity");
+    if (current !== generation || identity !== "admin") return;
+    el("backend-status").textContent = result.active_commands ? `${result.active_commands} command(s) running` : "Backend idle";
+    el("backend-events").textContent = result.events.slice().reverse().map(event =>
+      `${event.time} | ${event.role.toUpperCase()} | ${event.action} | ${event.state.toUpperCase()}${event.elapsed_seconds === undefined ? "" : ` | ${event.elapsed_seconds}s`}\n${event.message}`
+    ).join("\n\n") || "No backend command events yet.";
+  } catch (error) {
+    if (error.name !== "AbortError" && current === generation && identity === "admin") {
+      el("backend-status").textContent = "Monitor unavailable";
+      el("backend-events").textContent = "Restart the updated Python server to enable this read-only monitor. Other dashboard actions are unchanged.";
+    }
+  } finally { activityLoading = false; }
+}
+setInterval(() => { if (identity === "admin" && !document.hidden && el("auto-refresh").checked) refreshActivity(); },1000);

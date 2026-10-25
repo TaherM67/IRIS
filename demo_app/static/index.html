@@ -124,7 +124,14 @@
 --></div><!-- IRIS EXPLAIN: Close the existing <section> element; no rendered text or attributes are changed.
 --></section>
       <!-- IRIS EXPLAIN: Open <section>: id=admin-actions anchors the corresponding fixed dashboard control or status area; initially hidden; existing JS controls visibility after authentication/state changes.
---><!-- IRIS: roles=admin --><section id="admin-actions" class="card" hidden><!-- IRIS EXPLAIN: Open <div>: retain this existing semantic/layout container and its original content/attributes.
+--><!-- IRIS: roles=admin --><section id="backend-monitor" class="card" aria-label="Read-only backend activity">
+  <!-- Actual server events only. This is not a shell or simulated progress. -->
+  <div class="section-title"><div><p class="eyebrow">LIVE / BACKEND ACTIVITY</p><h2>Backend activity</h2></div><span id="backend-status" class="pill">Waiting for connection</span></div>
+  <p class="muted">Read-only · Updates every second, including during analysis. Shows command starts, outcomes and saved record counts. Times are UTC.</p>
+  <pre id="backend-events" tabindex="0" aria-label="Recent backend events">Connect as Admin to see real backend activity.</pre>
+  <p class="muted">Recent activity from this server process only; restarting clears this window. The existing Admin audit remains the persistent proof. No keys or review notes are shown.</p>
+</section>
+<section id="admin-actions" class="card" hidden><!-- IRIS EXPLAIN: Open <div>: retain this existing semantic/layout container and its original content/attributes.
 --><div class="section-title"><!-- IRIS EXPLAIN: Open <div>: retain this existing semantic/layout container and its original content/attributes.
 --><div><!-- IRIS EXPLAIN: Open <p>: retain this existing semantic/layout container and its original content/attributes.
 --><p class="eyebrow">01 / ANALYZE<!-- IRIS EXPLAIN: Close the existing <p> element; no rendered text or attributes are changed.

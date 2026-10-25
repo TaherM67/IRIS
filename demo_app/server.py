@@ -32,6 +32,7 @@ from backend.core import BusyError
 # IRIS EXPLAIN: Import ConflictError, DemoEngine from .engine to reuse the shared project contract/implementation rather than
 # IRIS EXPLAIN: duplicate it.
 from .engine import ConflictError, DemoEngine
+from .activity import BackendActivity
 
 # IRIS EXPLAIN: Store the result of Path(__file__).with_name('static') in STATIC; later lines use this named result.
 STATIC = Path(__file__).with_name('static')
@@ -112,6 +113,7 @@ class DemoServer(ThreadingHTTPServer):
         self.engine = engine
         # IRIS EXPLAIN: Call super().__init__(address, DemoHandler) using the existing explicit arguments.
         super().__init__(address, DemoHandler)
+        self.activity = BackendActivity()
 
 
 # IRIS EXPLAIN: Class DemoHandler: Bounded local HTTP request/response adapter with key-derived team roles.
@@ -142,6 +144,11 @@ class DemoHandler(BaseHTTPRequestHandler):
         # IRIS EXPLAIN: Store the result of json.dumps(value, allow_nan=False).encode() when
         # IRIS EXPLAIN: content_type.startswith('application/json'); otherwise value in body; later lines use this named result.
         body = json.dumps(value, allow_nan=False).encode() if content_type.startswith('application/json') else value
+        # Only observed POST commands enter the monitor; all reads stay quiet.
+        request_id = getattr(self, 'activity_id', None)
+        if request_id is not None:
+            self.server.activity.finish(request_id, status, value)
+            self.activity_id = None
         # IRIS EXPLAIN: Call self.send_response(status): start the HTTP response with the selected status.
         self.send_response(status)
         # IRIS EXPLAIN: Iterate {'Content-Type': content_type, 'Content-Length': str(len(body)), 'Cache-Control': 'no-store',
@@ -390,6 +397,10 @@ class DemoHandler(BaseHTTPRequestHandler):
             return int(value)
         # IRIS EXPLAIN: Enter this branch only when method == 'GET'.
         if method == 'GET':
+            if path == '/api/demo/activity':
+                if actor != 'admin':
+                    raise PermissionError('Backend activity requires the ADMIN role')
+                return self.send(200, self.server.activity.snapshot())
             # IRIS EXPLAIN: Enter this branch only when path == '/api/demo/state'.
             if path == '/api/demo/state':
                 # IRIS EXPLAIN: Return the result of self.send(200, engine.status(actor)) (send the already prepared
@@ -442,6 +453,13 @@ class DemoHandler(BaseHTTPRequestHandler):
                 return self.send(200, engine.export_alerts(actor))
         # IRIS EXPLAIN: Enter this branch only when method == 'POST'.
         if method == 'POST':
+            # Fixed labels only: no token, path, request body or review note is
+            # copied into the activity window. The engine still owns all writes.
+            action = {'/api/demo/analyze': 'analysis', '/api/demo/exercises': 'rehearsal'}.get(path)
+            if re.fullmatch(r'/api/demo/proposals/PROP-[a-f0-9]{32}/review', path):
+                action = 'review'
+            if action:
+                self.activity_id = self.server.activity.start(actor, action)
             # IRIS EXPLAIN: Store the result of self.read_json() in body; later lines use this named result.
             body = self.read_json()
             # IRIS EXPLAIN: Enter this branch only when path == '/api/demo/analyze'.
