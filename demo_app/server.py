@@ -32,6 +32,7 @@ from backend.core import BusyError
 # IRIS EXPLAIN: Import ConflictError, DemoEngine from .engine to reuse the shared project contract/implementation rather than
 # IRIS EXPLAIN: duplicate it.
 from .engine import ConflictError, DemoEngine
+from .access import public_info
 
 # IRIS EXPLAIN: Store the result of Path(__file__).with_name('static') in STATIC; later lines use this named result.
 STATIC = Path(__file__).with_name('static')
@@ -327,6 +328,12 @@ class DemoHandler(BaseHTTPRequestHandler):
             # IRIS EXPLAIN: Return the result of self.send(200, {'status': 'ok', 'demo_only': True}) (send the already prepared
             # IRIS EXPLAIN: response/message) to the caller; this ends the current function path.
             return self.send(200, {'status': 'ok', 'demo_only': True})
+        # A public non-secret build/profile label helps diagnose old servers and
+        # keys from another extracted folder. It exposes no key or working data.
+        if method == 'GET' and path == '/api/demo/info':
+            if parsed.query:
+                raise APIError(422, 'The demo info endpoint accepts no query fields')
+            return self.send(200, public_info(self.server.engine.settings))
         # IRIS EXPLAIN: Enter this branch only when not path.startswith('/api/demo/').
         if not path.startswith('/api/demo/'):
             # IRIS EXPLAIN: Stop this invalid/unauthorized/stale path by raising APIError(404, 'Not found'); the caller's
@@ -372,6 +379,10 @@ class DemoHandler(BaseHTTPRequestHandler):
             return int(value)
         # IRIS EXPLAIN: Enter this branch only when method == 'GET'.
         if method == 'GET':
+            # Authenticate before returning even a role label. The UI verifies
+            # this tiny response before requesting any dashboard records.
+            if path == '/api/demo/session':
+                return self.send(200, {'role': actor, **public_info(engine.settings)})
             # IRIS EXPLAIN: Enter this branch only when path == '/api/demo/state'.
             if path == '/api/demo/state':
                 # IRIS EXPLAIN: Return the result of self.send(200, engine.status(actor)) (send the already prepared

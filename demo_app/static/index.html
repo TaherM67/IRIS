@@ -3,38 +3,44 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#101b32">
   <title>IRIS · {{TITLE}}</title>
   <link rel="stylesheet" href="/demo-static/style.css">
   <script src="/demo-static/app.js" defer></script>
 </head>
-<!-- The backend chooses this fixed role and sends only its matching panels. -->
+<!-- The server selects this role. Other teams' panels are never in this page. -->
 <body data-role="{{ROLE}}">
-  <header class="topbar">
-    <a class="brand" href="/{{ROLE}}" aria-label="IRIS workspace">IRIS<span>Risk intelligence</span></a>
-    <span class="workspace-name">{{TITLE}}</span>
-    <span class="demo-badge">Synthetic demo</span>
-  </header>
-  <main>
-    <div class="page-heading"><div><h1>{{TITLE}}</h1><p>{{DESCRIPTION}}</p></div></div>
-    <!-- No records are fetched until a matching role key authenticates this tab. -->
-    <section id="login-panel" class="card login-panel">
-      <h2>Connect to your workspace</h2>
-      <p>Use your <strong>{{ROLE}}</strong> demo access key.</p>
-      <form id="login-form">
-        <label for="key">Access key</label>
-        <div class="login-row"><input id="key" type="password" required autocomplete="off" maxlength="256"><button type="submit">Connect</button></div>
-      </form>
-      <details class="small-help"><summary>Where do I find my demo key?</summary><p>Run <code>python demo.py keys</code> in a private terminal. Do not show keys while sharing your screen.</p></details>
-    </section>
-    <p id="message" class="message" role="status" aria-live="polite">Connect to see your workspace.</p>
-    <div id="workspace" hidden>
-      <div class="workspace-tools">
-        <div><span id="identity" class="connected"></span><span id="exercise" class="muted"></span></div>
-        <div class="tool-actions"><label class="check"><input id="auto-refresh" type="checkbox" checked>Live updates</label><button id="refresh" type="button" class="secondary">Refresh</button><button id="logout" type="button" class="quiet">Disconnect</button></div>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <!-- Navigation uses only sections present in this role's own workspace. -->
+  <aside class="sidebar" aria-label="Workspace navigation">
+    <a class="brand" href="/{{ROLE}}" aria-label="IRIS workspace"><span class="brand-mark" aria-hidden="true"><i></i></span><span>IRIS<small>RISK INTELLIGENCE</small></span></a>
+    <div class="sidebar-label">YOUR WORKSPACE</div>
+    <div class="role-card"><span class="role-icon" aria-hidden="true">{{ROLE}}</span><div><strong>{{TITLE}}</strong><span>Focused. Connected. In control.</span></div></div>
+    <nav class="side-nav" aria-label="Page sections">
+      <a href="#workspace" class="nav-overview"><span aria-hidden="true">◈</span>Overview</a>
+      <a href="#review-panel"><span aria-hidden="true">▣</span>Review center</a>
+      <a href="#records-section"><span aria-hidden="true">▤</span>Working records</a>
+      <a href="#activity-section"><span aria-hidden="true">↗</span>Applied changes</a>
+    </nav>
+    <div class="sidebar-note"><span class="status-dot" aria-hidden="true"></span><strong>Human-led decisions</strong><p>Evidence first.<br>Approval before any change.</p></div>
+    <div class="sidebar-bottom"><span class="demo-badge">SYNTHETIC DEMO</span><p>Private local workspace<br>No external system writes</p></div>
+  </aside>
+  <div class="app-shell">
+    <header class="topbar"><div class="breadcrumb">Workspace <span>/</span> <strong>{{TITLE}}</strong></div><div class="topbar-note"><span class="status-dot" aria-hidden="true"></span>Approval-gated engine</div></header>
+    <main id="main">
+      <div class="page-heading"><div><p class="eyebrow">CONNECTED RISK INTELLIGENCE</p><h1>{{TITLE}}</h1><p>{{DESCRIPTION}}</p></div><span class="page-emblem" aria-hidden="true">{{ROLE}}</span></div>
+      <!-- No records are read until this tab authenticates with its role key. -->
+      <section id="login-panel" class="card login-panel">
+        <div class="login-intro"><span class="section-kicker">SECURE WORKSPACE</span><h2>A clear view.<br>A confident decision.</h2><p>Connect to your workspace to review the evidence, see proposed changes, and follow the results.</p><div class="login-flow"><span>01 <strong>Review evidence</strong></span><span>02 <strong>Make a decision</strong></span><span>03 <strong>See the change</strong></span></div></div>
+        <div class="login-form-panel"><span class="login-lock" aria-hidden="true">↳</span><h2>Welcome to {{TITLE}}</h2><p>Use your <strong>{{ROLE}}</strong> demo access key.</p><form id="login-form"><label for="key">Workspace access key</label><div class="key-input-wrap"><input id="key" type="password" required autocomplete="off" maxlength="300" placeholder="Paste your private demo key" aria-describedby="key-help"><button id="toggle-key" type="button" class="quiet" aria-pressed="false">Show</button></div><p id="login-error" class="login-error" role="alert" hidden></p><button type="submit" class="connect-button">Connect to workspace →</button></form><p id="key-help" class="small-help">Your key stays in this tab. It is not saved in browser storage.</p><p id="access-profile" class="access-profile"></p><details class="small-help"><summary>Need help connecting?</summary><p>In the <strong>same project folder as the running server</strong>, open a second private terminal and run <code>python demo.py keys --role {{ROLE}}</code>. Copy only your role's key, not a different workspace's key.</p><p>Use <code>python demo.py doctor</code> to check this project's access configuration. Do not use <code>python -m backend keys</code>; those keys belong to the older prototype. Keep keys off screen when presenting.</p></details></div>
+      </section>
+      <p id="message" class="message" role="status" aria-live="polite">Connect to see your workspace.</p>
+      <div id="workspace" hidden>
+        <div class="workspace-tools"><div><span id="identity" class="connected"></span><span class="tool-divider" aria-hidden="true"></span><span id="exercise" class="muted"></span></div><div class="tool-actions"><label class="check"><input id="auto-refresh" type="checkbox" checked>Live updates</label><button id="refresh" type="button" class="secondary">Refresh</button><button id="logout" type="button" class="quiet">Disconnect</button></div></div>
+        <!-- IRIS: workspace -->
       </div>
-      <!-- IRIS: workspace -->
-    </div>
-  </main>
-  <footer>Demo records only · Changes require human approval · No external system is changed</footer>
+    </main>
+    <footer><span class="footer-brand">IRIS</span><span>Demo records only · Human approval required · No external system is changed</span></footer>
+  </div>
 </body>
 </html>

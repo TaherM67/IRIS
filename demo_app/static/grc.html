@@ -1,13 +1,18 @@
-<!-- GRC receives business risk/control context, not raw telemetry or the SOC queue. -->
+<!-- GRC receives business risk and control advice, never the SOC alert queue. -->
 <section class="stats" aria-label="GRC summary">
-  <div class="stat"><span>Registered risks</span><strong data-count="risks">—</strong></div>
-  <div class="stat"><span>Risk reviews</span><strong data-count="pending_grc">—</strong></div>
-  <div class="stat"><span>Risks updated</span><strong data-count="changed_risks">—</strong></div>
+  <div class="stat"><div class="stat-heading"><span>Risk register</span><i class="stat-icon" aria-hidden="true">▤</i></div><strong data-count="risks">—</strong><small>Current registered risks</small></div>
+  <div class="stat stat-attention"><div class="stat-heading"><span>Awaiting your review</span><i class="stat-icon" aria-hidden="true">◷</i></div><strong data-count="pending_grc">—</strong><small>Proposed register updates</small></div>
+  <div class="stat stat-success"><div class="stat-heading"><span>Risks updated</span><i class="stat-icon" aria-hidden="true">↗</i></div><strong data-count="changed_risks">—</strong><small>Approved and saved</small></div>
 </section>
-<!-- IRIS: reviews -->
-<section id="risk-panel" class="card">
-  <div class="section-heading"><div><h2>Risk register</h2><p>Original and current values stay side by side.</p></div><button id="export-risks" type="button" class="secondary">Download register</button></div>
-  <div class="table-wrap"><table><thead><tr><th>Risk / asset</th><th>Likelihood</th><th>Impact</th><th>Risk score</th><th>Status</th></tr></thead><tbody id="risk-rows"></tbody></table></div>
-  <p class="small-help">Risk score = likelihood × impact ÷ 25. It is a policy score, not an attack probability.</p>
-</section>
-<details class="card history-panel"><summary>Recent register changes</summary><p id="changes-empty" class="muted">No risk updates have been approved yet.</p><div id="changes-table" class="table-wrap" hidden><table><thead><tr><th>Risk</th><th>Before</th><th>After</th><th>Review note</th></tr></thead><tbody id="change-rows"></tbody></table></div></details>
+<div class="workflow-strip"><span class="workflow-step"><b>1</b>Review business risk</span><span aria-hidden="true">→</span><span class="workflow-step"><b>2</b>Approve a risk update</span><span aria-hidden="true">→</span><span class="workflow-step"><b>3</b>See the register change</span></div>
+<div class="dashboard-grid">
+  <!-- IRIS: reviews -->
+  <div id="records-section" class="records-column">
+    <section id="risk-panel" class="card records-card">
+      <div class="section-heading"><div><span class="section-kicker">LIVE WORKING RECORDS</span><h2>Risk register</h2><p>Original → current. Every change has an approval.</p></div><button id="export-risks" type="button" class="secondary">Download register</button></div>
+      <div class="table-wrap register-table"><table><thead><tr><th scope="col">Risk / asset</th><th scope="col">Likelihood</th><th scope="col">Impact</th><th scope="col">Risk score</th><th scope="col">Status</th></tr></thead><tbody id="risk-rows"></tbody></table></div>
+      <p class="table-footnote">Risk score = likelihood × impact ÷ 25. This policy score is not an attack probability.</p>
+    </section>
+    <div id="activity-section"><details class="card history-panel"><summary>Recent register changes <span>Approved history</span></summary><p id="changes-empty" class="muted">No risk updates have been approved yet.</p><div id="changes-table" class="table-wrap" hidden><table><thead><tr><th scope="col">Risk</th><th scope="col">Before</th><th scope="col">After</th><th scope="col">Review note</th></tr></thead><tbody id="change-rows"></tbody></table></div></details></div>
+  </div>
+</div>

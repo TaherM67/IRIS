@@ -3,6 +3,7 @@
 // The server selects the page template. The key, not this label, authorizes API data.
 const el = id => document.getElementById(id);
 const pageRole = document.body.dataset.role;
+const uiVersion = "2026.10.25.2";
 let key = "", identity = null, state = null, proposals = [], selected = "";
 let offset = 0, totalAlerts = 0, busy = false, generation = 0, selectFirst = true;
 let controller = new AbortController();
@@ -16,7 +17,14 @@ function node(tag, text, className) {
 }
 function text(id, value) { if (el(id)) el(id).textContent = value; }
 function pretty(id, value) { text(id, JSON.stringify(value, null, 2)); }
-function message(value, error = false) { text("message", value); el("message").classList.toggle("error", error); }
+function message(value, error = false) {
+  text("message", value); el("message").classList.toggle("error", error);
+  // A login failure must remain next to the input, not below the locked page.
+  if (el("login-error")) {
+    el("login-error").hidden = !error || el("login-panel").hidden;
+    text("login-error", error ? value : "");
+  }
+}
 function cell(value, detail) {
   const result = node("td", value);
   if (detail) result.append(node("span", detail, "secondary-line"));
@@ -29,15 +37,58 @@ function activity(value) {
 function score(value) { return Number(value).toFixed(2); }
 function changedValue(before, after, format = String) { return before === after ? format(after) : `${format(before)} → ${format(after)}`; }
 
+// Accept a clearly labelled, single-line CLI paste without guessing/truncating a
+// secret. Wrong-role labels and malformed input fail before HTTP header creation.
+function normalizeKey(value) {
+  let token = value.trim();
+  const label = token.match(/^(admin|soc|grc)\s*:\s*/i);
+  if (label) {
+    if (label[1].toLowerCase() !== pageRole) throw new Error(`This is labelled ${label[1].toUpperCase()}. Use python demo.py keys --role ${pageRole} for this workspace.`);
+    token = token.slice(label[0].length).trim();
+  }
+  const pairs = {'"': '"', "'": "'", "“": "”", "‘": "’"};
+  if (pairs[token[0]] && token.endsWith(pairs[token[0]])) token = token.slice(1, -1);
+  if (!/^[\x21-\x7E]{32,256}$/.test(token)) throw new Error("Paste one complete role key on one line. Do not include terminal instructions, spaces or JSON fields.");
+  return token;
+}
+
+// This public endpoint contains three safe labels only. Comparing the displayed
+// profile to the private CLI helps spot a different folder or a stale process.
+async function serverInfo() {
+  let response;
+  try { response = await fetch("/api/demo/info", {cache: "no-store", credentials: "omit", redirect: "error", signal: controller.signal}); }
+  catch (error) {
+    if (error.name === "AbortError") throw error;
+    throw new Error("Cannot reach IRIS. Start python demo.py and open the local URL printed in that terminal.");
+  }
+  let info;
+  try { info = await response.json(); } catch (_) { /* Report a safe error below, never echo a foreign page. */ }
+  if (!response.ok || info?.service !== "iris-active-demo" || info.ui_version !== uiVersion) throw new Error("The running server is an older or different app. Stop it, run the updated demo.py, then press Ctrl+F5.");
+  text("access-profile", `Key profile ${info.access_profile} · compare with demo.py keys`);
+  return info;
+}
+
 // Authenticate every call with the tab's memory-only key; discard old-session replies.
 async function api(path, options = {}) {
   const current = generation;
-  const response = await fetch("/api/demo" + path, {
-    ...options, headers: {"X-IRIS-Key": key, ...(options.headers || {})},
-    signal: controller.signal, cache: "no-store", credentials: "omit"
-  });
-  const result = await response.json();
+  let response;
+  try {
+    response = await fetch("/api/demo" + path, {
+      ...options, headers: {"X-IRIS-Key": key, ...(options.headers || {})},
+      signal: controller.signal, cache: "no-store", credentials: "omit", redirect: "error"
+    });
+  } catch (error) {
+    if (error.name === "AbortError") throw error;
+    throw new Error("Connection lost. Keep the demo terminal running, then reconnect or refresh.");
+  }
+  let result;
+  try { result = await response.json(); }
+  catch (_) { throw new Error("This server did not return the IRIS API. Restart the updated demo.py and reload this tab."); }
   if (generation !== current) throw new Error("The connection changed. Please reconnect.");
+  if (response.status === 401) {
+    disconnect();
+    throw new Error(`Key not accepted by this server. Run python demo.py doctor in the SAME project folder, then use python demo.py keys --role ${pageRole}. Older backend keys will not work.`);
+  }
   if (!response.ok) throw new Error(result.detail || "The backend could not complete this action.");
   return result;
 }
@@ -203,6 +254,7 @@ function renderChanges(result) {
 async function refresh() {
   if (!identity) return;
   const next = await api("/state");
+  if (next.role !== pageRole) { disconnect(); throw new Error("The server role changed. Reconnect with this workspace's own key."); }
   const query = el("proposal-status") ? `?status=${encodeURIComponent(el("proposal-status").value)}` : "";
   const requests = {proposals: api("/proposals" + query), changes: api("/changes")};
   if (el("risk-panel")) requests.risks = api("/risks");
@@ -234,29 +286,50 @@ async function refresh() {
 el("login-form").addEventListener("submit", event => {
   event.preventDefault();
   action(async () => {
-    generation += 1; key = el("key").value.trim();
+    generation += 1;
     try {
-      const result = await api("/state");
-      if (result.role !== pageRole) throw new Error(`Use the ${pageRole.toUpperCase()} demo key for this workspace.`);
+      key = normalizeKey(el("key").value);
+      const info = await serverInfo();
+      const result = await api("/session");
+      if (result.role !== pageRole) throw new Error(`That key belongs to ${String(result.role).toUpperCase()}. Use python demo.py keys --role ${pageRole} for this workspace.`);
+      if (result.access_profile !== info.access_profile) throw new Error("The running server changed during sign-in. Please try again.");
       identity = result.role; state = null; selectFirst = true;
-    } catch (error) { key = ""; throw error; }
-    el("key").value = ""; el("workspace").hidden = false; el("login-panel").hidden = true;
-    text("identity", `${identity.toUpperCase()} connected`);
-    text("review-title", {admin: "Team reviews", soc: "Priority reviews", grc: "Risk update reviews"}[pageRole]);
-    if (pageRole === "admin") text("review-help", "Read-only overview. Each team approves changes in its own workspace.");
-    await refresh(); message("Connected. You are viewing saved backend records.");
+      text("identity", `${identity.toUpperCase()} connected`);
+      text("review-title", {admin: "Team reviews", soc: "Priority reviews", grc: "Risk update reviews"}[pageRole]);
+      if (pageRole === "admin") text("review-help", "Read-only overview. Each team approves changes in its own workspace.");
+      // Show the dashboard only after all initial role-scoped reads succeeded.
+      await refresh();
+      el("key").value = ""; el("key").type = "password";
+      if (el("toggle-key")) { text("toggle-key", "Show"); el("toggle-key").setAttribute("aria-pressed", "false"); }
+      el("workspace").hidden = false; el("login-panel").hidden = true;
+      message("Connected. You are viewing saved backend records.");
+    } catch (error) { disconnect(); throw error; }
   });
 });
 
 // Disconnect cancels pending fetches and removes records/key from this tab.
-el("logout").addEventListener("click", () => {
+function disconnect() {
   generation += 1; controller.abort(); controller = new AbortController();
   key = ""; identity = null; state = null; selected = ""; proposals = []; offset = 0; selectFirst = true;
   el("workspace").hidden = true; el("login-panel").hidden = false; el("review-form").reset();
   for (const id of ["risk-rows", "alert-rows", "change-rows", "audit", "integration", "history", "model-status", "admin-evidence", "decision-details"]) if (el(id)) el(id).replaceChildren();
+  for (const id of ["identity", "exercise", "proposal-asset", "proposal-description", "before-value", "before-detail", "after-value", "after-detail", "analysis-status", "alert-page"]) text(id, "");
+  el("proposal-content").hidden = true; el("review-form").hidden = true;
+  el("review-empty").hidden = false; text("review-empty", "Connect to load your reviews.");
+  text("proposal-count", "0 pending");
   el("proposal-select").replaceChildren(new Option("No pending proposals", ""));
-  message("Disconnected.");
+  el("key").value = ""; el("key").type = "password";
+  if (el("toggle-key")) { text("toggle-key", "Show"); el("toggle-key").setAttribute("aria-pressed", "false"); }
+  for (const counter of document.querySelectorAll("[data-count]")) counter.textContent = "—";
+}
+el("logout").addEventListener("click", () => { disconnect(); message("Disconnected."); });
+if (el("toggle-key")) el("toggle-key").addEventListener("click", () => {
+  const show = el("key").type === "password";
+  el("key").type = show ? "text" : "password";
+  text("toggle-key", show ? "Hide" : "Show"); el("toggle-key").setAttribute("aria-pressed", String(show));
 });
+// Safe public build/profile check on first paint; never signs a role in itself.
+serverInfo().catch(error => { if (error.name !== "AbortError" && !identity) message(error.message, true); });
 el("refresh").addEventListener("click", () => action(refresh));
 el("proposal-select").addEventListener("change", () => { selected = el("proposal-select").value; selectFirst = false; el("reason").value = ""; el("review-details").open = false; renderProposal(); });
 

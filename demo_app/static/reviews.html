@@ -1,17 +1,17 @@
-<!-- Shared review layout; backend responses contain only role-allowlisted evidence. -->
-<section id="review-panel" class="card">
-  <div class="section-heading"><div><h2 id="review-title">Pending reviews</h2><p id="review-help">Choose a proposal, check the change, then approve or reject it.</p></div><span id="proposal-count" class="count-badge">0 pending</span></div>
+<!-- Same clear review pattern; the API restricts evidence to this team's role. -->
+<section id="review-panel" class="card review-card">
+  <div class="section-heading"><div><span class="section-kicker">HUMAN DECISION POINT</span><h2 id="review-title">Pending reviews</h2><p id="review-help">Review the proposed change, then decide.</p></div><span id="proposal-count" class="count-badge">0 pending</span></div>
   <label for="proposal-select">Select a proposal</label><select id="proposal-select"><option value="">No pending proposals</option></select>
   <p id="review-empty" class="empty-state">No proposals yet. Waiting for analysis.</p>
   <div id="proposal-content" hidden>
-    <h3 id="proposal-asset"></h3><p id="proposal-description"></p>
+    <div class="proposal-heading"><span class="asset-glyph" aria-hidden="true">▧</span><div><h3 id="proposal-asset"></h3><p id="proposal-description"></p></div></div>
     <div class="comparison"><div><span id="before-label">Current</span><strong id="before-value"></strong><small id="before-detail"></small></div><span class="comparison-arrow" aria-hidden="true">→</span><div class="recommended"><span id="after-label">Recommended</span><strong id="after-value"></strong><small id="after-detail"></small></div></div>
-    <details id="review-details" class="small-help"><summary>Why this change?</summary><div id="decision-details"></div></details>
-    <!-- Hidden for Admin: monitoring all records does not grant team approval authority. -->
+    <details id="review-details" class="evidence-details"><summary>Why this change? <span>View evidence</span></summary><div id="decision-details"></div></details>
+    <!-- Admin's read-only overview never grants either team's approval role. -->
     <form id="review-form" hidden>
-      <label for="reason">Review note</label><textarea id="reason" name="reason" minlength="5" maxlength="1000" placeholder="Briefly explain your decision." required></textarea>
+      <label for="reason">Your review note</label><textarea id="reason" name="reason" minlength="5" maxlength="1000" placeholder="Why are you approving or rejecting this change?" required></textarea>
       <div class="button-row"><button id="approve" type="submit" name="decision" value="approve">Approve change</button><button id="reject" type="submit" name="decision" value="reject" class="secondary">Reject</button></div>
-      <p class="small-help">Approval saves the change. Rejection keeps the current values.</p>
+      <p class="approval-note"><span aria-hidden="true">✓</span>Approval updates the saved record. Rejection leaves it unchanged.</p>
     </form>
   </div>
 </section>

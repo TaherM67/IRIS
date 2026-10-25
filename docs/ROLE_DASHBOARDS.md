@@ -1,6 +1,10 @@
-# Simple, role-specific dashboards
+# Focused, role-specific dashboards
 
 The active demo at port 8010 now has three focused workspaces. The saved models, three input datasets, approvals, database schema and existing demo keys are unchanged.
+
+The refreshed interface uses a navy navigation rail, bright workspace, teal action buttons, clear status labels and compact comparison cards. Each role has its own navigation and workflow; data remains real backend state, not decorative sample counters. Detailed evidence stays expandable so the main screen is easy to explain.
+
+**Cannot sign in? Start with [the access recovery steps](ACCESS_HELP.md).** The new `demo.py doctor` checks all three role keys against the running server without printing them. The sign-in page identifies old builds, shows a non-secret key-profile label and accepts a single labelled key paste.
 
 | Workspace | Main content | Hidden from this team's API and page |
 | --- | --- | --- |
@@ -25,7 +29,7 @@ GRC's control recommendations remain advice: approving a risk update does not in
 ## Update the demo you already tried
 
 1. Stop the running server with **Ctrl+C**.
-2. If you cloned the repository, pull the updated source normally. If you use GitHub ZIP downloads, extract the new ZIP elsewhere and copy the updated **`demo_app`** folder into your existing project. Preserve any local source edits first.
+2. If you cloned the repository, pull the updated source normally. If you use GitHub ZIP downloads, extract the new ZIP elsewhere and copy the updated **`demo.py`** and **`demo_app/`** into your existing project. Preserve any local source edits first. Both are required for the new access diagnostics.
 3. **Keep your existing `.local/` folder.** It contains your demo keys, approved records and history. No database reset or migration is needed.
 4. Start the demo with the same Python command as before, for example on Windows:
 
@@ -33,7 +37,7 @@ GRC's control recommendations remain advice: approving a risk update does not in
    .\.venv\Scripts\python.exe demo.py
    ```
 
-5. Reload the three browser tabs with **Ctrl+F5** and reconnect with the same corresponding keys:
+5. In a second terminal, run `.\.venv\Scripts\python.exe demo.py doctor`. Then reload the three browser tabs with **Ctrl+F5** and reconnect with the same corresponding keys:
    - Admin: <http://127.0.0.1:8010/admin>
    - SOC: <http://127.0.0.1:8010/soc>
    - GRC: <http://127.0.0.1:8010/grc>

@@ -21,7 +21,7 @@ Windows PowerShell, from the project root:
 ```powershell
 py -3.12 -m venv .venv
 .\.venv\Scripts\python.exe -m pip install -r IRIS_Models_v2/requirements.txt
-.\.venv\Scripts\python.exe -m unittest demo_app.tests.test_demo -v
+.\.venv\Scripts\python.exe -m unittest demo_app.tests.test_demo demo_app.tests.test_access -v
 ```
 
 macOS/Linux:
@@ -29,10 +29,10 @@ macOS/Linux:
 ```bash
 python3.12 -m venv .venv
 .venv/bin/python -m pip install -r IRIS_Models_v2/requirements.txt
-.venv/bin/python -m unittest demo_app.tests.test_demo -v
+.venv/bin/python -m unittest demo_app.tests.test_demo demo_app.tests.test_access -v
 ```
 
-If a suitable `.venv` already exists, skip creating it. The **52 demo tests** should finish with `OK`. Do not proceed to the examination with a dependency error or failed test. Keep the ML dependency pins: the trusted saved models require the matching scikit-learn version.
+If a suitable `.venv` already exists, skip creating it. The **80 demo/access tests** should finish with `OK`. Do not proceed to the examination with a dependency error or failed test. Keep the ML dependency pins: the trusted saved models require the matching scikit-learn version.
 
 This demo server uses Python's standard HTTP library, so it does **not** need `requirements-backend.txt` or FastAPI. The older FastAPI interface on port 8000 has its own installation and verification requirements; it is not the active demo described here.
 
@@ -86,6 +86,8 @@ Open three browser tabs:
 | GRC | <http://127.0.0.1:8010/grc> | GRC key; inspect and approve/reject risk-register changes |
 
 Paste only that tab's key into its password field. Keys remain in the tab's memory, not browser storage or URLs. The earlier `python -m backend keys` command produces **different keys for the older passive prototype**: do not mix them up.
+
+For one key only, add `--role admin`, `--role soc` or `--role grc`. A labelled single-line paste is accepted on its matching page. The sign-in page's **Key profile** must match the private CLI's profile. If access fails, run `python demo.py doctor` in this same folder (with the same Python executable and any custom `--port`). It checks the running build and all roles without exposing keys or changing records. See [the simple recovery guide](ACCESS_HELP.md); do not delete `.local/` to troubleshoot.
 
 Hide the key terminal before sharing your screen. These are shared lab role keys, not individual enterprise identities or SSO. The Admin can inspect all proposals but **cannot impersonate the SOC or GRC approver**.
 

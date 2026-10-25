@@ -10,6 +10,7 @@ const root = path.resolve(__dirname, "../static");
 class Element {
   constructor(tag = "div", attrs = {}) {
     this.tag = tag; this.children = []; this.events = {}; this.content = "";
+    this.attributes = {...attrs}; this.type = attrs.type || "";
     this.value = attrs.value || ""; this.checked = "checked" in attrs;
     this.hidden = "hidden" in attrs; this.disabled = false; this.open = false; this.dataset = {};
     for (const [key, value] of Object.entries(attrs)) if (key.startsWith("data-")) this.dataset[key.slice(5)] = value;
@@ -21,6 +22,8 @@ class Element {
   append(...nodes) { this.children.push(...nodes); }
   replaceChildren(...nodes) { this.content = ""; this.children = nodes; }
   addEventListener(event, callback) { (this.events[event] ||= []).push(callback); }
+  setAttribute(name, value) { this.attributes[name] = String(value); if (name === "type") this.type = String(value); }
+  getAttribute(name) { return this.attributes[name] ?? null; }
   emit(event, extra = {}) { for (const callback of this.events[event] || []) callback({preventDefault() {}, ...extra}); }
   reset() { this.value = ""; }
   click() {}
@@ -63,9 +66,26 @@ function fixture(role) {
     pending: role === "admin" ? [soc, grc] : role === "soc" ? [soc] : [grc], changed: false};
 }
 
-function mockFetch(role, data, calls) {
+const TEST_KEY = "SYNTHETIC-UI-TEST-KEY-NOT-A-REAL-SECRET";
+const UI_VERSION = "2026.10.25.2";
+
+// These responses deliberately model only the API contract. They do not bypass
+// the real server's authorization checks or use any locally configured key.
+function mockFetch(role, data, calls, requests, behavior = {}) {
   return async (url, options = {}) => {
     const route = new URL(url, "http://local.test").pathname.replace("/api/demo", ""); calls.push(route);
+    requests.push({route, headers: {...options.headers}});
+    const response = (value, status = 200) => ({ok: status >= 200 && status < 300, status,
+      json: async () => JSON.parse(JSON.stringify(value))});
+    if (route === "/info") {
+      assert.equal(Object.keys(options.headers || {}).some(name => name.toLowerCase() === "x-iris-key"), false,
+        "The public build/profile check must never send a role credential");
+      return response({service: "iris-active-demo", ui_version: behavior.infoVersion || UI_VERSION, access_profile: "test-profile"});
+    }
+    assert.equal(typeof options.headers?.["X-IRIS-Key"], "string");
+    if (route === "/session") return response(behavior.sessionStatus === 401 ? {detail: "Rejected synthetic test credential"} :
+      {role: behavior.sessionRole || data.state.role, access_profile: "test-profile"}, behavior.sessionStatus || 200);
+    if (route === behavior.failRoute) return response({detail: "Synthetic initial loading failure"}, 500);
     let value;
     if (route === "/state") value = data.state;
     else if (route === "/proposals") value = {exercise_id: "UI-TEST", items: data.pending, total: data.pending.length};
@@ -89,7 +109,7 @@ function mockFetch(role, data, calls) {
       else Object.assign(data.state.counts, {pending_grc: 0, changed_risks: 1});
       value = {demo_records_written: role === "soc" ? 19 : 1};
     } else throw new Error("Unexpected UI endpoint: " + route);
-    return {ok: true, json: async () => JSON.parse(JSON.stringify(value))};
+    return response(value);
   };
 }
 
@@ -101,14 +121,31 @@ async function settle(context) {
   throw new Error("Controller action did not settle");
 }
 
-async function check(role) {
-  const document = documentFor(role), data = fixture(role), calls = [];
-  const context = vm.createContext({document, fetch: mockFetch(role, data, calls), AbortController,
+function harness(role, behavior = {}) {
+  const document = documentFor(role), data = fixture(role), calls = [], requests = [];
+  const context = vm.createContext({document, fetch: mockFetch(role, data, calls, requests, behavior), AbortController,
     Option: function(label, value) { const option = new Element("option"); option.textContent = label; option.value = value; return option; },
     setInterval() { return 1; }, setTimeout, URL, Blob, confirm: () => true, console});
   vm.runInContext(fs.readFileSync(path.join(root, "app.js"), "utf8"), context);
-  document.getElementById("key").value = "SYNTHETIC-UI-TEST-KEY-NOT-A-REAL-SECRET";
-  document.getElementById("login-form").emit("submit"); await settle(context);
+  return {document, data, calls, requests, context};
+}
+
+async function login(test, value = TEST_KEY) {
+  test.document.getElementById("key").value = value;
+  test.document.getElementById("login-form").emit("submit"); await settle(test.context);
+}
+
+function locked(test) {
+  assert.equal(test.document.getElementById("workspace").hidden, true);
+  assert.equal(test.document.getElementById("login-panel").hidden, false);
+  assert.equal(vm.runInContext("key", test.context), "");
+  assert.equal(vm.runInContext("identity", test.context), null);
+  assert.equal(test.document.getElementById("key").value, "");
+}
+
+async function check(role) {
+  const test = harness(role), {document, data, calls, context} = test;
+  await login(test);
   assert.equal(document.getElementById("login-panel").hidden, true);
   assert.equal(document.getElementById("message").classList.contains("error"), false);
   assert.equal(document.getElementById("proposal-asset").textContent, "identity-server");
@@ -141,12 +178,76 @@ async function check(role) {
   assert.equal(vm.runInContext("key", context), "");
   // A valid key for another role must not open this page or paint its records.
   data.state.role = role === "admin" ? "soc" : "admin";
-  document.getElementById("key").value = "SYNTHETIC-WRONG-ROLE-UI-FIXTURE";
-  document.getElementById("login-form").emit("submit"); await settle(context);
+  const stateReads = calls.filter(route => route === "/state").length;
+  await login(test, "SYNTHETIC-WRONG-ROLE-UI-FIXTURE");
   assert.equal(document.getElementById("workspace").hidden, true);
   assert.equal(document.getElementById("message").classList.contains("error"), true);
   assert.equal(vm.runInContext("key", context), "");
+  assert.equal(calls.filter(route => route === "/state").length, stateReads,
+    "A mismatched authenticated role must not fetch dashboard records");
   console.log(role.toUpperCase() + ": role-only controller login, render, approval/read-only and logout passed");
 }
 
-(async () => { for (const role of ["soc", "grc", "admin"]) await check(role); })().catch(error => { console.error(error); process.exitCode = 1; });
+async function accessChecks() {
+  // Single labelled/quoted CLI lines and smart OUTER quotes are normalized only;
+  // no internal characters are guessed, removed or replaced.
+  for (const input of [`soc: "${TEST_KEY}"`, `'${TEST_KEY}'`, `“${TEST_KEY}”`]) {
+    const test = harness("soc"); await login(test, input);
+    assert.equal(test.document.getElementById("login-panel").hidden, true);
+    const session = test.requests.find(request => request.route === "/session");
+    assert.equal(session.headers["X-IRIS-Key"], TEST_KEY);
+  }
+  for (const [input, expected] of [
+    [`grc: ${TEST_KEY}`, /labelled GRC/],
+    [`${TEST_KEY}\n${TEST_KEY}`, /one complete role key on one line/],
+    [`${TEST_KEY.slice(0, 12)}“${TEST_KEY.slice(12)}`, /one complete role key on one line/]
+  ]) {
+    const test = harness("soc"); await login(test, input); locked(test);
+    assert.equal(test.calls.includes("/session"), false, "Malformed input must fail before authentication");
+    assert.equal(test.calls.includes("/state"), false);
+    assert.match(test.document.getElementById("login-error").textContent, expected);
+    assert.equal(test.document.getElementById("login-error").hidden, false);
+  }
+  {
+    const test = harness("soc", {sessionStatus: 401}); await login(test); locked(test);
+    assert.match(test.document.getElementById("login-error").textContent, /Key not accepted.*SAME project folder/);
+    assert.equal(test.calls.includes("/state"), false);
+  }
+  {
+    const test = harness("soc", {sessionRole: "admin"}); await login(test); locked(test);
+    assert.match(test.document.getElementById("login-error").textContent, /belongs to ADMIN/);
+    assert.equal(test.calls.includes("/state"), false);
+  }
+  {
+    const test = harness("soc", {failRoute: "/proposals"}); await login(test); locked(test);
+    assert.equal(vm.runInContext("state", test.context), null);
+    assert.match(test.document.getElementById("login-error").textContent, /initial loading failure/);
+    assert.equal(test.document.getElementById("alert-rows").textContent, "");
+  }
+  {
+    const test = harness("soc", {infoVersion: "outdated-fixture"}); await login(test); locked(test);
+    assert.match(test.document.getElementById("login-error").textContent, /older or different app/);
+    assert.ok(test.requests.length > 0);
+    assert.ok(test.requests.every(request => request.route === "/info" && !("X-IRIS-Key" in request.headers)),
+      "An unverified/stale server must not receive the supplied key");
+  }
+  {
+    const test = harness("soc"), {document} = test;
+    const toggle = document.getElementById("toggle-key"), input = document.getElementById("key");
+    assert.ok(toggle, "The key visibility control must be present in the actual HTML");
+    assert.equal(input.type, "password");
+    toggle.emit("click"); assert.equal(input.type, "text"); assert.equal(toggle.getAttribute("aria-pressed"), "true");
+    toggle.emit("click"); assert.equal(input.type, "password"); assert.equal(toggle.getAttribute("aria-pressed"), "false");
+    toggle.emit("click"); await login(test);
+    assert.equal(input.type, "password"); assert.equal(input.value, ""); assert.equal(toggle.getAttribute("aria-pressed"), "false");
+    document.getElementById("logout").emit("click"); locked(test);
+    assert.equal(input.type, "password"); assert.equal(toggle.getAttribute("aria-pressed"), "false");
+    assert.equal(document.getElementById("alert-rows").textContent, "");
+  }
+  console.log("ACCESS: 11 normalization, locked-failure, server-version and visibility scenarios passed");
+}
+
+(async () => {
+  for (const role of ["soc", "grc", "admin"]) await check(role);
+  await accessChecks();
+})().catch(error => { console.error(error); process.exitCode = 1; });

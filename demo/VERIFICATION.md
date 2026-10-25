@@ -6,11 +6,12 @@ Verified 25 October 2026. This record applies to `demo.py` and `demo_app/`, not 
 
 ```bash
 python -m unittest demo_app.tests.test_demo -v
+python -m unittest demo_app.tests.test_access -v
 ```
 
-**52 tests passed**, including 32 active-core tests and 20 real loopback HTTP tests. These use the actual pinned user Colab models, not a dummy classifier. The 79 original model tests and 33 earlier backend-core tests also pass: **164 Python regression tests in total**.
+**80 tests passed**: 32 active-core tests, 20 real loopback HTTP tests and 28 access/configuration/diagnostic tests. The active-core/HTTP cases use the actual pinned user Colab models, not a dummy classifier; lightweight access checks deliberately do not load models. The 79 original model tests and 33 earlier backend-core tests also pass: **192 Python regression tests in total**.
 
-The additional optional developer command `node demo_app/tests/test_ui_controller.js` passed all three role flows. It executes the actual frontend controller against deliberate DOM/API doubles, checking login, role-only reads, summary rendering, approval/read-only behavior and logout. It is not a real-browser or visual-layout test, and Node is not required to run the demo.
+The additional optional developer command `node demo_app/tests/test_ui_controller.js` passed all three role flows and 11 access scenarios (14 total). It executes the actual frontend controller against deliberate DOM/API doubles, checking login, role-only reads, summary rendering, approval/read-only behavior, malformed/labelled/quoted key pastes,401 errors, wrong roles, failed initial loading, stale builds, key visibility and logout. It is not a real-browser or visual-layout test, and Node is not required to run the demo.
 
 Verified:
 
@@ -29,6 +30,9 @@ Verified:
 - SOC state/proposals omit GRC counters, risk values and control recommendations; GRC state/proposals omit SOC counters, raw telemetry and model confidence/metrics. Admin retains the full evidence and both teams' working records.
 - Actual served SOC/GRC HTML omits other-team and Admin panels/links rather than merely hiding them. Template slots resolve, element IDs are unique and partial templates are not publicly served as static pages.
 - Only Admin can run analysis or create a rehearsal; team approvals and stale-revision protections remain unchanged. Role/query parameters cannot expand authenticated-key access.
+- The public info endpoint returns only service/build/profile labels. A key-derived session role is checked before any dashboard records are requested. Public requests carry no key. Keys remain memory-only and are cleared on failed sign-in/logout; a failed first load never opens the workspace.
+- Read-only `demo.py doctor` validates the running build, credential-set fingerprint and all three roles over bounded loopback GET requests. It does not follow redirects, send keys to a mismatched profile, initialize missing credentials, load models or change records.
+- Existing key/configuration and database bytes are preserved, including a supported UTF-8 BOM in a Windows-edited access file. No silent credential regeneration or auth bypass was introduced.
 
 The Python source compiles; JavaScript syntax checks pass; HTML IDs and script references match; UI values use text nodes rather than untrusted HTML; all frontend assets are local.
 

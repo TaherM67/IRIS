@@ -4,9 +4,11 @@ Integrated Risk Intelligence System: a research prototype connecting SOC/SIEM ev
 
 This repository contains the **three-input advisory ML package**, the user's Colab-trained artifact, linked synthetic samples, a training notebook, a prepared FastAPI backend, and an **active, approval-gated demonstration** with Admin/SOC/GRC dashboards. It is not a finished live SOC/GRC platform.
 
-**For the examiner demonstration, start with [`demo.py`](demo.py) and [the active demo instructions](docs/ACTIVE_DEMO.md).** GRC approval actually changes the synthetic working risk register; SOC approval actually reprioritizes stored alerts. Changes persist, can be exported, and have before/after audit records. The simplified role-specific interface has **52 passing demo tests including real HTTP/API approval and role-isolation tests**, plus three frontend controller role checks. No real organization or security controls are modified. Browser layout/click-through still needs a local rehearsal.
+**For the examiner demonstration, start with [`demo.py`](demo.py) and [the active demo instructions](docs/ACTIVE_DEMO.md).** GRC approval actually changes the synthetic working risk register; SOC approval actually reprioritizes stored alerts. Changes persist, can be exported, and have before/after audit records. The redesigned role-specific interface has **80 passing demo/access tests including real HTTP/API approval, authentication and role-isolation tests**, plus 14 frontend controller scenarios. No real organization or security controls are modified. Browser layout/click-through still needs a local rehearsal.
 
 **Each workspace now shows only its own work:** SOC has alerts and priority reviews; GRC has the risk register and business/control reviews; Admin can monitor both working systems plus full analysis, model and audit details. This is enforced in server-rendered HTML and API response allowlists, not only hidden panels. See [the dashboard guide and update steps](docs/ROLE_DASHBOARDS.md).
+
+**Sign-in trouble?** Run `python demo.py doctor` from the same folder while the demo server is running. It checks the running build and all three local role keys without printing them. Use `python demo.py keys --role soc` (or `admin` / `grc`), not the older backend keys command. See [the step-by-step access guide](docs/ACCESS_HELP.md). Keep your existing `.local/` folder.
 
 **Verification boundary:** 79 ML tests and 33 backend-core tests passed, and a fresh batch persisted 900 shadow cases. The actual FastAPI/Uvicorn HTTP server and browser interactions were **not run here**, because PyPI downloads were denied. Run the target-computer HTTP tests before using that interface. See [the verification record](backend/VERIFICATION.md).
 
@@ -40,7 +42,7 @@ Validation and exact point-in-time enrichment produce one unified event dataset 
 From the project root with Python 3.12, install `IRIS_Models_v2/requirements.txt` and run:
 
 ```bash
-python -m unittest demo_app.tests.test_demo -v
+python -m unittest demo_app.tests.test_demo demo_app.tests.test_access -v
 python demo.py
 ```
 
