@@ -32,7 +32,7 @@ python3.12 -m venv .venv
 .venv/bin/python -m unittest demo_app.tests.test_demo -v
 ```
 
-If a suitable `.venv` already exists, skip creating it. The **54 demo tests** should finish with `OK`. Do not proceed to the examination with a dependency error or failed test. Keep the ML dependency pins: the trusted saved models require the matching scikit-learn version.
+If a suitable `.venv` already exists, skip creating it. The **55 demo tests** should finish with `OK`. Do not proceed to the examination with a dependency error or failed test. Keep the ML dependency pins: the trusted saved models require the matching scikit-learn version.
 
 This demo server uses Python's standard HTTP library, so it does **not** need `requirements-backend.txt` or FastAPI. The older FastAPI interface on port 8000 has its own installation and verification requirements; it is not the active demo described here.
 

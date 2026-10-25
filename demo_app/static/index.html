@@ -16,11 +16,11 @@
 --><script src="/demo-static/app.js" defer></script>
 <!-- IRIS EXPLAIN: Close the existing <head> element; no rendered text or attributes are changed.
 --></head>
-<!-- IRIS EXPLAIN: Open <body data-role="{{ROLE}}">: retain this existing semantic/layout container and its original content/attributes.
---><body>
+<!-- IRIS EXPLAIN: Open <body>: retain this existing semantic/layout container and its original content/attributes.
+--><body data-role="admin">
   <!-- IRIS EXPLAIN: Open <header>: retain this existing semantic/layout container and its original content/attributes.
 --><header class="topbar"><!-- IRIS EXPLAIN: Open <a>: existing navigation/download link; it never includes a role key.
---><a class="brand" href="/{{ROLE}}">IRIS<!-- IRIS EXPLAIN: Open <span>: retain this existing semantic/layout container and its original content/attributes.
+--><a class="brand" href="/admin">IRIS<!-- IRIS EXPLAIN: Open <span>: retain this existing semantic/layout container and its original content/attributes.
 --><span>Integrated Risk Intelligence<!-- IRIS EXPLAIN: Close the existing <span> element; no rendered text or attributes are changed.
 --></span><!-- IRIS EXPLAIN: Close the existing <a> element; no rendered text or attributes are changed.
 --></a><!-- IRIS EXPLAIN: Open <nav>: retain this existing semantic/layout container and its original content/attributes.
@@ -47,7 +47,7 @@
 --></p><!-- IRIS EXPLAIN: Close the existing <section> element; no rendered text or attributes are changed.
 --></section>
     <!-- IRIS EXPLAIN: Open <aside>: retain this existing semantic/layout container and its original content/attributes.
---><aside class="notice">{{NOTICE}}<!-- IRIS EXPLAIN: Close the existing <aside> element; no rendered text or attributes are changed.
+--><aside class="notice">Approvals actively update the demo database. No real company system is connected, no security controls are executed, and the unreleased ML predictions stay separately labeled as shadow results.<!-- IRIS EXPLAIN: Close the existing <aside> element; no rendered text or attributes are changed.
 --></aside>
     <!-- IRIS EXPLAIN: Open <section>: id=login-panel anchors role-key connection panel.
 --><section id="login-panel" class="card login"><!-- IRIS EXPLAIN: Open <h2>: retain this existing semantic/layout container and its original content/attributes.
@@ -119,7 +119,7 @@
 --><div class="stat"><!-- IRIS EXPLAIN: Open <span>: retain this existing semantic/layout container and its original content/attributes.
 --><span>Waiting for approval<!-- IRIS EXPLAIN: Close the existing <span> element; no rendered text or attributes are changed.
 --></span><!-- IRIS EXPLAIN: Open <strong>: id=pending-count anchors the corresponding fixed dashboard control or status area.
---><strong id="pending-count" data-count="{{PENDING_COUNT}}">0<!-- IRIS EXPLAIN: Close the existing <strong> element; no rendered text or attributes are changed.
+--><strong id="pending-count" data-count="pending_total">0<!-- IRIS EXPLAIN: Close the existing <strong> element; no rendered text or attributes are changed.
 --></strong><!-- IRIS EXPLAIN: Close the existing <div> element; no rendered text or attributes are changed.
 --></div><!-- IRIS EXPLAIN: Close the existing <section> element; no rendered text or attributes are changed.
 --></section>
@@ -176,7 +176,7 @@
 --><div id="proposal-summary" class="proposal-summary"><!-- IRIS EXPLAIN: Close the existing <div> element; no rendered text or attributes are changed.
 --></div><!-- IRIS EXPLAIN: Open <details>: id=evidence-panel anchors the corresponding fixed dashboard control or status area; collapsible supporting evidence/instructions; opening it does not apply a change; initially hidden; existing JS controls visibility after authentication/state changes.
 --><details id="evidence-panel" hidden><!-- IRIS EXPLAIN: Open <summary>: retain this existing semantic/layout container and its original content/attributes.
---><summary>{{EVIDENCE_TITLE}}<!-- IRIS EXPLAIN: Close the existing <summary> element; no rendered text or attributes are changed.
+--><summary>Inspect technical evidence, ML shadow and policy rationale<!-- IRIS EXPLAIN: Close the existing <summary> element; no rendered text or attributes are changed.
 --></summary><!-- IRIS EXPLAIN: Open <pre>: id=proposal-evidence anchors full saved technical/policy evidence for review; plain-text JSON/evidence display populated with textContent.
 --><pre id="proposal-evidence"><!-- IRIS EXPLAIN: Close the existing <pre> element; no rendered text or attributes are changed.
 --></pre><!-- IRIS EXPLAIN: Close the existing <details> element; no rendered text or attributes are changed.

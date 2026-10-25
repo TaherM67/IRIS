@@ -13,13 +13,14 @@ python -m unittest discover -s tests -v
 node demo_app/tests/test_ui_controller.js
 ```
 
-**54 demo tests** (32 core and 22 real loopback HTTP), **33 backend-core tests**, and **79 model tests** pass: **166 Python regressions** total. The demo core/HTTP fixtures use the actual pinned user Colab model. Nine controller scenarios execute the actual restored JavaScript against deliberate DOM/API doubles, not a real browser.
+**55 demo tests** (32 core and 23 real loopback HTTP), **33 backend-core tests**, and **79 model tests** pass: **167 Python regressions** total. The demo core/HTTP fixtures use the actual pinned user Colab model. Nine controller scenarios execute the actual restored JavaScript against deliberate DOM/API doubles, not a real browser.
 
 ## Original UI restoration
 
 - Restores the original annotated dark stylesheet rules byte-for-byte; only a team-only three-counter rule is appended.
 - Restores the original hero, login form, five-card Admin strip, proposal summary/evidence, working tables and applied-change history. No sidebar or redesigned before/after card.
 - Restores direct `/state` key login. No `/info`, version/profile or separate `/session` prerequisite.
+- The HTML source itself has readable default labels, not unresolved template variables. The server supplies actual role headings before JavaScript runs; real HTTP checks inspect the body role rather than matching text inside comments. Tests cover both raw source and all three served pages.
 - Omits unrelated blocks from the original served HTML. Team pages contain only their own counters, working table, evidence and history. Admin receives both working tables plus full model/audit/history.
 - Keeps the existing API role allowlists, Admin-only analysis, team-only approval authority and query-escalation denial.
 - Removes unused redesigned page partials and the redesign-only access helper/commands. They remain recoverable in Git history. Existing keys and runtime records are not removed.
@@ -41,4 +42,4 @@ node demo_app/tests/test_ui_controller.js
 
 No real browser executable was available. Layout/click-through and download interaction still need a local rehearsal. Static HTML/controller tests are not visual browser verification.
 
-No vendor integrations, cloud deployment, production security assessment or real-world ML effectiveness were established. The separately prepared FastAPI HTTP tests remain unexecuted because its web dependencies were unavailable and are not included in the 166 tests above.
+No vendor integrations, cloud deployment, production security assessment or real-world ML effectiveness were established. The separately prepared FastAPI HTTP tests remain unexecuted because its web dependencies were unavailable and are not included in the 167 tests above.

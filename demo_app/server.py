@@ -52,20 +52,31 @@ def dashboard_html(role):
     markup = re.sub(r'<!-- IRIS: roles=([a-z,]+) -->(.*?)<!-- IRIS: end -->',
                     lambda match: match[2] if role in match[1].split(',') else '',
                     markup, flags=re.DOTALL)
+    # The source HTML is a readable Admin page, not an unresolved template.
+    # This also prevents literal variable names when a stale server serves the
+    # file directly. The current server still filters role blocks above.
+    markup = markup.replace('<body data-role="admin">', f'<body data-role="{role}">')
+    markup = markup.replace('class="brand" href="/admin"', f'class="brand" href="/{role}"')
+    pending = {'admin': 'pending_total', 'soc': 'pending_soc', 'grc': 'pending_grc'}[role]
+    markup = markup.replace('data-count="pending_total"', f'data-count="{pending}"')
     labels = {
-        '{{ROLE}}': role,
-        '{{PENDING_COUNT}}': {'admin': 'pending_total', 'soc': 'pending_soc', 'grc': 'pending_grc'}[role],
-        '{{EVIDENCE_TITLE}}': {
+        'Inspect technical evidence, ML shadow and policy rationale': {
             'admin': 'Inspect technical evidence, ML shadow and policy rationale',
             'soc': 'Inspect alert evidence and priority rationale',
             'grc': 'Inspect registered risk, control advice and update rationale'}[role],
-        '{{NOTICE}}': {
+        'Approvals actively update the demo database. No real company system is connected, no security controls are executed, and the unreleased ML predictions stay separately labeled as shadow results.': {
             'admin': 'Approvals actively update the demo database. No real company system is connected, no security controls are executed, and the unreleased ML predictions stay separately labeled as shadow results.',
             'soc': 'SOC approval updates alert priorities in the demo database. No real SIEM is connected and no security control is executed.',
             'grc': 'GRC approval updates the demo risk register. Control recommendations are advice only; no real GRC system or security control is changed.'}[role]
     }
     for marker, value in labels.items():
         markup = markup.replace(marker, value)
+    # Supply real headings before JavaScript runs; the browser only adds live
+    # records after authentication. A failed script never exposes a title token.
+    title = {'admin': 'Admin · engine control', 'soc': 'SOC · live alert queue',
+             'grc': 'GRC · live risk register'}[role]
+    markup = markup.replace('<title>IRIS · Active demonstration</title>', f'<title>IRIS · {title}</title>')
+    markup = markup.replace('<h1 id="title">IRIS active demonstration', f'<h1 id="title">{title}')
     return markup.encode('utf-8')
 
 

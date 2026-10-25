@@ -49,11 +49,14 @@ class PageStructure(HTMLParser):
     def __init__(self, markup):
         super().__init__()
         self.ids, self.counts, self.links = [], set(), set()
+        self.body_role = None
         self.feed(markup)
 
     def handle_starttag(self, tag, attrs):
         # Comments are ignored; only actual element attributes count.
         attributes = dict(attrs)
+        if tag == 'body':
+            self.body_role = attributes.get('data-role')
         if 'id' in attributes:
             self.ids.append(attributes['id'])
         if 'data-count' in attributes:
@@ -1029,7 +1032,23 @@ class ActiveHTTPTests(Fixture):
             self.assertEqual(len(page.ids), len(set(page.ids)))
             self.assertNotIn('{{', markup)
             self.assertNotIn('<!-- IRIS:', markup)
-            self.assertIn(f'data-role="{role}"', markup)
+            # Inspect the real body, not an example tag in an HTML comment.
+            self.assertEqual(page.body_role, role)
+
+    def test_source_and_served_pages_have_readable_text_not_placeholder_variables(self):
+        """Raw HTML fallback and real HTTP responses must not show template tokens."""
+        from demo_app.server import STATIC
+        source = (STATIC / 'index.html').read_text(encoding='utf-8')
+        self.assertNotIn('{{', source)
+        self.assertIn('Approvals actively update the demo database.', source)
+        self.assertIn('Inspect technical evidence, ML shadow and policy rationale', source)
+        for role, title in [('admin', 'Admin · engine control'), ('soc', 'SOC · live alert queue'),
+                            ('grc', 'GRC · live risk register')]:
+            _, body, _ = self.request('/' + role, None)
+            markup = body.decode()
+            self.assertIn(f'<title>IRIS · {title}</title>', markup)
+            self.assertIn(f'<h1 id="title">{title}', markup)
+            self.assertNotIn('{{', markup)
 
     def test_http_team_status_does_not_deliver_admin_or_cross_team_fields(self):
         for role in ('soc', 'grc'):

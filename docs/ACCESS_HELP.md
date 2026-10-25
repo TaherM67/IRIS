@@ -31,6 +31,8 @@ On macOS/Linux use `.venv/bin/python` instead. With the correct environment acti
 
 ## If access still fails
 
+If the page shows variable names or template tokens instead of labels, an older server may be serving newer HTML without rendering it. Update **both `demo.py` and `demo_app/`**, stop the running process with Ctrl+C, restart from that same project folder and press Ctrl+F5. Open **http://127.0.0.1:8010/admin**, not a GitHub source preview or a local HTML file. The updated source contains readable default text and the server provides real headings before JavaScript loads. A different symptom still needs its exact error or screenshot; do not send your key.
+
 - Use **`demo.py keys`**, not **`python -m backend keys`**. The older passive prototype uses different keys and normally runs on port 8000, not 8010.
 - Run both commands from the **same existing project folder**. A different extracted ZIP creates its own keys and database.
 - Use the matching role's token. Admin credentials do not sign in to the SOC or GRC page.
