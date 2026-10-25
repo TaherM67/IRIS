@@ -13,7 +13,7 @@ python -m unittest discover -s tests -v
 node demo_app/tests/test_ui_controller.js
 ```
 
-**55 demo tests** (32 core and 23 real loopback HTTP), **33 backend-core tests**, and **79 model tests** pass: **167 Python regressions** total. The demo core/HTTP fixtures use the actual pinned user Colab model. Nine controller scenarios execute the actual restored JavaScript against deliberate DOM/API doubles, not a real browser.
+**55 demo tests** (32 core and 23 real loopback HTTP), **33 backend-core tests**, and **79 model tests** pass: **167 Python regressions** total. The demo core/HTTP fixtures use the actual pinned user Colab model. Twelve controller scenarios execute the actual restored JavaScript against deliberate DOM/API doubles, not a real browser.
 
 ## Original UI restoration
 
@@ -25,6 +25,7 @@ node demo_app/tests/test_ui_controller.js
 - Keeps the existing API role allowlists, Admin-only analysis, team-only approval authority and query-escalation denial.
 - Removes unused redesigned page partials and the redesign-only access helper/commands. They remain recoverable in Git history. Existing keys and runtime records are not removed.
 - Controller checks cover role-only reads, working summary/table rendering, approvals, read-only Admin reviews, failed/wrong-role login and logout.
+- Three additional controller scenarios use the actual unfiltered HTML source with every panel present. Before the fix this reproduced the screenshot's exact SOC failure: “This action requires the ADMIN OR GRC role”. After the fix SOC/GRC/Admin connect successfully, team counters/model sections are hidden appropriately, and polling remains role-scoped. Requests now depend on authenticated identity, not HTML panel existence. Real API permissions remain unchanged.
 
 ## Engine and persistence
 

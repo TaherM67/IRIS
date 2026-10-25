@@ -15,6 +15,25 @@ el("title").textContent = {admin:"Admin · engine control", soc:"SOC · live ale
 el("subtitle").textContent = {admin:"Analyze evidence. Follow approvals. Show the audit trail.", soc:"Inspect a proposal, approve it, and watch alert priorities actually change.", grc:"Review risk evidence, approve it, and watch the register actually change."}[pageRole];
 // IRIS EXPLAIN: Write plain text, so evidence/labels are not interpreted as HTML or executable markup.
 el("login-hint").textContent = `Run python demo.py keys in a private terminal. Connect with the ${pageRole.toUpperCase()} demo key, not the older backend key.`;
+// A stale server may return the original full HTML. DOM presence is not a role
+// permission: hide unrelated blocks, and independently scope every API read.
+function applyRoleView() {
+  document.body.dataset.role = pageRole;
+  for (const [id, roles] of Object.entries({"admin-actions":["admin"], "admin-detail":["admin"],
+    "risk-panel":["admin", "grc"], "alert-panel":["admin", "soc"], "review-panel":["admin", "soc", "grc"]})) {
+    if (el(id)) el(id).hidden = !roles.includes(pageRole);
+  }
+  for (const [id, owner] of [["risk-count", "grc"], ["risk-changed", "grc"], ["alert-count", "soc"], ["alert-changed", "soc"]]) {
+    const card = el(id)?.closest(".stat");
+    if (card) card.hidden = pageRole !== "admin" && pageRole !== owner;
+  }
+  const modelPanel = el("model-status")?.closest("section");
+  if (modelPanel) modelPanel.hidden = pageRole !== "admin";
+  for (const link of document.querySelectorAll('nav[aria-label="Dashboards"] a')) {
+    link.hidden = pageRole !== "admin" && link.getAttribute("href") !== "/" + pageRole;
+  }
+}
+applyRoleView();
 // IRIS EXPLAIN: Function message: Show safe plain-text progress/error feedback in the live status area. Write plain text, so
 // IRIS EXPLAIN: evidence/labels are not interpreted as HTML or executable markup.
 const message = text => { el("message").textContent = text; };
@@ -210,9 +229,10 @@ async function refresh() {
     message("Admin selected a new rehearsal. This tab now shows its original demo records.");
   }
   const requests = {proposals:api("/proposals"), changes:api("/changes")};
-  if (el("risk-panel")) requests.risks = api("/risks");
-  if (el("alert-panel")) requests.alerts = api("/alerts?limit=50&offset=" + offset + "&changed_only=" + el("changed-only").checked);
-  if (pageRole === "admin") requests.audit = api("/audit");
+  // Authorize by the server-confirmed identity, NEVER by a panel's existence.
+  if (identity === "admin" || identity === "grc") requests.risks = api("/risks");
+  if (identity === "admin" || identity === "soc") requests.alerts = api("/alerts?limit=50&offset=" + offset + "&changed_only=" + el("changed-only").checked);
+  if (identity === "admin") requests.audit = api("/audit");
   const entries = await Promise.all(Object.entries(requests).map(async ([name, pending]) => [name, await pending]));
   const results = Object.fromEntries(entries);
   if (entries.some(([, value]) => value.exercise_id && value.exercise_id !== current.exercise_id)) throw new Error("The rehearsal changed while loading. Please refresh.");
@@ -221,7 +241,7 @@ async function refresh() {
   const c = state.counts;
   const counters = {"risk-count":c.risks,"alert-count":c.alerts,"risk-changed":c.changed_risks,"alert-changed":c.reprioritized_alerts,"pending-count":pageRole === "admin" ? c.pending_soc+c.pending_grc : pageRole === "soc" ? c.pending_soc : c.pending_grc};
   // Other-team counters are absent from both served markup and the API response.
-  for (const [id,value] of Object.entries(counters)) if (el(id)) el(id).textContent = value.toLocaleString();
+  for (const [id,value] of Object.entries(counters)) if (el(id) && Number.isFinite(value)) el(id).textContent = value.toLocaleString();
   renderProposalList(results.proposals);
   renderChanges(results.changes);
   if (results.risks) renderRisks(results.risks);
@@ -244,7 +264,7 @@ el("login-form").addEventListener("submit",event => {
       if (result.role !== pageRole) throw new Error("This is the " + pageRole.toUpperCase() + " dashboard. Use its own demo key.");
       identity = result.role; state = null; selectFirst = true;
       el("identity").textContent = identity.toUpperCase() + " connected";
-      for (const id of ["admin-actions","admin-detail","risk-panel","alert-panel","review-panel"]) if (el(id)) el(id).hidden = false;
+      applyRoleView();
       el("proposal-title").textContent = pageRole === "admin" ? "Team proposals · read-only for Admin" : pageRole.toUpperCase() + " approval inbox";
       el("approval-note").textContent = pageRole === "admin" ? "Open the SOC and GRC links in separate tabs and use their own keys to approve. Admin cannot impersonate either team." : "Inspect the saved evidence and before/after values. Approve to write the demo database, or reject to preserve the current values.";
       await refresh();

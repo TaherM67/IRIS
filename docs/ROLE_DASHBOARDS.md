@@ -14,6 +14,8 @@ SOC receives no risk-register values, GRC control recommendations, cross-team co
 
 The backend omits unrelated blocks from the **original HTML**, and the existing key-derived API allowlists enforce the same separation. This is not an extra set of redesigned pages. Admin can see both teams but still cannot approve on their behalf.
 
+The browser independently selects API reads from its server-confirmed role, not from the presence of panels. If an older server returns the complete original HTML, the controller hides unrelated sections/counters and still never requests another team's table. This fixes valid SOC sign-in failing with an ADMIN OR GRC permission error while loading records.
+
 ## Sign-in is the original flow
 
 Run `python demo.py`, then run `python demo.py keys` in a second private terminal **from the same project folder**. Paste only the matching role token into the original **Connect this dashboard** form.

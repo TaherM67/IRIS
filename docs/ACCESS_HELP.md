@@ -31,6 +31,8 @@ On macOS/Linux use `.venv/bin/python` instead. With the correct environment acti
 
 ## If access still fails
 
+**Correct SOC key, but “This action requires the ADMIN OR GRC role”:** this is a dashboard-loading error, not a rejected key. Older/unfiltered HTML contains both team panels. The previous controller treated the presence of a risk panel as a reason to fetch `/risks`, even after signing in as SOC. The backend correctly denied it. The corrected `demo_app/static/app.js` chooses requests by the authenticated role: SOC never requests risks; GRC never requests alerts; Admin requests both. It also hides unrelated panels/counters if old HTML contains them. Update that controller, restart the server and Ctrl+F5. Keep the same keys; do not try an Admin key on the SOC page or relax backend permissions.
+
 If the page shows variable names or template tokens instead of labels, an older server may be serving newer HTML without rendering it. Update **both `demo.py` and `demo_app/`**, stop the running process with Ctrl+C, restart from that same project folder and press Ctrl+F5. Open **http://127.0.0.1:8010/admin**, not a GitHub source preview or a local HTML file. The updated source contains readable default text and the server provides real headings before JavaScript loads. A different symptom still needs its exact error or screenshot; do not send your key.
 
 - Use **`demo.py keys`**, not **`python -m backend keys`**. The older passive prototype uses different keys and normally runs on port 8000, not 8010.

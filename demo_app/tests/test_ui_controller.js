@@ -31,9 +31,15 @@ class Element {
   reset() { this.value = ""; }
   click() {}
   remove() {}
+  closest(selector) {
+    for (let current = this; current; current = current.parentElement) {
+      if (selector.startsWith('.') ? (current.attributes.class || '').split(' ').includes(selector.slice(1)) : current.tag === selector) return current;
+    }
+    return null;
+  }
 }
 
-function documentFor(role) {
+function documentFor(role, unfiltered = false) {
   assert.ok(["admin", "soc", "grc"].includes(role));
   if (!markupCache.has(role)) {
     // Use the real server renderer, not another copy of its filtering algorithm.
@@ -41,17 +47,21 @@ function documentFor(role) {
     markupCache.set(role, execFileSync(process.env.IRIS_TEST_PYTHON || "python", ["-c", code],
       {cwd: repository, encoding: "utf8", maxBuffer: 2 * 1024 * 1024}));
   }
-  const html = markupCache.get(role).replace(/<!--[\s\S]*?-->/g, "");
-  const nodes = [], ids = new Map();
-  for (const match of html.matchAll(/<([a-z][a-z0-9-]*)\b([^>]*)>/gi)) {
+  const html = (unfiltered ? fs.readFileSync(path.join(root, 'index.html'), 'utf8') : markupCache.get(role)).replace(/<!--[\s\S]*?-->/g, "");
+  const nodes = [], ids = new Map(), stack = [];
+  for (const match of html.matchAll(/<(\/?)([a-z][a-z0-9-]*)\b([^>]*)>/gi)) {
+    if (match[1]) { while (stack.length && stack.pop().tag !== match[2]) {} continue; }
     const attrs = {};
-    for (const attr of match[2].matchAll(/([a-z][a-z0-9-]*)(?:="([^"]*)")?/gi)) attrs[attr[1]] = attr[2] || "";
-    const element = new Element(match[1], attrs); nodes.push(element);
+    for (const attr of match[3].matchAll(/([a-z][a-z0-9-]*)(?:="([^"]*)")?/gi)) attrs[attr[1]] = attr[2] || "";
+    const element = new Element(match[2], attrs); nodes.push(element);
+    element.parentElement = stack[stack.length - 1] || null;
+    if (!['meta', 'link', 'input', 'br', 'hr', 'img'].includes(element.tag)) stack.push(element);
     if (attrs.id) { assert.ok(!ids.has(attrs.id), "Duplicate HTML ID: " + attrs.id); ids.set(attrs.id, element); }
   }
   return {hidden: false, body: Object.assign(new Element(), {dataset: {role}}),
     getElementById: id => ids.get(id) || null, createElement: tag => new Element(tag),
-    querySelectorAll: selector => selector === "button" ? nodes.filter(n => n.tag === "button") : nodes.filter(n => "count" in n.dataset)};
+    querySelectorAll: selector => selector === "button" ? nodes.filter(n => n.tag === "button") :
+      selector === 'nav[aria-label="Dashboards"] a' ? nodes.filter(n => n.tag === 'a' && n.closest('nav')) : nodes.filter(n => "count" in n.dataset)};
 }
 
 function fixture(role) {
@@ -94,12 +104,12 @@ function mockFetch(role, data, calls, behavior = {}) {
     else if (route === "/changes") value = {exercise_id: "UI-TEST", items: []};
     else if (route === "/audit") { assert.equal(role, "admin"); value = []; }
     else if (route === "/risks") {
-      assert.notEqual(role, "soc");
+      if (role === 'soc') return response({detail: 'This action requires the ADMIN OR GRC role'}, 403);
       value = {exercise_id: "UI-TEST", items: [{risk_id: "DEMO-R001-1", hostname: "identity-server", category: "Unauthorized Access",
         baseline_likelihood: 3, current_likelihood: data.changed ? 4 : 3, impact: 5, baseline_score: .6, current_score: data.changed ? .8 : .6,
         version: data.changed ? 2 : 1, updated_by: data.changed ? "grc" : null}]};
     } else if (route === "/alerts") {
-      assert.notEqual(role, "grc");
+      if (role === 'grc') return response({detail: 'This action requires the ADMIN OR SOC role'}, 403);
       value = {exercise_id: "UI-TEST", total: data.changed ? 19 : 2355, items: [{event_id: "UI-EVENT", hostname: "identity-server",
         event_time: "2026-10-25T12:00:00Z", baseline_priority: "High", current_priority: data.changed ? "Critical" : "High",
         version: data.changed ? 2 : 1, updated_by: data.changed ? "soc" : null}]};
@@ -125,7 +135,7 @@ async function settle(context) {
   throw new Error("Controller action did not settle");
 }
 function harness(role, behavior = {}) {
-  const document = documentFor(role), data = fixture(role), calls = [];
+  const document = documentFor(role, behavior.unfiltered), data = fixture(role), calls = [];
   const context = vm.createContext({document, location: {pathname: "/" + role}, fetch: mockFetch(role, data, calls, behavior), AbortController,
     Option: function(label, value) { const option = new Element("option"); option.textContent = label; option.value = value; return option; },
     setInterval() { return 1; }, setTimeout, URL, Blob, confirm: () => true, console});
@@ -208,7 +218,31 @@ async function failureChecks() {
   console.log("FAILURES: 3 wrong-role keys, rejected key and 2 initial-load failures stay locked");
 }
 
+async function unfilteredChecks() {
+  for (const role of ['soc', 'grc', 'admin']) {
+    const test = harness(role, {unfiltered: true});
+    await login(test);
+    assert.equal(test.document.getElementById('login-panel').hidden, true,
+      'Unfiltered original markup must not cause a cross-team request: ' + test.document.getElementById('message').textContent);
+    if (role !== 'admin') {
+      const otherPanel = test.document.getElementById(role === 'soc' ? 'risk-panel' : 'alert-panel');
+      assert.equal(otherPanel.hidden, true);
+      assert.ok(!test.calls.includes(role === 'soc' ? '/risks' : '/alerts'));
+      assert.ok(!test.calls.includes('/audit'));
+      for (const id of role === 'soc' ? ['risk-count', 'risk-changed'] : ['alert-count', 'alert-changed']) {
+        assert.equal(test.document.getElementById(id).closest('.stat').hidden, true);
+      }
+      assert.equal(test.document.getElementById('model-status').closest('section').hidden, true);
+      assert.equal(test.document.getElementById('pending-count').textContent, '1');
+      await vm.runInContext('refresh()', test.context);
+      assert.ok(!test.calls.includes(role === 'soc' ? '/risks' : '/alerts'), 'Polling must remain role-specific');
+    } else assert.ok(test.calls.includes('/risks') && test.calls.includes('/alerts'));
+  }
+  console.log('UNFILTERED: SOC, GRC and Admin load correctly even with every panel present');
+}
+
 (async () => {
   for (const role of ["soc", "grc", "admin"]) await check(role);
   await failureChecks();
+  await unfilteredChecks();
 })().catch(error => { console.error(error); process.exitCode = 1; });
