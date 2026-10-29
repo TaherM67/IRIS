@@ -1,0 +1,101 @@
+{
+  "trained_at_utc": "2026-10-29T02:40:23.303097+00:00",
+  "synthetic": true,
+  "evaluation_unit": "prepared session fragments; not independent original campaigns",
+  "test_session_fragments": 399,
+  "model1": {
+    "algorithm": "logistic_regression",
+    "metrics": {
+      "n": 399,
+      "coverage": 1.0,
+      "macro_f1": 0.979556338664498,
+      "accuracy_all_sessions": 0.974937343358396,
+      "accepted_accuracy": 0.974937343358396,
+      "benign_false_positive_rate": 0.0,
+      "benign_false_alarms": 0,
+      "benign_support": 119,
+      "benign_fpr_wilson_95_percent": [
+        3.469446951953614e-18,
+        0.03127279358132749
+      ],
+      "per_class": {
+        "benign": {
+          "precision": 0.9224806201550387,
+          "recall": 1.0,
+          "f1": 0.9596774193548387,
+          "support": 119
+        },
+        "credential_access": {
+          "precision": 1.0,
+          "recall": 0.9588477366255144,
+          "f1": 0.9789915966386554,
+          "support": 243
+        },
+        "reconnaissance": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 37
+        }
+      },
+      "confusion_labels": [
+        "benign",
+        "credential_access",
+        "reconnaissance",
+        "ABSTAINED"
+      ],
+      "confusion_matrix": [
+        [
+          119,
+          0,
+          0,
+          0
+        ],
+        [
+          10,
+          233,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          37,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "metric_semantics": "Abstentions count as missed true classes (false negatives), never dropped from recall/F1. FPR excludes abstentions and must be read together with coverage."
+    },
+    "release_eligible": false
+  },
+  "model2": {
+    "algorithm": "binary_relevance_logistic_regression",
+    "metrics": {
+      "n": 399,
+      "micro_precision": 0.6556291390728477,
+      "micro_recall": 0.1746031746031746,
+      "micro_f1": 0.2757660167130919,
+      "macro_f1_all_catalogue_controls": 0.03048145344300553,
+      "hamming_loss": 0.01086048454469507,
+      "exact_set_accuracy": 0.37593984962406013
+    },
+    "positive_test_support_controls": 32,
+    "catalogue_controls": 120,
+    "synthetic_association_targets": true,
+    "release_eligible": false
+  },
+  "split_rows": {
+    "test": 399,
+    "threshold": 418,
+    "calibration": 301,
+    "selection": 468,
+    "train": 1399
+  },
+  "deployed": false
+}
