@@ -1,0 +1,34 @@
+{
+  "selected": "balanced_logistic",
+  "candidates": {
+    "balanced_logistic": {
+      "precision_gate_passed": true,
+      "micro_f1": 1.0,
+      "micro_precision": 1.0,
+      "threshold": 0.9500000000000004
+    },
+    "bounded_tree": {
+      "precision_gate_passed": true,
+      "micro_f1": 1.0,
+      "micro_precision": 1.0,
+      "threshold": 0.9500000000000004
+    }
+  },
+  "without_grc_context_selected": "bounded_tree",
+  "without_grc_context_candidates": {
+    "balanced_logistic": {
+      "precision_gate_passed": false,
+      "micro_f1": 0.28761651131824234,
+      "micro_precision": 0.18082879866052742,
+      "threshold": 0.9250000000000004
+    },
+    "bounded_tree": {
+      "precision_gate_passed": false,
+      "micro_f1": 0.3228318584070796,
+      "micro_precision": 0.20633484162895926,
+      "threshold": 0.9500000000000004
+    }
+  },
+  "selection_rows": 418,
+  "audit_used_for_selection": false
+}

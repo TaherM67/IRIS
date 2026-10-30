@@ -1,0 +1,15 @@
+{
+  "fit": [
+    "original_train",
+    "original_selection"
+  ],
+  "selection": "original_threshold",
+  "final_control_target_audit": "original_calibration",
+  "old_test": "diagnostics only, excluded",
+  "audit_control_targets_previously_used_in_control_training": false,
+  "upstream_model1_predictions_used_by_repair": false,
+  "static_control_membership_assumed_for_synthetic_replay": true,
+  "protocol_sha256": "3b0f21b3aa710a71661859fbc7719f997e06633e3b5e60fefd9ddd81f5462a90",
+  "source_model_sha256": "58bc7b80a56882de6f86e5688700c361170e32b20d261eda5920d7819abdad8c",
+  "synthetic": true
+}

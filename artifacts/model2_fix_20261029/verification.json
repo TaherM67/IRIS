@@ -1,0 +1,12 @@
+{
+  "verified_on_client_date": "2026-10-30",
+  "model_and_integration_tests_passed": 92,
+  "new_grounded_control_tests_included": 13,
+  "frozen_audit_inference_requests_replayed": 301,
+  "runtime_and_offline_predictions_agree": true,
+  "audit_used_for_tuning": false,
+  "original_demo_changed": false,
+  "original_model1_changed": false,
+  "production_release_eligible": false,
+  "recommendations_are_review_only": true
+}
