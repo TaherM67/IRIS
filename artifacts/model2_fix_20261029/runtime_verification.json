@@ -1,0 +1,9 @@
+{
+  "all_audit_requests_replayed": 301,
+  "runtime_equals_frozen_audit_predictions": true,
+  "metrics_reproduced": true,
+  "thresholds_retuned": false,
+  "demo_or_original_weights_modified": false,
+  "inference_module_sha256": "cf1a5a3853cc14826f51ece015972cd4b306a30c0d9b84bda91eee7c37f2bf44",
+  "independent_expert_control_validation": false
+}

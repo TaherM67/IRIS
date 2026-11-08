@@ -1,0 +1,40 @@
+{
+  "recommendations": [
+    {
+      "control_id": "CTL-MON-004",
+      "name": "Impossible-travel sign-in detection",
+      "model_score": 0.999999999680129,
+      "current_state": "unknown",
+      "action_type": "review",
+      "requires_human_approval": true,
+      "positive_fit_support": 62,
+      "matched_registered_risks": 1,
+      "reason": "Registered-risk control link matches observed technique context",
+      "evidence_status": "synthetic_training_support",
+      "source": "experimental_grounded_candidate_model"
+    },
+    {
+      "control_id": "CTL-IAM-002",
+      "name": "Enforce MFA for remote access (VPN)",
+      "model_score": 0.9999999996026832,
+      "current_state": "unknown",
+      "action_type": "review",
+      "requires_human_approval": true,
+      "positive_fit_support": 55,
+      "matched_registered_risks": 1,
+      "reason": "Registered-risk control link matches observed technique context",
+      "evidence_status": "synthetic_training_support",
+      "source": "experimental_grounded_candidate_model"
+    }
+  ],
+  "catalogue_policy_candidates": [
+    "CTL-IAM-002",
+    "CTL-MON-004"
+  ],
+  "source": "experimental_grounded_candidate_model",
+  "independent_expert_validation": false,
+  "release_eligible": false,
+  "automatic_execution": false,
+  "validation_scope": "Synthetic association matching; no demonstrated ML advantage over catalogue rules",
+  "score_meaning": "Uncalibrated synthetic association relevance, not efficacy or risk reduction"
+}

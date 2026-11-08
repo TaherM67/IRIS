@@ -1,0 +1,2946 @@
+{
+  "synthetic": true,
+  "control_targets": "supplied synthetic associations, not expert recommendations",
+  "fit_fragments": 1867,
+  "selection_fragments": 418,
+  "audit_fragments": 301,
+  "audit_origin": "previously unused Model 2 calibration control targets",
+  "selected_algorithm": "balanced_logistic",
+  "threshold": 0.9500000000000004,
+  "original_model2_same_audit": {
+    "n": 301,
+    "micro_precision": 0.6916666666666667,
+    "micro_recall": 0.1930232558139535,
+    "micro_f1": 0.3018181818181818,
+    "macro_f1_all_catalogue_controls": 0.021540200593285243,
+    "hamming_loss": 0.0106312292358804,
+    "exact_set_accuracy": 0.3654485049833887,
+    "per_control": {
+      "CTL-CLD-001": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-CLD-002": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-CLD-003": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-CLD-004": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-CLD-005": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-CLD-006": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-CLD-007": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-CLD-008": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-CLD-009": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-CLD-010": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-CLD-011": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-CLD-012": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-DAT-001": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-DAT-002": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-DAT-003": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-DAT-004": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-DAT-005": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-DAT-006": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-DAT-007": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-DAT-008": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-DAT-009": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-DAT-010": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-DAT-011": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-DAT-012": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 1
+      },
+      "CTL-END-001": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 3
+      },
+      "CTL-END-002": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-END-003": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-END-004": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 3
+      },
+      "CTL-END-005": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 1
+      },
+      "CTL-END-006": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-END-007": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-END-008": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-END-009": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-END-010": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-END-011": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 10
+      },
+      "CTL-END-012": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-GOV-001": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-GOV-002": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-GOV-003": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 2
+      },
+      "CTL-GOV-004": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 3
+      },
+      "CTL-GOV-005": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-GOV-006": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-GOV-007": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-GOV-008": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-GOV-009": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-GOV-010": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-GOV-011": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-GOV-012": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-IAM-001": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 43
+      },
+      "CTL-IAM-002": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 25
+      },
+      "CTL-IAM-003": {
+        "precision": 0.6190476190476191,
+        "recall": 0.38613861386138615,
+        "f1": 0.47560975609756095,
+        "test_positive_support": 101
+      },
+      "CTL-IAM-004": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-IAM-005": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-IAM-006": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-IAM-007": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 1
+      },
+      "CTL-IAM-008": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-IAM-009": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-IAM-010": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-IAM-011": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-IAM-012": {
+        "precision": 1.0,
+        "recall": 0.018518518518518517,
+        "f1": 0.03636363636363636,
+        "test_positive_support": 54
+      },
+      "CTL-IR-001": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-IR-002": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-IR-003": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-IR-004": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-IR-005": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-IR-006": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-IR-007": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-IR-008": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-IR-009": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-IR-010": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-IR-011": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-IR-012": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-MON-001": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-MON-002": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 30
+      },
+      "CTL-MON-003": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-MON-004": {
+        "precision": 1.0,
+        "recall": 0.9696969696969697,
+        "f1": 0.9846153846153847,
+        "test_positive_support": 33
+      },
+      "CTL-MON-005": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-MON-006": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 14
+      },
+      "CTL-MON-007": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-MON-008": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-MON-009": {
+        "precision": 0.8333333333333334,
+        "recall": 0.45454545454545453,
+        "f1": 0.5882352941176471,
+        "test_positive_support": 22
+      },
+      "CTL-MON-010": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-MON-011": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-MON-012": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-NET-001": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 11
+      },
+      "CTL-NET-002": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 7
+      },
+      "CTL-NET-003": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 14
+      },
+      "CTL-NET-004": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-NET-005": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-NET-006": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 1
+      },
+      "CTL-NET-007": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-NET-008": {
+        "precision": 1.0,
+        "recall": 0.3333333333333333,
+        "f1": 0.5,
+        "test_positive_support": 3
+      },
+      "CTL-NET-009": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-NET-010": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-NET-011": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-NET-012": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 44
+      },
+      "CTL-PHY-001": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-PHY-002": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 1
+      },
+      "CTL-PHY-003": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-PHY-004": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-PHY-005": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-PHY-006": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-PHY-007": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-PHY-008": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-PHY-009": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-PHY-010": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-PHY-011": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-PHY-012": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-VUL-001": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-VUL-002": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-VUL-003": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-VUL-004": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-VUL-005": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-VUL-006": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-VUL-007": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-VUL-008": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-VUL-009": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-VUL-010": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-VUL-011": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 3
+      },
+      "CTL-VUL-012": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      }
+    }
+  },
+  "revised_grounded_model2": {
+    "n": 301,
+    "micro_precision": 1.0,
+    "micro_recall": 1.0,
+    "micro_f1": 1.0,
+    "macro_f1_all_catalogue_controls": 0.2,
+    "hamming_loss": 0.0,
+    "exact_set_accuracy": 1.0,
+    "per_control": {
+      "CTL-CLD-001": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-CLD-002": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-CLD-003": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-CLD-004": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-CLD-005": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-CLD-006": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-CLD-007": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-CLD-008": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-CLD-009": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-CLD-010": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-CLD-011": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-CLD-012": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-DAT-001": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-DAT-002": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-DAT-003": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-DAT-004": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-DAT-005": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-DAT-006": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-DAT-007": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-DAT-008": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-DAT-009": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-DAT-010": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-DAT-011": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-DAT-012": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "test_positive_support": 1
+      },
+      "CTL-END-001": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "test_positive_support": 3
+      },
+      "CTL-END-002": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-END-003": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-END-004": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "test_positive_support": 3
+      },
+      "CTL-END-005": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "test_positive_support": 1
+      },
+      "CTL-END-006": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-END-007": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-END-008": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-END-009": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-END-010": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-END-011": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "test_positive_support": 10
+      },
+      "CTL-END-012": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-GOV-001": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-GOV-002": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-GOV-003": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "test_positive_support": 2
+      },
+      "CTL-GOV-004": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "test_positive_support": 3
+      },
+      "CTL-GOV-005": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-GOV-006": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-GOV-007": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-GOV-008": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-GOV-009": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-GOV-010": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-GOV-011": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-GOV-012": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-IAM-001": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "test_positive_support": 43
+      },
+      "CTL-IAM-002": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "test_positive_support": 25
+      },
+      "CTL-IAM-003": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "test_positive_support": 101
+      },
+      "CTL-IAM-004": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-IAM-005": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-IAM-006": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-IAM-007": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "test_positive_support": 1
+      },
+      "CTL-IAM-008": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-IAM-009": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-IAM-010": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-IAM-011": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-IAM-012": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "test_positive_support": 54
+      },
+      "CTL-IR-001": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-IR-002": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-IR-003": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-IR-004": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-IR-005": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-IR-006": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-IR-007": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-IR-008": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-IR-009": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-IR-010": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-IR-011": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-IR-012": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-MON-001": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-MON-002": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "test_positive_support": 30
+      },
+      "CTL-MON-003": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-MON-004": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "test_positive_support": 33
+      },
+      "CTL-MON-005": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-MON-006": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "test_positive_support": 14
+      },
+      "CTL-MON-007": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-MON-008": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-MON-009": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "test_positive_support": 22
+      },
+      "CTL-MON-010": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-MON-011": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-MON-012": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-NET-001": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "test_positive_support": 11
+      },
+      "CTL-NET-002": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "test_positive_support": 7
+      },
+      "CTL-NET-003": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "test_positive_support": 14
+      },
+      "CTL-NET-004": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-NET-005": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-NET-006": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "test_positive_support": 1
+      },
+      "CTL-NET-007": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-NET-008": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "test_positive_support": 3
+      },
+      "CTL-NET-009": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-NET-010": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-NET-011": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-NET-012": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "test_positive_support": 44
+      },
+      "CTL-PHY-001": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-PHY-002": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "test_positive_support": 1
+      },
+      "CTL-PHY-003": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-PHY-004": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-PHY-005": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-PHY-006": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-PHY-007": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-PHY-008": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-PHY-009": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-PHY-010": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-PHY-011": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-PHY-012": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-VUL-001": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-VUL-002": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-VUL-003": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-VUL-004": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-VUL-005": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-VUL-006": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-VUL-007": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-VUL-008": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-VUL-009": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-VUL-010": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-VUL-011": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "test_positive_support": 3
+      },
+      "CTL-VUL-012": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      }
+    }
+  },
+  "without_grc_membership_ablation": {
+    "n": 301,
+    "micro_precision": 0.1821933962264151,
+    "micro_recall": 0.7186046511627907,
+    "micro_f1": 0.29068673565381,
+    "macro_f1_all_catalogue_controls": 0.058763078389143505,
+    "hamming_loss": 0.041749723145071985,
+    "exact_set_accuracy": 0.33222591362126247,
+    "per_control": {
+      "CTL-CLD-001": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-CLD-002": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-CLD-003": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-CLD-004": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-CLD-005": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-CLD-006": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-CLD-007": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-CLD-008": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-CLD-009": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-CLD-010": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-CLD-011": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-CLD-012": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-DAT-001": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-DAT-002": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-DAT-003": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-DAT-004": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-DAT-005": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-DAT-006": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-DAT-007": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-DAT-008": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-DAT-009": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-DAT-010": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-DAT-011": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-DAT-012": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 1
+      },
+      "CTL-END-001": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 3
+      },
+      "CTL-END-002": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-END-003": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-END-004": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 3
+      },
+      "CTL-END-005": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 1
+      },
+      "CTL-END-006": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-END-007": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-END-008": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-END-009": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-END-010": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-END-011": {
+        "precision": 0.3181818181818182,
+        "recall": 0.7,
+        "f1": 0.4375,
+        "test_positive_support": 10
+      },
+      "CTL-END-012": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-GOV-001": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-GOV-002": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-GOV-003": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 2
+      },
+      "CTL-GOV-004": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 3
+      },
+      "CTL-GOV-005": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-GOV-006": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-GOV-007": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-GOV-008": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-GOV-009": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-GOV-010": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-GOV-011": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-GOV-012": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-IAM-001": {
+        "precision": 0.2684563758389262,
+        "recall": 0.9302325581395349,
+        "f1": 0.4166666666666667,
+        "test_positive_support": 43
+      },
+      "CTL-IAM-002": {
+        "precision": 0.8333333333333334,
+        "recall": 0.8,
+        "f1": 0.8163265306122449,
+        "test_positive_support": 25
+      },
+      "CTL-IAM-003": {
+        "precision": 0.6644295302013423,
+        "recall": 0.9801980198019802,
+        "f1": 0.792,
+        "test_positive_support": 101
+      },
+      "CTL-IAM-004": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-IAM-005": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-IAM-006": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-IAM-007": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 1
+      },
+      "CTL-IAM-008": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-IAM-009": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-IAM-010": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-IAM-011": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-IAM-012": {
+        "precision": 0.31543624161073824,
+        "recall": 0.8703703703703703,
+        "f1": 0.4630541871921182,
+        "test_positive_support": 54
+      },
+      "CTL-IR-001": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-IR-002": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-IR-003": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-IR-004": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-IR-005": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-IR-006": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-IR-007": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-IR-008": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-IR-009": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-IR-010": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-IR-011": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-IR-012": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-MON-001": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-MON-002": {
+        "precision": 0.15436241610738255,
+        "recall": 0.7666666666666667,
+        "f1": 0.2569832402234637,
+        "test_positive_support": 30
+      },
+      "CTL-MON-003": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-MON-004": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 33
+      },
+      "CTL-MON-005": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-MON-006": {
+        "precision": 0.42857142857142855,
+        "recall": 0.6428571428571429,
+        "f1": 0.5142857142857142,
+        "test_positive_support": 14
+      },
+      "CTL-MON-007": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-MON-008": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-MON-009": {
+        "precision": 0.6666666666666666,
+        "recall": 1.0,
+        "f1": 0.8,
+        "test_positive_support": 22
+      },
+      "CTL-MON-010": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-MON-011": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-MON-012": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-NET-001": {
+        "precision": 0.36666666666666664,
+        "recall": 1.0,
+        "f1": 0.5365853658536586,
+        "test_positive_support": 11
+      },
+      "CTL-NET-002": {
+        "precision": 0.375,
+        "recall": 0.8571428571428571,
+        "f1": 0.5217391304347826,
+        "test_positive_support": 7
+      },
+      "CTL-NET-003": {
+        "precision": 0.42857142857142855,
+        "recall": 0.6428571428571429,
+        "f1": 0.5142857142857142,
+        "test_positive_support": 14
+      },
+      "CTL-NET-004": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-NET-005": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-NET-006": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 1
+      },
+      "CTL-NET-007": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-NET-008": {
+        "precision": 0.6,
+        "recall": 1.0,
+        "f1": 0.75,
+        "test_positive_support": 3
+      },
+      "CTL-NET-009": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-NET-010": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-NET-011": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-NET-012": {
+        "precision": 0.19117647058823528,
+        "recall": 0.29545454545454547,
+        "f1": 0.23214285714285715,
+        "test_positive_support": 44
+      },
+      "CTL-PHY-001": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-PHY-002": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 1
+      },
+      "CTL-PHY-003": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-PHY-004": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-PHY-005": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-PHY-006": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-PHY-007": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-PHY-008": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-PHY-009": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-PHY-010": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-PHY-011": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-PHY-012": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-VUL-001": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-VUL-002": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-VUL-003": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-VUL-004": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-VUL-005": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-VUL-006": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-VUL-007": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-VUL-008": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-VUL-009": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-VUL-010": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-VUL-011": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 3
+      },
+      "CTL-VUL-012": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      }
+    }
+  },
+  "deterministic_catalogue_matching_baseline": {
+    "n": 301,
+    "micro_precision": 1.0,
+    "micro_recall": 1.0,
+    "micro_f1": 1.0,
+    "macro_f1_all_catalogue_controls": 0.2,
+    "hamming_loss": 0.0,
+    "exact_set_accuracy": 1.0,
+    "per_control": {
+      "CTL-CLD-001": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-CLD-002": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-CLD-003": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-CLD-004": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-CLD-005": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-CLD-006": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-CLD-007": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-CLD-008": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-CLD-009": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-CLD-010": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-CLD-011": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-CLD-012": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-DAT-001": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-DAT-002": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-DAT-003": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-DAT-004": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-DAT-005": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-DAT-006": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-DAT-007": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-DAT-008": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-DAT-009": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-DAT-010": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-DAT-011": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-DAT-012": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "test_positive_support": 1
+      },
+      "CTL-END-001": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "test_positive_support": 3
+      },
+      "CTL-END-002": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-END-003": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-END-004": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "test_positive_support": 3
+      },
+      "CTL-END-005": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "test_positive_support": 1
+      },
+      "CTL-END-006": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-END-007": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-END-008": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-END-009": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-END-010": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-END-011": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "test_positive_support": 10
+      },
+      "CTL-END-012": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-GOV-001": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-GOV-002": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-GOV-003": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "test_positive_support": 2
+      },
+      "CTL-GOV-004": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "test_positive_support": 3
+      },
+      "CTL-GOV-005": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-GOV-006": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-GOV-007": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-GOV-008": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-GOV-009": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-GOV-010": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-GOV-011": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-GOV-012": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-IAM-001": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "test_positive_support": 43
+      },
+      "CTL-IAM-002": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "test_positive_support": 25
+      },
+      "CTL-IAM-003": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "test_positive_support": 101
+      },
+      "CTL-IAM-004": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-IAM-005": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-IAM-006": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-IAM-007": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "test_positive_support": 1
+      },
+      "CTL-IAM-008": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-IAM-009": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-IAM-010": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-IAM-011": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-IAM-012": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "test_positive_support": 54
+      },
+      "CTL-IR-001": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-IR-002": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-IR-003": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-IR-004": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-IR-005": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-IR-006": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-IR-007": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-IR-008": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-IR-009": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-IR-010": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-IR-011": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-IR-012": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-MON-001": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-MON-002": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "test_positive_support": 30
+      },
+      "CTL-MON-003": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-MON-004": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "test_positive_support": 33
+      },
+      "CTL-MON-005": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-MON-006": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "test_positive_support": 14
+      },
+      "CTL-MON-007": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-MON-008": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-MON-009": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "test_positive_support": 22
+      },
+      "CTL-MON-010": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-MON-011": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-MON-012": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-NET-001": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "test_positive_support": 11
+      },
+      "CTL-NET-002": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "test_positive_support": 7
+      },
+      "CTL-NET-003": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "test_positive_support": 14
+      },
+      "CTL-NET-004": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-NET-005": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-NET-006": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "test_positive_support": 1
+      },
+      "CTL-NET-007": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-NET-008": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "test_positive_support": 3
+      },
+      "CTL-NET-009": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-NET-010": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-NET-011": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-NET-012": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "test_positive_support": 44
+      },
+      "CTL-PHY-001": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-PHY-002": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "test_positive_support": 1
+      },
+      "CTL-PHY-003": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-PHY-004": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-PHY-005": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-PHY-006": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-PHY-007": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-PHY-008": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-PHY-009": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-PHY-010": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-PHY-011": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-PHY-012": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-VUL-001": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-VUL-002": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-VUL-003": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-VUL-004": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-VUL-005": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-VUL-006": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-VUL-007": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-VUL-008": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-VUL-009": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-VUL-010": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      },
+      "CTL-VUL-011": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "test_positive_support": 3
+      },
+      "CTL-VUL-012": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "test_positive_support": 0
+      }
+    }
+  },
+  "catalogue_size": 120,
+  "controls_with_positive_audit_support": 24,
+  "model2_exceeds_catalogue_baseline_f1": false,
+  "release_eligible": false,
+  "automatic_execution": false,
+  "limitations": [
+    "Data reused from an earlier study; this is internal validation, not a new external dataset.",
+    "Matched-risk membership is closely related to the deterministic synthetic label generator.",
+    "Improved synthetic association agreement is not independent AI efficacy validation.",
+    "Control membership history is absent: static membership is an explicit synthetic assumption.",
+    "Original Model 1 is not changed or deployed."
+  ]
+}

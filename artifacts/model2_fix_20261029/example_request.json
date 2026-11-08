@@ -1,0 +1,3265 @@
+{
+  "session": {
+    "session_id": "SES-b9b563181f686490b2c1",
+    "run_id": "SES-00128",
+    "campaign_id": "CMP-007",
+    "asset_id": "AST-00159",
+    "start_utc": "2026-09-28T13:44:15+00:00",
+    "end_utc": "2026-09-28T13:44:15+00:00",
+    "context_as_of_utc": "2026-09-28T13:44:15+00:00",
+    "data_provenance": "synthetic",
+    "aggregation_schema": "iris-three-source-session-v1-window60",
+    "sensor_healthy": true,
+    "features": {
+      "event_family": "authentication",
+      "primary_protocol": "TCP",
+      "event_count": 1.0,
+      "duration_seconds": 0.0,
+      "max_rule_level": 5.0,
+      "mean_rule_level": 5.0,
+      "distinct_rules": 1.0,
+      "distinct_sources": 1.0,
+      "distinct_accounts": 1.0,
+      "failed_count": 1.0,
+      "success_count": 0.0,
+      "failure_ratio": 1.0,
+      "success_after_failures": 0.0,
+      "max_events_in_10s": 1.0,
+      "external_source_fraction": 0.0,
+      "event_rate_per_minute": 60.0
+    },
+    "context": {
+      "asset_type": "vpn_gateway",
+      "asset_criticality": 5,
+      "current_likelihood": 4,
+      "impact": 5,
+      "previous_similar_24h": 0,
+      "controls": {},
+      "active_exception_control_ids": [],
+      "context_risk_id": "RSK-00761",
+      "context_risk_version_id": "RSK-00761-V2",
+      "risk_selection_policy": "highest_preexisting_likelihood_times_impact_then_risk_id"
+    },
+    "asset_snapshot": {
+      "asset_id": "AST-00159",
+      "asset_version_id": "AST-00159-V1",
+      "hostname": "vpn-02",
+      "ip_addresses": [
+        "172.16.1.56"
+      ],
+      "asset_type": "vpn_gateway",
+      "criticality": 5,
+      "zone": "DMZ",
+      "owner": "Head of IT Operations",
+      "valid_from": "2024-04-15T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2024-04-15T00:00:00+00:00"
+    },
+    "risk_snapshots": [
+      {
+        "risk_id": "RSK-00760",
+        "risk_version_id": "RSK-00760-V2",
+        "asset_id": "AST-00159",
+        "risk_category": "Access control",
+        "likelihood": 3,
+        "impact": 5,
+        "control_states": {},
+        "active_exception_control_ids": [],
+        "valid_from": "2025-08-02T00:00:00+00:00",
+        "valid_to": null,
+        "recorded_at": "2025-08-02T00:00:00+00:00"
+      },
+      {
+        "risk_id": "RSK-00761",
+        "risk_version_id": "RSK-00761-V2",
+        "asset_id": "AST-00159",
+        "risk_category": "Network security",
+        "likelihood": 4,
+        "impact": 5,
+        "control_states": {},
+        "active_exception_control_ids": [],
+        "valid_from": "2025-11-17T00:00:00+00:00",
+        "valid_to": null,
+        "recorded_at": "2025-11-17T00:00:00+00:00"
+      },
+      {
+        "risk_id": "RSK-00762",
+        "risk_version_id": "RSK-00762-V2",
+        "asset_id": "AST-00159",
+        "risk_category": "Availability",
+        "likelihood": 3,
+        "impact": 5,
+        "control_states": {},
+        "active_exception_control_ids": [],
+        "valid_from": "2025-06-08T00:00:00+00:00",
+        "valid_to": "2026-10-03T13:00:00+00:00",
+        "recorded_at": "2025-06-08T00:00:00+00:00"
+      },
+      {
+        "risk_id": "RSK-00763",
+        "risk_version_id": "RSK-00763-V2",
+        "asset_id": "AST-00159",
+        "risk_category": "Vulnerability management",
+        "likelihood": 3,
+        "impact": 4,
+        "control_states": {},
+        "active_exception_control_ids": [],
+        "valid_from": "2025-12-30T00:00:00+00:00",
+        "valid_to": null,
+        "recorded_at": "2025-12-30T00:00:00+00:00"
+      },
+      {
+        "risk_id": "RSK-00764",
+        "risk_version_id": "RSK-00764-V2",
+        "asset_id": "AST-00159",
+        "risk_category": "Monitoring",
+        "likelihood": 4,
+        "impact": 4,
+        "control_states": {},
+        "active_exception_control_ids": [],
+        "valid_from": "2026-06-01T00:00:00+00:00",
+        "valid_to": null,
+        "recorded_at": "2026-06-01T00:00:00+00:00"
+      }
+    ],
+    "context_status": "MATCHED",
+    "source_event_ids": [
+      "ALR-000099"
+    ],
+    "evidence_refs": [
+      "siem_alerts.jsonl#L98"
+    ],
+    "source_session_id": "SES-00128",
+    "annotation_primary_asset_id": "AST-00159"
+  },
+  "alerts": [
+    {
+      "alert_id": "ALR-000099",
+      "timestamp": "2026-09-28T13:44:15Z",
+      "mitre_technique": "T1110"
+    }
+  ],
+  "asset": {
+    "asset_id": "AST-00159",
+    "hostname": "VPN-02",
+    "fqdn": "vpn-02.corp.example",
+    "ip_address": "172.16.1.56",
+    "public_ip": "203.0.113.42",
+    "asset_type": "vpn_gateway",
+    "asset_type_label": "VPN gateway",
+    "operating_system": "FortiOS 7.4",
+    "business_unit": "IT Operations",
+    "owner": "Head of IT Operations",
+    "custodian": "IT Operations",
+    "criticality": "Critical",
+    "data_classification": "Confidential",
+    "environment": "Production",
+    "network_zone": "DMZ",
+    "location": "Al Ain main data center",
+    "internet_facing": true,
+    "control_groups": [
+      "network",
+      "identity"
+    ],
+    "status": "active",
+    "valid_from": "2024-04-15T00:00:00Z",
+    "valid_to": null,
+    "last_seen": "2026-10-23T19:23:07Z"
+  },
+  "registered_risks": [
+    {
+      "risk_id": "RSK-00760",
+      "title": "Password spraying through VPN-02",
+      "description": "An attacker trying common passwords across many accounts could exploit single-factor sign-in for standard users on VPN-02 (vpn gateway), affecting IT Operations services.",
+      "category": "Access control",
+      "scenario_tag": "credential_access",
+      "asset_id": "AST-00159",
+      "business_unit": "IT Operations",
+      "risk_owner": "Head of IT Operations",
+      "threat": "An attacker trying common passwords across many accounts",
+      "vulnerability": "Single-factor sign-in for standard users",
+      "mitre_attack_techniques": [
+        "T1110.003"
+      ],
+      "inherent": {
+        "likelihood": 3,
+        "impact": 5,
+        "score": 15,
+        "rating": "High"
+      },
+      "existing_control_ids": [
+        "CTL-IAM-002"
+      ],
+      "planned_control_ids": [
+        "CTL-MON-004"
+      ],
+      "residual": {
+        "likelihood": 2,
+        "impact": 5,
+        "score": 10,
+        "rating": "Medium"
+      },
+      "treatment": "Mitigate",
+      "status": "Monitoring",
+      "date_identified": "2025-03-30",
+      "last_reviewed": "2025-08-02T00:00:00Z",
+      "next_review": "2025-10-31",
+      "history": [
+        {
+          "valid_from": "2025-03-30T00:00:00Z",
+          "likelihood": 3,
+          "impact": 5,
+          "status": "Open"
+        },
+        {
+          "valid_from": "2025-08-02T00:00:00Z",
+          "likelihood": 3,
+          "impact": 5,
+          "status": "Monitoring"
+        }
+      ]
+    },
+    {
+      "risk_id": "RSK-00761",
+      "title": "Unauthorized network scanning of VPN-02",
+      "description": "An attacker mapping open services could exploit unfiltered internal network paths on VPN-02 (vpn gateway), affecting IT Operations services.",
+      "category": "Network security",
+      "scenario_tag": "reconnaissance",
+      "asset_id": "AST-00159",
+      "business_unit": "IT Operations",
+      "risk_owner": "Head of IT Operations",
+      "threat": "An attacker mapping open services",
+      "vulnerability": "Unfiltered internal network paths",
+      "mitre_attack_techniques": [
+        "T1046"
+      ],
+      "inherent": {
+        "likelihood": 4,
+        "impact": 5,
+        "score": 20,
+        "rating": "Critical"
+      },
+      "existing_control_ids": [
+        "CTL-NET-003"
+      ],
+      "planned_control_ids": [],
+      "residual": {
+        "likelihood": 3,
+        "impact": 5,
+        "score": 15,
+        "rating": "High"
+      },
+      "treatment": "Mitigate",
+      "status": "In treatment",
+      "date_identified": "2025-01-29",
+      "last_reviewed": "2025-11-17T00:00:00Z",
+      "next_review": "2026-02-15",
+      "history": [
+        {
+          "valid_from": "2025-01-29T00:00:00Z",
+          "likelihood": 4,
+          "impact": 5,
+          "status": "Open"
+        },
+        {
+          "valid_from": "2025-11-17T00:00:00Z",
+          "likelihood": 4,
+          "impact": 5,
+          "status": "In treatment"
+        }
+      ]
+    },
+    {
+      "risk_id": "RSK-00762",
+      "title": "Denial of service against VPN-02",
+      "description": "A volumetric or application-layer flood could exploit limited upstream filtering on VPN-02 (vpn gateway), affecting IT Operations services.",
+      "category": "Availability",
+      "scenario_tag": "other",
+      "asset_id": "AST-00159",
+      "business_unit": "IT Operations",
+      "risk_owner": "Head of IT Operations",
+      "threat": "A volumetric or application-layer flood",
+      "vulnerability": "Limited upstream filtering",
+      "mitre_attack_techniques": [
+        "T1498"
+      ],
+      "inherent": {
+        "likelihood": 2,
+        "impact": 5,
+        "score": 10,
+        "rating": "Medium"
+      },
+      "existing_control_ids": [
+        "CTL-NET-011",
+        "CTL-NET-012"
+      ],
+      "planned_control_ids": [
+        "CTL-IR-012"
+      ],
+      "residual": {
+        "likelihood": 1,
+        "impact": 5,
+        "score": 5,
+        "rating": "Low"
+      },
+      "treatment": "Transfer",
+      "status": "In treatment",
+      "date_identified": "2025-01-21",
+      "last_reviewed": "2026-10-03T13:00:00Z",
+      "next_review": "2027-04-01",
+      "history": [
+        {
+          "valid_from": "2025-01-21T00:00:00Z",
+          "likelihood": 3,
+          "impact": 5,
+          "status": "Open"
+        },
+        {
+          "valid_from": "2025-06-08T00:00:00Z",
+          "likelihood": 3,
+          "impact": 5,
+          "status": "In treatment"
+        },
+        {
+          "valid_from": "2026-10-03T13:00:00Z",
+          "likelihood": 2,
+          "impact": 5,
+          "status": "In treatment"
+        }
+      ]
+    },
+    {
+      "risk_id": "RSK-00763",
+      "title": "Unpatched critical vulnerabilities on VPN-02",
+      "description": "An attacker exploiting a known vulnerability could exploit missing security patches on VPN-02 (vpn gateway), affecting IT Operations services.",
+      "category": "Vulnerability management",
+      "scenario_tag": "other",
+      "asset_id": "AST-00159",
+      "business_unit": "IT Operations",
+      "risk_owner": "Head of IT Operations",
+      "threat": "An attacker exploiting a known vulnerability",
+      "vulnerability": "Missing security patches",
+      "mitre_attack_techniques": [
+        "T1190",
+        "T1068"
+      ],
+      "inherent": {
+        "likelihood": 3,
+        "impact": 4,
+        "score": 12,
+        "rating": "High"
+      },
+      "existing_control_ids": [
+        "CTL-VUL-001",
+        "CTL-VUL-002",
+        "CTL-VUL-003"
+      ],
+      "planned_control_ids": [],
+      "residual": {
+        "likelihood": 1,
+        "impact": 4,
+        "score": 4,
+        "rating": "Low"
+      },
+      "treatment": "Mitigate",
+      "status": "Open",
+      "date_identified": "2025-07-23",
+      "last_reviewed": "2025-12-30T00:00:00Z",
+      "next_review": "2026-03-30",
+      "history": [
+        {
+          "valid_from": "2025-07-23T00:00:00Z",
+          "likelihood": 3,
+          "impact": 4,
+          "status": "Open"
+        },
+        {
+          "valid_from": "2025-12-30T00:00:00Z",
+          "likelihood": 3,
+          "impact": 4,
+          "status": "Open"
+        }
+      ]
+    },
+    {
+      "risk_id": "RSK-00764",
+      "title": "Insufficient security logging on VPN-02",
+      "description": "An intrusion going unnoticed could exploit incomplete log forwarding on VPN-02 (vpn gateway), affecting IT Operations services.",
+      "category": "Monitoring",
+      "scenario_tag": "other",
+      "asset_id": "AST-00159",
+      "business_unit": "IT Operations",
+      "risk_owner": "Head of IT Operations",
+      "threat": "An intrusion going unnoticed",
+      "vulnerability": "Incomplete log forwarding",
+      "mitre_attack_techniques": [],
+      "inherent": {
+        "likelihood": 4,
+        "impact": 4,
+        "score": 16,
+        "rating": "High"
+      },
+      "existing_control_ids": [
+        "CTL-MON-001",
+        "CTL-MON-011"
+      ],
+      "planned_control_ids": [
+        "CTL-MON-010"
+      ],
+      "residual": {
+        "likelihood": 2,
+        "impact": 4,
+        "score": 8,
+        "rating": "Medium"
+      },
+      "treatment": "Mitigate",
+      "status": "Monitoring",
+      "date_identified": "2025-07-06",
+      "last_reviewed": "2026-06-01T00:00:00Z",
+      "next_review": "2026-08-30",
+      "history": [
+        {
+          "valid_from": "2025-07-06T00:00:00Z",
+          "likelihood": 4,
+          "impact": 4,
+          "status": "Open"
+        },
+        {
+          "valid_from": "2026-06-01T00:00:00Z",
+          "likelihood": 4,
+          "impact": 4,
+          "status": "Monitoring"
+        }
+      ]
+    }
+  ],
+  "catalogue": [
+    {
+      "control_id": "CTL-IAM-001",
+      "name": "Enforce MFA for privileged accounts",
+      "family": "Identity and access",
+      "control_type": "Preventive",
+      "nist_csf_2": {
+        "category": "PR.AA",
+        "category_name": "Identity Management, Authentication, and Access Control",
+        "function": "PR"
+      },
+      "mitigates_attack_techniques": [
+        "T1078",
+        "T1110"
+      ],
+      "applies_to": [
+        "identity",
+        "server"
+      ],
+      "owner": "Identity team",
+      "implementation_status": "Partially implemented",
+      "effectiveness": 0.46,
+      "test_frequency": "Quarterly",
+      "last_tested": "2026-08-14",
+      "model2_held_out_positive": true
+    },
+    {
+      "control_id": "CTL-IAM-002",
+      "name": "Enforce MFA for remote access (VPN)",
+      "family": "Identity and access",
+      "control_type": "Preventive",
+      "nist_csf_2": {
+        "category": "PR.AA",
+        "category_name": "Identity Management, Authentication, and Access Control",
+        "function": "PR"
+      },
+      "mitigates_attack_techniques": [
+        "T1078",
+        "T1110",
+        "T1133"
+      ],
+      "applies_to": [
+        "network"
+      ],
+      "owner": "Identity team",
+      "implementation_status": "Implemented",
+      "effectiveness": 0.73,
+      "test_frequency": "Quarterly",
+      "last_tested": "2026-08-18",
+      "model2_held_out_positive": false
+    },
+    {
+      "control_id": "CTL-IAM-003",
+      "name": "Account lockout after 5 failed logins",
+      "family": "Identity and access",
+      "control_type": "Preventive",
+      "nist_csf_2": {
+        "category": "PR.AA",
+        "category_name": "Identity Management, Authentication, and Access Control",
+        "function": "PR"
+      },
+      "mitigates_attack_techniques": [
+        "T1110.001",
+        "T1110.003"
+      ],
+      "applies_to": [
+        "all"
+      ],
+      "owner": "Identity team",
+      "implementation_status": "Partially implemented",
+      "effectiveness": 0.43,
+      "test_frequency": "Quarterly",
+      "last_tested": "2026-06-23",
+      "model2_held_out_positive": true
+    },
+    {
+      "control_id": "CTL-IAM-004",
+      "name": "Quarterly privileged access review",
+      "family": "Identity and access",
+      "control_type": "Detective",
+      "nist_csf_2": {
+        "category": "PR.AA",
+        "category_name": "Identity Management, Authentication, and Access Control",
+        "function": "PR"
+      },
+      "mitigates_attack_techniques": [
+        "T1078",
+        "T1098"
+      ],
+      "applies_to": [
+        "identity",
+        "server"
+      ],
+      "owner": "Identity team",
+      "implementation_status": "Partially implemented",
+      "effectiveness": 0.56,
+      "test_frequency": "Monthly",
+      "last_tested": "2026-07-13",
+      "model2_held_out_positive": true
+    },
+    {
+      "control_id": "CTL-IAM-005",
+      "name": "Privileged access management vault",
+      "family": "Identity and access",
+      "control_type": "Preventive",
+      "nist_csf_2": {
+        "category": "PR.AA",
+        "category_name": "Identity Management, Authentication, and Access Control",
+        "function": "PR"
+      },
+      "mitigates_attack_techniques": [
+        "T1078",
+        "T1003"
+      ],
+      "applies_to": [
+        "identity",
+        "server"
+      ],
+      "owner": "Identity team",
+      "implementation_status": "Implemented",
+      "effectiveness": 0.9,
+      "test_frequency": "Quarterly",
+      "last_tested": "2026-09-05",
+      "model2_held_out_positive": false
+    },
+    {
+      "control_id": "CTL-IAM-006",
+      "name": "Just-in-time administrative access",
+      "family": "Identity and access",
+      "control_type": "Preventive",
+      "nist_csf_2": {
+        "category": "PR.AA",
+        "category_name": "Identity Management, Authentication, and Access Control",
+        "function": "PR"
+      },
+      "mitigates_attack_techniques": [
+        "T1078"
+      ],
+      "applies_to": [
+        "server",
+        "cloud"
+      ],
+      "owner": "Identity team",
+      "implementation_status": "Implemented",
+      "effectiveness": 0.69,
+      "test_frequency": "Quarterly",
+      "last_tested": "2026-08-28",
+      "model2_held_out_positive": false
+    },
+    {
+      "control_id": "CTL-IAM-007",
+      "name": "Local administrator password solution (LAPS)",
+      "family": "Identity and access",
+      "control_type": "Preventive",
+      "nist_csf_2": {
+        "category": "PR.AA",
+        "category_name": "Identity Management, Authentication, and Access Control",
+        "function": "PR"
+      },
+      "mitigates_attack_techniques": [
+        "T1078.003",
+        "T1021.002"
+      ],
+      "applies_to": [
+        "endpoint",
+        "server"
+      ],
+      "owner": "Identity team",
+      "implementation_status": "Partially implemented",
+      "effectiveness": 0.48,
+      "test_frequency": "Quarterly",
+      "last_tested": "2026-09-18",
+      "model2_held_out_positive": false
+    },
+    {
+      "control_id": "CTL-IAM-008",
+      "name": "Service account password rotation (90 days)",
+      "family": "Identity and access",
+      "control_type": "Preventive",
+      "nist_csf_2": {
+        "category": "PR.AA",
+        "category_name": "Identity Management, Authentication, and Access Control",
+        "function": "PR"
+      },
+      "mitigates_attack_techniques": [
+        "T1558.003",
+        "T1078"
+      ],
+      "applies_to": [
+        "identity"
+      ],
+      "owner": "Identity team",
+      "implementation_status": "Implemented",
+      "effectiveness": 0.7,
+      "test_frequency": "Quarterly",
+      "last_tested": "2026-08-09",
+      "model2_held_out_positive": false
+    },
+    {
+      "control_id": "CTL-IAM-009",
+      "name": "Enforce AES-only Kerberos encryption",
+      "family": "Identity and access",
+      "control_type": "Preventive",
+      "nist_csf_2": {
+        "category": "PR.PS",
+        "category_name": "Platform Security",
+        "function": "PR"
+      },
+      "mitigates_attack_techniques": [
+        "T1558.003"
+      ],
+      "applies_to": [
+        "identity"
+      ],
+      "owner": "Identity team",
+      "implementation_status": "Implemented",
+      "effectiveness": 0.75,
+      "test_frequency": "Quarterly",
+      "last_tested": "2026-06-28",
+      "model2_held_out_positive": false
+    },
+    {
+      "control_id": "CTL-IAM-010",
+      "name": "Disable NTLMv1 and legacy authentication",
+      "family": "Identity and access",
+      "control_type": "Preventive",
+      "nist_csf_2": {
+        "category": "PR.PS",
+        "category_name": "Platform Security",
+        "function": "PR"
+      },
+      "mitigates_attack_techniques": [
+        "T1110",
+        "T1557"
+      ],
+      "applies_to": [
+        "identity",
+        "endpoint"
+      ],
+      "owner": "Identity team",
+      "implementation_status": "Implemented",
+      "effectiveness": 0.76,
+      "test_frequency": "Quarterly",
+      "last_tested": "2026-08-10",
+      "model2_held_out_positive": false
+    },
+    {
+      "control_id": "CTL-IAM-011",
+      "name": "Joiner-mover-leaver account process",
+      "family": "Identity and access",
+      "control_type": "Directive",
+      "nist_csf_2": {
+        "category": "PR.AA",
+        "category_name": "Identity Management, Authentication, and Access Control",
+        "function": "PR"
+      },
+      "mitigates_attack_techniques": [
+        "T1078"
+      ],
+      "applies_to": [
+        "all"
+      ],
+      "owner": "Identity team",
+      "implementation_status": "Implemented",
+      "effectiveness": 0.71,
+      "test_frequency": "Annually",
+      "last_tested": "2026-05-24",
+      "model2_held_out_positive": false
+    },
+    {
+      "control_id": "CTL-IAM-012",
+      "name": "Password policy (14+ characters, banned-password list)",
+      "family": "Identity and access",
+      "control_type": "Preventive",
+      "nist_csf_2": {
+        "category": "PR.AA",
+        "category_name": "Identity Management, Authentication, and Access Control",
+        "function": "PR"
+      },
+      "mitigates_attack_techniques": [
+        "T1110"
+      ],
+      "applies_to": [
+        "all"
+      ],
+      "owner": "Identity team",
+      "implementation_status": "Implemented",
+      "effectiveness": 0.81,
+      "test_frequency": "Quarterly",
+      "last_tested": "2026-07-23",
+      "model2_held_out_positive": false
+    },
+    {
+      "control_id": "CTL-NET-001",
+      "name": "Segment the network zone",
+      "family": "Network security",
+      "control_type": "Preventive",
+      "nist_csf_2": {
+        "category": "PR.IR",
+        "category_name": "Technology Infrastructure Resilience",
+        "function": "PR"
+      },
+      "mitigates_attack_techniques": [
+        "T1046",
+        "T1021"
+      ],
+      "applies_to": [
+        "all"
+      ],
+      "owner": "Network team",
+      "implementation_status": "Partially implemented",
+      "effectiveness": 0.54,
+      "test_frequency": "Quarterly",
+      "last_tested": "2026-06-29",
+      "model2_held_out_positive": true
+    },
+    {
+      "control_id": "CTL-NET-002",
+      "name": "Restrict inbound management ports",
+      "family": "Network security",
+      "control_type": "Preventive",
+      "nist_csf_2": {
+        "category": "PR.IR",
+        "category_name": "Technology Infrastructure Resilience",
+        "function": "PR"
+      },
+      "mitigates_attack_techniques": [
+        "T1046",
+        "T1021.001",
+        "T1133"
+      ],
+      "applies_to": [
+        "server",
+        "network"
+      ],
+      "owner": "Network team",
+      "implementation_status": "Partially implemented",
+      "effectiveness": 0.53,
+      "test_frequency": "Quarterly",
+      "last_tested": "2026-09-10",
+      "model2_held_out_positive": true
+    },
+    {
+      "control_id": "CTL-NET-003",
+      "name": "Tune IDS scan signatures",
+      "family": "Network security",
+      "control_type": "Detective",
+      "nist_csf_2": {
+        "category": "DE.CM",
+        "category_name": "Continuous Monitoring",
+        "function": "DE"
+      },
+      "mitigates_attack_techniques": [
+        "T1046",
+        "T1595"
+      ],
+      "applies_to": [
+        "network",
+        "server"
+      ],
+      "owner": "Network team",
+      "implementation_status": "Partially implemented",
+      "effectiveness": 0.52,
+      "test_frequency": "Monthly",
+      "last_tested": "2026-07-05",
+      "model2_held_out_positive": true
+    },
+    {
+      "control_id": "CTL-NET-004",
+      "name": "IPS blocking for known scanners",
+      "family": "Network security",
+      "control_type": "Preventive",
+      "nist_csf_2": {
+        "category": "PR.IR",
+        "category_name": "Technology Infrastructure Resilience",
+        "function": "PR"
+      },
+      "mitigates_attack_techniques": [
+        "T1595",
+        "T1190"
+      ],
+      "applies_to": [
+        "network",
+        "web"
+      ],
+      "owner": "Network team",
+      "implementation_status": "Implemented",
+      "effectiveness": 0.69,
+      "test_frequency": "Quarterly",
+      "last_tested": "2026-05-16",
+      "model2_held_out_positive": false
+    },
+    {
+      "control_id": "CTL-NET-005",
+      "name": "Restrict DNS zone transfers",
+      "family": "Network security",
+      "control_type": "Preventive",
+      "nist_csf_2": {
+        "category": "PR.PS",
+        "category_name": "Platform Security",
+        "function": "PR"
+      },
+      "mitigates_attack_techniques": [
+        "T1590.002"
+      ],
+      "applies_to": [
+        "network",
+        "identity"
+      ],
+      "owner": "Network team",
+      "implementation_status": "Implemented",
+      "effectiveness": 0.89,
+      "test_frequency": "Quarterly",
+      "last_tested": "2026-07-06",
+      "model2_held_out_positive": false
+    },
+    {
+      "control_id": "CTL-NET-006",
+      "name": "Network access control (802.1X)",
+      "family": "Network security",
+      "control_type": "Preventive",
+      "nist_csf_2": {
+        "category": "PR.AA",
+        "category_name": "Identity Management, Authentication, and Access Control",
+        "function": "PR"
+      },
+      "mitigates_attack_techniques": [
+        "T1200"
+      ],
+      "applies_to": [
+        "endpoint",
+        "iot",
+        "network"
+      ],
+      "owner": "Network team",
+      "implementation_status": "Implemented",
+      "effectiveness": 0.81,
+      "test_frequency": "Quarterly",
+      "last_tested": "2026-06-18",
+      "model2_held_out_positive": false
+    },
+    {
+      "control_id": "CTL-NET-007",
+      "name": "Egress filtering by allowlist",
+      "family": "Network security",
+      "control_type": "Preventive",
+      "nist_csf_2": {
+        "category": "PR.IR",
+        "category_name": "Technology Infrastructure Resilience",
+        "function": "PR"
+      },
+      "mitigates_attack_techniques": [
+        "T1048",
+        "T1071"
+      ],
+      "applies_to": [
+        "server",
+        "cloud"
+      ],
+      "owner": "Network team",
+      "implementation_status": "Implemented",
+      "effectiveness": 0.76,
+      "test_frequency": "Quarterly",
+      "last_tested": "2026-04-10",
+      "model2_held_out_positive": false
+    },
+    {
+      "control_id": "CTL-NET-008",
+      "name": "Web application firewall",
+      "family": "Network security",
+      "control_type": "Preventive",
+      "nist_csf_2": {
+        "category": "PR.IR",
+        "category_name": "Technology Infrastructure Resilience",
+        "function": "PR"
+      },
+      "mitigates_attack_techniques": [
+        "T1190",
+        "T1595.002"
+      ],
+      "applies_to": [
+        "web"
+      ],
+      "owner": "Network team",
+      "implementation_status": "Implemented",
+      "effectiveness": 0.8,
+      "test_frequency": "Quarterly",
+      "last_tested": "2026-08-07",
+      "model2_held_out_positive": false
+    },
+    {
+      "control_id": "CTL-NET-009",
+      "name": "VPN geo-restriction and IP reputation filtering",
+      "family": "Network security",
+      "control_type": "Preventive",
+      "nist_csf_2": {
+        "category": "PR.AA",
+        "category_name": "Identity Management, Authentication, and Access Control",
+        "function": "PR"
+      },
+      "mitigates_attack_techniques": [
+        "T1133",
+        "T1110.003"
+      ],
+      "applies_to": [
+        "network"
+      ],
+      "owner": "Network team",
+      "implementation_status": "Planned",
+      "effectiveness": 0.0,
+      "test_frequency": "Quarterly",
+      "last_tested": null,
+      "model2_held_out_positive": false
+    },
+    {
+      "control_id": "CTL-NET-010",
+      "name": "East-west firewall rules between server tiers",
+      "family": "Network security",
+      "control_type": "Preventive",
+      "nist_csf_2": {
+        "category": "PR.IR",
+        "category_name": "Technology Infrastructure Resilience",
+        "function": "PR"
+      },
+      "mitigates_attack_techniques": [
+        "T1021",
+        "T1046"
+      ],
+      "applies_to": [
+        "server"
+      ],
+      "owner": "Network team",
+      "implementation_status": "Partially implemented",
+      "effectiveness": 0.53,
+      "test_frequency": "Quarterly",
+      "last_tested": "2026-05-18",
+      "model2_held_out_positive": false
+    },
+    {
+      "control_id": "CTL-NET-011",
+      "name": "DDoS protection service",
+      "family": "Network security",
+      "control_type": "Preventive",
+      "nist_csf_2": {
+        "category": "PR.IR",
+        "category_name": "Technology Infrastructure Resilience",
+        "function": "PR"
+      },
+      "mitigates_attack_techniques": [
+        "T1498"
+      ],
+      "applies_to": [
+        "web",
+        "network"
+      ],
+      "owner": "Network team",
+      "implementation_status": "Implemented",
+      "effectiveness": 0.67,
+      "test_frequency": "Quarterly",
+      "last_tested": "2026-04-08",
+      "model2_held_out_positive": false
+    },
+    {
+      "control_id": "CTL-NET-012",
+      "name": "Rate limiting on authentication endpoints",
+      "family": "Network security",
+      "control_type": "Preventive",
+      "nist_csf_2": {
+        "category": "PR.PS",
+        "category_name": "Platform Security",
+        "function": "PR"
+      },
+      "mitigates_attack_techniques": [
+        "T1110"
+      ],
+      "applies_to": [
+        "web",
+        "network"
+      ],
+      "owner": "Network team",
+      "implementation_status": "Implemented",
+      "effectiveness": 0.68,
+      "test_frequency": "Quarterly",
+      "last_tested": "2026-03-28",
+      "model2_held_out_positive": false
+    },
+    {
+      "control_id": "CTL-VUL-001",
+      "name": "Monthly patch cycle",
+      "family": "Vulnerability and configuration",
+      "control_type": "Corrective",
+      "nist_csf_2": {
+        "category": "PR.PS",
+        "category_name": "Platform Security",
+        "function": "PR"
+      },
+      "mitigates_attack_techniques": [
+        "T1190",
+        "T1068"
+      ],
+      "applies_to": [
+        "all"
+      ],
+      "owner": "IT operations",
+      "implementation_status": "Partially implemented",
+      "effectiveness": 0.41,
+      "test_frequency": "Semi-annually",
+      "last_tested": "2026-07-20",
+      "model2_held_out_positive": false
+    },
+    {
+      "control_id": "CTL-VUL-002",
+      "name": "Critical patch SLA (14 days)",
+      "family": "Vulnerability and configuration",
+      "control_type": "Corrective",
+      "nist_csf_2": {
+        "category": "PR.PS",
+        "category_name": "Platform Security",
+        "function": "PR"
+      },
+      "mitigates_attack_techniques": [
+        "T1190"
+      ],
+      "applies_to": [
+        "all"
+      ],
+      "owner": "IT operations",
+      "implementation_status": "Implemented",
+      "effectiveness": 0.86,
+      "test_frequency": "Semi-annually",
+      "last_tested": "2026-05-10",
+      "model2_held_out_positive": false
+    },
+    {
+      "control_id": "CTL-VUL-003",
+      "name": "Authenticated vulnerability scanning (weekly)",
+      "family": "Vulnerability and configuration",
+      "control_type": "Detective",
+      "nist_csf_2": {
+        "category": "ID.RA",
+        "category_name": "Risk Assessment",
+        "function": "ID"
+      },
+      "mitigates_attack_techniques": [
+        "T1190",
+        "T1068"
+      ],
+      "applies_to": [
+        "all"
+      ],
+      "owner": "IT operations",
+      "implementation_status": "Implemented",
+      "effectiveness": 0.86,
+      "test_frequency": "Monthly",
+      "last_tested": "2026-06-29",
+      "model2_held_out_positive": false
+    },
+    {
+      "control_id": "CTL-VUL-004",
+      "name": "External attack surface scanning",
+      "family": "Vulnerability and configuration",
+      "control_type": "Detective",
+      "nist_csf_2": {
+        "category": "ID.RA",
+        "category_name": "Risk Assessment",
+        "function": "ID"
+      },
+      "mitigates_attack_techniques": [
+        "T1595",
+        "T1190"
+      ],
+      "applies_to": [
+        "web",
+        "network"
+      ],
+      "owner": "IT operations",
+      "implementation_status": "Implemented",
+      "effectiveness": 0.77,
+      "test_frequency": "Monthly",
+      "last_tested": "2026-06-03",
+      "model2_held_out_positive": false
+    },
+    {
+      "control_id": "CTL-VUL-005",
+      "name": "CIS hardened baseline configuration",
+      "family": "Vulnerability and configuration",
+      "control_type": "Preventive",
+      "nist_csf_2": {
+        "category": "PR.PS",
+        "category_name": "Platform Security",
+        "function": "PR"
+      },
+      "mitigates_attack_techniques": [
+        "T1046",
+        "T1021"
+      ],
+      "applies_to": [
+        "server",
+        "endpoint"
+      ],
+      "owner": "IT operations",
+      "implementation_status": "Implemented",
+      "effectiveness": 0.84,
+      "test_frequency": "Quarterly",
+      "last_tested": "2026-06-12",
+      "model2_held_out_positive": false
+    },
+    {
+      "control_id": "CTL-VUL-006",
+      "name": "Disable unused services and ports",
+      "family": "Vulnerability and configuration",
+      "control_type": "Preventive",
+      "nist_csf_2": {
+        "category": "PR.PS",
+        "category_name": "Platform Security",
+        "function": "PR"
+      },
+      "mitigates_attack_techniques": [
+        "T1046"
+      ],
+      "applies_to": [
+        "server",
+        "iot"
+      ],
+      "owner": "IT operations",
+      "implementation_status": "Implemented",
+      "effectiveness": 0.66,
+      "test_frequency": "Quarterly",
+      "last_tested": "2026-08-24",
+      "model2_held_out_positive": false
+    },
+    {
+      "control_id": "CTL-VUL-007",
+      "name": "Hardened golden images",
+      "family": "Vulnerability and configuration",
+      "control_type": "Preventive",
+      "nist_csf_2": {
+        "category": "PR.PS",
+        "category_name": "Platform Security",
+        "function": "PR"
+      },
+      "mitigates_attack_techniques": [
+        "T1190"
+      ],
+      "applies_to": [
+        "cloud",
+        "server"
+      ],
+      "owner": "IT operations",
+      "implementation_status": "Implemented",
+      "effectiveness": 0.88,
+      "test_frequency": "Quarterly",
+      "last_tested": "2026-08-28",
+      "model2_held_out_positive": false
+    },
+    {
+      "control_id": "CTL-VUL-008",
+      "name": "Configuration drift monitoring",
+      "family": "Vulnerability and configuration",
+      "control_type": "Detective",
+      "nist_csf_2": {
+        "category": "DE.CM",
+        "category_name": "Continuous Monitoring",
+        "function": "DE"
+      },
+      "mitigates_attack_techniques": [
+        "T1098"
+      ],
+      "applies_to": [
+        "server",
+        "cloud"
+      ],
+      "owner": "IT operations",
+      "implementation_status": "Partially implemented",
+      "effectiveness": 0.4,
+      "test_frequency": "Monthly",
+      "last_tested": "2026-06-29",
+      "model2_held_out_positive": false
+    },
+    {
+      "control_id": "CTL-VUL-009",
+      "name": "Firmware update program for devices",
+      "family": "Vulnerability and configuration",
+      "control_type": "Corrective",
+      "nist_csf_2": {
+        "category": "PR.PS",
+        "category_name": "Platform Security",
+        "function": "PR"
+      },
+      "mitigates_attack_techniques": [
+        "T1190"
+      ],
+      "applies_to": [
+        "iot",
+        "network"
+      ],
+      "owner": "IT operations",
+      "implementation_status": "Implemented",
+      "effectiveness": 0.86,
+      "test_frequency": "Semi-annually",
+      "last_tested": "2026-03-20",
+      "model2_held_out_positive": false
+    },
+    {
+      "control_id": "CTL-VUL-010",
+      "name": "Change default device credentials",
+      "family": "Vulnerability and configuration",
+      "control_type": "Preventive",
+      "nist_csf_2": {
+        "category": "PR.AA",
+        "category_name": "Identity Management, Authentication, and Access Control",
+        "function": "PR"
+      },
+      "mitigates_attack_techniques": [
+        "T1078.001"
+      ],
+      "applies_to": [
+        "iot",
+        "network"
+      ],
+      "owner": "IT operations",
+      "implementation_status": "Implemented",
+      "effectiveness": 0.72,
+      "test_frequency": "Quarterly",
+      "last_tested": "2026-05-18",
+      "model2_held_out_positive": false
+    },
+    {
+      "control_id": "CTL-VUL-011",
+      "name": "Secure software development review",
+      "family": "Vulnerability and configuration",
+      "control_type": "Preventive",
+      "nist_csf_2": {
+        "category": "PR.PS",
+        "category_name": "Platform Security",
+        "function": "PR"
+      },
+      "mitigates_attack_techniques": [
+        "T1190"
+      ],
+      "applies_to": [
+        "web"
+      ],
+      "owner": "IT operations",
+      "implementation_status": "Implemented",
+      "effectiveness": 0.81,
+      "test_frequency": "Quarterly",
+      "last_tested": "2026-03-24",
+      "model2_held_out_positive": false
+    },
+    {
+      "control_id": "CTL-VUL-012",
+      "name": "Database hardening and least-privilege roles",
+      "family": "Vulnerability and configuration",
+      "control_type": "Preventive",
+      "nist_csf_2": {
+        "category": "PR.PS",
+        "category_name": "Platform Security",
+        "function": "PR"
+      },
+      "mitigates_attack_techniques": [
+        "T1190",
+        "T1078"
+      ],
+      "applies_to": [
+        "db"
+      ],
+      "owner": "IT operations",
+      "implementation_status": "Implemented",
+      "effectiveness": 0.83,
+      "test_frequency": "Quarterly",
+      "last_tested": "2026-06-05",
+      "model2_held_out_positive": false
+    },
+    {
+      "control_id": "CTL-MON-001",
+      "name": "Centralized log collection to SIEM",
+      "family": "Logging and monitoring",
+      "control_type": "Detective",
+      "nist_csf_2": {
+        "category": "DE.CM",
+        "category_name": "Continuous Monitoring",
+        "function": "DE"
+      },
+      "mitigates_attack_techniques": [
+        "T1110",
+        "T1046"
+      ],
+      "applies_to": [
+        "all"
+      ],
+      "owner": "Security operations (SOC)",
+      "implementation_status": "Implemented",
+      "effectiveness": 0.72,
+      "test_frequency": "Monthly",
+      "last_tested": "2026-06-04",
+      "model2_held_out_positive": false
+    },
+    {
+      "control_id": "CTL-MON-002",
+      "name": "Alert on repeated failed logons",
+      "family": "Logging and monitoring",
+      "control_type": "Detective",
+      "nist_csf_2": {
+        "category": "DE.CM",
+        "category_name": "Continuous Monitoring",
+        "function": "DE"
+      },
+      "mitigates_attack_techniques": [
+        "T1110"
+      ],
+      "applies_to": [
+        "all"
+      ],
+      "owner": "Security operations (SOC)",
+      "implementation_status": "Implemented",
+      "effectiveness": 0.69,
+      "test_frequency": "Monthly",
+      "last_tested": "2026-08-22",
+      "model2_held_out_positive": false
+    },
+    {
+      "control_id": "CTL-MON-003",
+      "name": "Alert on logon success after failures",
+      "family": "Logging and monitoring",
+      "control_type": "Detective",
+      "nist_csf_2": {
+        "category": "DE.AE",
+        "category_name": "Adverse Event Analysis",
+        "function": "DE"
+      },
+      "mitigates_attack_techniques": [
+        "T1110",
+        "T1078"
+      ],
+      "applies_to": [
+        "all"
+      ],
+      "owner": "Security operations (SOC)",
+      "implementation_status": "Implemented",
+      "effectiveness": 0.68,
+      "test_frequency": "Monthly",
+      "last_tested": "2026-03-30",
+      "model2_held_out_positive": false
+    },
+    {
+      "control_id": "CTL-MON-004",
+      "name": "Impossible-travel sign-in detection",
+      "family": "Logging and monitoring",
+      "control_type": "Detective",
+      "nist_csf_2": {
+        "category": "DE.AE",
+        "category_name": "Adverse Event Analysis",
+        "function": "DE"
+      },
+      "mitigates_attack_techniques": [
+        "T1078"
+      ],
+      "applies_to": [
+        "identity",
+        "network"
+      ],
+      "owner": "Security operations (SOC)",
+      "implementation_status": "Planned",
+      "effectiveness": 0.0,
+      "test_frequency": "Monthly",
+      "last_tested": null,
+      "model2_held_out_positive": false
+    },
+    {
+      "control_id": "CTL-MON-005",
+      "name": "Kerberos service ticket anomaly detection",
+      "family": "Logging and monitoring",
+      "control_type": "Detective",
+      "nist_csf_2": {
+        "category": "DE.AE",
+        "category_name": "Adverse Event Analysis",
+        "function": "DE"
+      },
+      "mitigates_attack_techniques": [
+        "T1558.003"
+      ],
+      "applies_to": [
+        "identity"
+      ],
+      "owner": "Security operations (SOC)",
+      "implementation_status": "Implemented",
+      "effectiveness": 0.67,
+      "test_frequency": "Monthly",
+      "last_tested": "2026-06-13",
+      "model2_held_out_positive": false
+    },
+    {
+      "control_id": "CTL-MON-006",
+      "name": "Port-scan threshold detection",
+      "family": "Logging and monitoring",
+      "control_type": "Detective",
+      "nist_csf_2": {
+        "category": "DE.CM",
+        "category_name": "Continuous Monitoring",
+        "function": "DE"
+      },
+      "mitigates_attack_techniques": [
+        "T1046",
+        "T1595"
+      ],
+      "applies_to": [
+        "network",
+        "server"
+      ],
+      "owner": "Security operations (SOC)",
+      "implementation_status": "Partially implemented",
+      "effectiveness": 0.59,
+      "test_frequency": "Monthly",
+      "last_tested": "2026-04-24",
+      "model2_held_out_positive": false
+    },
+    {
+      "control_id": "CTL-MON-007",
+      "name": "File integrity monitoring",
+      "family": "Logging and monitoring",
+      "control_type": "Detective",
+      "nist_csf_2": {
+        "category": "DE.CM",
+        "category_name": "Continuous Monitoring",
+        "function": "DE"
+      },
+      "mitigates_attack_techniques": [
+        "T1565"
+      ],
+      "applies_to": [
+        "server"
+      ],
+      "owner": "Security operations (SOC)",
+      "implementation_status": "Partially implemented",
+      "effectiveness": 0.57,
+      "test_frequency": "Monthly",
+      "last_tested": "2026-06-10",
+      "model2_held_out_positive": false
+    },
+    {
+      "control_id": "CTL-MON-008",
+      "name": "User and entity behavior analytics",
+      "family": "Logging and monitoring",
+      "control_type": "Detective",
+      "nist_csf_2": {
+        "category": "DE.AE",
+        "category_name": "Adverse Event Analysis",
+        "function": "DE"
+      },
+      "mitigates_attack_techniques": [
+        "T1078"
+      ],
+      "applies_to": [
+        "all"
+      ],
+      "owner": "Security operations (SOC)",
+      "implementation_status": "Implemented",
+      "effectiveness": 0.73,
+      "test_frequency": "Monthly",
+      "last_tested": "2026-05-01",
+      "model2_held_out_positive": false
+    },
+    {
+      "control_id": "CTL-MON-009",
+      "name": "Honeytoken accounts",
+      "family": "Logging and monitoring",
+      "control_type": "Detective",
+      "nist_csf_2": {
+        "category": "DE.CM",
+        "category_name": "Continuous Monitoring",
+        "function": "DE"
+      },
+      "mitigates_attack_techniques": [
+        "T1087",
+        "T1110"
+      ],
+      "applies_to": [
+        "identity"
+      ],
+      "owner": "Security operations (SOC)",
+      "implementation_status": "Implemented",
+      "effectiveness": 0.76,
+      "test_frequency": "Monthly",
+      "last_tested": "2026-07-06",
+      "model2_held_out_positive": false
+    },
+    {
+      "control_id": "CTL-MON-010",
+      "name": "Security log retention (12 months)",
+      "family": "Logging and monitoring",
+      "control_type": "Directive",
+      "nist_csf_2": {
+        "category": "PR.PS",
+        "category_name": "Platform Security",
+        "function": "PR"
+      },
+      "mitigates_attack_techniques": [],
+      "applies_to": [
+        "all"
+      ],
+      "owner": "Security operations (SOC)",
+      "implementation_status": "Planned",
+      "effectiveness": 0.0,
+      "test_frequency": "Annually",
+      "last_tested": null,
+      "model2_held_out_positive": false
+    },
+    {
+      "control_id": "CTL-MON-011",
+      "name": "NTP time synchronization",
+      "family": "Logging and monitoring",
+      "control_type": "Preventive",
+      "nist_csf_2": {
+        "category": "PR.PS",
+        "category_name": "Platform Security",
+        "function": "PR"
+      },
+      "mitigates_attack_techniques": [],
+      "applies_to": [
+        "all"
+      ],
+      "owner": "Security operations (SOC)",
+      "implementation_status": "Partially implemented",
+      "effectiveness": 0.5,
+      "test_frequency": "Quarterly",
+      "last_tested": "2026-09-13",
+      "model2_held_out_positive": false
+    },
+    {
+      "control_id": "CTL-MON-012",
+      "name": "Quarterly SIEM use-case review",
+      "family": "Logging and monitoring",
+      "control_type": "Detective",
+      "nist_csf_2": {
+        "category": "DE.AE",
+        "category_name": "Adverse Event Analysis",
+        "function": "DE"
+      },
+      "mitigates_attack_techniques": [
+        "T1110",
+        "T1046"
+      ],
+      "applies_to": [
+        "all"
+      ],
+      "owner": "Security operations (SOC)",
+      "implementation_status": "Implemented",
+      "effectiveness": 0.8,
+      "test_frequency": "Monthly",
+      "last_tested": "2026-04-15",
+      "model2_held_out_positive": false
+    },
+    {
+      "control_id": "CTL-DAT-001",
+      "name": "Encryption at rest (AES-256)",
+      "family": "Data protection",
+      "control_type": "Preventive",
+      "nist_csf_2": {
+        "category": "PR.DS",
+        "category_name": "Data Security",
+        "function": "PR"
+      },
+      "mitigates_attack_techniques": [
+        "T1005",
+        "T1530"
+      ],
+      "applies_to": [
+        "server",
+        "db",
+        "cloud",
+        "endpoint"
+      ],
+      "owner": "Data protection office",
+      "implementation_status": "Partially implemented",
+      "effectiveness": 0.47,
+      "test_frequency": "Quarterly",
+      "last_tested": "2026-06-13",
+      "model2_held_out_positive": false
+    },
+    {
+      "control_id": "CTL-DAT-002",
+      "name": "TLS 1.2 or later for data in transit",
+      "family": "Data protection",
+      "control_type": "Preventive",
+      "nist_csf_2": {
+        "category": "PR.DS",
+        "category_name": "Data Security",
+        "function": "PR"
+      },
+      "mitigates_attack_techniques": [
+        "T1557",
+        "T1040"
+      ],
+      "applies_to": [
+        "all"
+      ],
+      "owner": "Data protection office",
+      "implementation_status": "Implemented",
+      "effectiveness": 0.74,
+      "test_frequency": "Quarterly",
+      "last_tested": "2026-04-15",
+      "model2_held_out_positive": false
+    },
+    {
+      "control_id": "CTL-DAT-003",
+      "name": "Data loss prevention",
+      "family": "Data protection",
+      "control_type": "Detective",
+      "nist_csf_2": {
+        "category": "PR.DS",
+        "category_name": "Data Security",
+        "function": "PR"
+      },
+      "mitigates_attack_techniques": [
+        "T1048",
+        "T1567"
+      ],
+      "applies_to": [
+        "endpoint",
+        "server"
+      ],
+      "owner": "Data protection office",
+      "implementation_status": "Implemented",
+      "effectiveness": 0.67,
+      "test_frequency": "Monthly",
+      "last_tested": "2026-03-15",
+      "model2_held_out_positive": false
+    },
+    {
+      "control_id": "CTL-DAT-004",
+      "name": "Daily backups (3-2-1 rule)",
+      "family": "Data protection",
+      "control_type": "Corrective",
+      "nist_csf_2": {
+        "category": "PR.DS",
+        "category_name": "Data Security",
+        "function": "PR"
+      },
+      "mitigates_attack_techniques": [
+        "T1486",
+        "T1490"
+      ],
+      "applies_to": [
+        "server",
+        "db"
+      ],
+      "owner": "Data protection office",
+      "implementation_status": "Implemented",
+      "effectiveness": 0.9,
+      "test_frequency": "Semi-annually",
+      "last_tested": "2026-09-14",
+      "model2_held_out_positive": false
+    },
+    {
+      "control_id": "CTL-DAT-005",
+      "name": "Immutable offline backup copy",
+      "family": "Data protection",
+      "control_type": "Corrective",
+      "nist_csf_2": {
+        "category": "PR.DS",
+        "category_name": "Data Security",
+        "function": "PR"
+      },
+      "mitigates_attack_techniques": [
+        "T1486",
+        "T1490"
+      ],
+      "applies_to": [
+        "server",
+        "db"
+      ],
+      "owner": "Data protection office",
+      "implementation_status": "Partially implemented",
+      "effectiveness": 0.46,
+      "test_frequency": "Semi-annually",
+      "last_tested": "2026-05-04",
+      "model2_held_out_positive": false
+    },
+    {
+      "control_id": "CTL-DAT-006",
+      "name": "Quarterly backup restore testing",
+      "family": "Data protection",
+      "control_type": "Corrective",
+      "nist_csf_2": {
+        "category": "RC.RP",
+        "category_name": "Incident Recovery Plan Execution",
+        "function": "RC"
+      },
+      "mitigates_attack_techniques": [
+        "T1486"
+      ],
+      "applies_to": [
+        "server",
+        "db"
+      ],
+      "owner": "Data protection office",
+      "implementation_status": "Implemented",
+      "effectiveness": 0.84,
+      "test_frequency": "Semi-annually",
+      "last_tested": "2026-08-04",
+      "model2_held_out_positive": false
+    },
+    {
+      "control_id": "CTL-DAT-007",
+      "name": "Data classification and labeling",
+      "family": "Data protection",
+      "control_type": "Directive",
+      "nist_csf_2": {
+        "category": "ID.AM",
+        "category_name": "Asset Management",
+        "function": "ID"
+      },
+      "mitigates_attack_techniques": [
+        "T1048"
+      ],
+      "applies_to": [
+        "all"
+      ],
+      "owner": "Data protection office",
+      "implementation_status": "Not implemented",
+      "effectiveness": 0.0,
+      "test_frequency": "Annually",
+      "last_tested": null,
+      "model2_held_out_positive": false
+    },
+    {
+      "control_id": "CTL-DAT-008",
+      "name": "Key management service",
+      "family": "Data protection",
+      "control_type": "Preventive",
+      "nist_csf_2": {
+        "category": "PR.DS",
+        "category_name": "Data Security",
+        "function": "PR"
+      },
+      "mitigates_attack_techniques": [
+        "T1552"
+      ],
+      "applies_to": [
+        "cloud",
+        "server"
+      ],
+      "owner": "Data protection office",
+      "implementation_status": "Not implemented",
+      "effectiveness": 0.0,
+      "test_frequency": "Quarterly",
+      "last_tested": null,
+      "model2_held_out_positive": false
+    },
+    {
+      "control_id": "CTL-DAT-009",
+      "name": "Database activity monitoring",
+      "family": "Data protection",
+      "control_type": "Detective",
+      "nist_csf_2": {
+        "category": "DE.CM",
+        "category_name": "Continuous Monitoring",
+        "function": "DE"
+      },
+      "mitigates_attack_techniques": [
+        "T1005",
+        "T1213"
+      ],
+      "applies_to": [
+        "db"
+      ],
+      "owner": "Data protection office",
+      "implementation_status": "Implemented",
+      "effectiveness": 0.72,
+      "test_frequency": "Monthly",
+      "last_tested": "2026-03-28",
+      "model2_held_out_positive": false
+    },
+    {
+      "control_id": "CTL-DAT-010",
+      "name": "Secure file transfer only (SFTP)",
+      "family": "Data protection",
+      "control_type": "Preventive",
+      "nist_csf_2": {
+        "category": "PR.DS",
+        "category_name": "Data Security",
+        "function": "PR"
+      },
+      "mitigates_attack_techniques": [
+        "T1040"
+      ],
+      "applies_to": [
+        "server"
+      ],
+      "owner": "Data protection office",
+      "implementation_status": "Partially implemented",
+      "effectiveness": 0.4,
+      "test_frequency": "Quarterly",
+      "last_tested": "2026-07-26",
+      "model2_held_out_positive": false
+    },
+    {
+      "control_id": "CTL-DAT-011",
+      "name": "Data retention and disposal schedule",
+      "family": "Data protection",
+      "control_type": "Directive",
+      "nist_csf_2": {
+        "category": "PR.DS",
+        "category_name": "Data Security",
+        "function": "PR"
+      },
+      "mitigates_attack_techniques": [
+        "T1005"
+      ],
+      "applies_to": [
+        "all"
+      ],
+      "owner": "Data protection office",
+      "implementation_status": "Planned",
+      "effectiveness": 0.0,
+      "test_frequency": "Annually",
+      "last_tested": null,
+      "model2_held_out_positive": false
+    },
+    {
+      "control_id": "CTL-DAT-012",
+      "name": "Approval for restricted data access",
+      "family": "Data protection",
+      "control_type": "Preventive",
+      "nist_csf_2": {
+        "category": "PR.AA",
+        "category_name": "Identity Management, Authentication, and Access Control",
+        "function": "PR"
+      },
+      "mitigates_attack_techniques": [
+        "T1213"
+      ],
+      "applies_to": [
+        "db",
+        "server"
+      ],
+      "owner": "Data protection office",
+      "implementation_status": "Implemented",
+      "effectiveness": 0.85,
+      "test_frequency": "Quarterly",
+      "last_tested": "2026-09-17",
+      "model2_held_out_positive": false
+    },
+    {
+      "control_id": "CTL-END-001",
+      "name": "Endpoint detection and response (EDR)",
+      "family": "Endpoint security",
+      "control_type": "Detective",
+      "nist_csf_2": {
+        "category": "DE.CM",
+        "category_name": "Continuous Monitoring",
+        "function": "DE"
+      },
+      "mitigates_attack_techniques": [
+        "T1059.001",
+        "T1003",
+        "T1486"
+      ],
+      "applies_to": [
+        "endpoint",
+        "server"
+      ],
+      "owner": "Endpoint team",
+      "implementation_status": "Implemented",
+      "effectiveness": 0.75,
+      "test_frequency": "Monthly",
+      "last_tested": "2026-05-12",
+      "model2_held_out_positive": false
+    },
+    {
+      "control_id": "CTL-END-002",
+      "name": "Next-generation antivirus",
+      "family": "Endpoint security",
+      "control_type": "Preventive",
+      "nist_csf_2": {
+        "category": "PR.PS",
+        "category_name": "Platform Security",
+        "function": "PR"
+      },
+      "mitigates_attack_techniques": [
+        "T1204"
+      ],
+      "applies_to": [
+        "endpoint",
+        "server"
+      ],
+      "owner": "Endpoint team",
+      "implementation_status": "Partially implemented",
+      "effectiveness": 0.54,
+      "test_frequency": "Quarterly",
+      "last_tested": "2026-06-13",
+      "model2_held_out_positive": false
+    },
+    {
+      "control_id": "CTL-END-003",
+      "name": "Application allowlisting",
+      "family": "Endpoint security",
+      "control_type": "Preventive",
+      "nist_csf_2": {
+        "category": "PR.PS",
+        "category_name": "Platform Security",
+        "function": "PR"
+      },
+      "mitigates_attack_techniques": [
+        "T1204",
+        "T1059"
+      ],
+      "applies_to": [
+        "endpoint",
+        "server"
+      ],
+      "owner": "Endpoint team",
+      "implementation_status": "Implemented",
+      "effectiveness": 0.84,
+      "test_frequency": "Quarterly",
+      "last_tested": "2026-04-12",
+      "model2_held_out_positive": false
+    },
+    {
+      "control_id": "CTL-END-004",
+      "name": "Remove local administrator rights",
+      "family": "Endpoint security",
+      "control_type": "Preventive",
+      "nist_csf_2": {
+        "category": "PR.AA",
+        "category_name": "Identity Management, Authentication, and Access Control",
+        "function": "PR"
+      },
+      "mitigates_attack_techniques": [
+        "T1068",
+        "T1078.003"
+      ],
+      "applies_to": [
+        "endpoint"
+      ],
+      "owner": "Endpoint team",
+      "implementation_status": "Implemented",
+      "effectiveness": 0.75,
+      "test_frequency": "Quarterly",
+      "last_tested": "2026-07-10",
+      "model2_held_out_positive": false
+    },
+    {
+      "control_id": "CTL-END-005",
+      "name": "Block Office macros from the internet",
+      "family": "Endpoint security",
+      "control_type": "Preventive",
+      "nist_csf_2": {
+        "category": "PR.PS",
+        "category_name": "Platform Security",
+        "function": "PR"
+      },
+      "mitigates_attack_techniques": [
+        "T1204.002",
+        "T1566.001"
+      ],
+      "applies_to": [
+        "endpoint"
+      ],
+      "owner": "Endpoint team",
+      "implementation_status": "Implemented",
+      "effectiveness": 0.9,
+      "test_frequency": "Quarterly",
+      "last_tested": "2026-07-21",
+      "model2_held_out_positive": false
+    },
+    {
+      "control_id": "CTL-END-006",
+      "name": "USB storage control",
+      "family": "Endpoint security",
+      "control_type": "Preventive",
+      "nist_csf_2": {
+        "category": "PR.PS",
+        "category_name": "Platform Security",
+        "function": "PR"
+      },
+      "mitigates_attack_techniques": [
+        "T1091",
+        "T1052"
+      ],
+      "applies_to": [
+        "endpoint"
+      ],
+      "owner": "Endpoint team",
+      "implementation_status": "Implemented",
+      "effectiveness": 0.68,
+      "test_frequency": "Quarterly",
+      "last_tested": "2026-05-26",
+      "model2_held_out_positive": false
+    },
+    {
+      "control_id": "CTL-END-007",
+      "name": "Full disk encryption",
+      "family": "Endpoint security",
+      "control_type": "Preventive",
+      "nist_csf_2": {
+        "category": "PR.DS",
+        "category_name": "Data Security",
+        "function": "PR"
+      },
+      "mitigates_attack_techniques": [
+        "T1005"
+      ],
+      "applies_to": [
+        "endpoint"
+      ],
+      "owner": "Endpoint team",
+      "implementation_status": "Implemented",
+      "effectiveness": 0.69,
+      "test_frequency": "Quarterly",
+      "last_tested": "2026-06-10",
+      "model2_held_out_positive": false
+    },
+    {
+      "control_id": "CTL-END-008",
+      "name": "LSASS protection (Credential Guard)",
+      "family": "Endpoint security",
+      "control_type": "Preventive",
+      "nist_csf_2": {
+        "category": "PR.PS",
+        "category_name": "Platform Security",
+        "function": "PR"
+      },
+      "mitigates_attack_techniques": [
+        "T1003.001"
+      ],
+      "applies_to": [
+        "endpoint",
+        "identity"
+      ],
+      "owner": "Endpoint team",
+      "implementation_status": "Implemented",
+      "effectiveness": 0.65,
+      "test_frequency": "Quarterly",
+      "last_tested": "2026-04-12",
+      "model2_held_out_positive": false
+    },
+    {
+      "control_id": "CTL-END-009",
+      "name": "PowerShell logging and constrained language mode",
+      "family": "Endpoint security",
+      "control_type": "Detective",
+      "nist_csf_2": {
+        "category": "DE.CM",
+        "category_name": "Continuous Monitoring",
+        "function": "DE"
+      },
+      "mitigates_attack_techniques": [
+        "T1059.001"
+      ],
+      "applies_to": [
+        "endpoint",
+        "server"
+      ],
+      "owner": "Endpoint team",
+      "implementation_status": "Implemented",
+      "effectiveness": 0.83,
+      "test_frequency": "Monthly",
+      "last_tested": "2026-05-06",
+      "model2_held_out_positive": false
+    },
+    {
+      "control_id": "CTL-END-010",
+      "name": "Browser hardening and isolation",
+      "family": "Endpoint security",
+      "control_type": "Preventive",
+      "nist_csf_2": {
+        "category": "PR.PS",
+        "category_name": "Platform Security",
+        "function": "PR"
+      },
+      "mitigates_attack_techniques": [
+        "T1189"
+      ],
+      "applies_to": [
+        "endpoint"
+      ],
+      "owner": "Endpoint team",
+      "implementation_status": "Implemented",
+      "effectiveness": 0.7,
+      "test_frequency": "Quarterly",
+      "last_tested": "2026-08-02",
+      "model2_held_out_positive": false
+    },
+    {
+      "control_id": "CTL-END-011",
+      "name": "Host firewall enabled",
+      "family": "Endpoint security",
+      "control_type": "Preventive",
+      "nist_csf_2": {
+        "category": "PR.IR",
+        "category_name": "Technology Infrastructure Resilience",
+        "function": "PR"
+      },
+      "mitigates_attack_techniques": [
+        "T1021",
+        "T1046"
+      ],
+      "applies_to": [
+        "endpoint",
+        "server"
+      ],
+      "owner": "Endpoint team",
+      "implementation_status": "Partially implemented",
+      "effectiveness": 0.51,
+      "test_frequency": "Quarterly",
+      "last_tested": "2026-04-27",
+      "model2_held_out_positive": false
+    },
+    {
+      "control_id": "CTL-END-012",
+      "name": "Mobile device management",
+      "family": "Endpoint security",
+      "control_type": "Preventive",
+      "nist_csf_2": {
+        "category": "PR.PS",
+        "category_name": "Platform Security",
+        "function": "PR"
+      },
+      "mitigates_attack_techniques": [
+        "T1078"
+      ],
+      "applies_to": [
+        "endpoint"
+      ],
+      "owner": "Endpoint team",
+      "implementation_status": "Planned",
+      "effectiveness": 0.0,
+      "test_frequency": "Quarterly",
+      "last_tested": null,
+      "model2_held_out_positive": false
+    },
+    {
+      "control_id": "CTL-CLD-001",
+      "name": "Cloud security posture management",
+      "family": "Cloud and container",
+      "control_type": "Detective",
+      "nist_csf_2": {
+        "category": "DE.CM",
+        "category_name": "Continuous Monitoring",
+        "function": "DE"
+      },
+      "mitigates_attack_techniques": [
+        "T1530",
+        "T1078.004"
+      ],
+      "applies_to": [
+        "cloud"
+      ],
+      "owner": "Cloud platform team",
+      "implementation_status": "Implemented",
+      "effectiveness": 0.89,
+      "test_frequency": "Monthly",
+      "last_tested": "2026-08-31",
+      "model2_held_out_positive": false
+    },
+    {
+      "control_id": "CTL-CLD-002",
+      "name": "Least-privilege cloud IAM roles",
+      "family": "Cloud and container",
+      "control_type": "Preventive",
+      "nist_csf_2": {
+        "category": "PR.AA",
+        "category_name": "Identity Management, Authentication, and Access Control",
+        "function": "PR"
+      },
+      "mitigates_attack_techniques": [
+        "T1078.004"
+      ],
+      "applies_to": [
+        "cloud"
+      ],
+      "owner": "Cloud platform team",
+      "implementation_status": "Planned",
+      "effectiveness": 0.0,
+      "test_frequency": "Quarterly",
+      "last_tested": null,
+      "model2_held_out_positive": false
+    },
+    {
+      "control_id": "CTL-CLD-003",
+      "name": "Monthly security group review",
+      "family": "Cloud and container",
+      "control_type": "Detective",
+      "nist_csf_2": {
+        "category": "PR.IR",
+        "category_name": "Technology Infrastructure Resilience",
+        "function": "PR"
+      },
+      "mitigates_attack_techniques": [
+        "T1046",
+        "T1190"
+      ],
+      "applies_to": [
+        "cloud"
+      ],
+      "owner": "Cloud platform team",
+      "implementation_status": "Implemented",
+      "effectiveness": 0.86,
+      "test_frequency": "Monthly",
+      "last_tested": "2026-09-09",
+      "model2_held_out_positive": false
+    },
+    {
+      "control_id": "CTL-CLD-004",
+      "name": "Container image scanning",
+      "family": "Cloud and container",
+      "control_type": "Detective",
+      "nist_csf_2": {
+        "category": "ID.RA",
+        "category_name": "Risk Assessment",
+        "function": "ID"
+      },
+      "mitigates_attack_techniques": [
+        "T1610",
+        "T1190"
+      ],
+      "applies_to": [
+        "cloud"
+      ],
+      "owner": "Cloud platform team",
+      "implementation_status": "Implemented",
+      "effectiveness": 0.87,
+      "test_frequency": "Monthly",
+      "last_tested": "2026-04-26",
+      "model2_held_out_positive": false
+    },
+    {
+      "control_id": "CTL-CLD-005",
+      "name": "Kubernetes RBAC and namespace isolation",
+      "family": "Cloud and container",
+      "control_type": "Preventive",
+      "nist_csf_2": {
+        "category": "PR.AA",
+        "category_name": "Identity Management, Authentication, and Access Control",
+        "function": "PR"
+      },
+      "mitigates_attack_techniques": [
+        "T1611",
+        "T1078"
+      ],
+      "applies_to": [
+        "cloud"
+      ],
+      "owner": "Cloud platform team",
+      "implementation_status": "Implemented",
+      "effectiveness": 0.84,
+      "test_frequency": "Quarterly",
+      "last_tested": "2026-09-01",
+      "model2_held_out_positive": false
+    },
+    {
+      "control_id": "CTL-CLD-006",
+      "name": "Secrets management vault",
+      "family": "Cloud and container",
+      "control_type": "Preventive",
+      "nist_csf_2": {
+        "category": "PR.DS",
+        "category_name": "Data Security",
+        "function": "PR"
+      },
+      "mitigates_attack_techniques": [
+        "T1552"
+      ],
+      "applies_to": [
+        "cloud",
+        "server"
+      ],
+      "owner": "Cloud platform team",
+      "implementation_status": "Implemented",
+      "effectiveness": 0.81,
+      "test_frequency": "Quarterly",
+      "last_tested": "2026-08-05",
+      "model2_held_out_positive": false
+    },
+    {
+      "control_id": "CTL-CLD-007",
+      "name": "Block public storage buckets",
+      "family": "Cloud and container",
+      "control_type": "Preventive",
+      "nist_csf_2": {
+        "category": "PR.DS",
+        "category_name": "Data Security",
+        "function": "PR"
+      },
+      "mitigates_attack_techniques": [
+        "T1530"
+      ],
+      "applies_to": [
+        "cloud"
+      ],
+      "owner": "Cloud platform team",
+      "implementation_status": "Implemented",
+      "effectiveness": 0.88,
+      "test_frequency": "Quarterly",
+      "last_tested": "2026-05-07",
+      "model2_held_out_positive": false
+    },
+    {
+      "control_id": "CTL-CLD-008",
+      "name": "Cloud audit logging enabled",
+      "family": "Cloud and container",
+      "control_type": "Detective",
+      "nist_csf_2": {
+        "category": "DE.CM",
+        "category_name": "Continuous Monitoring",
+        "function": "DE"
+      },
+      "mitigates_attack_techniques": [
+        "T1078.004"
+      ],
+      "applies_to": [
+        "cloud"
+      ],
+      "owner": "Cloud platform team",
+      "implementation_status": "Planned",
+      "effectiveness": 0.0,
+      "test_frequency": "Monthly",
+      "last_tested": null,
+      "model2_held_out_positive": false
+    },
+    {
+      "control_id": "CTL-CLD-009",
+      "name": "Runtime container security monitoring",
+      "family": "Cloud and container",
+      "control_type": "Detective",
+      "nist_csf_2": {
+        "category": "DE.CM",
+        "category_name": "Continuous Monitoring",
+        "function": "DE"
+      },
+      "mitigates_attack_techniques": [
+        "T1610",
+        "T1611"
+      ],
+      "applies_to": [
+        "cloud"
+      ],
+      "owner": "Cloud platform team",
+      "implementation_status": "Not implemented",
+      "effectiveness": 0.0,
+      "test_frequency": "Monthly",
+      "last_tested": null,
+      "model2_held_out_positive": false
+    },
+    {
+      "control_id": "CTL-CLD-010",
+      "name": "Infrastructure-as-code security checks",
+      "family": "Cloud and container",
+      "control_type": "Preventive",
+      "nist_csf_2": {
+        "category": "PR.PS",
+        "category_name": "Platform Security",
+        "function": "PR"
+      },
+      "mitigates_attack_techniques": [
+        "T1190"
+      ],
+      "applies_to": [
+        "cloud"
+      ],
+      "owner": "Cloud platform team",
+      "implementation_status": "Implemented",
+      "effectiveness": 0.83,
+      "test_frequency": "Quarterly",
+      "last_tested": "2026-03-28",
+      "model2_held_out_positive": false
+    },
+    {
+      "control_id": "CTL-CLD-011",
+      "name": "Private endpoints for data services",
+      "family": "Cloud and container",
+      "control_type": "Preventive",
+      "nist_csf_2": {
+        "category": "PR.IR",
+        "category_name": "Technology Infrastructure Resilience",
+        "function": "PR"
+      },
+      "mitigates_attack_techniques": [
+        "T1530"
+      ],
+      "applies_to": [
+        "cloud",
+        "db"
+      ],
+      "owner": "Cloud platform team",
+      "implementation_status": "Implemented",
+      "effectiveness": 0.71,
+      "test_frequency": "Quarterly",
+      "last_tested": "2026-04-24",
+      "model2_held_out_positive": false
+    },
+    {
+      "control_id": "CTL-CLD-012",
+      "name": "Cloud workload backup policy",
+      "family": "Cloud and container",
+      "control_type": "Corrective",
+      "nist_csf_2": {
+        "category": "PR.DS",
+        "category_name": "Data Security",
+        "function": "PR"
+      },
+      "mitigates_attack_techniques": [
+        "T1485",
+        "T1490"
+      ],
+      "applies_to": [
+        "cloud"
+      ],
+      "owner": "Cloud platform team",
+      "implementation_status": "Partially implemented",
+      "effectiveness": 0.56,
+      "test_frequency": "Semi-annually",
+      "last_tested": "2026-09-17",
+      "model2_held_out_positive": false
+    },
+    {
+      "control_id": "CTL-GOV-001",
+      "name": "Information security policy (annual review)",
+      "family": "Governance and awareness",
+      "control_type": "Directive",
+      "nist_csf_2": {
+        "category": "GV.PO",
+        "category_name": "Policy",
+        "function": "GV"
+      },
+      "mitigates_attack_techniques": [],
+      "applies_to": [
+        "all"
+      ],
+      "owner": "GRC office",
+      "implementation_status": "Implemented",
+      "effectiveness": 0.78,
+      "test_frequency": "Annually",
+      "last_tested": "2026-07-07",
+      "model2_held_out_positive": false
+    },
+    {
+      "control_id": "CTL-GOV-002",
+      "name": "Annual risk assessment",
+      "family": "Governance and awareness",
+      "control_type": "Directive",
+      "nist_csf_2": {
+        "category": "ID.RA",
+        "category_name": "Risk Assessment",
+        "function": "ID"
+      },
+      "mitigates_attack_techniques": [],
+      "applies_to": [
+        "all"
+      ],
+      "owner": "GRC office",
+      "implementation_status": "Implemented",
+      "effectiveness": 0.79,
+      "test_frequency": "Annually",
+      "last_tested": "2026-08-25",
+      "model2_held_out_positive": false
+    },
+    {
+      "control_id": "CTL-GOV-003",
+      "name": "Security awareness training",
+      "family": "Governance and awareness",
+      "control_type": "Directive",
+      "nist_csf_2": {
+        "category": "PR.AT",
+        "category_name": "Awareness and Training",
+        "function": "PR"
+      },
+      "mitigates_attack_techniques": [
+        "T1566",
+        "T1078"
+      ],
+      "applies_to": [
+        "all"
+      ],
+      "owner": "GRC office",
+      "implementation_status": "Implemented",
+      "effectiveness": 0.89,
+      "test_frequency": "Annually",
+      "last_tested": "2026-06-01",
+      "model2_held_out_positive": false
+    },
+    {
+      "control_id": "CTL-GOV-004",
+      "name": "Quarterly phishing simulation",
+      "family": "Governance and awareness",
+      "control_type": "Directive",
+      "nist_csf_2": {
+        "category": "PR.AT",
+        "category_name": "Awareness and Training",
+        "function": "PR"
+      },
+      "mitigates_attack_techniques": [
+        "T1566"
+      ],
+      "applies_to": [
+        "endpoint"
+      ],
+      "owner": "GRC office",
+      "implementation_status": "Implemented",
+      "effectiveness": 0.79,
+      "test_frequency": "Annually",
+      "last_tested": "2026-09-07",
+      "model2_held_out_positive": false
+    },
+    {
+      "control_id": "CTL-GOV-005",
+      "name": "Third-party access review",
+      "family": "Governance and awareness",
+      "control_type": "Detective",
+      "nist_csf_2": {
+        "category": "GV.SC",
+        "category_name": "Cybersecurity Supply Chain Risk Management",
+        "function": "GV"
+      },
+      "mitigates_attack_techniques": [
+        "T1199"
+      ],
+      "applies_to": [
+        "all"
+      ],
+      "owner": "GRC office",
+      "implementation_status": "Implemented",
+      "effectiveness": 0.68,
+      "test_frequency": "Monthly",
+      "last_tested": "2026-09-10",
+      "model2_held_out_positive": false
+    },
+    {
+      "control_id": "CTL-GOV-006",
+      "name": "Monthly asset inventory reconciliation",
+      "family": "Governance and awareness",
+      "control_type": "Detective",
+      "nist_csf_2": {
+        "category": "ID.AM",
+        "category_name": "Asset Management",
+        "function": "ID"
+      },
+      "mitigates_attack_techniques": [],
+      "applies_to": [
+        "all"
+      ],
+      "owner": "GRC office",
+      "implementation_status": "Planned",
+      "effectiveness": 0.0,
+      "test_frequency": "Monthly",
+      "last_tested": null,
+      "model2_held_out_positive": false
+    },
+    {
+      "control_id": "CTL-GOV-007",
+      "name": "Risk acceptance sign-off",
+      "family": "Governance and awareness",
+      "control_type": "Directive",
+      "nist_csf_2": {
+        "category": "GV.RM",
+        "category_name": "Risk Management Strategy",
+        "function": "GV"
+      },
+      "mitigates_attack_techniques": [],
+      "applies_to": [
+        "all"
+      ],
+      "owner": "GRC office",
+      "implementation_status": "Partially implemented",
+      "effectiveness": 0.38,
+      "test_frequency": "Annually",
+      "last_tested": "2026-05-28",
+      "model2_held_out_positive": false
+    },
+    {
+      "control_id": "CTL-GOV-008",
+      "name": "Security exceptions register",
+      "family": "Governance and awareness",
+      "control_type": "Directive",
+      "nist_csf_2": {
+        "category": "GV.RM",
+        "category_name": "Risk Management Strategy",
+        "function": "GV"
+      },
+      "mitigates_attack_techniques": [],
+      "applies_to": [
+        "all"
+      ],
+      "owner": "GRC office",
+      "implementation_status": "Implemented",
+      "effectiveness": 0.89,
+      "test_frequency": "Annually",
+      "last_tested": "2026-03-20",
+      "model2_held_out_positive": false
+    },
+    {
+      "control_id": "CTL-GOV-009",
+      "name": "Acceptable use policy",
+      "family": "Governance and awareness",
+      "control_type": "Directive",
+      "nist_csf_2": {
+        "category": "GV.PO",
+        "category_name": "Policy",
+        "function": "GV"
+      },
+      "mitigates_attack_techniques": [
+        "T1078"
+      ],
+      "applies_to": [
+        "endpoint"
+      ],
+      "owner": "GRC office",
+      "implementation_status": "Implemented",
+      "effectiveness": 0.71,
+      "test_frequency": "Annually",
+      "last_tested": "2026-08-10",
+      "model2_held_out_positive": false
+    },
+    {
+      "control_id": "CTL-GOV-010",
+      "name": "Supplier security clauses in contracts",
+      "family": "Governance and awareness",
+      "control_type": "Directive",
+      "nist_csf_2": {
+        "category": "GV.SC",
+        "category_name": "Cybersecurity Supply Chain Risk Management",
+        "function": "GV"
+      },
+      "mitigates_attack_techniques": [
+        "T1195",
+        "T1199"
+      ],
+      "applies_to": [
+        "all"
+      ],
+      "owner": "GRC office",
+      "implementation_status": "Planned",
+      "effectiveness": 0.0,
+      "test_frequency": "Annually",
+      "last_tested": null,
+      "model2_held_out_positive": false
+    },
+    {
+      "control_id": "CTL-GOV-011",
+      "name": "Security metrics reporting to management",
+      "family": "Governance and awareness",
+      "control_type": "Directive",
+      "nist_csf_2": {
+        "category": "GV.OV",
+        "category_name": "Oversight",
+        "function": "GV"
+      },
+      "mitigates_attack_techniques": [],
+      "applies_to": [
+        "all"
+      ],
+      "owner": "GRC office",
+      "implementation_status": "Implemented",
+      "effectiveness": 0.84,
+      "test_frequency": "Annually",
+      "last_tested": "2026-05-10",
+      "model2_held_out_positive": false
+    },
+    {
+      "control_id": "CTL-GOV-012",
+      "name": "Internal audit of security controls",
+      "family": "Governance and awareness",
+      "control_type": "Detective",
+      "nist_csf_2": {
+        "category": "GV.OV",
+        "category_name": "Oversight",
+        "function": "GV"
+      },
+      "mitigates_attack_techniques": [],
+      "applies_to": [
+        "all"
+      ],
+      "owner": "GRC office",
+      "implementation_status": "Implemented",
+      "effectiveness": 0.81,
+      "test_frequency": "Monthly",
+      "last_tested": "2026-08-29",
+      "model2_held_out_positive": false
+    },
+    {
+      "control_id": "CTL-IR-001",
+      "name": "Incident response plan",
+      "family": "Incident response and recovery",
+      "control_type": "Corrective",
+      "nist_csf_2": {
+        "category": "RS.MA",
+        "category_name": "Incident Management",
+        "function": "RS"
+      },
+      "mitigates_attack_techniques": [],
+      "applies_to": [
+        "all"
+      ],
+      "owner": "Security operations (SOC)",
+      "implementation_status": "Planned",
+      "effectiveness": 0.0,
+      "test_frequency": "Semi-annually",
+      "last_tested": null,
+      "model2_held_out_positive": false
+    },
+    {
+      "control_id": "CTL-IR-002",
+      "name": "Credential compromise playbook",
+      "family": "Incident response and recovery",
+      "control_type": "Corrective",
+      "nist_csf_2": {
+        "category": "RS.MI",
+        "category_name": "Incident Mitigation",
+        "function": "RS"
+      },
+      "mitigates_attack_techniques": [
+        "T1078",
+        "T1110"
+      ],
+      "applies_to": [
+        "all"
+      ],
+      "owner": "Security operations (SOC)",
+      "implementation_status": "Implemented",
+      "effectiveness": 0.87,
+      "test_frequency": "Semi-annually",
+      "last_tested": "2026-04-14",
+      "model2_held_out_positive": false
+    },
+    {
+      "control_id": "CTL-IR-003",
+      "name": "Reconnaissance triage playbook",
+      "family": "Incident response and recovery",
+      "control_type": "Corrective",
+      "nist_csf_2": {
+        "category": "RS.AN",
+        "category_name": "Incident Analysis",
+        "function": "RS"
+      },
+      "mitigates_attack_techniques": [
+        "T1046",
+        "T1595"
+      ],
+      "applies_to": [
+        "all"
+      ],
+      "owner": "Security operations (SOC)",
+      "implementation_status": "Implemented",
+      "effectiveness": 0.79,
+      "test_frequency": "Semi-annually",
+      "last_tested": "2026-09-11",
+      "model2_held_out_positive": false
+    },
+    {
+      "control_id": "CTL-IR-004",
+      "name": "Account disable on confirmed compromise (approval required)",
+      "family": "Incident response and recovery",
+      "control_type": "Corrective",
+      "nist_csf_2": {
+        "category": "RS.MI",
+        "category_name": "Incident Mitigation",
+        "function": "RS"
+      },
+      "mitigates_attack_techniques": [
+        "T1078"
+      ],
+      "applies_to": [
+        "identity"
+      ],
+      "owner": "Security operations (SOC)",
+      "implementation_status": "Partially implemented",
+      "effectiveness": 0.47,
+      "test_frequency": "Semi-annually",
+      "last_tested": "2026-05-18",
+      "model2_held_out_positive": false
+    },
+    {
+      "control_id": "CTL-IR-005",
+      "name": "Host isolation through EDR (approval required)",
+      "family": "Incident response and recovery",
+      "control_type": "Corrective",
+      "nist_csf_2": {
+        "category": "RS.MI",
+        "category_name": "Incident Mitigation",
+        "function": "RS"
+      },
+      "mitigates_attack_techniques": [
+        "T1021",
+        "T1486"
+      ],
+      "applies_to": [
+        "endpoint",
+        "server"
+      ],
+      "owner": "Security operations (SOC)",
+      "implementation_status": "Partially implemented",
+      "effectiveness": 0.54,
+      "test_frequency": "Semi-annually",
+      "last_tested": "2026-05-01",
+      "model2_held_out_positive": false
+    },
+    {
+      "control_id": "CTL-IR-006",
+      "name": "Block malicious source IP at the perimeter",
+      "family": "Incident response and recovery",
+      "control_type": "Corrective",
+      "nist_csf_2": {
+        "category": "RS.MI",
+        "category_name": "Incident Mitigation",
+        "function": "RS"
+      },
+      "mitigates_attack_techniques": [
+        "T1595",
+        "T1110"
+      ],
+      "applies_to": [
+        "network"
+      ],
+      "owner": "Security operations (SOC)",
+      "implementation_status": "Partially implemented",
+      "effectiveness": 0.6,
+      "test_frequency": "Semi-annually",
+      "last_tested": "2026-03-19",
+      "model2_held_out_positive": false
+    },
+    {
+      "control_id": "CTL-IR-007",
+      "name": "Forensic readiness and evidence handling",
+      "family": "Incident response and recovery",
+      "control_type": "Corrective",
+      "nist_csf_2": {
+        "category": "RS.AN",
+        "category_name": "Incident Analysis",
+        "function": "RS"
+      },
+      "mitigates_attack_techniques": [],
+      "applies_to": [
+        "server",
+        "endpoint"
+      ],
+      "owner": "Security operations (SOC)",
+      "implementation_status": "Implemented",
+      "effectiveness": 0.87,
+      "test_frequency": "Semi-annually",
+      "last_tested": "2026-07-13",
+      "model2_held_out_positive": false
+    },
+    {
+      "control_id": "CTL-IR-008",
+      "name": "Incident escalation matrix",
+      "family": "Incident response and recovery",
+      "control_type": "Directive",
+      "nist_csf_2": {
+        "category": "RS.CO",
+        "category_name": "Incident Response Reporting and Communication",
+        "function": "RS"
+      },
+      "mitigates_attack_techniques": [],
+      "applies_to": [
+        "all"
+      ],
+      "owner": "Security operations (SOC)",
+      "implementation_status": "Partially implemented",
+      "effectiveness": 0.44,
+      "test_frequency": "Annually",
+      "last_tested": "2026-06-25",
+      "model2_held_out_positive": false
+    },
+    {
+      "control_id": "CTL-IR-009",
+      "name": "Biannual tabletop exercises",
+      "family": "Incident response and recovery",
+      "control_type": "Directive",
+      "nist_csf_2": {
+        "category": "ID.IM",
+        "category_name": "Improvement",
+        "function": "ID"
+      },
+      "mitigates_attack_techniques": [],
+      "applies_to": [
+        "all"
+      ],
+      "owner": "Security operations (SOC)",
+      "implementation_status": "Implemented",
+      "effectiveness": 0.87,
+      "test_frequency": "Annually",
+      "last_tested": "2026-07-15",
+      "model2_held_out_positive": false
+    },
+    {
+      "control_id": "CTL-IR-010",
+      "name": "Post-incident lessons learned",
+      "family": "Incident response and recovery",
+      "control_type": "Corrective",
+      "nist_csf_2": {
+        "category": "ID.IM",
+        "category_name": "Improvement",
+        "function": "ID"
+      },
+      "mitigates_attack_techniques": [],
+      "applies_to": [
+        "all"
+      ],
+      "owner": "Security operations (SOC)",
+      "implementation_status": "Implemented",
+      "effectiveness": 0.74,
+      "test_frequency": "Semi-annually",
+      "last_tested": "2026-05-16",
+      "model2_held_out_positive": false
+    },
+    {
+      "control_id": "CTL-IR-011",
+      "name": "Ransomware recovery runbook",
+      "family": "Incident response and recovery",
+      "control_type": "Corrective",
+      "nist_csf_2": {
+        "category": "RC.RP",
+        "category_name": "Incident Recovery Plan Execution",
+        "function": "RC"
+      },
+      "mitigates_attack_techniques": [
+        "T1486"
+      ],
+      "applies_to": [
+        "server",
+        "db"
+      ],
+      "owner": "Security operations (SOC)",
+      "implementation_status": "Partially implemented",
+      "effectiveness": 0.38,
+      "test_frequency": "Semi-annually",
+      "last_tested": "2026-04-10",
+      "model2_held_out_positive": false
+    },
+    {
+      "control_id": "CTL-IR-012",
+      "name": "Business continuity and disaster recovery plan",
+      "family": "Incident response and recovery",
+      "control_type": "Corrective",
+      "nist_csf_2": {
+        "category": "RC.RP",
+        "category_name": "Incident Recovery Plan Execution",
+        "function": "RC"
+      },
+      "mitigates_attack_techniques": [
+        "T1485",
+        "T1486",
+        "T1498"
+      ],
+      "applies_to": [
+        "all"
+      ],
+      "owner": "Security operations (SOC)",
+      "implementation_status": "Not implemented",
+      "effectiveness": 0.0,
+      "test_frequency": "Semi-annually",
+      "last_tested": null,
+      "model2_held_out_positive": false
+    },
+    {
+      "control_id": "CTL-PHY-001",
+      "name": "IoT network isolation (dedicated VLAN)",
+      "family": "Physical, OT and IoT",
+      "control_type": "Preventive",
+      "nist_csf_2": {
+        "category": "PR.IR",
+        "category_name": "Technology Infrastructure Resilience",
+        "function": "PR"
+      },
+      "mitigates_attack_techniques": [
+        "T1046",
+        "T1021"
+      ],
+      "applies_to": [
+        "iot"
+      ],
+      "owner": "Facilities",
+      "implementation_status": "Partially implemented",
+      "effectiveness": 0.36,
+      "test_frequency": "Quarterly",
+      "last_tested": "2026-07-22",
+      "model2_held_out_positive": false
+    },
+    {
+      "control_id": "CTL-PHY-002",
+      "name": "Device certificate authentication",
+      "family": "Physical, OT and IoT",
+      "control_type": "Preventive",
+      "nist_csf_2": {
+        "category": "PR.AA",
+        "category_name": "Identity Management, Authentication, and Access Control",
+        "function": "PR"
+      },
+      "mitigates_attack_techniques": [
+        "T1200"
+      ],
+      "applies_to": [
+        "iot",
+        "network"
+      ],
+      "owner": "Facilities",
+      "implementation_status": "Partially implemented",
+      "effectiveness": 0.47,
+      "test_frequency": "Quarterly",
+      "last_tested": "2026-05-31",
+      "model2_held_out_positive": false
+    },
+    {
+      "control_id": "CTL-PHY-003",
+      "name": "Data center physical access control",
+      "family": "Physical, OT and IoT",
+      "control_type": "Preventive",
+      "nist_csf_2": {
+        "category": "PR.AA",
+        "category_name": "Identity Management, Authentication, and Access Control",
+        "function": "PR"
+      },
+      "mitigates_attack_techniques": [
+        "T1200"
+      ],
+      "applies_to": [
+        "server",
+        "network"
+      ],
+      "owner": "Facilities",
+      "implementation_status": "Implemented",
+      "effectiveness": 0.7,
+      "test_frequency": "Quarterly",
+      "last_tested": "2026-06-12",
+      "model2_held_out_positive": false
+    },
+    {
+      "control_id": "CTL-PHY-004",
+      "name": "CCTV recording retention (90 days)",
+      "family": "Physical, OT and IoT",
+      "control_type": "Detective",
+      "nist_csf_2": {
+        "category": "DE.CM",
+        "category_name": "Continuous Monitoring",
+        "function": "DE"
+      },
+      "mitigates_attack_techniques": [],
+      "applies_to": [
+        "iot"
+      ],
+      "owner": "Facilities",
+      "implementation_status": "Implemented",
+      "effectiveness": 0.77,
+      "test_frequency": "Monthly",
+      "last_tested": "2026-08-27",
+      "model2_held_out_positive": false
+    },
+    {
+      "control_id": "CTL-PHY-005",
+      "name": "Building management system access review",
+      "family": "Physical, OT and IoT",
+      "control_type": "Detective",
+      "nist_csf_2": {
+        "category": "PR.AA",
+        "category_name": "Identity Management, Authentication, and Access Control",
+        "function": "PR"
+      },
+      "mitigates_attack_techniques": [
+        "T1078"
+      ],
+      "applies_to": [
+        "iot"
+      ],
+      "owner": "Facilities",
+      "implementation_status": "Not implemented",
+      "effectiveness": 0.0,
+      "test_frequency": "Monthly",
+      "last_tested": null,
+      "model2_held_out_positive": false
+    },
+    {
+      "control_id": "CTL-PHY-006",
+      "name": "Printer secure configuration",
+      "family": "Physical, OT and IoT",
+      "control_type": "Preventive",
+      "nist_csf_2": {
+        "category": "PR.PS",
+        "category_name": "Platform Security",
+        "function": "PR"
+      },
+      "mitigates_attack_techniques": [
+        "T1046"
+      ],
+      "applies_to": [
+        "iot"
+      ],
+      "owner": "Facilities",
+      "implementation_status": "Not implemented",
+      "effectiveness": 0.0,
+      "test_frequency": "Quarterly",
+      "last_tested": null,
+      "model2_held_out_positive": false
+    },
+    {
+      "control_id": "CTL-PHY-007",
+      "name": "OT and IoT passive network monitoring",
+      "family": "Physical, OT and IoT",
+      "control_type": "Detective",
+      "nist_csf_2": {
+        "category": "DE.CM",
+        "category_name": "Continuous Monitoring",
+        "function": "DE"
+      },
+      "mitigates_attack_techniques": [
+        "T1046"
+      ],
+      "applies_to": [
+        "iot"
+      ],
+      "owner": "Facilities",
+      "implementation_status": "Implemented",
+      "effectiveness": 0.86,
+      "test_frequency": "Monthly",
+      "last_tested": "2026-06-01",
+      "model2_held_out_positive": false
+    },
+    {
+      "control_id": "CTL-PHY-008",
+      "name": "Server room environmental monitoring",
+      "family": "Physical, OT and IoT",
+      "control_type": "Detective",
+      "nist_csf_2": {
+        "category": "DE.CM",
+        "category_name": "Continuous Monitoring",
+        "function": "DE"
+      },
+      "mitigates_attack_techniques": [],
+      "applies_to": [
+        "server"
+      ],
+      "owner": "Facilities",
+      "implementation_status": "Implemented",
+      "effectiveness": 0.87,
+      "test_frequency": "Monthly",
+      "last_tested": "2026-06-08",
+      "model2_held_out_positive": false
+    },
+    {
+      "control_id": "CTL-PHY-009",
+      "name": "Redundant power (UPS and generator)",
+      "family": "Physical, OT and IoT",
+      "control_type": "Preventive",
+      "nist_csf_2": {
+        "category": "PR.IR",
+        "category_name": "Technology Infrastructure Resilience",
+        "function": "PR"
+      },
+      "mitigates_attack_techniques": [],
+      "applies_to": [
+        "server",
+        "network"
+      ],
+      "owner": "Facilities",
+      "implementation_status": "Implemented",
+      "effectiveness": 0.68,
+      "test_frequency": "Quarterly",
+      "last_tested": "2026-07-14",
+      "model2_held_out_positive": false
+    },
+    {
+      "control_id": "CTL-PHY-010",
+      "name": "Visitor management",
+      "family": "Physical, OT and IoT",
+      "control_type": "Preventive",
+      "nist_csf_2": {
+        "category": "PR.AA",
+        "category_name": "Identity Management, Authentication, and Access Control",
+        "function": "PR"
+      },
+      "mitigates_attack_techniques": [],
+      "applies_to": [
+        "all"
+      ],
+      "owner": "Facilities",
+      "implementation_status": "Partially implemented",
+      "effectiveness": 0.53,
+      "test_frequency": "Quarterly",
+      "last_tested": "2026-06-10",
+      "model2_held_out_positive": false
+    },
+    {
+      "control_id": "CTL-PHY-011",
+      "name": "Secure disposal of hardware",
+      "family": "Physical, OT and IoT",
+      "control_type": "Preventive",
+      "nist_csf_2": {
+        "category": "PR.DS",
+        "category_name": "Data Security",
+        "function": "PR"
+      },
+      "mitigates_attack_techniques": [
+        "T1005"
+      ],
+      "applies_to": [
+        "all"
+      ],
+      "owner": "Facilities",
+      "implementation_status": "Implemented",
+      "effectiveness": 0.83,
+      "test_frequency": "Quarterly",
+      "last_tested": "2026-09-10",
+      "model2_held_out_positive": false
+    },
+    {
+      "control_id": "CTL-PHY-012",
+      "name": "Network device configuration backup",
+      "family": "Physical, OT and IoT",
+      "control_type": "Corrective",
+      "nist_csf_2": {
+        "category": "PR.DS",
+        "category_name": "Data Security",
+        "function": "PR"
+      },
+      "mitigates_attack_techniques": [
+        "T1485"
+      ],
+      "applies_to": [
+        "network"
+      ],
+      "owner": "Facilities",
+      "implementation_status": "Not implemented",
+      "effectiveness": 0.0,
+      "test_frequency": "Semi-annually",
+      "last_tested": null,
+      "model2_held_out_positive": false
+    }
+  ]
+}

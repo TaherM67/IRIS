@@ -1,0 +1,9 @@
+{
+  "fit_fragments": 1867,
+  "ambiguous_identical_input_groups": 108,
+  "fit_fragments_in_ambiguous_groups": 336,
+  "original_unsupported_controls": 87,
+  "original_validation_suppressed_controls": 19,
+  "original_control_micro_recall": 0.1746031746031746,
+  "note": "Only fitting data used for the collision diagnostic. Predicted scenario cannot recover missing asset-specific control links."
+}

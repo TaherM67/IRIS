@@ -1,0 +1,52 @@
+{
+  "current_uploaded_files_verified": [
+    {
+      "source_file": "asset_inventory.json",
+      "uploaded_name": "asset_inventory(1).json",
+      "sha256": "2be35c1436186c2ee13bf8253b2241a1d6be9146ad285ba30afafe2592e6e8c2",
+      "matches_manifest": true
+    },
+    {
+      "source_file": "risk_register.json",
+      "uploaded_name": "risk_register(1).json",
+      "sha256": "32c8380262bbb47e3a1045561cc790d7f5888276daefa7002051ee90cb0b0561",
+      "matches_manifest": true
+    },
+    {
+      "source_file": "security_controls.json",
+      "uploaded_name": "security_controls(1).json",
+      "sha256": "2209cd0a164cf301243c7af9e916edacc1c4f616f408c34007b71b25bd220836",
+      "matches_manifest": true
+    },
+    {
+      "source_file": "siem_alerts.json",
+      "uploaded_name": "siem_alerts(1).json",
+      "sha256": "037eeee5d494996942a1bb41490d9b9d0d84e970708c5055f96821edefd10040",
+      "matches_manifest": true
+    },
+    {
+      "source_file": "training_labels.json",
+      "uploaded_name": "training_labels.json",
+      "sha256": "179006128be29be6d64584dfe9add92a71e5ebb1adbaa30ea3266db35bbab8fd",
+      "matches_manifest": true
+    },
+    {
+      "source_file": "siem_alerts.jsonl",
+      "uploaded_name": "siem_alerts.jsonl",
+      "sha256": "888053768275cc2f49c6fb97843eddb6c566c25cac6c192efd306eba22716a62",
+      "matches_manifest": true
+    }
+  ],
+  "training_archive_matches_current_uploads": true,
+  "synthetic": true,
+  "model2_target_source": "user-approved supplied synthetic control associations",
+  "independently_human_reviewed_control_targets": false,
+  "fresh_training_completed": true,
+  "model_sha256": "58bc7b80a56882de6f86e5688700c361170e32b20d261eda5920d7819abdad8c",
+  "model1_metrics_replayed": true,
+  "model2_metrics_replayed": true,
+  "demo_replaced": false,
+  "release_eligible": false,
+  "adapter_sha256": "50b333914fce30ee7b70f8f8154239732534a4442ed6653d62f7b511ef898198",
+  "training_module_sha256": "b3065deb78d338ff3684d9eea771e6a8a5705bdb84d6ff25c33ede3c3dc0a292"
+}
