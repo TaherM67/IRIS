@@ -56,6 +56,10 @@ def main():
     # IRIS EXPLAIN: Call parser.add_argument('--port', type=int, default=8010): declare the existing CLI option and its
     # IRIS EXPLAIN: type/default/validation.
     parser.add_argument('--port', type=int, default=8010)
+    parser.add_argument('--https', action='store_true', default=True, help='HTTPS is enabled by default for account sign-in')
+    parser.add_argument('--cert-file', type=Path, help='PEM certificate (default: .local/active_demo/tls/localhost-cert.pem)')
+    parser.add_argument('--key-file', type=Path, help='PEM private key (default: .local/active_demo/tls/localhost-key.pem)')
+    parser.add_argument('--lan', action='store_true', help='Also share HTTPS on the private network prepared by Prepare-LanAccess.ps1')
     # IRIS EXPLAIN: Store the result of parser.parse_args() (parse and validate the supplied CLI arguments) in args; later lines
     # IRIS EXPLAIN: use this named result.
     args = parser.parse_args()
@@ -73,6 +77,29 @@ def main():
             # IRIS EXPLAIN: caller's existing boundary determines rollback or the HTTP diagnostic.
             raise ValueError('Port must be 1..65535')
         # IRIS EXPLAIN: Store the result of settings() in config; later lines use this named result.
+        if (args.cert_file is None) != (args.key_file is None):
+            raise ValueError('--cert-file and --key-file must be supplied together')
+        if (args.cert_file or args.key_file) and not args.https:
+            raise ValueError('Use --https with --cert-file and --key-file')
+        tls_context = None
+        if args.https and args.command == 'serve':
+            from demo_app.tls import server_context
+            tls_context = server_context(args.cert_file or DEMO_HOME / 'tls/localhost-cert.pem',
+                                         args.key_file or DEMO_HOME / 'tls/localhost-key.pem')
+        accounts = None
+        if args.command == 'serve':
+            from demo_app.auth import AccountAuth
+            accounts = AccountAuth.load()
+        lan_settings = None
+        lan_tls = None
+        if args.lan:
+            if args.command != 'serve':
+                raise ValueError('--lan is only available when serving dashboards')
+            from demo_app.lan import LanSettings
+            lan_settings = LanSettings.load()
+            if args.port != lan_settings.port:
+                raise ValueError('LAN port differs from the prepared firewall/configuration. Run Prepare-LanAccess.ps1 with -Port')
+            lan_tls = server_context(lan_settings.certificate,lan_settings.private_key)
         config = settings()
         # IRIS EXPLAIN: Enter this branch only when args.command == 'keys'.
         if args.command == 'keys':
@@ -107,9 +134,11 @@ def main():
         # IRIS EXPLAIN: Import DemoServer from demo_app.server to reuse the shared project contract/implementation rather than
         # IRIS EXPLAIN: duplicate it.
         from demo_app.server import DemoServer
+        from demo_app.lan import lan_listener
         # IRIS EXPLAIN: Enter DemoServer(('127.0.0.1', args.port), engine) as server; its context manager supplies the existing
         # IRIS EXPLAIN: cleanup/transaction/expected-exception behavior.
-        with DemoServer(('127.0.0.1', args.port), engine) as server:
+        with DemoServer(('127.0.0.1', args.port), engine, tls_context=tls_context, auth=accounts) as server, \
+                lan_listener(lan_settings,engine,lan_tls,accounts):
             # IRIS EXPLAIN: Call print('IRIS ACTIVE DEMO — real local database changes, synthetic records only.', flush=True)
             # IRIS EXPLAIN: using the existing explicit arguments.
             print('IRIS ACTIVE DEMO — real local database changes, synthetic records only.', flush=True)
@@ -118,13 +147,17 @@ def main():
             for role in ('admin', 'soc', 'grc'):
                 # IRIS EXPLAIN: Call print(f'{role.upper()}: http://127.0.0.1:{args.port}/{role}', flush=True) using the
                 # IRIS EXPLAIN: existing explicit arguments.
-                print(f'{role.upper()}: http://127.0.0.1:{args.port}/{role}', flush=True)
+                print(f'{role.upper()}: {server.scheme}://127.0.0.1:{args.port}/{role}', flush=True)
+            if lan_settings is not None:
+                print('SAME-NETWORK ACCESS (existing usernames/passwords):',flush=True)
+                for role in ('admin','soc','grc'):
+                    print(f'{role.upper()}: https://{lan_settings.address}:{args.port}/{role}',flush=True)
             # IRIS EXPLAIN: Call print('In a SECOND private terminal run: python demo.py keys (use the same Python/venv
             # IRIS EXPLAIN: executable)', flush=True) using the existing explicit arguments.
-            print('In a SECOND private terminal run: python demo.py keys (use the same Python/venv executable)', flush=True)
+            print('Sign in with your username and password for the selected workspace.', flush=True)
             # IRIS EXPLAIN: Call print('Use the separate role key in each tab. Admin analyzes; SOC/GRC approve their own
             # IRIS EXPLAIN: changes.', flush=True) using the existing explicit arguments.
-            print('Use the separate role key in each tab. Admin analyzes; SOC/GRC approve their own changes.', flush=True)
+            print('Each account has its own role. Admin analyzes; SOC/GRC approve their own changes.', flush=True)
             # IRIS EXPLAIN: Call print('Keep this terminal open. Ctrl+C stops the server; approved changes remain saved.',
             # IRIS EXPLAIN: flush=True) using the existing explicit arguments.
             print('Keep this terminal open. Ctrl+C stops the server; approved changes remain saved.', flush=True)

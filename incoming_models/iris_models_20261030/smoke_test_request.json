@@ -1,0 +1,436 @@
+{
+  "session": {
+    "session_id": "SES-b9b563181f686490b2c1",
+    "run_id": "SES-00128",
+    "campaign_id": "CMP-007",
+    "asset_id": "AST-00159",
+    "start_utc": "2026-09-28T13:44:15+00:00",
+    "end_utc": "2026-09-28T13:44:15+00:00",
+    "context_as_of_utc": "2026-09-28T13:44:15+00:00",
+    "data_provenance": "synthetic",
+    "aggregation_schema": "iris-three-source-session-v1-window60",
+    "sensor_healthy": true,
+    "features": {
+      "event_family": "authentication",
+      "primary_protocol": "TCP",
+      "event_count": 1.0,
+      "duration_seconds": 0.0,
+      "max_rule_level": 5.0,
+      "mean_rule_level": 5.0,
+      "distinct_rules": 1.0,
+      "distinct_sources": 1.0,
+      "distinct_accounts": 1.0,
+      "failed_count": 1.0,
+      "success_count": 0.0,
+      "failure_ratio": 1.0,
+      "success_after_failures": 0.0,
+      "max_events_in_10s": 1.0,
+      "external_source_fraction": 0.0,
+      "event_rate_per_minute": 60.0
+    },
+    "context": {
+      "asset_type": "vpn_gateway",
+      "asset_criticality": 5,
+      "current_likelihood": 4,
+      "impact": 5,
+      "previous_similar_24h": 0,
+      "controls": {},
+      "active_exception_control_ids": [],
+      "context_risk_id": "RSK-00761",
+      "context_risk_version_id": "RSK-00761-V2",
+      "risk_selection_policy": "highest_preexisting_likelihood_times_impact_then_risk_id"
+    },
+    "asset_snapshot": {
+      "asset_id": "AST-00159",
+      "asset_version_id": "AST-00159-V1",
+      "hostname": "vpn-02",
+      "ip_addresses": [
+        "172.16.1.56"
+      ],
+      "asset_type": "vpn_gateway",
+      "criticality": 5,
+      "zone": "DMZ",
+      "owner": "Head of IT Operations",
+      "valid_from": "2024-04-15T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2024-04-15T00:00:00+00:00"
+    },
+    "risk_snapshots": [
+      {
+        "risk_id": "RSK-00760",
+        "risk_version_id": "RSK-00760-V2",
+        "asset_id": "AST-00159",
+        "risk_category": "Access control",
+        "likelihood": 3,
+        "impact": 5,
+        "control_states": {},
+        "active_exception_control_ids": [],
+        "valid_from": "2025-08-02T00:00:00+00:00",
+        "valid_to": null,
+        "recorded_at": "2025-08-02T00:00:00+00:00"
+      },
+      {
+        "risk_id": "RSK-00761",
+        "risk_version_id": "RSK-00761-V2",
+        "asset_id": "AST-00159",
+        "risk_category": "Network security",
+        "likelihood": 4,
+        "impact": 5,
+        "control_states": {},
+        "active_exception_control_ids": [],
+        "valid_from": "2025-11-17T00:00:00+00:00",
+        "valid_to": null,
+        "recorded_at": "2025-11-17T00:00:00+00:00"
+      },
+      {
+        "risk_id": "RSK-00762",
+        "risk_version_id": "RSK-00762-V2",
+        "asset_id": "AST-00159",
+        "risk_category": "Availability",
+        "likelihood": 3,
+        "impact": 5,
+        "control_states": {},
+        "active_exception_control_ids": [],
+        "valid_from": "2025-06-08T00:00:00+00:00",
+        "valid_to": "2026-10-03T13:00:00+00:00",
+        "recorded_at": "2025-06-08T00:00:00+00:00"
+      },
+      {
+        "risk_id": "RSK-00763",
+        "risk_version_id": "RSK-00763-V2",
+        "asset_id": "AST-00159",
+        "risk_category": "Vulnerability management",
+        "likelihood": 3,
+        "impact": 4,
+        "control_states": {},
+        "active_exception_control_ids": [],
+        "valid_from": "2025-12-30T00:00:00+00:00",
+        "valid_to": null,
+        "recorded_at": "2025-12-30T00:00:00+00:00"
+      },
+      {
+        "risk_id": "RSK-00764",
+        "risk_version_id": "RSK-00764-V2",
+        "asset_id": "AST-00159",
+        "risk_category": "Monitoring",
+        "likelihood": 4,
+        "impact": 4,
+        "control_states": {},
+        "active_exception_control_ids": [],
+        "valid_from": "2026-06-01T00:00:00+00:00",
+        "valid_to": null,
+        "recorded_at": "2026-06-01T00:00:00+00:00"
+      }
+    ],
+    "context_status": "MATCHED",
+    "source_event_ids": [
+      "ALR-000099"
+    ],
+    "evidence_refs": [
+      "siem_alerts.jsonl#L98"
+    ],
+    "source_session_id": "SES-00128",
+    "annotation_primary_asset_id": "AST-00159"
+  },
+  "alerts": [
+    {
+      "alert_id": "ALR-000099",
+      "timestamp": "2026-09-28T13:44:15Z",
+      "mitre_technique": "T1110"
+    }
+  ],
+  "asset": {
+    "asset_id": "AST-00159",
+    "hostname": "VPN-02",
+    "fqdn": "vpn-02.corp.example",
+    "ip_address": "172.16.1.56",
+    "public_ip": "203.0.113.42",
+    "asset_type": "vpn_gateway",
+    "asset_type_label": "VPN gateway",
+    "operating_system": "FortiOS 7.4",
+    "business_unit": "IT Operations",
+    "owner": "Head of IT Operations",
+    "custodian": "IT Operations",
+    "criticality": "Critical",
+    "data_classification": "Confidential",
+    "environment": "Production",
+    "network_zone": "DMZ",
+    "location": "Al Ain main data center",
+    "internet_facing": true,
+    "control_groups": [
+      "network",
+      "identity"
+    ],
+    "status": "active",
+    "valid_from": "2024-04-15T00:00:00Z",
+    "valid_to": null,
+    "last_seen": "2026-10-23T19:23:07Z"
+  },
+  "registered_risks": [
+    {
+      "risk_id": "RSK-00760",
+      "title": "Password spraying through VPN-02",
+      "description": "An attacker trying common passwords across many accounts could exploit single-factor sign-in for standard users on VPN-02 (vpn gateway), affecting IT Operations services.",
+      "category": "Access control",
+      "scenario_tag": "credential_access",
+      "asset_id": "AST-00159",
+      "business_unit": "IT Operations",
+      "risk_owner": "Head of IT Operations",
+      "threat": "An attacker trying common passwords across many accounts",
+      "vulnerability": "Single-factor sign-in for standard users",
+      "mitre_attack_techniques": [
+        "T1110.003"
+      ],
+      "inherent": {
+        "likelihood": 3,
+        "impact": 5,
+        "score": 15,
+        "rating": "High"
+      },
+      "existing_control_ids": [
+        "CTL-IAM-002"
+      ],
+      "planned_control_ids": [
+        "CTL-MON-004"
+      ],
+      "residual": {
+        "likelihood": 2,
+        "impact": 5,
+        "score": 10,
+        "rating": "Medium"
+      },
+      "treatment": "Mitigate",
+      "status": "Monitoring",
+      "date_identified": "2025-03-30",
+      "last_reviewed": "2025-08-02T00:00:00Z",
+      "next_review": "2025-10-31",
+      "history": [
+        {
+          "valid_from": "2025-03-30T00:00:00Z",
+          "likelihood": 3,
+          "impact": 5,
+          "status": "Open"
+        },
+        {
+          "valid_from": "2025-08-02T00:00:00Z",
+          "likelihood": 3,
+          "impact": 5,
+          "status": "Monitoring"
+        }
+      ]
+    },
+    {
+      "risk_id": "RSK-00761",
+      "title": "Unauthorized network scanning of VPN-02",
+      "description": "An attacker mapping open services could exploit unfiltered internal network paths on VPN-02 (vpn gateway), affecting IT Operations services.",
+      "category": "Network security",
+      "scenario_tag": "reconnaissance",
+      "asset_id": "AST-00159",
+      "business_unit": "IT Operations",
+      "risk_owner": "Head of IT Operations",
+      "threat": "An attacker mapping open services",
+      "vulnerability": "Unfiltered internal network paths",
+      "mitre_attack_techniques": [
+        "T1046"
+      ],
+      "inherent": {
+        "likelihood": 4,
+        "impact": 5,
+        "score": 20,
+        "rating": "Critical"
+      },
+      "existing_control_ids": [
+        "CTL-NET-003"
+      ],
+      "planned_control_ids": [],
+      "residual": {
+        "likelihood": 3,
+        "impact": 5,
+        "score": 15,
+        "rating": "High"
+      },
+      "treatment": "Mitigate",
+      "status": "In treatment",
+      "date_identified": "2025-01-29",
+      "last_reviewed": "2025-11-17T00:00:00Z",
+      "next_review": "2026-02-15",
+      "history": [
+        {
+          "valid_from": "2025-01-29T00:00:00Z",
+          "likelihood": 4,
+          "impact": 5,
+          "status": "Open"
+        },
+        {
+          "valid_from": "2025-11-17T00:00:00Z",
+          "likelihood": 4,
+          "impact": 5,
+          "status": "In treatment"
+        }
+      ]
+    },
+    {
+      "risk_id": "RSK-00762",
+      "title": "Denial of service against VPN-02",
+      "description": "A volumetric or application-layer flood could exploit limited upstream filtering on VPN-02 (vpn gateway), affecting IT Operations services.",
+      "category": "Availability",
+      "scenario_tag": "other",
+      "asset_id": "AST-00159",
+      "business_unit": "IT Operations",
+      "risk_owner": "Head of IT Operations",
+      "threat": "A volumetric or application-layer flood",
+      "vulnerability": "Limited upstream filtering",
+      "mitre_attack_techniques": [
+        "T1498"
+      ],
+      "inherent": {
+        "likelihood": 2,
+        "impact": 5,
+        "score": 10,
+        "rating": "Medium"
+      },
+      "existing_control_ids": [
+        "CTL-NET-011",
+        "CTL-NET-012"
+      ],
+      "planned_control_ids": [
+        "CTL-IR-012"
+      ],
+      "residual": {
+        "likelihood": 1,
+        "impact": 5,
+        "score": 5,
+        "rating": "Low"
+      },
+      "treatment": "Transfer",
+      "status": "In treatment",
+      "date_identified": "2025-01-21",
+      "last_reviewed": "2026-10-03T13:00:00Z",
+      "next_review": "2027-04-01",
+      "history": [
+        {
+          "valid_from": "2025-01-21T00:00:00Z",
+          "likelihood": 3,
+          "impact": 5,
+          "status": "Open"
+        },
+        {
+          "valid_from": "2025-06-08T00:00:00Z",
+          "likelihood": 3,
+          "impact": 5,
+          "status": "In treatment"
+        },
+        {
+          "valid_from": "2026-10-03T13:00:00Z",
+          "likelihood": 2,
+          "impact": 5,
+          "status": "In treatment"
+        }
+      ]
+    },
+    {
+      "risk_id": "RSK-00763",
+      "title": "Unpatched critical vulnerabilities on VPN-02",
+      "description": "An attacker exploiting a known vulnerability could exploit missing security patches on VPN-02 (vpn gateway), affecting IT Operations services.",
+      "category": "Vulnerability management",
+      "scenario_tag": "other",
+      "asset_id": "AST-00159",
+      "business_unit": "IT Operations",
+      "risk_owner": "Head of IT Operations",
+      "threat": "An attacker exploiting a known vulnerability",
+      "vulnerability": "Missing security patches",
+      "mitre_attack_techniques": [
+        "T1190",
+        "T1068"
+      ],
+      "inherent": {
+        "likelihood": 3,
+        "impact": 4,
+        "score": 12,
+        "rating": "High"
+      },
+      "existing_control_ids": [
+        "CTL-VUL-001",
+        "CTL-VUL-002",
+        "CTL-VUL-003"
+      ],
+      "planned_control_ids": [],
+      "residual": {
+        "likelihood": 1,
+        "impact": 4,
+        "score": 4,
+        "rating": "Low"
+      },
+      "treatment": "Mitigate",
+      "status": "Open",
+      "date_identified": "2025-07-23",
+      "last_reviewed": "2025-12-30T00:00:00Z",
+      "next_review": "2026-03-30",
+      "history": [
+        {
+          "valid_from": "2025-07-23T00:00:00Z",
+          "likelihood": 3,
+          "impact": 4,
+          "status": "Open"
+        },
+        {
+          "valid_from": "2025-12-30T00:00:00Z",
+          "likelihood": 3,
+          "impact": 4,
+          "status": "Open"
+        }
+      ]
+    },
+    {
+      "risk_id": "RSK-00764",
+      "title": "Insufficient security logging on VPN-02",
+      "description": "An intrusion going unnoticed could exploit incomplete log forwarding on VPN-02 (vpn gateway), affecting IT Operations services.",
+      "category": "Monitoring",
+      "scenario_tag": "other",
+      "asset_id": "AST-00159",
+      "business_unit": "IT Operations",
+      "risk_owner": "Head of IT Operations",
+      "threat": "An intrusion going unnoticed",
+      "vulnerability": "Incomplete log forwarding",
+      "mitre_attack_techniques": [],
+      "inherent": {
+        "likelihood": 4,
+        "impact": 4,
+        "score": 16,
+        "rating": "High"
+      },
+      "existing_control_ids": [
+        "CTL-MON-001",
+        "CTL-MON-011"
+      ],
+      "planned_control_ids": [
+        "CTL-MON-010"
+      ],
+      "residual": {
+        "likelihood": 2,
+        "impact": 4,
+        "score": 8,
+        "rating": "Medium"
+      },
+      "treatment": "Mitigate",
+      "status": "Monitoring",
+      "date_identified": "2025-07-06",
+      "last_reviewed": "2026-06-01T00:00:00Z",
+      "next_review": "2026-08-30",
+      "history": [
+        {
+          "valid_from": "2025-07-06T00:00:00Z",
+          "likelihood": 4,
+          "impact": 4,
+          "status": "Open"
+        },
+        {
+          "valid_from": "2026-06-01T00:00:00Z",
+          "likelihood": 4,
+          "impact": 4,
+          "status": "Monitoring"
+        }
+      ]
+    }
+  ]
+}

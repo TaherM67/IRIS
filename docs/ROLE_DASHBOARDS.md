@@ -1,26 +1,47 @@
-# Original dashboard, team-related content only
+# Dashboard workspaces
 
-The original working dark dashboard is restored from the pre-separation version. Its colours, top navigation, forms, proposal summaries, evidence sections, register, queue and before/after history remain in the original style. Both later redesigns have been removed.
+The dashboards use a navy/lavender dark workspace with chat as the first panel, sidebar
+navigation, compact counters and a scrollable approval inbox. All existing
+analysis, approvals, evidence, exports, live records, history and role permissions
+remain available. Long explanations and diagnostics expand on demand.
 
-Only the content scope differs:
+Each workspace shows the data and controls appropriate to its role:
 
 | Page | Content |
 | --- | --- |
-| Admin | Original five counters, engine controls, team proposals, full evidence/model/audit/history, plus both original working tables |
+| Admin | Five counters, engine controls, team approval inbox with SOC/GRC filters, full evidence/model/audit/history, both working tables, read-only chat and backend monitor |
 | SOC | Alert count, reprioritized count, SOC pending count, priority proposals and technical evidence, alert queue and SOC changes |
 | GRC | Risk count, changed-risk count, GRC pending count, risk proposals and control context, risk register and GRC changes |
 
-SOC receives no risk-register values, GRC control recommendations, cross-team counters or Admin commands. GRC receives no alert queue, raw telemetry, model confidence or Admin commands. Model reports are Admin-only. Each team sees only its own dashboard navigation link.
+SOC receives no risk-register values, GRC control recommendations, cross-team counters or Admin commands. GRC receives no alert queue, raw telemetry, model confidence or Admin commands. Model reports are Admin-only. Team sidebars show workspace sections; only Admin has links to the separate dashboards.
 
-The backend omits unrelated blocks from the **original HTML**, and the existing key-derived API allowlists enforce the same separation. This is not an extra set of redesigned pages. Admin can see both teams but still cannot approve on their behalf.
+The backend omits unrelated blocks from the shared HTML, and the key-derived API allowlists enforce the same separation. Admin can see both teams but cannot approve on their behalf. SOC and GRC can use the shared chat; Admin monitors it read-only.
 
-The browser independently selects API reads from its server-confirmed role, not from the presence of panels. If an older server returns the complete original HTML, the controller hides unrelated sections/counters and still never requests another team's table. This fixes valid SOC sign-in failing with an ADMIN OR GRC permission error while loading records.
+The browser independently selects API reads from its server-confirmed role, not from the presence of panels. It also hides unrelated sections/counters if a full template is returned. It never requests another team's table.
 
-## Sign-in is the original flow
+## Approval inbox and chat
 
-Run `python demo.py`, then run `python demo.py keys` in a second private terminal **from the same project folder**. Paste only the matching role token into the original **Connect this dashboard** form.
+Select an approval card instead of using a dropdown. The bounded inbox scrolls
+independently and supports asset, risk-ID and case-ID search. Admin can filter
+the list by SOC or GRC. Filtering does not silently switch your selected decision.
+Live refresh preserves the selection, inbox position and decision note; a proposal
+that is no longer pending clears the selection rather than choosing another one.
 
-The browser authenticates directly with `/api/demo/state`, as in the working version. The redesign's build/profile/session gates, new access module, `doctor` command and `keys --role` option have been removed. No key or database reset is needed. See [the access guide](ACCESS_HELP.md).
+The chat at the top can be collapsed while messages keep updating. An unread badge
+counts new messages from other teams while collapsed. At narrow widths the
+layout stacks; the Team chat navigation link jumps to the conversation. Chat
+history persists across restarts, and Disconnect clears messages from the tab.
+
+## Sign-in uses the existing flow
+
+Run `python demo.py`, then run `python demo.py keys` in a second private terminal **from the same project folder**. On the **Sign in** screen choose Administrator, SOC analyst or GRC officer, then paste the matching role token. Clicking a different role updates the card, key hint and sign-in button in place, without navigation or a page reload. It clears the key field. After the matching key is validated, the role-filtered workspace loads in the same document and the URL updates without reloading. The key stays in memory and still determines the authenticated role.
+
+The entry screen has an IRIS introduction, three actual bundled-input totals and
+large role cards. It hides the working sidebar until sign-in succeeds. Model
+predictions are described as comparisons; only an authorized approval changes
+the demo records. The connected workspace retains every existing function.
+
+The browser authenticates directly with `/api/demo/state`. The new layout adds no build/profile/session gates or new key commands. No key or database reset is needed. See [the access guide](ACCESS_HELP.md).
 
 ## Update your existing working project
 
@@ -44,14 +65,18 @@ The browser authenticates directly with `/api/demo/state`, as in the working ver
    - SOC: <http://127.0.0.1:8010/soc>
    - GRC: <http://127.0.0.1:8010/grc>
 
-No retraining, Colab session, dependency installation or migration is needed for this restoration. A completely new extracted folder has a different `.local` unless you deliberately preserve your prior state.
+No retraining, Colab session or new dependency installation is needed for this layout. A completely new extracted folder has a different `.local` unless you deliberately preserve your prior state.
 
 ## The engine still makes real demo changes
 
 The same models, datasets, explicit risk policy, approval transactions and database schema are used. GRC approval can change the demonstration risk score **0.60 → 0.80**; SOC approval can move **19 alerts to Critical**. The source JSON inputs are not overwritten. Control advice is not executed.
 
-The rejected redesign files remain recoverable in Git history. No user credentials or saved working records are deleted by this update.
+Existing credentials, chat history and saved working records are preserved.
 
 ## Verification boundary
 
-Core/model/real loopback HTTP regressions and controller unit checks cover the restored workflow and role separation. The original stylesheet rules are byte-identical, followed only by a team-only three-counter layout rule. Controller tests are not a real-browser visual check; rehearse locally before presenting.
+All 75 Python demo/chat/activity regressions pass, including real loopback HTTP,
+approval writes, authentication and role separation. Frontend controller tests
+also cover inbox selection, search, team filters, draft/scroll preservation,
+chat collapsing and unread counts. Browser previews use a separate temporary
+database and synthetic test keys so they do not change the user's records.

@@ -1,0 +1,10 @@
+{
+  "profile": "iris_models_20261030",
+  "directory": "artifacts/model_versions/iris_models_20261030",
+  "package_manifest_sha256": "4c446379a3cf7333624ce87e973a870f56d84231c6a83c84ebbb745d008c36a5",
+  "aggregation_schema": "iris-three-source-session-v1-window60",
+  "adapter_schema": "iris-grounded-backend-v1",
+  "mode": "shadow_only",
+  "production_validated": false,
+  "rollback_environment": "IRIS_MODEL_PROFILE=legacy"
+}

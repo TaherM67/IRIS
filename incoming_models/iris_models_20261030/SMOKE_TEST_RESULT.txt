@@ -1,0 +1,5 @@
+Model 1 loaded. Example scenario: credential_access
+CTL-MON-004: Impossible-travel sign-in detection | review only
+CTL-IAM-002: Enforce MFA for remote access (VPN) | review only
+Both components loaded. No website, keys, database or GitHub files changed.
+Model 2 remains synthetic association matching, not proven control efficacy.

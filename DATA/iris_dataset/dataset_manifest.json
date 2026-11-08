@@ -1,0 +1,71 @@
+{
+ "dataset": "IRIS synthetic dataset",
+ "version": "2.0",
+ "generated_at": "2026-10-28T05:00:00Z",
+ "seed": 481,
+ "synthetic": true,
+ "organization": "Synthetic organization (corp.example)",
+ "counts": {
+  "assets": 535,
+  "assets_active": 527,
+  "assets_retired": 8,
+  "risks": 2372,
+  "controls": 120,
+  "alerts": 6764,
+  "alerts_duplicates": 99,
+  "alerts_unknown_asset": 135,
+  "alerts_linked_to_risks": 4990,
+  "sessions": 1340,
+  "sessions_by_scenario": {
+   "benign": 520,
+   "reconnaissance": 380,
+   "credential_access": 380,
+   "unknown_asset": 60
+  },
+  "campaigns": 70
+ },
+ "time_window": {
+  "start": "2026-09-28T00:00:00Z",
+  "end": "2026-10-28T00:00:00Z"
+ },
+ "files": [
+  {
+   "file": "asset_inventory.json",
+   "bytes": 393447,
+   "sha256": "2be35c1436186c2ee13bf8253b2241a1d6be9146ad285ba30afafe2592e6e8c2"
+  },
+  {
+   "file": "risk_register.json",
+   "bytes": 3160291,
+   "sha256": "32c8380262bbb47e3a1045561cc790d7f5888276daefa7002051ee90cb0b0561"
+  },
+  {
+   "file": "security_controls.json",
+   "bytes": 71244,
+   "sha256": "2209cd0a164cf301243c7af9e916edacc1c4f616f408c34007b71b25bd220836"
+  },
+  {
+   "file": "siem_alerts.json",
+   "bytes": 5273569,
+   "sha256": "037eeee5d494996942a1bb41490d9b9d0d84e970708c5055f96821edefd10040"
+  },
+  {
+   "file": "training_labels.json",
+   "bytes": 176233,
+   "sha256": "179006128be29be6d64584dfe9add92a71e5ebb1adbaa30ea3266db35bbab8fd"
+  },
+  {
+   "file": "siem_alerts.jsonl",
+   "bytes": 4526498,
+   "sha256": "888053768275cc2f49c6fb97843eddb6c566c25cac6c192efd306eba22716a62"
+  }
+ ],
+ "notes": [
+  "All records are synthetic and use reserved ranges: 10/8, 172.16/12, RFC 5737 documentation addresses and corp.example.",
+  "siem_alerts.jsonl holds the same alerts as siem_alerts.json, one per line, for the three-input pipeline.",
+  "About 1.5% of alerts are exact duplicate deliveries with new alert IDs, to exercise deduplication.",
+  "Alerts with associations.asset_id = null target IP addresses missing from the inventory, to exercise quarantine.",
+  "Authorized vulnerability scans and single mistyped passwords are labelled benign on purpose (hard negatives).",
+  "training_labels.json is an offline sidecar, not a fourth runtime input."
+ ]
+}

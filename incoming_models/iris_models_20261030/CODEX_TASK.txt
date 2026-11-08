@@ -1,0 +1,31 @@
+Integrate this model-only package into the CURRENT local IRIS project.
+
+Preserve all my local website changes. Do not git pull, git reset, checkout an
+older version, replace website files, regenerate keys, delete .local, overwrite
+the database, retrain models or push to GitHub.
+
+Read READ_ME_FIRST.txt and the model metadata first. Inspect the CURRENT backend
+and its input/response contracts. Run the packaged smoke_test.py with the current
+virtual environment; check compatibility before changing dependency versions.
+
+Keep the old model configuration as a rollback option. Add a versioned model
+directory and minimal backend adapters; do not redesign or replace the frontend.
+Use model1_scenario.joblib for the existing 16-feature scenario input. For
+grounded_model2.joblib, use the reference candidate builder or an equivalent
+tested adapter with the exact schema and control catalogue. Do not feed the
+old Model 2 feature vector into the new candidate model. Do not copy offline
+training labels or associations.control_ids into predictor features.
+
+Connect the new review recommendations to the CURRENT Admin and GRC response
+contracts. Show name, ID, reason, source and unknown/known implementation state.
+Preserve role separation. If a small frontend rendering change is necessary,
+make only that local change and preserve the rest of my website.
+
+Keep policy and human approval in control of risk/priority writes. Never
+auto-execute controls or bypass release/provenance checks. If required runtime
+fields are absent, report them instead of inventing data or marking real input
+synthetic. Model 2 is experimental synthetic association matching, not proven
+100% real-world recommendation accuracy.
+
+Test the adapters, API and existing workflow. Report every file changed, the
+exact Windows startup commands, what passed and any remaining integration gaps.

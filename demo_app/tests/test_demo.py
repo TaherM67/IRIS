@@ -144,7 +144,7 @@ class ActiveCoreTests(Fixture):
         # IRIS EXPLAIN: Call self.assertEqual(state['model']['model_sha256'],
         # IRIS EXPLAIN: '12e76f280bcaa4854e9f08df9ea05839ea43cbb7691a7d44bfbd9d473eb39950'): assert that the actual and expected
         # IRIS EXPLAIN: values are equal.
-        self.assertEqual(state['model']['model_sha256'], '12e76f280bcaa4854e9f08df9ea05839ea43cbb7691a7d44bfbd9d473eb39950')
+        self.assertEqual(state['model']['model1_sha256'], 'ae8ca09ded11a3d7e10be68fbc29999028cf6c456874e4376697a1e7c8fb7bb1')
         # IRIS EXPLAIN: Call self.assertFalse(state['model']['model1_released']): assert that the stated condition is false.
         self.assertFalse(state['model']['model1_released'])
         # IRIS EXPLAIN: Call self.assertFalse(state['model']['model2_released']): assert that the stated condition is false.
@@ -663,7 +663,9 @@ class ActiveCoreTests(Fixture):
         self.assertIn('priority_reason', evidence)
         self.assertNotIn('policy', evidence)
         self.assertNotIn('primary_controls', evidence)
-        self.assertNotIn('controls', evidence['ml_shadow'])
+        if evidence['ml_shadow'] is not None:
+            self.assertNotIn('controls', evidence['ml_shadow'])
+        self.assertNotIn('model2_review', evidence)
         self.assertNotIn('risk_reason', evidence)
 
     def test_grc_proposals_exclude_raw_telemetry_and_model_confidence(self):
@@ -1003,6 +1005,8 @@ class ActiveHTTPTests(Fixture):
         self.assertFalse({'risk-panel', 'export-risks', 'admin-actions', 'model-status', 'audit', 'admin-evidence'} & set(page.ids))
         self.assertEqual(page.counts, {'alerts', 'pending_soc', 'reprioritized_alerts'})
         self.assertFalse({'/admin', '/grc'} & page.links)
+        self.assertNotIn('dashboard-switcher', page.ids)
+        self.assertNotIn('aria-label="Dashboards"', body.decode())
 
     def test_grc_html_has_only_grc_records_and_controls(self):
         status, body, _ = self.request('/grc', None)
@@ -1012,6 +1016,8 @@ class ActiveHTTPTests(Fixture):
         self.assertFalse({'alert-panel', 'export-alerts', 'admin-actions', 'model-status', 'audit', 'admin-evidence'} & set(page.ids))
         self.assertEqual(page.counts, {'risks', 'pending_grc', 'changed_risks'})
         self.assertFalse({'/admin', '/soc'} & page.links)
+        self.assertNotIn('dashboard-switcher', page.ids)
+        self.assertNotIn('aria-label="Dashboards"', body.decode())
 
     def test_admin_html_contains_both_working_systems_and_all_diagnostics(self):
         status, body, _ = self.request('/admin', None)
@@ -1023,6 +1029,7 @@ class ActiveHTTPTests(Fixture):
         # card sums the two pending-team counts only for Admin.
         self.assertEqual(page.counts, {'risks', 'alerts', 'changed_risks', 'reprioritized_alerts', 'pending_total'})
         self.assertTrue({'/soc', '/grc'} <= page.links)
+        self.assertIn('dashboard-switcher', page.ids)
 
     def test_rendered_pages_have_unique_ids_and_resolved_template_slots(self):
         for role in ('admin', 'soc', 'grc'):
@@ -1042,8 +1049,8 @@ class ActiveHTTPTests(Fixture):
         self.assertNotIn('{{', source)
         self.assertIn('Approvals actively update the demo database.', source)
         self.assertIn('Inspect technical evidence, ML shadow and policy rationale', source)
-        for role, title in [('admin', 'Admin · engine control'), ('soc', 'SOC · live alert queue'),
-                            ('grc', 'GRC · live risk register')]:
+        for role, title in [('admin', 'Operations overview'), ('soc', 'Security operations'),
+                            ('grc', 'Risk & compliance')]:
             _, body, _ = self.request('/' + role, None)
             markup = body.decode()
             self.assertIn(f'<title>IRIS · {title}</title>', markup)
@@ -1078,31 +1085,45 @@ class ActiveHTTPTests(Fixture):
         for name in ('admin', 'soc', 'grc', 'reviews', 'index'):
             self.assertEqual(self.request('/demo-static/' + name + '.html', None)[0], 404)
 
-    def test_original_dashboard_structure_is_restored_without_redesign_panels(self):
-        """Keep the original dark layout and original review/table controls."""
+    def test_workspace_redesign_keeps_controls_with_scroll_inbox_and_first_chat(self):
+        """The new layout preserves the review, evidence and team controls."""
         for role in ('admin', 'soc', 'grc'):
             _, body, _ = self.request('/' + role, None)
             markup = body.decode()
             page = PageStructure(markup)
             self.assertTrue({'title', 'subtitle', 'login-hint', 'proposal-title',
                              'proposal-summary', 'proposal-evidence', 'evidence-panel'} <= set(page.ids))
-            self.assertFalse({'before-value', 'after-value', 'access-profile', 'toggle-key',
-                              'login-error', 'proposal-status'} & set(page.ids))
+            self.assertTrue({'proposal-search', 'proposal-list', 'chat-toggle', 'chat-body',
+                             'chat-unread', 'changes-panel', 'nav-pending'} <= set(page.ids))
+            self.assertNotIn('proposal-select', page.ids)
             self.assertIn('class="hero"', markup)
             self.assertIn('Connect this dashboard', markup)
-            self.assertNotIn('class="sidebar"', markup)
-        # All original annotated theme rules remain byte-identical; only the
-        # team-only three-counter rule is appended after this original prefix.
+            self.assertIn('Integrated Risk<br>Intelligence System', markup)
+            self.assertIn(f'id="workspace-role-{role}" type="radio" name="workspace-role" value="{role}" checked', markup)
+            self.assertTrue({'login-title', 'login-submit', 'workspace-role-admin',
+                             'workspace-role-soc', 'workspace-role-grc'} <= set(page.ids))
+            self.assertIn('class="sidebar"', markup)
+            self.assertIn('class="side-rail"', markup)
+            self.assertLess(markup.index('id="team-chat"'), markup.index('<section class="stats"'))
+            self.assertIn('class="card chat-card chat-priority"', markup)
+            self.assertEqual('proposal-filters' in page.ids, role == 'admin')
         _, stylesheet, _ = self.request('/demo-static/style.css', None)
-        original = stylesheet.partition(b'\n/* Content-only scoping:')[0]
-        self.assertEqual(hashlib.sha256(original).hexdigest(),
-                         '94b07c7009dfa585037b3243670729463394b3d9c69f9d7157b08b4ce6deb11d')
+        self.assertIn(b'color-scheme: dark', stylesheet)
+        self.assertIn(b'.proposal-list {', stylesheet)
+        self.assertIn(b'overflow-y:auto', stylesheet)
+        self.assertIn(b'prefers-reduced-motion', stylesheet)
 
-    def test_restored_login_uses_no_new_build_or_session_prerequisites(self):
-        """The original direct /state login works without the rejected gates."""
+    def test_account_login_keeps_no_unrelated_build_or_version_gates(self):
+        """Username/password sign-in replaces the old key field and keeps the existing workspace."""
         _, body, _ = self.request('/demo-static/app.js', None)
         source = body.decode()
-        self.assertIn('await api("/state")', source)
+        self.assertIn('post("/auth/login"', source)
+        self.assertIn('Authorization:"Bearer "', source)
+        self.assertNotIn('"X-IRIS-Key"', source)
+        _, markup, _ = self.request('/admin', None)
+        self.assertIn(b'autocomplete="username"', markup)
+        self.assertIn(b'autocomplete="current-password"', markup)
+        self.assertNotIn(b'id="key"', markup)
         self.assertNotIn('/api/demo/info', source)
         self.assertNotIn('api("/session")', source)
         self.assertEqual(self.request('/api/demo/info', None)[0], 401)

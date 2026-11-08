@@ -1,0 +1,8054 @@
+{
+ "metadata": {
+  "dataset": "IRIS synthetic dataset",
+  "version": "2.0",
+  "generated_at": "2026-10-28T05:00:00Z",
+  "seed": 481,
+  "synthetic": true,
+  "organization": "Synthetic organization (corp.example)",
+  "record_count": 1340,
+  "description": "Offline annotation sidecar: one label per session. Not a runtime input; preparation and prediction must not read it."
+ },
+ "labels": [
+  {
+   "session_id": "SES-00001",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00344",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00002",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00028",
+   "campaign_id": "CMP-010"
+  },
+  {
+   "session_id": "SES-00003",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00451",
+   "campaign_id": "CMP-003"
+  },
+  {
+   "session_id": "SES-00004",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00154",
+   "campaign_id": "CMP-029"
+  },
+  {
+   "session_id": "SES-00005",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00483",
+   "campaign_id": "CMP-060"
+  },
+  {
+   "session_id": "SES-00006",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00161",
+   "campaign_id": "CMP-008"
+  },
+  {
+   "session_id": "SES-00007",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00080",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00008",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00034",
+   "campaign_id": "CMP-034"
+  },
+  {
+   "session_id": "SES-00009",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00064",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00010",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00294",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00011",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00102",
+   "campaign_id": "CMP-057"
+  },
+  {
+   "session_id": "SES-00012",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00438",
+   "campaign_id": "CMP-053"
+  },
+  {
+   "session_id": "SES-00013",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00172",
+   "campaign_id": "CMP-024"
+  },
+  {
+   "session_id": "SES-00014",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00154",
+   "campaign_id": "CMP-053"
+  },
+  {
+   "session_id": "SES-00015",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00119",
+   "campaign_id": "CMP-019"
+  },
+  {
+   "session_id": "SES-00016",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00052",
+   "campaign_id": "CMP-052"
+  },
+  {
+   "session_id": "SES-00017",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00470",
+   "campaign_id": "CMP-060"
+  },
+  {
+   "session_id": "SES-00018",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00426",
+   "campaign_id": "CMP-022"
+  },
+  {
+   "session_id": "SES-00019",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00161",
+   "campaign_id": "CMP-016"
+  },
+  {
+   "session_id": "SES-00020",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00245",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00021",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00016",
+   "campaign_id": "CMP-025"
+  },
+  {
+   "session_id": "SES-00022",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00530",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00023",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00486",
+   "campaign_id": "CMP-002"
+  },
+  {
+   "session_id": "SES-00024",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00156",
+   "campaign_id": "CMP-014"
+  },
+  {
+   "session_id": "SES-00025",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00154",
+   "campaign_id": "CMP-052"
+  },
+  {
+   "session_id": "SES-00026",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00405",
+   "campaign_id": "CMP-066"
+  },
+  {
+   "session_id": "SES-00027",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00246",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00028",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00183",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00029",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00159",
+   "campaign_id": "CMP-021"
+  },
+  {
+   "session_id": "SES-00030",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00003",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00031",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00344",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00032",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00079",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00033",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00135",
+   "campaign_id": "CMP-057"
+  },
+  {
+   "session_id": "SES-00034",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00010",
+   "campaign_id": "CMP-001"
+  },
+  {
+   "session_id": "SES-00035",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00263",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00036",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00169",
+   "campaign_id": "CMP-018"
+  },
+  {
+   "session_id": "SES-00037",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00309",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00038",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00494",
+   "campaign_id": "CMP-007"
+  },
+  {
+   "session_id": "SES-00039",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00247",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00040",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00291",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00041",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00503",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00042",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00118",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00043",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00428",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00044",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00451",
+   "campaign_id": "CMP-011"
+  },
+  {
+   "session_id": "SES-00045",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00253",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00046",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00101",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00047",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00158",
+   "campaign_id": "CMP-001"
+  },
+  {
+   "session_id": "SES-00048",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00126",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00049",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00358",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00050",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00476",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00051",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00049",
+   "campaign_id": "CMP-037"
+  },
+  {
+   "session_id": "SES-00052",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00134",
+   "campaign_id": "CMP-064"
+  },
+  {
+   "session_id": "SES-00053",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00268",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00054",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00284",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00055",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00052",
+   "campaign_id": "CMP-039"
+  },
+  {
+   "session_id": "SES-00056",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00077",
+   "campaign_id": "CMP-029"
+  },
+  {
+   "session_id": "SES-00057",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00434",
+   "campaign_id": "CMP-032"
+  },
+  {
+   "session_id": "SES-00058",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00048",
+   "campaign_id": "CMP-017"
+  },
+  {
+   "session_id": "SES-00059",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00029",
+   "campaign_id": "CMP-048"
+  },
+  {
+   "session_id": "SES-00060",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00027",
+   "campaign_id": "CMP-049"
+  },
+  {
+   "session_id": "SES-00061",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00239",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00062",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00136",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00063",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00120",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00064",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00264",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00065",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00192",
+   "campaign_id": "CMP-026"
+  },
+  {
+   "session_id": "SES-00066",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00204",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00067",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00022",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00068",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00534",
+   "campaign_id": "CMP-069"
+  },
+  {
+   "session_id": "SES-00069",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00453",
+   "campaign_id": "CMP-015"
+  },
+  {
+   "session_id": "SES-00070",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00178",
+   "campaign_id": "CMP-016"
+  },
+  {
+   "session_id": "SES-00071",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00265",
+   "campaign_id": "CMP-004"
+  },
+  {
+   "session_id": "SES-00072",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00470",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00073",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00001",
+   "campaign_id": "CMP-028"
+  },
+  {
+   "session_id": "SES-00074",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00492",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00075",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00070",
+   "campaign_id": "CMP-031"
+  },
+  {
+   "session_id": "SES-00076",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00429",
+   "campaign_id": "CMP-035"
+  },
+  {
+   "session_id": "SES-00077",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00158",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00078",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00434",
+   "campaign_id": "CMP-011"
+  },
+  {
+   "session_id": "SES-00079",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00294",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00080",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00097",
+   "campaign_id": "CMP-006"
+  },
+  {
+   "session_id": "SES-00081",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00072",
+   "campaign_id": "CMP-052"
+  },
+  {
+   "session_id": "SES-00082",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00486",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00083",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00186",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00084",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00272",
+   "campaign_id": "CMP-038"
+  },
+  {
+   "session_id": "SES-00085",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00221",
+   "campaign_id": "CMP-038"
+  },
+  {
+   "session_id": "SES-00086",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00165",
+   "campaign_id": "CMP-028"
+  },
+  {
+   "session_id": "SES-00087",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00424",
+   "campaign_id": "CMP-018"
+  },
+  {
+   "session_id": "SES-00088",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00440",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00089",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00008",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00090",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00180",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00091",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00159",
+   "campaign_id": "CMP-024"
+  },
+  {
+   "session_id": "SES-00092",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00220",
+   "campaign_id": "CMP-070"
+  },
+  {
+   "session_id": "SES-00093",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00237",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00094",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00252",
+   "campaign_id": "CMP-020"
+  },
+  {
+   "session_id": "SES-00095",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00195",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00096",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00037",
+   "campaign_id": "CMP-026"
+  },
+  {
+   "session_id": "SES-00097",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00033",
+   "campaign_id": "CMP-002"
+  },
+  {
+   "session_id": "SES-00098",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00075",
+   "campaign_id": "CMP-004"
+  },
+  {
+   "session_id": "SES-00099",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00452",
+   "campaign_id": "CMP-010"
+  },
+  {
+   "session_id": "SES-00100",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00149",
+   "campaign_id": "CMP-023"
+  },
+  {
+   "session_id": "SES-00101",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00034",
+   "campaign_id": "CMP-016"
+  },
+  {
+   "session_id": "SES-00102",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00052",
+   "campaign_id": "CMP-003"
+  },
+  {
+   "session_id": "SES-00103",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00100",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00104",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00078",
+   "campaign_id": "CMP-031"
+  },
+  {
+   "session_id": "SES-00105",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00276",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00106",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00429",
+   "campaign_id": "CMP-015"
+  },
+  {
+   "session_id": "SES-00107",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00040",
+   "campaign_id": "CMP-036"
+  },
+  {
+   "session_id": "SES-00108",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00489",
+   "campaign_id": "CMP-043"
+  },
+  {
+   "session_id": "SES-00109",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00059",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00110",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00032",
+   "campaign_id": "CMP-033"
+  },
+  {
+   "session_id": "SES-00111",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00079",
+   "campaign_id": "CMP-031"
+  },
+  {
+   "session_id": "SES-00112",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00132",
+   "campaign_id": "CMP-040"
+  },
+  {
+   "session_id": "SES-00113",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00077",
+   "campaign_id": "CMP-006"
+  },
+  {
+   "session_id": "SES-00114",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00120",
+   "campaign_id": "CMP-059"
+  },
+  {
+   "session_id": "SES-00115",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00023",
+   "campaign_id": "CMP-054"
+  },
+  {
+   "session_id": "SES-00116",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00050",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00117",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00239",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00118",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00028",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00119",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00263",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00120",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00374",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00121",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00285",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00122",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00102",
+   "campaign_id": "CMP-027"
+  },
+  {
+   "session_id": "SES-00123",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00222",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00124",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00033",
+   "campaign_id": "CMP-009"
+  },
+  {
+   "session_id": "SES-00125",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00169",
+   "campaign_id": "CMP-050"
+  },
+  {
+   "session_id": "SES-00126",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00053",
+   "campaign_id": "CMP-033"
+  },
+  {
+   "session_id": "SES-00127",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00130",
+   "campaign_id": "CMP-031"
+  },
+  {
+   "session_id": "SES-00128",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00159",
+   "campaign_id": "CMP-007"
+  },
+  {
+   "session_id": "SES-00129",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00274",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00130",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00077",
+   "campaign_id": "CMP-006"
+  },
+  {
+   "session_id": "SES-00131",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00339",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00132",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00385",
+   "campaign_id": "CMP-002"
+  },
+  {
+   "session_id": "SES-00133",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00313",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00134",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00435",
+   "campaign_id": "CMP-002"
+  },
+  {
+   "session_id": "SES-00135",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00177",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00136",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00391",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00137",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00097",
+   "campaign_id": "CMP-058"
+  },
+  {
+   "session_id": "SES-00138",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00156",
+   "campaign_id": "CMP-010"
+  },
+  {
+   "session_id": "SES-00139",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00122",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00140",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00012",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00141",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00022",
+   "campaign_id": "CMP-002"
+  },
+  {
+   "session_id": "SES-00142",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00428",
+   "campaign_id": "CMP-037"
+  },
+  {
+   "session_id": "SES-00143",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00535",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00144",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00368",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00145",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00450",
+   "campaign_id": "CMP-039"
+  },
+  {
+   "session_id": "SES-00146",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00029",
+   "campaign_id": "CMP-048"
+  },
+  {
+   "session_id": "SES-00147",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00018",
+   "campaign_id": "CMP-028"
+  },
+  {
+   "session_id": "SES-00148",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00101",
+   "campaign_id": "CMP-065"
+  },
+  {
+   "session_id": "SES-00149",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00001",
+   "campaign_id": "CMP-009"
+  },
+  {
+   "session_id": "SES-00150",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00206",
+   "campaign_id": "CMP-068"
+  },
+  {
+   "session_id": "SES-00151",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00482",
+   "campaign_id": "CMP-018"
+  },
+  {
+   "session_id": "SES-00152",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00254",
+   "campaign_id": "CMP-020"
+  },
+  {
+   "session_id": "SES-00153",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00136",
+   "campaign_id": "CMP-057"
+  },
+  {
+   "session_id": "SES-00154",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00222",
+   "campaign_id": "CMP-040"
+  },
+  {
+   "session_id": "SES-00155",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00090",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00156",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00021",
+   "campaign_id": "CMP-046"
+  },
+  {
+   "session_id": "SES-00157",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00505",
+   "campaign_id": "CMP-056"
+  },
+  {
+   "session_id": "SES-00158",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00067",
+   "campaign_id": "CMP-035"
+  },
+  {
+   "session_id": "SES-00159",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00242",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00160",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00092",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00161",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00104",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00162",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00302",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00163",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00151",
+   "campaign_id": "CMP-016"
+  },
+  {
+   "session_id": "SES-00164",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00426",
+   "campaign_id": "CMP-038"
+  },
+  {
+   "session_id": "SES-00165",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00487",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00166",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00469",
+   "campaign_id": "CMP-008"
+  },
+  {
+   "session_id": "SES-00167",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00497",
+   "campaign_id": "CMP-026"
+  },
+  {
+   "session_id": "SES-00168",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00061",
+   "campaign_id": "CMP-053"
+  },
+  {
+   "session_id": "SES-00169",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00149",
+   "campaign_id": "CMP-038"
+  },
+  {
+   "session_id": "SES-00170",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00473",
+   "campaign_id": "CMP-005"
+  },
+  {
+   "session_id": "SES-00171",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00514",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00172",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00149",
+   "campaign_id": "CMP-053"
+  },
+  {
+   "session_id": "SES-00173",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00109",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00174",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00008",
+   "campaign_id": "CMP-002"
+  },
+  {
+   "session_id": "SES-00175",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00062",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00176",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00324",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00177",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00046",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00178",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00040",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00179",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00067",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00180",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00144",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00181",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00115",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00182",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00457",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00183",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00475",
+   "campaign_id": "CMP-029"
+  },
+  {
+   "session_id": "SES-00184",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00467",
+   "campaign_id": "CMP-014"
+  },
+  {
+   "session_id": "SES-00185",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00126",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00186",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00143",
+   "campaign_id": "CMP-022"
+  },
+  {
+   "session_id": "SES-00187",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00494",
+   "campaign_id": "CMP-004"
+  },
+  {
+   "session_id": "SES-00188",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00494",
+   "campaign_id": "CMP-024"
+  },
+  {
+   "session_id": "SES-00189",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00165",
+   "campaign_id": "CMP-058"
+  },
+  {
+   "session_id": "SES-00190",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00230",
+   "campaign_id": "CMP-036"
+  },
+  {
+   "session_id": "SES-00191",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00019",
+   "campaign_id": "CMP-009"
+  },
+  {
+   "session_id": "SES-00192",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00368",
+   "campaign_id": "CMP-022"
+  },
+  {
+   "session_id": "SES-00193",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00494",
+   "campaign_id": "CMP-032"
+  },
+  {
+   "session_id": "SES-00194",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00264",
+   "campaign_id": "CMP-050"
+  },
+  {
+   "session_id": "SES-00195",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00090",
+   "campaign_id": "CMP-031"
+  },
+  {
+   "session_id": "SES-00196",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00498",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00197",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00162",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00198",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00071",
+   "campaign_id": "CMP-050"
+  },
+  {
+   "session_id": "SES-00199",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00435",
+   "campaign_id": "CMP-067"
+  },
+  {
+   "session_id": "SES-00200",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00182",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00201",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00317",
+   "campaign_id": "CMP-038"
+  },
+  {
+   "session_id": "SES-00202",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00232",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00203",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00052",
+   "campaign_id": "CMP-033"
+  },
+  {
+   "session_id": "SES-00204",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00046",
+   "campaign_id": "CMP-049"
+  },
+  {
+   "session_id": "SES-00205",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00176",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00206",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00205",
+   "campaign_id": "CMP-032"
+  },
+  {
+   "session_id": "SES-00207",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00074",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00208",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00006",
+   "campaign_id": "CMP-029"
+  },
+  {
+   "session_id": "SES-00209",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00004",
+   "campaign_id": "CMP-067"
+  },
+  {
+   "session_id": "SES-00210",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00535",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00211",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00473",
+   "campaign_id": "CMP-037"
+  },
+  {
+   "session_id": "SES-00212",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00342",
+   "campaign_id": "CMP-070"
+  },
+  {
+   "session_id": "SES-00213",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00154",
+   "campaign_id": "CMP-064"
+  },
+  {
+   "session_id": "SES-00214",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00477",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00215",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00079",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00216",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00039",
+   "campaign_id": "CMP-031"
+  },
+  {
+   "session_id": "SES-00217",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00453",
+   "campaign_id": "CMP-043"
+  },
+  {
+   "session_id": "SES-00218",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00025",
+   "campaign_id": "CMP-060"
+  },
+  {
+   "session_id": "SES-00219",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00384",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00220",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00496",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00221",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00275",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00222",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00240",
+   "campaign_id": "CMP-068"
+  },
+  {
+   "session_id": "SES-00223",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00370",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00224",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00242",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00225",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00531",
+   "campaign_id": "CMP-019"
+  },
+  {
+   "session_id": "SES-00226",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00340",
+   "campaign_id": "CMP-012"
+  },
+  {
+   "session_id": "SES-00227",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00463",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00228",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00049",
+   "campaign_id": "CMP-005"
+  },
+  {
+   "session_id": "SES-00229",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00193",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00230",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00168",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00231",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00168",
+   "campaign_id": "CMP-050"
+  },
+  {
+   "session_id": "SES-00232",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00383",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00233",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00472",
+   "campaign_id": "CMP-051"
+  },
+  {
+   "session_id": "SES-00234",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00176",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00235",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00196",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00236",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00379",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00237",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00427",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00238",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00435",
+   "campaign_id": "CMP-049"
+  },
+  {
+   "session_id": "SES-00239",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00225",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00240",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00013",
+   "campaign_id": "CMP-062"
+  },
+  {
+   "session_id": "SES-00241",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00534",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00242",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00484",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00243",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00154",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00244",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00010",
+   "campaign_id": "CMP-029"
+  },
+  {
+   "session_id": "SES-00245",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00089",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00246",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00358",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00247",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00268",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00248",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00141",
+   "campaign_id": "CMP-031"
+  },
+  {
+   "session_id": "SES-00249",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00013",
+   "campaign_id": "CMP-020"
+  },
+  {
+   "session_id": "SES-00250",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00077",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00251",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00316",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00252",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00338",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00253",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00438",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00254",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00322",
+   "campaign_id": "CMP-032"
+  },
+  {
+   "session_id": "SES-00255",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00292",
+   "campaign_id": "CMP-042"
+  },
+  {
+   "session_id": "SES-00256",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00157",
+   "campaign_id": "CMP-052"
+  },
+  {
+   "session_id": "SES-00257",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00055",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00258",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00533",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00259",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00531",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00260",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00094",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00261",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00432",
+   "campaign_id": "CMP-020"
+  },
+  {
+   "session_id": "SES-00262",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00525",
+   "campaign_id": "CMP-004"
+  },
+  {
+   "session_id": "SES-00263",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00182",
+   "campaign_id": "CMP-028"
+  },
+  {
+   "session_id": "SES-00264",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00153",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00265",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00478",
+   "campaign_id": "CMP-007"
+  },
+  {
+   "session_id": "SES-00266",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00080",
+   "campaign_id": "CMP-031"
+  },
+  {
+   "session_id": "SES-00267",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00119",
+   "campaign_id": "CMP-067"
+  },
+  {
+   "session_id": "SES-00268",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00516",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00269",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00079",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00270",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00457",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00271",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00103",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00272",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00429",
+   "campaign_id": "CMP-045"
+  },
+  {
+   "session_id": "SES-00273",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00270",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00274",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00198",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00275",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00147",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00276",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00028",
+   "campaign_id": "CMP-053"
+  },
+  {
+   "session_id": "SES-00277",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00002",
+   "campaign_id": "CMP-039"
+  },
+  {
+   "session_id": "SES-00278",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00496",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00279",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00346",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00280",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00036",
+   "campaign_id": "CMP-050"
+  },
+  {
+   "session_id": "SES-00281",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00298",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00282",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00052",
+   "campaign_id": "CMP-015"
+  },
+  {
+   "session_id": "SES-00283",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00030",
+   "campaign_id": "CMP-018"
+  },
+  {
+   "session_id": "SES-00284",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00002",
+   "campaign_id": "CMP-022"
+  },
+  {
+   "session_id": "SES-00285",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00451",
+   "campaign_id": "CMP-069"
+  },
+  {
+   "session_id": "SES-00286",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00012",
+   "campaign_id": "CMP-023"
+  },
+  {
+   "session_id": "SES-00287",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00258",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00288",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00482",
+   "campaign_id": "CMP-028"
+  },
+  {
+   "session_id": "SES-00289",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00066",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00290",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00203",
+   "campaign_id": "CMP-018"
+  },
+  {
+   "session_id": "SES-00291",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00472",
+   "campaign_id": "CMP-070"
+  },
+  {
+   "session_id": "SES-00292",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00519",
+   "campaign_id": "CMP-064"
+  },
+  {
+   "session_id": "SES-00293",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00006",
+   "campaign_id": "CMP-009"
+  },
+  {
+   "session_id": "SES-00294",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00144",
+   "campaign_id": "CMP-029"
+  },
+  {
+   "session_id": "SES-00295",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00480",
+   "campaign_id": "CMP-047"
+  },
+  {
+   "session_id": "SES-00296",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00529",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00297",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00423",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00298",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00082",
+   "campaign_id": "CMP-031"
+  },
+  {
+   "session_id": "SES-00299",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00006",
+   "campaign_id": "CMP-011"
+  },
+  {
+   "session_id": "SES-00300",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00493",
+   "campaign_id": "CMP-033"
+  },
+  {
+   "session_id": "SES-00301",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00202",
+   "campaign_id": "CMP-014"
+  },
+  {
+   "session_id": "SES-00302",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00084",
+   "campaign_id": "CMP-003"
+  },
+  {
+   "session_id": "SES-00303",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00483",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00304",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00081",
+   "campaign_id": "CMP-003"
+  },
+  {
+   "session_id": "SES-00305",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00135",
+   "campaign_id": "CMP-021"
+  },
+  {
+   "session_id": "SES-00306",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00492",
+   "campaign_id": "CMP-042"
+  },
+  {
+   "session_id": "SES-00307",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00240",
+   "campaign_id": "CMP-008"
+  },
+  {
+   "session_id": "SES-00308",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00034",
+   "campaign_id": "CMP-066"
+  },
+  {
+   "session_id": "SES-00309",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00200",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00310",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00183",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00311",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00448",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00312",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00023",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00313",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00009",
+   "campaign_id": "CMP-019"
+  },
+  {
+   "session_id": "SES-00314",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00249",
+   "campaign_id": "CMP-070"
+  },
+  {
+   "session_id": "SES-00315",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00373",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00316",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00171",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00317",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00017",
+   "campaign_id": "CMP-033"
+  },
+  {
+   "session_id": "SES-00318",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00159",
+   "campaign_id": "CMP-045"
+  },
+  {
+   "session_id": "SES-00319",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00140",
+   "campaign_id": "CMP-037"
+  },
+  {
+   "session_id": "SES-00320",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00054",
+   "campaign_id": "CMP-057"
+  },
+  {
+   "session_id": "SES-00321",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00122",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00322",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00146",
+   "campaign_id": "CMP-001"
+  },
+  {
+   "session_id": "SES-00323",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00450",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00324",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00300",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00325",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00428",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00326",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00022",
+   "campaign_id": "CMP-064"
+  },
+  {
+   "session_id": "SES-00327",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00020",
+   "campaign_id": "CMP-063"
+  },
+  {
+   "session_id": "SES-00328",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00002",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00329",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00474",
+   "campaign_id": "CMP-021"
+  },
+  {
+   "session_id": "SES-00330",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00260",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00331",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00163",
+   "campaign_id": "CMP-018"
+  },
+  {
+   "session_id": "SES-00332",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00130",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00333",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00322",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00334",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00136",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00335",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00041",
+   "campaign_id": "CMP-030"
+  },
+  {
+   "session_id": "SES-00336",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00489",
+   "campaign_id": "CMP-018"
+  },
+  {
+   "session_id": "SES-00337",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00464",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00338",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00075",
+   "campaign_id": "CMP-067"
+  },
+  {
+   "session_id": "SES-00339",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00006",
+   "campaign_id": "CMP-055"
+  },
+  {
+   "session_id": "SES-00340",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00081",
+   "campaign_id": "CMP-027"
+  },
+  {
+   "session_id": "SES-00341",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00143",
+   "campaign_id": "CMP-004"
+  },
+  {
+   "session_id": "SES-00342",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00359",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00343",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00248",
+   "campaign_id": "CMP-016"
+  },
+  {
+   "session_id": "SES-00344",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00154",
+   "campaign_id": "CMP-011"
+  },
+  {
+   "session_id": "SES-00345",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00034",
+   "campaign_id": "CMP-016"
+  },
+  {
+   "session_id": "SES-00346",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00435",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00347",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00025",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00348",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00059",
+   "campaign_id": "CMP-007"
+  },
+  {
+   "session_id": "SES-00349",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00526",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00350",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00136",
+   "campaign_id": "CMP-063"
+  },
+  {
+   "session_id": "SES-00351",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00052",
+   "campaign_id": "CMP-019"
+  },
+  {
+   "session_id": "SES-00352",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00026",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00353",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00237",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00354",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00403",
+   "campaign_id": "CMP-032"
+  },
+  {
+   "session_id": "SES-00355",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00352",
+   "campaign_id": "CMP-070"
+  },
+  {
+   "session_id": "SES-00356",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00109",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00357",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00157",
+   "campaign_id": "CMP-011"
+  },
+  {
+   "session_id": "SES-00358",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00470",
+   "campaign_id": "CMP-049"
+  },
+  {
+   "session_id": "SES-00359",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00262",
+   "campaign_id": "CMP-022"
+  },
+  {
+   "session_id": "SES-00360",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00143",
+   "campaign_id": "CMP-002"
+  },
+  {
+   "session_id": "SES-00361",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00300",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00362",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00048",
+   "campaign_id": "CMP-015"
+  },
+  {
+   "session_id": "SES-00363",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00005",
+   "campaign_id": "CMP-025"
+  },
+  {
+   "session_id": "SES-00364",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00154",
+   "campaign_id": "CMP-033"
+  },
+  {
+   "session_id": "SES-00365",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00223",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00366",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00488",
+   "campaign_id": "CMP-006"
+  },
+  {
+   "session_id": "SES-00367",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00491",
+   "campaign_id": "CMP-025"
+  },
+  {
+   "session_id": "SES-00368",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00045",
+   "campaign_id": "CMP-051"
+  },
+  {
+   "session_id": "SES-00369",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00165",
+   "campaign_id": "CMP-014"
+  },
+  {
+   "session_id": "SES-00370",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00474",
+   "campaign_id": "CMP-054"
+  },
+  {
+   "session_id": "SES-00371",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00160",
+   "campaign_id": "CMP-023"
+  },
+  {
+   "session_id": "SES-00372",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00107",
+   "campaign_id": "CMP-069"
+  },
+  {
+   "session_id": "SES-00373",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00036",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00374",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00004",
+   "campaign_id": "CMP-017"
+  },
+  {
+   "session_id": "SES-00375",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00064",
+   "campaign_id": "CMP-057"
+  },
+  {
+   "session_id": "SES-00376",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00396",
+   "campaign_id": "CMP-066"
+  },
+  {
+   "session_id": "SES-00377",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00460",
+   "campaign_id": "CMP-061"
+  },
+  {
+   "session_id": "SES-00378",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00032",
+   "campaign_id": "CMP-060"
+  },
+  {
+   "session_id": "SES-00379",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00018",
+   "campaign_id": "CMP-056"
+  },
+  {
+   "session_id": "SES-00380",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00135",
+   "campaign_id": "CMP-050"
+  },
+  {
+   "session_id": "SES-00381",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00039",
+   "campaign_id": "CMP-050"
+  },
+  {
+   "session_id": "SES-00382",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00311",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00383",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00530",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00384",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00001",
+   "campaign_id": "CMP-029"
+  },
+  {
+   "session_id": "SES-00385",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00065",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00386",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00504",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00387",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00292",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00388",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00043",
+   "campaign_id": "CMP-069"
+  },
+  {
+   "session_id": "SES-00389",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00153",
+   "campaign_id": "CMP-047"
+  },
+  {
+   "session_id": "SES-00390",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00224",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00391",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00135",
+   "campaign_id": "CMP-005"
+  },
+  {
+   "session_id": "SES-00392",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00123",
+   "campaign_id": "CMP-019"
+  },
+  {
+   "session_id": "SES-00393",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00233",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00394",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00121",
+   "campaign_id": "CMP-022"
+  },
+  {
+   "session_id": "SES-00395",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00018",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00396",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00067",
+   "campaign_id": "CMP-021"
+  },
+  {
+   "session_id": "SES-00397",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00154",
+   "campaign_id": "CMP-022"
+  },
+  {
+   "session_id": "SES-00398",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00313",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00399",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00156",
+   "campaign_id": "CMP-065"
+  },
+  {
+   "session_id": "SES-00400",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00077",
+   "campaign_id": "CMP-047"
+  },
+  {
+   "session_id": "SES-00401",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00208",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00402",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00307",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00403",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00009",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00404",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00067",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00405",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00534",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00406",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00497",
+   "campaign_id": "CMP-054"
+  },
+  {
+   "session_id": "SES-00407",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00046",
+   "campaign_id": "CMP-019"
+  },
+  {
+   "session_id": "SES-00408",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00066",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00409",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00521",
+   "campaign_id": "CMP-010"
+  },
+  {
+   "session_id": "SES-00410",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00078",
+   "campaign_id": "CMP-057"
+  },
+  {
+   "session_id": "SES-00411",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00153",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00412",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00350",
+   "campaign_id": "CMP-010"
+  },
+  {
+   "session_id": "SES-00413",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00030",
+   "campaign_id": "CMP-005"
+  },
+  {
+   "session_id": "SES-00414",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00435",
+   "campaign_id": "CMP-038"
+  },
+  {
+   "session_id": "SES-00415",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00273",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00416",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00054",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00417",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00527",
+   "campaign_id": "CMP-050"
+  },
+  {
+   "session_id": "SES-00418",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00152",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00419",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00143",
+   "campaign_id": "CMP-064"
+  },
+  {
+   "session_id": "SES-00420",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00458",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00421",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00013",
+   "campaign_id": "CMP-001"
+  },
+  {
+   "session_id": "SES-00422",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00508",
+   "campaign_id": "CMP-016"
+  },
+  {
+   "session_id": "SES-00423",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00154",
+   "campaign_id": "CMP-030"
+  },
+  {
+   "session_id": "SES-00424",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00015",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00425",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00155",
+   "campaign_id": "CMP-007"
+  },
+  {
+   "session_id": "SES-00426",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00051",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00427",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00428",
+   "campaign_id": "CMP-025"
+  },
+  {
+   "session_id": "SES-00428",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00147",
+   "campaign_id": "CMP-027"
+  },
+  {
+   "session_id": "SES-00429",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00456",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00430",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00027",
+   "campaign_id": "CMP-019"
+  },
+  {
+   "session_id": "SES-00431",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00052",
+   "campaign_id": "CMP-014"
+  },
+  {
+   "session_id": "SES-00432",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00058",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00433",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00102",
+   "campaign_id": "CMP-055"
+  },
+  {
+   "session_id": "SES-00434",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00368",
+   "campaign_id": "CMP-052"
+  },
+  {
+   "session_id": "SES-00435",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00362",
+   "campaign_id": "CMP-036"
+  },
+  {
+   "session_id": "SES-00436",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00524",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00437",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00407",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00438",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00395",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00439",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00247",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00440",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00008",
+   "campaign_id": "CMP-007"
+  },
+  {
+   "session_id": "SES-00441",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00532",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00442",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00059",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00443",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00517",
+   "campaign_id": "CMP-058"
+  },
+  {
+   "session_id": "SES-00444",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00117",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00445",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00502",
+   "campaign_id": "CMP-032"
+  },
+  {
+   "session_id": "SES-00446",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00152",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00447",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00152",
+   "campaign_id": "CMP-014"
+  },
+  {
+   "session_id": "SES-00448",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00046",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00449",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00060",
+   "campaign_id": "CMP-047"
+  },
+  {
+   "session_id": "SES-00450",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00475",
+   "campaign_id": "CMP-018"
+  },
+  {
+   "session_id": "SES-00451",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00436",
+   "campaign_id": "CMP-043"
+  },
+  {
+   "session_id": "SES-00452",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00150",
+   "campaign_id": "CMP-014"
+  },
+  {
+   "session_id": "SES-00453",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00159",
+   "campaign_id": "CMP-008"
+  },
+  {
+   "session_id": "SES-00454",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00284",
+   "campaign_id": "CMP-008"
+  },
+  {
+   "session_id": "SES-00455",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00440",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00456",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00025",
+   "campaign_id": "CMP-007"
+  },
+  {
+   "session_id": "SES-00457",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00033",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00458",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00497",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00459",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00342",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00460",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00307",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00461",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00058",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00462",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00166",
+   "campaign_id": "CMP-006"
+  },
+  {
+   "session_id": "SES-00463",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00135",
+   "campaign_id": "CMP-062"
+  },
+  {
+   "session_id": "SES-00464",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00073",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00465",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00143",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00466",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00097",
+   "campaign_id": "CMP-052"
+  },
+  {
+   "session_id": "SES-00467",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00330",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00468",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00062",
+   "campaign_id": "CMP-030"
+  },
+  {
+   "session_id": "SES-00469",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00445",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00470",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00107",
+   "campaign_id": "CMP-065"
+  },
+  {
+   "session_id": "SES-00471",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00329",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00472",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00291",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00473",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00020",
+   "campaign_id": "CMP-066"
+  },
+  {
+   "session_id": "SES-00474",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00355",
+   "campaign_id": "CMP-050"
+  },
+  {
+   "session_id": "SES-00475",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00149",
+   "campaign_id": "CMP-019"
+  },
+  {
+   "session_id": "SES-00476",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00436",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00477",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00174",
+   "campaign_id": "CMP-012"
+  },
+  {
+   "session_id": "SES-00478",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00453",
+   "campaign_id": "CMP-046"
+  },
+  {
+   "session_id": "SES-00479",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00451",
+   "campaign_id": "CMP-062"
+  },
+  {
+   "session_id": "SES-00480",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00036",
+   "campaign_id": "CMP-008"
+  },
+  {
+   "session_id": "SES-00481",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00171",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00482",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00137",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00483",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00472",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00484",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00046",
+   "campaign_id": "CMP-026"
+  },
+  {
+   "session_id": "SES-00485",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00341",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00486",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00128",
+   "campaign_id": "CMP-005"
+  },
+  {
+   "session_id": "SES-00487",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00491",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00488",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00115",
+   "campaign_id": "CMP-029"
+  },
+  {
+   "session_id": "SES-00489",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00131",
+   "campaign_id": "CMP-032"
+  },
+  {
+   "session_id": "SES-00490",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00372",
+   "campaign_id": "CMP-020"
+  },
+  {
+   "session_id": "SES-00491",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00111",
+   "campaign_id": "CMP-051"
+  },
+  {
+   "session_id": "SES-00492",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00215",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00493",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00092",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00494",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00197",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00495",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00364",
+   "campaign_id": "CMP-066"
+  },
+  {
+   "session_id": "SES-00496",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00011",
+   "campaign_id": "CMP-014"
+  },
+  {
+   "session_id": "SES-00497",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00511",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00498",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00005",
+   "campaign_id": "CMP-012"
+  },
+  {
+   "session_id": "SES-00499",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00470",
+   "campaign_id": "CMP-013"
+  },
+  {
+   "session_id": "SES-00500",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00413",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00501",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00018",
+   "campaign_id": "CMP-013"
+  },
+  {
+   "session_id": "SES-00502",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00442",
+   "campaign_id": "CMP-060"
+  },
+  {
+   "session_id": "SES-00503",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00428",
+   "campaign_id": "CMP-037"
+  },
+  {
+   "session_id": "SES-00504",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00063",
+   "campaign_id": "CMP-052"
+  },
+  {
+   "session_id": "SES-00505",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00136",
+   "campaign_id": "CMP-049"
+  },
+  {
+   "session_id": "SES-00506",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00360",
+   "campaign_id": "CMP-028"
+  },
+  {
+   "session_id": "SES-00507",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00065",
+   "campaign_id": "CMP-059"
+  },
+  {
+   "session_id": "SES-00508",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00397",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00509",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00073",
+   "campaign_id": "CMP-039"
+  },
+  {
+   "session_id": "SES-00510",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00095",
+   "campaign_id": "CMP-049"
+  },
+  {
+   "session_id": "SES-00511",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00027",
+   "campaign_id": "CMP-013"
+  },
+  {
+   "session_id": "SES-00512",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00437",
+   "campaign_id": "CMP-020"
+  },
+  {
+   "session_id": "SES-00513",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00002",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00514",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00071",
+   "campaign_id": "CMP-060"
+  },
+  {
+   "session_id": "SES-00515",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00027",
+   "campaign_id": "CMP-017"
+  },
+  {
+   "session_id": "SES-00516",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00259",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00517",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00471",
+   "campaign_id": "CMP-028"
+  },
+  {
+   "session_id": "SES-00518",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00031",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00519",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00105",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00520",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00145",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00521",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00036",
+   "campaign_id": "CMP-069"
+  },
+  {
+   "session_id": "SES-00522",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00076",
+   "campaign_id": "CMP-022"
+  },
+  {
+   "session_id": "SES-00523",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00080",
+   "campaign_id": "CMP-051"
+  },
+  {
+   "session_id": "SES-00524",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00116",
+   "campaign_id": "CMP-045"
+  },
+  {
+   "session_id": "SES-00525",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00076",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00526",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00204",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00527",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00157",
+   "campaign_id": "CMP-061"
+  },
+  {
+   "session_id": "SES-00528",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00209",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00529",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00154",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00530",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00441",
+   "campaign_id": "CMP-011"
+  },
+  {
+   "session_id": "SES-00531",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00373",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00532",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00452",
+   "campaign_id": "CMP-069"
+  },
+  {
+   "session_id": "SES-00533",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00146",
+   "campaign_id": "CMP-034"
+  },
+  {
+   "session_id": "SES-00534",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00117",
+   "campaign_id": "CMP-033"
+  },
+  {
+   "session_id": "SES-00535",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00097",
+   "campaign_id": "CMP-054"
+  },
+  {
+   "session_id": "SES-00536",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00123",
+   "campaign_id": "CMP-045"
+  },
+  {
+   "session_id": "SES-00537",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00015",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00538",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00407",
+   "campaign_id": "CMP-052"
+  },
+  {
+   "session_id": "SES-00539",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00146",
+   "campaign_id": "CMP-022"
+  },
+  {
+   "session_id": "SES-00540",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00534",
+   "campaign_id": "CMP-066"
+  },
+  {
+   "session_id": "SES-00541",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00157",
+   "campaign_id": "CMP-069"
+  },
+  {
+   "session_id": "SES-00542",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00102",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00543",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00005",
+   "campaign_id": "CMP-045"
+  },
+  {
+   "session_id": "SES-00544",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00092",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00545",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00392",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00546",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00428",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00547",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00306",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00548",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00161",
+   "campaign_id": "CMP-056"
+  },
+  {
+   "session_id": "SES-00549",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00082",
+   "campaign_id": "CMP-059"
+  },
+  {
+   "session_id": "SES-00550",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00427",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00551",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00135",
+   "campaign_id": "CMP-063"
+  },
+  {
+   "session_id": "SES-00552",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00473",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00553",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00109",
+   "campaign_id": "CMP-001"
+  },
+  {
+   "session_id": "SES-00554",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00318",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00555",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00327",
+   "campaign_id": "CMP-052"
+  },
+  {
+   "session_id": "SES-00556",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00144",
+   "campaign_id": "CMP-033"
+  },
+  {
+   "session_id": "SES-00557",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00067",
+   "campaign_id": "CMP-004"
+  },
+  {
+   "session_id": "SES-00558",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00172",
+   "campaign_id": "CMP-066"
+  },
+  {
+   "session_id": "SES-00559",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00145",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00560",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00006",
+   "campaign_id": "CMP-019"
+  },
+  {
+   "session_id": "SES-00561",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00382",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00562",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00075",
+   "campaign_id": "CMP-024"
+  },
+  {
+   "session_id": "SES-00563",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00451",
+   "campaign_id": "CMP-037"
+  },
+  {
+   "session_id": "SES-00564",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00499",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00565",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00039",
+   "campaign_id": "CMP-051"
+  },
+  {
+   "session_id": "SES-00566",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00326",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00567",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00405",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00568",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00414",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00569",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00464",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00570",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00106",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00571",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00498",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00572",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00107",
+   "campaign_id": "CMP-003"
+  },
+  {
+   "session_id": "SES-00573",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00372",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00574",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00113",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00575",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00183",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00576",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00135",
+   "campaign_id": "CMP-047"
+  },
+  {
+   "session_id": "SES-00577",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00163",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00578",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00408",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00579",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00007",
+   "campaign_id": "CMP-025"
+  },
+  {
+   "session_id": "SES-00580",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00420",
+   "campaign_id": "CMP-068"
+  },
+  {
+   "session_id": "SES-00581",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00053",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00582",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00250",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00583",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00459",
+   "campaign_id": "CMP-011"
+  },
+  {
+   "session_id": "SES-00584",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00354",
+   "campaign_id": "CMP-016"
+  },
+  {
+   "session_id": "SES-00585",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00475",
+   "campaign_id": "CMP-017"
+  },
+  {
+   "session_id": "SES-00586",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00455",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00587",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00043",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00588",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00337",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00589",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00176",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00590",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00232",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00591",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00434",
+   "campaign_id": "CMP-001"
+  },
+  {
+   "session_id": "SES-00592",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00430",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00593",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00100",
+   "campaign_id": "CMP-018"
+  },
+  {
+   "session_id": "SES-00594",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00157",
+   "campaign_id": "CMP-029"
+  },
+  {
+   "session_id": "SES-00595",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00372",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00596",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00210",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00597",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00022",
+   "campaign_id": "CMP-036"
+  },
+  {
+   "session_id": "SES-00598",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00043",
+   "campaign_id": "CMP-055"
+  },
+  {
+   "session_id": "SES-00599",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00045",
+   "campaign_id": "CMP-010"
+  },
+  {
+   "session_id": "SES-00600",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00450",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00601",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00130",
+   "campaign_id": "CMP-065"
+  },
+  {
+   "session_id": "SES-00602",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00079",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00603",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00154",
+   "campaign_id": "CMP-059"
+  },
+  {
+   "session_id": "SES-00604",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00412",
+   "campaign_id": "CMP-070"
+  },
+  {
+   "session_id": "SES-00605",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00111",
+   "campaign_id": "CMP-049"
+  },
+  {
+   "session_id": "SES-00606",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00136",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00607",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00429",
+   "campaign_id": "CMP-043"
+  },
+  {
+   "session_id": "SES-00608",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00208",
+   "campaign_id": "CMP-002"
+  },
+  {
+   "session_id": "SES-00609",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00448",
+   "campaign_id": "CMP-053"
+  },
+  {
+   "session_id": "SES-00610",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00030",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00611",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00290",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00612",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00368",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00613",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00484",
+   "campaign_id": "CMP-069"
+  },
+  {
+   "session_id": "SES-00614",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00003",
+   "campaign_id": "CMP-012"
+  },
+  {
+   "session_id": "SES-00615",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00260",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00616",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00276",
+   "campaign_id": "CMP-024"
+  },
+  {
+   "session_id": "SES-00617",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00092",
+   "campaign_id": "CMP-056"
+  },
+  {
+   "session_id": "SES-00618",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00027",
+   "campaign_id": "CMP-007"
+  },
+  {
+   "session_id": "SES-00619",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00115",
+   "campaign_id": "CMP-031"
+  },
+  {
+   "session_id": "SES-00620",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00061",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00621",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00045",
+   "campaign_id": "CMP-024"
+  },
+  {
+   "session_id": "SES-00622",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00269",
+   "campaign_id": "CMP-032"
+  },
+  {
+   "session_id": "SES-00623",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00435",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00624",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00065",
+   "campaign_id": "CMP-060"
+  },
+  {
+   "session_id": "SES-00625",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00012",
+   "campaign_id": "CMP-015"
+  },
+  {
+   "session_id": "SES-00626",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00349",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00627",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00153",
+   "campaign_id": "CMP-070"
+  },
+  {
+   "session_id": "SES-00628",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00122",
+   "campaign_id": "CMP-037"
+  },
+  {
+   "session_id": "SES-00629",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00100",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00630",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00059",
+   "campaign_id": "CMP-013"
+  },
+  {
+   "session_id": "SES-00631",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00032",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00632",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00019",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00633",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00171",
+   "campaign_id": "CMP-032"
+  },
+  {
+   "session_id": "SES-00634",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00084",
+   "campaign_id": "CMP-055"
+  },
+  {
+   "session_id": "SES-00635",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00177",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00636",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00492",
+   "campaign_id": "CMP-058"
+  },
+  {
+   "session_id": "SES-00637",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00372",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00638",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00077",
+   "campaign_id": "CMP-049"
+  },
+  {
+   "session_id": "SES-00639",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00131",
+   "campaign_id": "CMP-061"
+  },
+  {
+   "session_id": "SES-00640",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00130",
+   "campaign_id": "CMP-011"
+  },
+  {
+   "session_id": "SES-00641",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00416",
+   "campaign_id": "CMP-026"
+  },
+  {
+   "session_id": "SES-00642",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00155",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00643",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00025",
+   "campaign_id": "CMP-019"
+  },
+  {
+   "session_id": "SES-00644",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00104",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00645",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00156",
+   "campaign_id": "CMP-018"
+  },
+  {
+   "session_id": "SES-00646",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00149",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00647",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00039",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00648",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00472",
+   "campaign_id": "CMP-027"
+  },
+  {
+   "session_id": "SES-00649",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00303",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00650",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00214",
+   "campaign_id": "CMP-034"
+  },
+  {
+   "session_id": "SES-00651",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00305",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00652",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00492",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00653",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00006",
+   "campaign_id": "CMP-057"
+  },
+  {
+   "session_id": "SES-00654",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00380",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00655",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00441",
+   "campaign_id": "CMP-045"
+  },
+  {
+   "session_id": "SES-00656",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00130",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00657",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00029",
+   "campaign_id": "CMP-065"
+  },
+  {
+   "session_id": "SES-00658",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00061",
+   "campaign_id": "CMP-005"
+  },
+  {
+   "session_id": "SES-00659",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00230",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00660",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00448",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00661",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00233",
+   "campaign_id": "CMP-026"
+  },
+  {
+   "session_id": "SES-00662",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00088",
+   "campaign_id": "CMP-035"
+  },
+  {
+   "session_id": "SES-00663",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00379",
+   "campaign_id": "CMP-064"
+  },
+  {
+   "session_id": "SES-00664",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00158",
+   "campaign_id": "CMP-045"
+  },
+  {
+   "session_id": "SES-00665",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00434",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00666",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00173",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00667",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00149",
+   "campaign_id": "CMP-026"
+  },
+  {
+   "session_id": "SES-00668",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00327",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00669",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00374",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00670",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00277",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00671",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00136",
+   "campaign_id": "CMP-060"
+  },
+  {
+   "session_id": "SES-00672",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00012",
+   "campaign_id": "CMP-011"
+  },
+  {
+   "session_id": "SES-00673",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00251",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00674",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00022",
+   "campaign_id": "CMP-069"
+  },
+  {
+   "session_id": "SES-00675",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00148",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00676",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00072",
+   "campaign_id": "CMP-001"
+  },
+  {
+   "session_id": "SES-00677",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00135",
+   "campaign_id": "CMP-006"
+  },
+  {
+   "session_id": "SES-00678",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00216",
+   "campaign_id": "CMP-006"
+  },
+  {
+   "session_id": "SES-00679",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00115",
+   "campaign_id": "CMP-011"
+  },
+  {
+   "session_id": "SES-00680",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00028",
+   "campaign_id": "CMP-022"
+  },
+  {
+   "session_id": "SES-00681",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00304",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00682",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00516",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00683",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00123",
+   "campaign_id": "CMP-041"
+  },
+  {
+   "session_id": "SES-00684",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00157",
+   "campaign_id": "CMP-047"
+  },
+  {
+   "session_id": "SES-00685",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00133",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00686",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00105",
+   "campaign_id": "CMP-063"
+  },
+  {
+   "session_id": "SES-00687",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00217",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00688",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00418",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00689",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00099",
+   "campaign_id": "CMP-023"
+  },
+  {
+   "session_id": "SES-00690",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00010",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00691",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00308",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00692",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00043",
+   "campaign_id": "CMP-063"
+  },
+  {
+   "session_id": "SES-00693",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00097",
+   "campaign_id": "CMP-059"
+  },
+  {
+   "session_id": "SES-00694",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00485",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00695",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00520",
+   "campaign_id": "CMP-034"
+  },
+  {
+   "session_id": "SES-00696",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00089",
+   "campaign_id": "CMP-037"
+  },
+  {
+   "session_id": "SES-00697",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00293",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00698",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00430",
+   "campaign_id": "CMP-037"
+  },
+  {
+   "session_id": "SES-00699",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00159",
+   "campaign_id": "CMP-003"
+  },
+  {
+   "session_id": "SES-00700",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00074",
+   "campaign_id": "CMP-017"
+  },
+  {
+   "session_id": "SES-00701",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00375",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00702",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00210",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00703",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00053",
+   "campaign_id": "CMP-065"
+  },
+  {
+   "session_id": "SES-00704",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00113",
+   "campaign_id": "CMP-015"
+  },
+  {
+   "session_id": "SES-00705",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00155",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00706",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00070",
+   "campaign_id": "CMP-045"
+  },
+  {
+   "session_id": "SES-00707",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00378",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00708",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00461",
+   "campaign_id": "CMP-025"
+  },
+  {
+   "session_id": "SES-00709",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00094",
+   "campaign_id": "CMP-070"
+  },
+  {
+   "session_id": "SES-00710",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00082",
+   "campaign_id": "CMP-037"
+  },
+  {
+   "session_id": "SES-00711",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00339",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00712",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00001",
+   "campaign_id": "CMP-009"
+  },
+  {
+   "session_id": "SES-00713",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00183",
+   "campaign_id": "CMP-008"
+  },
+  {
+   "session_id": "SES-00714",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00379",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00715",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00535",
+   "campaign_id": "CMP-044"
+  },
+  {
+   "session_id": "SES-00716",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00483",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00717",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00146",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00718",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00406",
+   "campaign_id": "CMP-040"
+  },
+  {
+   "session_id": "SES-00719",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00468",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00720",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00220",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00721",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00486",
+   "campaign_id": "CMP-045"
+  },
+  {
+   "session_id": "SES-00722",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00265",
+   "campaign_id": "CMP-060"
+  },
+  {
+   "session_id": "SES-00723",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00059",
+   "campaign_id": "CMP-003"
+  },
+  {
+   "session_id": "SES-00724",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00480",
+   "campaign_id": "CMP-053"
+  },
+  {
+   "session_id": "SES-00725",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00015",
+   "campaign_id": "CMP-042"
+  },
+  {
+   "session_id": "SES-00726",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00003",
+   "campaign_id": "CMP-041"
+  },
+  {
+   "session_id": "SES-00727",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00121",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00728",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00267",
+   "campaign_id": "CMP-014"
+  },
+  {
+   "session_id": "SES-00729",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00138",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00730",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00007",
+   "campaign_id": "CMP-012"
+  },
+  {
+   "session_id": "SES-00731",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00120",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00732",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00013",
+   "campaign_id": "CMP-065"
+  },
+  {
+   "session_id": "SES-00733",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00515",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00734",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00186",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00735",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00515",
+   "campaign_id": "CMP-034"
+  },
+  {
+   "session_id": "SES-00736",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00072",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00737",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00101",
+   "campaign_id": "CMP-005"
+  },
+  {
+   "session_id": "SES-00738",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00009",
+   "campaign_id": "CMP-026"
+  },
+  {
+   "session_id": "SES-00739",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00004",
+   "campaign_id": "CMP-063"
+  },
+  {
+   "session_id": "SES-00740",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00434",
+   "campaign_id": "CMP-049"
+  },
+  {
+   "session_id": "SES-00741",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00505",
+   "campaign_id": "CMP-034"
+  },
+  {
+   "session_id": "SES-00742",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00396",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00743",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00308",
+   "campaign_id": "CMP-066"
+  },
+  {
+   "session_id": "SES-00744",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00158",
+   "campaign_id": "CMP-052"
+  },
+  {
+   "session_id": "SES-00745",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00065",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00746",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00200",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00747",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00239",
+   "campaign_id": "CMP-028"
+  },
+  {
+   "session_id": "SES-00748",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00324",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00749",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00311",
+   "campaign_id": "CMP-062"
+  },
+  {
+   "session_id": "SES-00750",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00156",
+   "campaign_id": "CMP-042"
+  },
+  {
+   "session_id": "SES-00751",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00036",
+   "campaign_id": "CMP-049"
+  },
+  {
+   "session_id": "SES-00752",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00004",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00753",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00453",
+   "campaign_id": "CMP-065"
+  },
+  {
+   "session_id": "SES-00754",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00129",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00755",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00046",
+   "campaign_id": "CMP-037"
+  },
+  {
+   "session_id": "SES-00756",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00322",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00757",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00376",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00758",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00268",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00759",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00451",
+   "campaign_id": "CMP-018"
+  },
+  {
+   "session_id": "SES-00760",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00010",
+   "campaign_id": "CMP-068"
+  },
+  {
+   "session_id": "SES-00761",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00501",
+   "campaign_id": "CMP-056"
+  },
+  {
+   "session_id": "SES-00762",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00067",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00763",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00070",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00764",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00032",
+   "campaign_id": "CMP-061"
+  },
+  {
+   "session_id": "SES-00765",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00058",
+   "campaign_id": "CMP-038"
+  },
+  {
+   "session_id": "SES-00766",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00151",
+   "campaign_id": "CMP-045"
+  },
+  {
+   "session_id": "SES-00767",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00417",
+   "campaign_id": "CMP-024"
+  },
+  {
+   "session_id": "SES-00768",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00415",
+   "campaign_id": "CMP-066"
+  },
+  {
+   "session_id": "SES-00769",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00115",
+   "campaign_id": "CMP-021"
+  },
+  {
+   "session_id": "SES-00770",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00474",
+   "campaign_id": "CMP-015"
+  },
+  {
+   "session_id": "SES-00771",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00001",
+   "campaign_id": "CMP-002"
+  },
+  {
+   "session_id": "SES-00772",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00111",
+   "campaign_id": "CMP-039"
+  },
+  {
+   "session_id": "SES-00773",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00471",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00774",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00123",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00775",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00013",
+   "campaign_id": "CMP-015"
+  },
+  {
+   "session_id": "SES-00776",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00407",
+   "campaign_id": "CMP-022"
+  },
+  {
+   "session_id": "SES-00777",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00039",
+   "campaign_id": "CMP-018"
+  },
+  {
+   "session_id": "SES-00778",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00094",
+   "campaign_id": "CMP-065"
+  },
+  {
+   "session_id": "SES-00779",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00019",
+   "campaign_id": "CMP-004"
+  },
+  {
+   "session_id": "SES-00780",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00225",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00781",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00001",
+   "campaign_id": "CMP-053"
+  },
+  {
+   "session_id": "SES-00782",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00446",
+   "campaign_id": "CMP-001"
+  },
+  {
+   "session_id": "SES-00783",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00005",
+   "campaign_id": "CMP-009"
+  },
+  {
+   "session_id": "SES-00784",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00065",
+   "campaign_id": "CMP-017"
+  },
+  {
+   "session_id": "SES-00785",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00231",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00786",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00206",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00787",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00052",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00788",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00486",
+   "campaign_id": "CMP-031"
+  },
+  {
+   "session_id": "SES-00789",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00510",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00790",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00154",
+   "campaign_id": "CMP-023"
+  },
+  {
+   "session_id": "SES-00791",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00333",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00792",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00053",
+   "campaign_id": "CMP-069"
+  },
+  {
+   "session_id": "SES-00793",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00268",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00794",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00397",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00795",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00463",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00796",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00094",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00797",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00097",
+   "campaign_id": "CMP-007"
+  },
+  {
+   "session_id": "SES-00798",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00158",
+   "campaign_id": "CMP-023"
+  },
+  {
+   "session_id": "SES-00799",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00010",
+   "campaign_id": "CMP-060"
+  },
+  {
+   "session_id": "SES-00800",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00188",
+   "campaign_id": "CMP-042"
+  },
+  {
+   "session_id": "SES-00801",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00350",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00802",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00009",
+   "campaign_id": "CMP-040"
+  },
+  {
+   "session_id": "SES-00803",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00457",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00804",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00063",
+   "campaign_id": "CMP-001"
+  },
+  {
+   "session_id": "SES-00805",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00010",
+   "campaign_id": "CMP-064"
+  },
+  {
+   "session_id": "SES-00806",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00382",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00807",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00110",
+   "campaign_id": "CMP-012"
+  },
+  {
+   "session_id": "SES-00808",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00003",
+   "campaign_id": "CMP-007"
+  },
+  {
+   "session_id": "SES-00809",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00043",
+   "campaign_id": "CMP-043"
+  },
+  {
+   "session_id": "SES-00810",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00376",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00811",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00169",
+   "campaign_id": "CMP-054"
+  },
+  {
+   "session_id": "SES-00812",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00155",
+   "campaign_id": "CMP-010"
+  },
+  {
+   "session_id": "SES-00813",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00053",
+   "campaign_id": "CMP-043"
+  },
+  {
+   "session_id": "SES-00814",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00481",
+   "campaign_id": "CMP-029"
+  },
+  {
+   "session_id": "SES-00815",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00032",
+   "campaign_id": "CMP-022"
+  },
+  {
+   "session_id": "SES-00816",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00447",
+   "campaign_id": "CMP-001"
+  },
+  {
+   "session_id": "SES-00817",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00242",
+   "campaign_id": "CMP-010"
+  },
+  {
+   "session_id": "SES-00818",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00077",
+   "campaign_id": "CMP-022"
+  },
+  {
+   "session_id": "SES-00819",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00084",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00820",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00234",
+   "campaign_id": "CMP-032"
+  },
+  {
+   "session_id": "SES-00821",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00472",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00822",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00285",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00823",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00512",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00824",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00430",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00825",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00053",
+   "campaign_id": "CMP-045"
+  },
+  {
+   "session_id": "SES-00826",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00138",
+   "campaign_id": "CMP-062"
+  },
+  {
+   "session_id": "SES-00827",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00433",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00828",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00461",
+   "campaign_id": "CMP-032"
+  },
+  {
+   "session_id": "SES-00829",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00007",
+   "campaign_id": "CMP-060"
+  },
+  {
+   "session_id": "SES-00830",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00453",
+   "campaign_id": "CMP-048"
+  },
+  {
+   "session_id": "SES-00831",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00414",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00832",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00130",
+   "campaign_id": "CMP-069"
+  },
+  {
+   "session_id": "SES-00833",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00472",
+   "campaign_id": "CMP-017"
+  },
+  {
+   "session_id": "SES-00834",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00459",
+   "campaign_id": "CMP-070"
+  },
+  {
+   "session_id": "SES-00835",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00005",
+   "campaign_id": "CMP-053"
+  },
+  {
+   "session_id": "SES-00836",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00021",
+   "campaign_id": "CMP-019"
+  },
+  {
+   "session_id": "SES-00837",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00102",
+   "campaign_id": "CMP-009"
+  },
+  {
+   "session_id": "SES-00838",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00151",
+   "campaign_id": "CMP-046"
+  },
+  {
+   "session_id": "SES-00839",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00222",
+   "campaign_id": "CMP-040"
+  },
+  {
+   "session_id": "SES-00840",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00229",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00841",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00403",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00842",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00005",
+   "campaign_id": "CMP-005"
+  },
+  {
+   "session_id": "SES-00843",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00453",
+   "campaign_id": "CMP-019"
+  },
+  {
+   "session_id": "SES-00844",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00061",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00845",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00043",
+   "campaign_id": "CMP-029"
+  },
+  {
+   "session_id": "SES-00846",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00337",
+   "campaign_id": "CMP-028"
+  },
+  {
+   "session_id": "SES-00847",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00165",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00848",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00183",
+   "campaign_id": "CMP-070"
+  },
+  {
+   "session_id": "SES-00849",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00025",
+   "campaign_id": "CMP-001"
+  },
+  {
+   "session_id": "SES-00850",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00155",
+   "campaign_id": "CMP-066"
+  },
+  {
+   "session_id": "SES-00851",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00070",
+   "campaign_id": "CMP-015"
+  },
+  {
+   "session_id": "SES-00852",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00006",
+   "campaign_id": "CMP-017"
+  },
+  {
+   "session_id": "SES-00853",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00076",
+   "campaign_id": "CMP-015"
+  },
+  {
+   "session_id": "SES-00854",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00156",
+   "campaign_id": "CMP-065"
+  },
+  {
+   "session_id": "SES-00855",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00417",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00856",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00158",
+   "campaign_id": "CMP-067"
+  },
+  {
+   "session_id": "SES-00857",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00011",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00858",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00276",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00859",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00236",
+   "campaign_id": "CMP-046"
+  },
+  {
+   "session_id": "SES-00860",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00001",
+   "campaign_id": "CMP-001"
+  },
+  {
+   "session_id": "SES-00861",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00086",
+   "campaign_id": "CMP-057"
+  },
+  {
+   "session_id": "SES-00862",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00269",
+   "campaign_id": "CMP-056"
+  },
+  {
+   "session_id": "SES-00863",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00360",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00864",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00013",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00865",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00526",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00866",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00533",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00867",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00049",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00868",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00004",
+   "campaign_id": "CMP-045"
+  },
+  {
+   "session_id": "SES-00869",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00037",
+   "campaign_id": "CMP-064"
+  },
+  {
+   "session_id": "SES-00870",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00446",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00871",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00391",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00872",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00019",
+   "campaign_id": "CMP-047"
+  },
+  {
+   "session_id": "SES-00873",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00252",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00874",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00451",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00875",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00467",
+   "campaign_id": "CMP-055"
+  },
+  {
+   "session_id": "SES-00876",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00291",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00877",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00326",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00878",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00094",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00879",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00279",
+   "campaign_id": "CMP-058"
+  },
+  {
+   "session_id": "SES-00880",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00007",
+   "campaign_id": "CMP-008"
+  },
+  {
+   "session_id": "SES-00881",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00487",
+   "campaign_id": "CMP-020"
+  },
+  {
+   "session_id": "SES-00882",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00337",
+   "campaign_id": "CMP-002"
+  },
+  {
+   "session_id": "SES-00883",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00215",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00884",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00470",
+   "campaign_id": "CMP-053"
+  },
+  {
+   "session_id": "SES-00885",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00229",
+   "campaign_id": "CMP-022"
+  },
+  {
+   "session_id": "SES-00886",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00323",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00887",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00016",
+   "campaign_id": "CMP-070"
+  },
+  {
+   "session_id": "SES-00888",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00048",
+   "campaign_id": "CMP-025"
+  },
+  {
+   "session_id": "SES-00889",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00025",
+   "campaign_id": "CMP-023"
+  },
+  {
+   "session_id": "SES-00890",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00044",
+   "campaign_id": "CMP-031"
+  },
+  {
+   "session_id": "SES-00891",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00348",
+   "campaign_id": "CMP-056"
+  },
+  {
+   "session_id": "SES-00892",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00081",
+   "campaign_id": "CMP-031"
+  },
+  {
+   "session_id": "SES-00893",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00090",
+   "campaign_id": "CMP-045"
+  },
+  {
+   "session_id": "SES-00894",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00158",
+   "campaign_id": "CMP-007"
+  },
+  {
+   "session_id": "SES-00895",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00187",
+   "campaign_id": "CMP-020"
+  },
+  {
+   "session_id": "SES-00896",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00417",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00897",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00034",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00898",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00175",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00899",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00368",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00900",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00157",
+   "campaign_id": "CMP-006"
+  },
+  {
+   "session_id": "SES-00901",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00150",
+   "campaign_id": "CMP-056"
+  },
+  {
+   "session_id": "SES-00902",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00176",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00903",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00335",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00904",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00145",
+   "campaign_id": "CMP-050"
+  },
+  {
+   "session_id": "SES-00905",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00466",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00906",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00012",
+   "campaign_id": "CMP-027"
+  },
+  {
+   "session_id": "SES-00907",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00001",
+   "campaign_id": "CMP-023"
+  },
+  {
+   "session_id": "SES-00908",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00103",
+   "campaign_id": "CMP-035"
+  },
+  {
+   "session_id": "SES-00909",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00290",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00910",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00276",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00911",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00106",
+   "campaign_id": "CMP-049"
+  },
+  {
+   "session_id": "SES-00912",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00502",
+   "campaign_id": "CMP-034"
+  },
+  {
+   "session_id": "SES-00913",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00468",
+   "campaign_id": "CMP-004"
+  },
+  {
+   "session_id": "SES-00914",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00151",
+   "campaign_id": "CMP-031"
+  },
+  {
+   "session_id": "SES-00915",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00468",
+   "campaign_id": "CMP-045"
+  },
+  {
+   "session_id": "SES-00916",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00349",
+   "campaign_id": "CMP-060"
+  },
+  {
+   "session_id": "SES-00917",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00439",
+   "campaign_id": "CMP-060"
+  },
+  {
+   "session_id": "SES-00918",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00055",
+   "campaign_id": "CMP-031"
+  },
+  {
+   "session_id": "SES-00919",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00186",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00920",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00017",
+   "campaign_id": "CMP-041"
+  },
+  {
+   "session_id": "SES-00921",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00380",
+   "campaign_id": "CMP-056"
+  },
+  {
+   "session_id": "SES-00922",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00313",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00923",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00486",
+   "campaign_id": "CMP-041"
+  },
+  {
+   "session_id": "SES-00924",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00088",
+   "campaign_id": "CMP-054"
+  },
+  {
+   "session_id": "SES-00925",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00012",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00926",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00349",
+   "campaign_id": "CMP-056"
+  },
+  {
+   "session_id": "SES-00927",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00430",
+   "campaign_id": "CMP-043"
+  },
+  {
+   "session_id": "SES-00928",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00012",
+   "campaign_id": "CMP-026"
+  },
+  {
+   "session_id": "SES-00929",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00411",
+   "campaign_id": "CMP-038"
+  },
+  {
+   "session_id": "SES-00930",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00136",
+   "campaign_id": "CMP-005"
+  },
+  {
+   "session_id": "SES-00931",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00008",
+   "campaign_id": "CMP-067"
+  },
+  {
+   "session_id": "SES-00932",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00450",
+   "campaign_id": "CMP-059"
+  },
+  {
+   "session_id": "SES-00933",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00049",
+   "campaign_id": "CMP-027"
+  },
+  {
+   "session_id": "SES-00934",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00040",
+   "campaign_id": "CMP-022"
+  },
+  {
+   "session_id": "SES-00935",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00126",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00936",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00016",
+   "campaign_id": "CMP-070"
+  },
+  {
+   "session_id": "SES-00937",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00476",
+   "campaign_id": "CMP-052"
+  },
+  {
+   "session_id": "SES-00938",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00154",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00939",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00133",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00940",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00160",
+   "campaign_id": "CMP-033"
+  },
+  {
+   "session_id": "SES-00941",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00057",
+   "campaign_id": "CMP-056"
+  },
+  {
+   "session_id": "SES-00942",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00061",
+   "campaign_id": "CMP-031"
+  },
+  {
+   "session_id": "SES-00943",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00134",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00944",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00108",
+   "campaign_id": "CMP-061"
+  },
+  {
+   "session_id": "SES-00945",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00458",
+   "campaign_id": "CMP-024"
+  },
+  {
+   "session_id": "SES-00946",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00309",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00947",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00146",
+   "campaign_id": "CMP-044"
+  },
+  {
+   "session_id": "SES-00948",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00283",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00949",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00090",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00950",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00207",
+   "campaign_id": "CMP-002"
+  },
+  {
+   "session_id": "SES-00951",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00438",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00952",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00114",
+   "campaign_id": "CMP-015"
+  },
+  {
+   "session_id": "SES-00953",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00375",
+   "campaign_id": "CMP-036"
+  },
+  {
+   "session_id": "SES-00954",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00514",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00955",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00364",
+   "campaign_id": "CMP-062"
+  },
+  {
+   "session_id": "SES-00956",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00299",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00957",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00434",
+   "campaign_id": "CMP-061"
+  },
+  {
+   "session_id": "SES-00958",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00271",
+   "campaign_id": "CMP-038"
+  },
+  {
+   "session_id": "SES-00959",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00007",
+   "campaign_id": "CMP-018"
+  },
+  {
+   "session_id": "SES-00960",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00169",
+   "campaign_id": "CMP-024"
+  },
+  {
+   "session_id": "SES-00961",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00122",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00962",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00383",
+   "campaign_id": "CMP-014"
+  },
+  {
+   "session_id": "SES-00963",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00436",
+   "campaign_id": "CMP-017"
+  },
+  {
+   "session_id": "SES-00964",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00043",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00965",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00484",
+   "campaign_id": "CMP-052"
+  },
+  {
+   "session_id": "SES-00966",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00319",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00967",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00032",
+   "campaign_id": "CMP-007"
+  },
+  {
+   "session_id": "SES-00968",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00088",
+   "campaign_id": "CMP-016"
+  },
+  {
+   "session_id": "SES-00969",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00078",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00970",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00294",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00971",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00150",
+   "campaign_id": "CMP-025"
+  },
+  {
+   "session_id": "SES-00972",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00052",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00973",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00313",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00974",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00019",
+   "campaign_id": "CMP-018"
+  },
+  {
+   "session_id": "SES-00975",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00139",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00976",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00044",
+   "campaign_id": "CMP-053"
+  },
+  {
+   "session_id": "SES-00977",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00024",
+   "campaign_id": "CMP-067"
+  },
+  {
+   "session_id": "SES-00978",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00348",
+   "campaign_id": "CMP-026"
+  },
+  {
+   "session_id": "SES-00979",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00266",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00980",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00117",
+   "campaign_id": "CMP-044"
+  },
+  {
+   "session_id": "SES-00981",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00085",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00982",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00253",
+   "campaign_id": "CMP-038"
+  },
+  {
+   "session_id": "SES-00983",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00165",
+   "campaign_id": "CMP-006"
+  },
+  {
+   "session_id": "SES-00984",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00243",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00985",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00030",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00986",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00070",
+   "campaign_id": "CMP-057"
+  },
+  {
+   "session_id": "SES-00987",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00344",
+   "campaign_id": "CMP-048"
+  },
+  {
+   "session_id": "SES-00988",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00488",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00989",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00324",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00990",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00300",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00991",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00061",
+   "campaign_id": "CMP-059"
+  },
+  {
+   "session_id": "SES-00992",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00299",
+   "campaign_id": "CMP-044"
+  },
+  {
+   "session_id": "SES-00993",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00009",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-00994",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00135",
+   "campaign_id": "CMP-039"
+  },
+  {
+   "session_id": "SES-00995",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00072",
+   "campaign_id": "CMP-062"
+  },
+  {
+   "session_id": "SES-00996",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00036",
+   "campaign_id": "CMP-003"
+  },
+  {
+   "session_id": "SES-00997",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00146",
+   "campaign_id": "CMP-034"
+  },
+  {
+   "session_id": "SES-00998",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00030",
+   "campaign_id": "CMP-029"
+  },
+  {
+   "session_id": "SES-00999",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00437",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01000",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00247",
+   "campaign_id": "CMP-006"
+  },
+  {
+   "session_id": "SES-01001",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00451",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01002",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00160",
+   "campaign_id": "CMP-015"
+  },
+  {
+   "session_id": "SES-01003",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00143",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01004",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00009",
+   "campaign_id": "CMP-065"
+  },
+  {
+   "session_id": "SES-01005",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00105",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01006",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00063",
+   "campaign_id": "CMP-064"
+  },
+  {
+   "session_id": "SES-01007",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00421",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01008",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00087",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01009",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00052",
+   "campaign_id": "CMP-044"
+  },
+  {
+   "session_id": "SES-01010",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00470",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01011",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00229",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01012",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00043",
+   "campaign_id": "CMP-065"
+  },
+  {
+   "session_id": "SES-01013",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00018",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01014",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00163",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01015",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00058",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01016",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00039",
+   "campaign_id": "CMP-008"
+  },
+  {
+   "session_id": "SES-01017",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00068",
+   "campaign_id": "CMP-026"
+  },
+  {
+   "session_id": "SES-01018",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00530",
+   "campaign_id": "CMP-041"
+  },
+  {
+   "session_id": "SES-01019",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00076",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01020",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00036",
+   "campaign_id": "CMP-054"
+  },
+  {
+   "session_id": "SES-01021",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00045",
+   "campaign_id": "CMP-002"
+  },
+  {
+   "session_id": "SES-01022",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00519",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01023",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00048",
+   "campaign_id": "CMP-023"
+  },
+  {
+   "session_id": "SES-01024",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00056",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01025",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00287",
+   "campaign_id": "CMP-048"
+  },
+  {
+   "session_id": "SES-01026",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00418",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01027",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00175",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01028",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00049",
+   "campaign_id": "CMP-025"
+  },
+  {
+   "session_id": "SES-01029",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00481",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01030",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00018",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01031",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00430",
+   "campaign_id": "CMP-055"
+  },
+  {
+   "session_id": "SES-01032",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00006",
+   "campaign_id": "CMP-017"
+  },
+  {
+   "session_id": "SES-01033",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00036",
+   "campaign_id": "CMP-070"
+  },
+  {
+   "session_id": "SES-01034",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00365",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01035",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00466",
+   "campaign_id": "CMP-034"
+  },
+  {
+   "session_id": "SES-01036",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00009",
+   "campaign_id": "CMP-011"
+  },
+  {
+   "session_id": "SES-01037",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00482",
+   "campaign_id": "CMP-020"
+  },
+  {
+   "session_id": "SES-01038",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00090",
+   "campaign_id": "CMP-014"
+  },
+  {
+   "session_id": "SES-01039",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00153",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01040",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00282",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01041",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00522",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01042",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00239",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01043",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00240",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01044",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00061",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01045",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00086",
+   "campaign_id": "CMP-069"
+  },
+  {
+   "session_id": "SES-01046",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00072",
+   "campaign_id": "CMP-048"
+  },
+  {
+   "session_id": "SES-01047",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00292",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01048",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00533",
+   "campaign_id": "CMP-013"
+  },
+  {
+   "session_id": "SES-01049",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00056",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01050",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00156",
+   "campaign_id": "CMP-020"
+  },
+  {
+   "session_id": "SES-01051",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00323",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01052",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00196",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01053",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00002",
+   "campaign_id": "CMP-053"
+  },
+  {
+   "session_id": "SES-01054",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00157",
+   "campaign_id": "CMP-041"
+  },
+  {
+   "session_id": "SES-01055",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00405",
+   "campaign_id": "CMP-018"
+  },
+  {
+   "session_id": "SES-01056",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00473",
+   "campaign_id": "CMP-025"
+  },
+  {
+   "session_id": "SES-01057",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00103",
+   "campaign_id": "CMP-001"
+  },
+  {
+   "session_id": "SES-01058",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00437",
+   "campaign_id": "CMP-051"
+  },
+  {
+   "session_id": "SES-01059",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00453",
+   "campaign_id": "CMP-027"
+  },
+  {
+   "session_id": "SES-01060",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00176",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01061",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00196",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01062",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00428",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01063",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00148",
+   "campaign_id": "CMP-004"
+  },
+  {
+   "session_id": "SES-01064",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00184",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01065",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00258",
+   "campaign_id": "CMP-038"
+  },
+  {
+   "session_id": "SES-01066",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00461",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01067",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00487",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01068",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00442",
+   "campaign_id": "CMP-022"
+  },
+  {
+   "session_id": "SES-01069",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00290",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01070",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00190",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01071",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00191",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01072",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00524",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01073",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00048",
+   "campaign_id": "CMP-051"
+  },
+  {
+   "session_id": "SES-01074",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00424",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01075",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00081",
+   "campaign_id": "CMP-023"
+  },
+  {
+   "session_id": "SES-01076",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00135",
+   "campaign_id": "CMP-013"
+  },
+  {
+   "session_id": "SES-01077",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00053",
+   "campaign_id": "CMP-068"
+  },
+  {
+   "session_id": "SES-01078",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00113",
+   "campaign_id": "CMP-024"
+  },
+  {
+   "session_id": "SES-01079",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00057",
+   "campaign_id": "CMP-007"
+  },
+  {
+   "session_id": "SES-01080",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00123",
+   "campaign_id": "CMP-067"
+  },
+  {
+   "session_id": "SES-01081",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00215",
+   "campaign_id": "CMP-028"
+  },
+  {
+   "session_id": "SES-01082",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00461",
+   "campaign_id": "CMP-027"
+  },
+  {
+   "session_id": "SES-01083",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00457",
+   "campaign_id": "CMP-035"
+  },
+  {
+   "session_id": "SES-01084",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00441",
+   "campaign_id": "CMP-063"
+  },
+  {
+   "session_id": "SES-01085",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00379",
+   "campaign_id": "CMP-062"
+  },
+  {
+   "session_id": "SES-01086",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00049",
+   "campaign_id": "CMP-041"
+  },
+  {
+   "session_id": "SES-01087",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00358",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01088",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00384",
+   "campaign_id": "CMP-008"
+  },
+  {
+   "session_id": "SES-01089",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00102",
+   "campaign_id": "CMP-033"
+  },
+  {
+   "session_id": "SES-01090",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00424",
+   "campaign_id": "CMP-060"
+  },
+  {
+   "session_id": "SES-01091",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00494",
+   "campaign_id": "CMP-034"
+  },
+  {
+   "session_id": "SES-01092",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00147",
+   "campaign_id": "CMP-004"
+  },
+  {
+   "session_id": "SES-01093",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00057",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01094",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00025",
+   "campaign_id": "CMP-017"
+  },
+  {
+   "session_id": "SES-01095",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00040",
+   "campaign_id": "CMP-070"
+  },
+  {
+   "session_id": "SES-01096",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00356",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01097",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00027",
+   "campaign_id": "CMP-005"
+  },
+  {
+   "session_id": "SES-01098",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00499",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01099",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00004",
+   "campaign_id": "CMP-048"
+  },
+  {
+   "session_id": "SES-01100",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00464",
+   "campaign_id": "CMP-018"
+  },
+  {
+   "session_id": "SES-01101",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00155",
+   "campaign_id": "CMP-026"
+  },
+  {
+   "session_id": "SES-01102",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00493",
+   "campaign_id": "CMP-056"
+  },
+  {
+   "session_id": "SES-01103",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00430",
+   "campaign_id": "CMP-055"
+  },
+  {
+   "session_id": "SES-01104",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00045",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01105",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00096",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01106",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00196",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01107",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00033",
+   "campaign_id": "CMP-032"
+  },
+  {
+   "session_id": "SES-01108",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00157",
+   "campaign_id": "CMP-012"
+  },
+  {
+   "session_id": "SES-01109",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00039",
+   "campaign_id": "CMP-029"
+  },
+  {
+   "session_id": "SES-01110",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00010",
+   "campaign_id": "CMP-036"
+  },
+  {
+   "session_id": "SES-01111",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00529",
+   "campaign_id": "CMP-029"
+  },
+  {
+   "session_id": "SES-01112",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00453",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01113",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00007",
+   "campaign_id": "CMP-003"
+  },
+  {
+   "session_id": "SES-01114",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00112",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01115",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00366",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01116",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00115",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01117",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00039",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01118",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00123",
+   "campaign_id": "CMP-050"
+  },
+  {
+   "session_id": "SES-01119",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00055",
+   "campaign_id": "CMP-046"
+  },
+  {
+   "session_id": "SES-01120",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00237",
+   "campaign_id": "CMP-042"
+  },
+  {
+   "session_id": "SES-01121",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00003",
+   "campaign_id": "CMP-053"
+  },
+  {
+   "session_id": "SES-01122",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00178",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01123",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00420",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01124",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00431",
+   "campaign_id": "CMP-069"
+  },
+  {
+   "session_id": "SES-01125",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00437",
+   "campaign_id": "CMP-025"
+  },
+  {
+   "session_id": "SES-01126",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00421",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01127",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00139",
+   "campaign_id": "CMP-031"
+  },
+  {
+   "session_id": "SES-01128",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00007",
+   "campaign_id": "CMP-049"
+  },
+  {
+   "session_id": "SES-01129",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00474",
+   "campaign_id": "CMP-062"
+  },
+  {
+   "session_id": "SES-01130",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00432",
+   "campaign_id": "CMP-044"
+  },
+  {
+   "session_id": "SES-01131",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00198",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01132",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00079",
+   "campaign_id": "CMP-059"
+  },
+  {
+   "session_id": "SES-01133",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00157",
+   "campaign_id": "CMP-006"
+  },
+  {
+   "session_id": "SES-01134",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00051",
+   "campaign_id": "CMP-028"
+  },
+  {
+   "session_id": "SES-01135",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00429",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01136",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00278",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01137",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00002",
+   "campaign_id": "CMP-023"
+  },
+  {
+   "session_id": "SES-01138",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00429",
+   "campaign_id": "CMP-045"
+  },
+  {
+   "session_id": "SES-01139",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00059",
+   "campaign_id": "CMP-063"
+  },
+  {
+   "session_id": "SES-01140",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00383",
+   "campaign_id": "CMP-002"
+  },
+  {
+   "session_id": "SES-01141",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00007",
+   "campaign_id": "CMP-064"
+  },
+  {
+   "session_id": "SES-01142",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00452",
+   "campaign_id": "CMP-016"
+  },
+  {
+   "session_id": "SES-01143",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00300",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01144",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00028",
+   "campaign_id": "CMP-048"
+  },
+  {
+   "session_id": "SES-01145",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00472",
+   "campaign_id": "CMP-001"
+  },
+  {
+   "session_id": "SES-01146",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00221",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01147",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00196",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01148",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00134",
+   "campaign_id": "CMP-009"
+  },
+  {
+   "session_id": "SES-01149",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00015",
+   "campaign_id": "CMP-044"
+  },
+  {
+   "session_id": "SES-01150",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00229",
+   "campaign_id": "CMP-066"
+  },
+  {
+   "session_id": "SES-01151",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00148",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01152",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00531",
+   "campaign_id": "CMP-014"
+  },
+  {
+   "session_id": "SES-01153",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00436",
+   "campaign_id": "CMP-061"
+  },
+  {
+   "session_id": "SES-01154",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00023",
+   "campaign_id": "CMP-057"
+  },
+  {
+   "session_id": "SES-01155",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00063",
+   "campaign_id": "CMP-025"
+  },
+  {
+   "session_id": "SES-01156",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00123",
+   "campaign_id": "CMP-044"
+  },
+  {
+   "session_id": "SES-01157",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00253",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01158",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00509",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01159",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00138",
+   "campaign_id": "CMP-015"
+  },
+  {
+   "session_id": "SES-01160",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00498",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01161",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00202",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01162",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00015",
+   "campaign_id": "CMP-063"
+  },
+  {
+   "session_id": "SES-01163",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00111",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01164",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00002",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01165",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00012",
+   "campaign_id": "CMP-014"
+  },
+  {
+   "session_id": "SES-01166",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00163",
+   "campaign_id": "CMP-006"
+  },
+  {
+   "session_id": "SES-01167",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00353",
+   "campaign_id": "CMP-014"
+  },
+  {
+   "session_id": "SES-01168",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00142",
+   "campaign_id": "CMP-034"
+  },
+  {
+   "session_id": "SES-01169",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00161",
+   "campaign_id": "CMP-045"
+  },
+  {
+   "session_id": "SES-01170",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00097",
+   "campaign_id": "CMP-002"
+  },
+  {
+   "session_id": "SES-01171",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00435",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01172",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00472",
+   "campaign_id": "CMP-019"
+  },
+  {
+   "session_id": "SES-01173",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00147",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01174",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00428",
+   "campaign_id": "CMP-043"
+  },
+  {
+   "session_id": "SES-01175",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00385",
+   "campaign_id": "CMP-058"
+  },
+  {
+   "session_id": "SES-01176",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00154",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01177",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00211",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01178",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00156",
+   "campaign_id": "CMP-043"
+  },
+  {
+   "session_id": "SES-01179",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00010",
+   "campaign_id": "CMP-019"
+  },
+  {
+   "session_id": "SES-01180",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00451",
+   "campaign_id": "CMP-059"
+  },
+  {
+   "session_id": "SES-01181",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00210",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01182",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00380",
+   "campaign_id": "CMP-014"
+  },
+  {
+   "session_id": "SES-01183",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00187",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01184",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00046",
+   "campaign_id": "CMP-060"
+  },
+  {
+   "session_id": "SES-01185",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00465",
+   "campaign_id": "CMP-065"
+  },
+  {
+   "session_id": "SES-01186",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00290",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01187",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00371",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01188",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00465",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01189",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00265",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01190",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00457",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01191",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00297",
+   "campaign_id": "CMP-012"
+  },
+  {
+   "session_id": "SES-01192",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00032",
+   "campaign_id": "CMP-066"
+  },
+  {
+   "session_id": "SES-01193",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00100",
+   "campaign_id": "CMP-042"
+  },
+  {
+   "session_id": "SES-01194",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00474",
+   "campaign_id": "CMP-029"
+  },
+  {
+   "session_id": "SES-01195",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00310",
+   "campaign_id": "CMP-020"
+  },
+  {
+   "session_id": "SES-01196",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00059",
+   "campaign_id": "CMP-005"
+  },
+  {
+   "session_id": "SES-01197",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00417",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01198",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00474",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01199",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00160",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01200",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00493",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01201",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00035",
+   "campaign_id": "CMP-008"
+  },
+  {
+   "session_id": "SES-01202",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00298",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01203",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00070",
+   "campaign_id": "CMP-067"
+  },
+  {
+   "session_id": "SES-01204",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00047",
+   "campaign_id": "CMP-061"
+  },
+  {
+   "session_id": "SES-01205",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00431",
+   "campaign_id": "CMP-035"
+  },
+  {
+   "session_id": "SES-01206",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00281",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01207",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00220",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01208",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00449",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01209",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00357",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01210",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00102",
+   "campaign_id": "CMP-027"
+  },
+  {
+   "session_id": "SES-01211",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00067",
+   "campaign_id": "CMP-045"
+  },
+  {
+   "session_id": "SES-01212",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00047",
+   "campaign_id": "CMP-008"
+  },
+  {
+   "session_id": "SES-01213",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00357",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01214",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00192",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01215",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00057",
+   "campaign_id": "CMP-003"
+  },
+  {
+   "session_id": "SES-01216",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00290",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01217",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00361",
+   "campaign_id": "CMP-044"
+  },
+  {
+   "session_id": "SES-01218",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00018",
+   "campaign_id": "CMP-061"
+  },
+  {
+   "session_id": "SES-01219",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00127",
+   "campaign_id": "CMP-070"
+  },
+  {
+   "session_id": "SES-01220",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00057",
+   "campaign_id": "CMP-068"
+  },
+  {
+   "session_id": "SES-01221",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00215",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01222",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00369",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01223",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00343",
+   "campaign_id": "CMP-022"
+  },
+  {
+   "session_id": "SES-01224",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00442",
+   "campaign_id": "CMP-024"
+  },
+  {
+   "session_id": "SES-01225",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00435",
+   "campaign_id": "CMP-025"
+  },
+  {
+   "session_id": "SES-01226",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00006",
+   "campaign_id": "CMP-055"
+  },
+  {
+   "session_id": "SES-01227",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00189",
+   "campaign_id": "CMP-038"
+  },
+  {
+   "session_id": "SES-01228",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00285",
+   "campaign_id": "CMP-048"
+  },
+  {
+   "session_id": "SES-01229",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00232",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01230",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00152",
+   "campaign_id": "CMP-030"
+  },
+  {
+   "session_id": "SES-01231",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00220",
+   "campaign_id": "CMP-070"
+  },
+  {
+   "session_id": "SES-01232",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00443",
+   "campaign_id": "CMP-016"
+  },
+  {
+   "session_id": "SES-01233",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00005",
+   "campaign_id": "CMP-039"
+  },
+  {
+   "session_id": "SES-01234",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00386",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01235",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00485",
+   "campaign_id": "CMP-069"
+  },
+  {
+   "session_id": "SES-01236",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00441",
+   "campaign_id": "CMP-028"
+  },
+  {
+   "session_id": "SES-01237",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00022",
+   "campaign_id": "CMP-019"
+  },
+  {
+   "session_id": "SES-01238",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00045",
+   "campaign_id": "CMP-009"
+  },
+  {
+   "session_id": "SES-01239",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00131",
+   "campaign_id": "CMP-019"
+  },
+  {
+   "session_id": "SES-01240",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00149",
+   "campaign_id": "CMP-037"
+  },
+  {
+   "session_id": "SES-01241",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00169",
+   "campaign_id": "CMP-064"
+  },
+  {
+   "session_id": "SES-01242",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00079",
+   "campaign_id": "CMP-013"
+  },
+  {
+   "session_id": "SES-01243",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00214",
+   "campaign_id": "CMP-046"
+  },
+  {
+   "session_id": "SES-01244",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00007",
+   "campaign_id": "CMP-056"
+  },
+  {
+   "session_id": "SES-01245",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00431",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01246",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00007",
+   "campaign_id": "CMP-014"
+  },
+  {
+   "session_id": "SES-01247",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00130",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01248",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00247",
+   "campaign_id": "CMP-028"
+  },
+  {
+   "session_id": "SES-01249",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00178",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01250",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00236",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01251",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00147",
+   "campaign_id": "CMP-016"
+  },
+  {
+   "session_id": "SES-01252",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00102",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01253",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00155",
+   "campaign_id": "CMP-003"
+  },
+  {
+   "session_id": "SES-01254",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00472",
+   "campaign_id": "CMP-064"
+  },
+  {
+   "session_id": "SES-01255",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00001",
+   "campaign_id": "CMP-016"
+  },
+  {
+   "session_id": "SES-01256",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00033",
+   "campaign_id": "CMP-069"
+  },
+  {
+   "session_id": "SES-01257",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00339",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01258",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00098",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01259",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00397",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01260",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00002",
+   "campaign_id": "CMP-059"
+  },
+  {
+   "session_id": "SES-01261",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00475",
+   "campaign_id": "CMP-038"
+  },
+  {
+   "session_id": "SES-01262",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00134",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01263",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00161",
+   "campaign_id": "CMP-037"
+  },
+  {
+   "session_id": "SES-01264",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00533",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01265",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00441",
+   "campaign_id": "CMP-026"
+  },
+  {
+   "session_id": "SES-01266",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00040",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01267",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00189",
+   "campaign_id": "CMP-050"
+  },
+  {
+   "session_id": "SES-01268",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00006",
+   "campaign_id": "CMP-005"
+  },
+  {
+   "session_id": "SES-01269",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00030",
+   "campaign_id": "CMP-037"
+  },
+  {
+   "session_id": "SES-01270",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00037",
+   "campaign_id": "CMP-060"
+  },
+  {
+   "session_id": "SES-01271",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00196",
+   "campaign_id": "CMP-020"
+  },
+  {
+   "session_id": "SES-01272",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00399",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01273",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00112",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01274",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00105",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01275",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00363",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01276",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00533",
+   "campaign_id": "CMP-038"
+  },
+  {
+   "session_id": "SES-01277",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00430",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01278",
+   "scenario": "reconnaissance",
+   "primary_asset_id": "AST-00161",
+   "campaign_id": "CMP-062"
+  },
+  {
+   "session_id": "SES-01279",
+   "scenario": "benign",
+   "primary_asset_id": "AST-00241",
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01280",
+   "scenario": "credential_access",
+   "primary_asset_id": "AST-00030",
+   "campaign_id": "CMP-045"
+  },
+  {
+   "session_id": "SES-01281",
+   "scenario": "unknown_asset",
+   "primary_asset_id": null,
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01282",
+   "scenario": "unknown_asset",
+   "primary_asset_id": null,
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01283",
+   "scenario": "unknown_asset",
+   "primary_asset_id": null,
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01284",
+   "scenario": "unknown_asset",
+   "primary_asset_id": null,
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01285",
+   "scenario": "unknown_asset",
+   "primary_asset_id": null,
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01286",
+   "scenario": "unknown_asset",
+   "primary_asset_id": null,
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01287",
+   "scenario": "unknown_asset",
+   "primary_asset_id": null,
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01288",
+   "scenario": "unknown_asset",
+   "primary_asset_id": null,
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01289",
+   "scenario": "unknown_asset",
+   "primary_asset_id": null,
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01290",
+   "scenario": "unknown_asset",
+   "primary_asset_id": null,
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01291",
+   "scenario": "unknown_asset",
+   "primary_asset_id": null,
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01292",
+   "scenario": "unknown_asset",
+   "primary_asset_id": null,
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01293",
+   "scenario": "unknown_asset",
+   "primary_asset_id": null,
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01294",
+   "scenario": "unknown_asset",
+   "primary_asset_id": null,
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01295",
+   "scenario": "unknown_asset",
+   "primary_asset_id": null,
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01296",
+   "scenario": "unknown_asset",
+   "primary_asset_id": null,
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01297",
+   "scenario": "unknown_asset",
+   "primary_asset_id": null,
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01298",
+   "scenario": "unknown_asset",
+   "primary_asset_id": null,
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01299",
+   "scenario": "unknown_asset",
+   "primary_asset_id": null,
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01300",
+   "scenario": "unknown_asset",
+   "primary_asset_id": null,
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01301",
+   "scenario": "unknown_asset",
+   "primary_asset_id": null,
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01302",
+   "scenario": "unknown_asset",
+   "primary_asset_id": null,
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01303",
+   "scenario": "unknown_asset",
+   "primary_asset_id": null,
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01304",
+   "scenario": "unknown_asset",
+   "primary_asset_id": null,
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01305",
+   "scenario": "unknown_asset",
+   "primary_asset_id": null,
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01306",
+   "scenario": "unknown_asset",
+   "primary_asset_id": null,
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01307",
+   "scenario": "unknown_asset",
+   "primary_asset_id": null,
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01308",
+   "scenario": "unknown_asset",
+   "primary_asset_id": null,
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01309",
+   "scenario": "unknown_asset",
+   "primary_asset_id": null,
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01310",
+   "scenario": "unknown_asset",
+   "primary_asset_id": null,
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01311",
+   "scenario": "unknown_asset",
+   "primary_asset_id": null,
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01312",
+   "scenario": "unknown_asset",
+   "primary_asset_id": null,
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01313",
+   "scenario": "unknown_asset",
+   "primary_asset_id": null,
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01314",
+   "scenario": "unknown_asset",
+   "primary_asset_id": null,
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01315",
+   "scenario": "unknown_asset",
+   "primary_asset_id": null,
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01316",
+   "scenario": "unknown_asset",
+   "primary_asset_id": null,
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01317",
+   "scenario": "unknown_asset",
+   "primary_asset_id": null,
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01318",
+   "scenario": "unknown_asset",
+   "primary_asset_id": null,
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01319",
+   "scenario": "unknown_asset",
+   "primary_asset_id": null,
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01320",
+   "scenario": "unknown_asset",
+   "primary_asset_id": null,
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01321",
+   "scenario": "unknown_asset",
+   "primary_asset_id": null,
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01322",
+   "scenario": "unknown_asset",
+   "primary_asset_id": null,
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01323",
+   "scenario": "unknown_asset",
+   "primary_asset_id": null,
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01324",
+   "scenario": "unknown_asset",
+   "primary_asset_id": null,
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01325",
+   "scenario": "unknown_asset",
+   "primary_asset_id": null,
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01326",
+   "scenario": "unknown_asset",
+   "primary_asset_id": null,
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01327",
+   "scenario": "unknown_asset",
+   "primary_asset_id": null,
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01328",
+   "scenario": "unknown_asset",
+   "primary_asset_id": null,
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01329",
+   "scenario": "unknown_asset",
+   "primary_asset_id": null,
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01330",
+   "scenario": "unknown_asset",
+   "primary_asset_id": null,
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01331",
+   "scenario": "unknown_asset",
+   "primary_asset_id": null,
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01332",
+   "scenario": "unknown_asset",
+   "primary_asset_id": null,
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01333",
+   "scenario": "unknown_asset",
+   "primary_asset_id": null,
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01334",
+   "scenario": "unknown_asset",
+   "primary_asset_id": null,
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01335",
+   "scenario": "unknown_asset",
+   "primary_asset_id": null,
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01336",
+   "scenario": "unknown_asset",
+   "primary_asset_id": null,
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01337",
+   "scenario": "unknown_asset",
+   "primary_asset_id": null,
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01338",
+   "scenario": "unknown_asset",
+   "primary_asset_id": null,
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01339",
+   "scenario": "unknown_asset",
+   "primary_asset_id": null,
+   "campaign_id": null
+  },
+  {
+   "session_id": "SES-01340",
+   "scenario": "unknown_asset",
+   "primary_asset_id": null,
+   "campaign_id": null
+  }
+ ]
+}

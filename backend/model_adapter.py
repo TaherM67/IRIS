@@ -2,13 +2,14 @@
 # IRIS EXPLAIN: shadow-only inference and model status.
 # IRIS EXPLAIN: Existing documentation/literal text below is kept exactly as written; the explanation is outside the string so
 # IRIS EXPLAIN: its value does not change.
-"""Load the operator-approved Colab bundle once; never train on an API request."""
+"""Load a pinned model profile once, retaining the original Colab rollback."""
 # IRIS EXPLAIN: Keep type annotations unevaluated at definition time; this does not add a model feature or change runtime
 # IRIS EXPLAIN: settings.
 from __future__ import annotations
 
 # IRIS EXPLAIN: Import json to encode and decode structured finite JSON payloads.
 import json
+import os
 # IRIS EXPLAIN: Import sys to inspect the Python version or select the same executable/import path.
 import sys
 # IRIS EXPLAIN: Import Path from pathlib to resolve server-owned paths without trusting uploaded filenames.
@@ -55,6 +56,16 @@ class ModelAdapter:
     # IRIS EXPLAIN: Inputs: model_dir: operator-trusted model bundle directory; manifest_path: server-owned artifact integrity
     # IRIS EXPLAIN: manifest.
     def __init__(self, model_dir: Path = MODEL_DIR, manifest_path: Path = MANIFEST):
+        self._active = None
+        profile = os.environ.get('IRIS_MODEL_PROFILE', 'iris_models_20261030')
+        if profile not in {'legacy', 'iris_models_20261030'}:
+            raise ValueError('IRIS_MODEL_PROFILE must be legacy or iris_models_20261030')
+        if profile != 'legacy' and model_dir == MODEL_DIR and manifest_path == MANIFEST:
+            from .grounded_adapter import GroundedModelAdapter
+            self._active = GroundedModelAdapter()
+            self.service, self.metadata = self._active.service, self._active.metadata
+            self.artifact_identity, self.loaded_at = self._active.artifact_identity, self._active.loaded_at
+            return
         # IRIS EXPLAIN: Store the result of json.loads(manifest_path.read_text(encoding='utf-8')) (decode the existing JSON
         # IRIS EXPLAIN: text) in manifest; later lines use this named result.
         manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
@@ -105,7 +116,12 @@ class ModelAdapter:
     # IRIS EXPLAIN: an ML candidate or claim automatic/official writes.
     # IRIS EXPLAIN: Inputs: session: observed session features plus time-valid asset/risk context.
     # IRIS EXPLAIN: Declared return type: dict; the return statements below show each actual result/fallback.
+    def enrich_sessions(self, sessions, paths):
+        return self._active.enrich_sessions(sessions, paths) if self._active is not None else sessions
+
     def predict(self, session: dict) -> dict:
+        if self._active is not None:
+            return self._active.predict(session)
         # IRIS EXPLAIN: Store the result of self.service.predict(session, mode='shadow') (obtain the configured prediction
         # IRIS EXPLAIN: result without training on this call) in prediction; later lines use this named result.
         prediction = self.service.predict(session, mode="shadow")
@@ -127,6 +143,8 @@ class ModelAdapter:
     # IRIS EXPLAIN: for dashboards, without exposing role secrets.
     # IRIS EXPLAIN: Declared return type: dict; the return statements below show each actual result/fallback.
     def status(self) -> dict:
+        if self._active is not None:
+            return self._active.status()
         # IRIS EXPLAIN: Return a mapping containing loaded, loaded_at_utc, mode, model_sha256, artifact_manifest_sha256,
         # IRIS EXPLAIN: package_version, aggregation_schema and additional fields to the caller; this ends the current function
         # IRIS EXPLAIN: path.

@@ -32,6 +32,7 @@ from .model_adapter import ModelAdapter, SAMPLES, digest, prepare_three, utc_now
 from .policy import VERSION, evaluate, primary_controls
 # IRIS EXPLAIN: Import Store from .storage to reuse the shared project contract/implementation rather than duplicate it.
 from .storage import Store
+from .grounded_adapter import public_review
 
 # IRIS EXPLAIN: Store a mapping containing asset_inventory, risk_register, siem_alerts in INPUTS; later lines use this named
 # IRIS EXPLAIN: result.
@@ -215,6 +216,8 @@ class Engine:
             # IRIS EXPLAIN: sessions; later lines use this named result.
             sessions = [json.loads(line) for line in (directory / "prepared/model_sessions.jsonl").read_text(encoding="utf-8").splitlines() if line.strip()]
             # IRIS EXPLAIN: Store ([], Counter()) in (cases, labels); later lines use this named result.
+            if hasattr(self.adapter, 'enrich_sessions'):
+                sessions = self.adapter.enrich_sessions(sessions, local)
             cases, labels = [], Counter()
             # IRIS EXPLAIN: Iterate sessions, binding each item to session; process only the existing observed/fixture
             # IRIS EXPLAIN: collection.
@@ -339,6 +342,11 @@ def view(case: dict, role: str) -> dict:
     # IRIS EXPLAIN: Finish the existing grouped expression/call or collection; any trailing fields/call chain remain unchanged.
     }
     # IRIS EXPLAIN: Enter this branch only when role == 'soc'.
+    shadow = prediction['shadow_candidate']
+    if shadow and 'model2_review' in prediction:
+        shadow = {key: value for key, value in shadow.items() if key != 'controls'}
+        if role == 'grc':
+            shadow['controls'] = public_review(prediction['model2_review'])
     if role == "soc":
         # IRIS EXPLAIN: Call common.update(evidence_features=session['features'], source_event_ids=session['source_event_ids'],
         # IRIS EXPLAIN: evidence_refs=session['evidence_refs'], risk_review=case['...: merge the supplied fields into this
@@ -350,9 +358,11 @@ def view(case: dict, role: str) -> dict:
                       # IRIS EXPLAIN: Continue the surrounding call, schema/list, or comprehension with these existing
                       # IRIS EXPLAIN: arguments/items: primary_controls=case["primary_controls"],
                       # IRIS EXPLAIN: shadow_candidate=prediction["shadow_candidate"]).
-                      primary_controls=case["primary_controls"], shadow_candidate=prediction["shadow_candidate"])
+                      primary_controls=case["primary_controls"], shadow_candidate=shadow)
     # IRIS EXPLAIN: Check this alternative branch when role == 'grc'.
     elif role == "grc":
+        if 'model2_review' in prediction:
+            common['model2_review'] = public_review(prediction['model2_review'])
         # IRIS EXPLAIN: Call common.update(risk_snapshots=session['risk_snapshots'], risk_review=case['risk_review'],
         # IRIS EXPLAIN: primary_controls=case['primary_controls'], shadow_candidate=predicti...: merge the supplied fields into
         # IRIS EXPLAIN: this existing mapping.
@@ -360,7 +370,7 @@ def view(case: dict, role: str) -> dict:
                       # IRIS EXPLAIN: Continue the surrounding call, schema/list, or comprehension with these existing
                       # IRIS EXPLAIN: arguments/items: primary_controls=case["primary_controls"],
                       # IRIS EXPLAIN: shadow_candidate=prediction["shadow_candidate"],.
-                      primary_controls=case["primary_controls"], shadow_candidate=prediction["shadow_candidate"],
+                      primary_controls=case["primary_controls"], shadow_candidate=shadow,
                       # IRIS EXPLAIN: Continue the surrounding call, schema/list, or comprehension with these existing
                       # IRIS EXPLAIN: arguments/items: shadow_model_context=session["context"],.
                       shadow_model_context=session["context"],

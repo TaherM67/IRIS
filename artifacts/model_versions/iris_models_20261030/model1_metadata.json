@@ -1,0 +1,253 @@
+{
+  "algorithm": "logistic_regression",
+  "selection_scores": {
+    "logistic_regression": 0.958272877979042,
+    "random_forest": 0.958272877979042,
+    "hist_gradient_boosting": 0.9573914793676562
+  },
+  "threshold": 0.5,
+  "calibration_strategy": "Frozen base; every disjoint calibration row scored once; no base refit",
+  "classes": [
+    "benign",
+    "credential_access",
+    "reconnaissance"
+  ],
+  "metrics": {
+    "n": 399,
+    "coverage": 1.0,
+    "macro_f1": 0.979556338664498,
+    "accuracy_all_sessions": 0.974937343358396,
+    "accepted_accuracy": 0.974937343358396,
+    "benign_false_positive_rate": 0.0,
+    "benign_false_alarms": 0,
+    "benign_support": 119,
+    "benign_fpr_wilson_95_percent": [
+      3.469446951953614e-18,
+      0.03127279358132749
+    ],
+    "per_class": {
+      "benign": {
+        "precision": 0.9224806201550387,
+        "recall": 1.0,
+        "f1": 0.9596774193548387,
+        "support": 119
+      },
+      "credential_access": {
+        "precision": 1.0,
+        "recall": 0.9588477366255144,
+        "f1": 0.9789915966386554,
+        "support": 243
+      },
+      "reconnaissance": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 37
+      }
+    },
+    "confusion_labels": [
+      "benign",
+      "credential_access",
+      "reconnaissance",
+      "ABSTAINED"
+    ],
+    "confusion_matrix": [
+      [
+        119,
+        0,
+        0,
+        0
+      ],
+      [
+        10,
+        233,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        37,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "metric_semantics": "Abstentions count as missed true classes (false negatives), never dropped from recall/F1. FPR excludes abstentions and must be read together with coverage."
+  },
+  "rule_baseline": {
+    "n": 399,
+    "coverage": 0.045112781954887216,
+    "macro_f1": 0.07778182259434534,
+    "accuracy_all_sessions": 0.042606516290726815,
+    "accepted_accuracy": 0.9444444444444444,
+    "benign_false_positive_rate": 0.0,
+    "benign_false_alarms": 0,
+    "benign_support": 119,
+    "benign_fpr_wilson_95_percent": [
+      3.469446951953614e-18,
+      0.03127279358132749
+    ],
+    "per_class": {
+      "benign": {
+        "precision": 0.9333333333333333,
+        "recall": 0.11764705882352941,
+        "f1": 0.208955223880597,
+        "support": 119
+      },
+      "credential_access": {
+        "precision": 1.0,
+        "recall": 0.012345679012345678,
+        "f1": 0.024390243902439025,
+        "support": 243
+      },
+      "reconnaissance": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 37
+      }
+    },
+    "confusion_labels": [
+      "benign",
+      "credential_access",
+      "reconnaissance",
+      "ABSTAINED"
+    ],
+    "confusion_matrix": [
+      [
+        14,
+        0,
+        0,
+        105
+      ],
+      [
+        1,
+        3,
+        0,
+        239
+      ],
+      [
+        0,
+        0,
+        0,
+        37
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "metric_semantics": "Abstentions count as missed true classes (false negatives), never dropped from recall/F1. FPR excludes abstentions and must be read together with coverage."
+  },
+  "checks": {
+    "macro_f1_at_least_0_80": true,
+    "attack_recall_at_least_0_75": true,
+    "benign_fpr_at_most_0_05": true,
+    "coverage_at_least_0_80": true,
+    "improvement_over_frozen_rules_at_least_0_05": true,
+    "minimum_10_test_sessions_per_class": true,
+    "real_reviewed_cyber_range_data": false,
+    "campaign_or_template_holdout": true
+  },
+  "eligible_for_reviewed_advisory_release": false,
+  "categorical_vocab": {
+    "event_family": [
+      "authentication",
+      "network",
+      "system"
+    ],
+    "primary_protocol": [
+      "TCP",
+      "UDP"
+    ]
+  },
+  "numeric_train_ranges": {
+    "event_count": [
+      1.0,
+      12.0
+    ],
+    "duration_seconds": [
+      0.0,
+      205.0
+    ],
+    "max_rule_level": [
+      3.0,
+      12.0
+    ],
+    "mean_rule_level": [
+      3.0,
+      12.0
+    ],
+    "distinct_rules": [
+      1.0,
+      5.0
+    ],
+    "distinct_sources": [
+      1.0,
+      1.0
+    ],
+    "distinct_accounts": [
+      0.0,
+      1.0
+    ],
+    "failed_count": [
+      0.0,
+      12.0
+    ],
+    "success_count": [
+      0.0,
+      1.0
+    ],
+    "failure_ratio": [
+      0.0,
+      1.0
+    ],
+    "success_after_failures": [
+      0.0,
+      1.0
+    ],
+    "max_events_in_10s": [
+      1.0,
+      6.0
+    ],
+    "external_source_fraction": [
+      0.0,
+      0.0
+    ],
+    "event_rate_per_minute": [
+      1.7821782178217822,
+      180.0
+    ]
+  },
+  "model_sha256": "ae8ca09ded11a3d7e10be68fbc29999028cf6c456874e4376697a1e7c8fb7bb1",
+  "source_bundle_sha256": "58bc7b80a56882de6f86e5688700c361170e32b20d261eda5920d7819abdad8c",
+  "sklearn_version": "1.8.0",
+  "features": [
+    "event_family",
+    "primary_protocol",
+    "event_count",
+    "duration_seconds",
+    "max_rule_level",
+    "mean_rule_level",
+    "distinct_rules",
+    "distinct_sources",
+    "distinct_accounts",
+    "failed_count",
+    "success_count",
+    "failure_ratio",
+    "success_after_failures",
+    "max_events_in_10s",
+    "external_source_fraction",
+    "event_rate_per_minute"
+  ],
+  "feature_schema": "iris-telemetry-session-v1",
+  "aggregation_schema": "iris-three-source-session-v1-window60",
+  "synthetic": true
+}

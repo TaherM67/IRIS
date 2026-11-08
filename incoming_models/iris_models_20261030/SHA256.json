@@ -1,0 +1,16 @@
+{
+  "CODEX_TASK.txt": "9ab10d5a1c8481dc33bdac088cfec6cee6a7e69576c0cae90a2740d67d13fe33",
+  "READ_ME_FIRST.txt": "82f91e9d84a72e0b354d678ebdbb98991a46ed6183e45960dd3da2b378bd041b",
+  "SMOKE_TEST_RESULT.txt": "fc51adc57cbc1027659aab5d53734fd23bebb53cf3ba840c65a98cdcbd5feb88",
+  "control_catalogue.json": "a137c8d50e4751b4960a356e28000ecfc17118d4d6f1f303870ee9a078bfddfa",
+  "grounded_model2.joblib": "e29b2879b6c25a02605df4740265c5fdb7eb22849b45dcbf6f34e59736817dea",
+  "grounded_model2.json": "90cda21958a4c8401a38fdf763bdc486b3d2d32192732d898bfe758e938add6e",
+  "model1_metadata.json": "0ef8cb9be62c42522583286bf4f09b9c9f6cc2f172abb8a8b5af27757886fbf1",
+  "model1_scenario.joblib": "ae8ca09ded11a3d7e10be68fbc29999028cf6c456874e4376697a1e7c8fb7bb1",
+  "reference_code/__init__.py": "7c6d277b90cb7bbec7e671c035a8f4e414ee8246c04bcc0835b34ca6e4cf57b4",
+  "reference_code/contracts.py": "ae5743cb6f136815999e86ccbbc9d81345f65d214ccba1a39fbfb416b539368b",
+  "reference_code/grounded_controls.py": "cf1a5a3853cc14826f51ece015972cd4b306a30c0d9b84bda91eee7c37f2bf44",
+  "requirements.txt": "a0c0b064eddc88bf5a8bc1fe97ae3bcb92e88a05b653dcd859e822fbc612f99f",
+  "smoke_test.py": "728aa544dfe7de06edb22363a2e79ff834b8c0368412433e537bd76bd980bf9e",
+  "smoke_test_request.json": "7ec3ceba6a9eef3fb14ddfacc0aa319a0a8a447614ed90ba053684dd7a9f4f38"
+}

@@ -32,7 +32,7 @@ python3.12 -m venv .venv
 .venv/bin/python -m unittest demo_app.tests.test_demo -v
 ```
 
-If a suitable `.venv` already exists, skip creating it. The **55 demo tests** should finish with `OK`. Do not proceed to the examination with a dependency error or failed test. Keep the ML dependency pins: the trusted saved models require the matching scikit-learn version.
+If a suitable `.venv` already exists, skip creating it. The demo tests should finish with `OK`. Run all 75 demo, chat and activity tests with `python -m unittest demo_app.tests.test_demo demo_app.tests.test_chat demo_app.tests.test_activity -v`. Keep the ML dependency pins: the trusted saved models require the matching scikit-learn version.
 
 This demo server uses Python's standard HTTP library, so it does **not** need `requirements-backend.txt` or FastAPI. The older FastAPI interface on port 8000 has its own installation and verification requirements; it is not the active demo described here.
 
@@ -61,35 +61,47 @@ Keep this terminal open. The script:
 
 The server never replaces existing keys or discards approved changes on restart. If port 8010 is already occupied, stop your earlier demo instance or run `demo.py --port 8011` and use that port consistently.
 
+HTTPS is now the default for account sign-in. See [local HTTPS setup](LOCAL_HTTPS.md) and [local accounts](LOCAL_ACCOUNTS.md). Start with `.\.venv\Scripts\python.exe demo.py` (the existing `--https` option also works) and open `https://127.0.0.1:8010/admin`. The database, dashboards and approval workflow are preserved.
+
+For users on the same network, use the prepared [LAN setup](LAN_ACCESS.md) and start `demo.py --lan`. It adds a separate HTTPS listener for the selected private address/subnet while retaining the localhost dashboard and existing accounts.
+
 ## 4. Open the three dashboards
 
-In a **second private terminal**, from the same project folder, display your demo keys:
+### Live team chat
 
-Windows:
+After connecting, every dashboard shows **Team chat** as its first panel,
+above the counters and approvals. Messages and the composer sit side by side
+on wide screens and stack on small screens. The workspace uses a dim dark theme.
+SOC and GRC can send messages with **Send** or **Ctrl+Enter** (Cmd+Enter on macOS).
+Admin sees the same conversation with no send controls; the server also rejects
+Admin posts. New sender labels show the authenticated username and role, and times use the browser's
+local timezone. Messages appear within about one second while the tab is visible,
+independently of analysis, approvals and the dashboard's Live updates checkbox.
+Collapse the window with its minus button; incoming messages continue to arrive
+and an unread badge counts new messages from the other team. Reopen to read them.
 
-```powershell
-.\.venv\Scripts\python.exe demo.py keys
-```
+The most recent 100 messages load on connection; new messages are then added
+automatically. The shared conversation is saved in the existing local demo
+database and continues across server restarts and new rehearsals. Disconnecting
+clears messages and drafts from the tab. This runs on the existing loopback demo:
+use separate SOC/GRC/Admin browser tabs on the same computer.
 
-macOS/Linux:
+**Clear chat** clears only the signed-in user's view and preserves the saved logs. The preference survives signing out and restarting, and other users still see their conversations. Logs stay in recent storage for at least three calendar months, then move automatically to a permanent archive. Admin can use **Download logs** to export recent messages, archived messages and clear events. See [chat retention and archive details](CHAT_RETENTION.md).
 
-```bash
-.venv/bin/python demo.py keys
-```
 
 Open three browser tabs:
 
-| Tab | URL | Key and responsibility |
+| Tab | URL | Accounts and responsibility |
 | --- | --- | --- |
-| Admin | <http://127.0.0.1:8010/admin> | Admin key; analyze, monitor, audit and start a fresh rehearsal |
-| SOC | <http://127.0.0.1:8010/soc> | SOC key; inspect and approve/reject alert-priority changes |
-| GRC | <http://127.0.0.1:8010/grc> | GRC key; inspect and approve/reject risk-register changes |
+| Admin | <https://127.0.0.1:8010/admin> | Taher; analyze, monitor, audit and start a fresh rehearsal |
+| SOC | <https://127.0.0.1:8010/soc> | Abduallah, Abdualaziz; inspect and approve/reject alert-priority changes |
+| GRC | <https://127.0.0.1:8010/grc> | Abduarhman, Ahmed; inspect and approve/reject risk-register changes |
 
-Paste only that tab's key into its password field. Keys remain in the tab's memory, not browser storage or URLs. The earlier `python -m backend keys` command produces **different keys for the older passive prototype**: do not mix them up.
+Select the matching workspace card and enter your username and password. Card selection and sign-in stay in the same document without a page reload. Changing workspaces clears the password. The server checks the account's assigned role; choosing another card does not grant another role. Separate tabs have independent sessions, allowing Admin, SOC and GRC to stay open at once.
 
-The original dark page and direct `/state` sign-in are restored. There is no build/profile/session prerequisite. The redesign-only `doctor` and `keys --role` commands are removed; use the original `demo.py keys` above. See [the access guide](ACCESS_HELP.md); do not delete `.local/` to troubleshoot.
+See [the account guide](LOCAL_ACCOUNTS.md) for account maintenance and sign-in troubleshooting. Passwords are stored as salted hashes in ignored local storage. Existing role keys are retained for the older backend and rollback, but the active website does not accept them. Do not delete `.local/` to troubleshoot.
 
-Hide the key terminal before sharing your screen. These are shared lab role keys, not individual enterprise identities or SSO. The Admin can inspect all proposals but **cannot impersonate the SOC or GRC approver**.
+These local accounts are not enterprise SSO. Admin can inspect all proposals but **cannot impersonate the SOC or GRC approver**. New chat messages and approval audit records identify the individual authenticated user; existing team-only history is retained.
 
 ## 5. Show the before state
 
@@ -103,7 +115,7 @@ For a predictable example, find the `identity-server` access risk **`DEMO-R001-1
 
 ## 6. Run the actual analysis
 
-On **Admin**, click **Analyze the three demo datasets**. Only Admin runs analysis; each team receives only its own results.
+On **Admin**, click **Run analysis**. Only Admin runs analysis; each team receives only its own results. The pending approvals appear as cards in a scrollable inbox. Search by asset, risk ID or case ID; Admin can also filter by team. Select a card to inspect its evidence and review it. Your current selection, scroll position and decision note survive live refresh; a stale or reviewed proposal is never silently replaced with a different decision.
 
 The backend reads the fixed files in `demo/data/`, combines context before feature engineering, cleans events, creates 60-second-window sessions, runs your saved model bundle, and evaluates the explicit risk policy. It saves **132 cases** and prepares **123 SOC proposals** and **63 GRC proposals** for this initial evidence batch.
 
@@ -195,8 +207,8 @@ The active part is the **human-approved application** of an engine proposal to t
 - The original model's synthetic false-alarm and coverage limitations remain unchanged. Do not present demo pass counts as independent model accuracy.
 - A stale risk proposal is blocked; the current implementation does not automatically re-score newly changed organizational data. New real-world evidence would require a fresh export/reanalysis and an appropriate connector workflow.
 - The original SIEM technical bands are demo initialization logic; they are not a claim to reproduce an actual vendor's priority configuration.
-- Three-second refresh is polling, not WebSockets. Shared role keys are for a private lab only.
-- Python's standard-library HTTP server is for a local demonstration, **not production hosting**. It deliberately refuses non-loopback binding. Do not expose it with a tunnel or public port.
+- Three-second refresh is polling, not WebSockets. Local username/password accounts are for this private demonstration.
+- The demonstration server supports localhost and explicit authenticated HTTPS sharing on a configured private subnet. LAN mode does not bind every interface or enable internet hosting. See [LAN access](LAN_ACCESS.md).
 - The actual loopback HTTP/API approval workflow is covered by automated tests. Browser layout and click-through still need a rehearsal in your own browser; no headless browser executable was available in the build environment.
 
 ## One-minute explanation for the examiners

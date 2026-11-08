@@ -37,6 +37,7 @@ from backend.model_adapter import digest, utc_now
 # IRIS EXPLAIN: Import encoded from backend.storage to reuse the shared project contract/implementation rather than duplicate
 # IRIS EXPLAIN: it.
 from backend.storage import encoded
+from backend.grounded_adapter import public_review
 # IRIS EXPLAIN: Import integrate from iris_models.three_sources to reuse the shared project contract/implementation rather than
 # IRIS EXPLAIN: duplicate it.
 from iris_models.three_sources import integrate
@@ -555,6 +556,8 @@ class DemoEngine:
                     }
                     # IRIS EXPLAIN: Enter this branch only when policy['priority'] in PRIORITIES and
                     # IRIS EXPLAIN: prediction['soc_assessment']['status'] == 'ASSESSED'.
+                    if 'model2_review' in prediction:
+                        evidence['model2_review'] = prediction['model2_review']
                     if policy['priority'] in PRIORITIES and prediction['soc_assessment']['status'] == 'ASSESSED':
                         # IRIS EXPLAIN: Store the result of db.execute('SELECT event_id,current_priority,version FROM
                         # IRIS EXPLAIN: demo_alerts WHERE exercise_id=? AND case_id=?', (exercise, case['case_id']... (read all
@@ -949,6 +952,8 @@ class DemoEngine:
                        'controls': [{name: item[name] for name in (
                            'control_id', 'name', 'current_state', 'action_type', 'catalogue_action', 'warnings')}
                                     for item in recommendations]}
+        if actor == 'grc' and 'model2_review' in evidence:
+            focused['model2_review'] = public_review(evidence['model2_review'])
         return {**payload, 'evidence': focused}
 
     # IRIS EXPLAIN: Function DemoEngine.review: Validate the team, saved proposal and current revisions, then atomically apply
@@ -956,7 +961,7 @@ class DemoEngine:
     # IRIS EXPLAIN: Inputs: actor: the server-authenticated role; tests use explicit synthetic fixture roles; proposal_id: the
     # IRIS EXPLAIN: existing pending proposal identity; decision: the saved-proposal approve/reject command; reason: the
     # IRIS EXPLAIN: required human decision explanation.
-    def review(self, actor, proposal_id, decision, reason):
+    def review(self, actor, proposal_id, decision, reason, *, username=None):
         # IRIS EXPLAIN: Call require(actor, 'soc', 'grc') using the existing explicit arguments.
         require(actor, 'soc', 'grc')
         # IRIS EXPLAIN: Enter this branch only when not isinstance(proposal_id, str) or not proposal_id.startswith('PROP-') or
@@ -1170,6 +1175,7 @@ class DemoEngine:
                                   # IRIS EXPLAIN: Set/describe these existing record fields: external_writes: whether any
                                   # IRIS EXPLAIN: external system was modified; this local demo reports False.
                                   'reason': conflict or reason.strip(), 'external_writes': False,
+                                  **({'reviewer_username': username} if username is not None else {}),
                                   # IRIS EXPLAIN: Set/describe these existing record fields: security_control_execution: whether
                                   # IRIS EXPLAIN: a defensive control was executed; the demo does not do this.
                                   'security_control_execution': False})

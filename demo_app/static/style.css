@@ -1,324 +1,406 @@
-/* IRIS EXPLAIN: Styles only: layout, visibility, focus and update highlighting do not compute or persist risk decisions.
-*//* IRIS EXPLAIN: Style selector :root; CSS chooses presentation only, not the authenticated role or stored data.
-*/:root{/* IRIS EXPLAIN: Declare browser-native control/theme colors: color-scheme = dark.
-*/color-scheme:dark;/* IRIS EXPLAIN: Define a reusable theme token: --bg = #0a101b.
-*/--bg:#0a101b;/* IRIS EXPLAIN: Define a reusable theme token: --panel = #111c2b.
-*/--panel:#111c2b;/* IRIS EXPLAIN: Define a reusable theme token: --line = #26354a.
-*/--line:#26354a;/* IRIS EXPLAIN: Define a reusable theme token: --text = #edf3fb.
-*/--text:#edf3fb;/* IRIS EXPLAIN: Define a reusable theme token: --muted = #a5b4c8.
-*/--muted:#a5b4c8;/* IRIS EXPLAIN: Define a reusable theme token: --accent = #59e1c1.
-*/--accent:#59e1c1;/* IRIS EXPLAIN: Define a reusable theme token: --gold = #ffd17b.
-*/--gold:#ffd17b}
-/* IRIS EXPLAIN: Style selector *; CSS chooses presentation only, not the authenticated role or stored data.
-*/*{/* IRIS EXPLAIN: Choose whether padding and borders count inside stated dimensions: box-sizing = border-box.
-*/box-sizing:border-box}/* IRIS EXPLAIN: Style selector body; CSS chooses presentation only, not the authenticated role or stored data.
-*/body{/* IRIS EXPLAIN: Set outer spacing: margin = 0.
-*/margin:0;/* IRIS EXPLAIN: Set the background color/layers: background = radial-gradient(ellipse at 80% 0,#152d3b 0,transparent 45%),var(--bg).
-*/background:radial-gradient(ellipse at 80% 0,#152d3b 0,transparent 45%),var(--bg);/* IRIS EXPLAIN: Set foreground/text color: color = var(--text).
-*/color:var(--text);/* IRIS EXPLAIN: Set the font shorthand: font = 15px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif.
-*/font:15px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif}/* IRIS EXPLAIN: Style selector a; CSS chooses presentation only, not the authenticated role or stored data.
-*/a{/* IRIS EXPLAIN: Set foreground/text color: color = var(--accent).
-*/color:var(--accent);/* IRIS EXPLAIN: Control link underlines/decorations: text-decoration = none.
-*/text-decoration:none}/* IRIS EXPLAIN: Style selector a:hover; CSS chooses presentation only, not the authenticated role or stored data.
-*/a:hover{/* IRIS EXPLAIN: Control link underlines/decorations: text-decoration = underline.
-*/text-decoration:underline}/* IRIS EXPLAIN: Style selector .topbar; CSS chooses presentation only, not the authenticated role or stored data.
-*/.topbar{/* IRIS EXPLAIN: Choose the layout/visibility mode: display = flex.
-*/display:flex;/* IRIS EXPLAIN: Align children on the cross axis: align-items = center.
-*/align-items:center;/* IRIS EXPLAIN: Set spacing between flex/grid children: gap = 24px.
-*/gap:24px;/* IRIS EXPLAIN: Set inner spacing: padding = 20px 5%.
-*/padding:20px 5%;/* IRIS EXPLAIN: Set the lower border: border-bottom = 1px solid var(--line).
-*/border-bottom:1px solid var(--line);/* IRIS EXPLAIN: Set the background color/layers: background = #0a111ce8.
-*/background:#0a111ce8}/* IRIS EXPLAIN: Style selector .brand; CSS chooses presentation only, not the authenticated role or stored data.
-*/.brand{/* IRIS EXPLAIN: Set text size: font-size = 25px.
-*/font-size:25px;/* IRIS EXPLAIN: Set spacing between letters: letter-spacing = 4px.
-*/letter-spacing:4px;/* IRIS EXPLAIN: Set text emphasis weight: font-weight = 800.
-*/font-weight:800;/* IRIS EXPLAIN: Set foreground/text color: color = var(--text).
-*/color:var(--text)}/* IRIS EXPLAIN: Style selector .brand span; CSS chooses presentation only, not the authenticated role or stored data.
-*/.brand span{/* IRIS EXPLAIN: Choose the layout/visibility mode: display = block.
-*/display:block;/* IRIS EXPLAIN: Set text size: font-size = 10px.
-*/font-size:10px;/* IRIS EXPLAIN: Set spacing between letters: letter-spacing = 1.1px.
-*/letter-spacing:1.1px;/* IRIS EXPLAIN: Set text emphasis weight: font-weight = 500.
-*/font-weight:500;/* IRIS EXPLAIN: Set foreground/text color: color = var(--muted).
-*/color:var(--muted)}/* IRIS EXPLAIN: Style selector nav; CSS chooses presentation only, not the authenticated role or stored data.
-*/nav{/* IRIS EXPLAIN: Choose the layout/visibility mode: display = flex.
-*/display:flex;/* IRIS EXPLAIN: Set spacing between flex/grid children: gap = 22px.
-*/gap:22px;/* IRIS EXPLAIN: Set this existing CSS property: margin-left = auto.
-*/margin-left:auto}/* IRIS EXPLAIN: Style selector main; CSS chooses presentation only, not the authenticated role or stored data.
-*/main{/* IRIS EXPLAIN: Limit width: max-width = 1440px.
-*/max-width:1440px;/* IRIS EXPLAIN: Set outer spacing: margin = 0 auto.
-*/margin:0 auto;/* IRIS EXPLAIN: Set inner spacing: padding = 28px 32px.
-*/padding:28px 32px}/* IRIS EXPLAIN: Style selector .hero; CSS chooses presentation only, not the authenticated role or stored data.
-*/.hero{/* IRIS EXPLAIN: Set inner spacing: padding = 10px 0 20px.
-*/padding:10px 0 20px}/* IRIS EXPLAIN: Style selector .eyebrow; CSS chooses presentation only, not the authenticated role or stored data.
-*/.eyebrow{/* IRIS EXPLAIN: Set foreground/text color: color = var(--accent).
-*/color:var(--accent);/* IRIS EXPLAIN: Set text size: font-size = 11px.
-*/font-size:11px;/* IRIS EXPLAIN: Set text emphasis weight: font-weight = 800.
-*/font-weight:800;/* IRIS EXPLAIN: Set spacing between letters: letter-spacing = 1.8px.
-*/letter-spacing:1.8px;/* IRIS EXPLAIN: Set outer spacing: margin = 0 0 8px.
-*/margin:0 0 8px}/* IRIS EXPLAIN: Style selector h1; CSS chooses presentation only, not the authenticated role or stored data.
-*/h1{/* IRIS EXPLAIN: Set text size: font-size = clamp(28px,3vw,42px).
-*/font-size:clamp(28px,3vw,42px);/* IRIS EXPLAIN: Set outer spacing: margin = 0 0 8px.
-*/margin:0 0 8px;/* IRIS EXPLAIN: Set spacing between letters: letter-spacing = -1px.
-*/letter-spacing:-1px}/* IRIS EXPLAIN: Style selector h2; CSS chooses presentation only, not the authenticated role or stored data.
-*/h2{/* IRIS EXPLAIN: Set text size: font-size = 21px.
-*/font-size:21px;/* IRIS EXPLAIN: Set outer spacing: margin = 0 0 12px.
-*/margin:0 0 12px}/* IRIS EXPLAIN: Style selector p; CSS chooses presentation only, not the authenticated role or stored data.
-*/p{/* IRIS EXPLAIN: Set outer spacing: margin = 8px 0 14px.
-*/margin:8px 0 14px}/* IRIS EXPLAIN: Style selector .hero>p:last-child,.muted; CSS chooses presentation only, not the authenticated role or stored data.
-*/.hero>p:last-child,.muted{/* IRIS EXPLAIN: Set foreground/text color: color = var(--muted).
-*/color:var(--muted)}/* IRIS EXPLAIN: Style selector .pill; CSS chooses presentation only, not the authenticated role or stored data.
-*/.pill{/* IRIS EXPLAIN: Choose the layout/visibility mode: display = inline-block.
-*/display:inline-block;/* IRIS EXPLAIN: Set border width/style/color: border = 1px solid #3d5d63.
-*/border:1px solid #3d5d63;/* IRIS EXPLAIN: Set foreground/text color: color = var(--accent).
-*/color:var(--accent);/* IRIS EXPLAIN: Round box corners: border-radius = 30px.
-*/border-radius:30px;/* IRIS EXPLAIN: Set inner spacing: padding = 5px 10px.
-*/padding:5px 10px;/* IRIS EXPLAIN: Set text size: font-size = 10px.
-*/font-size:10px;/* IRIS EXPLAIN: Set text emphasis weight: font-weight = 800.
-*/font-weight:800;/* IRIS EXPLAIN: Set spacing between letters: letter-spacing = .7px.
-*/letter-spacing:.7px;/* IRIS EXPLAIN: Control wrapping and preserved whitespace: white-space = nowrap.
-*/white-space:nowrap}/* IRIS EXPLAIN: Style selector .notice; CSS chooses presentation only, not the authenticated role or stored data.
-*/.notice{/* IRIS EXPLAIN: Set border width/style/color: border = 1px solid #67583c.
-*/border:1px solid #67583c;/* IRIS EXPLAIN: Set the background color/layers: background = #2b261b.
-*/background:#2b261b;/* IRIS EXPLAIN: Set foreground/text color: color = #f8dca9.
-*/color:#f8dca9;/* IRIS EXPLAIN: Set inner spacing: padding = 14px 18px.
-*/padding:14px 18px;/* IRIS EXPLAIN: Round box corners: border-radius = 10px.
-*/border-radius:10px;/* IRIS EXPLAIN: Set this existing CSS property: margin-bottom = 22px.
-*/margin-bottom:22px}/* IRIS EXPLAIN: Style selector .card; CSS chooses presentation only, not the authenticated role or stored data.
-*/.card{/* IRIS EXPLAIN: Set the background color/layers: background = var(--panel).
-*/background:var(--panel);/* IRIS EXPLAIN: Set border width/style/color: border = 1px solid var(--line).
-*/border:1px solid var(--line);/* IRIS EXPLAIN: Round box corners: border-radius = 14px.
-*/border-radius:14px;/* IRIS EXPLAIN: Set inner spacing: padding = 24px.
-*/padding:24px;/* IRIS EXPLAIN: Set this existing CSS property: margin-bottom = 22px.
-*/margin-bottom:22px;/* IRIS EXPLAIN: Add a box/inset highlight or shadow: box-shadow = 0 12px 24px #00000014.
-*/box-shadow:0 12px 24px #00000014}/* IRIS EXPLAIN: Style selector .login; CSS chooses presentation only, not the authenticated role or stored data.
-*/.login{/* IRIS EXPLAIN: Limit width: max-width = 620px.
-*/max-width:620px}/* IRIS EXPLAIN: Style selector .message; CSS chooses presentation only, not the authenticated role or stored data.
-*/.message{/* IRIS EXPLAIN: Require a minimum height: min-height = 26px.
-*/min-height:26px;/* IRIS EXPLAIN: Set foreground/text color: color = var(--accent).
-*/color:var(--accent)}/* IRIS EXPLAIN: Style selector .toolbar,.section-title; CSS chooses presentation only, not the authenticated role or stored data.
-*/.toolbar,.section-title{/* IRIS EXPLAIN: Choose the layout/visibility mode: display = flex.
-*/display:flex;/* IRIS EXPLAIN: Align children on the cross axis: align-items = center.
-*/align-items:center;/* IRIS EXPLAIN: Distribute children on the main axis: justify-content = space-between.
-*/justify-content:space-between;/* IRIS EXPLAIN: Set spacing between flex/grid children: gap = 16px.
-*/gap:16px}/* IRIS EXPLAIN: Style selector .toolbar; CSS chooses presentation only, not the authenticated role or stored data.
-*/.toolbar{/* IRIS EXPLAIN: Set outer spacing: margin = 0 0 16px.
-*/margin:0 0 16px}/* IRIS EXPLAIN: Style selector .toolbar>div; CSS chooses presentation only, not the authenticated role or stored data.
-*/.toolbar>div{/* IRIS EXPLAIN: Choose the layout/visibility mode: display = flex.
-*/display:flex;/* IRIS EXPLAIN: Align children on the cross axis: align-items = center.
-*/align-items:center;/* IRIS EXPLAIN: Set spacing between flex/grid children: gap = 14px.
-*/gap:14px;/* IRIS EXPLAIN: Allow flex children to wrap: flex-wrap = wrap.
-*/flex-wrap:wrap}/* IRIS EXPLAIN: Style selector .toolbar p; CSS chooses presentation only, not the authenticated role or stored data.
-*/.toolbar p{/* IRIS EXPLAIN: Set outer spacing: margin = 0.
-*/margin:0}/* IRIS EXPLAIN: Style selector .section-title; CSS chooses presentation only, not the authenticated role or stored data.
-*/.section-title{/* IRIS EXPLAIN: Set this existing CSS property: margin-bottom = 12px.
-*/margin-bottom:12px}/* IRIS EXPLAIN: Style selector .section-title h2; CSS chooses presentation only, not the authenticated role or stored data.
-*/.section-title h2{/* IRIS EXPLAIN: Set outer spacing: margin = 0.
-*/margin:0}/* IRIS EXPLAIN: Style selector .stats; CSS chooses presentation only, not the authenticated role or stored data.
-*/.stats{/* IRIS EXPLAIN: Choose the layout/visibility mode: display = grid.
-*/display:grid;/* IRIS EXPLAIN: Define responsive grid columns: grid-template-columns = repeat(5,1fr).
-*/grid-template-columns:repeat(5,1fr);/* IRIS EXPLAIN: Set spacing between flex/grid children: gap = 14px.
-*/gap:14px;/* IRIS EXPLAIN: Set outer spacing: margin = 20px 0 24px.
-*/margin:20px 0 24px}/* IRIS EXPLAIN: Style selector .stat; CSS chooses presentation only, not the authenticated role or stored data.
-*/.stat{/* IRIS EXPLAIN: Set the background color/layers: background = #142133.
-*/background:#142133;/* IRIS EXPLAIN: Set border width/style/color: border = 1px solid var(--line).
-*/border:1px solid var(--line);/* IRIS EXPLAIN: Round box corners: border-radius = 12px.
-*/border-radius:12px;/* IRIS EXPLAIN: Set inner spacing: padding = 18px.
-*/padding:18px}/* IRIS EXPLAIN: Style selector .stat span; CSS chooses presentation only, not the authenticated role or stored data.
-*/.stat span{/* IRIS EXPLAIN: Set text size: font-size = 12px.
-*/font-size:12px;/* IRIS EXPLAIN: Set foreground/text color: color = var(--muted).
-*/color:var(--muted)}/* IRIS EXPLAIN: Style selector .stat strong; CSS chooses presentation only, not the authenticated role or stored data.
-*/.stat strong{/* IRIS EXPLAIN: Choose the layout/visibility mode: display = block.
-*/display:block;/* IRIS EXPLAIN: Set text size: font-size = 34px.
-*/font-size:34px;/* IRIS EXPLAIN: Set this existing CSS property: margin-top = 8px.
-*/margin-top:8px}/* IRIS EXPLAIN: Style selector .stat.accent; CSS chooses presentation only, not the authenticated role or stored data.
-*/.stat.accent{/* IRIS EXPLAIN: Set border color: border-color = #365e60.
-*/border-color:#365e60;/* IRIS EXPLAIN: Set the background color/layers: background = #132e32.
-*/background:#132e32}/* IRIS EXPLAIN: Style selector .stat.accent strong; CSS chooses presentation only, not the authenticated role or stored data.
-*/.stat.accent strong{/* IRIS EXPLAIN: Set foreground/text color: color = var(--accent).
-*/color:var(--accent)}/* IRIS EXPLAIN: Style selector label; CSS chooses presentation only, not the authenticated role or stored data.
-*/label{/* IRIS EXPLAIN: Choose the layout/visibility mode: display = block.
-*/display:block;/* IRIS EXPLAIN: Set foreground/text color: color = var(--muted).
-*/color:var(--muted);/* IRIS EXPLAIN: Set text size: font-size = 13px.
-*/font-size:13px;/* IRIS EXPLAIN: Set outer spacing: margin = 12px 0.
-*/margin:12px 0}/* IRIS EXPLAIN: Style selector input,select,textarea; CSS chooses presentation only, not the authenticated role or stored data.
-*/input,select,textarea{/* IRIS EXPLAIN: Set the font shorthand: font = inherit.
-*/font:inherit;/* IRIS EXPLAIN: Set foreground/text color: color = var(--text).
-*/color:var(--text);/* IRIS EXPLAIN: Set the background color/layers: background = #0c1522.
-*/background:#0c1522;/* IRIS EXPLAIN: Set border width/style/color: border = 1px solid #354761.
-*/border:1px solid #354761;/* IRIS EXPLAIN: Round box corners: border-radius = 7px.
-*/border-radius:7px;/* IRIS EXPLAIN: Set inner spacing: padding = 11px.
-*/padding:11px;/* IRIS EXPLAIN: Set width: width = 100%.
-*/width:100%;/* IRIS EXPLAIN: Set this existing CSS property: margin-top = 6px.
-*/margin-top:6px}/* IRIS EXPLAIN: Style selector textarea; CSS chooses presentation only, not the authenticated role or stored data.
-*/textarea{/* IRIS EXPLAIN: Require a minimum height: min-height = 80px.
-*/min-height:80px;/* IRIS EXPLAIN: Control whether the textarea can be resized: resize = vertical.
-*/resize:vertical}/* IRIS EXPLAIN: Style selector .inline; CSS chooses presentation only, not the authenticated role or stored data.
-*/.inline{/* IRIS EXPLAIN: Choose the layout/visibility mode: display = inline-flex.
-*/display:inline-flex;/* IRIS EXPLAIN: Align children on the cross axis: align-items = center.
-*/align-items:center;/* IRIS EXPLAIN: Set spacing between flex/grid children: gap = 7px.
-*/gap:7px;/* IRIS EXPLAIN: Set outer spacing: margin = 0.
-*/margin:0;/* IRIS EXPLAIN: Control wrapping and preserved whitespace: white-space = nowrap.
-*/white-space:nowrap}/* IRIS EXPLAIN: Style selector .inline input; CSS chooses presentation only, not the authenticated role or stored data.
-*/.inline input{/* IRIS EXPLAIN: Set width: width = auto.
-*/width:auto;/* IRIS EXPLAIN: Set outer spacing: margin = 0.
-*/margin:0;/* IRIS EXPLAIN: Choose native checkbox/control accent color: accent-color = var(--accent).
-*/accent-color:var(--accent)}/* IRIS EXPLAIN: Style selector button; CSS chooses presentation only, not the authenticated role or stored data.
-*/button{/* IRIS EXPLAIN: Set the font shorthand: font = 700 13px system-ui,sans-serif.
-*/font:700 13px system-ui,sans-serif;/* IRIS EXPLAIN: Set the background color/layers: background = var(--accent).
-*/background:var(--accent);/* IRIS EXPLAIN: Set foreground/text color: color = #09221e.
-*/color:#09221e;/* IRIS EXPLAIN: Set border width/style/color: border = 1px solid transparent.
-*/border:1px solid transparent;/* IRIS EXPLAIN: Round box corners: border-radius = 7px.
-*/border-radius:7px;/* IRIS EXPLAIN: Set inner spacing: padding = 12px 16px.
-*/padding:12px 16px;/* IRIS EXPLAIN: Show the pointer/wait/text interaction affordance: cursor = pointer.
-*/cursor:pointer;/* IRIS EXPLAIN: Require a minimum height: min-height = 42px.
-*/min-height:42px}/* IRIS EXPLAIN: Style selector button:hover; CSS chooses presentation only, not the authenticated role or stored data.
-*/button:hover{/* IRIS EXPLAIN: Apply a visual filter without changing data: filter = brightness(1.08).
-*/filter:brightness(1.08)}/* IRIS EXPLAIN: Style selector button:disabled; CSS chooses presentation only, not the authenticated role or stored data.
-*/button:disabled{/* IRIS EXPLAIN: Set visual opacity: opacity = .45.
-*/opacity:.45;/* IRIS EXPLAIN: Show the pointer/wait/text interaction affordance: cursor = wait.
-*/cursor:wait}/* IRIS EXPLAIN: Style selector .secondary; CSS chooses presentation only, not the authenticated role or stored data.
-*/.secondary{/* IRIS EXPLAIN: Set the background color/layers: background = #1a293b.
-*/background:#1a293b;/* IRIS EXPLAIN: Set foreground/text color: color = var(--text).
-*/color:var(--text);/* IRIS EXPLAIN: Set border color: border-color = #3d5069.
-*/border-color:#3d5069}/* IRIS EXPLAIN: Style selector .danger; CSS chooses presentation only, not the authenticated role or stored data.
-*/.danger{/* IRIS EXPLAIN: Set the background color/layers: background = #462832.
-*/background:#462832;/* IRIS EXPLAIN: Set border color: border-color = #9e5b6b.
-*/border-color:#9e5b6b;/* IRIS EXPLAIN: Set foreground/text color: color = #ffced7.
-*/color:#ffced7}/* IRIS EXPLAIN: Style selector button:focus-visible,a:focus-visible,summary:focus-visible; CSS chooses presentation only, not the authenticated role or stored data.
-*/button:focus-visible,a:focus-visible,summary:focus-visible{/* IRIS EXPLAIN: Draw a keyboard-focus indicator: outline = 3px solid #76d8ff.
-*/outline:3px solid #76d8ff;/* IRIS EXPLAIN: Separate the focus outline from its element: outline-offset = 3px.
-*/outline-offset:3px}/* IRIS EXPLAIN: Style selector .button-row; CSS chooses presentation only, not the authenticated role or stored data.
-*/.button-row{/* IRIS EXPLAIN: Choose the layout/visibility mode: display = flex.
-*/display:flex;/* IRIS EXPLAIN: Set spacing between flex/grid children: gap = 12px.
-*/gap:12px;/* IRIS EXPLAIN: Allow flex children to wrap: flex-wrap = wrap.
-*/flex-wrap:wrap}/* IRIS EXPLAIN: Style selector #login-form button; CSS chooses presentation only, not the authenticated role or stored data.
-*/#login-form button{/* IRIS EXPLAIN: Set this existing CSS property: margin-top = 6px.
-*/margin-top:6px}/* IRIS EXPLAIN: Style selector details; CSS chooses presentation only, not the authenticated role or stored data.
-*/details{/* IRIS EXPLAIN: Set this existing CSS property: margin-top = 14px.
-*/margin-top:14px}/* IRIS EXPLAIN: Style selector summary; CSS chooses presentation only, not the authenticated role or stored data.
-*/summary{/* IRIS EXPLAIN: Show the pointer/wait/text interaction affordance: cursor = pointer.
-*/cursor:pointer;/* IRIS EXPLAIN: Set foreground/text color: color = var(--accent).
-*/color:var(--accent);/* IRIS EXPLAIN: Set text emphasis weight: font-weight = 600.
-*/font-weight:600;/* IRIS EXPLAIN: Set inner spacing: padding = 5px 0.
-*/padding:5px 0}/* IRIS EXPLAIN: Style selector pre; CSS chooses presentation only, not the authenticated role or stored data.
-*/pre{/* IRIS EXPLAIN: Set the background color/layers: background = #0b1421.
-*/background:#0b1421;/* IRIS EXPLAIN: Set foreground/text color: color = #c9d9ed.
-*/color:#c9d9ed;/* IRIS EXPLAIN: Control wrapping and preserved whitespace: white-space = pre-wrap.
-*/white-space:pre-wrap;/* IRIS EXPLAIN: Allow long evidence text to break safely: overflow-wrap = anywhere.
-*/overflow-wrap:anywhere;/* IRIS EXPLAIN: Set the font shorthand: font = 12px/1.6 ui-monospace,monospace.
-*/font:12px/1.6 ui-monospace,monospace;/* IRIS EXPLAIN: Set inner spacing: padding = 18px.
-*/padding:18px;/* IRIS EXPLAIN: Round box corners: border-radius = 8px.
-*/border-radius:8px;/* IRIS EXPLAIN: Limit height: max-height = 500px.
-*/max-height:500px;/* IRIS EXPLAIN: Control clipping/scrolling: overflow = auto.
-*/overflow:auto}/* IRIS EXPLAIN: Style selector code; CSS chooses presentation only, not the authenticated role or stored data.
-*/code{/* IRIS EXPLAIN: Set the background color/layers: background = #243247.
-*/background:#243247;/* IRIS EXPLAIN: Set inner spacing: padding = 2px 5px.
-*/padding:2px 5px;/* IRIS EXPLAIN: Round box corners: border-radius = 4px.
-*/border-radius:4px}/* IRIS EXPLAIN: Style selector .proposal-summary; CSS chooses presentation only, not the authenticated role or stored data.
-*/.proposal-summary{/* IRIS EXPLAIN: Set the background color/layers: background = #0d1928.
-*/background:#0d1928;/* IRIS EXPLAIN: Set the left-side accent border: border-left = 3px solid var(--accent).
-*/border-left:3px solid var(--accent);/* IRIS EXPLAIN: Set inner spacing: padding = 16px 20px.
-*/padding:16px 20px;/* IRIS EXPLAIN: Set outer spacing: margin = 16px 0.
-*/margin:16px 0;/* IRIS EXPLAIN: Round box corners: border-radius = 6px.
-*/border-radius:6px}/* IRIS EXPLAIN: Style selector .proposal-summary h3; CSS chooses presentation only, not the authenticated role or stored data.
-*/.proposal-summary h3{/* IRIS EXPLAIN: Set outer spacing: margin = 0 0 6px.
-*/margin:0 0 6px}/* IRIS EXPLAIN: Style selector .proposal-summary .big-change; CSS chooses presentation only, not the authenticated role or stored data.
-*/.proposal-summary .big-change{/* IRIS EXPLAIN: Set foreground/text color: color = var(--accent).
-*/color:var(--accent);/* IRIS EXPLAIN: Set text size: font-size = 23px.
-*/font-size:23px;/* IRIS EXPLAIN: Set text emphasis weight: font-weight = 700.
-*/font-weight:700;/* IRIS EXPLAIN: Set outer spacing: margin = 10px 0.
-*/margin:10px 0}/* IRIS EXPLAIN: Style selector .table-wrap; CSS chooses presentation only, not the authenticated role or stored data.
-*/.table-wrap{/* IRIS EXPLAIN: Control clipping/scrolling: overflow = auto.
-*/overflow:auto}/* IRIS EXPLAIN: Style selector table; CSS chooses presentation only, not the authenticated role or stored data.
-*/table{/* IRIS EXPLAIN: Join adjacent table-cell borders: border-collapse = collapse.
-*/border-collapse:collapse;/* IRIS EXPLAIN: Set width: width = 100%.
-*/width:100%;/* IRIS EXPLAIN: Set text size: font-size = 12px.
-*/font-size:12px;/* IRIS EXPLAIN: Align inline text: text-align = left.
-*/text-align:left}/* IRIS EXPLAIN: Style selector th; CSS chooses presentation only, not the authenticated role or stored data.
-*/th{/* IRIS EXPLAIN: Set foreground/text color: color = var(--muted).
-*/color:var(--muted);/* IRIS EXPLAIN: Set text size: font-size = 10px.
-*/font-size:10px;/* IRIS EXPLAIN: Set spacing between letters: letter-spacing = .4px.
-*/letter-spacing:.4px;/* IRIS EXPLAIN: Control visual text capitalization: text-transform = uppercase.
-*/text-transform:uppercase;/* IRIS EXPLAIN: Set the lower border: border-bottom = 2px solid var(--line).
-*/border-bottom:2px solid var(--line);/* IRIS EXPLAIN: Set inner spacing: padding = 12px 10px.
-*/padding:12px 10px;/* IRIS EXPLAIN: Control wrapping and preserved whitespace: white-space = nowrap.
-*/white-space:nowrap}/* IRIS EXPLAIN: Style selector td; CSS chooses presentation only, not the authenticated role or stored data.
-*/td{/* IRIS EXPLAIN: Set the lower border: border-bottom = 1px solid var(--line).
-*/border-bottom:1px solid var(--line);/* IRIS EXPLAIN: Set inner spacing: padding = 13px 10px.
-*/padding:13px 10px;/* IRIS EXPLAIN: Align table-cell contents: vertical-align = top.
-*/vertical-align:top}/* IRIS EXPLAIN: Style selector td .secondary-line; CSS chooses presentation only, not the authenticated role or stored data.
-*/td .secondary-line{/* IRIS EXPLAIN: Choose the layout/visibility mode: display = block.
-*/display:block;/* IRIS EXPLAIN: Set foreground/text color: color = var(--muted).
-*/color:var(--muted);/* IRIS EXPLAIN: Set text size: font-size = 11px.
-*/font-size:11px;/* IRIS EXPLAIN: Set this existing CSS property: margin-top = 4px.
-*/margin-top:4px}/* IRIS EXPLAIN: Style selector tr.changed; CSS chooses presentation only, not the authenticated role or stored data.
-*/tr.changed{/* IRIS EXPLAIN: Set the background color/layers: background = #17342f.
-*/background:#17342f}/* IRIS EXPLAIN: Style selector tr.changed td:first-child; CSS chooses presentation only, not the authenticated role or stored data.
-*/tr.changed td:first-child{/* IRIS EXPLAIN: Add a box/inset highlight or shadow: box-shadow = inset 3px 0 var(--accent).
-*/box-shadow:inset 3px 0 var(--accent)}/* IRIS EXPLAIN: Style selector .priority; CSS chooses presentation only, not the authenticated role or stored data.
-*/.priority{/* IRIS EXPLAIN: Choose the layout/visibility mode: display = inline-block.
-*/display:inline-block;/* IRIS EXPLAIN: Set text size: font-size = 10px.
-*/font-size:10px;/* IRIS EXPLAIN: Set text emphasis weight: font-weight = 800.
-*/font-weight:800;/* IRIS EXPLAIN: Set inner spacing: padding = 3px 8px.
-*/padding:3px 8px;/* IRIS EXPLAIN: Round box corners: border-radius = 5px.
-*/border-radius:5px;/* IRIS EXPLAIN: Set the background color/layers: background = #253349.
-*/background:#253349}/* IRIS EXPLAIN: Style selector .priority-critical; CSS chooses presentation only, not the authenticated role or stored data.
-*/.priority-critical{/* IRIS EXPLAIN: Set foreground/text color: color = #ffadbd.
-*/color:#ffadbd;/* IRIS EXPLAIN: Set the background color/layers: background = #482530.
-*/background:#482530}/* IRIS EXPLAIN: Style selector .priority-high; CSS chooses presentation only, not the authenticated role or stored data.
-*/.priority-high{/* IRIS EXPLAIN: Set foreground/text color: color = #ffc592.
-*/color:#ffc592;/* IRIS EXPLAIN: Set the background color/layers: background = #46311f.
-*/background:#46311f}/* IRIS EXPLAIN: Style selector .priority-medium; CSS chooses presentation only, not the authenticated role or stored data.
-*/.priority-medium{/* IRIS EXPLAIN: Set foreground/text color: color = #f2e6a6.
-*/color:#f2e6a6;/* IRIS EXPLAIN: Set the background color/layers: background = #403b26.
-*/background:#403b26}/* IRIS EXPLAIN: Style selector .priority-low; CSS chooses presentation only, not the authenticated role or stored data.
-*/.priority-low{/* IRIS EXPLAIN: Set foreground/text color: color = #a8d6ee.
-*/color:#a8d6ee;/* IRIS EXPLAIN: Set the background color/layers: background = #1d3443.
-*/background:#1d3443}/* IRIS EXPLAIN: Style selector .pager; CSS chooses presentation only, not the authenticated role or stored data.
-*/.pager{/* IRIS EXPLAIN: Choose the layout/visibility mode: display = flex.
-*/display:flex;/* IRIS EXPLAIN: Distribute children on the main axis: justify-content = flex-end.
-*/justify-content:flex-end;/* IRIS EXPLAIN: Set spacing between flex/grid children: gap = 10px.
-*/gap:10px;/* IRIS EXPLAIN: Set this existing CSS property: margin-top = 14px.
-*/margin-top:14px}/* IRIS EXPLAIN: Style selector footer; CSS chooses presentation only, not the authenticated role or stored data.
-*/footer{/* IRIS EXPLAIN: Set inner spacing: padding = 18px 32px 32px.
-*/padding:18px 32px 32px;/* IRIS EXPLAIN: Align inline text: text-align = center.
-*/text-align:center;/* IRIS EXPLAIN: Set foreground/text color: color = var(--muted).
-*/color:var(--muted);/* IRIS EXPLAIN: Set text size: font-size = 11px.
-*/font-size:11px}/* IRIS EXPLAIN: Style selector [hidden]; CSS chooses presentation only, not the authenticated role or stored data.
-*/[hidden]{/* IRIS EXPLAIN: Choose the layout/visibility mode: display = none!important.
-*/display:none!important}
-/* IRIS EXPLAIN: Responsive/accessibility condition @media(max-width:900px); apply its existing nested styling only when matched.
-*/@media(max-width:900px){/* IRIS EXPLAIN: Style selector .topbar; CSS chooses presentation only, not the authenticated role or stored data.
-*/.topbar{/* IRIS EXPLAIN: Allow flex children to wrap: flex-wrap = wrap.
-*/flex-wrap:wrap;/* IRIS EXPLAIN: Set spacing between flex/grid children: gap = 14px.
-*/gap:14px}/* IRIS EXPLAIN: Style selector .topbar>.pill; CSS chooses presentation only, not the authenticated role or stored data.
-*/.topbar>.pill{/* IRIS EXPLAIN: Choose the layout/visibility mode: display = none.
-*/display:none}/* IRIS EXPLAIN: Style selector main; CSS chooses presentation only, not the authenticated role or stored data.
-*/main{/* IRIS EXPLAIN: Set inner spacing: padding = 20px 16px.
-*/padding:20px 16px}/* IRIS EXPLAIN: Style selector .stats; CSS chooses presentation only, not the authenticated role or stored data.
-*/.stats{/* IRIS EXPLAIN: Define responsive grid columns: grid-template-columns = repeat(2,1fr).
-*/grid-template-columns:repeat(2,1fr)}/* IRIS EXPLAIN: Style selector .stats>.stat:last-child; CSS chooses presentation only, not the authenticated role or stored data.
-*/.stats>.stat:last-child{/* IRIS EXPLAIN: Choose the columns spanned by a grid item: grid-column = span 2.
-*/grid-column:span 2}/* IRIS EXPLAIN: Style selector .toolbar,.section-title; CSS chooses presentation only, not the authenticated role or stored data.
-*/.toolbar,.section-title{/* IRIS EXPLAIN: Align children on the cross axis: align-items = flex-start.
-*/align-items:flex-start;/* IRIS EXPLAIN: Choose the flex stacking direction: flex-direction = column.
-*/flex-direction:column}/* IRIS EXPLAIN: Style selector .card; CSS chooses presentation only, not the authenticated role or stored data.
-*/.card{/* IRIS EXPLAIN: Set inner spacing: padding = 18px.
-*/padding:18px}/* IRIS EXPLAIN: Style selector .stat strong; CSS chooses presentation only, not the authenticated role or stored data.
-*/.stat strong{/* IRIS EXPLAIN: Set text size: font-size = 28px.
-*/font-size:28px}}
-/* IRIS EXPLAIN: Responsive/accessibility condition @media(prefers-reduced-motion:no-preference); apply its existing nested styling only when matched.
-*/@media(prefers-reduced-motion:no-preference){/* IRIS EXPLAIN: Style selector tr.changed; CSS chooses presentation only, not the authenticated role or stored data.
-*/tr.changed{/* IRIS EXPLAIN: Apply the visual update animation: animation = arrive .5s ease-out.
-*/animation:arrive .5s ease-out}/* IRIS EXPLAIN: Define the existing visual-only animation @keyframes arrive; it does not apply backend changes.
-*/@keyframes arrive{/* IRIS EXPLAIN: Style selector from; CSS chooses presentation only, not the authenticated role or stored data.
-*/from{/* IRIS EXPLAIN: Set the background color/layers: background = #286254.
-*/background:#286254}/* IRIS EXPLAIN: Style selector to; CSS chooses presentation only, not the authenticated role or stored data.
-*/to{/* IRIS EXPLAIN: Set the background color/layers: background = #17342f.
-*/background:#17342f}}}
+:root { color-scheme: dark; --bg:#101119; --panel:#181b25; --text:#e0e3ed; --muted:#969fb6; --line:#2d3143; --accent:#a4abea; --accent-soft:#292e4b; --surface:#12151e; --hover:#24293b; --quiet:#8994ac; --button:#a6acee; --sidebar:204px; }
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; scroll-padding-top:30px; }
+body { margin:0; background:var(--bg); color:var(--text); font:14px/1.6 "Segoe UI",system-ui,sans-serif; -webkit-font-smoothing:antialiased; }
+a { color:var(--accent); text-decoration:none; }
+a:hover { color:#c4c9ff; }
+button,input,select,textarea { font:inherit; }
+button:focus-visible,a:focus-visible,summary:focus-visible,[tabindex]:focus-visible { outline:3px solid #a6acee; outline-offset:3px; }
+button { cursor:pointer; border:1px solid transparent; border-radius:7px; min-height:39px; padding:9px 16px; color:#151827; background:var(--button); font-size:12px; font-weight:600; transition:background .15s,border-color .15s; }
+button:hover { background:#bbc0fa; }
+button:disabled { opacity:.45; cursor:wait; }
+button span { margin-left:8px; }
+.secondary { background:var(--panel); color:#b6bfd5; border-color:#3b425a; }
+.secondary:hover { background:var(--hover); border-color:#7c84bd; }
+.text-button { color:var(--muted); background:transparent; }
+.text-button:hover { color:var(--text); background:var(--hover); }
+.danger { background:#342a2b; color:#e1a59e; border-color:#70514d; }
+.danger:hover { background:#443132; }
+.small-button { min-height:32px; padding:6px 11px; font-size:11px; }
+.icon-button { width:28px; min-height:28px; padding:0; color:var(--muted); background:transparent; font-size:20px; }
+.icon-button:hover { background:var(--hover); color:var(--accent); }
+h1,h2,h3,p { margin-top:0; }
+h1 { font-size:clamp(25px,2.3vw,33px); line-height:1.25; font-weight:600; letter-spacing:-1.1px; margin-bottom:8px; }
+h2 { font-size:16px; letter-spacing:-.3px; font-weight:600; margin-bottom:12px; line-height:1.35; }
+h3 { font-size:17px; font-weight:600; line-height:1.35; letter-spacing:-.3px; }
+p { margin-bottom:12px; }
+.muted { color:var(--muted); }
+.small { font-size:11px; }
+.eyebrow { margin:0 0 7px; font-size:9px; font-weight:600; letter-spacing:1.6px; color:var(--muted); }
+.pill { display:inline-flex; align-items:center; gap:7px; padding:4px 8px; border-radius:5px; font-size:10px; font-weight:500; white-space:nowrap; color:var(--accent); background:var(--accent-soft); }
+.pill.subtle { color:var(--muted); background:var(--surface); border:1px solid var(--line); }
+.status-dot { display:inline-block; flex:0 0 auto; width:6px; height:6px; border-radius:50%; background:#529b80; }
+.sidebar { position:fixed; inset:0 auto 0 0; width:var(--sidebar); background:#141720; border-right:1px solid var(--line); display:flex; flex-direction:column; padding:30px 17px 19px; z-index:20; }
+.brand { display:flex; align-items:center; gap:10px; color:var(--text); margin:0 10px 46px; font-size:22px; font-weight:700; letter-spacing:2.3px; line-height:1.2; }
+.brand-symbol { display:grid; place-items:center; width:35px; height:37px; border:1px solid #535b8b; border-radius:10px; background:var(--accent-soft); color:var(--accent); font:italic 31px Georgia,serif; letter-spacing:0; }
+.brand small { display:block; font-size:9px; font-weight:400; letter-spacing:.2px; color:var(--muted); margin-top:5px; }
+.sidebar-label { font-size:9px; letter-spacing:1.7px; color:var(--quiet); margin:0 12px 13px; }
+.workspace-nav { display:flex; flex-direction:column; gap:5px; }
+.nav-link { display:flex; align-items:center; gap:10px; color:#a3adc5; border-radius:7px; font-size:12px; padding:10px 12px; }
+.nav-link:hover { background:var(--hover); }
+.nav-link.active { color:var(--accent); background:var(--accent-soft); font-weight:600; }
+.nav-icon { width:16px; font-size:17px; font-weight:400; color:#919bb8; text-align:center; line-height:1; }
+.nav-count { display:inline-flex; justify-content:center; align-items:center; min-width:19px; height:19px; padding:0 5px; background:var(--accent-soft); border-radius:5px; color:var(--accent); font-size:10px; font-weight:600; }
+.nav-link .nav-count { margin-left:auto; }
+.sidebar-bottom { margin-top:auto; padding-top:30px; }
+.role-links { display:flex; flex-direction:column; margin:0 12px 25px; gap:9px; }
+.role-links a { display:flex; justify-content:space-between; color:#a3adc5; font-size:11px; }
+.role-links a:hover { color:var(--accent); }
+.role-links a span { color:#8a96b0; }
+.environment { border-top:1px solid var(--line); padding:20px 12px 0; display:flex; align-items:flex-start; gap:9px; font-size:10px; color:#9aa6c2; }
+.environment .status-dot { margin-top:5px; }
+.environment small { display:block; color:#8793aa; font-size:9px; margin-top:3px; }
+.page-shell { margin-left:var(--sidebar); }
+.topbar { height:65px; display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--line); padding:0 34px; background:#141720; }
+.breadcrumb { font-size:11px; color:#8894ad; display:flex; align-items:center; gap:13px; }
+.breadcrumb span { color:#62708d; }
+.breadcrumb strong { color:#c1c8dc; font-weight:500; }
+main { max-width:1720px; margin:auto; padding:30px 34px 0; }
+.hero { display:flex; align-items:center; justify-content:space-between; gap:15px; margin-bottom:24px; }
+.hero p:last-child { font-size:12px; color:var(--muted); margin:0; }
+.hero-mark { color:#818daa; font:10px ui-monospace,monospace; letter-spacing:1.5px; white-space:nowrap; }
+.card { background:var(--panel); border:1px solid var(--line); border-radius:11px; padding:22px; margin-bottom:20px; box-shadow:0 2px 3px #182e2410; min-width:0; }
+.section-title { display:flex; justify-content:space-between; align-items:center; gap:12px; margin-bottom:12px; }
+.section-title h2 { margin-bottom:0; }
+.section-title .eyebrow { font-size:8px; }
+.toolbar { display:flex; align-items:center; justify-content:space-between; gap:12px; }
+.toolbar-actions,.connection { display:flex; align-items:center; gap:12px; flex-wrap:wrap; }
+.connection-toolbar { margin:0 0 18px; }
+.connection { font-size:10px; }
+.connection strong { color:#b0b9e7; font-weight:500; }
+#exercise { max-width:250px; overflow:hidden; white-space:nowrap; text-overflow:ellipsis; }
+.inline { display:inline-flex; align-items:center; gap:6px; margin:0; font-size:10px; white-space:nowrap; }
+label { display:block; margin:11px 0 5px; color:#b7c0d6; font-size:11px; }
+input,select,textarea { display:block; width:100%; border:1px solid #353d55; background:var(--surface); color:var(--text); border-radius:6px; padding:10px 11px; font-size:12px; }
+input::placeholder,textarea::placeholder { color:#7f8ca8; }
+input:focus,textarea:focus,select:focus { outline:2px solid #454b78; outline-offset:1px; border-color:#a5adeb; }
+input[type="checkbox"] { display:inline; width:12px; height:12px; margin:0; accent-color:var(--accent); }
+textarea { resize:vertical; min-height:74px; }
+.stats { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:12px; margin-bottom:24px; }
+body[data-role="soc"] .stats,body[data-role="grc"] .stats { grid-template-columns:repeat(3,minmax(0,1fr)); }
+.stat { background:var(--panel); border:1px solid var(--line); border-radius:9px; padding:16px 18px 13px; min-width:0; }
+.stat>span { font-size:11px; color:#b0bad0; }
+.stat strong { display:block; font-size:29px; letter-spacing:-1.2px; font-weight:500; margin:7px 0 4px; line-height:1.25; font-variant-numeric:tabular-nums; }
+.stat small { font-size:10px; color:var(--quiet); }
+.stat-pending { background:#242a43; border-color:#454e7b; }
+.stat-pending strong { color:var(--accent); }
+.content-grid { display:grid; grid-template-columns:minmax(0,1fr) 282px; align-items:start; gap:22px; }
+.primary-column { min-width:0; }
+.side-rail { min-width:0; position:sticky; top:22px; }
+.engine-card { background:var(--panel); }
+.engine-card #analysis-status { font-size:11px; margin-bottom:4px; }
+.engine-card .section-title { gap:20px; }
+.engine-card .section-title button { white-space:nowrap; }
+details { border-top:1px solid var(--line); padding-top:11px; margin-top:12px; font-size:12px; }
+summary { cursor:pointer; color:#abc5b6; font-size:11px; font-weight:500; padding:3px 0; }
+details[open]>summary { margin-bottom:10px; }
+.quiet-details { border:0; padding-top:0; margin-top:8px; }
+.quiet-details p { color:var(--muted); font-size:11px; }
+.inline-form { display:flex; align-items:flex-end; gap:10px; }
+.inline-form label { flex:1; margin-bottom:0; }
+.inline-form input { margin-top:6px; }
+.inline-form button { flex:0 0 auto; }
+.review-layout { display:grid; grid-template-columns:213px minmax(0,1fr); gap:21px; border-top:1px solid var(--line); margin-top:18px; padding-top:17px; }
+.approval-inbox { min-width:0; border-right:1px solid var(--line); padding-right:17px; }
+.search-label { display:flex; align-items:center; gap:7px; margin:0 0 10px; border:1px solid var(--line); border-radius:6px; padding-left:9px; background:var(--surface); }
+.search-label span { font-size:21px; line-height:1; color:#8593ad; }
+.search-label input { min-width:0; border:0; padding:8px 4px; font-size:10px; background:transparent; }
+.filter-tabs { display:flex; gap:5px; margin-bottom:10px; }
+.filter-tab { min-height:25px; padding:3px 10px; background:transparent; color:#a0abc5; font-size:10px; font-weight:500; }
+.filter-tab:hover { background:var(--hover); }
+.filter-tab.active { background:var(--accent-soft); color:var(--accent); }
+#inbox-result { margin:0 0 8px; font-size:9px; }
+.proposal-list { list-style:none; padding:0 3px 0 0; margin:0; max-height:360px; overflow-y:auto; overscroll-behavior:contain; scrollbar-width:thin; scrollbar-color:#4f5778 transparent; }
+.proposal-list li+li { margin-top:7px; }
+.proposal-item { display:block; width:100%; border:1px solid var(--line); border-radius:7px; padding:10px 11px; background:var(--surface); text-align:left; color:var(--text); font-weight:400; }
+.proposal-item:hover { background:var(--hover); border-color:#656fa2; }
+.proposal-item.selected { background:var(--accent-soft); border-color:#8f99d8; box-shadow:inset 2px 0 var(--accent); }
+.inbox-item-top { display:flex; align-items:center; justify-content:space-between; gap:7px; margin-bottom:7px; }
+.inbox-item-top strong { font-size:12px; font-weight:600; overflow-wrap:anywhere; }
+.inbox-team { margin:0; color:var(--accent); font-size:8px; letter-spacing:.5px; font-weight:600; }
+.inbox-summary { display:block; margin:0; color:#aeb8d1; font-size:11px; }
+.inbox-empty { font-size:11px; padding:24px 5px; }
+.approval-detail { min-width:0; }
+.proposal-summary { padding:2px 0; font-size:11px; }
+.proposal-summary h3 { margin:0 0 11px; font-size:16px; }
+.proposal-summary p { color:#abb5cd; margin-bottom:10px; overflow-wrap:anywhere; }
+.proposal-summary .big-change { padding:12px 14px; border:1px solid #454e77; border-radius:7px; background:#252c45; color:var(--accent); font-size:19px; font-weight:500; letter-spacing:-.4px; }
+.proposal-summary .case-reference { font:9px/1.5 ui-monospace,monospace; color:#8491ab; }
+#evidence-panel { margin-top:4px; }
+#evidence-panel summary { font-size:10px; }
+#review-form { padding-top:12px; border-top:1px solid var(--line); margin-top:12px; }
+#reason { margin-bottom:10px; min-height:70px; font-size:11px; }
+.button-row { display:flex; gap:8px; flex-wrap:wrap; }
+.button-row button { padding:8px 13px; min-height:35px; font-size:11px; }
+.section-footnote { margin:18px -22px -22px; padding:12px 22px; border-top:1px solid var(--line); color:var(--quiet); font-size:9px; background:var(--surface); border-radius:0 0 11px 11px; }
+.table-wrap { overflow:auto; max-height:540px; scrollbar-width:thin; }
+table { border-collapse:separate; border-spacing:0; width:100%; text-align:left; font-size:11px; }
+th { position:sticky; top:0; z-index:1; background:var(--surface); color:#a1abc2; border-block:1px solid var(--line); padding:10px; font-size:8px; font-weight:600; letter-spacing:.3px; white-space:nowrap; }
+th:first-child { border-radius:5px 0 0 5px; }
+th:last-child { border-radius:0 5px 5px 0; }
+td { padding:12px 10px; vertical-align:top; border-bottom:1px solid var(--line); color:#b2bbd0; }
+td:first-child { color:#d3d8e8; font-weight:500; }
+tbody tr:last-child td { border-bottom:0; }
+tbody tr:hover { background:var(--hover); }
+.secondary-line { display:block; color:#8d9ab1; font-size:9px; font-weight:400; margin-top:3px; }
+tr.changed { background:#23372b; }
+tr.changed td:first-child { box-shadow:inset 2px 0 #9dc6aa; }
+.priority { display:inline-block; border-radius:4px; padding:2px 7px; font-size:8px; font-weight:600; white-space:nowrap; }
+.priority-critical { color:#e6a09c; background:#422d31; }
+.priority-high { color:#d8bb83; background:#3b3529; }
+.priority-medium { color:#b8c58e; background:#303729; }
+.priority-low { color:#9dc4c8; background:#25383e; }
+.table-toolbar { margin:2px 0 12px; }
+.table-toolbar p { margin:0; }
+.pager { display:flex; align-items:center; justify-content:space-between; gap:10px; border-top:1px solid var(--line); margin-top:12px; padding-top:12px; }
+.pager>div { display:flex; gap:7px; }
+pre { padding:14px; background:var(--surface); border:1px solid var(--line); border-radius:6px; font:10px/1.7 ui-monospace,monospace; color:#bac3de; white-space:pre-wrap; overflow-wrap:anywhere; max-height:350px; overflow:auto; }
+code { font:11px ui-monospace,monospace; padding:2px 5px; background:var(--accent-soft); border-radius:4px; color:#bec8f2; }
+.chat-card { padding:0; overflow:hidden; }
+.chat-heading { display:flex; gap:9px; align-items:center; padding:16px; border-bottom:1px solid var(--line); }
+.chat-heading h2 { margin:0 0 1px; font-size:13px; }
+.chat-heading .small { font-size:9px; }
+.chat-actions { display:flex; align-items:center; gap:8px; margin-left:auto; flex-shrink:0; }
+.chat-actions .small-button { white-space:nowrap; }
+.chat-heading .icon-button { flex-shrink:0; }
+.chat-heading>.nav-count { margin-left:auto; }
+.chat-heading>.nav-count:not([hidden])+.icon-button { margin-left:0; }
+.chat-avatar { display:grid; place-items:center; border-radius:8px; width:32px; height:32px; background:var(--accent-soft); color:var(--accent); font-size:20px; }
+.chat-connection { display:flex; align-items:center; gap:5px; padding:12px 14px; font-size:8px; color:#a7b2d9; }
+.chat-connection>span:last-child { margin-left:auto; color:#909bb2; }
+.chat-messages { display:flex; flex-direction:column; gap:12px; max-height:285px; min-height:90px; overflow-y:auto; padding:4px 14px 14px; scrollbar-width:thin; scrollbar-color:#4f5778 transparent; overscroll-behavior:contain; }
+.chat-messages:empty { display:none; }
+.chat-message { align-self:flex-start; max-width:94%; min-width:65%; }
+.chat-meta { display:flex; justify-content:space-between; gap:8px; align-items:center; font-size:8px; margin-bottom:4px; }
+.chat-meta strong { font-weight:600; color:#bac5ed; }
+.chat-meta time { color:#8e9bb4; white-space:nowrap; }
+.chat-message p { margin:0; padding:9px 11px; border-radius:2px 9px 9px; background:#242a3b; color:#d9dff2; font-size:12px; line-height:1.6; white-space:pre-wrap; overflow-wrap:anywhere; }
+.chat-message.chat-own { align-self:flex-end; }
+.chat-message.chat-own p { background:#2d3454; border-radius:9px 2px 9px 9px; color:#d4ddff; }
+.chat-empty { padding:24px 17px 34px; margin:0; font-size:11px; text-align:center; line-height:1.8; }
+#chat-form { border-top:1px solid var(--line); padding:12px; background:var(--surface); }
+#chat-text { min-height:63px; font-size:11px; background:#11141e; border-color:#3c4668; }
+.chat-compose-footer { display:flex; align-items:center; justify-content:space-between; gap:6px; margin-top:9px; }
+.chat-compose-footer>span { font-size:8px; }
+.chat-feedback { font-size:9px; margin:0; padding:0 13px; }
+.chat-feedback:empty { display:none; }
+.chat-observer { margin:0; border-top:1px solid var(--line); padding:11px 14px; font-size:9px; color:#b0b9d6; background:var(--surface); }
+.chat-history { text-align:center; font-size:8px; margin:0; padding:10px; color:#8894ae; }
+.activity-card { padding:15px; }
+.activity-card details { border:0; margin:0; padding:0; }
+.activity-card summary { display:flex; align-items:center; justify-content:space-between; font-size:11px; }
+.activity-card summary::after { content:'+'; color:#8c98b3; margin-left:10px; }
+.activity-card details[open]>summary::after { content:'−'; }
+.activity-card summary .status-dot { margin-left:auto; }
+.activity-card pre { max-height:240px; font-size:9px; }
+.rail-note { text-align:center; padding:24px 15px; color:#8d99b0; }
+.rail-note-icon { font-size:29px; color:#a0abd1; }
+.rail-note p { font:italic 20px/1.4 Georgia,serif; color:#a3adce; margin:9px 0; }
+.rail-note>span:last-child { font-size:9px; }
+.message { font-size:11px; color:#aeb8eb; padding:0; margin:0 0 18px; }
+.login { max-width:430px; margin:50px auto 30px; padding:32px; }
+.login h2 { font-size:22px; margin-bottom:10px; }
+.login p { font-size:12px; color:var(--muted); }
+.login .eyebrow { font-size:9px; }
+.login-symbol { width:42px; height:42px; display:grid; place-items:center; color:var(--accent); background:var(--accent-soft); border-radius:12px; font-size:25px; margin-bottom:22px; }
+.login form button { width:100%; margin:14px 0; display:flex; justify-content:space-between; }
+.login .small { font-size:10px; margin:0; }
+.demo-info { border:0; margin:10px 0 22px; max-width:850px; }
+.demo-info summary { font-size:10px; color:#8a96af; }
+.demo-info p { color:var(--muted); font-size:11px; }
+footer { border-top:1px solid var(--line); padding:17px 0 23px; display:flex; align-items:center; justify-content:space-between; gap:10px; color:#8d9ab5; font-size:9px; }
+.skip-link { position:fixed; top:-100px; left:20px; z-index:100; background:var(--panel); padding:10px; }
+.skip-link:focus { top:10px; }
+.sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
+[hidden] { display:none !important; }
 
-/* Content-only scoping: retain the original theme; three team counters fill
-   the original counter strip. The original small-screen layout is unchanged. */
-@media (min-width: 901px) {
-  body[data-role="soc"] .stats, body[data-role="grc"] .stats { grid-template-columns: repeat(3, 1fr); }
+/* Chat is the first workspace panel on every screen size. */
+.chat-priority { margin-bottom:20px; }
+.chat-priority #chat-body { display:grid; grid-template-columns:minmax(0,1fr) 300px; grid-template-areas:"connection composer" "messages composer" "feedback composer" "history history"; }
+.chat-priority .chat-heading { padding:12px 16px; }
+.chat-priority .chat-connection { grid-area:connection; }
+.chat-priority .chat-messages { grid-area:messages; max-height:150px; min-height:90px; }
+.chat-priority .chat-empty { grid-area:messages; padding:12px 16px 24px; }
+.chat-priority #chat-form { grid-area:composer; border-top:0; border-left:1px solid var(--line); display:flex; flex-direction:column; justify-content:center; }
+.chat-priority #chat-text { min-height:80px; max-height:150px; }
+.chat-priority .chat-observer { grid-area:composer; display:flex; align-items:center; justify-content:center; border-top:0; border-left:1px solid var(--line); }
+.chat-priority .chat-feedback { grid-area:feedback; }
+.chat-priority .chat-history { grid-area:history; border-top:1px solid var(--line); padding:6px; }
+body[data-role="soc"] .content-grid,body[data-role="grc"] .content-grid { grid-template-columns:minmax(0,1fr); }
+body[data-role="soc"] .side-rail,body[data-role="grc"] .side-rail { display:none; }
+@media(min-width:1600px) {
+  main { padding-inline:44px; }
+  .content-grid { grid-template-columns:minmax(0,1fr) 300px; gap:26px; }
+  .review-layout { grid-template-columns:250px minmax(0,1fr); }
+}
+@media(max-width:1250px) {
+  :root { --sidebar:175px; }
+  main { padding-inline:22px; }
+  .topbar { padding-inline:22px; }
+  .content-grid { grid-template-columns:minmax(0,1fr) 256px; gap:16px; }
+  .card { padding:18px; }
+  .chat-card { padding:0; }
+  .review-layout { grid-template-columns:175px minmax(0,1fr); gap:15px; }
+  .approval-inbox { padding-right:12px; }
+  .section-footnote { margin-inline:-18px; margin-bottom:-18px; padding-inline:18px; }
+  .stat { padding:14px 12px; }
+  .stat>span { font-size:9px; }
+  .stat small { font-size:8px; }
+  .brand { margin-left:6px; }
+}
+@media(max-width:1080px) {
+  :root { --sidebar:165px; }
+  .content-grid { grid-template-columns:minmax(0,1fr); }
+  .side-rail { position:static; display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:16px; }
+  .chat-card { grid-row:span 2; }
+  .activity-card { align-self:start; }
+  .rail-note { padding:12px; }
+  .review-layout { grid-template-columns:210px minmax(0,1fr); }
+  .stats { gap:8px; }
+  .hero-mark { display:none; }
+}
+@media(max-width:760px) {
+  .chat-priority #chat-body { display:block; }
+  .chat-priority #chat-form,.chat-priority .chat-observer { border-left:0; border-top:1px solid var(--line); }
+  .chat-priority .chat-messages { max-height:130px; }
+  .sidebar { position:static; width:auto; padding:15px 18px; flex-direction:row; flex-wrap:wrap; gap:14px; border-bottom:1px solid var(--line); border-right:0; }
+  .brand { margin:0 auto 0 0; font-size:18px; }
+  .brand-symbol { width:31px; height:33px; font-size:26px; }
+  .sidebar>.sidebar-label,.sidebar-bottom .sidebar-label,.environment { display:none; }
+  .workspace-nav { width:100%; order:3; flex-direction:row; overflow:auto; gap:3px; }
+  .nav-link { padding:7px 8px; font-size:10px; white-space:nowrap; gap:5px; }
+  .nav-icon { display:none; }
+  .sidebar-bottom { margin:0; padding:0; align-self:center; }
+  .role-links { flex-direction:row; margin:0; gap:12px; }
+  .role-links a { font-size:10px; gap:3px; }
+  .page-shell { margin:0; }
+  .topbar { height:44px; padding-inline:18px; }
+  main { padding:22px 18px 0; }
+  .hero { margin-bottom:18px; }
+  .connection-toolbar { align-items:flex-start; flex-direction:column; }
+  .connection { gap:7px; }
+  .stats { grid-template-columns:repeat(3,minmax(0,1fr)); gap:8px; }
+  .stat strong { font-size:25px; }
+  .stat { padding:12px; }
+  .stat small { display:none; }
+  .review-layout { grid-template-columns:175px minmax(0,1fr); gap:14px; }
+  .engine-card .section-title { align-items:flex-start; }
+  .section-title h2 { font-size:15px; }
+  .inline-form { flex-direction:column; align-items:stretch; }
+  .pager { flex-wrap:wrap; }
+  .login { margin-top:25px; padding:25px; }
+  footer { flex-wrap:wrap; }
+}
+@media(max-width:520px) {
+  .chat-heading { flex-wrap:wrap; }
+  .chat-actions { gap:5px; }
+  .review-layout { grid-template-columns:minmax(0,1fr); }
+  .approval-inbox { border-right:0; padding:0 0 15px; border-bottom:1px solid var(--line); }
+  .proposal-list { max-height:185px; }
+  .side-rail { display:block; }
+  .rail-note { display:none; }
+  .engine-card .section-title { flex-direction:column; }
+  .stat>span { font-size:8px; }
+  .stat { padding:10px 9px; }
+  .stat strong { font-size:23px; }
+  .table-toolbar { align-items:flex-start; flex-direction:column; gap:7px; }
+  .section-title { gap:8px; }
+  .records-card>.section-title { flex-wrap:wrap; }
+}
+@media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } *,*::before,*::after { transition:none !important; } }
+
+/* Reference console: generous type, navy surfaces and soft lavender accents. */
+body { font-size:15px; }
+h2 { font-size:19px; }
+.hero p:last-child { font-size:14px; }
+.eyebrow,.section-title .eyebrow { font-size:10px; }
+.brand-symbol { background:none; border:0; border-radius:0; }
+.brand-symbol svg { width:35px; height:24px; }
+.nav-link { font-size:13px; }
+.role-links a { font-size:12px; }
+.stat>span { font-size:12px; }
+.stat small { font-size:11px; }
+.proposal-summary { font-size:13px; }
+.proposal-summary h3 { font-size:19px; }
+.proposal-summary .big-change { font-size:22px; }
+.proposal-summary .case-reference { font-size:10px; }
+.inbox-item-top strong { font-size:13px; }
+.inbox-summary { font-size:12px; }
+.proposal-item { padding:12px 11px; }
+.search-label input { font-size:12px; }
+summary,#evidence-panel summary { font-size:12px; }
+.small,.engine-card #analysis-status { font-size:12px; }
+table { font-size:12px; }
+th { font-size:10px; }
+.chat-heading h2 { font-size:16px; }
+.chat-heading .small { font-size:11px; }
+.chat-message p { font-size:13px; }
+.chat-meta { font-size:10px; }
+.chat-connection { font-size:10px; }
+#chat-text,#reason { font-size:13px; }
+.chat-compose-footer>span,.chat-history,.chat-feedback { font-size:10px; }
+.connection,.inline { font-size:12px; }
+.button-row button,.small-button { font-size:12px; }
+.section-footnote { font-size:10px; }
+.message { font-size:13px; }
+
+/* Before sign-in the introduction and role cards form a focused entry screen. */
+body:not([data-session="connected"]) .sidebar,
+body:not([data-session="connected"]) .topbar,
+body:not([data-session="connected"]) .hero { display:none; }
+body:not([data-session="connected"]) .page-shell { margin-left:0; }
+body:not([data-session="connected"]) main { max-width:1240px; padding:64px 40px 24px; }
+body:not([data-session="connected"]) .message { max-width:1160px; margin:20px auto; }
+body:not([data-session="connected"]) .demo-info { max-width:1160px; margin-top:35px; }
+.login-layout { display:grid; grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr); gap:72px; align-items:start; max-width:1160px; margin:0 auto; }
+.login-intro { padding-top:35px; min-width:0; }
+.landing-brand { display:flex; align-items:center; gap:12px; color:var(--text); font-size:16px; font-weight:650; letter-spacing:3px; }
+.iris-eye { width:35px; height:25px; color:var(--accent); }
+#login-title { font-size:42px; font-weight:650; line-height:1.18; letter-spacing:-1.2px; margin:30px 0; }
+.login-description { color:var(--muted); font-size:17px; line-height:1.8; margin-bottom:30px; }
+.source-summary { margin:0; font-size:14px; }
+.source-summary>div { display:flex; justify-content:space-between; align-items:center; gap:18px; padding:15px 0; border-bottom:1px solid var(--line); }
+.source-summary>div:first-child { border-top:1px solid var(--line); }
+.source-summary dt { color:#cbd2e4; }
+.source-summary dd { font:13px/1.5 ui-monospace,monospace; color:#98a5c2; margin:0; white-space:nowrap; }
+.model-note { font-size:13px; line-height:1.8; color:var(--muted); margin:24px 0; }
+.landing-caption { display:flex; align-items:center; flex-wrap:wrap; gap:9px; color:var(--quiet); font-size:11px; margin-top:30px; }
+.login-card { min-width:0; padding:32px; border:1px solid var(--line); border-radius:17px; background:var(--panel); }
+.login-card>h2 { font-size:24px; margin-bottom:8px; letter-spacing:-.4px; }
+.signin-description { font-size:15px; line-height:1.7; color:var(--muted); margin-bottom:28px; }
+.workspace-roles { border:0; padding:0; margin:0; min-width:0; }
+.workspace-roles legend { color:var(--quiet); font-size:11px; font-weight:650; letter-spacing:1.4px; padding:0; margin-bottom:12px; }
+.role-choice { display:flex; align-items:flex-start; gap:14px; padding:16px; border:1px solid var(--line); border-radius:10px; margin:0 0 10px; cursor:pointer; background:transparent; }
+.role-choice:hover { background:#1d2130; border-color:#525a7f; }
+.role-choice:has(input:checked) { background:#292e4b; border-color:#8f99d8; }
+.role-choice:has(input:focus-visible) { outline:2px solid var(--accent); outline-offset:3px; }
+.role-choice input { flex:0 0 auto; width:16px; height:16px; margin:4px 0 0; padding:0; accent-color:var(--accent); }
+.role-choice strong { display:block; color:var(--text); font-size:14px; font-weight:600; }
+.role-choice small { display:block; color:var(--muted); font-size:13px; line-height:1.65; margin-top:4px; }
+.signin-label { margin:18px 0 8px; color:#cbd3e6; font-size:14px; font-weight:550; }
+#username,#password { min-height:48px; padding:12px 14px; border-radius:8px; font-size:14px; background:#10131c; }
+.login-key-hint { font-size:12px; line-height:1.7; color:var(--quiet); margin:9px 0 20px; }
+#login-submit { width:100%; min-height:46px; padding:12px; color:#151827; background:#a6acee; border-radius:8px; font-size:14px; font-weight:600; }
+#login-submit:hover { background:#bbc0fa; }
+.signin-footer { display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; color:var(--quiet); font-size:10px; margin:26px 0 0; }
+
+@media(max-width:1000px) {
+  body:not([data-session="connected"]) main { padding:40px 28px 22px; }
+  .login-layout { grid-template-columns:minmax(0,1fr); max-width:700px; gap:38px; }
+  .login-intro { padding-top:0; }
+  #login-title { font-size:38px; }
+  .stat>span,.stat small { font-size:11px; }
+}
+@media(max-width:520px) {
+  body:not([data-session="connected"]) main { padding:28px 18px 18px; }
+  .login-layout { gap:26px; }
+  #login-title { font-size:32px; margin:24px 0; }
+  .login-description { font-size:15px; }
+  .source-summary { font-size:13px; }
+  .source-summary dd { font-size:11px; }
+  .login-card { padding:22px; border-radius:14px; }
+  .role-choice { padding:14px 12px; gap:10px; }
+  .role-choice small { font-size:12px; }
+  .stat>span { font-size:10px; }
+  .chat-connection { font-size:9px; }
 }

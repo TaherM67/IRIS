@@ -4,11 +4,11 @@ Integrated Risk Intelligence System: a research prototype connecting SOC/SIEM ev
 
 This repository contains the **three-input advisory ML package**, the user's Colab-trained artifact, linked synthetic samples, a training notebook, a prepared FastAPI backend, and an **active, approval-gated demonstration** with Admin/SOC/GRC dashboards. It is not a finished live SOC/GRC platform.
 
-**For the examiner demonstration, start with [`demo.py`](demo.py) and [the active demo instructions](docs/ACTIVE_DEMO.md).** The original dark dashboard and direct key login are restored; only unrelated team content is removed. GRC approval actually changes the synthetic working risk register; SOC approval actually reprioritizes stored alerts. Changes persist, can be exported, and have before/after audit records. There are **55 passing demo tests including real HTTP/API approval, authentication, placeholder-free headings, original-layout and role-isolation checks**, plus frontend controller regressions. No real organization or security controls are modified. Browser layout/click-through still needs a local rehearsal.
+**For the examiner demonstration, start with [`demo.py`](demo.py) and [the active demo instructions](docs/ACTIVE_DEMO.md).** The dim workspace has chat as its first panel, sidebar navigation, a searchable, scrollable approval inbox, and Admin monitoring. GRC approval changes the synthetic working risk register; SOC approval reprioritizes stored alerts. Changes persist, can be exported, and have before/after audit records. **75 Python demo/chat/activity tests pass**, alongside frontend controller regressions for login, role isolation, approvals, inbox search and chat. No real organization or security controls are modified.
 
 **Each workspace now shows only its own work:** SOC has alerts and priority reviews; GRC has the risk register and business/control reviews; Admin can monitor both working systems plus full analysis, model and audit details. This is enforced in server-rendered HTML and API response allowlists, not only hidden panels. See [the dashboard guide and update steps](docs/ROLE_DASHBOARDS.md).
 
-**Use the original sign-in:** run `python demo.py keys` from the same project folder as the running server and copy only the matching role's token. The two redesigns, their build/session gates and new key commands are removed. See [the access guide](docs/ACCESS_HELP.md). Keep your existing `.local/` folder and credentials.
+**Sign in:** choose the Administrator, SOC analyst or GRC officer card, then enter your username and password. The active demo uses HTTPS and individual accounts; existing role keys are preserved but are not accepted by its website. See [the account guide](docs/LOCAL_ACCOUNTS.md). Keep your existing `.local/` folder and database.
 
 **Verification boundary:** 79 ML tests and 33 backend-core tests passed, and a fresh batch persisted 900 shadow cases. The actual FastAPI/Uvicorn HTTP server and browser interactions were **not run here**, because PyPI downloads were denied. Run the target-computer HTTP tests before using that interface. See [the verification record](backend/VERIFICATION.md).
 
@@ -46,7 +46,7 @@ python -m unittest demo_app.tests.test_demo -v
 python demo.py
 ```
 
-In a second private terminal run `python demo.py keys`. Open `http://127.0.0.1:8010/admin`, `/soc`, and `/grc` with their separate demo keys. Admin analyzes; each team reviews and applies its own proposed changes to **persisted synthetic records**. See [the complete steps](docs/ACTIVE_DEMO.md).
+Open `https://127.0.0.1:8010/admin`, `/soc`, and `/grc` and sign in with an account for the selected workspace. HTTPS is enabled by default; the localhost certificate must be prepared and trusted as described in [the HTTPS guide](docs/LOCAL_HTTPS.md). Admin analyzes; each team reviews and applies its own proposed changes to **persisted synthetic records**. See [the complete steps](docs/ACTIVE_DEMO.md).
 
 The new [three demo datasets](demo/data/) contain 30 assets, 60 risks and 2,367 alert rows. They produce 132 cases. Demo state and credentials stay in `.local/active_demo/`, excluded from Git. No FastAPI install, Colab runtime or Node.js is needed for this local demo.
 

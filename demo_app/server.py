@@ -2,7 +2,7 @@
 # IRIS EXPLAIN: is not an internet-facing production web server.
 # IRIS EXPLAIN: Existing documentation/literal text below is kept exactly as written; the explanation is outside the string so
 # IRIS EXPLAIN: its value does not change.
-"""Loopback-only demonstration HTTP adapter, using Python's standard library.
+"""HTTPS demonstration adapter, with explicit same-subnet LAN sharing.
 
 Not an internet-facing or production HTTP service. Reuses the real shared ML
 core without depending on the separately prepared FastAPI HTTP stack.
@@ -19,6 +19,8 @@ import re
 import secrets
 # IRIS EXPLAIN: Import socket to handle local HTTP connection/timeouts.
 import socket
+import ssl
+import ipaddress
 # IRIS EXPLAIN: Import BaseHTTPRequestHandler, ThreadingHTTPServer from http.server to serve or test actual loopback HTTP
 # IRIS EXPLAIN: requests using the standard library.
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
@@ -33,6 +35,9 @@ from backend.core import BusyError
 # IRIS EXPLAIN: duplicate it.
 from .engine import ConflictError, DemoEngine
 from .activity import BackendActivity
+from .chat import TeamChat
+from .auth import AuthenticationError
+from .lan import lan_network
 
 # IRIS EXPLAIN: Store the result of Path(__file__).with_name('static') in STATIC; later lines use this named result.
 STATIC = Path(__file__).with_name('static')
@@ -41,7 +46,7 @@ MAX_BODY = 8192
 
 
 def dashboard_html(role):
-    """Keep the original page and omit only sections outside this role.
+    """Render the shared workspace and omit sections outside this role.
 
     The template and role are server-owned. Blocks cannot nest and never contain
     uploaded values. API permissions and response projections remain key-derived.
@@ -74,10 +79,16 @@ def dashboard_html(role):
         markup = markup.replace(marker, value)
     # Supply real headings before JavaScript runs; the browser only adds live
     # records after authentication. A failed script never exposes a title token.
-    title = {'admin': 'Admin · engine control', 'soc': 'SOC · live alert queue',
-             'grc': 'GRC · live risk register'}[role]
+    title = {'admin': 'Operations overview', 'soc': 'Security operations',
+             'grc': 'Risk & compliance'}[role]
     markup = markup.replace('<title>IRIS · Active demonstration</title>', f'<title>IRIS · {title}</title>')
     markup = markup.replace('<h1 id="title">IRIS active demonstration', f'<h1 id="title">{title}')
+    markup = markup.replace('<strong id="role-label">Admin', f'<strong id="role-label">{role.upper() if role != "admin" else "Admin"}')
+    # Set the initial card from the URL; later choices stay in the current page.
+    selected_role = f'id="workspace-role-{role}" type="radio" name="workspace-role" value="{role}"'
+    markup = markup.replace(selected_role, selected_role + ' checked')
+    role_name = {'admin': 'Administrator', 'soc': 'SOC analyst', 'grc': 'GRC officer'}[role]
+    markup = markup.replace('Sign in as Administrator', f'Sign in as {role_name}')
     return markup.encode('utf-8')
 
 
@@ -99,21 +110,54 @@ class DemoServer(ThreadingHTTPServer):
     # IRIS EXPLAIN: Store 8 in request_queue_size; later lines use this named result.
     request_queue_size = 8
 
-    # IRIS EXPLAIN: Function DemoServer.__init__: Reject non-loopback binding and attach the shared demo engine to the
-    # IRIS EXPLAIN: standard-library HTTP server.
-    # IRIS EXPLAIN: Inputs: address: the bound loopback host/port; non-loopback hosts are rejected; engine: the existing shared
-    # IRIS EXPLAIN: demo/model coordinator instance.
-    def __init__(self, address, engine: DemoEngine):
-        # IRIS EXPLAIN: Enter this branch only when address[0] != '127.0.0.1'.
+    # LAN binding is opt-in and requires accounts, HTTPS and a private subnet.
+    def __init__(self, address, engine: DemoEngine, *, tls_context=None, auth=None, allowed_subnet=None):
+        self.allowed_subnet = None
         if address[0] != '127.0.0.1':
-            # IRIS EXPLAIN: Stop this invalid/unauthorized/stale path by raising ValueError('The synthetic demo must bind only
-            # IRIS EXPLAIN: to 127.0.0.1'); the caller's existing boundary determines rollback or the HTTP diagnostic.
-            raise ValueError('The synthetic demo must bind only to 127.0.0.1')
+            if tls_context is None or auth is None or allowed_subnet is None:
+                raise ValueError('LAN access requires HTTPS, account authentication and an explicit private subnet')
+            self.allowed_subnet = lan_network(address[0],allowed_subnet)
         # IRIS EXPLAIN: Store engine in self.engine; later lines use this named result.
         self.engine = engine
+        if auth is not None and tls_context is None:
+            raise ValueError('Username/password sign-in requires HTTPS')
+        self.auth = auth
+        self.tls_context = tls_context
+        self.scheme = 'https' if tls_context is not None else 'http'
         # IRIS EXPLAIN: Call super().__init__(address, DemoHandler) using the existing explicit arguments.
         super().__init__(address, DemoHandler)
+        self.allowed_authorities = ({f'127.0.0.1:{self.server_port}',f'localhost:{self.server_port}'}
+                                    if self.allowed_subnet is None else {f'{address[0]}:{self.server_port}'})
         self.activity = BackendActivity()
+        self.chat = TeamChat(engine.store)
+
+    def service_actions(self):
+        self.chat.maintain()
+
+    def get_request(self):
+        request, address = super().get_request()
+        if self.allowed_subnet is not None:
+            peer = ipaddress.ip_address(address[0])
+            if peer not in self.allowed_subnet and not peer.is_loopback:
+                request.close()
+                raise ConnectionAbortedError('Client is outside the configured LAN subnet')
+        if self.tls_context is not None:
+            try:
+                request.settimeout(DemoHandler.timeout)
+                request = self.tls_context.wrap_socket(request, server_side=True, do_handshake_on_connect=False)
+            except Exception:
+                request.close()
+                raise
+        return request, address
+
+    def finish_request(self, request, client_address):
+        # Handshake in the worker, so a stalled TLS client cannot block accepts.
+        if self.tls_context is not None:
+            try:
+                request.do_handshake()
+            except (ssl.SSLError, OSError):
+                return
+        super().finish_request(request, client_address)
 
 
 # IRIS EXPLAIN: Class DemoHandler: Bounded local HTTP request/response adapter with key-derived team roles.
@@ -186,19 +230,17 @@ class DemoHandler(BaseHTTPRequestHandler):
     def boundary(self):
         # IRIS EXPLAIN: Store the result of self.headers.get_all('Host', []) in hosts; later lines use this named result.
         hosts = self.headers.get_all('Host', [])
-        # IRIS EXPLAIN: Store {f'127.0.0.1:{self.server.server_port}', f'localhost:{self.server.server_port}'} in expected;
-        # IRIS EXPLAIN: later lines use this named result.
-        expected = {f'127.0.0.1:{self.server.server_port}', f'localhost:{self.server.server_port}'}
+        # Every listener accepts only its own exact hostname/IP and port.
+        expected = self.server.allowed_authorities
         # IRIS EXPLAIN: Enter this branch only when len(hosts) != 1 or hosts[0].lower() not in expected.
         if len(hosts) != 1 or hosts[0].lower() not in expected:
             # IRIS EXPLAIN: Stop this invalid/unauthorized/stale path by raising APIError(400, 'Only the exact local demo host
             # IRIS EXPLAIN: and port are accepted'); the caller's existing boundary determines rollback or the HTTP diagnostic.
-            raise APIError(400, 'Only the exact local demo host and port are accepted')
+            raise APIError(400, 'Only the configured dashboard host and port are accepted')
         # IRIS EXPLAIN: Store the result of self.headers.get_all('Origin', []) in origins; later lines use this named result.
         origins = self.headers.get_all('Origin', [])
-        # IRIS EXPLAIN: Enter this branch only when len(origins) > 1 or (origins and origins[0].lower() != 'http://' +
-        # IRIS EXPLAIN: hosts[0].lower()).
-        if len(origins) > 1 or (origins and origins[0].lower() != 'http://' + hosts[0].lower()):
+        # IRIS EXPLAIN: Require an origin matching the active HTTP/HTTPS scheme and exact host/port.
+        if len(origins) > 1 or (origins and origins[0].lower() != self.server.scheme + '://' + hosts[0].lower()):
             # IRIS EXPLAIN: Stop this invalid/unauthorized/stale path by raising APIError(403, 'Cross-origin requests are
             # IRIS EXPLAIN: disabled'); the caller's existing boundary determines rollback or the HTTP diagnostic.
             raise APIError(403, 'Cross-origin requests are disabled')
@@ -220,6 +262,12 @@ class DemoHandler(BaseHTTPRequestHandler):
     # IRIS EXPLAIN: Function DemoHandler.authenticate: Require one ASCII local demo key and derive its server-configured role
     # IRIS EXPLAIN: using constant-time comparison.
     def authenticate(self):
+        if self.server.auth is not None:
+            values = self.headers.get_all('Authorization', [])
+            token = values[0][7:] if len(values) == 1 and values[0].startswith('Bearer ') else ''
+            self.principal = self.server.auth.authenticate(token)
+            self.session_token = token
+            return self.principal['role']
         # IRIS EXPLAIN: Store the result of self.headers.get_all('X-IRIS-Key', []) in values; later lines use this named result.
         values = self.headers.get_all('X-IRIS-Key', [])
         # IRIS EXPLAIN: Store values[0] when len(values) == 1; otherwise '' in token; later lines use this named result.
@@ -358,7 +406,21 @@ class DemoHandler(BaseHTTPRequestHandler):
             # IRIS EXPLAIN: existing boundary determines rollback or the HTTP diagnostic.
             raise APIError(404, 'Not found')
         # IRIS EXPLAIN: Store the result of self.authenticate() in actor; later lines use this named result.
-        actor = self.authenticate()  # Always before reading any mutation body.
+        if path == '/api/demo/auth/login' and method == 'POST':
+            if self.server.auth is None:
+                raise APIError(503, 'Username/password sign-in is not configured')
+            if parsed.query:
+                raise APIError(422, 'Sign-in does not accept query parameters')
+            body = self.read_json()
+            if set(body) != {'username', 'password', 'workspace'}:
+                raise APIError(422, 'Only username, password and workspace are accepted')
+            return self.send(200, self.server.auth.login(body['username'], body['password'], body['workspace']))
+        actor = self.authenticate()  # Always before reading any other mutation body.
+        if path == '/api/demo/auth/logout' and method == 'POST' and self.server.auth is not None:
+            if parsed.query or self.read_json() != {}:
+                raise APIError(422, 'Sign-out requires an empty JSON command')
+            self.server.auth.logout(self.session_token)
+            return self.send(200, {'signed_out': True})
         # IRIS EXPLAIN: Store self.server.engine in engine; later lines use this named result.
         engine = self.server.engine
         # IRIS EXPLAIN: Store the result of parse_qs(parsed.query, keep_blank_values=True) in query; later lines use this named
@@ -373,7 +435,8 @@ class DemoHandler(BaseHTTPRequestHandler):
                    '/api/demo/risks': {'limit', 'offset'},
                    # IRIS EXPLAIN: Continue the surrounding call, schema/list, or comprehension with these existing
                    # IRIS EXPLAIN: arguments/items: '/api/demo/proposals': {'status'}}.get(path, set()).
-                   '/api/demo/proposals': {'status'}}.get(path, set())
+                   '/api/demo/proposals': {'status'},
+                   '/api/demo/chat': {'after', 'limit'} if method == 'GET' else set()}.get(path, set())
         # IRIS EXPLAIN: Enter this branch only when set(query) - allowed or any((len(values) != 1 for values in
         # IRIS EXPLAIN: query.values())).
         if set(query) - allowed or any(len(values) != 1 for values in query.values()):
@@ -397,6 +460,13 @@ class DemoHandler(BaseHTTPRequestHandler):
             return int(value)
         # IRIS EXPLAIN: Enter this branch only when method == 'GET'.
         if method == 'GET':
+            if path == '/api/demo/chat/logs':
+                return self.send(200, self.server.chat.export_logs(actor))
+            if path == '/api/demo/chat':
+                return self.send(200, self.server.chat.messages(
+                    actor, after=number('after', 0) if 'after' in query else None,
+                    limit=number('limit', 100),
+                    username=self.principal['username'] if self.server.auth is not None else None))
             if path == '/api/demo/activity':
                 if actor != 'admin':
                     raise PermissionError('Backend activity requires the ADMIN role')
@@ -405,7 +475,10 @@ class DemoHandler(BaseHTTPRequestHandler):
             if path == '/api/demo/state':
                 # IRIS EXPLAIN: Return the result of self.send(200, engine.status(actor)) (send the already prepared
                 # IRIS EXPLAIN: response/message) to the caller; this ends the current function path.
-                return self.send(200, engine.status(actor))
+                result = engine.status(actor)
+                if self.server.auth is not None:
+                    result['user'] = dict(self.principal)
+                return self.send(200, result)
             # IRIS EXPLAIN: Enter this branch only when path == '/api/demo/risks'.
             if path == '/api/demo/risks':
                 # IRIS EXPLAIN: Return the result of self.send(200, engine.risks(actor, number('limit', 100), number('offset',
@@ -453,6 +526,19 @@ class DemoHandler(BaseHTTPRequestHandler):
                 return self.send(200, engine.export_alerts(actor))
         # IRIS EXPLAIN: Enter this branch only when method == 'POST'.
         if method == 'POST':
+            if path == '/api/demo/chat/clear':
+                if self.read_json() != {}:
+                    raise APIError(422, 'Clear chat accepts an empty command; the user comes from the signed-in account')
+                return self.send(200, self.server.chat.clear_view(actor,
+                    username=self.principal['username'] if self.server.auth is not None else None))
+            if path == '/api/demo/chat':
+                if actor not in {'soc', 'grc'}:
+                    raise PermissionError('Only SOC and GRC can send messages; Admin monitors read-only')
+                body = self.read_json()
+                if set(body) != {'text'}:
+                    raise APIError(422, 'Only message text is accepted; the sender comes from your role key')
+                return self.send(201, self.server.chat.send(actor, body['text'],
+                    username=self.principal['username'] if self.server.auth is not None else None))
             # Fixed labels only: no token, path, request body or review note is
             # copied into the activity window. The engine still owns all writes.
             action = {'/api/demo/analyze': 'analysis', '/api/demo/exercises': 'rehearsal'}.get(path)
@@ -497,7 +583,8 @@ class DemoHandler(BaseHTTPRequestHandler):
                 # IRIS EXPLAIN: Return the result of self.send(200, engine.review(actor, match[1], body['decision'],
                 # IRIS EXPLAIN: body['reason'])) (send the already prepared response/message) to the caller; this ends the
                 # IRIS EXPLAIN: current function path.
-                return self.send(200, engine.review(actor, match[1], body['decision'], body['reason']))
+                return self.send(200, engine.review(actor, match[1], body['decision'], body['reason'],
+                    username=self.principal['username'] if self.server.auth is not None else None))
         # IRIS EXPLAIN: Stop this invalid/unauthorized/stale path by raising APIError(404, 'Not found'); the caller's existing
         # IRIS EXPLAIN: boundary determines rollback or the HTTP diagnostic.
         raise APIError(404, 'Not found')
@@ -515,6 +602,8 @@ class DemoHandler(BaseHTTPRequestHandler):
         # IRIS EXPLAIN: success.
         except APIError as exc:
             # IRIS EXPLAIN: Call self.send(exc.status, {'detail': exc.detail}): send the already prepared response/message.
+            self.send(exc.status, {'detail': exc.detail})
+        except AuthenticationError as exc:
             self.send(exc.status, {'detail': exc.detail})
         # IRIS EXPLAIN: Catch PermissionError as exc; execute the existing error/fallback path rather than silently treating it
         # IRIS EXPLAIN: as success.

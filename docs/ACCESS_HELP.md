@@ -1,5 +1,7 @@
 # Original demo sign-in
 
+**Current active demo:** this historical key-based guide has been superseded by [username/password sign-in](LOCAL_ACCOUNTS.md) over [HTTPS](LOCAL_HTTPS.md). Use your named account on port 8010. The older key instructions below do not apply to the active website; keys and existing data have been preserved.
+
 The working dashboard and its original key flow are restored. **Do not delete `.local/` or regenerate your keys.** There is no build/profile/session prerequisite.
 
 ## Windows

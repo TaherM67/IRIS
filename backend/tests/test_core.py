@@ -163,7 +163,7 @@ class CoreTests(unittest.TestCase):
         # IRIS EXPLAIN: Call self.assertEqual(self.adapter.metadata['model_sha256'],
         # IRIS EXPLAIN: '12e76f280bcaa4854e9f08df9ea05839ea43cbb7691a7d44bfbd9d473eb39950'): assert that the actual and expected
         # IRIS EXPLAIN: values are equal.
-        self.assertEqual(self.adapter.metadata['model_sha256'], '12e76f280bcaa4854e9f08df9ea05839ea43cbb7691a7d44bfbd9d473eb39950')
+        self.assertEqual(self.adapter.status()['model1_sha256'], 'ae8ca09ded11a3d7e10be68fbc29999028cf6c456874e4376697a1e7c8fb7bb1')
 
     # IRIS EXPLAIN: Function CoreTests.test_corruption_rejected_before_model_loading: Regression test: verify that corruption
     # IRIS EXPLAIN: rejected before model loading; the assertions below define the exact expected behavior.

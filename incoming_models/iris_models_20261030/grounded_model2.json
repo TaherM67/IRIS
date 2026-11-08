@@ -1,0 +1,32 @@
+{
+  "model_sha256": "e29b2879b6c25a02605df4740265c5fdb7eb22849b45dcbf6f34e59736817dea",
+  "schema": "iris-grounded-control-candidates-v1",
+  "features": [
+    "event_count",
+    "duration_seconds",
+    "max_rule_level",
+    "mean_rule_level",
+    "distinct_rules",
+    "distinct_sources",
+    "distinct_accounts",
+    "failed_count",
+    "success_count",
+    "failure_ratio",
+    "success_after_failures",
+    "max_events_in_10s",
+    "external_source_fraction",
+    "event_rate_per_minute",
+    "asset_criticality",
+    "current_likelihood",
+    "impact",
+    "candidate_registered_risk_count",
+    "candidate_matched_risk_count",
+    "candidate_matched_event_fraction",
+    "candidate_catalogue_exact_technique_count",
+    "candidate_catalogue_parent_technique_count",
+    "candidate_applies_to_asset",
+    "observed_technique_count",
+    "matched_registered_risk_count"
+  ],
+  "release_eligible": false
+}
