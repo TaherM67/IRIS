@@ -429,7 +429,7 @@ class DemoHandler(BaseHTTPRequestHandler):
         # IRIS EXPLAIN: Store the result of {'/api/demo/alerts': {'limit', 'offset', 'changed_only'}, '/api/demo/risks':
         # IRIS EXPLAIN: {'limit', 'offset'}, '/api/demo/proposals': {'status'}}... (read an optional mapping field using its
         # IRIS EXPLAIN: stated fallback) in allowed; later lines use this named result.
-        allowed = {'/api/demo/alerts': {'limit', 'offset', 'changed_only'},
+        allowed = {'/api/demo/alerts': {'limit', 'offset', 'changed_only', 'group_by', 'scenario'},
                    # IRIS EXPLAIN: Continue the surrounding call, schema/list, or comprehension with these existing
                    # IRIS EXPLAIN: arguments/items: '/api/demo/risks': {'limit', 'offset'},.
                    '/api/demo/risks': {'limit', 'offset'},
@@ -497,7 +497,9 @@ class DemoHandler(BaseHTTPRequestHandler):
                 # IRIS EXPLAIN: Return the result of self.send(200, engine.alerts(actor, number('limit', 50), number('offset',
                 # IRIS EXPLAIN: 0), changed_only=changed == 'true')) (send the already prepared response/message) to the caller;
                 # IRIS EXPLAIN: this ends the current function path.
-                return self.send(200, engine.alerts(actor, number('limit', 50), number('offset', 0), changed_only=changed == 'true'))
+                return self.send(200, engine.alerts(actor, number('limit', 50), number('offset', 0),
+                                                    changed_only=changed == 'true', group_by=query.get('group_by', ['event'])[0],
+                                                    scenario=query.get('scenario', [None])[0]))
             # IRIS EXPLAIN: Enter this branch only when path == '/api/demo/proposals'.
             if path == '/api/demo/proposals':
                 # IRIS EXPLAIN: Return the result of self.send(200, engine.proposals(actor, status=query.get('status',

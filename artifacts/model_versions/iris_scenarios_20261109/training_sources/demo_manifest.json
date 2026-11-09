@@ -1,0 +1,38 @@
+{
+  "name": "IRIS diverse scenario demonstration",
+  "version": "2.0",
+  "data_provenance": "synthetic",
+  "seed": 20261109,
+  "unique_assets": 30,
+  "unique_risks": 180,
+  "expected_sessions": 1050,
+  "siem_alert_rows": 15231,
+  "expected_scenario_counts": {
+    "benign": 150,
+    "credential_access": 150,
+    "reconnaissance": 150,
+    "malicious_execution": 150,
+    "privilege_escalation": 150,
+    "web_exploitation": 150,
+    "data_exfiltration": 150
+  },
+  "training_labels_included": false,
+  "inputs": [
+    {
+      "upload_field": "asset_inventory",
+      "filename": "asset_inventory.json",
+      "sha256": "d4cdfcf36f5bba8ccfb6c4005b131de6e594e935ea61d608c5b5c3a84c35ca87"
+    },
+    {
+      "upload_field": "risk_register",
+      "filename": "risk_register.json",
+      "sha256": "36a089176bbcb3052c2afb2dbc481f32b853641b9082e4dcb7daee0e4120721e"
+    },
+    {
+      "upload_field": "siem_alerts",
+      "filename": "siem_alerts.jsonl",
+      "sha256": "d1bb14d36a6dc2ae164169a7b11b20b5507f8ff1b1893bdca7a7b3248d6a75e3"
+    }
+  ],
+  "purpose": "Synthetic software demonstration only; distinct sessions with correlated evidence, not independent real attacks."
+}

@@ -4,7 +4,7 @@
 # IRIS EXPLAIN: its value does not change.
 """Real local writes to synthetic SOC/GRC records, never to external systems.
 
-Analysis uses backend.core.Engine and the pinned Colab models unchanged. Human
+Analysis uses backend.core.Engine and a selected, versioned model profile. Human
 approvals execute explicit policy proposals against separately versioned demo
 tables. Immutable model evidence and original input files are never rewritten.
 """
@@ -38,6 +38,7 @@ from backend.model_adapter import digest, utc_now
 # IRIS EXPLAIN: it.
 from backend.storage import encoded
 from backend.grounded_adapter import public_review
+from backend.scenarios import NAMES, RISK_CATEGORIES
 # IRIS EXPLAIN: Import integrate from iris_models.three_sources to reuse the shared project contract/implementation rather than
 # IRIS EXPLAIN: duplicate it.
 from iris_models.three_sources import integrate
@@ -93,7 +94,7 @@ class DemoEngine:
     # IRIS EXPLAIN: Inputs: settings: validated local credentials, state path and processing bounds; data_dir: bundled synthetic
     # IRIS EXPLAIN: input directory used by the isolated demo; adapter: optional existing trusted model adapter, reused by tests
     # IRIS EXPLAIN: rather than retrained.
-    def __init__(self, settings: Settings, *, data_dir: Path = DATA, adapter=None):
+    def __init__(self, settings: Settings, *, data_dir: Path = DATA, adapter=None, allow_dataset_change=False):
         # IRIS EXPLAIN: Store (settings, Path(data_dir)) in (self.settings, self.data_dir); later lines use this named result.
         self.settings, self.data_dir = settings, Path(data_dir)
         # IRIS EXPLAIN: Store the comprehension {key: self.data_dir / name for key, name in INPUTS.items()} in self.inputs;
@@ -131,13 +132,16 @@ class DemoEngine:
                 # IRIS EXPLAIN: database'); the caller's existing boundary determines rollback or the HTTP diagnostic.
                 raise ValueError('Not an IRIS synthetic-demo database')
             # IRIS EXPLAIN: Enter this branch only when saved and saved[0] != encoded(self.source_hashes).
-            if saved and saved[0] != encoded(self.source_hashes):
+            dataset_changed = bool(saved and saved[0] != encoded(self.source_hashes))
+            if dataset_changed and not allow_dataset_change:
                 # IRIS EXPLAIN: Stop this invalid/unauthorized/stale path by raising ValueError('Demo source identity changed;
                 # IRIS EXPLAIN: do not mix exercises with different sources'); the caller's existing boundary determines
                 # IRIS EXPLAIN: rollback or the HTTP diagnostic.
                 raise ValueError('Demo source identity changed; do not mix exercises with different sources')
         # IRIS EXPLAIN: Enter this branch only when not current.
-        if not current:
+        if dataset_changed:
+            self.new_exercise('admin', self.manifest['name'][:100])
+        elif not current:
             # IRIS EXPLAIN: Call self.new_exercise('admin', 'Initial examiner demonstration') using the existing explicit
             # IRIS EXPLAIN: arguments.
             self.new_exercise('admin', 'Initial examiner demonstration')
@@ -388,7 +392,7 @@ class DemoEngine:
             # IRIS EXPLAIN: named result.
             risks = [row for row in risk_rows if valid(row)]
             # IRIS EXPLAIN: Enter this branch only when len(assets) != 30 or len(risks) != 60.
-            if len(assets) != 30 or len(risks) != 60:
+            if len(assets) != self.manifest['unique_assets'] or len(risks) != self.manifest['unique_risks']:
                 # IRIS EXPLAIN: Stop this invalid/unauthorized/stale path by raising ValueError('Unexpected current demo
                 # IRIS EXPLAIN: inventory/register size'); the caller's existing boundary determines rollback or the HTTP
                 # IRIS EXPLAIN: diagnostic.
@@ -412,7 +416,8 @@ class DemoEngine:
                 db.execute('INSERT INTO demo_exercises VALUES (?,?,?,NULL,?)',
                            # IRIS EXPLAIN: Continue the current record with seed_integration; each value comes from the
                            # IRIS EXPLAIN: expression shown on this unchanged line.
-                           (eid, label.strip(), now, encoded({'seed_integration': report})))
+                            (eid, label.strip(), now, encoded({'seed_integration': report, 'source_hashes': self.source_hashes,
+                                                              'dataset_name': self.manifest['name']})))
                 # IRIS EXPLAIN: Call db.executemany('INSERT INTO demo_risks VALUES (?,?,?,?,?,?,?,?,?,?,NULL,NULL,NULL)', [(eid,
                 # IRIS EXPLAIN: risk['risk_id'], risk['asset_id'], assets[risk['asset_id']]['host...: run the existing
                 # IRIS EXPLAIN: parameterized SQL for each supplied row.
@@ -467,7 +472,8 @@ class DemoEngine:
                                  # IRIS EXPLAIN: Continue the current record with label, synthetic_only,
                                  # IRIS EXPLAIN: previous_exercises_preserved; each value comes from the expression shown on
                                  # IRIS EXPLAIN: this unchanged line.
-                                 {'label': label.strip(), 'synthetic_only': True, 'previous_exercises_preserved': True})
+                                  {'label': label.strip(), 'synthetic_only': True, 'previous_exercises_preserved': True,
+                                   'source_hashes': self.source_hashes, 'dataset_name': self.manifest['name']})
             # IRIS EXPLAIN: Return a mapping containing exercise_id, status, previous_exercises_preserved to the caller; this
             # IRIS EXPLAIN: ends the current function path.
             return {'exercise_id': eid, 'status': 'seeded', 'previous_exercises_preserved': True}
@@ -500,6 +506,21 @@ class DemoEngine:
                 # IRIS EXPLAIN: Call db.execute('BEGIN IMMEDIATE'): run the existing SQL with its separately supplied
                 # IRIS EXPLAIN: parameters.
                 db.execute('BEGIN IMMEDIATE')
+                # An analysis revision can change a case ID without changing the
+                # underlying session. Keep one current review per team/session.
+                current_cases = {case['session']['session_id']: case['case_id'] for case in cases}
+                superseded = []
+                for old in db.execute('''SELECT p.proposal_id,p.case_id,c.payload_json FROM demo_proposals p
+                                         JOIN cases c ON c.case_id=p.case_id
+                                         WHERE p.exercise_id=? AND p.status='pending' ''', (exercise,)):
+                    sid = json.loads(old['payload_json'])['session']['session_id']
+                    if sid in current_cases and old['case_id'] != current_cases[sid]:
+                        superseded.append(old['proposal_id'])
+                if superseded:
+                    db.executemany("UPDATE demo_proposals SET status='stale',reason=?,reviewed_at=? WHERE proposal_id=?",
+                                   [('Superseded by newer analysis of the same incident', utc_now(), pid) for pid in superseded])
+                    self.store.audit(db, actor, 'demo_proposals_superseded', exercise,
+                                     {'proposals': len(superseded), 'basis': 'same session, newer immutable analysis'})
                 # IRIS EXPLAIN: Iterate cases, binding each item to case; process only the existing observed/fixture collection.
                 for case in cases:
                     # IRIS EXPLAIN: Store (case['session'], case['prediction'], case['risk_review']) in (session, prediction,
@@ -554,6 +575,12 @@ class DemoEngine:
                     # IRIS EXPLAIN: Finish the existing grouped expression/call or collection; any trailing fields/call chain
                     # IRIS EXPLAIN: remain unchanged.
                     }
+                    scenario = prediction['soc_assessment'].get('scenario_class') or 'needs_review'
+                    evidence['incident'] = {'session_id': session['session_id'], 'scenario': scenario,
+                                            'name': NAMES.get(scenario, scenario), 'start_utc': session['start_utc'],
+                                            'end_utc': session['end_utc'], 'alert_count': len(session['source_event_ids'])}
+                    if 'scenario_evidence' in session:
+                        evidence['scenario_evidence'] = session['scenario_evidence']
                     # IRIS EXPLAIN: Enter this branch only when policy['priority'] in PRIORITIES and
                     # IRIS EXPLAIN: prediction['soc_assessment']['status'] == 'ASSESSED'.
                     if 'model2_review' in prediction:
@@ -651,7 +678,8 @@ class DemoEngine:
                 db.execute('UPDATE demo_exercises SET run_id=?,summary_json=? WHERE exercise_id=?',
                            # IRIS EXPLAIN: Continue the surrounding call, schema/list, or comprehension with these existing
                            # IRIS EXPLAIN: arguments/items: (summary['run_id'], encoded(summary), exercise)).
-                           (summary['run_id'], encoded(summary), exercise))
+                            (summary['run_id'], encoded({**summary, 'source_hashes': self.source_hashes,
+                                                        'dataset_name': self.manifest['name']}), exercise))
                 # IRIS EXPLAIN: Call self.store.audit(db, actor, 'demo_analysis_ready', exercise, {'run_id': summary['run_id'],
                 # IRIS EXPLAIN: 'sessions': summary['sessions'], 'demo_records_changed_by_analysis... using the existing
                 # IRIS EXPLAIN: explicit arguments.
@@ -825,9 +853,15 @@ class DemoEngine:
     # IRIS EXPLAIN: Inputs: actor: the server-authenticated role; tests use explicit synthetic fixture roles; limit: the bounded
     # IRIS EXPLAIN: maximum result/preview count; offset: the nonnegative page offset; changed_only: whether to return only
     # IRIS EXPLAIN: genuinely revised working-alert rows.
-    def alerts(self, actor, limit=50, offset=0, *, changed_only=False):
+    def alerts(self, actor, limit=50, offset=0, *, changed_only=False, group_by='event', scenario=None):
         # IRIS EXPLAIN: Call require(actor, 'admin', 'soc') using the existing explicit arguments.
         require(actor, 'admin', 'soc')
+        if group_by not in {'event', 'incident'}:
+            raise ValueError('group_by must be event or incident')
+        if group_by == 'incident':
+            return self.incidents(actor, limit, offset, changed_only=changed_only, scenario=scenario)
+        if scenario is not None:
+            raise ValueError('Scenario filters require incident grouping')
         # IRIS EXPLAIN: Call self._page(limit, offset) using the existing explicit arguments.
         self._page(limit, offset)
         # IRIS EXPLAIN: Enter this branch only when type(changed_only) is not bool.
@@ -862,6 +896,47 @@ class DemoEngine:
         # IRIS EXPLAIN: Return a mapping containing exercise_id, total, items, limit, offset to the caller; this ends the
         # IRIS EXPLAIN: current function path.
         return {'exercise_id': eid, 'total': total, 'items': [dict(row) for row in rows], 'limit': limit, 'offset': offset}
+
+    def incidents(self, actor, limit=50, offset=0, *, changed_only=False, scenario=None):
+        """Correlate the complete queue before pagination, retaining event evidence."""
+        require(actor, 'admin', 'soc')
+        self._page(limit, offset)
+        if scenario is not None and scenario not in NAMES:
+            raise ValueError('Unknown incident scenario')
+        if type(changed_only) is not bool:
+            raise ValueError('changed_only must be a boolean')
+        with self.store.connection() as db:
+            eid = self.current(db)
+            rows = db.execute('SELECT * FROM demo_alerts WHERE exercise_id=? ORDER BY event_time,event_id', (eid,)).fetchall()
+            cases = {row['case_id']: json.loads(row['payload_json']) for row in db.execute(
+                'SELECT DISTINCT c.case_id,c.payload_json FROM cases c JOIN demo_alerts a ON a.case_id=c.case_id WHERE a.exercise_id=?', (eid,))}
+        grouped = {}
+        for row in rows:
+            case = cases.get(row['case_id'])
+            session = case['session'] if case else None
+            key = session['session_id'] if session else 'UNANALYZED-' + row['event_id']
+            if key not in grouped:
+                detected_scenario = (case['prediction']['soc_assessment'].get('scenario_class') or 'needs_review') if case else 'needs_review'
+                grouped[key] = {'incident_id': key, 'case_id': row['case_id'], 'hostname': row['hostname'],
+                                'asset_id': row['asset_id'], 'scenario': detected_scenario, 'name': NAMES.get(detected_scenario, detected_scenario),
+                                'start_utc': session['start_utc'] if session else row['event_time'],
+                                'end_utc': session['end_utc'] if session else row['event_time'], 'alerts': []}
+            grouped[key]['alerts'].append({k: row[k] for k in ('event_id','event_time','baseline_priority','current_priority','version')})
+        items = []
+        scenario_counts = Counter()
+        rank = {value: i for i,value in enumerate(PRIORITIES)}
+        for item in grouped.values():
+            alerts = item['alerts']
+            item.update(alert_count=len(alerts), changed_alerts=sum(row['version'] > 1 for row in alerts),
+                        baseline_counts=dict(Counter(row['baseline_priority'] for row in alerts)),
+                        current_counts=dict(Counter(row['current_priority'] for row in alerts)),
+                        current_priority=max((row['current_priority'] for row in alerts), key=rank.get))
+            scenario_counts[item['scenario']] += 1
+            if (not changed_only or item['changed_alerts']) and (scenario is None or item['scenario'] == scenario):
+                items.append(item)
+        items.sort(key=lambda row: (rank[row['current_priority']], row['start_utc'], row['incident_id']), reverse=True)
+        return {'exercise_id': eid, 'group_by': 'incident', 'total': len(items), 'items': items[offset:offset+limit],
+                'limit': limit, 'offset': offset, 'scenario_counts': dict(scenario_counts), 'source_alerts': len(rows)}
 
     # IRIS EXPLAIN: Function DemoEngine.proposals: Return pending/reviewed proposals scoped to the current exercise and
     # IRIS EXPLAIN: authenticated team; Admin can read both but cannot approve as either.
@@ -930,6 +1005,8 @@ class DemoEngine:
         # Asset identity and event-time provenance explain either team's proposal.
         common = {name: evidence[name] for name in (
             'hostname', 'asset_id', 'asset_criticality', 'session_id', 'session_time', 'decision_basis')}
+        if 'incident' in evidence:
+            common['incident'] = evidence['incident']
         scenario = evidence['primary_assessment']['scenario_class']
         if actor == 'soc':
             shadow = evidence['ml_shadow']
@@ -941,13 +1018,14 @@ class DemoEngine:
                                      if shadow else None),
                        'priority_reason': ('Routine activity remains Low priority.' if scenario == 'benign' else
                                            'Observed alert severity is combined with asset business criticality.')}
+            if 'scenario_evidence' in evidence:
+                focused['scenario_evidence'] = evidence['scenario_evidence']
         else:
             # GRC gets a high-level observation and matched-risk/control advice,
             # not raw telemetry counts, event lists, model confidence or metrics.
             recommendations = evidence['primary_controls']['recommendations']
             focused = {**common, 'observed_activity': scenario,
-                       'risk_category': {'credential_access': 'Unauthorized Access',
-                                         'reconnaissance': 'Reconnaissance'}.get(scenario, 'Not applicable'),
+                        'risk_category': next(iter(RISK_CATEGORIES.get(scenario, ())), 'Not applicable'),
                        'risk_reason': 'The activity matches this registered risk. The explicit policy proposes a likelihood increase; impact stays unchanged.',
                        'controls': [{name: item[name] for name in (
                            'control_id', 'name', 'current_state', 'action_type', 'catalogue_action', 'warnings')}

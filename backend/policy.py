@@ -11,10 +11,12 @@ registered risks. This is not a validated organizational risk methodology.
 # IRIS EXPLAIN: settings.
 from __future__ import annotations
 
-# IRIS EXPLAIN: Store 'iris-shadow-policy-v1' in VERSION; later lines use this named result.
-VERSION = "iris-shadow-policy-v1"
+# Version the policy so previous case evidence is never silently reused.
+VERSION = "iris-shadow-policy-v2"
 # IRIS EXPLAIN: Store a mapping containing credential_access, reconnaissance in CATEGORIES; later lines use this named result.
-CATEGORIES = {"credential_access": {"Unauthorized Access"}, "reconnaissance": {"Reconnaissance"}}
+from .scenarios import RISK_CATEGORIES
+
+CATEGORIES = RISK_CATEGORIES
 # IRIS EXPLAIN: Store a mapping containing Low, Medium, High, Critical in MATRIX; later lines use this named result.
 MATRIX = {
     # IRIS EXPLAIN: Continue the current record with Low, Low, Medium, High, Critical; each value comes from the expression
@@ -139,6 +141,9 @@ def evaluate(session: dict, prediction: dict) -> dict:
         # IRIS EXPLAIN: Continue the surrounding call, schema/list, or comprehension with these existing arguments/items:
         # IRIS EXPLAIN: scenario == "reconnaissance" and (features["distinct_rules"] >= 4 or features["event_count"] >= 30).
         scenario == "reconnaissance" and (features["distinct_rules"] >= 4 or features["event_count"] >= 30)
+    ) or (
+        scenario in {"malicious_execution", "privilege_escalation", "web_exploitation", "data_exfiltration"}
+        and primary.get("rule_version") == "iris-scenario-evidence-v2"
     # IRIS EXPLAIN: Finish the existing grouped expression/call or collection; any trailing fields/call chain remain unchanged.
     ):
         # IRIS EXPLAIN: Store min(5, likelihood + 1) in likelihood; later lines use this named result.

@@ -1,5 +1,7 @@
 # IRIS: active examiner demonstration
 
+**Current default:** the launcher now uses the [expanded seven-class demo](EXPANDED_SCENARIOS.md): 84 sessions, six attack families plus routine activity, and grouped incident evidence. Follow that guide for the current dataset and model. The fixed counts and identity-server walkthrough below describe the original dataset; select it with `demo.py --dataset legacy --model-profile iris_models_20261030`. Switching datasets creates a separate rehearsal and preserves prior history.
+
 This is the new **active demo**, launched by **`demo.py`**. It replaces neither the trained models nor the earlier FastAPI prototype. It reuses the same `backend.core.Engine`, source integration, saved Colab models and explicit policy, with a small loopback HTTP adapter and three new dashboards.
 
 The difference is real: after the appropriate human approval, the backend **writes updated synthetic risk-register records and alert priorities to SQLite**. These are not cosmetic changes in JavaScript. Reloading a page, downloading the current register, or restarting the server shows the saved values.

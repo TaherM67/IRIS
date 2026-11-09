@@ -1,0 +1,9 @@
+{
+  "profile": "iris_scenarios_20261109",
+  "directory": "artifacts/model_versions/iris_scenarios_20261109",
+  "metadata_sha256": "46b6482861893c5d67181880e1915db8944f8ad41e78e667ec1fab98be6401a4",
+  "model_sha256": "8b451bd4fa15bd3cc7bc7de7abbaf96eb8d46aa9489f4753bd3bb88505f585c0",
+  "evidence_schema": "iris-scenario-evidence-v2",
+  "mode": "shadow_only",
+  "production_validated": false
+}

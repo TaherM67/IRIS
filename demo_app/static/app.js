@@ -13,6 +13,10 @@ let controller = new AbortController();
 let proposalTeam = "all", inboxSignature = "";
 document.body.dataset.session = "locked";
 const roleNames = {admin:"Administrator", soc:"SOC analyst", grc:"GRC officer"};
+const scenarioNames = {benign:"Routine activity", credential_access:"Credential attack", reconnaissance:"Network reconnaissance",
+  malicious_execution:"Malicious execution", privilege_escalation:"Privilege escalation", web_exploitation:"Web exploitation",
+  data_exfiltration:"Data exfiltration", needs_review:"Needs analyst review"};
+const scenarioName = value => scenarioNames[value] || value || "Needs analyst review";
 function renderRoleSelection() {
   for (const role of Object.keys(roleNames)) el("workspace-role-" + role).checked = role === loginRole;
   el("login-submit").textContent = "Sign in as " + roleNames[loginRole];
@@ -161,6 +165,7 @@ function grcEvidence(source) {
       .map(item => pick(item, ["control_id", "name", "reason", "source", "current_state", "implementation_state_known", "action_type"]))
   } : undefined;
   return {...pick(source, ["hostname", "asset_id", "asset_criticality", "session_id", "session_time", "decision_basis"]),
+    ...(source.incident ? {incident:pick(source.incident,["session_id","scenario","name","start_utc","end_utc","alert_count"])} : {}),
     observed_activity: scenario || "Not recorded",
     risk_category: source.risk_category || {credential_access: "Unauthorized Access", reconnaissance: "Reconnaissance"}[scenario] || "Not recorded",
     risk_reason: source.risk_reason || "Review the registered risk and saved before/after values. Control advice does not execute a security control.",
@@ -182,6 +187,11 @@ function renderProposal() {
   const summary = el("proposal-summary");
   summary.append(node("h3", evidence.hostname + " · " + (p.kind === "soc" ? "SOC reprioritization" : "GRC risk update")));
   summary.append(node("p", p.case_id + " / " + p.proposal_id.slice(0, 13), "case-reference"));
+  if (evidence.incident) {
+    const incident = evidence.incident;
+    summary.append(node("p", `${incident.name} · ${incident.alert_count} supporting alerts · ${incident.start_utc}`, "incident-description"));
+    summary.append(node("p", "One session is one incident; the alerts below are its supporting evidence.", "muted small"));
+  }
   // SOC has technical activity and the proposed priority, not GRC policy fields.
   if (pageRole === "soc") {
     summary.append(node("p", "Primary: " + evidence.primary_assessment.scenario_class + " · proposed priority: " + data.new_priority + " · criticality: " + evidence.asset_criticality + "/5"));
@@ -245,7 +255,8 @@ function renderProposalList(result) {
 function renderApprovalInbox() {
   const query = el("proposal-search").value.trim().toLowerCase();
   const filtered = proposals.filter(p => (proposalTeam === "all" || p.kind === proposalTeam) &&
-    [p.payload.evidence.hostname, p.payload.risk_id, p.case_id, p.proposal_id, p.kind, p.payload.new_priority]
+    [p.payload.evidence.hostname, p.payload.risk_id, p.case_id, p.proposal_id, p.kind, p.payload.new_priority,
+      p.payload.evidence.incident?.name, p.payload.evidence.incident?.session_id, p.payload.evidence.incident?.start_utc]
       .filter(Boolean).join(" ").toLowerCase().includes(query));
   el("inbox-result").textContent = `${filtered.length} of ${proposals.length} pending`;
   el("inbox-empty").hidden = filtered.length > 0;
@@ -265,6 +276,10 @@ function renderApprovalInbox() {
     const summary = p.kind === "soc" ? `${p.payload.changed_alerts} alerts → ${p.payload.new_priority}` :
       `Risk ${p.payload.before.score.toFixed(2)} → ${p.payload.after.score.toFixed(2)}`;
     button.append(title, node("span", summary, "inbox-summary"));
+    if (p.payload.evidence.incident) {
+      const incident = p.payload.evidence.incident;
+      button.append(node("span", `${incident.name} · ${incident.start_utc.slice(0,16).replace("T"," ")} UTC`, "inbox-incident"));
+    }
     button.addEventListener("click", () => {
       if (busy) return;
       if (selected !== p.proposal_id) el("reason").value = "";
@@ -307,6 +322,9 @@ function renderRisks(result) {
 // IRIS EXPLAIN: Function renderAlerts: Render the backend-sorted current-priority queue, original priority, revision evidence
 // IRIS EXPLAIN: and page counts.
 function renderAlerts(result) {
+  if (result.group_by === "incident") { renderIncidents(result); return; }
+  if (el("alert-identity-heading")) el("alert-identity-heading").textContent = "Event / asset";
+  if (el("scenario-overview")) el("scenario-overview").textContent = "Raw event view. Several events may belong to the same incident.";
   // IRIS EXPLAIN: Update the existing tab-local presentation/request state using the unchanged statement: totalAlerts =
   // IRIS EXPLAIN: result.total;
   totalAlerts = result.total;
@@ -330,6 +348,31 @@ function renderAlerts(result) {
 }
 // IRIS EXPLAIN: Function renderChanges: Render persisted before/after change evidence with the approver role, reason and
 // IRIS EXPLAIN: timestamp.
+function renderIncidents(result) {
+  totalAlerts = result.total;
+  el("alert-identity-heading").textContent = "Incident / asset";
+  el("alert-page").textContent = result.total ? `${offset+1}–${Math.min(offset+result.items.length,result.total)} of ${result.total} incidents` : "No incidents match this filter. Run analysis to correlate the source alerts.";
+  el("scenario-overview").textContent = `${result.source_alerts} supporting alerts · ` + Object.entries(result.scenario_counts || {}).map(([name,count]) => `${scenarioName(name)}: ${count}`).join(" · ");
+  const countsCell = counts => {
+    const td = node("td");
+    for (const [label,count] of Object.entries(counts)) { const line = node("div",undefined,"priority-count"); line.append(priority(label),node("span",` × ${count}`)); td.append(line); }
+    return td;
+  };
+  el("alert-rows").replaceChildren(...result.items.map(item => {
+    const tr = node("tr",undefined,item.changed_alerts ? "changed" : "");
+    const identity = node("td"), details = node("details",undefined,"incident-evidence");
+    details.append(node("summary",`${item.name} · ${item.alert_count} supporting alerts`));
+    details.append(node("p",item.incident_id,"case-reference"));
+    const list = node("ul");
+    for (const alert of item.alerts) list.append(node("li",`${alert.event_id} · ${alert.baseline_priority} → ${alert.current_priority} · v${alert.version}`));
+    details.append(list); identity.append(node("strong",item.hostname),details);
+    tr.append(identity,cell(item.start_utc,item.end_utc),countsCell(item.baseline_counts),countsCell(item.current_counts),
+      cell(`${item.changed_alerts} of ${item.alert_count} updated`,item.changed_alerts ? "Approved changes" : "Awaiting review / unchanged"));
+    return tr;
+  }));
+  pager();
+}
+
 function renderChanges(result) {
   // IRIS EXPLAIN: Show/hide only the UI controls appropriate to the authenticated view/state; server authorization still
   // IRIS EXPLAIN: enforces access.
@@ -365,7 +408,12 @@ async function refresh() {
   const requests = {proposals:api("/proposals"), changes:api("/changes")};
   // Authorize by the server-confirmed identity, NEVER by a panel's existence.
   if (identity === "admin" || identity === "grc") requests.risks = api("/risks");
-  if (identity === "admin" || identity === "soc") requests.alerts = api("/alerts?limit=50&offset=" + offset + "&changed_only=" + el("changed-only").checked);
+  if (identity === "admin" || identity === "soc") {
+    const grouped = el("group-incidents")?.checked !== false;
+    const scenario = grouped ? el("scenario-filter")?.value : "";
+    requests.alerts = api("/alerts?limit=50&offset=" + offset + "&changed_only=" + el("changed-only").checked +
+      "&group_by=" + (grouped ? "incident" : "event") + (scenario ? "&scenario=" + encodeURIComponent(scenario) : ""));
+  }
   if (identity === "admin") requests.audit = api("/audit");
   const entries = await Promise.all(Object.entries(requests).map(async ([name, pending]) => [name, await pending]));
   const results = Object.fromEntries(entries);
@@ -382,7 +430,7 @@ async function refresh() {
   if (results.alerts) renderAlerts(results.alerts);
   if (pageRole === "admin") {
     pretty("model-status",state.model);
-    el("analysis-status").textContent = state.analyzed ? state.analysis.sessions + " model sessions analyzed. Proposals wait for separate SOC/GRC approvals. Re-analysis reuses identical evidence and does not reset reviews." : "Ready: 30 assets, 60 current risks and 2,355 matched unique alerts. Nothing has been changed.";
+    el("analysis-status").textContent = state.analyzed ? state.analysis.sessions + " sessions analyzed. Each incident groups its supporting alerts. Proposals wait for separate SOC/GRC approvals." : `Ready: ${c.risks} registered risks and ${c.alerts} source alerts. Run analysis to group them into incidents.`;
     pretty("audit",results.audit); pretty("integration",state.analysis); pretty("history",state.exercise_history);
   }
 }
@@ -482,6 +530,10 @@ function bindDashboardControls() {
   });
   // IRIS EXPLAIN: Register the change event handler for changed-only; the callback below performs only the explicit user action.
   if (el("changed-only")) el("changed-only").addEventListener("change",() => action(async () => { offset = 0; await refresh(); }));
+  if (el("group-incidents")) el("group-incidents").addEventListener("change",() => action(async () => {
+    offset = 0; el("scenario-filter").value = ""; el("scenario-filter").disabled = !el("group-incidents").checked; await refresh();
+  }));
+  if (el("scenario-filter")) el("scenario-filter").addEventListener("change",() => action(async () => { offset = 0; await refresh(); }));
   // IRIS EXPLAIN: Register the click event handler for previous; the callback below performs only the explicit user action.
   if (el("previous")) el("previous").addEventListener("click",() => action(async () => { offset = Math.max(0,offset-50); await refresh(); }));
   // IRIS EXPLAIN: Register the click event handler for next; the callback below performs only the explicit user action.

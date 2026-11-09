@@ -150,6 +150,17 @@ function mockFetch(role, data, calls, behavior = {}) {
         version: data.changed ? 2 : 1, updated_by: data.changed ? "grc" : null}]};
     } else if (route === "/alerts") {
       if (role === 'grc') return response({detail: 'This action requires the ADMIN OR SOC role'}, 403);
+      if (behavior.incidents && new URL(url, 'http://local.test').searchParams.get('group_by') === 'incident') {
+        const scenario = new URL(url, 'http://local.test').searchParams.get('scenario');
+        const items = ['malicious_execution','data_exfiltration'].map((name,index) => ({
+          incident_id:'SESSION-' + index, hostname:'host-' + index, scenario:name,
+          name:index ? 'Data exfiltration' : 'Malicious execution', start_utc:'2026-11-08T12:00:00Z',end_utc:'2026-11-08T12:00:30Z',
+          alert_count:4,changed_alerts:0,baseline_counts:{High:4},current_counts:{High:4},
+          alerts:[{event_id:'EVENT-' + index,event_time:'2026-11-08T12:00:00Z',baseline_priority:'High',current_priority:'High',version:1}]
+        })).filter(item => !scenario || item.scenario === scenario);
+        return response({exercise_id:'UI-TEST',group_by:'incident',source_alerts:8,total:items.length,items,
+          scenario_counts:{malicious_execution:1,data_exfiltration:1}});
+      }
       value = {exercise_id: "UI-TEST", total: data.changed ? 19 : 2355, items: [{event_id: "UI-EVENT", hostname: "identity-server",
         event_time: "2026-10-25T12:00:00Z", baseline_priority: "High", current_priority: data.changed ? "Critical" : "High",
         version: data.changed ? 2 : 1, updated_by: data.changed ? "soc" : null}]};
@@ -523,6 +534,30 @@ async function roleCardChecks() {
   console.log('ROLE CARDS: in-place selection, no navigation/API reads, updated labels and wrong-role rejection passed');
 }
 
+async function incidentChecks() {
+  const test = harness('soc', {incidents:true});
+  const proposal = test.data.pending[0];
+  proposal.payload.evidence.incident = {session_id:'SESSION-0',scenario:'malicious_execution',name:'Malicious execution',
+    start_utc:'2026-11-08T12:00:00Z',end_utc:'2026-11-08T12:00:30Z',alert_count:4};
+  await login(test);
+  assert.equal(test.document.getElementById('alert-rows').children.length,2);
+  assert.match(test.document.getElementById('alert-page').textContent,/2 incidents/);
+  assert.match(test.document.getElementById('scenario-overview').textContent,/Malicious execution: 1.*Data exfiltration: 1/);
+  assert.match(test.document.getElementById('alert-rows').textContent,/4 supporting alerts.*EVENT-0/);
+  assert.match(test.document.getElementById('proposal-list').textContent,/Malicious execution/);
+  assert.match(test.document.getElementById('proposal-summary').textContent,/One session is one incident/);
+  const filter = test.document.getElementById('scenario-filter');
+  filter.value = 'data_exfiltration'; filter.emit('change'); await settle(test.context);
+  assert.equal(test.document.getElementById('alert-rows').children.length,1);
+  assert.match(test.document.getElementById('alert-rows').textContent,/Data exfiltration/);
+  assert.doesNotMatch(test.document.getElementById('alert-rows').textContent,/Malicious execution/);
+  const grouping = test.document.getElementById('group-incidents');
+  grouping.checked = false; grouping.emit('change'); await settle(test.context);
+  assert.match(test.document.getElementById('alert-page').textContent,/2355 alerts/);
+  assert.equal(filter.value,'');
+  console.log('INCIDENTS: correlation, supporting evidence, scenario filtering, review labels and raw-event toggle passed');
+}
+
 async function modelReviewChecks() {
   const test = harness('grc');
   test.data.pending[0].payload.evidence.model2_review = {
@@ -562,4 +597,5 @@ async function modelReviewChecks() {
   await chatClearChecks();
   await roleCardChecks();
   await modelReviewChecks();
+  await incidentChecks();
 })().catch(error => { console.error(error); process.exitCode = 1; });

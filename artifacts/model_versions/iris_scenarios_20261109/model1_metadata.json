@@ -1,0 +1,316 @@
+{
+  "profile": "iris_scenarios_20261109",
+  "schema": "iris-scenario-evidence-v2",
+  "features": [
+    "event_family",
+    "primary_protocol",
+    "event_count",
+    "duration_seconds",
+    "max_rule_level",
+    "mean_rule_level",
+    "distinct_rules",
+    "distinct_sources",
+    "distinct_accounts",
+    "failed_count",
+    "success_count",
+    "failure_ratio",
+    "success_after_failures",
+    "max_events_in_10s",
+    "external_source_fraction",
+    "event_rate_per_minute",
+    "bytes_sent_total",
+    "unsigned_process_count",
+    "privilege_change_count",
+    "web_attack_count",
+    "sensitive_access_count",
+    "untrusted_destination_count",
+    "known_indicator_count"
+  ],
+  "aggregation_schema": "iris-three-source-session-v1-window60",
+  "sklearn_version": "1.8.0",
+  "model_sha256": "8b451bd4fa15bd3cc7bc7de7abbaf96eb8d46aa9489f4753bd3bb88505f585c0",
+  "classes": [
+    "benign",
+    "credential_access",
+    "data_exfiltration",
+    "malicious_execution",
+    "privilege_escalation",
+    "reconnaissance",
+    "web_exploitation"
+  ],
+  "algorithm": "logistic_regression",
+  "selection_scores": {
+    "logistic_regression": 1.0,
+    "random_forest": 1.0,
+    "hist_gradient_boosting": 1.0
+  },
+  "threshold": 0.5,
+  "metrics": {
+    "n": 105,
+    "coverage": 1.0,
+    "accuracy_all_sessions": 1.0,
+    "accepted_accuracy": 1.0,
+    "macro_f1": 1.0,
+    "per_class": {
+      "benign": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 15.0
+      },
+      "credential_access": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 15.0
+      },
+      "reconnaissance": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 15.0
+      },
+      "malicious_execution": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 15.0
+      },
+      "privilege_escalation": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 15.0
+      },
+      "web_exploitation": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 15.0
+      },
+      "data_exfiltration": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 15.0
+      },
+      "accuracy": 1.0,
+      "macro avg": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 105.0
+      },
+      "weighted avg": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 105.0
+      }
+    },
+    "confusion_labels": [
+      "benign",
+      "credential_access",
+      "reconnaissance",
+      "malicious_execution",
+      "privilege_escalation",
+      "web_exploitation",
+      "data_exfiltration",
+      "ABSTAINED"
+    ],
+    "confusion_matrix": [
+      [
+        15,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        15,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        15,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        15,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        15,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        15,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        15,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "validation_scope": "Synthetic campaign holdout; no real-world performance claim"
+  },
+  "synthetic": true,
+  "categorical_vocab": {
+    "event_family": [
+      "authentication",
+      "network",
+      "privilege",
+      "process",
+      "web"
+    ],
+    "primary_protocol": [
+      "HTTPS",
+      "LOCAL",
+      "SSH",
+      "TCP"
+    ]
+  },
+  "numeric_train_ranges": {
+    "event_count": [
+      4.0,
+      38.0
+    ],
+    "duration_seconds": [
+      1.514132,
+      43.093743
+    ],
+    "max_rule_level": [
+      6.0,
+      13.0
+    ],
+    "mean_rule_level": [
+      3.3636363636363638,
+      12.6
+    ],
+    "distinct_rules": [
+      2.0,
+      5.0
+    ],
+    "distinct_sources": [
+      1.0,
+      1.0
+    ],
+    "distinct_accounts": [
+      1.0,
+      1.0
+    ],
+    "failed_count": [
+      0.0,
+      37.0
+    ],
+    "success_count": [
+      0.0,
+      11.0
+    ],
+    "failure_ratio": [
+      0.0,
+      0.9736842105263158
+    ],
+    "success_after_failures": [
+      0.0,
+      1.0
+    ],
+    "max_events_in_10s": [
+      4.0,
+      19.0
+    ],
+    "external_source_fraction": [
+      0.0,
+      0.0
+    ],
+    "event_rate_per_minute": [
+      51.515599375992934,
+      158.50665595866147
+    ],
+    "bytes_sent_total": [
+      0.0,
+      48323035.0
+    ],
+    "unsigned_process_count": [
+      0.0,
+      9.0
+    ],
+    "privilege_change_count": [
+      0.0,
+      5.0
+    ],
+    "web_attack_count": [
+      0.0,
+      12.0
+    ],
+    "sensitive_access_count": [
+      0.0,
+      6.0
+    ],
+    "untrusted_destination_count": [
+      0.0,
+      12.0
+    ],
+    "known_indicator_count": [
+      0.0,
+      4.0
+    ]
+  },
+  "checks": {
+    "disjoint_campaigns": true,
+    "all_classes_in_every_split": true,
+    "real_reviewed_data": false
+  },
+  "eligible_for_reviewed_advisory_release": false,
+  "calibration": "Frozen selected fit pipeline; disjoint calibration campaigns; no refit",
+  "source_identity_features_used": false,
+  "training_labels_read_at_runtime": false
+}

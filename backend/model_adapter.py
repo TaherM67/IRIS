@@ -55,14 +55,18 @@ class ModelAdapter:
     # IRIS EXPLAIN: require both trained components and the exact session contract, and retain one loaded service.
     # IRIS EXPLAIN: Inputs: model_dir: operator-trusted model bundle directory; manifest_path: server-owned artifact integrity
     # IRIS EXPLAIN: manifest.
-    def __init__(self, model_dir: Path = MODEL_DIR, manifest_path: Path = MANIFEST):
+    def __init__(self, model_dir: Path = MODEL_DIR, manifest_path: Path = MANIFEST, *, profile=None):
         self._active = None
-        profile = os.environ.get('IRIS_MODEL_PROFILE', 'iris_models_20261030')
-        if profile not in {'legacy', 'iris_models_20261030'}:
-            raise ValueError('IRIS_MODEL_PROFILE must be legacy or iris_models_20261030')
+        profile = profile or os.environ.get('IRIS_MODEL_PROFILE', 'iris_models_20261030')
+        if profile not in {'legacy', 'iris_models_20261030', 'iris_scenarios_20261109'}:
+            raise ValueError('Unknown IRIS model profile')
         if profile != 'legacy' and model_dir == MODEL_DIR and manifest_path == MANIFEST:
-            from .grounded_adapter import GroundedModelAdapter
-            self._active = GroundedModelAdapter()
+            if profile == 'iris_scenarios_20261109':
+                from .scenario_adapter import ScenarioModelAdapter
+                self._active = ScenarioModelAdapter()
+            else:
+                from .grounded_adapter import GroundedModelAdapter
+                self._active = GroundedModelAdapter()
             self.service, self.metadata = self._active.service, self._active.metadata
             self.artifact_identity, self.loaded_at = self._active.artifact_identity, self._active.loaded_at
             return

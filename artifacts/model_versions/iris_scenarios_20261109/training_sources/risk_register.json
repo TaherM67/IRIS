@@ -1,0 +1,4866 @@
+{
+  "schema_version": "iris-risk-register-v1",
+  "data_provenance": "synthetic",
+  "records": [
+    {
+      "risk_id": "DIVERSE-R001-1",
+      "risk_version_id": "DIVERSE-R001-1-V1",
+      "asset_id": "DIVERSE-A001",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 2,
+      "impact": 1,
+      "existing_control_ids": [
+        "CTL-IAM-001"
+      ],
+      "planned_control_ids": [
+        "CTL-IAM-002",
+        "CTL-IAM-003"
+      ],
+      "mitre_attack_techniques": [
+        "T1110"
+      ],
+      "control_states": {
+        "CTL-IAM-001": "partial",
+        "CTL-IAM-002": "missing",
+        "CTL-IAM-003": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R001-2",
+      "risk_version_id": "DIVERSE-R001-2-V1",
+      "asset_id": "DIVERSE-A001",
+      "risk_category": "Reconnaissance",
+      "likelihood": 2,
+      "impact": 1,
+      "existing_control_ids": [
+        "CTL-NET-001"
+      ],
+      "planned_control_ids": [
+        "CTL-NET-002",
+        "CTL-NET-003"
+      ],
+      "mitre_attack_techniques": [
+        "T1046"
+      ],
+      "control_states": {
+        "CTL-NET-001": "partial",
+        "CTL-NET-002": "missing",
+        "CTL-NET-003": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R001-3",
+      "risk_version_id": "DIVERSE-R001-3-V1",
+      "asset_id": "DIVERSE-A001",
+      "risk_category": "Malware Execution",
+      "likelihood": 2,
+      "impact": 1,
+      "existing_control_ids": [
+        "CTL-END-001"
+      ],
+      "planned_control_ids": [
+        "CTL-END-003",
+        "CTL-END-009"
+      ],
+      "mitre_attack_techniques": [
+        "T1059"
+      ],
+      "control_states": {
+        "CTL-END-001": "partial",
+        "CTL-END-003": "missing",
+        "CTL-END-009": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R001-4",
+      "risk_version_id": "DIVERSE-R001-4-V1",
+      "asset_id": "DIVERSE-A001",
+      "risk_category": "Privilege Escalation",
+      "likelihood": 2,
+      "impact": 1,
+      "existing_control_ids": [
+        "CTL-VUL-001"
+      ],
+      "planned_control_ids": [
+        "CTL-VUL-003",
+        "CTL-END-004"
+      ],
+      "mitre_attack_techniques": [
+        "T1068"
+      ],
+      "control_states": {
+        "CTL-VUL-001": "partial",
+        "CTL-VUL-003": "missing",
+        "CTL-END-004": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R001-5",
+      "risk_version_id": "DIVERSE-R001-5-V1",
+      "asset_id": "DIVERSE-A001",
+      "risk_category": "Web Application Compromise",
+      "likelihood": 2,
+      "impact": 1,
+      "existing_control_ids": [
+        "CTL-NET-004"
+      ],
+      "planned_control_ids": [
+        "CTL-NET-008",
+        "CTL-VUL-001"
+      ],
+      "mitre_attack_techniques": [
+        "T1190"
+      ],
+      "control_states": {
+        "CTL-NET-004": "partial",
+        "CTL-NET-008": "missing",
+        "CTL-VUL-001": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R001-6",
+      "risk_version_id": "DIVERSE-R001-6-V1",
+      "asset_id": "DIVERSE-A001",
+      "risk_category": "Data Exfiltration",
+      "likelihood": 2,
+      "impact": 1,
+      "existing_control_ids": [
+        "CTL-NET-007"
+      ],
+      "planned_control_ids": [
+        "CTL-DAT-003",
+        "CTL-DAT-007"
+      ],
+      "mitre_attack_techniques": [
+        "T1048"
+      ],
+      "control_states": {
+        "CTL-NET-007": "partial",
+        "CTL-DAT-003": "missing",
+        "CTL-DAT-007": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R002-1",
+      "risk_version_id": "DIVERSE-R002-1-V1",
+      "asset_id": "DIVERSE-A002",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 3,
+      "impact": 2,
+      "existing_control_ids": [
+        "CTL-IAM-001"
+      ],
+      "planned_control_ids": [
+        "CTL-IAM-002",
+        "CTL-IAM-003"
+      ],
+      "mitre_attack_techniques": [
+        "T1110"
+      ],
+      "control_states": {
+        "CTL-IAM-001": "partial",
+        "CTL-IAM-002": "missing",
+        "CTL-IAM-003": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R002-2",
+      "risk_version_id": "DIVERSE-R002-2-V1",
+      "asset_id": "DIVERSE-A002",
+      "risk_category": "Reconnaissance",
+      "likelihood": 3,
+      "impact": 2,
+      "existing_control_ids": [
+        "CTL-NET-001"
+      ],
+      "planned_control_ids": [
+        "CTL-NET-002",
+        "CTL-NET-003"
+      ],
+      "mitre_attack_techniques": [
+        "T1046"
+      ],
+      "control_states": {
+        "CTL-NET-001": "partial",
+        "CTL-NET-002": "missing",
+        "CTL-NET-003": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R002-3",
+      "risk_version_id": "DIVERSE-R002-3-V1",
+      "asset_id": "DIVERSE-A002",
+      "risk_category": "Malware Execution",
+      "likelihood": 3,
+      "impact": 2,
+      "existing_control_ids": [
+        "CTL-END-001"
+      ],
+      "planned_control_ids": [
+        "CTL-END-003",
+        "CTL-END-009"
+      ],
+      "mitre_attack_techniques": [
+        "T1059"
+      ],
+      "control_states": {
+        "CTL-END-001": "partial",
+        "CTL-END-003": "missing",
+        "CTL-END-009": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R002-4",
+      "risk_version_id": "DIVERSE-R002-4-V1",
+      "asset_id": "DIVERSE-A002",
+      "risk_category": "Privilege Escalation",
+      "likelihood": 3,
+      "impact": 2,
+      "existing_control_ids": [
+        "CTL-VUL-001"
+      ],
+      "planned_control_ids": [
+        "CTL-VUL-003",
+        "CTL-END-004"
+      ],
+      "mitre_attack_techniques": [
+        "T1068"
+      ],
+      "control_states": {
+        "CTL-VUL-001": "partial",
+        "CTL-VUL-003": "missing",
+        "CTL-END-004": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R002-5",
+      "risk_version_id": "DIVERSE-R002-5-V1",
+      "asset_id": "DIVERSE-A002",
+      "risk_category": "Web Application Compromise",
+      "likelihood": 3,
+      "impact": 2,
+      "existing_control_ids": [
+        "CTL-NET-004"
+      ],
+      "planned_control_ids": [
+        "CTL-NET-008",
+        "CTL-VUL-001"
+      ],
+      "mitre_attack_techniques": [
+        "T1190"
+      ],
+      "control_states": {
+        "CTL-NET-004": "partial",
+        "CTL-NET-008": "missing",
+        "CTL-VUL-001": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R002-6",
+      "risk_version_id": "DIVERSE-R002-6-V1",
+      "asset_id": "DIVERSE-A002",
+      "risk_category": "Data Exfiltration",
+      "likelihood": 3,
+      "impact": 2,
+      "existing_control_ids": [
+        "CTL-NET-007"
+      ],
+      "planned_control_ids": [
+        "CTL-DAT-003",
+        "CTL-DAT-007"
+      ],
+      "mitre_attack_techniques": [
+        "T1048"
+      ],
+      "control_states": {
+        "CTL-NET-007": "partial",
+        "CTL-DAT-003": "missing",
+        "CTL-DAT-007": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R003-1",
+      "risk_version_id": "DIVERSE-R003-1-V1",
+      "asset_id": "DIVERSE-A003",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 4,
+      "impact": 3,
+      "existing_control_ids": [
+        "CTL-IAM-001"
+      ],
+      "planned_control_ids": [
+        "CTL-IAM-002",
+        "CTL-IAM-003"
+      ],
+      "mitre_attack_techniques": [
+        "T1110"
+      ],
+      "control_states": {
+        "CTL-IAM-001": "partial",
+        "CTL-IAM-002": "missing",
+        "CTL-IAM-003": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R003-2",
+      "risk_version_id": "DIVERSE-R003-2-V1",
+      "asset_id": "DIVERSE-A003",
+      "risk_category": "Reconnaissance",
+      "likelihood": 4,
+      "impact": 3,
+      "existing_control_ids": [
+        "CTL-NET-001"
+      ],
+      "planned_control_ids": [
+        "CTL-NET-002",
+        "CTL-NET-003"
+      ],
+      "mitre_attack_techniques": [
+        "T1046"
+      ],
+      "control_states": {
+        "CTL-NET-001": "partial",
+        "CTL-NET-002": "missing",
+        "CTL-NET-003": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R003-3",
+      "risk_version_id": "DIVERSE-R003-3-V1",
+      "asset_id": "DIVERSE-A003",
+      "risk_category": "Malware Execution",
+      "likelihood": 4,
+      "impact": 3,
+      "existing_control_ids": [
+        "CTL-END-001"
+      ],
+      "planned_control_ids": [
+        "CTL-END-003",
+        "CTL-END-009"
+      ],
+      "mitre_attack_techniques": [
+        "T1059"
+      ],
+      "control_states": {
+        "CTL-END-001": "partial",
+        "CTL-END-003": "missing",
+        "CTL-END-009": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R003-4",
+      "risk_version_id": "DIVERSE-R003-4-V1",
+      "asset_id": "DIVERSE-A003",
+      "risk_category": "Privilege Escalation",
+      "likelihood": 4,
+      "impact": 3,
+      "existing_control_ids": [
+        "CTL-VUL-001"
+      ],
+      "planned_control_ids": [
+        "CTL-VUL-003",
+        "CTL-END-004"
+      ],
+      "mitre_attack_techniques": [
+        "T1068"
+      ],
+      "control_states": {
+        "CTL-VUL-001": "partial",
+        "CTL-VUL-003": "missing",
+        "CTL-END-004": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R003-5",
+      "risk_version_id": "DIVERSE-R003-5-V1",
+      "asset_id": "DIVERSE-A003",
+      "risk_category": "Web Application Compromise",
+      "likelihood": 4,
+      "impact": 3,
+      "existing_control_ids": [
+        "CTL-NET-004"
+      ],
+      "planned_control_ids": [
+        "CTL-NET-008",
+        "CTL-VUL-001"
+      ],
+      "mitre_attack_techniques": [
+        "T1190"
+      ],
+      "control_states": {
+        "CTL-NET-004": "partial",
+        "CTL-NET-008": "missing",
+        "CTL-VUL-001": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R003-6",
+      "risk_version_id": "DIVERSE-R003-6-V1",
+      "asset_id": "DIVERSE-A003",
+      "risk_category": "Data Exfiltration",
+      "likelihood": 4,
+      "impact": 3,
+      "existing_control_ids": [
+        "CTL-NET-007"
+      ],
+      "planned_control_ids": [
+        "CTL-DAT-003",
+        "CTL-DAT-007"
+      ],
+      "mitre_attack_techniques": [
+        "T1048"
+      ],
+      "control_states": {
+        "CTL-NET-007": "partial",
+        "CTL-DAT-003": "missing",
+        "CTL-DAT-007": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R004-1",
+      "risk_version_id": "DIVERSE-R004-1-V1",
+      "asset_id": "DIVERSE-A004",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 2,
+      "impact": 4,
+      "existing_control_ids": [
+        "CTL-IAM-001"
+      ],
+      "planned_control_ids": [
+        "CTL-IAM-002",
+        "CTL-IAM-003"
+      ],
+      "mitre_attack_techniques": [
+        "T1110"
+      ],
+      "control_states": {
+        "CTL-IAM-001": "partial",
+        "CTL-IAM-002": "missing",
+        "CTL-IAM-003": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R004-2",
+      "risk_version_id": "DIVERSE-R004-2-V1",
+      "asset_id": "DIVERSE-A004",
+      "risk_category": "Reconnaissance",
+      "likelihood": 2,
+      "impact": 4,
+      "existing_control_ids": [
+        "CTL-NET-001"
+      ],
+      "planned_control_ids": [
+        "CTL-NET-002",
+        "CTL-NET-003"
+      ],
+      "mitre_attack_techniques": [
+        "T1046"
+      ],
+      "control_states": {
+        "CTL-NET-001": "partial",
+        "CTL-NET-002": "missing",
+        "CTL-NET-003": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R004-3",
+      "risk_version_id": "DIVERSE-R004-3-V1",
+      "asset_id": "DIVERSE-A004",
+      "risk_category": "Malware Execution",
+      "likelihood": 2,
+      "impact": 4,
+      "existing_control_ids": [
+        "CTL-END-001"
+      ],
+      "planned_control_ids": [
+        "CTL-END-003",
+        "CTL-END-009"
+      ],
+      "mitre_attack_techniques": [
+        "T1059"
+      ],
+      "control_states": {
+        "CTL-END-001": "partial",
+        "CTL-END-003": "missing",
+        "CTL-END-009": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R004-4",
+      "risk_version_id": "DIVERSE-R004-4-V1",
+      "asset_id": "DIVERSE-A004",
+      "risk_category": "Privilege Escalation",
+      "likelihood": 2,
+      "impact": 4,
+      "existing_control_ids": [
+        "CTL-VUL-001"
+      ],
+      "planned_control_ids": [
+        "CTL-VUL-003",
+        "CTL-END-004"
+      ],
+      "mitre_attack_techniques": [
+        "T1068"
+      ],
+      "control_states": {
+        "CTL-VUL-001": "partial",
+        "CTL-VUL-003": "missing",
+        "CTL-END-004": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R004-5",
+      "risk_version_id": "DIVERSE-R004-5-V1",
+      "asset_id": "DIVERSE-A004",
+      "risk_category": "Web Application Compromise",
+      "likelihood": 2,
+      "impact": 4,
+      "existing_control_ids": [
+        "CTL-NET-004"
+      ],
+      "planned_control_ids": [
+        "CTL-NET-008",
+        "CTL-VUL-001"
+      ],
+      "mitre_attack_techniques": [
+        "T1190"
+      ],
+      "control_states": {
+        "CTL-NET-004": "partial",
+        "CTL-NET-008": "missing",
+        "CTL-VUL-001": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R004-6",
+      "risk_version_id": "DIVERSE-R004-6-V1",
+      "asset_id": "DIVERSE-A004",
+      "risk_category": "Data Exfiltration",
+      "likelihood": 2,
+      "impact": 4,
+      "existing_control_ids": [
+        "CTL-NET-007"
+      ],
+      "planned_control_ids": [
+        "CTL-DAT-003",
+        "CTL-DAT-007"
+      ],
+      "mitre_attack_techniques": [
+        "T1048"
+      ],
+      "control_states": {
+        "CTL-NET-007": "partial",
+        "CTL-DAT-003": "missing",
+        "CTL-DAT-007": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R005-1",
+      "risk_version_id": "DIVERSE-R005-1-V1",
+      "asset_id": "DIVERSE-A005",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 3,
+      "impact": 5,
+      "existing_control_ids": [
+        "CTL-IAM-001"
+      ],
+      "planned_control_ids": [
+        "CTL-IAM-002",
+        "CTL-IAM-003"
+      ],
+      "mitre_attack_techniques": [
+        "T1110"
+      ],
+      "control_states": {
+        "CTL-IAM-001": "partial",
+        "CTL-IAM-002": "missing",
+        "CTL-IAM-003": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R005-2",
+      "risk_version_id": "DIVERSE-R005-2-V1",
+      "asset_id": "DIVERSE-A005",
+      "risk_category": "Reconnaissance",
+      "likelihood": 3,
+      "impact": 5,
+      "existing_control_ids": [
+        "CTL-NET-001"
+      ],
+      "planned_control_ids": [
+        "CTL-NET-002",
+        "CTL-NET-003"
+      ],
+      "mitre_attack_techniques": [
+        "T1046"
+      ],
+      "control_states": {
+        "CTL-NET-001": "partial",
+        "CTL-NET-002": "missing",
+        "CTL-NET-003": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R005-3",
+      "risk_version_id": "DIVERSE-R005-3-V1",
+      "asset_id": "DIVERSE-A005",
+      "risk_category": "Malware Execution",
+      "likelihood": 3,
+      "impact": 5,
+      "existing_control_ids": [
+        "CTL-END-001"
+      ],
+      "planned_control_ids": [
+        "CTL-END-003",
+        "CTL-END-009"
+      ],
+      "mitre_attack_techniques": [
+        "T1059"
+      ],
+      "control_states": {
+        "CTL-END-001": "partial",
+        "CTL-END-003": "missing",
+        "CTL-END-009": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R005-4",
+      "risk_version_id": "DIVERSE-R005-4-V1",
+      "asset_id": "DIVERSE-A005",
+      "risk_category": "Privilege Escalation",
+      "likelihood": 3,
+      "impact": 5,
+      "existing_control_ids": [
+        "CTL-VUL-001"
+      ],
+      "planned_control_ids": [
+        "CTL-VUL-003",
+        "CTL-END-004"
+      ],
+      "mitre_attack_techniques": [
+        "T1068"
+      ],
+      "control_states": {
+        "CTL-VUL-001": "partial",
+        "CTL-VUL-003": "missing",
+        "CTL-END-004": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R005-5",
+      "risk_version_id": "DIVERSE-R005-5-V1",
+      "asset_id": "DIVERSE-A005",
+      "risk_category": "Web Application Compromise",
+      "likelihood": 3,
+      "impact": 5,
+      "existing_control_ids": [
+        "CTL-NET-004"
+      ],
+      "planned_control_ids": [
+        "CTL-NET-008",
+        "CTL-VUL-001"
+      ],
+      "mitre_attack_techniques": [
+        "T1190"
+      ],
+      "control_states": {
+        "CTL-NET-004": "partial",
+        "CTL-NET-008": "missing",
+        "CTL-VUL-001": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R005-6",
+      "risk_version_id": "DIVERSE-R005-6-V1",
+      "asset_id": "DIVERSE-A005",
+      "risk_category": "Data Exfiltration",
+      "likelihood": 3,
+      "impact": 5,
+      "existing_control_ids": [
+        "CTL-NET-007"
+      ],
+      "planned_control_ids": [
+        "CTL-DAT-003",
+        "CTL-DAT-007"
+      ],
+      "mitre_attack_techniques": [
+        "T1048"
+      ],
+      "control_states": {
+        "CTL-NET-007": "partial",
+        "CTL-DAT-003": "missing",
+        "CTL-DAT-007": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R006-1",
+      "risk_version_id": "DIVERSE-R006-1-V1",
+      "asset_id": "DIVERSE-A006",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 4,
+      "impact": 1,
+      "existing_control_ids": [
+        "CTL-IAM-001"
+      ],
+      "planned_control_ids": [
+        "CTL-IAM-002",
+        "CTL-IAM-003"
+      ],
+      "mitre_attack_techniques": [
+        "T1110"
+      ],
+      "control_states": {
+        "CTL-IAM-001": "partial",
+        "CTL-IAM-002": "missing",
+        "CTL-IAM-003": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R006-2",
+      "risk_version_id": "DIVERSE-R006-2-V1",
+      "asset_id": "DIVERSE-A006",
+      "risk_category": "Reconnaissance",
+      "likelihood": 4,
+      "impact": 1,
+      "existing_control_ids": [
+        "CTL-NET-001"
+      ],
+      "planned_control_ids": [
+        "CTL-NET-002",
+        "CTL-NET-003"
+      ],
+      "mitre_attack_techniques": [
+        "T1046"
+      ],
+      "control_states": {
+        "CTL-NET-001": "partial",
+        "CTL-NET-002": "missing",
+        "CTL-NET-003": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R006-3",
+      "risk_version_id": "DIVERSE-R006-3-V1",
+      "asset_id": "DIVERSE-A006",
+      "risk_category": "Malware Execution",
+      "likelihood": 4,
+      "impact": 1,
+      "existing_control_ids": [
+        "CTL-END-001"
+      ],
+      "planned_control_ids": [
+        "CTL-END-003",
+        "CTL-END-009"
+      ],
+      "mitre_attack_techniques": [
+        "T1059"
+      ],
+      "control_states": {
+        "CTL-END-001": "partial",
+        "CTL-END-003": "missing",
+        "CTL-END-009": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R006-4",
+      "risk_version_id": "DIVERSE-R006-4-V1",
+      "asset_id": "DIVERSE-A006",
+      "risk_category": "Privilege Escalation",
+      "likelihood": 4,
+      "impact": 1,
+      "existing_control_ids": [
+        "CTL-VUL-001"
+      ],
+      "planned_control_ids": [
+        "CTL-VUL-003",
+        "CTL-END-004"
+      ],
+      "mitre_attack_techniques": [
+        "T1068"
+      ],
+      "control_states": {
+        "CTL-VUL-001": "partial",
+        "CTL-VUL-003": "missing",
+        "CTL-END-004": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R006-5",
+      "risk_version_id": "DIVERSE-R006-5-V1",
+      "asset_id": "DIVERSE-A006",
+      "risk_category": "Web Application Compromise",
+      "likelihood": 4,
+      "impact": 1,
+      "existing_control_ids": [
+        "CTL-NET-004"
+      ],
+      "planned_control_ids": [
+        "CTL-NET-008",
+        "CTL-VUL-001"
+      ],
+      "mitre_attack_techniques": [
+        "T1190"
+      ],
+      "control_states": {
+        "CTL-NET-004": "partial",
+        "CTL-NET-008": "missing",
+        "CTL-VUL-001": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R006-6",
+      "risk_version_id": "DIVERSE-R006-6-V1",
+      "asset_id": "DIVERSE-A006",
+      "risk_category": "Data Exfiltration",
+      "likelihood": 4,
+      "impact": 1,
+      "existing_control_ids": [
+        "CTL-NET-007"
+      ],
+      "planned_control_ids": [
+        "CTL-DAT-003",
+        "CTL-DAT-007"
+      ],
+      "mitre_attack_techniques": [
+        "T1048"
+      ],
+      "control_states": {
+        "CTL-NET-007": "partial",
+        "CTL-DAT-003": "missing",
+        "CTL-DAT-007": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R007-1",
+      "risk_version_id": "DIVERSE-R007-1-V1",
+      "asset_id": "DIVERSE-A007",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 2,
+      "impact": 2,
+      "existing_control_ids": [
+        "CTL-IAM-001"
+      ],
+      "planned_control_ids": [
+        "CTL-IAM-002",
+        "CTL-IAM-003"
+      ],
+      "mitre_attack_techniques": [
+        "T1110"
+      ],
+      "control_states": {
+        "CTL-IAM-001": "partial",
+        "CTL-IAM-002": "missing",
+        "CTL-IAM-003": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R007-2",
+      "risk_version_id": "DIVERSE-R007-2-V1",
+      "asset_id": "DIVERSE-A007",
+      "risk_category": "Reconnaissance",
+      "likelihood": 2,
+      "impact": 2,
+      "existing_control_ids": [
+        "CTL-NET-001"
+      ],
+      "planned_control_ids": [
+        "CTL-NET-002",
+        "CTL-NET-003"
+      ],
+      "mitre_attack_techniques": [
+        "T1046"
+      ],
+      "control_states": {
+        "CTL-NET-001": "partial",
+        "CTL-NET-002": "missing",
+        "CTL-NET-003": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R007-3",
+      "risk_version_id": "DIVERSE-R007-3-V1",
+      "asset_id": "DIVERSE-A007",
+      "risk_category": "Malware Execution",
+      "likelihood": 2,
+      "impact": 2,
+      "existing_control_ids": [
+        "CTL-END-001"
+      ],
+      "planned_control_ids": [
+        "CTL-END-003",
+        "CTL-END-009"
+      ],
+      "mitre_attack_techniques": [
+        "T1059"
+      ],
+      "control_states": {
+        "CTL-END-001": "partial",
+        "CTL-END-003": "missing",
+        "CTL-END-009": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R007-4",
+      "risk_version_id": "DIVERSE-R007-4-V1",
+      "asset_id": "DIVERSE-A007",
+      "risk_category": "Privilege Escalation",
+      "likelihood": 2,
+      "impact": 2,
+      "existing_control_ids": [
+        "CTL-VUL-001"
+      ],
+      "planned_control_ids": [
+        "CTL-VUL-003",
+        "CTL-END-004"
+      ],
+      "mitre_attack_techniques": [
+        "T1068"
+      ],
+      "control_states": {
+        "CTL-VUL-001": "partial",
+        "CTL-VUL-003": "missing",
+        "CTL-END-004": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R007-5",
+      "risk_version_id": "DIVERSE-R007-5-V1",
+      "asset_id": "DIVERSE-A007",
+      "risk_category": "Web Application Compromise",
+      "likelihood": 2,
+      "impact": 2,
+      "existing_control_ids": [
+        "CTL-NET-004"
+      ],
+      "planned_control_ids": [
+        "CTL-NET-008",
+        "CTL-VUL-001"
+      ],
+      "mitre_attack_techniques": [
+        "T1190"
+      ],
+      "control_states": {
+        "CTL-NET-004": "partial",
+        "CTL-NET-008": "missing",
+        "CTL-VUL-001": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R007-6",
+      "risk_version_id": "DIVERSE-R007-6-V1",
+      "asset_id": "DIVERSE-A007",
+      "risk_category": "Data Exfiltration",
+      "likelihood": 2,
+      "impact": 2,
+      "existing_control_ids": [
+        "CTL-NET-007"
+      ],
+      "planned_control_ids": [
+        "CTL-DAT-003",
+        "CTL-DAT-007"
+      ],
+      "mitre_attack_techniques": [
+        "T1048"
+      ],
+      "control_states": {
+        "CTL-NET-007": "partial",
+        "CTL-DAT-003": "missing",
+        "CTL-DAT-007": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R008-1",
+      "risk_version_id": "DIVERSE-R008-1-V1",
+      "asset_id": "DIVERSE-A008",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 3,
+      "impact": 3,
+      "existing_control_ids": [
+        "CTL-IAM-001"
+      ],
+      "planned_control_ids": [
+        "CTL-IAM-002",
+        "CTL-IAM-003"
+      ],
+      "mitre_attack_techniques": [
+        "T1110"
+      ],
+      "control_states": {
+        "CTL-IAM-001": "partial",
+        "CTL-IAM-002": "missing",
+        "CTL-IAM-003": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R008-2",
+      "risk_version_id": "DIVERSE-R008-2-V1",
+      "asset_id": "DIVERSE-A008",
+      "risk_category": "Reconnaissance",
+      "likelihood": 3,
+      "impact": 3,
+      "existing_control_ids": [
+        "CTL-NET-001"
+      ],
+      "planned_control_ids": [
+        "CTL-NET-002",
+        "CTL-NET-003"
+      ],
+      "mitre_attack_techniques": [
+        "T1046"
+      ],
+      "control_states": {
+        "CTL-NET-001": "partial",
+        "CTL-NET-002": "missing",
+        "CTL-NET-003": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R008-3",
+      "risk_version_id": "DIVERSE-R008-3-V1",
+      "asset_id": "DIVERSE-A008",
+      "risk_category": "Malware Execution",
+      "likelihood": 3,
+      "impact": 3,
+      "existing_control_ids": [
+        "CTL-END-001"
+      ],
+      "planned_control_ids": [
+        "CTL-END-003",
+        "CTL-END-009"
+      ],
+      "mitre_attack_techniques": [
+        "T1059"
+      ],
+      "control_states": {
+        "CTL-END-001": "partial",
+        "CTL-END-003": "missing",
+        "CTL-END-009": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R008-4",
+      "risk_version_id": "DIVERSE-R008-4-V1",
+      "asset_id": "DIVERSE-A008",
+      "risk_category": "Privilege Escalation",
+      "likelihood": 3,
+      "impact": 3,
+      "existing_control_ids": [
+        "CTL-VUL-001"
+      ],
+      "planned_control_ids": [
+        "CTL-VUL-003",
+        "CTL-END-004"
+      ],
+      "mitre_attack_techniques": [
+        "T1068"
+      ],
+      "control_states": {
+        "CTL-VUL-001": "partial",
+        "CTL-VUL-003": "missing",
+        "CTL-END-004": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R008-5",
+      "risk_version_id": "DIVERSE-R008-5-V1",
+      "asset_id": "DIVERSE-A008",
+      "risk_category": "Web Application Compromise",
+      "likelihood": 3,
+      "impact": 3,
+      "existing_control_ids": [
+        "CTL-NET-004"
+      ],
+      "planned_control_ids": [
+        "CTL-NET-008",
+        "CTL-VUL-001"
+      ],
+      "mitre_attack_techniques": [
+        "T1190"
+      ],
+      "control_states": {
+        "CTL-NET-004": "partial",
+        "CTL-NET-008": "missing",
+        "CTL-VUL-001": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R008-6",
+      "risk_version_id": "DIVERSE-R008-6-V1",
+      "asset_id": "DIVERSE-A008",
+      "risk_category": "Data Exfiltration",
+      "likelihood": 3,
+      "impact": 3,
+      "existing_control_ids": [
+        "CTL-NET-007"
+      ],
+      "planned_control_ids": [
+        "CTL-DAT-003",
+        "CTL-DAT-007"
+      ],
+      "mitre_attack_techniques": [
+        "T1048"
+      ],
+      "control_states": {
+        "CTL-NET-007": "partial",
+        "CTL-DAT-003": "missing",
+        "CTL-DAT-007": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R009-1",
+      "risk_version_id": "DIVERSE-R009-1-V1",
+      "asset_id": "DIVERSE-A009",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 4,
+      "impact": 4,
+      "existing_control_ids": [
+        "CTL-IAM-001"
+      ],
+      "planned_control_ids": [
+        "CTL-IAM-002",
+        "CTL-IAM-003"
+      ],
+      "mitre_attack_techniques": [
+        "T1110"
+      ],
+      "control_states": {
+        "CTL-IAM-001": "partial",
+        "CTL-IAM-002": "missing",
+        "CTL-IAM-003": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R009-2",
+      "risk_version_id": "DIVERSE-R009-2-V1",
+      "asset_id": "DIVERSE-A009",
+      "risk_category": "Reconnaissance",
+      "likelihood": 4,
+      "impact": 4,
+      "existing_control_ids": [
+        "CTL-NET-001"
+      ],
+      "planned_control_ids": [
+        "CTL-NET-002",
+        "CTL-NET-003"
+      ],
+      "mitre_attack_techniques": [
+        "T1046"
+      ],
+      "control_states": {
+        "CTL-NET-001": "partial",
+        "CTL-NET-002": "missing",
+        "CTL-NET-003": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R009-3",
+      "risk_version_id": "DIVERSE-R009-3-V1",
+      "asset_id": "DIVERSE-A009",
+      "risk_category": "Malware Execution",
+      "likelihood": 4,
+      "impact": 4,
+      "existing_control_ids": [
+        "CTL-END-001"
+      ],
+      "planned_control_ids": [
+        "CTL-END-003",
+        "CTL-END-009"
+      ],
+      "mitre_attack_techniques": [
+        "T1059"
+      ],
+      "control_states": {
+        "CTL-END-001": "partial",
+        "CTL-END-003": "missing",
+        "CTL-END-009": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R009-4",
+      "risk_version_id": "DIVERSE-R009-4-V1",
+      "asset_id": "DIVERSE-A009",
+      "risk_category": "Privilege Escalation",
+      "likelihood": 4,
+      "impact": 4,
+      "existing_control_ids": [
+        "CTL-VUL-001"
+      ],
+      "planned_control_ids": [
+        "CTL-VUL-003",
+        "CTL-END-004"
+      ],
+      "mitre_attack_techniques": [
+        "T1068"
+      ],
+      "control_states": {
+        "CTL-VUL-001": "partial",
+        "CTL-VUL-003": "missing",
+        "CTL-END-004": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R009-5",
+      "risk_version_id": "DIVERSE-R009-5-V1",
+      "asset_id": "DIVERSE-A009",
+      "risk_category": "Web Application Compromise",
+      "likelihood": 4,
+      "impact": 4,
+      "existing_control_ids": [
+        "CTL-NET-004"
+      ],
+      "planned_control_ids": [
+        "CTL-NET-008",
+        "CTL-VUL-001"
+      ],
+      "mitre_attack_techniques": [
+        "T1190"
+      ],
+      "control_states": {
+        "CTL-NET-004": "partial",
+        "CTL-NET-008": "missing",
+        "CTL-VUL-001": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R009-6",
+      "risk_version_id": "DIVERSE-R009-6-V1",
+      "asset_id": "DIVERSE-A009",
+      "risk_category": "Data Exfiltration",
+      "likelihood": 4,
+      "impact": 4,
+      "existing_control_ids": [
+        "CTL-NET-007"
+      ],
+      "planned_control_ids": [
+        "CTL-DAT-003",
+        "CTL-DAT-007"
+      ],
+      "mitre_attack_techniques": [
+        "T1048"
+      ],
+      "control_states": {
+        "CTL-NET-007": "partial",
+        "CTL-DAT-003": "missing",
+        "CTL-DAT-007": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R010-1",
+      "risk_version_id": "DIVERSE-R010-1-V1",
+      "asset_id": "DIVERSE-A010",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 2,
+      "impact": 5,
+      "existing_control_ids": [
+        "CTL-IAM-001"
+      ],
+      "planned_control_ids": [
+        "CTL-IAM-002",
+        "CTL-IAM-003"
+      ],
+      "mitre_attack_techniques": [
+        "T1110"
+      ],
+      "control_states": {
+        "CTL-IAM-001": "partial",
+        "CTL-IAM-002": "missing",
+        "CTL-IAM-003": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R010-2",
+      "risk_version_id": "DIVERSE-R010-2-V1",
+      "asset_id": "DIVERSE-A010",
+      "risk_category": "Reconnaissance",
+      "likelihood": 2,
+      "impact": 5,
+      "existing_control_ids": [
+        "CTL-NET-001"
+      ],
+      "planned_control_ids": [
+        "CTL-NET-002",
+        "CTL-NET-003"
+      ],
+      "mitre_attack_techniques": [
+        "T1046"
+      ],
+      "control_states": {
+        "CTL-NET-001": "partial",
+        "CTL-NET-002": "missing",
+        "CTL-NET-003": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R010-3",
+      "risk_version_id": "DIVERSE-R010-3-V1",
+      "asset_id": "DIVERSE-A010",
+      "risk_category": "Malware Execution",
+      "likelihood": 2,
+      "impact": 5,
+      "existing_control_ids": [
+        "CTL-END-001"
+      ],
+      "planned_control_ids": [
+        "CTL-END-003",
+        "CTL-END-009"
+      ],
+      "mitre_attack_techniques": [
+        "T1059"
+      ],
+      "control_states": {
+        "CTL-END-001": "partial",
+        "CTL-END-003": "missing",
+        "CTL-END-009": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R010-4",
+      "risk_version_id": "DIVERSE-R010-4-V1",
+      "asset_id": "DIVERSE-A010",
+      "risk_category": "Privilege Escalation",
+      "likelihood": 2,
+      "impact": 5,
+      "existing_control_ids": [
+        "CTL-VUL-001"
+      ],
+      "planned_control_ids": [
+        "CTL-VUL-003",
+        "CTL-END-004"
+      ],
+      "mitre_attack_techniques": [
+        "T1068"
+      ],
+      "control_states": {
+        "CTL-VUL-001": "partial",
+        "CTL-VUL-003": "missing",
+        "CTL-END-004": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R010-5",
+      "risk_version_id": "DIVERSE-R010-5-V1",
+      "asset_id": "DIVERSE-A010",
+      "risk_category": "Web Application Compromise",
+      "likelihood": 2,
+      "impact": 5,
+      "existing_control_ids": [
+        "CTL-NET-004"
+      ],
+      "planned_control_ids": [
+        "CTL-NET-008",
+        "CTL-VUL-001"
+      ],
+      "mitre_attack_techniques": [
+        "T1190"
+      ],
+      "control_states": {
+        "CTL-NET-004": "partial",
+        "CTL-NET-008": "missing",
+        "CTL-VUL-001": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R010-6",
+      "risk_version_id": "DIVERSE-R010-6-V1",
+      "asset_id": "DIVERSE-A010",
+      "risk_category": "Data Exfiltration",
+      "likelihood": 2,
+      "impact": 5,
+      "existing_control_ids": [
+        "CTL-NET-007"
+      ],
+      "planned_control_ids": [
+        "CTL-DAT-003",
+        "CTL-DAT-007"
+      ],
+      "mitre_attack_techniques": [
+        "T1048"
+      ],
+      "control_states": {
+        "CTL-NET-007": "partial",
+        "CTL-DAT-003": "missing",
+        "CTL-DAT-007": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R011-1",
+      "risk_version_id": "DIVERSE-R011-1-V1",
+      "asset_id": "DIVERSE-A011",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 3,
+      "impact": 1,
+      "existing_control_ids": [
+        "CTL-IAM-001"
+      ],
+      "planned_control_ids": [
+        "CTL-IAM-002",
+        "CTL-IAM-003"
+      ],
+      "mitre_attack_techniques": [
+        "T1110"
+      ],
+      "control_states": {
+        "CTL-IAM-001": "partial",
+        "CTL-IAM-002": "missing",
+        "CTL-IAM-003": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R011-2",
+      "risk_version_id": "DIVERSE-R011-2-V1",
+      "asset_id": "DIVERSE-A011",
+      "risk_category": "Reconnaissance",
+      "likelihood": 3,
+      "impact": 1,
+      "existing_control_ids": [
+        "CTL-NET-001"
+      ],
+      "planned_control_ids": [
+        "CTL-NET-002",
+        "CTL-NET-003"
+      ],
+      "mitre_attack_techniques": [
+        "T1046"
+      ],
+      "control_states": {
+        "CTL-NET-001": "partial",
+        "CTL-NET-002": "missing",
+        "CTL-NET-003": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R011-3",
+      "risk_version_id": "DIVERSE-R011-3-V1",
+      "asset_id": "DIVERSE-A011",
+      "risk_category": "Malware Execution",
+      "likelihood": 3,
+      "impact": 1,
+      "existing_control_ids": [
+        "CTL-END-001"
+      ],
+      "planned_control_ids": [
+        "CTL-END-003",
+        "CTL-END-009"
+      ],
+      "mitre_attack_techniques": [
+        "T1059"
+      ],
+      "control_states": {
+        "CTL-END-001": "partial",
+        "CTL-END-003": "missing",
+        "CTL-END-009": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R011-4",
+      "risk_version_id": "DIVERSE-R011-4-V1",
+      "asset_id": "DIVERSE-A011",
+      "risk_category": "Privilege Escalation",
+      "likelihood": 3,
+      "impact": 1,
+      "existing_control_ids": [
+        "CTL-VUL-001"
+      ],
+      "planned_control_ids": [
+        "CTL-VUL-003",
+        "CTL-END-004"
+      ],
+      "mitre_attack_techniques": [
+        "T1068"
+      ],
+      "control_states": {
+        "CTL-VUL-001": "partial",
+        "CTL-VUL-003": "missing",
+        "CTL-END-004": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R011-5",
+      "risk_version_id": "DIVERSE-R011-5-V1",
+      "asset_id": "DIVERSE-A011",
+      "risk_category": "Web Application Compromise",
+      "likelihood": 3,
+      "impact": 1,
+      "existing_control_ids": [
+        "CTL-NET-004"
+      ],
+      "planned_control_ids": [
+        "CTL-NET-008",
+        "CTL-VUL-001"
+      ],
+      "mitre_attack_techniques": [
+        "T1190"
+      ],
+      "control_states": {
+        "CTL-NET-004": "partial",
+        "CTL-NET-008": "missing",
+        "CTL-VUL-001": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R011-6",
+      "risk_version_id": "DIVERSE-R011-6-V1",
+      "asset_id": "DIVERSE-A011",
+      "risk_category": "Data Exfiltration",
+      "likelihood": 3,
+      "impact": 1,
+      "existing_control_ids": [
+        "CTL-NET-007"
+      ],
+      "planned_control_ids": [
+        "CTL-DAT-003",
+        "CTL-DAT-007"
+      ],
+      "mitre_attack_techniques": [
+        "T1048"
+      ],
+      "control_states": {
+        "CTL-NET-007": "partial",
+        "CTL-DAT-003": "missing",
+        "CTL-DAT-007": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R012-1",
+      "risk_version_id": "DIVERSE-R012-1-V1",
+      "asset_id": "DIVERSE-A012",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 4,
+      "impact": 2,
+      "existing_control_ids": [
+        "CTL-IAM-001"
+      ],
+      "planned_control_ids": [
+        "CTL-IAM-002",
+        "CTL-IAM-003"
+      ],
+      "mitre_attack_techniques": [
+        "T1110"
+      ],
+      "control_states": {
+        "CTL-IAM-001": "partial",
+        "CTL-IAM-002": "missing",
+        "CTL-IAM-003": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R012-2",
+      "risk_version_id": "DIVERSE-R012-2-V1",
+      "asset_id": "DIVERSE-A012",
+      "risk_category": "Reconnaissance",
+      "likelihood": 4,
+      "impact": 2,
+      "existing_control_ids": [
+        "CTL-NET-001"
+      ],
+      "planned_control_ids": [
+        "CTL-NET-002",
+        "CTL-NET-003"
+      ],
+      "mitre_attack_techniques": [
+        "T1046"
+      ],
+      "control_states": {
+        "CTL-NET-001": "partial",
+        "CTL-NET-002": "missing",
+        "CTL-NET-003": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R012-3",
+      "risk_version_id": "DIVERSE-R012-3-V1",
+      "asset_id": "DIVERSE-A012",
+      "risk_category": "Malware Execution",
+      "likelihood": 4,
+      "impact": 2,
+      "existing_control_ids": [
+        "CTL-END-001"
+      ],
+      "planned_control_ids": [
+        "CTL-END-003",
+        "CTL-END-009"
+      ],
+      "mitre_attack_techniques": [
+        "T1059"
+      ],
+      "control_states": {
+        "CTL-END-001": "partial",
+        "CTL-END-003": "missing",
+        "CTL-END-009": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R012-4",
+      "risk_version_id": "DIVERSE-R012-4-V1",
+      "asset_id": "DIVERSE-A012",
+      "risk_category": "Privilege Escalation",
+      "likelihood": 4,
+      "impact": 2,
+      "existing_control_ids": [
+        "CTL-VUL-001"
+      ],
+      "planned_control_ids": [
+        "CTL-VUL-003",
+        "CTL-END-004"
+      ],
+      "mitre_attack_techniques": [
+        "T1068"
+      ],
+      "control_states": {
+        "CTL-VUL-001": "partial",
+        "CTL-VUL-003": "missing",
+        "CTL-END-004": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R012-5",
+      "risk_version_id": "DIVERSE-R012-5-V1",
+      "asset_id": "DIVERSE-A012",
+      "risk_category": "Web Application Compromise",
+      "likelihood": 4,
+      "impact": 2,
+      "existing_control_ids": [
+        "CTL-NET-004"
+      ],
+      "planned_control_ids": [
+        "CTL-NET-008",
+        "CTL-VUL-001"
+      ],
+      "mitre_attack_techniques": [
+        "T1190"
+      ],
+      "control_states": {
+        "CTL-NET-004": "partial",
+        "CTL-NET-008": "missing",
+        "CTL-VUL-001": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R012-6",
+      "risk_version_id": "DIVERSE-R012-6-V1",
+      "asset_id": "DIVERSE-A012",
+      "risk_category": "Data Exfiltration",
+      "likelihood": 4,
+      "impact": 2,
+      "existing_control_ids": [
+        "CTL-NET-007"
+      ],
+      "planned_control_ids": [
+        "CTL-DAT-003",
+        "CTL-DAT-007"
+      ],
+      "mitre_attack_techniques": [
+        "T1048"
+      ],
+      "control_states": {
+        "CTL-NET-007": "partial",
+        "CTL-DAT-003": "missing",
+        "CTL-DAT-007": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R013-1",
+      "risk_version_id": "DIVERSE-R013-1-V1",
+      "asset_id": "DIVERSE-A013",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 2,
+      "impact": 3,
+      "existing_control_ids": [
+        "CTL-IAM-001"
+      ],
+      "planned_control_ids": [
+        "CTL-IAM-002",
+        "CTL-IAM-003"
+      ],
+      "mitre_attack_techniques": [
+        "T1110"
+      ],
+      "control_states": {
+        "CTL-IAM-001": "partial",
+        "CTL-IAM-002": "missing",
+        "CTL-IAM-003": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R013-2",
+      "risk_version_id": "DIVERSE-R013-2-V1",
+      "asset_id": "DIVERSE-A013",
+      "risk_category": "Reconnaissance",
+      "likelihood": 2,
+      "impact": 3,
+      "existing_control_ids": [
+        "CTL-NET-001"
+      ],
+      "planned_control_ids": [
+        "CTL-NET-002",
+        "CTL-NET-003"
+      ],
+      "mitre_attack_techniques": [
+        "T1046"
+      ],
+      "control_states": {
+        "CTL-NET-001": "partial",
+        "CTL-NET-002": "missing",
+        "CTL-NET-003": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R013-3",
+      "risk_version_id": "DIVERSE-R013-3-V1",
+      "asset_id": "DIVERSE-A013",
+      "risk_category": "Malware Execution",
+      "likelihood": 2,
+      "impact": 3,
+      "existing_control_ids": [
+        "CTL-END-001"
+      ],
+      "planned_control_ids": [
+        "CTL-END-003",
+        "CTL-END-009"
+      ],
+      "mitre_attack_techniques": [
+        "T1059"
+      ],
+      "control_states": {
+        "CTL-END-001": "partial",
+        "CTL-END-003": "missing",
+        "CTL-END-009": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R013-4",
+      "risk_version_id": "DIVERSE-R013-4-V1",
+      "asset_id": "DIVERSE-A013",
+      "risk_category": "Privilege Escalation",
+      "likelihood": 2,
+      "impact": 3,
+      "existing_control_ids": [
+        "CTL-VUL-001"
+      ],
+      "planned_control_ids": [
+        "CTL-VUL-003",
+        "CTL-END-004"
+      ],
+      "mitre_attack_techniques": [
+        "T1068"
+      ],
+      "control_states": {
+        "CTL-VUL-001": "partial",
+        "CTL-VUL-003": "missing",
+        "CTL-END-004": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R013-5",
+      "risk_version_id": "DIVERSE-R013-5-V1",
+      "asset_id": "DIVERSE-A013",
+      "risk_category": "Web Application Compromise",
+      "likelihood": 2,
+      "impact": 3,
+      "existing_control_ids": [
+        "CTL-NET-004"
+      ],
+      "planned_control_ids": [
+        "CTL-NET-008",
+        "CTL-VUL-001"
+      ],
+      "mitre_attack_techniques": [
+        "T1190"
+      ],
+      "control_states": {
+        "CTL-NET-004": "partial",
+        "CTL-NET-008": "missing",
+        "CTL-VUL-001": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R013-6",
+      "risk_version_id": "DIVERSE-R013-6-V1",
+      "asset_id": "DIVERSE-A013",
+      "risk_category": "Data Exfiltration",
+      "likelihood": 2,
+      "impact": 3,
+      "existing_control_ids": [
+        "CTL-NET-007"
+      ],
+      "planned_control_ids": [
+        "CTL-DAT-003",
+        "CTL-DAT-007"
+      ],
+      "mitre_attack_techniques": [
+        "T1048"
+      ],
+      "control_states": {
+        "CTL-NET-007": "partial",
+        "CTL-DAT-003": "missing",
+        "CTL-DAT-007": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R014-1",
+      "risk_version_id": "DIVERSE-R014-1-V1",
+      "asset_id": "DIVERSE-A014",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 3,
+      "impact": 4,
+      "existing_control_ids": [
+        "CTL-IAM-001"
+      ],
+      "planned_control_ids": [
+        "CTL-IAM-002",
+        "CTL-IAM-003"
+      ],
+      "mitre_attack_techniques": [
+        "T1110"
+      ],
+      "control_states": {
+        "CTL-IAM-001": "partial",
+        "CTL-IAM-002": "missing",
+        "CTL-IAM-003": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R014-2",
+      "risk_version_id": "DIVERSE-R014-2-V1",
+      "asset_id": "DIVERSE-A014",
+      "risk_category": "Reconnaissance",
+      "likelihood": 3,
+      "impact": 4,
+      "existing_control_ids": [
+        "CTL-NET-001"
+      ],
+      "planned_control_ids": [
+        "CTL-NET-002",
+        "CTL-NET-003"
+      ],
+      "mitre_attack_techniques": [
+        "T1046"
+      ],
+      "control_states": {
+        "CTL-NET-001": "partial",
+        "CTL-NET-002": "missing",
+        "CTL-NET-003": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R014-3",
+      "risk_version_id": "DIVERSE-R014-3-V1",
+      "asset_id": "DIVERSE-A014",
+      "risk_category": "Malware Execution",
+      "likelihood": 3,
+      "impact": 4,
+      "existing_control_ids": [
+        "CTL-END-001"
+      ],
+      "planned_control_ids": [
+        "CTL-END-003",
+        "CTL-END-009"
+      ],
+      "mitre_attack_techniques": [
+        "T1059"
+      ],
+      "control_states": {
+        "CTL-END-001": "partial",
+        "CTL-END-003": "missing",
+        "CTL-END-009": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R014-4",
+      "risk_version_id": "DIVERSE-R014-4-V1",
+      "asset_id": "DIVERSE-A014",
+      "risk_category": "Privilege Escalation",
+      "likelihood": 3,
+      "impact": 4,
+      "existing_control_ids": [
+        "CTL-VUL-001"
+      ],
+      "planned_control_ids": [
+        "CTL-VUL-003",
+        "CTL-END-004"
+      ],
+      "mitre_attack_techniques": [
+        "T1068"
+      ],
+      "control_states": {
+        "CTL-VUL-001": "partial",
+        "CTL-VUL-003": "missing",
+        "CTL-END-004": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R014-5",
+      "risk_version_id": "DIVERSE-R014-5-V1",
+      "asset_id": "DIVERSE-A014",
+      "risk_category": "Web Application Compromise",
+      "likelihood": 3,
+      "impact": 4,
+      "existing_control_ids": [
+        "CTL-NET-004"
+      ],
+      "planned_control_ids": [
+        "CTL-NET-008",
+        "CTL-VUL-001"
+      ],
+      "mitre_attack_techniques": [
+        "T1190"
+      ],
+      "control_states": {
+        "CTL-NET-004": "partial",
+        "CTL-NET-008": "missing",
+        "CTL-VUL-001": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R014-6",
+      "risk_version_id": "DIVERSE-R014-6-V1",
+      "asset_id": "DIVERSE-A014",
+      "risk_category": "Data Exfiltration",
+      "likelihood": 3,
+      "impact": 4,
+      "existing_control_ids": [
+        "CTL-NET-007"
+      ],
+      "planned_control_ids": [
+        "CTL-DAT-003",
+        "CTL-DAT-007"
+      ],
+      "mitre_attack_techniques": [
+        "T1048"
+      ],
+      "control_states": {
+        "CTL-NET-007": "partial",
+        "CTL-DAT-003": "missing",
+        "CTL-DAT-007": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R015-1",
+      "risk_version_id": "DIVERSE-R015-1-V1",
+      "asset_id": "DIVERSE-A015",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 4,
+      "impact": 5,
+      "existing_control_ids": [
+        "CTL-IAM-001"
+      ],
+      "planned_control_ids": [
+        "CTL-IAM-002",
+        "CTL-IAM-003"
+      ],
+      "mitre_attack_techniques": [
+        "T1110"
+      ],
+      "control_states": {
+        "CTL-IAM-001": "partial",
+        "CTL-IAM-002": "missing",
+        "CTL-IAM-003": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R015-2",
+      "risk_version_id": "DIVERSE-R015-2-V1",
+      "asset_id": "DIVERSE-A015",
+      "risk_category": "Reconnaissance",
+      "likelihood": 4,
+      "impact": 5,
+      "existing_control_ids": [
+        "CTL-NET-001"
+      ],
+      "planned_control_ids": [
+        "CTL-NET-002",
+        "CTL-NET-003"
+      ],
+      "mitre_attack_techniques": [
+        "T1046"
+      ],
+      "control_states": {
+        "CTL-NET-001": "partial",
+        "CTL-NET-002": "missing",
+        "CTL-NET-003": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R015-3",
+      "risk_version_id": "DIVERSE-R015-3-V1",
+      "asset_id": "DIVERSE-A015",
+      "risk_category": "Malware Execution",
+      "likelihood": 4,
+      "impact": 5,
+      "existing_control_ids": [
+        "CTL-END-001"
+      ],
+      "planned_control_ids": [
+        "CTL-END-003",
+        "CTL-END-009"
+      ],
+      "mitre_attack_techniques": [
+        "T1059"
+      ],
+      "control_states": {
+        "CTL-END-001": "partial",
+        "CTL-END-003": "missing",
+        "CTL-END-009": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R015-4",
+      "risk_version_id": "DIVERSE-R015-4-V1",
+      "asset_id": "DIVERSE-A015",
+      "risk_category": "Privilege Escalation",
+      "likelihood": 4,
+      "impact": 5,
+      "existing_control_ids": [
+        "CTL-VUL-001"
+      ],
+      "planned_control_ids": [
+        "CTL-VUL-003",
+        "CTL-END-004"
+      ],
+      "mitre_attack_techniques": [
+        "T1068"
+      ],
+      "control_states": {
+        "CTL-VUL-001": "partial",
+        "CTL-VUL-003": "missing",
+        "CTL-END-004": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R015-5",
+      "risk_version_id": "DIVERSE-R015-5-V1",
+      "asset_id": "DIVERSE-A015",
+      "risk_category": "Web Application Compromise",
+      "likelihood": 4,
+      "impact": 5,
+      "existing_control_ids": [
+        "CTL-NET-004"
+      ],
+      "planned_control_ids": [
+        "CTL-NET-008",
+        "CTL-VUL-001"
+      ],
+      "mitre_attack_techniques": [
+        "T1190"
+      ],
+      "control_states": {
+        "CTL-NET-004": "partial",
+        "CTL-NET-008": "missing",
+        "CTL-VUL-001": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R015-6",
+      "risk_version_id": "DIVERSE-R015-6-V1",
+      "asset_id": "DIVERSE-A015",
+      "risk_category": "Data Exfiltration",
+      "likelihood": 4,
+      "impact": 5,
+      "existing_control_ids": [
+        "CTL-NET-007"
+      ],
+      "planned_control_ids": [
+        "CTL-DAT-003",
+        "CTL-DAT-007"
+      ],
+      "mitre_attack_techniques": [
+        "T1048"
+      ],
+      "control_states": {
+        "CTL-NET-007": "partial",
+        "CTL-DAT-003": "missing",
+        "CTL-DAT-007": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R016-1",
+      "risk_version_id": "DIVERSE-R016-1-V1",
+      "asset_id": "DIVERSE-A016",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 2,
+      "impact": 1,
+      "existing_control_ids": [
+        "CTL-IAM-001"
+      ],
+      "planned_control_ids": [
+        "CTL-IAM-002",
+        "CTL-IAM-003"
+      ],
+      "mitre_attack_techniques": [
+        "T1110"
+      ],
+      "control_states": {
+        "CTL-IAM-001": "partial",
+        "CTL-IAM-002": "missing",
+        "CTL-IAM-003": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R016-2",
+      "risk_version_id": "DIVERSE-R016-2-V1",
+      "asset_id": "DIVERSE-A016",
+      "risk_category": "Reconnaissance",
+      "likelihood": 2,
+      "impact": 1,
+      "existing_control_ids": [
+        "CTL-NET-001"
+      ],
+      "planned_control_ids": [
+        "CTL-NET-002",
+        "CTL-NET-003"
+      ],
+      "mitre_attack_techniques": [
+        "T1046"
+      ],
+      "control_states": {
+        "CTL-NET-001": "partial",
+        "CTL-NET-002": "missing",
+        "CTL-NET-003": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R016-3",
+      "risk_version_id": "DIVERSE-R016-3-V1",
+      "asset_id": "DIVERSE-A016",
+      "risk_category": "Malware Execution",
+      "likelihood": 2,
+      "impact": 1,
+      "existing_control_ids": [
+        "CTL-END-001"
+      ],
+      "planned_control_ids": [
+        "CTL-END-003",
+        "CTL-END-009"
+      ],
+      "mitre_attack_techniques": [
+        "T1059"
+      ],
+      "control_states": {
+        "CTL-END-001": "partial",
+        "CTL-END-003": "missing",
+        "CTL-END-009": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R016-4",
+      "risk_version_id": "DIVERSE-R016-4-V1",
+      "asset_id": "DIVERSE-A016",
+      "risk_category": "Privilege Escalation",
+      "likelihood": 2,
+      "impact": 1,
+      "existing_control_ids": [
+        "CTL-VUL-001"
+      ],
+      "planned_control_ids": [
+        "CTL-VUL-003",
+        "CTL-END-004"
+      ],
+      "mitre_attack_techniques": [
+        "T1068"
+      ],
+      "control_states": {
+        "CTL-VUL-001": "partial",
+        "CTL-VUL-003": "missing",
+        "CTL-END-004": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R016-5",
+      "risk_version_id": "DIVERSE-R016-5-V1",
+      "asset_id": "DIVERSE-A016",
+      "risk_category": "Web Application Compromise",
+      "likelihood": 2,
+      "impact": 1,
+      "existing_control_ids": [
+        "CTL-NET-004"
+      ],
+      "planned_control_ids": [
+        "CTL-NET-008",
+        "CTL-VUL-001"
+      ],
+      "mitre_attack_techniques": [
+        "T1190"
+      ],
+      "control_states": {
+        "CTL-NET-004": "partial",
+        "CTL-NET-008": "missing",
+        "CTL-VUL-001": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R016-6",
+      "risk_version_id": "DIVERSE-R016-6-V1",
+      "asset_id": "DIVERSE-A016",
+      "risk_category": "Data Exfiltration",
+      "likelihood": 2,
+      "impact": 1,
+      "existing_control_ids": [
+        "CTL-NET-007"
+      ],
+      "planned_control_ids": [
+        "CTL-DAT-003",
+        "CTL-DAT-007"
+      ],
+      "mitre_attack_techniques": [
+        "T1048"
+      ],
+      "control_states": {
+        "CTL-NET-007": "partial",
+        "CTL-DAT-003": "missing",
+        "CTL-DAT-007": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R017-1",
+      "risk_version_id": "DIVERSE-R017-1-V1",
+      "asset_id": "DIVERSE-A017",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 3,
+      "impact": 2,
+      "existing_control_ids": [
+        "CTL-IAM-001"
+      ],
+      "planned_control_ids": [
+        "CTL-IAM-002",
+        "CTL-IAM-003"
+      ],
+      "mitre_attack_techniques": [
+        "T1110"
+      ],
+      "control_states": {
+        "CTL-IAM-001": "partial",
+        "CTL-IAM-002": "missing",
+        "CTL-IAM-003": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R017-2",
+      "risk_version_id": "DIVERSE-R017-2-V1",
+      "asset_id": "DIVERSE-A017",
+      "risk_category": "Reconnaissance",
+      "likelihood": 3,
+      "impact": 2,
+      "existing_control_ids": [
+        "CTL-NET-001"
+      ],
+      "planned_control_ids": [
+        "CTL-NET-002",
+        "CTL-NET-003"
+      ],
+      "mitre_attack_techniques": [
+        "T1046"
+      ],
+      "control_states": {
+        "CTL-NET-001": "partial",
+        "CTL-NET-002": "missing",
+        "CTL-NET-003": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R017-3",
+      "risk_version_id": "DIVERSE-R017-3-V1",
+      "asset_id": "DIVERSE-A017",
+      "risk_category": "Malware Execution",
+      "likelihood": 3,
+      "impact": 2,
+      "existing_control_ids": [
+        "CTL-END-001"
+      ],
+      "planned_control_ids": [
+        "CTL-END-003",
+        "CTL-END-009"
+      ],
+      "mitre_attack_techniques": [
+        "T1059"
+      ],
+      "control_states": {
+        "CTL-END-001": "partial",
+        "CTL-END-003": "missing",
+        "CTL-END-009": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R017-4",
+      "risk_version_id": "DIVERSE-R017-4-V1",
+      "asset_id": "DIVERSE-A017",
+      "risk_category": "Privilege Escalation",
+      "likelihood": 3,
+      "impact": 2,
+      "existing_control_ids": [
+        "CTL-VUL-001"
+      ],
+      "planned_control_ids": [
+        "CTL-VUL-003",
+        "CTL-END-004"
+      ],
+      "mitre_attack_techniques": [
+        "T1068"
+      ],
+      "control_states": {
+        "CTL-VUL-001": "partial",
+        "CTL-VUL-003": "missing",
+        "CTL-END-004": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R017-5",
+      "risk_version_id": "DIVERSE-R017-5-V1",
+      "asset_id": "DIVERSE-A017",
+      "risk_category": "Web Application Compromise",
+      "likelihood": 3,
+      "impact": 2,
+      "existing_control_ids": [
+        "CTL-NET-004"
+      ],
+      "planned_control_ids": [
+        "CTL-NET-008",
+        "CTL-VUL-001"
+      ],
+      "mitre_attack_techniques": [
+        "T1190"
+      ],
+      "control_states": {
+        "CTL-NET-004": "partial",
+        "CTL-NET-008": "missing",
+        "CTL-VUL-001": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R017-6",
+      "risk_version_id": "DIVERSE-R017-6-V1",
+      "asset_id": "DIVERSE-A017",
+      "risk_category": "Data Exfiltration",
+      "likelihood": 3,
+      "impact": 2,
+      "existing_control_ids": [
+        "CTL-NET-007"
+      ],
+      "planned_control_ids": [
+        "CTL-DAT-003",
+        "CTL-DAT-007"
+      ],
+      "mitre_attack_techniques": [
+        "T1048"
+      ],
+      "control_states": {
+        "CTL-NET-007": "partial",
+        "CTL-DAT-003": "missing",
+        "CTL-DAT-007": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R018-1",
+      "risk_version_id": "DIVERSE-R018-1-V1",
+      "asset_id": "DIVERSE-A018",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 4,
+      "impact": 3,
+      "existing_control_ids": [
+        "CTL-IAM-001"
+      ],
+      "planned_control_ids": [
+        "CTL-IAM-002",
+        "CTL-IAM-003"
+      ],
+      "mitre_attack_techniques": [
+        "T1110"
+      ],
+      "control_states": {
+        "CTL-IAM-001": "partial",
+        "CTL-IAM-002": "missing",
+        "CTL-IAM-003": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R018-2",
+      "risk_version_id": "DIVERSE-R018-2-V1",
+      "asset_id": "DIVERSE-A018",
+      "risk_category": "Reconnaissance",
+      "likelihood": 4,
+      "impact": 3,
+      "existing_control_ids": [
+        "CTL-NET-001"
+      ],
+      "planned_control_ids": [
+        "CTL-NET-002",
+        "CTL-NET-003"
+      ],
+      "mitre_attack_techniques": [
+        "T1046"
+      ],
+      "control_states": {
+        "CTL-NET-001": "partial",
+        "CTL-NET-002": "missing",
+        "CTL-NET-003": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R018-3",
+      "risk_version_id": "DIVERSE-R018-3-V1",
+      "asset_id": "DIVERSE-A018",
+      "risk_category": "Malware Execution",
+      "likelihood": 4,
+      "impact": 3,
+      "existing_control_ids": [
+        "CTL-END-001"
+      ],
+      "planned_control_ids": [
+        "CTL-END-003",
+        "CTL-END-009"
+      ],
+      "mitre_attack_techniques": [
+        "T1059"
+      ],
+      "control_states": {
+        "CTL-END-001": "partial",
+        "CTL-END-003": "missing",
+        "CTL-END-009": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R018-4",
+      "risk_version_id": "DIVERSE-R018-4-V1",
+      "asset_id": "DIVERSE-A018",
+      "risk_category": "Privilege Escalation",
+      "likelihood": 4,
+      "impact": 3,
+      "existing_control_ids": [
+        "CTL-VUL-001"
+      ],
+      "planned_control_ids": [
+        "CTL-VUL-003",
+        "CTL-END-004"
+      ],
+      "mitre_attack_techniques": [
+        "T1068"
+      ],
+      "control_states": {
+        "CTL-VUL-001": "partial",
+        "CTL-VUL-003": "missing",
+        "CTL-END-004": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R018-5",
+      "risk_version_id": "DIVERSE-R018-5-V1",
+      "asset_id": "DIVERSE-A018",
+      "risk_category": "Web Application Compromise",
+      "likelihood": 4,
+      "impact": 3,
+      "existing_control_ids": [
+        "CTL-NET-004"
+      ],
+      "planned_control_ids": [
+        "CTL-NET-008",
+        "CTL-VUL-001"
+      ],
+      "mitre_attack_techniques": [
+        "T1190"
+      ],
+      "control_states": {
+        "CTL-NET-004": "partial",
+        "CTL-NET-008": "missing",
+        "CTL-VUL-001": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R018-6",
+      "risk_version_id": "DIVERSE-R018-6-V1",
+      "asset_id": "DIVERSE-A018",
+      "risk_category": "Data Exfiltration",
+      "likelihood": 4,
+      "impact": 3,
+      "existing_control_ids": [
+        "CTL-NET-007"
+      ],
+      "planned_control_ids": [
+        "CTL-DAT-003",
+        "CTL-DAT-007"
+      ],
+      "mitre_attack_techniques": [
+        "T1048"
+      ],
+      "control_states": {
+        "CTL-NET-007": "partial",
+        "CTL-DAT-003": "missing",
+        "CTL-DAT-007": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R019-1",
+      "risk_version_id": "DIVERSE-R019-1-V1",
+      "asset_id": "DIVERSE-A019",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 2,
+      "impact": 4,
+      "existing_control_ids": [
+        "CTL-IAM-001"
+      ],
+      "planned_control_ids": [
+        "CTL-IAM-002",
+        "CTL-IAM-003"
+      ],
+      "mitre_attack_techniques": [
+        "T1110"
+      ],
+      "control_states": {
+        "CTL-IAM-001": "partial",
+        "CTL-IAM-002": "missing",
+        "CTL-IAM-003": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R019-2",
+      "risk_version_id": "DIVERSE-R019-2-V1",
+      "asset_id": "DIVERSE-A019",
+      "risk_category": "Reconnaissance",
+      "likelihood": 2,
+      "impact": 4,
+      "existing_control_ids": [
+        "CTL-NET-001"
+      ],
+      "planned_control_ids": [
+        "CTL-NET-002",
+        "CTL-NET-003"
+      ],
+      "mitre_attack_techniques": [
+        "T1046"
+      ],
+      "control_states": {
+        "CTL-NET-001": "partial",
+        "CTL-NET-002": "missing",
+        "CTL-NET-003": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R019-3",
+      "risk_version_id": "DIVERSE-R019-3-V1",
+      "asset_id": "DIVERSE-A019",
+      "risk_category": "Malware Execution",
+      "likelihood": 2,
+      "impact": 4,
+      "existing_control_ids": [
+        "CTL-END-001"
+      ],
+      "planned_control_ids": [
+        "CTL-END-003",
+        "CTL-END-009"
+      ],
+      "mitre_attack_techniques": [
+        "T1059"
+      ],
+      "control_states": {
+        "CTL-END-001": "partial",
+        "CTL-END-003": "missing",
+        "CTL-END-009": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R019-4",
+      "risk_version_id": "DIVERSE-R019-4-V1",
+      "asset_id": "DIVERSE-A019",
+      "risk_category": "Privilege Escalation",
+      "likelihood": 2,
+      "impact": 4,
+      "existing_control_ids": [
+        "CTL-VUL-001"
+      ],
+      "planned_control_ids": [
+        "CTL-VUL-003",
+        "CTL-END-004"
+      ],
+      "mitre_attack_techniques": [
+        "T1068"
+      ],
+      "control_states": {
+        "CTL-VUL-001": "partial",
+        "CTL-VUL-003": "missing",
+        "CTL-END-004": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R019-5",
+      "risk_version_id": "DIVERSE-R019-5-V1",
+      "asset_id": "DIVERSE-A019",
+      "risk_category": "Web Application Compromise",
+      "likelihood": 2,
+      "impact": 4,
+      "existing_control_ids": [
+        "CTL-NET-004"
+      ],
+      "planned_control_ids": [
+        "CTL-NET-008",
+        "CTL-VUL-001"
+      ],
+      "mitre_attack_techniques": [
+        "T1190"
+      ],
+      "control_states": {
+        "CTL-NET-004": "partial",
+        "CTL-NET-008": "missing",
+        "CTL-VUL-001": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R019-6",
+      "risk_version_id": "DIVERSE-R019-6-V1",
+      "asset_id": "DIVERSE-A019",
+      "risk_category": "Data Exfiltration",
+      "likelihood": 2,
+      "impact": 4,
+      "existing_control_ids": [
+        "CTL-NET-007"
+      ],
+      "planned_control_ids": [
+        "CTL-DAT-003",
+        "CTL-DAT-007"
+      ],
+      "mitre_attack_techniques": [
+        "T1048"
+      ],
+      "control_states": {
+        "CTL-NET-007": "partial",
+        "CTL-DAT-003": "missing",
+        "CTL-DAT-007": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R020-1",
+      "risk_version_id": "DIVERSE-R020-1-V1",
+      "asset_id": "DIVERSE-A020",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 3,
+      "impact": 5,
+      "existing_control_ids": [
+        "CTL-IAM-001"
+      ],
+      "planned_control_ids": [
+        "CTL-IAM-002",
+        "CTL-IAM-003"
+      ],
+      "mitre_attack_techniques": [
+        "T1110"
+      ],
+      "control_states": {
+        "CTL-IAM-001": "partial",
+        "CTL-IAM-002": "missing",
+        "CTL-IAM-003": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R020-2",
+      "risk_version_id": "DIVERSE-R020-2-V1",
+      "asset_id": "DIVERSE-A020",
+      "risk_category": "Reconnaissance",
+      "likelihood": 3,
+      "impact": 5,
+      "existing_control_ids": [
+        "CTL-NET-001"
+      ],
+      "planned_control_ids": [
+        "CTL-NET-002",
+        "CTL-NET-003"
+      ],
+      "mitre_attack_techniques": [
+        "T1046"
+      ],
+      "control_states": {
+        "CTL-NET-001": "partial",
+        "CTL-NET-002": "missing",
+        "CTL-NET-003": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R020-3",
+      "risk_version_id": "DIVERSE-R020-3-V1",
+      "asset_id": "DIVERSE-A020",
+      "risk_category": "Malware Execution",
+      "likelihood": 3,
+      "impact": 5,
+      "existing_control_ids": [
+        "CTL-END-001"
+      ],
+      "planned_control_ids": [
+        "CTL-END-003",
+        "CTL-END-009"
+      ],
+      "mitre_attack_techniques": [
+        "T1059"
+      ],
+      "control_states": {
+        "CTL-END-001": "partial",
+        "CTL-END-003": "missing",
+        "CTL-END-009": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R020-4",
+      "risk_version_id": "DIVERSE-R020-4-V1",
+      "asset_id": "DIVERSE-A020",
+      "risk_category": "Privilege Escalation",
+      "likelihood": 3,
+      "impact": 5,
+      "existing_control_ids": [
+        "CTL-VUL-001"
+      ],
+      "planned_control_ids": [
+        "CTL-VUL-003",
+        "CTL-END-004"
+      ],
+      "mitre_attack_techniques": [
+        "T1068"
+      ],
+      "control_states": {
+        "CTL-VUL-001": "partial",
+        "CTL-VUL-003": "missing",
+        "CTL-END-004": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R020-5",
+      "risk_version_id": "DIVERSE-R020-5-V1",
+      "asset_id": "DIVERSE-A020",
+      "risk_category": "Web Application Compromise",
+      "likelihood": 3,
+      "impact": 5,
+      "existing_control_ids": [
+        "CTL-NET-004"
+      ],
+      "planned_control_ids": [
+        "CTL-NET-008",
+        "CTL-VUL-001"
+      ],
+      "mitre_attack_techniques": [
+        "T1190"
+      ],
+      "control_states": {
+        "CTL-NET-004": "partial",
+        "CTL-NET-008": "missing",
+        "CTL-VUL-001": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R020-6",
+      "risk_version_id": "DIVERSE-R020-6-V1",
+      "asset_id": "DIVERSE-A020",
+      "risk_category": "Data Exfiltration",
+      "likelihood": 3,
+      "impact": 5,
+      "existing_control_ids": [
+        "CTL-NET-007"
+      ],
+      "planned_control_ids": [
+        "CTL-DAT-003",
+        "CTL-DAT-007"
+      ],
+      "mitre_attack_techniques": [
+        "T1048"
+      ],
+      "control_states": {
+        "CTL-NET-007": "partial",
+        "CTL-DAT-003": "missing",
+        "CTL-DAT-007": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R021-1",
+      "risk_version_id": "DIVERSE-R021-1-V1",
+      "asset_id": "DIVERSE-A021",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 4,
+      "impact": 1,
+      "existing_control_ids": [
+        "CTL-IAM-001"
+      ],
+      "planned_control_ids": [
+        "CTL-IAM-002",
+        "CTL-IAM-003"
+      ],
+      "mitre_attack_techniques": [
+        "T1110"
+      ],
+      "control_states": {
+        "CTL-IAM-001": "partial",
+        "CTL-IAM-002": "missing",
+        "CTL-IAM-003": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R021-2",
+      "risk_version_id": "DIVERSE-R021-2-V1",
+      "asset_id": "DIVERSE-A021",
+      "risk_category": "Reconnaissance",
+      "likelihood": 4,
+      "impact": 1,
+      "existing_control_ids": [
+        "CTL-NET-001"
+      ],
+      "planned_control_ids": [
+        "CTL-NET-002",
+        "CTL-NET-003"
+      ],
+      "mitre_attack_techniques": [
+        "T1046"
+      ],
+      "control_states": {
+        "CTL-NET-001": "partial",
+        "CTL-NET-002": "missing",
+        "CTL-NET-003": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R021-3",
+      "risk_version_id": "DIVERSE-R021-3-V1",
+      "asset_id": "DIVERSE-A021",
+      "risk_category": "Malware Execution",
+      "likelihood": 4,
+      "impact": 1,
+      "existing_control_ids": [
+        "CTL-END-001"
+      ],
+      "planned_control_ids": [
+        "CTL-END-003",
+        "CTL-END-009"
+      ],
+      "mitre_attack_techniques": [
+        "T1059"
+      ],
+      "control_states": {
+        "CTL-END-001": "partial",
+        "CTL-END-003": "missing",
+        "CTL-END-009": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R021-4",
+      "risk_version_id": "DIVERSE-R021-4-V1",
+      "asset_id": "DIVERSE-A021",
+      "risk_category": "Privilege Escalation",
+      "likelihood": 4,
+      "impact": 1,
+      "existing_control_ids": [
+        "CTL-VUL-001"
+      ],
+      "planned_control_ids": [
+        "CTL-VUL-003",
+        "CTL-END-004"
+      ],
+      "mitre_attack_techniques": [
+        "T1068"
+      ],
+      "control_states": {
+        "CTL-VUL-001": "partial",
+        "CTL-VUL-003": "missing",
+        "CTL-END-004": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R021-5",
+      "risk_version_id": "DIVERSE-R021-5-V1",
+      "asset_id": "DIVERSE-A021",
+      "risk_category": "Web Application Compromise",
+      "likelihood": 4,
+      "impact": 1,
+      "existing_control_ids": [
+        "CTL-NET-004"
+      ],
+      "planned_control_ids": [
+        "CTL-NET-008",
+        "CTL-VUL-001"
+      ],
+      "mitre_attack_techniques": [
+        "T1190"
+      ],
+      "control_states": {
+        "CTL-NET-004": "partial",
+        "CTL-NET-008": "missing",
+        "CTL-VUL-001": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R021-6",
+      "risk_version_id": "DIVERSE-R021-6-V1",
+      "asset_id": "DIVERSE-A021",
+      "risk_category": "Data Exfiltration",
+      "likelihood": 4,
+      "impact": 1,
+      "existing_control_ids": [
+        "CTL-NET-007"
+      ],
+      "planned_control_ids": [
+        "CTL-DAT-003",
+        "CTL-DAT-007"
+      ],
+      "mitre_attack_techniques": [
+        "T1048"
+      ],
+      "control_states": {
+        "CTL-NET-007": "partial",
+        "CTL-DAT-003": "missing",
+        "CTL-DAT-007": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R022-1",
+      "risk_version_id": "DIVERSE-R022-1-V1",
+      "asset_id": "DIVERSE-A022",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 2,
+      "impact": 2,
+      "existing_control_ids": [
+        "CTL-IAM-001"
+      ],
+      "planned_control_ids": [
+        "CTL-IAM-002",
+        "CTL-IAM-003"
+      ],
+      "mitre_attack_techniques": [
+        "T1110"
+      ],
+      "control_states": {
+        "CTL-IAM-001": "partial",
+        "CTL-IAM-002": "missing",
+        "CTL-IAM-003": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R022-2",
+      "risk_version_id": "DIVERSE-R022-2-V1",
+      "asset_id": "DIVERSE-A022",
+      "risk_category": "Reconnaissance",
+      "likelihood": 2,
+      "impact": 2,
+      "existing_control_ids": [
+        "CTL-NET-001"
+      ],
+      "planned_control_ids": [
+        "CTL-NET-002",
+        "CTL-NET-003"
+      ],
+      "mitre_attack_techniques": [
+        "T1046"
+      ],
+      "control_states": {
+        "CTL-NET-001": "partial",
+        "CTL-NET-002": "missing",
+        "CTL-NET-003": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R022-3",
+      "risk_version_id": "DIVERSE-R022-3-V1",
+      "asset_id": "DIVERSE-A022",
+      "risk_category": "Malware Execution",
+      "likelihood": 2,
+      "impact": 2,
+      "existing_control_ids": [
+        "CTL-END-001"
+      ],
+      "planned_control_ids": [
+        "CTL-END-003",
+        "CTL-END-009"
+      ],
+      "mitre_attack_techniques": [
+        "T1059"
+      ],
+      "control_states": {
+        "CTL-END-001": "partial",
+        "CTL-END-003": "missing",
+        "CTL-END-009": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R022-4",
+      "risk_version_id": "DIVERSE-R022-4-V1",
+      "asset_id": "DIVERSE-A022",
+      "risk_category": "Privilege Escalation",
+      "likelihood": 2,
+      "impact": 2,
+      "existing_control_ids": [
+        "CTL-VUL-001"
+      ],
+      "planned_control_ids": [
+        "CTL-VUL-003",
+        "CTL-END-004"
+      ],
+      "mitre_attack_techniques": [
+        "T1068"
+      ],
+      "control_states": {
+        "CTL-VUL-001": "partial",
+        "CTL-VUL-003": "missing",
+        "CTL-END-004": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R022-5",
+      "risk_version_id": "DIVERSE-R022-5-V1",
+      "asset_id": "DIVERSE-A022",
+      "risk_category": "Web Application Compromise",
+      "likelihood": 2,
+      "impact": 2,
+      "existing_control_ids": [
+        "CTL-NET-004"
+      ],
+      "planned_control_ids": [
+        "CTL-NET-008",
+        "CTL-VUL-001"
+      ],
+      "mitre_attack_techniques": [
+        "T1190"
+      ],
+      "control_states": {
+        "CTL-NET-004": "partial",
+        "CTL-NET-008": "missing",
+        "CTL-VUL-001": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R022-6",
+      "risk_version_id": "DIVERSE-R022-6-V1",
+      "asset_id": "DIVERSE-A022",
+      "risk_category": "Data Exfiltration",
+      "likelihood": 2,
+      "impact": 2,
+      "existing_control_ids": [
+        "CTL-NET-007"
+      ],
+      "planned_control_ids": [
+        "CTL-DAT-003",
+        "CTL-DAT-007"
+      ],
+      "mitre_attack_techniques": [
+        "T1048"
+      ],
+      "control_states": {
+        "CTL-NET-007": "partial",
+        "CTL-DAT-003": "missing",
+        "CTL-DAT-007": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R023-1",
+      "risk_version_id": "DIVERSE-R023-1-V1",
+      "asset_id": "DIVERSE-A023",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 3,
+      "impact": 3,
+      "existing_control_ids": [
+        "CTL-IAM-001"
+      ],
+      "planned_control_ids": [
+        "CTL-IAM-002",
+        "CTL-IAM-003"
+      ],
+      "mitre_attack_techniques": [
+        "T1110"
+      ],
+      "control_states": {
+        "CTL-IAM-001": "partial",
+        "CTL-IAM-002": "missing",
+        "CTL-IAM-003": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R023-2",
+      "risk_version_id": "DIVERSE-R023-2-V1",
+      "asset_id": "DIVERSE-A023",
+      "risk_category": "Reconnaissance",
+      "likelihood": 3,
+      "impact": 3,
+      "existing_control_ids": [
+        "CTL-NET-001"
+      ],
+      "planned_control_ids": [
+        "CTL-NET-002",
+        "CTL-NET-003"
+      ],
+      "mitre_attack_techniques": [
+        "T1046"
+      ],
+      "control_states": {
+        "CTL-NET-001": "partial",
+        "CTL-NET-002": "missing",
+        "CTL-NET-003": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R023-3",
+      "risk_version_id": "DIVERSE-R023-3-V1",
+      "asset_id": "DIVERSE-A023",
+      "risk_category": "Malware Execution",
+      "likelihood": 3,
+      "impact": 3,
+      "existing_control_ids": [
+        "CTL-END-001"
+      ],
+      "planned_control_ids": [
+        "CTL-END-003",
+        "CTL-END-009"
+      ],
+      "mitre_attack_techniques": [
+        "T1059"
+      ],
+      "control_states": {
+        "CTL-END-001": "partial",
+        "CTL-END-003": "missing",
+        "CTL-END-009": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R023-4",
+      "risk_version_id": "DIVERSE-R023-4-V1",
+      "asset_id": "DIVERSE-A023",
+      "risk_category": "Privilege Escalation",
+      "likelihood": 3,
+      "impact": 3,
+      "existing_control_ids": [
+        "CTL-VUL-001"
+      ],
+      "planned_control_ids": [
+        "CTL-VUL-003",
+        "CTL-END-004"
+      ],
+      "mitre_attack_techniques": [
+        "T1068"
+      ],
+      "control_states": {
+        "CTL-VUL-001": "partial",
+        "CTL-VUL-003": "missing",
+        "CTL-END-004": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R023-5",
+      "risk_version_id": "DIVERSE-R023-5-V1",
+      "asset_id": "DIVERSE-A023",
+      "risk_category": "Web Application Compromise",
+      "likelihood": 3,
+      "impact": 3,
+      "existing_control_ids": [
+        "CTL-NET-004"
+      ],
+      "planned_control_ids": [
+        "CTL-NET-008",
+        "CTL-VUL-001"
+      ],
+      "mitre_attack_techniques": [
+        "T1190"
+      ],
+      "control_states": {
+        "CTL-NET-004": "partial",
+        "CTL-NET-008": "missing",
+        "CTL-VUL-001": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R023-6",
+      "risk_version_id": "DIVERSE-R023-6-V1",
+      "asset_id": "DIVERSE-A023",
+      "risk_category": "Data Exfiltration",
+      "likelihood": 3,
+      "impact": 3,
+      "existing_control_ids": [
+        "CTL-NET-007"
+      ],
+      "planned_control_ids": [
+        "CTL-DAT-003",
+        "CTL-DAT-007"
+      ],
+      "mitre_attack_techniques": [
+        "T1048"
+      ],
+      "control_states": {
+        "CTL-NET-007": "partial",
+        "CTL-DAT-003": "missing",
+        "CTL-DAT-007": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R024-1",
+      "risk_version_id": "DIVERSE-R024-1-V1",
+      "asset_id": "DIVERSE-A024",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 4,
+      "impact": 4,
+      "existing_control_ids": [
+        "CTL-IAM-001"
+      ],
+      "planned_control_ids": [
+        "CTL-IAM-002",
+        "CTL-IAM-003"
+      ],
+      "mitre_attack_techniques": [
+        "T1110"
+      ],
+      "control_states": {
+        "CTL-IAM-001": "partial",
+        "CTL-IAM-002": "missing",
+        "CTL-IAM-003": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R024-2",
+      "risk_version_id": "DIVERSE-R024-2-V1",
+      "asset_id": "DIVERSE-A024",
+      "risk_category": "Reconnaissance",
+      "likelihood": 4,
+      "impact": 4,
+      "existing_control_ids": [
+        "CTL-NET-001"
+      ],
+      "planned_control_ids": [
+        "CTL-NET-002",
+        "CTL-NET-003"
+      ],
+      "mitre_attack_techniques": [
+        "T1046"
+      ],
+      "control_states": {
+        "CTL-NET-001": "partial",
+        "CTL-NET-002": "missing",
+        "CTL-NET-003": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R024-3",
+      "risk_version_id": "DIVERSE-R024-3-V1",
+      "asset_id": "DIVERSE-A024",
+      "risk_category": "Malware Execution",
+      "likelihood": 4,
+      "impact": 4,
+      "existing_control_ids": [
+        "CTL-END-001"
+      ],
+      "planned_control_ids": [
+        "CTL-END-003",
+        "CTL-END-009"
+      ],
+      "mitre_attack_techniques": [
+        "T1059"
+      ],
+      "control_states": {
+        "CTL-END-001": "partial",
+        "CTL-END-003": "missing",
+        "CTL-END-009": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R024-4",
+      "risk_version_id": "DIVERSE-R024-4-V1",
+      "asset_id": "DIVERSE-A024",
+      "risk_category": "Privilege Escalation",
+      "likelihood": 4,
+      "impact": 4,
+      "existing_control_ids": [
+        "CTL-VUL-001"
+      ],
+      "planned_control_ids": [
+        "CTL-VUL-003",
+        "CTL-END-004"
+      ],
+      "mitre_attack_techniques": [
+        "T1068"
+      ],
+      "control_states": {
+        "CTL-VUL-001": "partial",
+        "CTL-VUL-003": "missing",
+        "CTL-END-004": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R024-5",
+      "risk_version_id": "DIVERSE-R024-5-V1",
+      "asset_id": "DIVERSE-A024",
+      "risk_category": "Web Application Compromise",
+      "likelihood": 4,
+      "impact": 4,
+      "existing_control_ids": [
+        "CTL-NET-004"
+      ],
+      "planned_control_ids": [
+        "CTL-NET-008",
+        "CTL-VUL-001"
+      ],
+      "mitre_attack_techniques": [
+        "T1190"
+      ],
+      "control_states": {
+        "CTL-NET-004": "partial",
+        "CTL-NET-008": "missing",
+        "CTL-VUL-001": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R024-6",
+      "risk_version_id": "DIVERSE-R024-6-V1",
+      "asset_id": "DIVERSE-A024",
+      "risk_category": "Data Exfiltration",
+      "likelihood": 4,
+      "impact": 4,
+      "existing_control_ids": [
+        "CTL-NET-007"
+      ],
+      "planned_control_ids": [
+        "CTL-DAT-003",
+        "CTL-DAT-007"
+      ],
+      "mitre_attack_techniques": [
+        "T1048"
+      ],
+      "control_states": {
+        "CTL-NET-007": "partial",
+        "CTL-DAT-003": "missing",
+        "CTL-DAT-007": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R025-1",
+      "risk_version_id": "DIVERSE-R025-1-V1",
+      "asset_id": "DIVERSE-A025",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 2,
+      "impact": 5,
+      "existing_control_ids": [
+        "CTL-IAM-001"
+      ],
+      "planned_control_ids": [
+        "CTL-IAM-002",
+        "CTL-IAM-003"
+      ],
+      "mitre_attack_techniques": [
+        "T1110"
+      ],
+      "control_states": {
+        "CTL-IAM-001": "partial",
+        "CTL-IAM-002": "missing",
+        "CTL-IAM-003": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R025-2",
+      "risk_version_id": "DIVERSE-R025-2-V1",
+      "asset_id": "DIVERSE-A025",
+      "risk_category": "Reconnaissance",
+      "likelihood": 2,
+      "impact": 5,
+      "existing_control_ids": [
+        "CTL-NET-001"
+      ],
+      "planned_control_ids": [
+        "CTL-NET-002",
+        "CTL-NET-003"
+      ],
+      "mitre_attack_techniques": [
+        "T1046"
+      ],
+      "control_states": {
+        "CTL-NET-001": "partial",
+        "CTL-NET-002": "missing",
+        "CTL-NET-003": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R025-3",
+      "risk_version_id": "DIVERSE-R025-3-V1",
+      "asset_id": "DIVERSE-A025",
+      "risk_category": "Malware Execution",
+      "likelihood": 2,
+      "impact": 5,
+      "existing_control_ids": [
+        "CTL-END-001"
+      ],
+      "planned_control_ids": [
+        "CTL-END-003",
+        "CTL-END-009"
+      ],
+      "mitre_attack_techniques": [
+        "T1059"
+      ],
+      "control_states": {
+        "CTL-END-001": "partial",
+        "CTL-END-003": "missing",
+        "CTL-END-009": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R025-4",
+      "risk_version_id": "DIVERSE-R025-4-V1",
+      "asset_id": "DIVERSE-A025",
+      "risk_category": "Privilege Escalation",
+      "likelihood": 2,
+      "impact": 5,
+      "existing_control_ids": [
+        "CTL-VUL-001"
+      ],
+      "planned_control_ids": [
+        "CTL-VUL-003",
+        "CTL-END-004"
+      ],
+      "mitre_attack_techniques": [
+        "T1068"
+      ],
+      "control_states": {
+        "CTL-VUL-001": "partial",
+        "CTL-VUL-003": "missing",
+        "CTL-END-004": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R025-5",
+      "risk_version_id": "DIVERSE-R025-5-V1",
+      "asset_id": "DIVERSE-A025",
+      "risk_category": "Web Application Compromise",
+      "likelihood": 2,
+      "impact": 5,
+      "existing_control_ids": [
+        "CTL-NET-004"
+      ],
+      "planned_control_ids": [
+        "CTL-NET-008",
+        "CTL-VUL-001"
+      ],
+      "mitre_attack_techniques": [
+        "T1190"
+      ],
+      "control_states": {
+        "CTL-NET-004": "partial",
+        "CTL-NET-008": "missing",
+        "CTL-VUL-001": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R025-6",
+      "risk_version_id": "DIVERSE-R025-6-V1",
+      "asset_id": "DIVERSE-A025",
+      "risk_category": "Data Exfiltration",
+      "likelihood": 2,
+      "impact": 5,
+      "existing_control_ids": [
+        "CTL-NET-007"
+      ],
+      "planned_control_ids": [
+        "CTL-DAT-003",
+        "CTL-DAT-007"
+      ],
+      "mitre_attack_techniques": [
+        "T1048"
+      ],
+      "control_states": {
+        "CTL-NET-007": "partial",
+        "CTL-DAT-003": "missing",
+        "CTL-DAT-007": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R026-1",
+      "risk_version_id": "DIVERSE-R026-1-V1",
+      "asset_id": "DIVERSE-A026",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 3,
+      "impact": 1,
+      "existing_control_ids": [
+        "CTL-IAM-001"
+      ],
+      "planned_control_ids": [
+        "CTL-IAM-002",
+        "CTL-IAM-003"
+      ],
+      "mitre_attack_techniques": [
+        "T1110"
+      ],
+      "control_states": {
+        "CTL-IAM-001": "partial",
+        "CTL-IAM-002": "missing",
+        "CTL-IAM-003": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R026-2",
+      "risk_version_id": "DIVERSE-R026-2-V1",
+      "asset_id": "DIVERSE-A026",
+      "risk_category": "Reconnaissance",
+      "likelihood": 3,
+      "impact": 1,
+      "existing_control_ids": [
+        "CTL-NET-001"
+      ],
+      "planned_control_ids": [
+        "CTL-NET-002",
+        "CTL-NET-003"
+      ],
+      "mitre_attack_techniques": [
+        "T1046"
+      ],
+      "control_states": {
+        "CTL-NET-001": "partial",
+        "CTL-NET-002": "missing",
+        "CTL-NET-003": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R026-3",
+      "risk_version_id": "DIVERSE-R026-3-V1",
+      "asset_id": "DIVERSE-A026",
+      "risk_category": "Malware Execution",
+      "likelihood": 3,
+      "impact": 1,
+      "existing_control_ids": [
+        "CTL-END-001"
+      ],
+      "planned_control_ids": [
+        "CTL-END-003",
+        "CTL-END-009"
+      ],
+      "mitre_attack_techniques": [
+        "T1059"
+      ],
+      "control_states": {
+        "CTL-END-001": "partial",
+        "CTL-END-003": "missing",
+        "CTL-END-009": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R026-4",
+      "risk_version_id": "DIVERSE-R026-4-V1",
+      "asset_id": "DIVERSE-A026",
+      "risk_category": "Privilege Escalation",
+      "likelihood": 3,
+      "impact": 1,
+      "existing_control_ids": [
+        "CTL-VUL-001"
+      ],
+      "planned_control_ids": [
+        "CTL-VUL-003",
+        "CTL-END-004"
+      ],
+      "mitre_attack_techniques": [
+        "T1068"
+      ],
+      "control_states": {
+        "CTL-VUL-001": "partial",
+        "CTL-VUL-003": "missing",
+        "CTL-END-004": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R026-5",
+      "risk_version_id": "DIVERSE-R026-5-V1",
+      "asset_id": "DIVERSE-A026",
+      "risk_category": "Web Application Compromise",
+      "likelihood": 3,
+      "impact": 1,
+      "existing_control_ids": [
+        "CTL-NET-004"
+      ],
+      "planned_control_ids": [
+        "CTL-NET-008",
+        "CTL-VUL-001"
+      ],
+      "mitre_attack_techniques": [
+        "T1190"
+      ],
+      "control_states": {
+        "CTL-NET-004": "partial",
+        "CTL-NET-008": "missing",
+        "CTL-VUL-001": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R026-6",
+      "risk_version_id": "DIVERSE-R026-6-V1",
+      "asset_id": "DIVERSE-A026",
+      "risk_category": "Data Exfiltration",
+      "likelihood": 3,
+      "impact": 1,
+      "existing_control_ids": [
+        "CTL-NET-007"
+      ],
+      "planned_control_ids": [
+        "CTL-DAT-003",
+        "CTL-DAT-007"
+      ],
+      "mitre_attack_techniques": [
+        "T1048"
+      ],
+      "control_states": {
+        "CTL-NET-007": "partial",
+        "CTL-DAT-003": "missing",
+        "CTL-DAT-007": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R027-1",
+      "risk_version_id": "DIVERSE-R027-1-V1",
+      "asset_id": "DIVERSE-A027",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 4,
+      "impact": 2,
+      "existing_control_ids": [
+        "CTL-IAM-001"
+      ],
+      "planned_control_ids": [
+        "CTL-IAM-002",
+        "CTL-IAM-003"
+      ],
+      "mitre_attack_techniques": [
+        "T1110"
+      ],
+      "control_states": {
+        "CTL-IAM-001": "partial",
+        "CTL-IAM-002": "missing",
+        "CTL-IAM-003": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R027-2",
+      "risk_version_id": "DIVERSE-R027-2-V1",
+      "asset_id": "DIVERSE-A027",
+      "risk_category": "Reconnaissance",
+      "likelihood": 4,
+      "impact": 2,
+      "existing_control_ids": [
+        "CTL-NET-001"
+      ],
+      "planned_control_ids": [
+        "CTL-NET-002",
+        "CTL-NET-003"
+      ],
+      "mitre_attack_techniques": [
+        "T1046"
+      ],
+      "control_states": {
+        "CTL-NET-001": "partial",
+        "CTL-NET-002": "missing",
+        "CTL-NET-003": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R027-3",
+      "risk_version_id": "DIVERSE-R027-3-V1",
+      "asset_id": "DIVERSE-A027",
+      "risk_category": "Malware Execution",
+      "likelihood": 4,
+      "impact": 2,
+      "existing_control_ids": [
+        "CTL-END-001"
+      ],
+      "planned_control_ids": [
+        "CTL-END-003",
+        "CTL-END-009"
+      ],
+      "mitre_attack_techniques": [
+        "T1059"
+      ],
+      "control_states": {
+        "CTL-END-001": "partial",
+        "CTL-END-003": "missing",
+        "CTL-END-009": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R027-4",
+      "risk_version_id": "DIVERSE-R027-4-V1",
+      "asset_id": "DIVERSE-A027",
+      "risk_category": "Privilege Escalation",
+      "likelihood": 4,
+      "impact": 2,
+      "existing_control_ids": [
+        "CTL-VUL-001"
+      ],
+      "planned_control_ids": [
+        "CTL-VUL-003",
+        "CTL-END-004"
+      ],
+      "mitre_attack_techniques": [
+        "T1068"
+      ],
+      "control_states": {
+        "CTL-VUL-001": "partial",
+        "CTL-VUL-003": "missing",
+        "CTL-END-004": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R027-5",
+      "risk_version_id": "DIVERSE-R027-5-V1",
+      "asset_id": "DIVERSE-A027",
+      "risk_category": "Web Application Compromise",
+      "likelihood": 4,
+      "impact": 2,
+      "existing_control_ids": [
+        "CTL-NET-004"
+      ],
+      "planned_control_ids": [
+        "CTL-NET-008",
+        "CTL-VUL-001"
+      ],
+      "mitre_attack_techniques": [
+        "T1190"
+      ],
+      "control_states": {
+        "CTL-NET-004": "partial",
+        "CTL-NET-008": "missing",
+        "CTL-VUL-001": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R027-6",
+      "risk_version_id": "DIVERSE-R027-6-V1",
+      "asset_id": "DIVERSE-A027",
+      "risk_category": "Data Exfiltration",
+      "likelihood": 4,
+      "impact": 2,
+      "existing_control_ids": [
+        "CTL-NET-007"
+      ],
+      "planned_control_ids": [
+        "CTL-DAT-003",
+        "CTL-DAT-007"
+      ],
+      "mitre_attack_techniques": [
+        "T1048"
+      ],
+      "control_states": {
+        "CTL-NET-007": "partial",
+        "CTL-DAT-003": "missing",
+        "CTL-DAT-007": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R028-1",
+      "risk_version_id": "DIVERSE-R028-1-V1",
+      "asset_id": "DIVERSE-A028",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 2,
+      "impact": 3,
+      "existing_control_ids": [
+        "CTL-IAM-001"
+      ],
+      "planned_control_ids": [
+        "CTL-IAM-002",
+        "CTL-IAM-003"
+      ],
+      "mitre_attack_techniques": [
+        "T1110"
+      ],
+      "control_states": {
+        "CTL-IAM-001": "partial",
+        "CTL-IAM-002": "missing",
+        "CTL-IAM-003": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R028-2",
+      "risk_version_id": "DIVERSE-R028-2-V1",
+      "asset_id": "DIVERSE-A028",
+      "risk_category": "Reconnaissance",
+      "likelihood": 2,
+      "impact": 3,
+      "existing_control_ids": [
+        "CTL-NET-001"
+      ],
+      "planned_control_ids": [
+        "CTL-NET-002",
+        "CTL-NET-003"
+      ],
+      "mitre_attack_techniques": [
+        "T1046"
+      ],
+      "control_states": {
+        "CTL-NET-001": "partial",
+        "CTL-NET-002": "missing",
+        "CTL-NET-003": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R028-3",
+      "risk_version_id": "DIVERSE-R028-3-V1",
+      "asset_id": "DIVERSE-A028",
+      "risk_category": "Malware Execution",
+      "likelihood": 2,
+      "impact": 3,
+      "existing_control_ids": [
+        "CTL-END-001"
+      ],
+      "planned_control_ids": [
+        "CTL-END-003",
+        "CTL-END-009"
+      ],
+      "mitre_attack_techniques": [
+        "T1059"
+      ],
+      "control_states": {
+        "CTL-END-001": "partial",
+        "CTL-END-003": "missing",
+        "CTL-END-009": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R028-4",
+      "risk_version_id": "DIVERSE-R028-4-V1",
+      "asset_id": "DIVERSE-A028",
+      "risk_category": "Privilege Escalation",
+      "likelihood": 2,
+      "impact": 3,
+      "existing_control_ids": [
+        "CTL-VUL-001"
+      ],
+      "planned_control_ids": [
+        "CTL-VUL-003",
+        "CTL-END-004"
+      ],
+      "mitre_attack_techniques": [
+        "T1068"
+      ],
+      "control_states": {
+        "CTL-VUL-001": "partial",
+        "CTL-VUL-003": "missing",
+        "CTL-END-004": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R028-5",
+      "risk_version_id": "DIVERSE-R028-5-V1",
+      "asset_id": "DIVERSE-A028",
+      "risk_category": "Web Application Compromise",
+      "likelihood": 2,
+      "impact": 3,
+      "existing_control_ids": [
+        "CTL-NET-004"
+      ],
+      "planned_control_ids": [
+        "CTL-NET-008",
+        "CTL-VUL-001"
+      ],
+      "mitre_attack_techniques": [
+        "T1190"
+      ],
+      "control_states": {
+        "CTL-NET-004": "partial",
+        "CTL-NET-008": "missing",
+        "CTL-VUL-001": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R028-6",
+      "risk_version_id": "DIVERSE-R028-6-V1",
+      "asset_id": "DIVERSE-A028",
+      "risk_category": "Data Exfiltration",
+      "likelihood": 2,
+      "impact": 3,
+      "existing_control_ids": [
+        "CTL-NET-007"
+      ],
+      "planned_control_ids": [
+        "CTL-DAT-003",
+        "CTL-DAT-007"
+      ],
+      "mitre_attack_techniques": [
+        "T1048"
+      ],
+      "control_states": {
+        "CTL-NET-007": "partial",
+        "CTL-DAT-003": "missing",
+        "CTL-DAT-007": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R029-1",
+      "risk_version_id": "DIVERSE-R029-1-V1",
+      "asset_id": "DIVERSE-A029",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 3,
+      "impact": 4,
+      "existing_control_ids": [
+        "CTL-IAM-001"
+      ],
+      "planned_control_ids": [
+        "CTL-IAM-002",
+        "CTL-IAM-003"
+      ],
+      "mitre_attack_techniques": [
+        "T1110"
+      ],
+      "control_states": {
+        "CTL-IAM-001": "partial",
+        "CTL-IAM-002": "missing",
+        "CTL-IAM-003": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R029-2",
+      "risk_version_id": "DIVERSE-R029-2-V1",
+      "asset_id": "DIVERSE-A029",
+      "risk_category": "Reconnaissance",
+      "likelihood": 3,
+      "impact": 4,
+      "existing_control_ids": [
+        "CTL-NET-001"
+      ],
+      "planned_control_ids": [
+        "CTL-NET-002",
+        "CTL-NET-003"
+      ],
+      "mitre_attack_techniques": [
+        "T1046"
+      ],
+      "control_states": {
+        "CTL-NET-001": "partial",
+        "CTL-NET-002": "missing",
+        "CTL-NET-003": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R029-3",
+      "risk_version_id": "DIVERSE-R029-3-V1",
+      "asset_id": "DIVERSE-A029",
+      "risk_category": "Malware Execution",
+      "likelihood": 3,
+      "impact": 4,
+      "existing_control_ids": [
+        "CTL-END-001"
+      ],
+      "planned_control_ids": [
+        "CTL-END-003",
+        "CTL-END-009"
+      ],
+      "mitre_attack_techniques": [
+        "T1059"
+      ],
+      "control_states": {
+        "CTL-END-001": "partial",
+        "CTL-END-003": "missing",
+        "CTL-END-009": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R029-4",
+      "risk_version_id": "DIVERSE-R029-4-V1",
+      "asset_id": "DIVERSE-A029",
+      "risk_category": "Privilege Escalation",
+      "likelihood": 3,
+      "impact": 4,
+      "existing_control_ids": [
+        "CTL-VUL-001"
+      ],
+      "planned_control_ids": [
+        "CTL-VUL-003",
+        "CTL-END-004"
+      ],
+      "mitre_attack_techniques": [
+        "T1068"
+      ],
+      "control_states": {
+        "CTL-VUL-001": "partial",
+        "CTL-VUL-003": "missing",
+        "CTL-END-004": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R029-5",
+      "risk_version_id": "DIVERSE-R029-5-V1",
+      "asset_id": "DIVERSE-A029",
+      "risk_category": "Web Application Compromise",
+      "likelihood": 3,
+      "impact": 4,
+      "existing_control_ids": [
+        "CTL-NET-004"
+      ],
+      "planned_control_ids": [
+        "CTL-NET-008",
+        "CTL-VUL-001"
+      ],
+      "mitre_attack_techniques": [
+        "T1190"
+      ],
+      "control_states": {
+        "CTL-NET-004": "partial",
+        "CTL-NET-008": "missing",
+        "CTL-VUL-001": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R029-6",
+      "risk_version_id": "DIVERSE-R029-6-V1",
+      "asset_id": "DIVERSE-A029",
+      "risk_category": "Data Exfiltration",
+      "likelihood": 3,
+      "impact": 4,
+      "existing_control_ids": [
+        "CTL-NET-007"
+      ],
+      "planned_control_ids": [
+        "CTL-DAT-003",
+        "CTL-DAT-007"
+      ],
+      "mitre_attack_techniques": [
+        "T1048"
+      ],
+      "control_states": {
+        "CTL-NET-007": "partial",
+        "CTL-DAT-003": "missing",
+        "CTL-DAT-007": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R030-1",
+      "risk_version_id": "DIVERSE-R030-1-V1",
+      "asset_id": "DIVERSE-A030",
+      "risk_category": "Unauthorized Access",
+      "likelihood": 4,
+      "impact": 5,
+      "existing_control_ids": [
+        "CTL-IAM-001"
+      ],
+      "planned_control_ids": [
+        "CTL-IAM-002",
+        "CTL-IAM-003"
+      ],
+      "mitre_attack_techniques": [
+        "T1110"
+      ],
+      "control_states": {
+        "CTL-IAM-001": "partial",
+        "CTL-IAM-002": "missing",
+        "CTL-IAM-003": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R030-2",
+      "risk_version_id": "DIVERSE-R030-2-V1",
+      "asset_id": "DIVERSE-A030",
+      "risk_category": "Reconnaissance",
+      "likelihood": 4,
+      "impact": 5,
+      "existing_control_ids": [
+        "CTL-NET-001"
+      ],
+      "planned_control_ids": [
+        "CTL-NET-002",
+        "CTL-NET-003"
+      ],
+      "mitre_attack_techniques": [
+        "T1046"
+      ],
+      "control_states": {
+        "CTL-NET-001": "partial",
+        "CTL-NET-002": "missing",
+        "CTL-NET-003": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R030-3",
+      "risk_version_id": "DIVERSE-R030-3-V1",
+      "asset_id": "DIVERSE-A030",
+      "risk_category": "Malware Execution",
+      "likelihood": 4,
+      "impact": 5,
+      "existing_control_ids": [
+        "CTL-END-001"
+      ],
+      "planned_control_ids": [
+        "CTL-END-003",
+        "CTL-END-009"
+      ],
+      "mitre_attack_techniques": [
+        "T1059"
+      ],
+      "control_states": {
+        "CTL-END-001": "partial",
+        "CTL-END-003": "missing",
+        "CTL-END-009": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R030-4",
+      "risk_version_id": "DIVERSE-R030-4-V1",
+      "asset_id": "DIVERSE-A030",
+      "risk_category": "Privilege Escalation",
+      "likelihood": 4,
+      "impact": 5,
+      "existing_control_ids": [
+        "CTL-VUL-001"
+      ],
+      "planned_control_ids": [
+        "CTL-VUL-003",
+        "CTL-END-004"
+      ],
+      "mitre_attack_techniques": [
+        "T1068"
+      ],
+      "control_states": {
+        "CTL-VUL-001": "partial",
+        "CTL-VUL-003": "missing",
+        "CTL-END-004": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R030-5",
+      "risk_version_id": "DIVERSE-R030-5-V1",
+      "asset_id": "DIVERSE-A030",
+      "risk_category": "Web Application Compromise",
+      "likelihood": 4,
+      "impact": 5,
+      "existing_control_ids": [
+        "CTL-NET-004"
+      ],
+      "planned_control_ids": [
+        "CTL-NET-008",
+        "CTL-VUL-001"
+      ],
+      "mitre_attack_techniques": [
+        "T1190"
+      ],
+      "control_states": {
+        "CTL-NET-004": "partial",
+        "CTL-NET-008": "missing",
+        "CTL-VUL-001": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    },
+    {
+      "risk_id": "DIVERSE-R030-6",
+      "risk_version_id": "DIVERSE-R030-6-V1",
+      "asset_id": "DIVERSE-A030",
+      "risk_category": "Data Exfiltration",
+      "likelihood": 4,
+      "impact": 5,
+      "existing_control_ids": [
+        "CTL-NET-007"
+      ],
+      "planned_control_ids": [
+        "CTL-DAT-003",
+        "CTL-DAT-007"
+      ],
+      "mitre_attack_techniques": [
+        "T1048"
+      ],
+      "control_states": {
+        "CTL-NET-007": "partial",
+        "CTL-DAT-003": "missing",
+        "CTL-DAT-007": "missing"
+      },
+      "active_exception_control_ids": [],
+      "valid_from": "2026-09-01T00:00:00+00:00",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00+00:00"
+    }
+  ]
+}

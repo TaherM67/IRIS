@@ -383,6 +383,14 @@ body:not([data-session="connected"]) .demo-info { max-width:1160px; margin-top:3
 #login-submit { width:100%; min-height:46px; padding:12px; color:#151827; background:#a6acee; border-radius:8px; font-size:14px; font-weight:600; }
 #login-submit:hover { background:#bbc0fa; }
 .signin-footer { display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; color:var(--quiet); font-size:10px; margin:26px 0 0; }
+.incident-filters { flex-wrap:wrap; gap:14px; align-items:center; }
+.incident-filters select { min-width:170px; max-width:240px; padding:8px; }
+.incident-evidence { min-width:210px; max-width:420px; margin-top:8px; }
+.incident-evidence summary { color:var(--accent); line-height:1.6; cursor:pointer; }
+.incident-evidence ul { max-height:240px; overflow:auto; padding-left:18px; font-size:11px; line-height:1.8; overflow-wrap:anywhere; }
+.inbox-incident { display:block; margin-top:7px; color:var(--quiet); font-size:11px; line-height:1.5; }
+.incident-description { border-left:2px solid var(--accent); padding-left:12px; line-height:1.6; }
+.priority-count { display:flex; align-items:center; white-space:nowrap; gap:4px; margin:5px 0; }
 
 @media(max-width:1000px) {
   body:not([data-session="connected"]) main { padding:40px 28px 22px; }
