@@ -5,11 +5,13 @@ The default `python demo.py` launch selects `demo/scenarios_v2/` and the pinned
 remain available through:
 
 ```powershell
-.\.venv\Scripts\python.exe demo.py --dataset legacy --model-profile iris_models_20261030
+.\.venv\Scripts\python.exe demo.py --dataset legacy --model-profile legacy
 ```
 
-An explicit `--model-profile` or `IRIS_MODEL_PROFILE` setting overrides the model
-selection. Use `--model-profile iris_scenarios_20261109` for the expanded classifier.
+By default the launcher matches the input contract. An explicit `--model-profile`
+or `IRIS_MODEL_PROFILE` setting overrides selection. Use
+`--model-profile iris_scenarios_20261109` for the expanded classifier. See
+[complete input-coverage checks](INPUT_COVERAGE.md) before pairing another dataset/profile.
 
 Switching datasets starts a new exercise in the same local database. Earlier
 exercises, approvals, changed records, chat, credentials and audit entries remain

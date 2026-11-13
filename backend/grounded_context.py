@@ -15,8 +15,13 @@ class GroundedContext:
     def __init__(self, paths):
         self.assets = {r['asset_version_id']: r for r in json.loads(
             paths['asset_inventory'].read_text(encoding='utf-8'))['records']}
-        self.risks = {r['risk_version_id']: r for r in json.loads(
-            paths['risk_register'].read_text(encoding='utf-8'))['records']}
+        risk_payload = json.loads(paths['risk_register'].read_text(encoding='utf-8'))
+        self.risks = {r['risk_version_id']: r for r in risk_payload['records']}
+        self.membership_basis = risk_payload.get('control_membership_basis', 'versioned_runtime_risk_snapshots')
+        if self.membership_basis not in {'versioned_runtime_risk_snapshots', 'explicit_synthetic_static_membership'}:
+            raise ValueError('Unsupported runtime control-membership basis')
+        if self.membership_basis == 'explicit_synthetic_static_membership' and risk_payload.get('data_provenance') != 'synthetic':
+            raise ValueError('Static synthetic control membership cannot be used for real data')
         self.alerts, self.conflicts = {}, set()
         with paths['siem_alerts'].open(encoding='utf-8') as stream:
             for line in stream:
@@ -69,6 +74,6 @@ class GroundedContext:
         return {**session, 'model2_context': {
             'schema': SCHEMA, 'asset': asset, 'alerts': alerts, 'registered_risks': risks,
             'missing_fields': sorted(set(missing)),
-            'membership_basis': 'versioned_runtime_risk_snapshots',
+            'membership_basis': self.membership_basis,
             'training_labels_read': False,
         }}

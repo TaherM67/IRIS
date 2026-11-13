@@ -11,6 +11,7 @@ from __future__ import annotations
 import hashlib
 # IRIS EXPLAIN: Import json to encode and decode structured finite JSON payloads.
 import json
+import os
 # IRIS EXPLAIN: Import shutil to copy immutable inputs or clean test-owned temporary directories.
 import shutil
 # IRIS EXPLAIN: Import threading to coordinate the batch/approval lock or run a local HTTP test server.
@@ -33,6 +34,8 @@ from .policy import VERSION, evaluate, primary_controls
 # IRIS EXPLAIN: Import Store from .storage to reuse the shared project contract/implementation rather than duplicate it.
 from .storage import Store
 from .grounded_adapter import public_review
+from .source_inputs import VERSION as INPUT_ADAPTER_VERSION, normalize_inputs, read_alerts, select_profile
+from .coverage import session_outcome, summarize as summarize_coverage
 
 # IRIS EXPLAIN: Store a mapping containing asset_inventory, risk_register, siem_alerts in INPUTS; later lines use this named
 # IRIS EXPLAIN: result.
@@ -48,14 +51,19 @@ class BusyError(RuntimeError):
 # IRIS EXPLAIN: Class Engine: Reusable three-input batch coordinator with immutable SQLite case persistence.
 class Engine:
     # IRIS EXPLAIN: Function Engine.__init__: Create one reusable model adapter, SQLite store and batch lock; incoming requests
-    # IRIS EXPLAIN: do not retrain or reload the models.
+    # IRIS EXPLAIN: do not retrain; input-matched profiles are loaded once and cached.
     # IRIS EXPLAIN: Inputs: settings: validated local credentials, state path and processing bounds; adapter: optional existing
     # IRIS EXPLAIN: trusted model adapter, reused by tests rather than retrained.
-    def __init__(self, settings: Settings, adapter=None):
+    def __init__(self, settings: Settings, adapter=None, *, auto_profile=None):
         # IRIS EXPLAIN: Store settings in self.settings; later lines use this named result.
         self.settings = settings
         # IRIS EXPLAIN: Store adapter or ModelAdapter() in self.adapter; later lines use this named result.
-        self.adapter = adapter or ModelAdapter()
+        configured = os.environ.get('IRIS_MODEL_PROFILE', 'auto')
+        self.auto_profile = (adapter is None and configured == 'auto') if auto_profile is None else auto_profile
+        if self.auto_profile and adapter is not None:
+            raise ValueError('An explicit model adapter cannot also request automatic profile selection')
+        self.adapter = adapter or ModelAdapter(profile='iris_models_20261030' if self.auto_profile or configured == 'auto' else configured)
+        self._adapters = {getattr(self.adapter,'profile',self.adapter.metadata.get('package_version')): self.adapter}
         # IRIS EXPLAIN: Store the result of Store(settings.state_dir / 'iris.sqlite3') in self.store; later lines use this named
         # IRIS EXPLAIN: result.
         self.store = Store(settings.state_dir / "iris.sqlite3")
@@ -101,17 +109,14 @@ class Engine:
                     # IRIS EXPLAIN: upload-size limit exceeded'); the caller's existing boundary determines rollback or the HTTP
                     # IRIS EXPLAIN: diagnostic.
                     raise ValueError(f"{key}: empty file or upload-size limit exceeded")
-            # IRIS EXPLAIN: Enter paths['siem_alerts'].open(encoding='utf-8') as stream; its context manager supplies the
-            # IRIS EXPLAIN: existing cleanup/transaction/expected-exception behavior.
-            with paths["siem_alerts"].open(encoding="utf-8") as stream:
-                # IRIS EXPLAIN: Store sum((1 for line in stream if line.strip())) in alert_rows; later lines use this named
-                # IRIS EXPLAIN: result.
-                alert_rows = sum(1 for line in stream if line.strip())
-                # IRIS EXPLAIN: Enter this branch only when alert_rows > self.settings.max_alert_rows.
-                if alert_rows > self.settings.max_alert_rows:
-                    # IRIS EXPLAIN: Stop this invalid/unauthorized/stale path by raising ValueError('Batch alert-row limit
-                    # IRIS EXPLAIN: exceeded'); the caller's existing boundary determines rollback or the HTTP diagnostic.
-                    raise ValueError("Batch alert-row limit exceeded")
+            alert_rows = len(read_alerts(paths["siem_alerts"]))
+            if alert_rows > self.settings.max_alert_rows:
+                raise ValueError("Batch alert-row limit exceeded")
+            if self.auto_profile:
+                selected = select_profile(paths)
+                if selected not in self._adapters:
+                    self._adapters[selected] = ModelAdapter(profile=selected)
+                self.adapter = self._adapters[selected]
             # IRIS EXPLAIN: Store the comprehension {key: digest(path) for key, path in sorted(paths.items())} in hashes; later
             # IRIS EXPLAIN: lines use this named result.
             hashes = {key: digest(path) for key, path in sorted(paths.items())}
@@ -124,7 +129,8 @@ class Engine:
                                                      "artifact_manifest": self.adapter.artifact_identity,
                                                      # IRIS EXPLAIN: Continue the current record with policy, window; each value comes
                                                      # IRIS EXPLAIN: from the expression shown on this unchanged line.
-                                                     "policy": VERSION, "window": 60}, sort_keys=True).encode()).hexdigest()
+                                                     "policy": VERSION, "window": 60,
+                                                     "input_adapter": INPUT_ADAPTER_VERSION}, sort_keys=True).encode()).hexdigest()
             # IRIS EXPLAIN: Store the result of self.store.previous(fingerprint) in previous; later lines use this named result.
             previous = self.store.previous(fingerprint)
             # IRIS EXPLAIN: Enter this branch only when previous.
@@ -159,6 +165,8 @@ class Engine:
                     # IRIS EXPLAIN: processing; submit an immutable export'); the caller's existing boundary determines rollback
                     # IRIS EXPLAIN: or the HTTP diagnostic.
                     raise ValueError("Input changed during processing; submit an immutable export")
+            local, normalization = normalize_inputs(local, directory / 'normalized')
+            alert_rows = len(read_alerts(local['siem_alerts']))
             # Bound enrichment expansion before allocating or serializing nested
             # risk context on every alert. Byte limits alone do not bound this.
             # IRIS EXPLAIN: Store a mapping containing  in risks_by_asset; later lines use this named result.
@@ -206,11 +214,12 @@ class Engine:
             # IRIS EXPLAIN: Store the result of prepare_three(local['asset_inventory'], local['risk_register'],
             # IRIS EXPLAIN: local['siem_alerts'], directory / 'prepared... in report; later lines use this named result.
             report = prepare_three(local["asset_inventory"], local["risk_register"], local["siem_alerts"], directory / "prepared", window_seconds=60)
+            report['input_normalization'] = normalization
+            report['operational_source_sha256'] = hashes
             # IRIS EXPLAIN: Enter this branch only when not 0 < report['model_sessions'] <= self.settings.max_sessions.
             if not 0 < report["model_sessions"] <= self.settings.max_sessions:
-                # IRIS EXPLAIN: Stop this invalid/unauthorized/stale path by raising ValueError('Batch must produce 1..2000
-                # IRIS EXPLAIN: model sessions'); the caller's existing boundary determines rollback or the HTTP diagnostic.
-                raise ValueError("Batch must produce 1..2000 model sessions")
+                # Reject batches beyond the configured bound; do not silently truncate sessions.
+                raise ValueError(f"Batch must produce 1..{self.settings.max_sessions} model sessions")
             # IRIS EXPLAIN: Store the comprehension [json.loads(line) for line in (directory /
             # IRIS EXPLAIN: 'prepared/model_sessions.jsonl').read_text(encoding='utf-8').splitlines() if line.strip()] in
             # IRIS EXPLAIN: sessions; later lines use this named result.
@@ -218,13 +227,14 @@ class Engine:
             # IRIS EXPLAIN: Store ([], Counter()) in (cases, labels); later lines use this named result.
             if hasattr(self.adapter, 'enrich_sessions'):
                 sessions = self.adapter.enrich_sessions(sessions, local)
-            cases, labels = [], Counter()
+            cases, labels, outcomes = [], Counter(), []
             # IRIS EXPLAIN: Iterate sessions, binding each item to session; process only the existing observed/fixture
             # IRIS EXPLAIN: collection.
             for session in sessions:
                 # IRIS EXPLAIN: Store the result of self.adapter.predict(session) (obtain the configured prediction result
                 # IRIS EXPLAIN: without training on this call) in prediction; later lines use this named result.
                 prediction = self.adapter.predict(session)
+                outcomes.append(session_outcome(session, prediction, self.adapter.metadata))
                 # IRIS EXPLAIN: Store the result of prediction.get('shadow_candidate') (read an optional mapping field using its
                 # IRIS EXPLAIN: stated fallback) in candidate; later lines use this named result.
                 candidate = prediction.get("shadow_candidate")
@@ -265,6 +275,8 @@ class Engine:
                 # IRIS EXPLAIN: Continue the current record with shadow_class_counts, integration; each value comes from the
                 # IRIS EXPLAIN: expression shown on this unchanged line.
                 "shadow_class_counts": dict(labels), "integration": report,
+                "model_profile": getattr(self.adapter,'profile',self.adapter.metadata['package_version']),
+                "model_coverage": summarize_coverage(outcomes),
                 # IRIS EXPLAIN: Set/describe these existing record fields: reused_existing_run: identical completed evidence was
                 # IRIS EXPLAIN: reused rather than re-inferred or duplicated; training_labels_read: runtime provenance flag
                 # IRIS EXPLAIN: proving labels are not operational inputs.

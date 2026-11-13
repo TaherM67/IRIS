@@ -2,6 +2,8 @@
 
 Integrated Risk Intelligence System: a research prototype connecting SOC/SIEM evidence with asset and GRC risk context.
 
+**Input compatibility:** the serving engine now matches the model to the input contract and accepts the supplied synthetic-v2 JSON exports. Run `python tools/check_input_coverage.py --dataset v2` to check every retained fragment without changing the website's saved state. See [coverage results, exact skip reasons and update details](docs/INPUT_COVERAGE.md).
+
 **Expanded demo:** `python demo.py` now selects a seven-class scenario model and 84 sessions across six attack families plus routine activity. The SOC queue groups related alerts into incidents, supports scenario filters and retains expandable event evidence. Dataset switches preserve earlier exercises and approvals. See [expanded scenarios, training and verification](docs/EXPANDED_SCENARIOS.md).
 
 This repository contains the **three-input advisory ML package**, the user's Colab-trained artifact, linked synthetic samples, a training notebook, a prepared FastAPI backend, and an **active, approval-gated demonstration** with Admin/SOC/GRC dashboards. It is not a finished live SOC/GRC platform.

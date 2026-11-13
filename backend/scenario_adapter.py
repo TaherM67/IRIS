@@ -109,5 +109,5 @@ class ScenarioModelAdapter(GroundedModelAdapter):
         result = super().status()
         result.update(supported_scenarios=list(CLASSES),scenario_feature_schema=VERSION,
                       scenario_feature_count=len(FEATURES+EXTRA_FEATURES),
-                      rollback='Use --dataset legacy --model-profile iris_models_20261030')
+                      rollback='Use --dataset legacy --model-profile legacy')
         return result

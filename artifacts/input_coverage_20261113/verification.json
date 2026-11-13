@@ -1,0 +1,37 @@
+{
+  "verification_date": "2026-11-13",
+  "source_commit": "5901aed1e462568d07a11983cf9f81fed8d9e27d",
+  "scope": "Input-schema adaptation, observed-contract model selection, complete runtime coverage and software regression checks",
+  "python_tests": {
+    "backend_demo_and_http": {"run": 204, "passed": 189, "skipped": 15, "failures": 0, "errors": 0},
+    "model_package": {"run": 92, "passed": 92, "skipped": 0, "failures": 0, "errors": 0},
+    "original_v2_training_adapter": {"run": 5, "passed": 5, "skipped": 0, "failures": 0, "errors": 0},
+    "total": {"run": 301, "passed": 286, "skipped": 15, "failures": 0, "errors": 0},
+    "skip_scope": "Existing local HTTPS-certificate/account and prepared-LAN checks require target-computer setup; no setup was bypassed"
+  },
+  "javascript_controller_checks": {"passed": true, "browser_visual_rehearsal": false},
+  "training_serving_telemetry_parity": {
+    "retained_v2_events_compared": 6665,
+    "matching_existing_training_mapping": 6665,
+    "mismatches": 0,
+    "observed_techniques_retained_separately_for_model2": true,
+    "model1_predictor_schema_changed": false
+  },
+  "runtime": {
+    "expanded": {"sessions": 84, "model1_assessed": 84, "model2_assessed": 72, "no_observed_technique": 12},
+    "legacy_with_matching_profile": {"sessions": 132, "model1_assessed": 131, "model1_sensor_health_blocked": 1, "grounded_model2_comparison": "Not applicable: the original advisor uses its original catalogue and output schema"},
+    "supplied_v2": {"raw_source_session_identifiers": 1340, "retained_fragments": 2985, "model1_assessed": 2985, "model2_assessed": 2388, "no_observed_technique": 597, "unresolved_asset_events_held_aside": 131}
+  },
+  "environment": {"python": "3.12.14", "numpy": "2.3.5", "pandas": "2.2.3", "scipy": "1.17.0", "scikit-learn": "1.8.0", "joblib": "1.5.3", "fastapi": "0.141.1", "uvicorn": "0.52.1"},
+  "safety": {"runtime_training_labels_read": false, "model_weights_changed": false, "pinned_artifacts_unchanged": true, "supplied_inputs_unchanged": true, "existing_demo_database_opened": false, "dashboard_html_css_javascript_changed": false, "automatic_control_execution": false, "official_risk_register_write": false},
+  "accuracy_evaluated": false,
+  "limitations": [
+    "These are runtime coverage and software checks, not new accuracy/F1 or independent real-world validation.",
+    "The v2 export was used in prior model development; replaying it cannot establish new held-out performance.",
+    "Missing technique evidence is not proof of benign activity; no grounded recommendation is fabricated.",
+    "Unresolved assets and unhealthy sensor evidence remain explicit exclusions/blocks.",
+    "Synthetic replay assumptions about sensor health, knowledge timestamps and static control membership are recorded in each v2 coverage report.",
+    "The available web dependencies differ from historical backend pins; this is not certification of a different target environment.",
+    "Actual browser layout, target-computer TLS/LAN setup, production connectors and control efficacy are outside this verification."
+  ]
+}

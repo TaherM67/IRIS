@@ -1,0 +1,98 @@
+{
+  "checked_at_utc": "2026-11-13T15:21:46.189455+00:00",
+  "requested_profile": "auto",
+  "selected_profile": "legacy",
+  "model_coverage": {
+    "sessions_checked": 132,
+    "model1": {
+      "status_counts": {
+        "ASSESSED": 131,
+        "NOT_RUN": 1
+      },
+      "prediction_coverage": 0.9924242424242424,
+      "reasons": {
+        "sensor_health_unavailable_or_unhealthy": 1
+      }
+    },
+    "model2": {
+      "status_counts": {
+        "LEGACY_ADVISOR_OUTPUT": 132
+      },
+      "prediction_coverage_all_sessions": null,
+      "missing_fields": {}
+    },
+    "training_labels_read": false,
+    "accuracy_evaluated": false,
+    "note": "Coverage is not accuracy. No observed technique means no grounded recommendation, not proof of benign activity."
+  },
+  "integration": {
+    "data_provenance": "synthetic",
+    "input_alert_rows": 2367,
+    "deduplicated_alerts": 2358,
+    "exact_duplicate_rows_removed": 6,
+    "conflicting_event_ids_excluded": [
+      "DEMO-QA-CONFLICT"
+    ],
+    "ignored_non_alert_sensor_records": 0,
+    "quarantine": [
+      {
+        "line": 703,
+        "reason": "Invalid isoformat string: 'deliberately-invalid-demo-timestamp'"
+      },
+      {
+        "line": 2249,
+        "event_id": "DEMO-QA-CONFLICT",
+        "reason": "Conflicting duplicate event ID; all versions excluded"
+      }
+    ],
+    "unresolved_asset_events": 3,
+    "matched_events_without_risk_context": 0,
+    "unified_event_rows": 2358,
+    "model_sessions": 132,
+    "asset_snapshots": 36,
+    "risk_snapshots": 72,
+    "join_does_not_multiply_alerts": true,
+    "risk_selection_policy": "highest_preexisting_likelihood_times_impact_then_risk_id",
+    "session_window_seconds": 60,
+    "source_sha256": {
+      "asset_inventory": "0c19b01e5065e4decb155a0dc847526623b0d30e346deb4f381a39469c0975c4",
+      "risk_register": "83e44a23c66a1226e4626cedd0fd4c8fd188d824df0675ce4b4b372a5bf3560f",
+      "siem_alerts": "7f2ab225213ab8cab612ab70d6cf3b01abc40c4a8ec1f7db7362b97bb12b992b"
+    },
+    "elapsed_seconds": 0.174255,
+    "training_labels_read": false,
+    "memory_model": "Indexed snapshots and deduplicated alerts retained in memory; batch O(E log E) sorting, no cartesian event-risk expansion. Not a streaming production connector.",
+    "input_normalization": {
+      "adapter": "iris-runtime-source-adapter-v1",
+      "format": "canonical",
+      "assumptions": [],
+      "training_labels_read": false
+    },
+    "operational_source_sha256": {
+      "asset_inventory": "0c19b01e5065e4decb155a0dc847526623b0d30e346deb4f381a39469c0975c4",
+      "risk_register": "83e44a23c66a1226e4626cedd0fd4c8fd188d824df0675ce4b4b372a5bf3560f",
+      "siem_alerts": "7f2ab225213ab8cab612ab70d6cf3b01abc40c4a8ec1f7db7362b97bb12b992b"
+    }
+  },
+  "shadow_class_counts": {
+    "benign": 62,
+    "credential_access": 35,
+    "reconnaissance": 34,
+    "ML_UNAVAILABLE": 1
+  },
+  "raw_source_session_identifiers": null,
+  "events_in_model_sessions": 2355,
+  "every_persisted_session_checked": true,
+  "session_event_membership_unique": true,
+  "source_files_unchanged": true,
+  "operational_source_sha256": {
+    "asset_inventory": "0c19b01e5065e4decb155a0dc847526623b0d30e346deb4f381a39469c0975c4",
+    "risk_register": "83e44a23c66a1226e4626cedd0fd4c8fd188d824df0675ce4b4b372a5bf3560f",
+    "siem_alerts": "7f2ab225213ab8cab612ab70d6cf3b01abc40c4a8ec1f7db7362b97bb12b992b"
+  },
+  "existing_demo_state_opened": false,
+  "training_labels_read": false,
+  "accuracy_evaluated": false,
+  "model_weights_changed": false,
+  "automatic_execution": false
+}

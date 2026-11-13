@@ -59,8 +59,9 @@ def main():
     parser.add_argument('--port', type=int, default=8010)
     parser.add_argument('--dataset', choices=('expanded', 'legacy'), default='expanded',
                         help='Expanded seven-class scenarios (default), or the original demo inputs')
-    parser.add_argument('--model-profile', choices=('iris_scenarios_20261109', 'iris_models_20261030', 'legacy'),
-                        default=os.environ.get('IRIS_MODEL_PROFILE', 'iris_scenarios_20261109'))
+    parser.add_argument('--model-profile', choices=('auto', 'iris_scenarios_20261109', 'iris_models_20261030', 'legacy'),
+                        default=os.environ.get('IRIS_MODEL_PROFILE', 'auto'),
+                        help='Match the observed input contract by default; explicit profiles remain available')
     parser.add_argument('--https', action='store_true', default=True, help='HTTPS is enabled by default for account sign-in')
     parser.add_argument('--cert-file', type=Path, help='PEM certificate (default: .local/active_demo/tls/localhost-cert.pem)')
     parser.add_argument('--key-file', type=Path, help='PEM private key (default: .local/active_demo/tls/localhost-key.pem)')
@@ -124,7 +125,11 @@ def main():
         # IRIS EXPLAIN: Store the result of DemoEngine(config) in engine; later lines use this named result.
         from backend.model_adapter import ModelAdapter
         data_dir = ROOT / 'demo' / ('scenarios_v2' if args.dataset == 'expanded' else 'data')
-        engine = DemoEngine(config, data_dir=data_dir, adapter=ModelAdapter(profile=args.model_profile),
+        from backend.core import INPUTS
+        from backend.source_inputs import select_profile
+        profile = (select_profile({key: data_dir/name for key, name in INPUTS.items()})
+                   if args.model_profile == 'auto' else args.model_profile)
+        engine = DemoEngine(config, data_dir=data_dir, adapter=ModelAdapter(profile=profile),
                             allow_dataset_change=True)
         # IRIS EXPLAIN: Enter this branch only when args.command == 'check'.
         if args.command == 'check':

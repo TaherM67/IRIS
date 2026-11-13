@@ -38,8 +38,8 @@ class Settings:
     role_keys: dict[str, str] = field(repr=False)
     # IRIS EXPLAIN: Store the computed value 32 * 1024 * 1024 in max_body_bytes; later lines use this named result.
     max_body_bytes: int = 32 * 1024 * 1024
-    # IRIS EXPLAIN: Store 2000 in max_sessions; later lines use this named result.
-    max_sessions: int = 2000
+    # Bound the supplied v2 export's 2,985 fragments without removing batch limits.
+    max_sessions: int = 5000
     # IRIS EXPLAIN: Store 50000 in max_alert_rows; later lines use this named result.
     max_alert_rows: int = 50000
 
@@ -67,8 +67,8 @@ class Settings:
             # IRIS EXPLAIN: Stop this invalid/unauthorized/stale path by raising ValueError('Invalid request-size limit'); the
             # IRIS EXPLAIN: caller's existing boundary determines rollback or the HTTP diagnostic.
             raise ValueError("Invalid request-size limit")
-        # IRIS EXPLAIN: Enter this branch only when not 1 <= self.max_sessions <= 2000 or not 1 <= self.max_alert_rows <= 50000.
-        if not 1 <= self.max_sessions <= 2000 or not 1 <= self.max_alert_rows <= 50000:
+        # Retain explicit session and alert limits for uploaded batches.
+        if not 1 <= self.max_sessions <= 5000 or not 1 <= self.max_alert_rows <= 50000:
             # IRIS EXPLAIN: Stop this invalid/unauthorized/stale path by raising ValueError('Invalid batch/session limits'); the
             # IRIS EXPLAIN: caller's existing boundary determines rollback or the HTTP diagnostic.
             raise ValueError("Invalid batch/session limits")

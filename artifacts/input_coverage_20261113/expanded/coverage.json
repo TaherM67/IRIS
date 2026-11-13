@@ -1,0 +1,89 @@
+{
+  "checked_at_utc": "2026-11-13T15:21:25.058529+00:00",
+  "requested_profile": "auto",
+  "selected_profile": "iris_scenarios_20261109",
+  "model_coverage": {
+    "sessions_checked": 84,
+    "model1": {
+      "status_counts": {
+        "ASSESSED": 84
+      },
+      "prediction_coverage": 1.0,
+      "reasons": {}
+    },
+    "model2": {
+      "status_counts": {
+        "NO_OBSERVED_TECHNIQUE": 12,
+        "ASSESSED": 72
+      },
+      "prediction_coverage_all_sessions": 0.8571428571428571,
+      "missing_fields": {
+        "alerts.mitre_technique": 12
+      }
+    },
+    "training_labels_read": false,
+    "accuracy_evaluated": false,
+    "note": "Coverage is not accuracy. No observed technique means no grounded recommendation, not proof of benign activity."
+  },
+  "integration": {
+    "data_provenance": "synthetic",
+    "input_alert_rows": 1163,
+    "deduplicated_alerts": 1163,
+    "exact_duplicate_rows_removed": 0,
+    "conflicting_event_ids_excluded": [],
+    "ignored_non_alert_sensor_records": 0,
+    "quarantine": [],
+    "unresolved_asset_events": 0,
+    "matched_events_without_risk_context": 0,
+    "unified_event_rows": 1163,
+    "model_sessions": 84,
+    "asset_snapshots": 30,
+    "risk_snapshots": 180,
+    "join_does_not_multiply_alerts": true,
+    "risk_selection_policy": "highest_preexisting_likelihood_times_impact_then_risk_id",
+    "session_window_seconds": 60,
+    "source_sha256": {
+      "asset_inventory": "d4cdfcf36f5bba8ccfb6c4005b131de6e594e935ea61d608c5b5c3a84c35ca87",
+      "risk_register": "36a089176bbcb3052c2afb2dbc481f32b853641b9082e4dcb7daee0e4120721e",
+      "siem_alerts": "c126a959c1c2ea7e88ee23f9f0d991e4f4bcbb3408722869797d5dc06b80904d"
+    },
+    "elapsed_seconds": 0.562684,
+    "training_labels_read": false,
+    "memory_model": "Indexed snapshots and deduplicated alerts retained in memory; batch O(E log E) sorting, no cartesian event-risk expansion. Not a streaming production connector.",
+    "input_normalization": {
+      "adapter": "iris-runtime-source-adapter-v1",
+      "format": "canonical",
+      "assumptions": [],
+      "training_labels_read": false
+    },
+    "operational_source_sha256": {
+      "asset_inventory": "d4cdfcf36f5bba8ccfb6c4005b131de6e594e935ea61d608c5b5c3a84c35ca87",
+      "risk_register": "36a089176bbcb3052c2afb2dbc481f32b853641b9082e4dcb7daee0e4120721e",
+      "siem_alerts": "c126a959c1c2ea7e88ee23f9f0d991e4f4bcbb3408722869797d5dc06b80904d"
+    }
+  },
+  "shadow_class_counts": {
+    "benign": 12,
+    "credential_access": 12,
+    "reconnaissance": 12,
+    "malicious_execution": 12,
+    "privilege_escalation": 12,
+    "web_exploitation": 12,
+    "data_exfiltration": 12
+  },
+  "raw_source_session_identifiers": null,
+  "events_in_model_sessions": 1163,
+  "every_persisted_session_checked": true,
+  "session_event_membership_unique": true,
+  "source_files_unchanged": true,
+  "operational_source_sha256": {
+    "asset_inventory": "d4cdfcf36f5bba8ccfb6c4005b131de6e594e935ea61d608c5b5c3a84c35ca87",
+    "risk_register": "36a089176bbcb3052c2afb2dbc481f32b853641b9082e4dcb7daee0e4120721e",
+    "siem_alerts": "c126a959c1c2ea7e88ee23f9f0d991e4f4bcbb3408722869797d5dc06b80904d"
+  },
+  "existing_demo_state_opened": false,
+  "training_labels_read": false,
+  "accuracy_evaluated": false,
+  "model_weights_changed": false,
+  "automatic_execution": false
+}

@@ -58,8 +58,13 @@ class ModelAdapter:
     def __init__(self, model_dir: Path = MODEL_DIR, manifest_path: Path = MANIFEST, *, profile=None):
         self._active = None
         profile = profile or os.environ.get('IRIS_MODEL_PROFILE', 'iris_models_20261030')
+        # Input-aware callers resolve 'auto' before loading. Direct adapters keep
+        # the original bootstrap profile until an input contract is available.
+        if profile == 'auto':
+            profile = 'iris_models_20261030'
         if profile not in {'legacy', 'iris_models_20261030', 'iris_scenarios_20261109'}:
             raise ValueError('Unknown IRIS model profile')
+        self.profile = profile
         if profile != 'legacy' and model_dir == MODEL_DIR and manifest_path == MANIFEST:
             if profile == 'iris_scenarios_20261109':
                 from .scenario_adapter import ScenarioModelAdapter
