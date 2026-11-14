@@ -1,0 +1,37 @@
+{
+  "official_coverage_function": "tools/check_input_coverage.py:run_check",
+  "official_coverage_source_sha256": "f38cdfd5967964eb42a91f5dce22a4ce3f354367fc62171dabdda028920c4e33",
+  "cases_retrieved": 2490,
+  "all_cases_retrieved": true,
+  "actual_iris_priorities": {
+    "High": 834,
+    "Needs Review": 886,
+    "Critical": 457,
+    "Medium": 175,
+    "Low": 138
+  },
+  "actual_iris_mapping_statuses": {
+    "MATCHED": 1479,
+    "UNMAPPED": 886,
+    "NOT_APPLICABLE": 125
+  },
+  "actual_model2_recommendations": 5919,
+  "sessions_with_actual_model2_recommendations": 1897,
+  "actual_priority_changed_comparisons": 72,
+  "comparisons_with_constant_detector_severity": 72,
+  "proposed_hospital_reference_priorities": {
+    "Critical": 572,
+    "High": 719,
+    "Needs Review": 886,
+    "Medium": 175,
+    "Low": 138
+  },
+  "proposed_hospital_reference_differs_from_iris": 115,
+  "hospital_reference_is_runtime_policy": false,
+  "source_files_unchanged": true,
+  "model_weights_changed": false,
+  "frozen_thresholds_changed": false,
+  "actual_approvals_created": false,
+  "labels_independently_reviewed": false,
+  "accuracy_evaluated": false
+}

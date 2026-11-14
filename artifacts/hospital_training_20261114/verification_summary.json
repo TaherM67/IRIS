@@ -1,0 +1,47 @@
+{
+  "verified_at_utc": "2026-11-14T10:31:31.230733+00:00",
+  "base_repository": "TaherM67/IRIS",
+  "base_ref": "cdd036e53337fc813fd5a7a672a4e374a591055c",
+  "test_suites": {
+    "backend": {
+      "run": 112,
+      "passed": 112,
+      "skipped": 0
+    },
+    "demo": {
+      "run": 130,
+      "passed": 128,
+      "skipped": 2
+    },
+    "ml": {
+      "run": 92,
+      "passed": 92,
+      "skipped": 0
+    }
+  },
+  "python_passed": 332,
+  "python_skipped": 2,
+  "javascript_controller": "PASS",
+  "full_hospital_https_workflow": "PASS",
+  "independent_hospital_checks": 157612,
+  "existing_user_state_opened": false,
+  "browser_visual_check": false,
+  "private_lan_check": false,
+  "versions": {
+    "numpy": "2.3.5",
+    "pandas": "2.2.3",
+    "scipy": "1.17.0",
+    "scikit-learn": "1.8.0",
+    "joblib": "1.5.3",
+    "threadpoolctl": "3.6.0",
+    "jsonschema": "4.26.0",
+    "fastapi": "0.141.1",
+    "starlette": "1.6.0",
+    "pydantic": "2.13.4",
+    "uvicorn": "0.52.1",
+    "httpx": "0.28.1",
+    "python-multipart": "0.0.32"
+  },
+  "prepared_fastapi_environment": "HTTP tests used available versions listed here; active demo uses stdlib HTTPS",
+  "release_eligible": false
+}

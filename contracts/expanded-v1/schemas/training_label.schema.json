@@ -1,0 +1,238 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Offline training annotation",
+  "description": "Offline only. LLM generation must leave verification false and reviewers null.",
+  "type": "object",
+  "properties": {
+    "case_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 80,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_-]{0,79}$"
+    },
+    "event_ids": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 50000,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 80,
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9_-]{0,79}$"
+      }
+    },
+    "campaign_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 80,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_-]{0,79}$"
+    },
+    "run_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 80,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_-]{0,79}$"
+    },
+    "template_group": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 80,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_-]{0,79}$"
+    },
+    "scenario_class": {
+      "type": "string",
+      "enum": [
+        "benign",
+        "credential_access",
+        "reconnaissance",
+        "malicious_execution",
+        "privilege_escalation",
+        "web_exploitation",
+        "data_exfiltration"
+      ]
+    },
+    "label_source": {
+      "type": "string",
+      "enum": [
+        "llm_synthetic",
+        "deterministic_synthetic_generator"
+      ]
+    },
+    "review_status": {
+      "type": "string",
+      "enum": [
+        "unreviewed",
+        "independently_reviewed"
+      ]
+    },
+    "label_verified": {
+      "type": "boolean"
+    },
+    "reviewer": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1,
+      "maxLength": 120
+    },
+    "recommended_control_ids": {
+      "type": "array",
+      "maxItems": 120,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "enum": [
+          "CTL-IAM-001",
+          "CTL-IAM-002",
+          "CTL-IAM-003",
+          "CTL-IAM-004",
+          "CTL-IAM-005",
+          "CTL-IAM-006",
+          "CTL-IAM-007",
+          "CTL-IAM-008",
+          "CTL-IAM-009",
+          "CTL-IAM-010",
+          "CTL-IAM-011",
+          "CTL-IAM-012",
+          "CTL-NET-001",
+          "CTL-NET-002",
+          "CTL-NET-003",
+          "CTL-NET-004",
+          "CTL-NET-005",
+          "CTL-NET-006",
+          "CTL-NET-007",
+          "CTL-NET-008",
+          "CTL-NET-009",
+          "CTL-NET-010",
+          "CTL-NET-011",
+          "CTL-NET-012",
+          "CTL-VUL-001",
+          "CTL-VUL-002",
+          "CTL-VUL-003",
+          "CTL-VUL-004",
+          "CTL-VUL-005",
+          "CTL-VUL-006",
+          "CTL-VUL-007",
+          "CTL-VUL-008",
+          "CTL-VUL-009",
+          "CTL-VUL-010",
+          "CTL-VUL-011",
+          "CTL-VUL-012",
+          "CTL-MON-001",
+          "CTL-MON-002",
+          "CTL-MON-003",
+          "CTL-MON-004",
+          "CTL-MON-005",
+          "CTL-MON-006",
+          "CTL-MON-007",
+          "CTL-MON-008",
+          "CTL-MON-009",
+          "CTL-MON-010",
+          "CTL-MON-011",
+          "CTL-MON-012",
+          "CTL-DAT-001",
+          "CTL-DAT-002",
+          "CTL-DAT-003",
+          "CTL-DAT-004",
+          "CTL-DAT-005",
+          "CTL-DAT-006",
+          "CTL-DAT-007",
+          "CTL-DAT-008",
+          "CTL-DAT-009",
+          "CTL-DAT-010",
+          "CTL-DAT-011",
+          "CTL-DAT-012",
+          "CTL-END-001",
+          "CTL-END-002",
+          "CTL-END-003",
+          "CTL-END-004",
+          "CTL-END-005",
+          "CTL-END-006",
+          "CTL-END-007",
+          "CTL-END-008",
+          "CTL-END-009",
+          "CTL-END-010",
+          "CTL-END-011",
+          "CTL-END-012",
+          "CTL-CLD-001",
+          "CTL-CLD-002",
+          "CTL-CLD-003",
+          "CTL-CLD-004",
+          "CTL-CLD-005",
+          "CTL-CLD-006",
+          "CTL-CLD-007",
+          "CTL-CLD-008",
+          "CTL-CLD-009",
+          "CTL-CLD-010",
+          "CTL-CLD-011",
+          "CTL-CLD-012",
+          "CTL-GOV-001",
+          "CTL-GOV-002",
+          "CTL-GOV-003",
+          "CTL-GOV-004",
+          "CTL-GOV-005",
+          "CTL-GOV-006",
+          "CTL-GOV-007",
+          "CTL-GOV-008",
+          "CTL-GOV-009",
+          "CTL-GOV-010",
+          "CTL-GOV-011",
+          "CTL-GOV-012",
+          "CTL-IR-001",
+          "CTL-IR-002",
+          "CTL-IR-003",
+          "CTL-IR-004",
+          "CTL-IR-005",
+          "CTL-IR-006",
+          "CTL-IR-007",
+          "CTL-IR-008",
+          "CTL-IR-009",
+          "CTL-IR-010",
+          "CTL-IR-011",
+          "CTL-IR-012",
+          "CTL-PHY-001",
+          "CTL-PHY-002",
+          "CTL-PHY-003",
+          "CTL-PHY-004",
+          "CTL-PHY-005",
+          "CTL-PHY-006",
+          "CTL-PHY-007",
+          "CTL-PHY-008",
+          "CTL-PHY-009",
+          "CTL-PHY-010",
+          "CTL-PHY-011",
+          "CTL-PHY-012"
+        ]
+      }
+    },
+    "controls_reviewed": {
+      "type": "boolean"
+    },
+    "control_reviewer": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1,
+      "maxLength": 120
+    }
+  },
+  "required": [
+    "case_id",
+    "event_ids",
+    "campaign_id",
+    "run_id",
+    "template_group",
+    "scenario_class",
+    "label_source",
+    "review_status",
+    "label_verified",
+    "reviewer",
+    "recommended_control_ids",
+    "controls_reviewed",
+    "control_reviewer"
+  ],
+  "additionalProperties": false
+}

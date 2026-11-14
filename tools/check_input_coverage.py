@@ -21,9 +21,10 @@ from backend.coverage import session_outcome
 from backend.model_adapter import ModelAdapter, digest
 from backend.source_inputs import read_alerts
 
-DATASETS = {'expanded': ROOT/'demo/scenarios_v2', 'legacy': ROOT/'demo/data',
+DATASETS = {'hospital': ROOT/'datasets/iris_general_hospital_20261114/data',
+            'expanded': ROOT/'demo/scenarios_v2', 'legacy': ROOT/'demo/data',
             'v2': ROOT/'DATA/iris_dataset'}
-PROFILES = ('auto', 'legacy', 'iris_models_20261030', 'iris_scenarios_20261109')
+PROFILES = ('auto', 'legacy', 'iris_models_20261030', 'iris_scenarios_20261109', 'iris_hospital_20261114')
 
 
 def run_check(paths, profile='auto'):

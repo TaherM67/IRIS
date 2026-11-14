@@ -1,0 +1,3 @@
+-r IRIS_Models_v2/requirements.txt
+# Used by the independent hospital schema/business/reproducibility verifier.
+jsonschema==4.26.0

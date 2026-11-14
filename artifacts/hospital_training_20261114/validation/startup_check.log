@@ -1,0 +1,14 @@
+{
+  "exercise_id": "DEMO-c06ad592b17446ee",
+  "counts": {
+    "risks": 1860,
+    "alerts": 15000,
+    "changed_risks": 0,
+    "reprioritized_alerts": 0,
+    "pending_soc": 0,
+    "pending_grc": 0
+  },
+  "demo_only": true,
+  "external_writes": false
+}
+Trusted models and synthetic data loaded. Run python -m unittest demo_app.tests.test_demo -v to test HTTP and approval writes.

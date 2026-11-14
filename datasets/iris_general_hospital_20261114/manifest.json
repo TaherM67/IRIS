@@ -1,0 +1,375 @@
+{
+  "title": "IRIS hospital synthetic data and temporal risk review",
+  "version": 2,
+  "seed": 20261114,
+  "organization": "IRIS General Hospital",
+  "data_provenance": "synthetic",
+  "runtime_directory": "data",
+  "runtime_files": [
+    "data/asset_inventory.json",
+    "data/risk_register.json",
+    "data/siem_alerts.jsonl"
+  ],
+  "schema_contract": "iris-expanded-input-v1",
+  "schema_contract_version": "1.0.0",
+  "supplied_schemas_modified": false,
+  "supplied_catalogue_modified": false,
+  "counts": {
+    "seed": 20261114,
+    "logical_assets": 500,
+    "asset_snapshots": 572,
+    "current_risks": 1860,
+    "risk_snapshots": 2169,
+    "alerts": 15000,
+    "sessions": 2490,
+    "class_counts": {
+      "credential_access": 500,
+      "malicious_execution": 280,
+      "privilege_escalation": 465,
+      "data_exfiltration": 445,
+      "web_exploitation": 100,
+      "reconnaissance": 200,
+      "benign": 500
+    },
+    "variant_counts": {
+      "subtle_noisy": 398,
+      "standard": 1992,
+      "benign_lookalike": 100
+    },
+    "historical_assets": 72,
+    "incident_driven_risk_updates": 48,
+    "paired_context_comparisons": 72,
+    "shared_template_groups": 342,
+    "generated_control_memberships": 6811,
+    "risk_level_counts": {
+      "Low": 128,
+      "High": 970,
+      "Critical": 283,
+      "Medium": 479
+    }
+  },
+  "qualification": {
+    "valid": true,
+    "error_count": 0,
+    "warnings": [
+      {
+        "path": "model2",
+        "message": "Some sessions have no complete control context. A missing technique is not evidence of benign activity"
+      }
+    ]
+  },
+  "actual_workflow": {
+    "official_coverage_function": "tools/check_input_coverage.py:run_check",
+    "official_coverage_source_sha256": "f38cdfd5967964eb42a91f5dce22a4ce3f354367fc62171dabdda028920c4e33",
+    "cases_retrieved": 2490,
+    "all_cases_retrieved": true,
+    "actual_iris_priorities": {
+      "High": 834,
+      "Needs Review": 886,
+      "Critical": 457,
+      "Medium": 175,
+      "Low": 138
+    },
+    "actual_iris_mapping_statuses": {
+      "MATCHED": 1479,
+      "UNMAPPED": 886,
+      "NOT_APPLICABLE": 125
+    },
+    "actual_model2_recommendations": 5919,
+    "sessions_with_actual_model2_recommendations": 1897,
+    "actual_priority_changed_comparisons": 72,
+    "comparisons_with_constant_detector_severity": 72,
+    "proposed_hospital_reference_priorities": {
+      "Critical": 572,
+      "High": 719,
+      "Needs Review": 886,
+      "Medium": 175,
+      "Low": 138
+    },
+    "proposed_hospital_reference_differs_from_iris": 115,
+    "hospital_reference_is_runtime_policy": false,
+    "source_files_unchanged": true,
+    "model_weights_changed": false,
+    "frozen_thresholds_changed": false,
+    "actual_approvals_created": false,
+    "labels_independently_reviewed": false,
+    "accuracy_evaluated": false
+  },
+  "model_coverage": {
+    "sessions_checked": 2490,
+    "rule_model_disagreement_sessions": 640,
+    "probability_diagnostics_available": 2490,
+    "model1": {
+      "status_counts": {
+        "ASSESSED": 2091,
+        "ABSTAINED": 399
+      },
+      "prediction_coverage": 0.8397590361445784,
+      "reasons": {
+        "below_frozen_confidence_threshold": 399
+      }
+    },
+    "model2": {
+      "status_counts": {
+        "ASSESSED": 1897,
+        "NO_OBSERVED_TECHNIQUE": 593
+      },
+      "withheld_candidate_count": 0,
+      "prediction_coverage_all_sessions": 0.761847389558233,
+      "missing_fields": {
+        "alerts.mitre_technique": 593
+      }
+    },
+    "training_labels_read": false,
+    "accuracy_evaluated": false,
+    "note": "Coverage is not accuracy. No observed technique means no grounded recommendation, not proof of benign activity."
+  },
+  "fitting_readiness": false,
+  "scope_overrides": [
+    "The user-selected hospital and 500 assets with three to four relevant risks replace the original generic 40-assets/six-risks generation example.",
+    "The runtime schemas, allowed techniques/classes, fixed catalogue, source provenance, historical semantics, input limits and review boundaries are unchanged.",
+    "Class frequencies follow the registered hospital risks; they are not balanced to the original 1,260-session example.",
+    "Each of 1,860 risks has linked attack observations. There are 1,990 attack-scenario sessions plus 500 benign sessions, not 15,000 independent attack scenarios.",
+    "Matched temporal examples reuse measured patterns and retain shared grouping identities; they do not count as independent experiments.",
+    "The copied reference agreement is unchanged. This bundle documents the user scope overrides rather than editing the contract to make validation pass."
+  ],
+  "limitations": [
+    "The qualifier is VALID_WITH_LIMITATIONS with zero errors. Its single warning concerns 593 sessions with no observed technique: 500 benign and 93 subtle/noisy attack sessions. No technique is invented for them.",
+    "Model 1 assessed 2,091 sessions and explicitly abstained on 399 below its frozen threshold. These are coverage counts, not correctness or accuracy.",
+    "There are 640 rule/model disagreements and 886 primary-policy UNMAPPED cases requiring review. They remain in the audit and queue; their priority is not guessed.",
+    "Labels and control reference targets remain unreviewed. Official preparation found 14 connected independent groups and insufficient per-class support in some experimental roles. Both independent review and additional independent examples are required before fitting.",
+    "No real patient data, real approvals, live hospital changes, fitting, threshold changes or performance claims are included.",
+    "The current IRIS primary priority matrix combines detector severity with asset criticality. Registered likelihood and impact affect its risk review and the inspection queue tie-break; they do not directly raise its priority matrix output.",
+    "A separate proposed hospital review floor demonstrates Medium-to-Critical escalation when care-critical assets have registered likelihood x impact >= 20 and corroborating rule evidence. It is clearly marked as a synthetic reference policy, is not installed in IRIS, and requires actual organizational policy approval before use.",
+    "Forty-eight historical risk-register updates are simulation fixtures after synthetic SOC/GRC review. Actual label reviewers and real human approvals are not claimed. Control plans are not proof of implemented or effective safeguards."
+  ],
+  "user_requested_scope": {
+    "organization": "hospital",
+    "at_least_assets": 500,
+    "risks_per_asset": [
+      3,
+      4
+    ],
+    "alerts": 15000
+  },
+  "original_example_scope": {
+    "assets": 40,
+    "current_risks_per_asset": 6,
+    "logical_current_risks": 240,
+    "campaigns": 60,
+    "sessions_per_class_per_campaign": 3,
+    "classes": 7,
+    "expected_sessions": 1260,
+    "seed": 20261114,
+    "at_least_historical_assets": 8,
+    "at_least_historical_risks": 48
+  },
+  "generated_on": "2026-11-14",
+  "files": [
+    {
+      "path": "HOSPITAL_CONTEXT_AND_RESULTS.html",
+      "bytes": 16773,
+      "sha256": "de9d3d880bc518d5e36ba2af615afae20baa687bd81c18184bc7dfa733f8e166"
+    },
+    {
+      "path": "README.txt",
+      "bytes": 10202,
+      "sha256": "6979bb3d742a4bff11a72869e5965f5d75efb5c0c02b9b0de6971c1e5cfffd98"
+    },
+    {
+      "path": "data/asset_inventory.json",
+      "bytes": 313879,
+      "sha256": "3126fc5d3b620e8d584074756f7e9f6ba2a8c9d93f48a5f398330fcec1367093"
+    },
+    {
+      "path": "data/risk_register.json",
+      "bytes": 1697293,
+      "sha256": "3d85a9280541c18d707ec8df95a2e38fc35b6d601702f4086533f4fc2353fb13"
+    },
+    {
+      "path": "data/siem_alerts.jsonl",
+      "bytes": 11971651,
+      "sha256": "61542ace43cfa81bcd86ff1aac89697511a88066ce463e65b548533bfa31abb2"
+    },
+    {
+      "path": "generator/build_handoff.py",
+      "bytes": 26368,
+      "sha256": "7b82ca471120bbae2d5530a810e09b0423cb5c8b622aedb09055ea82fb3d5efd"
+    },
+    {
+      "path": "generator/generate_hospital.py",
+      "bytes": 35727,
+      "sha256": "82a350095ab344f4fedbe4bf54319db04e22f6efe743eabd9ea0cf484eafc0a3"
+    },
+    {
+      "path": "generator/run_iris_audit.py",
+      "bytes": 10627,
+      "sha256": "70fbf9ed56760f9337d1ffdf6c79b02d72fe58d1da83165d25afc598d9aeee58"
+    },
+    {
+      "path": "generator/verify_hospital.py",
+      "bytes": 11180,
+      "sha256": "77b5ea72ea13275a78eba5160a52e8dfd1d1df64636cef205d05c1413b580942"
+    },
+    {
+      "path": "offline/actual_iris_reviews.jsonl",
+      "bytes": 12235240,
+      "sha256": "eda84c8a1817def5cfc3033e95f48aac6344e583827fbb4146bfdaf012426fa5"
+    },
+    {
+      "path": "offline/asset_contexts.json",
+      "bytes": 320630,
+      "sha256": "03abb6b73bf6100e6580c85ebf07bce869960d8852a131d1986531053667ad0b"
+    },
+    {
+      "path": "offline/change_journal.jsonl",
+      "bytes": 93945,
+      "sha256": "fc0649ee3cc9697c75733dab0494c36a8335d94a39591b232e488250249b4cb2"
+    },
+    {
+      "path": "offline/event_associations.jsonl",
+      "bytes": 7181811,
+      "sha256": "2d5ecf2142478c69d1bded79d8eef2d0cd9b2fa36feaa074b314edddf3dd240c"
+    },
+    {
+      "path": "offline/generation_summary.json",
+      "bytes": 767,
+      "sha256": "f321dff6f5d2c33bc15dc216474c10e8c6a31be6e323d80b5d1190b2159cb4f1"
+    },
+    {
+      "path": "offline/hospital_context.json",
+      "bytes": 14711,
+      "sha256": "9e6645ad6a8f2ac99c41fccde9ac4b96fae65155799b9036ea5125e073fd5035"
+    },
+    {
+      "path": "offline/priority_change_walkthroughs.json",
+      "bytes": 204651,
+      "sha256": "e61d73dc22f0956e4aba9a6292238e80cb774757a33a8d6d82ef35e4ccc971a7"
+    },
+    {
+      "path": "offline/review_queue.jsonl",
+      "bytes": 1570593,
+      "sha256": "d048496e2fec147ac02a68a6f312a03b56ebe8f797583727f571335481f082db"
+    },
+    {
+      "path": "offline/risk_contexts.jsonl",
+      "bytes": 1081124,
+      "sha256": "d25483505d9e2d93ae44dcc484b3d83751bdaaf063d6b8709dde60e943ab15a7"
+    },
+    {
+      "path": "offline/risk_levels.json",
+      "bytes": 364058,
+      "sha256": "cbf65edc0135cc4b59118d9d9111882355757d41a3ae77c1cdd17f9920d23f49"
+    },
+    {
+      "path": "offline/scenario_details.jsonl",
+      "bytes": 3458318,
+      "sha256": "c83d14bf2f3d4955478c9f6bf1816db4ef76e6025f185b1086c5bcc5a22bb94e"
+    },
+    {
+      "path": "offline/temporal_comparisons.json",
+      "bytes": 72819,
+      "sha256": "3e2b395488061c0815f2d2df402fa29d6d11073c4190f4a02fa80c0c438416ea"
+    },
+    {
+      "path": "offline/training_labels.jsonl",
+      "bytes": 1592391,
+      "sha256": "4d59f6c8e55877c1186e9e258b550ea0dcf002be868019a67d34ab63037770a5"
+    },
+    {
+      "path": "reference/agreement/LLM_GENERATION_PROMPT.txt",
+      "bytes": 9128,
+      "sha256": "894b941a17ef26764fb628e9d213e78a44eeefd89fcc2301050d16cf68ef0b53"
+    },
+    {
+      "path": "reference/agreement/READ_ME_FIRST.txt",
+      "bytes": 2260,
+      "sha256": "955e4e0babe29ab4fd3fc85507470c3a2d096bc74b53b4ecdfafe072bea427df"
+    },
+    {
+      "path": "reference/agreement/contract.json",
+      "bytes": 1816,
+      "sha256": "bb44f0040150c87562d50620ad4017d1be2c711b61f6eafed066a582a022eea1"
+    },
+    {
+      "path": "reference/agreement/control_catalogue_reference.json",
+      "bytes": 28634,
+      "sha256": "470c7396df43a7c15742aba58652e5dbbc93e1e5bcc662aaeedd4a5826d2dbb6"
+    },
+    {
+      "path": "reference/agreement/implementation/REFINEMENT_20261114.md",
+      "bytes": 4625,
+      "sha256": "92b8b56da02bec4272b5362ff155d6369016a1a98f8becd59c19bdbdfb5eb1fc"
+    },
+    {
+      "path": "reference/agreement/implementation/iris_refinement.patch",
+      "bytes": 277028,
+      "sha256": "bdb00ee5e30c950de2734fb892283b5084d46e4695276895df521f80c9366555"
+    },
+    {
+      "path": "reference/agreement/schemas/asset_inventory.schema.json",
+      "bytes": 5362,
+      "sha256": "cce508cf89eda3e0b47f0ab8f27c474ab640fa4794e8fdf7be1f946c7ba89983"
+    },
+    {
+      "path": "reference/agreement/schemas/risk_register.schema.json",
+      "bytes": 19398,
+      "sha256": "658b382ab3724aca1b5444177060eb10a665e3f761ab4270a067afe1b3e46e7a"
+    },
+    {
+      "path": "reference/agreement/schemas/siem_alert.schema.json",
+      "bytes": 7183,
+      "sha256": "df49fac75954d2cbb37ca65f5f2af60440ac03e3b10255d945ccd72fce77a139"
+    },
+    {
+      "path": "reference/agreement/schemas/training_label.schema.json",
+      "bytes": 5540,
+      "sha256": "c92de75a6beed4deafe5f10b642743a15a5d8b0bd7fbf46beca393b115df6161"
+    },
+    {
+      "path": "validation/independent_validation.json",
+      "bytes": 4376,
+      "sha256": "0b885280e9361be33225e69bc68b46b714f1bd4368a938b4cf3ff52e6fc6cc8b"
+    },
+    {
+      "path": "validation/inference/coverage.json",
+      "bytes": 3605,
+      "sha256": "1e127e64bd688a85b00388e12441ee62e8cb08eb20acce2f3d510bfa86fb36e5"
+    },
+    {
+      "path": "validation/inference/session_outcomes.jsonl",
+      "bytes": 4541540,
+      "sha256": "6dcfaee995c4f667bfa16d645261f8dbf7ee8f4af44b88d3a1a2090b0a4d9022"
+    },
+    {
+      "path": "validation/qualification.json",
+      "bytes": 1731170,
+      "sha256": "db94c6a7dd47bad6d39588533783a83eded9b2c278eeb21ccbb0d4f875dac260"
+    },
+    {
+      "path": "validation/source_provenance.json",
+      "bytes": 1296,
+      "sha256": "12133278d3dffb4e77065053ea9697d457d1c09613f1876d26c58eee4ed09961"
+    },
+    {
+      "path": "validation/training_handoff/preparation.json",
+      "bytes": 2307,
+      "sha256": "cb031a742d01b081d1a450a88aed8a146115b25f7a1ee4d592783fc3ebe0c538"
+    },
+    {
+      "path": "validation/training_handoff/split_plan.json",
+      "bytes": 7381,
+      "sha256": "a1b5208253e558f170cb76242971c21e5530afd6bbb13c54046f330a660520c8"
+    },
+    {
+      "path": "validation/training_handoff/supervised_records.jsonl",
+      "bytes": 3365357,
+      "sha256": "9f6e3a46ed8086b9aa211ad6c11d75295e683fe8e1bb7213fb3fcb4a39ed5928"
+    },
+    {
+      "path": "validation/workflow_audit.json",
+      "bytes": 1145,
+      "sha256": "8074da7d84cf7c5abfdd3c9c2e4bc3a4b7940f72b3a366f8f726cc0fe0d3367f"
+    }
+  ]
+}

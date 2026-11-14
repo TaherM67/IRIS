@@ -8,6 +8,7 @@ that the former training-only adapter discarded. Original files are immutable.
 from __future__ import annotations
 
 import json
+import hashlib
 from pathlib import Path
 
 VERSION = 'iris-runtime-source-adapter-v1'
@@ -51,6 +52,12 @@ def select_profile(paths):
     SSH-only legacy telemetry uses the original SSH-trained model; synthetic-v2
     exports use the model fitted on their TCP/UDP mapping.
     """
+    hospital_profile = Path(__file__).with_name('model_profile_hospital.json')
+    if hospital_profile.is_file():
+        hospital = json.loads(hospital_profile.read_text(encoding='utf-8'))
+        if hospital.get('input_sha256') == {key: hashlib.sha256(Path(path).read_bytes()).hexdigest()
+                                            for key, path in paths.items()}:
+            return 'iris_hospital_20261114'
     assets = json.loads(Path(paths['asset_inventory']).read_text(encoding='utf-8-sig'))
     if isinstance(assets, dict) and isinstance(assets.get('assets'), list):
         return 'iris_models_20261030'

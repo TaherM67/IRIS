@@ -1,0 +1,569 @@
+{
+  "organization": "IRIS General Hospital",
+  "organization_type": "Fictional 350-bed general hospital",
+  "departments": [
+    "Emergency",
+    "ICU",
+    "Inpatient Wards",
+    "Radiology",
+    "Laboratory",
+    "Pharmacy",
+    "Outpatient Clinics",
+    "Administration",
+    "Hospital IT"
+  ],
+  "scope": "500 selected monitored technology assets across one main hospital campus and its fictional cloud tenancy; not a complete medical-device inventory",
+  "data_provenance": "synthetic",
+  "patient_records_included": false,
+  "clinical_performance_claimed": false,
+  "logical_assets": 500,
+  "current_risks": 1860,
+  "risks_per_asset": {
+    "4": 360,
+    "3": 140
+  },
+  "asset_type_counts": {
+    "workstation": 210,
+    "server": 70,
+    "database": 50,
+    "identity_service": 15,
+    "web_application": 25,
+    "network_device": 60,
+    "cloud_resource": 40,
+    "iot_device": 30
+  },
+  "roles": [
+    {
+      "role": "ward-nursing-ws",
+      "count": 80,
+      "asset_type": "workstation",
+      "department": "Inpatient wards",
+      "service": "bedside documentation",
+      "owner": "Clinical Workplace Team",
+      "control_groups": [
+        "endpoint"
+      ],
+      "clinical_criticality": 4
+    },
+    {
+      "role": "imaging-viewer-ws",
+      "count": 40,
+      "asset_type": "workstation",
+      "department": "Radiology",
+      "service": "diagnostic image review",
+      "owner": "Imaging Informatics Team",
+      "control_groups": [
+        "endpoint"
+      ],
+      "clinical_criticality": 4
+    },
+    {
+      "role": "laboratory-ws",
+      "count": 30,
+      "asset_type": "workstation",
+      "department": "Laboratory",
+      "service": "specimen workflow",
+      "owner": "Laboratory Informatics Team",
+      "control_groups": [
+        "endpoint"
+      ],
+      "clinical_criticality": 4
+    },
+    {
+      "role": "pharmacy-ws",
+      "count": 20,
+      "asset_type": "workstation",
+      "department": "Pharmacy",
+      "service": "medication verification",
+      "owner": "Pharmacy Informatics Team",
+      "control_groups": [
+        "endpoint"
+      ],
+      "clinical_criticality": 5
+    },
+    {
+      "role": "administration-ws",
+      "count": 20,
+      "asset_type": "workstation",
+      "department": "Administration",
+      "service": "staff scheduling and finance",
+      "owner": "Hospital Business Systems",
+      "control_groups": [
+        "endpoint"
+      ],
+      "clinical_criticality": 2
+    },
+    {
+      "role": "it-support-ws",
+      "count": 20,
+      "asset_type": "workstation",
+      "department": "IT Operations",
+      "service": "technical service support",
+      "owner": "Hospital IT Operations",
+      "control_groups": [
+        "endpoint"
+      ],
+      "clinical_criticality": 3
+    },
+    {
+      "role": "ehr-app",
+      "count": 16,
+      "asset_type": "server",
+      "department": "Clinical Applications",
+      "service": "electronic health record access",
+      "owner": "Clinical Applications Team",
+      "control_groups": [
+        "server",
+        "web"
+      ],
+      "clinical_criticality": 5
+    },
+    {
+      "role": "pacs-app",
+      "count": 12,
+      "asset_type": "server",
+      "department": "Radiology",
+      "service": "image archive access",
+      "owner": "Imaging Informatics Team",
+      "control_groups": [
+        "server",
+        "web"
+      ],
+      "clinical_criticality": 5
+    },
+    {
+      "role": "lis-app",
+      "count": 8,
+      "asset_type": "server",
+      "department": "Laboratory",
+      "service": "laboratory result distribution",
+      "owner": "Laboratory Informatics Team",
+      "control_groups": [
+        "server",
+        "web"
+      ],
+      "clinical_criticality": 5
+    },
+    {
+      "role": "pharmacy-app",
+      "count": 8,
+      "asset_type": "server",
+      "department": "Pharmacy",
+      "service": "medication administration support",
+      "owner": "Pharmacy Informatics Team",
+      "control_groups": [
+        "server",
+        "web"
+      ],
+      "clinical_criticality": 5
+    },
+    {
+      "role": "interface-engine",
+      "count": 6,
+      "asset_type": "server",
+      "department": "Clinical Integration",
+      "service": "clinical message routing",
+      "owner": "Clinical Integration Team",
+      "control_groups": [
+        "server"
+      ],
+      "clinical_criticality": 5
+    },
+    {
+      "role": "backup-server",
+      "count": 6,
+      "asset_type": "server",
+      "department": "IT Operations",
+      "service": "hospital recovery operations",
+      "owner": "Hospital Resilience Team",
+      "control_groups": [
+        "server"
+      ],
+      "clinical_criticality": 4
+    },
+    {
+      "role": "virtualization-host",
+      "count": 8,
+      "asset_type": "server",
+      "department": "IT Operations",
+      "service": "clinical virtual machine hosting",
+      "owner": "Hospital Infrastructure Team",
+      "control_groups": [
+        "server"
+      ],
+      "clinical_criticality": 5
+    },
+    {
+      "role": "file-print-server",
+      "count": 6,
+      "asset_type": "server",
+      "department": "Administration",
+      "service": "document and print services",
+      "owner": "Hospital Business Systems",
+      "control_groups": [
+        "server"
+      ],
+      "clinical_criticality": 3
+    },
+    {
+      "role": "ehr-db",
+      "count": 16,
+      "asset_type": "database",
+      "department": "Clinical Applications",
+      "service": "electronic health record storage",
+      "owner": "Clinical Database Team",
+      "control_groups": [
+        "server",
+        "db"
+      ],
+      "clinical_criticality": 5
+    },
+    {
+      "role": "pacs-index-db",
+      "count": 10,
+      "asset_type": "database",
+      "department": "Radiology",
+      "service": "image metadata storage",
+      "owner": "Imaging Database Team",
+      "control_groups": [
+        "server",
+        "db"
+      ],
+      "clinical_criticality": 5
+    },
+    {
+      "role": "lis-db",
+      "count": 8,
+      "asset_type": "database",
+      "department": "Laboratory",
+      "service": "laboratory result storage",
+      "owner": "Laboratory Database Team",
+      "control_groups": [
+        "server",
+        "db"
+      ],
+      "clinical_criticality": 5
+    },
+    {
+      "role": "pharmacy-db",
+      "count": 6,
+      "asset_type": "database",
+      "department": "Pharmacy",
+      "service": "medication catalogue storage",
+      "owner": "Pharmacy Database Team",
+      "control_groups": [
+        "server",
+        "db"
+      ],
+      "clinical_criticality": 5
+    },
+    {
+      "role": "finance-db",
+      "count": 6,
+      "asset_type": "database",
+      "department": "Administration",
+      "service": "billing and payroll records",
+      "owner": "Hospital Business Systems",
+      "control_groups": [
+        "server",
+        "db"
+      ],
+      "clinical_criticality": 3
+    },
+    {
+      "role": "reporting-db",
+      "count": 4,
+      "asset_type": "database",
+      "department": "Administration",
+      "service": "operational reporting",
+      "owner": "Hospital Analytics Team",
+      "control_groups": [
+        "server",
+        "db"
+      ],
+      "clinical_criticality": 3
+    },
+    {
+      "role": "directory-service",
+      "count": 5,
+      "asset_type": "identity_service",
+      "department": "Identity and Access",
+      "service": "clinical staff authentication",
+      "owner": "Hospital Identity Team",
+      "control_groups": [
+        "server",
+        "identity"
+      ],
+      "clinical_criticality": 5
+    },
+    {
+      "role": "clinical-sso",
+      "count": 4,
+      "asset_type": "identity_service",
+      "department": "Identity and Access",
+      "service": "clinical single sign on",
+      "owner": "Hospital Identity Team",
+      "control_groups": [
+        "server",
+        "identity"
+      ],
+      "clinical_criticality": 5
+    },
+    {
+      "role": "network-radius",
+      "count": 3,
+      "asset_type": "identity_service",
+      "department": "Identity and Access",
+      "service": "network access authentication",
+      "owner": "Hospital Identity Team",
+      "control_groups": [
+        "server",
+        "identity"
+      ],
+      "clinical_criticality": 4
+    },
+    {
+      "role": "privileged-access",
+      "count": 3,
+      "asset_type": "identity_service",
+      "department": "Identity and Access",
+      "service": "privileged access administration",
+      "owner": "Hospital Identity Team",
+      "control_groups": [
+        "server",
+        "identity"
+      ],
+      "clinical_criticality": 5
+    },
+    {
+      "role": "patient-portal",
+      "count": 8,
+      "asset_type": "web_application",
+      "department": "Patient Services",
+      "service": "patient portal access",
+      "owner": "Patient Digital Services",
+      "control_groups": [
+        "web"
+      ],
+      "clinical_criticality": 5
+    },
+    {
+      "role": "appointment-web",
+      "count": 5,
+      "asset_type": "web_application",
+      "department": "Outpatient Clinics",
+      "service": "appointment scheduling",
+      "owner": "Patient Digital Services",
+      "control_groups": [
+        "web"
+      ],
+      "clinical_criticality": 4
+    },
+    {
+      "role": "clinical-web",
+      "count": 5,
+      "asset_type": "web_application",
+      "department": "Clinical Applications",
+      "service": "clinical workflow access",
+      "owner": "Clinical Applications Team",
+      "control_groups": [
+        "web"
+      ],
+      "clinical_criticality": 5
+    },
+    {
+      "role": "vendor-support-web",
+      "count": 4,
+      "asset_type": "web_application",
+      "department": "Biomedical Engineering",
+      "service": "approved vendor service access",
+      "owner": "Biomedical Security Team",
+      "control_groups": [
+        "web"
+      ],
+      "clinical_criticality": 4
+    },
+    {
+      "role": "billing-web",
+      "count": 3,
+      "asset_type": "web_application",
+      "department": "Administration",
+      "service": "billing enquiries",
+      "owner": "Hospital Business Systems",
+      "control_groups": [
+        "web"
+      ],
+      "clinical_criticality": 3
+    },
+    {
+      "role": "clinical-core-switch",
+      "count": 32,
+      "asset_type": "network_device",
+      "department": "Network Operations",
+      "service": "clinical network transport",
+      "owner": "Hospital Network Team",
+      "control_groups": [
+        "network"
+      ],
+      "clinical_criticality": 4
+    },
+    {
+      "role": "segmentation-firewall",
+      "count": 12,
+      "asset_type": "network_device",
+      "department": "Network Operations",
+      "service": "clinical network segmentation",
+      "owner": "Hospital Network Team",
+      "control_groups": [
+        "network"
+      ],
+      "clinical_criticality": 5
+    },
+    {
+      "role": "remote-access-gateway",
+      "count": 8,
+      "asset_type": "network_device",
+      "department": "Network Operations",
+      "service": "approved remote access",
+      "owner": "Hospital Network Team",
+      "control_groups": [
+        "network"
+      ],
+      "clinical_criticality": 4
+    },
+    {
+      "role": "wireless-controller",
+      "count": 8,
+      "asset_type": "network_device",
+      "department": "Network Operations",
+      "service": "clinical wireless connectivity",
+      "owner": "Hospital Network Team",
+      "control_groups": [
+        "network"
+      ],
+      "clinical_criticality": 4
+    },
+    {
+      "role": "cloud-backup-vault",
+      "count": 16,
+      "asset_type": "cloud_resource",
+      "department": "IT Operations",
+      "service": "offsite recovery storage",
+      "owner": "Hospital Resilience Team",
+      "control_groups": [
+        "cloud"
+      ],
+      "clinical_criticality": 5
+    },
+    {
+      "role": "telemedicine-cloud",
+      "count": 12,
+      "asset_type": "cloud_resource",
+      "department": "Outpatient Clinics",
+      "service": "remote consultation support",
+      "owner": "Patient Digital Services",
+      "control_groups": [
+        "cloud"
+      ],
+      "clinical_criticality": 4
+    },
+    {
+      "role": "analytics-cloud",
+      "count": 6,
+      "asset_type": "cloud_resource",
+      "department": "Administration",
+      "service": "de-identified operational analytics",
+      "owner": "Hospital Analytics Team",
+      "control_groups": [
+        "cloud"
+      ],
+      "clinical_criticality": 3
+    },
+    {
+      "role": "integration-cloud",
+      "count": 6,
+      "asset_type": "cloud_resource",
+      "department": "Clinical Integration",
+      "service": "approved external data exchange",
+      "owner": "Clinical Integration Team",
+      "control_groups": [
+        "cloud"
+      ],
+      "clinical_criticality": 4
+    },
+    {
+      "role": "bedside-monitor-gateway",
+      "count": 12,
+      "asset_type": "iot_device",
+      "department": "ICU and Emergency",
+      "service": "bedside monitoring connectivity",
+      "owner": "Biomedical Engineering Team",
+      "control_groups": [
+        "iot"
+      ],
+      "clinical_criticality": 5
+    },
+    {
+      "role": "infusion-integration-gateway",
+      "count": 8,
+      "asset_type": "iot_device",
+      "department": "ICU and Inpatient Wards",
+      "service": "medication device connectivity",
+      "owner": "Biomedical Engineering Team",
+      "control_groups": [
+        "iot"
+      ],
+      "clinical_criticality": 5
+    },
+    {
+      "role": "imaging-acquisition-console",
+      "count": 6,
+      "asset_type": "iot_device",
+      "department": "Radiology",
+      "service": "diagnostic image acquisition",
+      "owner": "Imaging Engineering Team",
+      "control_groups": [
+        "iot",
+        "endpoint"
+      ],
+      "clinical_criticality": 5
+    },
+    {
+      "role": "laboratory-instrument-gateway",
+      "count": 4,
+      "asset_type": "iot_device",
+      "department": "Laboratory",
+      "service": "instrument result connectivity",
+      "owner": "Laboratory Engineering Team",
+      "control_groups": [
+        "iot"
+      ],
+      "clinical_criticality": 4
+    }
+  ],
+  "time_basis": "UTC October to early November 2026; inventory changes 1 November, 48 incident-triggered fictional risk updates effective 6 November",
+  "mutation_boundary": "Historical changes are generated simulation fixtures. Live risk and priority updates remain proposals requiring actual SOC/GRC approval.",
+  "severity_convention": {
+    "formula": "likelihood * impact",
+    "bands": {
+      "Low": [
+        1,
+        4
+      ],
+      "Medium": [
+        5,
+        9
+      ],
+      "High": [
+        10,
+        16
+      ],
+      "Critical": [
+        17,
+        25
+      ]
+    },
+    "runtime_field": false
+  },
+  "reference_catalogue_sha256": "470c7396df43a7c15742aba58652e5dbbc93e1e5bcc662aaeedd4a5826d2dbb6"
+}

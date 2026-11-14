@@ -4,3 +4,6 @@
 # IRIS EXPLAIN: Disable automatic text/line-ending conversion for the existing paths; byte hashes must match across checkout
 # IRIS EXPLAIN: platforms.
 * -text
+
+# Preserve context-line spaces in the supplied archival patch.
+datasets/iris_general_hospital_20261114/reference/agreement/implementation/*.patch -whitespace

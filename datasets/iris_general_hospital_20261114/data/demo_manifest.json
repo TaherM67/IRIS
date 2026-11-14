@@ -1,0 +1,28 @@
+{
+  "name": "IRIS General Hospital \u2014 experimental synthetic demonstration",
+  "version": "20261114",
+  "data_provenance": "synthetic",
+  "unique_assets": 500,
+  "unique_risks": 1860,
+  "expected_sessions": 2490,
+  "siem_alert_rows": 15000,
+  "model_profile": "iris_hospital_20261114",
+  "training_labels_included": false,
+  "inputs": [
+    {
+      "upload_field": "asset_inventory",
+      "filename": "asset_inventory.json",
+      "sha256": "3126fc5d3b620e8d584074756f7e9f6ba2a8c9d93f48a5f398330fcec1367093"
+    },
+    {
+      "upload_field": "risk_register",
+      "filename": "risk_register.json",
+      "sha256": "3d85a9280541c18d707ec8df95a2e38fc35b6d601702f4086533f4fc2353fb13"
+    },
+    {
+      "upload_field": "siem_alerts",
+      "filename": "siem_alerts.jsonl",
+      "sha256": "61542ace43cfa81bcd86ff1aac89697511a88066ce463e65b548533bfa31abb2"
+    }
+  ]
+}

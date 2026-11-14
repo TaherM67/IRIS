@@ -1,0 +1,14 @@
+SOC: original login, own counters, role-only reads, approval/read-only and logout passed
+GRC: original login, own counters, role-only reads, approval/read-only and logout passed
+ADMIN: original login, own counters, role-only reads, approval/read-only and logout passed
+FAILURES: 3 wrong-role keys, rejected key and 2 initial-load failures stay locked
+UNFILTERED: SOC, GRC and Admin load correctly even with every panel present
+GRC CONTROLS: legacy, absent, null and malformed lists load, poll and review without a crash
+MONITOR: polls during commands, clears on logout, and failure does not block login
+CHAT: team sends during commands, admin read-only, plain text, polling, logout and failed-send draft preservation passed
+INBOX: click selection, search, team filters, polling scroll/draft preservation and stale selection passed
+CHAT WINDOW: collapse, background updates, unread counts and reopening passed
+CLEAR CHAT: retained logs, per-view polling, drafts, failure recovery, stale responses and Admin export passed
+ROLE CARDS: in-place selection, no navigation/API reads, updated labels and wrong-role rejection passed
+MODEL REVIEW: name, ID, reason, source, unknown state, score isolation and missing-context approval regression passed
+INCIDENTS: correlation, supporting evidence, scenario filtering, review labels and raw-event toggle passed

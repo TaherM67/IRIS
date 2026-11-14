@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "check_evaluations": 157612,
+  "error_count": 0,
+  "current_risks": 1860,
+  "events": 15000,
+  "sessions": 2490,
+  "all_risks_exercised": true,
+  "offline_unreviewed_control_target_count": 1783
+}

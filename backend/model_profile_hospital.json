@@ -1,0 +1,14 @@
+{
+  "profile": "iris_hospital_20261114",
+  "directory": "artifacts/model_versions/iris_hospital_20261114",
+  "metadata_sha256": "8831040df5285bd15a044e4347d92d6043aa291c1d5d5d4b228a19be04309b4c",
+  "model_sha256": "39b1aae91954bfa7bfd58d14af735986490de07f12f80fe8bc431f3e22cb451d",
+  "evidence_schema": "iris-scenario-evidence-v2",
+  "input_sha256": {
+    "asset_inventory": "3126fc5d3b620e8d584074756f7e9f6ba2a8c9d93f48a5f398330fcec1367093",
+    "risk_register": "3d85a9280541c18d707ec8df95a2e38fc35b6d601702f4086533f4fc2353fb13",
+    "siem_alerts": "61542ace43cfa81bcd86ff1aac89697511a88066ce463e65b548533bfa31abb2"
+  },
+  "mode": "shadow_only",
+  "production_validated": false
+}

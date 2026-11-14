@@ -23,6 +23,7 @@ PROFILE = Path(__file__).with_name('model_profile_20261030.json')
 LEGACY_CATALOGUE = ROOT / 'IRIS_Models_v2/iris_models/data/control_catalog.csv'
 STATES = {'implemented', 'partial', 'missing', 'not_assessed', 'compensating', 'exception', 'unknown'}
 VALID_TECHNIQUE = re.compile(r'T[0-9]{4}(?:\.[0-9]{3})?')
+GROUNDING_POLICY = 'iris-control-evidence-gate-v1'
 
 
 def not_run(reason, missing=()):
@@ -35,7 +36,8 @@ def not_run(reason, missing=()):
 def public_review(review):
     """Business-facing review fields; no raw telemetry or learned scores."""
     fields = ('source', 'reason', 'missing_fields', 'validation_scope', 'membership_basis',
-              'release_eligible', 'automatic_execution', 'requires_human_approval', 'score_meaning')
+              'release_eligible', 'automatic_execution', 'requires_human_approval', 'score_meaning',
+              'grounding_policy', 'withheld_candidate_count')
     result = {key: review[key] for key in fields if key in review}
     result['recommendations'] = [{key: item[key] for key in (
         'control_id', 'name', 'reason', 'source', 'current_state', 'action_type',
@@ -89,7 +91,8 @@ class GroundedModelAdapter:
         self.metadata = {'model_sha256': combined, 'package_version': profile['profile'],
                          'aggregation_schema': profile['aggregation_schema'],
                          'data_quality': {'synthetic': True}, 'model1': m1, 'model2': m2}
-        self.artifact_identity = hashlib.sha256((digest(profile_path) + digest(package_manifest) + profile['adapter_schema']).encode()).hexdigest()
+        self.artifact_identity = hashlib.sha256((digest(profile_path) + digest(package_manifest)
+                                                + profile['adapter_schema'] + GROUNDING_POLICY).encode()).hexdigest()
         self.loaded_at = utc_now()
         # Keep the existing rule/catalogue advice, without running the old ML weights.
         primary_manifest = json.loads((ROOT / 'backend/model_manifest.json').read_text(encoding='utf-8'))
@@ -155,12 +158,36 @@ class GroundedModelAdapter:
             result = self.grounded.recommend(session, alerts, asset, risks, self.catalogue)
             result['membership_basis'] = context['membership_basis']
             result['missing_fields'] = []
-            for item in result['recommendations']:
+            accepted, withheld = [], []
+            for original in result['recommendations']:
+                item = dict(original)
                 if not math.isfinite(item['model_score']) or not 0 <= item['model_score'] <= 1:
                     raise ValueError('Model 2 produced a non-finite or out-of-range relevance score')
                 linked = [r for r in risks if item['control_id'] in r['existing_control_ids'] + r['planned_control_ids']
                           and any(self.reference.technique_match(a.get('mitre_technique'), t)
                                   for a in alerts for t in r['mitre_attack_techniques'])]
+                control = self.controls[item['control_id']]
+                reasons = []
+                if not linked:
+                    reasons.append('no_registered_risk_link_matching_observed_technique')
+                if not any(self.reference.technique_match(a.get('mitre_technique'), t)
+                           for a in alerts for t in control['mitigates_attack_techniques']):
+                    reasons.append('catalogue_technique_mismatch')
+                if 'all' not in control['applies_to'] and not set(groups).intersection(control['applies_to']):
+                    reasons.append('asset_applicability_mismatch')
+                shared = [r for r in linked if any(
+                    any(self.reference.technique_match(a.get('mitre_technique'), t)
+                        for t in r['mitre_attack_techniques'])
+                    and any(self.reference.technique_match(a.get('mitre_technique'), t)
+                            for t in control['mitigates_attack_techniques'])
+                    for a in alerts)]
+                if linked and not shared and 'catalogue_technique_mismatch' not in reasons:
+                    reasons.append('no_shared_observed_technique_for_risk_and_control')
+                if reasons:
+                    withheld.append({'control_id': item['control_id'], 'model_score': item['model_score'],
+                                     'reason_codes': reasons})
+                    continue
+                linked = shared
                 states = [snapshots[r['risk_id']].get('control_states', {}).get(item['control_id'], 'unknown') for r in linked]
                 state = states[0] if states and len(set(states)) == 1 and states[0] in STATES else 'unknown'
                 if state == 'not_assessed':
@@ -168,6 +195,17 @@ class GroundedModelAdapter:
                 item.update(current_state=state, implementation_state_known=state != 'unknown',
                             implementation_state_source='matched_runtime_risk_snapshots' if state != 'unknown' else 'not_observed',
                             action_type='review', catalogue_action='Review candidate against observed evidence', warnings=[])
+                item['matched_risk_ids'] = sorted(r['risk_id'] for r in linked)
+                item['supporting_event_ids'] = sorted(a['alert_id'] for a in alerts
+                    if any(self.reference.technique_match(a.get('mitre_technique'), t)
+                           for r in linked for t in r['mitre_attack_techniques'])
+                    and any(self.reference.technique_match(a.get('mitre_technique'), t)
+                            for t in control['mitigates_attack_techniques']))
+                if state == 'unknown':
+                    item['warnings'].append('Implementation state is absent or conflicting; no effectiveness is inferred.')
+                accepted.append(item)
+            result.update(recommendations=accepted, withheld_candidates=withheld,
+                          withheld_candidate_count=len(withheld), grounding_policy=GROUNDING_POLICY)
             return result
         except (KeyError, TypeError, ValueError) as exc:
             return not_run('Model 2 context rejected: ' + str(exc))
@@ -228,6 +266,7 @@ class GroundedModelAdapter:
             'model2_candidate_count': 120, 'model2_feature_count': 25,
             'model2_feature_schema': self.metadata['model2']['schema'],
             'model1_released': False, 'model2_released': False,
+            'grounding_policy': GROUNDING_POLICY,
             'automatic_execution': False, 'official_risk_register_write': False,
             'rollback': 'Set IRIS_MODEL_PROFILE=legacy before starting the backend',
         }

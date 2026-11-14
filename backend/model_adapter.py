@@ -62,13 +62,14 @@ class ModelAdapter:
         # the original bootstrap profile until an input contract is available.
         if profile == 'auto':
             profile = 'iris_models_20261030'
-        if profile not in {'legacy', 'iris_models_20261030', 'iris_scenarios_20261109'}:
+        if profile not in {'legacy', 'iris_models_20261030', 'iris_scenarios_20261109', 'iris_hospital_20261114'}:
             raise ValueError('Unknown IRIS model profile')
         self.profile = profile
         if profile != 'legacy' and model_dir == MODEL_DIR and manifest_path == MANIFEST:
-            if profile == 'iris_scenarios_20261109':
+            if profile in {'iris_scenarios_20261109', 'iris_hospital_20261114'}:
                 from .scenario_adapter import ScenarioModelAdapter
-                self._active = ScenarioModelAdapter()
+                self._active = (ScenarioModelAdapter(profile_path=ROOT / 'backend/model_profile_hospital.json')
+                                if profile == 'iris_hospital_20261114' else ScenarioModelAdapter())
             else:
                 from .grounded_adapter import GroundedModelAdapter
                 self._active = GroundedModelAdapter()
