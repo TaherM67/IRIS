@@ -84,7 +84,9 @@ class GroundedTests(unittest.TestCase):
         result = self.adapter.predict(self.session)
         self.assertEqual(result['shadow_candidate']['scenario_class'], 'credential_access')
         review = result['model2_review']
-        self.assertEqual({r['control_id'] for r in review['recommendations']}, {'CTL-MON-004', 'CTL-IAM-002'})
+        self.assertEqual({r['control_id'] for r in review['recommendations']}, {'CTL-IAM-002'})
+        withheld = next(r for r in review['withheld_candidates'] if r['control_id'] == 'CTL-MON-004')
+        self.assertIn('catalogue_technique_mismatch', withheld['reason_codes'])
         for row in review['recommendations']:
             self.assertTrue(row['name'] and row['reason'] and row['source'])
             self.assertEqual((row['current_state'], row['action_type']), ('unknown', 'review'))
@@ -95,8 +97,12 @@ class GroundedTests(unittest.TestCase):
         for risk in self.session['risk_snapshots']:
             risk['control_states'] = {'CTL-MON-004': 'implemented', 'CTL-IAM-002': 'partial'}
         rows = self.adapter.predict(self.session)['model2_review']['recommendations']
-        self.assertEqual({r['current_state'] for r in rows}, {'implemented', 'partial'})
+        self.assertEqual({r['current_state'] for r in rows}, {'partial'})
         self.assertTrue(all(r['implementation_state_known'] and r['action_type'] == 'review' for r in rows))
+        for risk in self.session['risk_snapshots']:
+            risk['control_states'] = {'CTL-IAM-002': 'implemented'}
+        rows = self.adapter.predict(self.session)['model2_review']['recommendations']
+        self.assertEqual({r['current_state'] for r in rows}, {'implemented'})
         for risk in self.session['risk_snapshots']:
             risk['control_states'] = {'CTL-MON-004': 'not_assessed', 'CTL-IAM-002': 'unknown'}
         rows = self.adapter.predict(self.session)['model2_review']['recommendations']

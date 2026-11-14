@@ -1,0 +1,188 @@
+{
+  "schema_version": "iris-asset-inventory-v1",
+  "data_provenance": "synthetic",
+  "records": [
+    {
+      "asset_id": "DIVERSE-A001",
+      "asset_version_id": "DIVERSE-A001-V1",
+      "hostname": "identity-01",
+      "ip_addresses": [
+        "10.80.0.10"
+      ],
+      "asset_type": "server",
+      "criticality": 1,
+      "zone": "synthetic-lab",
+      "owner": "Demonstration team",
+      "control_groups": [
+        "all",
+        "cloud",
+        "db",
+        "endpoint",
+        "identity",
+        "iot",
+        "network",
+        "server",
+        "web"
+      ],
+      "valid_from": "2026-09-01T00:00:00Z",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00Z"
+    },
+    {
+      "asset_id": "DIVERSE-A002",
+      "asset_version_id": "DIVERSE-A002-V1",
+      "hostname": "web-02",
+      "ip_addresses": [
+        "10.80.0.11"
+      ],
+      "asset_type": "server",
+      "criticality": 2,
+      "zone": "synthetic-lab",
+      "owner": "Demonstration team",
+      "control_groups": [
+        "all",
+        "cloud",
+        "db",
+        "endpoint",
+        "identity",
+        "iot",
+        "network",
+        "server",
+        "web"
+      ],
+      "valid_from": "2026-09-01T00:00:00Z",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00Z"
+    },
+    {
+      "asset_id": "DIVERSE-A003",
+      "asset_version_id": "DIVERSE-A003-V1",
+      "hostname": "payroll-03",
+      "ip_addresses": [
+        "10.80.0.12"
+      ],
+      "asset_type": "server",
+      "criticality": 3,
+      "zone": "synthetic-lab",
+      "owner": "Demonstration team",
+      "control_groups": [
+        "all",
+        "cloud",
+        "db",
+        "endpoint",
+        "identity",
+        "iot",
+        "network",
+        "server",
+        "web"
+      ],
+      "valid_from": "2026-09-01T00:00:00Z",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00Z"
+    },
+    {
+      "asset_id": "DIVERSE-A004",
+      "asset_version_id": "DIVERSE-A004-V1",
+      "hostname": "engineering-04",
+      "ip_addresses": [
+        "10.80.0.13"
+      ],
+      "asset_type": "server",
+      "criticality": 4,
+      "zone": "synthetic-lab",
+      "owner": "Demonstration team",
+      "control_groups": [
+        "all",
+        "cloud",
+        "db",
+        "endpoint",
+        "identity",
+        "iot",
+        "network",
+        "server",
+        "web"
+      ],
+      "valid_from": "2026-09-01T00:00:00Z",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00Z"
+    },
+    {
+      "asset_id": "DIVERSE-A005",
+      "asset_version_id": "DIVERSE-A005-V1",
+      "hostname": "files-05",
+      "ip_addresses": [
+        "10.80.0.14"
+      ],
+      "asset_type": "server",
+      "criticality": 5,
+      "zone": "synthetic-lab",
+      "owner": "Demonstration team",
+      "control_groups": [
+        "all",
+        "cloud",
+        "db",
+        "endpoint",
+        "identity",
+        "iot",
+        "network",
+        "server",
+        "web"
+      ],
+      "valid_from": "2026-09-01T00:00:00Z",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00Z"
+    },
+    {
+      "asset_id": "DIVERSE-A006",
+      "asset_version_id": "DIVERSE-A006-V1",
+      "hostname": "workstation-06",
+      "ip_addresses": [
+        "10.80.0.15"
+      ],
+      "asset_type": "server",
+      "criticality": 1,
+      "zone": "synthetic-lab",
+      "owner": "Demonstration team",
+      "control_groups": [
+        "all",
+        "cloud",
+        "db",
+        "endpoint",
+        "identity",
+        "iot",
+        "network",
+        "server",
+        "web"
+      ],
+      "valid_from": "2026-09-01T00:00:00Z",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00Z"
+    },
+    {
+      "asset_id": "DIVERSE-A007",
+      "asset_version_id": "DIVERSE-A007-V1",
+      "hostname": "identity-07",
+      "ip_addresses": [
+        "10.80.0.16"
+      ],
+      "asset_type": "server",
+      "criticality": 2,
+      "zone": "synthetic-lab",
+      "owner": "Demonstration team",
+      "control_groups": [
+        "all",
+        "cloud",
+        "db",
+        "endpoint",
+        "identity",
+        "iot",
+        "network",
+        "server",
+        "web"
+      ],
+      "valid_from": "2026-09-01T00:00:00Z",
+      "valid_to": null,
+      "recorded_at": "2026-09-01T00:00:00Z"
+    }
+  ]
+}
