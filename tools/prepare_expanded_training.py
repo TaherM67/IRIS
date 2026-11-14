@@ -18,4 +18,3 @@ def main():
         p.exit(2,"Training handoff: "+str(exc)+"\n")
     print(json.dumps(result,indent=2))
 if __name__=="__main__":main()
-

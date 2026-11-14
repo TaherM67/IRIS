@@ -117,4 +117,3 @@ def prepare_training(paths, labels_path, output_dir):
     (out/"split_plan.json").write_text(json.dumps(plan,indent=2)+"\n")
     (out/"preparation.json").write_text(json.dumps(manifest,indent=2)+"\n")
     return manifest
-

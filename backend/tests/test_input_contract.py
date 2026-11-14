@@ -125,4 +125,3 @@ class AmbiguityTests(unittest.TestCase):
         self.assertEqual(out["model1"]["status"],"ABSTAINED")
         self.assertIsNone(out["rule_model_disagreement"])
         self.assertEqual(summarize([out])["probability_diagnostics_available"],1)
-

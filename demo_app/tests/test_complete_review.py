@@ -53,4 +53,3 @@ class CompleteReviewTests(unittest.TestCase):
         with engine.store.connection() as db:
             self.assertEqual(db.execute("SELECT COUNT(*) FROM demo_alerts WHERE case_id IS NOT NULL").fetchone()[0],0)
             self.assertEqual(db.execute("SELECT COUNT(*) FROM demo_proposals").fetchone()[0],0)
-

@@ -284,4 +284,3 @@ def validate_inputs(paths, *, contract_dir=CONTRACT):
     report["valid"]=not report["errors"]
     report["status"]="REJECTED" if report["errors"] else "VALID_WITH_LIMITATIONS" if report["warnings"] else "VALID"
     return report
-

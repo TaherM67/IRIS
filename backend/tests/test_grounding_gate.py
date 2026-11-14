@@ -65,4 +65,3 @@ class GroundingGateTests(unittest.TestCase):
         self.assertEqual([r["control_id"] for r in review["recommendations"]],["C1"])
         withheld=next(r for r in review["withheld_candidates"] if r["control_id"]=="C3")
         self.assertIn("no_shared_observed_technique_for_risk_and_control",withheld["reason_codes"])
-

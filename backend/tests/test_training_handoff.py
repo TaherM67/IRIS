@@ -47,4 +47,3 @@ class HandoffTests(unittest.TestCase):
     def test_unreviewed_llm_cannot_mark_its_own_labels_verified(self):
         self.labels[0]["label_verified"]=True
         with self.assertRaisesRegex(ValueError,"review_status"):self.prepare()
-
