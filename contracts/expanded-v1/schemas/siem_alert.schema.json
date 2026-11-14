@@ -1,0 +1,276 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/iris-expanded-input-v1/siem_alert.schema.json",
+  "title": "Siem Alert",
+  "type": "object",
+  "description": "One canonical observed event per JSONL line. Include every field; JSON null is explicit missingness.",
+  "properties": {
+    "event_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 80,
+      "description": "Opaque stable identifier. Never encode a class, true label or target.",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_-]{0,79}$"
+    },
+    "timestamp": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 40,
+      "description": "UTC timestamp ending Z; valid RFC 3339 calendar time.",
+      "format": "date-time",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d{1,6})?Z$"
+    },
+    "asset_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 80,
+      "description": "Opaque stable identifier. Never encode a class, true label or target.",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_-]{0,79}$"
+    },
+    "agent_name": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 253,
+      "description": "Exact monitored-asset hostname at event time."
+    },
+    "destination_ip": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1,
+      "maxLength": 15,
+      "description": "Monitored destination asset IP for inbound observations. Null for local or outbound events.",
+      "format": "ipv4"
+    },
+    "remote_destination_ip": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1,
+      "maxLength": 15,
+      "description": "Actual remote recipient for outbound events; null for local/inbound observations.",
+      "format": "ipv4"
+    },
+    "network_direction": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 16,
+      "description": "Explicit observation direction.",
+      "enum": [
+        "inbound",
+        "outbound",
+        "local"
+      ]
+    },
+    "source_ip": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 15,
+      "description": "Syntactically valid IPv4 address; generated lab data uses fictional addresses.",
+      "format": "ipv4"
+    },
+    "account": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1,
+      "maxLength": 80,
+      "description": "Observed fictional account or null when unavailable."
+    },
+    "event_family": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 32,
+      "description": "Supported expanded telemetry family.",
+      "enum": [
+        "authentication",
+        "network",
+        "privilege",
+        "process",
+        "web"
+      ]
+    },
+    "protocol": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 16,
+      "description": "Exact case-sensitive supported protocol; never rewrite SSH to TCP.",
+      "enum": [
+        "HTTPS",
+        "LOCAL",
+        "SSH",
+        "TCP"
+      ]
+    },
+    "rule_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 80,
+      "description": "Observed detector/rule identifier; opaque, never a truth label."
+    },
+    "rule_level": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 15,
+      "description": "Normalized observed rule severity, 0 to 15."
+    },
+    "outcome": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 16,
+      "description": "Observed event outcome.",
+      "enum": [
+        "failed",
+        "success",
+        "unknown"
+      ]
+    },
+    "bytes_sent": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 1000000000000,
+      "description": "Measured outbound bytes for this event only; do not repeat a session total."
+    },
+    "process_unsigned": {
+      "type": "boolean",
+      "description": "Observed unsigned-process evidence, not a scenario label."
+    },
+    "privilege_change": {
+      "type": "boolean",
+      "description": "Observed privilege-change evidence."
+    },
+    "web_attack_signal": {
+      "type": "boolean",
+      "description": "Observed web sensor signature or alert flag."
+    },
+    "sensitive_data_access": {
+      "type": "boolean",
+      "description": "Observed access to a fictional sensitive resource."
+    },
+    "destination_untrusted": {
+      "type": "boolean",
+      "description": "Observed untrusted destination evidence."
+    },
+    "malicious_indicator": {
+      "type": "boolean",
+      "description": "Observed match to a fictional known indicator, not ground-truth attack status."
+    },
+    "mitre_technique": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1,
+      "maxLength": 16,
+      "description": "Technique explicitly observed in this event; null if none is observed.",
+      "enum": [
+        null,
+        "T1003",
+        "T1003.001",
+        "T1005",
+        "T1021",
+        "T1021.001",
+        "T1021.002",
+        "T1040",
+        "T1046",
+        "T1048",
+        "T1052",
+        "T1059",
+        "T1059.001",
+        "T1068",
+        "T1071",
+        "T1078",
+        "T1078.001",
+        "T1078.003",
+        "T1078.004",
+        "T1087",
+        "T1091",
+        "T1098",
+        "T1110",
+        "T1110.001",
+        "T1110.003",
+        "T1133",
+        "T1189",
+        "T1190",
+        "T1195",
+        "T1199",
+        "T1200",
+        "T1204",
+        "T1204.002",
+        "T1213",
+        "T1485",
+        "T1486",
+        "T1490",
+        "T1498",
+        "T1530",
+        "T1552",
+        "T1557",
+        "T1558.003",
+        "T1565",
+        "T1566",
+        "T1566.001",
+        "T1567",
+        "T1590.002",
+        "T1595",
+        "T1595.002",
+        "T1610",
+        "T1611"
+      ]
+    },
+    "sensor_healthy": {
+      "type": "boolean",
+      "description": "True only when sensor-health evidence is available and healthy. False produces an explicit model abstention."
+    },
+    "campaign_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 80,
+      "description": "Opaque stable identifier. Never encode a class, true label or target.",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_-]{0,79}$"
+    },
+    "run_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 80,
+      "description": "Opaque stable identifier. Never encode a class, true label or target.",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_-]{0,79}$"
+    },
+    "data_provenance": {
+      "type": "string",
+      "const": "synthetic",
+      "description": "Required declaration on every LLM-generated alert."
+    }
+  },
+  "required": [
+    "event_id",
+    "timestamp",
+    "asset_id",
+    "agent_name",
+    "destination_ip",
+    "remote_destination_ip",
+    "network_direction",
+    "source_ip",
+    "account",
+    "event_family",
+    "protocol",
+    "rule_id",
+    "rule_level",
+    "outcome",
+    "bytes_sent",
+    "process_unsigned",
+    "privilege_change",
+    "web_attack_signal",
+    "sensitive_data_access",
+    "destination_untrusted",
+    "malicious_indicator",
+    "mitre_technique",
+    "sensor_healthy",
+    "campaign_id",
+    "run_id",
+    "data_provenance"
+  ],
+  "additionalProperties": false
+}

@@ -1,0 +1,167 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/iris-expanded-input-v1/asset_inventory.schema.json",
+  "title": "Asset Inventory",
+  "type": "object",
+  "description": "asset_inventory.json; all records must use the same declared synthetic provenance.",
+  "properties": {
+    "schema_version": {
+      "const": "iris-asset-inventory-v1"
+    },
+    "data_provenance": {
+      "const": "synthetic"
+    },
+    "records": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "description": "One time-bounded inventory snapshot. Intervals are half-open [valid_from, valid_to).",
+        "properties": {
+          "asset_id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 80,
+            "description": "Opaque stable identifier. Never encode a class, true label or target.",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_-]{0,79}$"
+          },
+          "asset_version_id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 80,
+            "description": "Opaque stable identifier. Never encode a class, true label or target.",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_-]{0,79}$"
+          },
+          "hostname": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 253,
+            "description": "Lowercase exact hostname; keep consistent with alert.agent_name.",
+            "pattern": "^[a-z0-9][a-z0-9.-]{0,252}$"
+          },
+          "ip_addresses": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 15,
+              "description": "Syntactically valid IPv4 address; generated lab data uses fictional addresses.",
+              "format": "ipv4"
+            },
+            "description": "Addresses of this monitored asset in this version.",
+            "minItems": 1,
+            "maxItems": 16,
+            "uniqueItems": true
+          },
+          "asset_type": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 32,
+            "description": "Asset kind used for organizational context.",
+            "enum": [
+              "server",
+              "workstation",
+              "network_device",
+              "identity_service",
+              "web_application",
+              "database",
+              "cloud_resource",
+              "iot_device"
+            ]
+          },
+          "criticality": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 5,
+            "description": "Pre-existing business criticality, 1 low to 5 highest; not an attack target."
+          },
+          "zone": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 80,
+            "description": "Network or business zone."
+          },
+          "owner": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 120,
+            "description": "Fictional accountable team."
+          },
+          "control_groups": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 16,
+              "description": "Catalogue applicability group.",
+              "enum": [
+                "all",
+                "cloud",
+                "db",
+                "endpoint",
+                "identity",
+                "iot",
+                "network",
+                "server",
+                "web"
+              ]
+            },
+            "description": "Only groups that actually apply to this asset.",
+            "minItems": 1,
+            "maxItems": 9,
+            "uniqueItems": true
+          },
+          "valid_from": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 40,
+            "description": "UTC timestamp ending Z; valid RFC 3339 calendar time.",
+            "format": "date-time",
+            "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d{1,6})?Z$"
+          },
+          "valid_to": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "minLength": 1,
+            "maxLength": 40,
+            "description": "UTC timestamp ending Z; valid RFC 3339 calendar time.",
+            "format": "date-time",
+            "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d{1,6})?Z$"
+          },
+          "recorded_at": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 40,
+            "description": "UTC timestamp ending Z; valid RFC 3339 calendar time.",
+            "format": "date-time",
+            "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d{1,6})?Z$"
+          }
+        },
+        "required": [
+          "asset_id",
+          "asset_version_id",
+          "hostname",
+          "ip_addresses",
+          "asset_type",
+          "criticality",
+          "zone",
+          "owner",
+          "control_groups",
+          "valid_from",
+          "valid_to",
+          "recorded_at"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 1,
+      "maxItems": 5000
+    }
+  },
+  "required": [
+    "schema_version",
+    "data_provenance",
+    "records"
+  ],
+  "additionalProperties": false
+}

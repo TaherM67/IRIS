@@ -497,9 +497,11 @@ class DemoEngine:
                 exercise = self.current(db)
             # IRIS EXPLAIN: Store the result of self.core.run(self.inputs, actor) in summary; later lines use this named result.
             summary = self.core.run(self.inputs, actor)
-            # IRIS EXPLAIN: Store self.store.cases(run_id=summary['run_id'], limit=2000)['items'] in cases; later lines use this
-            # IRIS EXPLAIN: named result.
-            cases = self.store.cases(run_id=summary['run_id'], limit=2000)['items']
+            # Read every accepted case before correlating alerts or preparing reviews.
+            page = self.store.cases(run_id=summary['run_id'], limit=self.settings.max_sessions)
+            cases = page['items']
+            if page['total'] != summary['sessions'] or len(cases) != summary['sessions']:
+                raise ValueError('Incomplete analysis case retrieval; no demo reviews or working records changed')
             # IRIS EXPLAIN: Enter self.store.connection() as db; its context manager supplies the existing
             # IRIS EXPLAIN: cleanup/transaction/expected-exception behavior.
             with self.store.connection() as db:

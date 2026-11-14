@@ -2,6 +2,8 @@
 
 Integrated Risk Intelligence System: a research prototype connecting SOC/SIEM evidence with asset and GRC risk context.
 
+**Exact expanded input agreement:** use the [field-by-field agreement](docs/INPUT_AGREEMENT.md), [JSON schemas and complete example](contracts/expanded-v1), and [copyable LLM generation request](contracts/expanded-v1/LLM_GENERATION_PROMPT.txt). Run `python tools/validate_inputs.py --input-dir DATA_DIRECTORY --out NEW_qualification.json` before analysis. Optional offline labels support a separate seven-class training handoff; no new weights have been fitted. See [refinement and verification results](docs/REFINEMENT_20261114.md).
+
 **Input compatibility:** the serving engine now matches the model to the input contract and accepts the supplied synthetic-v2 JSON exports. Run `python tools/check_input_coverage.py --dataset v2` to check every retained fragment without changing the website's saved state. See [coverage results, exact skip reasons and update details](docs/INPUT_COVERAGE.md).
 
 **Expanded demo:** `python demo.py` now selects a seven-class scenario model and 84 sessions across six attack families plus routine activity. The SOC queue groups related alerts into incidents, supports scenario filters and retains expandable event evidence. Dataset switches preserve earlier exercises and approvals. See [expanded scenarios, training and verification](docs/EXPANDED_SCENARIOS.md).
