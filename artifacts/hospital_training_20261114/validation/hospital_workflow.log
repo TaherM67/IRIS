@@ -1,0 +1,96 @@
+{
+  "verified_at_utc": "2026-11-14T10:28:21.522285+00:00",
+  "status": "PASS",
+  "checks": [
+    "HTTPS /admin",
+    "HTTPS /soc",
+    "HTTPS /grc",
+    "HTTPS /demo-static/app.js",
+    "HTTPS /health",
+    "unauthenticated requests rejected",
+    "admin account sign-in",
+    "soc account sign-in",
+    "grc account sign-in",
+    "SOC cannot read GRC register",
+    "GRC cannot read SOC queue",
+    "authenticated full hospital analysis",
+    "all 2490 sessions persisted",
+    "all cases read beyond former 2000 limit",
+    "all 15000 source events accounted for exactly once",
+    "full working alert and risk tables",
+    "grc proposals available",
+    "Admin cannot approve grc proposal",
+    "grc authorized approval",
+    "grc approval retry is idempotent",
+    "soc proposals available",
+    "Admin cannot approve soc proposal",
+    "soc authorized approval",
+    "soc approval retry is idempotent",
+    "GRC approval changes saved register",
+    "SOC approval changes saved alert priorities",
+    "grc current-state export",
+    "soc current-state export",
+    "reanalysis reuses immutable model evidence",
+    "reanalysis preserves approved risk changes",
+    "restart preserves all working counts",
+    "experimental models remain separate from approved writes",
+    "operational source files unchanged"
+  ],
+  "model_profile": "iris_hospital_20261114",
+  "counts_before_approval": {
+    "risks": 1860,
+    "alerts": 15000,
+    "changed_risks": 0,
+    "reprioritized_alerts": 0,
+    "pending_soc": 1354,
+    "pending_grc": 965
+  },
+  "counts_after_approval": {
+    "risks": 1860,
+    "alerts": 15000,
+    "changed_risks": 1,
+    "reprioritized_alerts": 4,
+    "pending_soc": 1353,
+    "pending_grc": 964
+  },
+  "events_accounted_for": 15000,
+  "sessions": 2490,
+  "model_coverage": {
+    "sessions_checked": 2490,
+    "rule_model_disagreement_sessions": 0,
+    "probability_diagnostics_available": 2490,
+    "model1": {
+      "status_counts": {
+        "ASSESSED": 2477,
+        "ABSTAINED": 13
+      },
+      "prediction_coverage": 0.9947791164658635,
+      "reasons": {
+        "below_frozen_confidence_threshold": 13
+      }
+    },
+    "model2": {
+      "status_counts": {
+        "ASSESSED": 1897,
+        "NO_OBSERVED_TECHNIQUE": 593
+      },
+      "withheld_candidate_count": 0,
+      "prediction_coverage_all_sessions": 0.761847389558233,
+      "missing_fields": {
+        "alerts.mitre_technique": 593
+      }
+    },
+    "training_labels_read": false,
+    "accuracy_evaluated": false,
+    "note": "Coverage is not accuracy. No observed technique means no grounded recommendation, not proof of benign activity."
+  },
+  "source_sha256": {
+    "asset_inventory.json": "3126fc5d3b620e8d584074756f7e9f6ba2a8c9d93f48a5f398330fcec1367093",
+    "risk_register.json": "3d85a9280541c18d707ec8df95a2e38fc35b6d601702f4086533f4fc2353fb13",
+    "siem_alerts.jsonl": "61542ace43cfa81bcd86ff1aac89697511a88066ce463e65b548533bfa31abb2"
+  },
+  "existing_demo_state_opened": false,
+  "browser_visual_check": false,
+  "private_lan_check": false,
+  "accuracy_evaluated": false
+}

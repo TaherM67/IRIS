@@ -1,128 +1,127 @@
 # IRIS
 
-Integrated Risk Intelligence System: a research prototype connecting SOC/SIEM evidence with asset and GRC risk context.
+Integrated Risk Intelligence System: a research prototype joining SOC/SIEM
+observations with asset and GRC risk context.
 
-**Exact expanded input agreement:** use the [field-by-field agreement](docs/INPUT_AGREEMENT.md), [JSON schemas and complete example](contracts/expanded-v1), and [copyable LLM generation request](contracts/expanded-v1/LLM_GENERATION_PROMPT.txt). Run `python tools/validate_inputs.py --input-dir DATA_DIRECTORY --out NEW_qualification.json` before analysis. Optional offline labels support a separate seven-class training handoff; no new weights have been fitted. See [refinement and verification results](docs/REFINEMENT_20261114.md).
+The current default demo is **IRIS General Hospital**: 500 assets, 1,860 risks,
+15,000 alerts and 2,490 sessions. The supplied synthetic data, newly trained
+Model 1, existing grounded Model 2, evaluation results and runnable Admin/SOC/GRC
+application are included.
 
-**Input compatibility:** the serving engine now matches the model to the input contract and accepts the supplied synthetic-v2 JSON exports. Run `python tools/check_input_coverage.py --dataset v2` to check every retained fragment without changing the website's saved state. See [coverage results, exact skip reasons and update details](docs/INPUT_COVERAGE.md).
+**Start with [the VS Code/Codex run guide](docs/VSCODE_HOSPITAL_DEMO.md).** It
+contains a copyable Codex prompt, Windows commands, fresh-install setup and
+instructions that preserve existing accounts, certificates and saved approvals.
 
-**Expanded demo:** `python demo.py` now selects a seven-class scenario model and 84 sessions across six attack families plus routine activity. The SOC queue groups related alerts into incidents, supports scenario filters and retains expandable event evidence. Dataset switches preserve earlier exercises and approvals. See [expanded scenarios, training and verification](docs/EXPANDED_SCENARIOS.md).
+## Start the hospital demo
 
-This repository contains the **three-input advisory ML package**, the user's Colab-trained artifact, linked synthetic samples, a training notebook, a prepared FastAPI backend, and an **active, approval-gated demonstration** with Admin/SOC/GRC dashboards. It is not a finished live SOC/GRC platform.
+Use Python 3.12 and an existing compatible virtual environment. For a fresh
+checkout, create `.venv` first. Install:
 
-**For the examiner demonstration, start with [`demo.py`](demo.py) and [the active demo instructions](docs/ACTIVE_DEMO.md).** The dim workspace has chat as its first panel, sidebar navigation, a searchable, scrollable approval inbox, and Admin monitoring. GRC approval changes the synthetic working risk register; SOC approval reprioritizes stored alerts. Changes persist, can be exported, and have before/after audit records. **75 Python demo/chat/activity tests pass**, alongside frontend controller regressions for login, role isolation, approvals, inbox search and chat. No real organization or security controls are modified.
+```powershell
+.\.venv\Scripts\python.exe -m pip install -r requirements-hospital.txt
+.\.venv\Scripts\python.exe -m unittest backend.tests.test_hospital_training -v
+.\.venv\Scripts\python.exe demo.py check --dataset hospital --model-profile iris_hospital_20261114
+.\.venv\Scripts\python.exe demo.py --dataset hospital --model-profile iris_hospital_20261114
+```
 
-**Each workspace now shows only its own work:** SOC has alerts and priority reviews; GRC has the risk register and business/control reviews; Admin can monitor both working systems plus full analysis, model and audit details. This is enforced in server-rendered HTML and API response allowlists, not only hidden panels. See [the dashboard guide and update steps](docs/ROLE_DASHBOARDS.md).
+The server requires local HTTPS certificate files and individual accounts.
+Reuse existing ones. The [run guide](docs/VSCODE_HOSPITAL_DEMO.md) explains the
+one-time setup on a fresh machine. No passwords or private keys are shipped.
 
-**Sign in:** choose the Administrator, SOC analyst or GRC officer card, then enter your username and password. The active demo uses HTTPS and individual accounts; existing role keys are preserved but are not accepted by its website. See [the account guide](docs/LOCAL_ACCOUNTS.md). Keep your existing `.local/` folder and database.
+Open:
 
-**Verification boundary:** 79 ML tests and 33 backend-core tests passed, and a fresh batch persisted 900 shadow cases. The actual FastAPI/Uvicorn HTTP server and browser interactions were **not run here**, because PyPI downloads were denied. Run the target-computer HTTP tests before using that interface. See [the verification record](backend/VERIFICATION.md).
+- Admin: <https://127.0.0.1:8010/admin>
+- SOC: <https://127.0.0.1:8010/soc>
+- GRC: <https://127.0.0.1:8010/grc>
 
-## Start here
+Admin runs analysis. Each team reviews and approves its own proposals. GRC
+approval changes the synthetic working register; SOC approval changes stored
+alert priorities. SQLite retains revisions, audit records, chat and approvals.
+Admin can monitor both teams but cannot approve for either team.
 
-1. Follow [the active demo guide](docs/ACTIVE_DEMO.md): run `python demo.py`, open the three dashboards on port 8010, analyze, then approve and show real synthetic record changes.
-2. For the older passive FastAPI prototype, follow [the backend setup guide](docs/BACKEND_SETUP.md).
-3. Open [the Colab training notebook](notebooks/IRIS_Colab_Training.ipynb) if you want to train again; the saved models are already included.
-4. Read [the three-input schemas and joining rules](IRIS_Models_v2/docs/THREE_INPUTS_GUIDE.md) and [the full model explanation](IRIS_Models_v2/docs/MODEL_GUIDE.md).
+`python demo.py` also selects the hospital by default. Explicit commands above
+avoid an old `IRIS_MODEL_PROFILE` environment override. Earlier demonstrations
+remain available with `--dataset expanded --model-profile auto` or
+`--dataset legacy --model-profile auto`. Dataset switches retain prior exercises.
 
-The repository is private. To use Colab without putting a GitHub token in a notebook, download this repository with **Code > Download ZIP**, upload the notebook to Colab, and upload the repository ZIP when its first cell asks for it. The notebook also accepts the original `IRIS_Model_Code_v2.zip` package.
+## Training results and limits
+
+[The model card](docs/HOSPITAL_MODEL_CARD.md) explains the review, split, features,
+comparisons, limitations and reproduction commands.
+
+| New Model 1 holdout measurement | Result |
+| --- | ---: |
+| Fit / held-out sessions | 1,868 / 622 |
+| Macro-F1 | 0.9489 |
+| All-session accuracy | 94.37% |
+| Classification coverage | 99.36% |
+| Benign false-positive rate | **16.67% (20/120)** |
+
+These are synthetic-reference measurements. Annotations remain unreviewed.
+Connected campaigns, templates and identical feature vectors never cross the
+fit/test boundary. Too few independent template groups support the former
+five-role protocol, so this explicit experiment uses a fixed logistic-regression
+configuration and fixed 0.5 threshold, without probability calibration or test-set
+tuning. The model exceeds the 5% benign false-positive review gate and remains
+**unreleased, experimental and shadow-only**. Primary rules and authorized human
+approvals remain responsible for demo changes.
+
+Model 2 retains its pinned 120-control grounded estimator; it was not refitted on
+unreviewed control targets. Missing technique context produces an explicit
+unassessed outcome, not an invented benign result or control recommendation.
+
+Full replay assessed 2,477 of 2,490 sessions with Model 1 and 1,897 sessions with
+Model 2. Full replay includes fit rows; those numbers are runtime coverage only.
+No real hospital data or production SIEM/GRC connector is included. LLM/RAG
+explanations and live enterprise integration remain future work.
 
 ## Exactly three operational inputs
 
-| Input | Supplied sample |
+The hospital files are in `datasets/iris_general_hospital_20261114/data/`:
+
+1. `asset_inventory.json`
+2. `risk_register.json`
+3. `siem_alerts.jsonl`
+
+Historical validity and knowledge times are retained. The pipeline validates
+sources, performs exact point-in-time joins, deduplicates/quarantines evidence,
+and builds 60-second sessions. Model 1 receives 23 observed features.
+`offline/training_labels.jsonl` is used only for the supervised experiment;
+runtime inference never reads it. The supplied catalogue is a fixed reference.
+
+## Recorded verification
+
+- 112 backend tests passed.
+- 128 demo tests passed; two private-LAN checks skipped.
+- 92 ML tests passed; JavaScript controller checks passed.
+- Independent hospital validation completed 157,612 assertions with zero errors.
+- A separate HTTPS workflow checked all 15,000 events, all 2,490 cases, account
+  sign-in, role isolation, approval writes/retries, exports, restart persistence
+  and reanalysis using temporary state.
+
+Existing user databases/accounts were not opened for those checks. Browser visual
+inspection and actual private-LAN rehearsal remain local follow-up checks.
+See `artifacts/hospital_training_20261114/` for logs and detailed outcomes.
+
+## Repository map
+
+| Path | Contents |
 | --- | --- |
-| Asset inventory | [asset_inventory.json](IRIS_Models_v2/samples/three_inputs/asset_inventory.json) |
-| Risk register | [risk_register.json](IRIS_Models_v2/samples/three_inputs/risk_register.json) |
-| SIEM alerts | [siem_alerts.jsonl](IRIS_Models_v2/samples/three_inputs/siem_alerts.jsonl) |
+| `demo.py`, `demo_app/` | Active HTTPS application, accounts, approvals, chat and role dashboards |
+| `backend/` | Shared integration, model adapters, rules, storage and separate FastAPI service |
+| `datasets/iris_general_hospital_20261114/` | Supplied fictional hospital data, narratives, generator and original validation |
+| `artifacts/model_versions/iris_hospital_20261114/` | Trained weights, pinned metadata, split, held-out predictions and results |
+| `artifacts/hospital_training_20261114/` | Fresh qualification, full-system verification and test logs |
+| `IRIS_Models_v2/` | Original model library, three-source integration, samples and tests |
+| `notebooks/` | Earlier Colab training workflow |
+| `report/SGP2/` | Existing PDF, Overleaf source and figures guide; older evidence is preserved |
 
-The samples contain 60 assets, 120 registered risks and 26,086 alert rows. They produce 900 synthetic labeled sessions: 300 benign, 300 credential-access and 300 reconnaissance sessions.
+The earlier passive FastAPI interface is documented in
+[BACKEND_SETUP.md](docs/BACKEND_SETUP.md). The active hospital demo uses the
+standard-library HTTPS server and does not require FastAPI, Node.js, Colab, an
+LLM API key or training at startup. Node.js is used only for controller tests.
 
-`training_labels.jsonl` is a separate **offline annotation sidecar**, not a fourth runtime input. Preparation and prediction never read it.
-
-Validation and exact point-in-time enrichment produce one unified event dataset before session feature engineering. Both training and inference use the same preparation function. The models use tabular features, not raw JSON documents.
-
-## Run the backend locally
-
-### Active demo (recommended for the examination)
-
-From the project root with Python 3.12, install `IRIS_Models_v2/requirements.txt` and run:
-
-```bash
-python -m unittest demo_app.tests.test_demo -v
-python demo.py
-```
-
-Open `https://127.0.0.1:8010/admin`, `/soc`, and `/grc` and sign in with an account for the selected workspace. HTTPS is enabled by default; the localhost certificate must be prepared and trusted as described in [the HTTPS guide](docs/LOCAL_HTTPS.md). Admin analyzes; each team reviews and applies its own proposed changes to **persisted synthetic records**. See [the complete steps](docs/ACTIVE_DEMO.md).
-
-The new [three demo datasets](demo/data/) contain 30 assets, 60 risks and 2,367 alert rows. They produce 132 cases. Demo state and credentials stay in `.local/active_demo/`, excluded from Git. No FastAPI install, Colab runtime or Node.js is needed for this local demo.
-
-### Earlier passive FastAPI interface
-
-Use Python 3.12. From the repository root, install `requirements-backend.txt`, run both backend test suites, generate local role keys, and start `python -m backend serve`. The same server serves the website at `http://127.0.0.1:8000`; Colab is not needed during inference.
-
-See [the setup guide](docs/BACKEND_SETUP.md) for exact Windows and macOS/Linux commands, privacy notes, limitations and the examiner walkthrough. Use the generated Admin/SOC/GRC keys; no default deployment keys are shipped.
-
-## Train or run the ML CLI locally
-
-Use Python 3.12 and the pinned dependencies. From the repository root:
-
-```bash
-cd IRIS_Models_v2
-python -m venv .venv
-```
-
-Activate the environment with `source .venv/bin/activate` on Linux/macOS, or `.\.venv\Scripts\Activate.ps1` in Windows PowerShell. Then:
-
-```bash
-python -m pip install -r requirements.txt
-python -m unittest discover -s tests -v
-python -m iris_models train-three --assets samples/three_inputs/asset_inventory.json --risks samples/three_inputs/risk_register.json --alerts samples/three_inputs/siem_alerts.jsonl --labels samples/three_inputs/training_labels.jsonl --synthetic --out my_training
-python -m iris_models predict-three --assets samples/three_inputs/asset_inventory.json --risks samples/three_inputs/risk_register.json --alerts samples/three_inputs/siem_alerts.jsonl --models my_training/models --mode shadow --out my_predictions
-```
-
-Use fresh output directories when repeating experiments. No GPU, cloud account or LLM key is required for local training.
-
-## What is implemented
-
-- Three-source validation, exact asset matching, historical asset/risk enrichment, deduplication, quarantine and session construction.
-- Model 1: supervised scenario classification with candidate comparison, calibration and abstention.
-- Model 2: multi-label control recommendations with policy and catalogue fallback.
-- Campaign-grouped fitting, selection, calibration, threshold selection and held-out evaluation.
-- Synthetic source generation, release safeguards and 79 model/integration tests.
-- Complete sample training artifacts and a clearly limited five-session prediction preview.
-- Prepared FastAPI adapter using the user's pinned Colab bundle, SQLite cases/audit, local role-key guards and three-source batch submission.
-- A small HTML SOC/GRC/Admin interface and local-only GRC follow-up reviews; HTTP/UI runtime verification remains pending on the target computer.
-- A separate active synthetic-system demo: role-gated approval writes, persistent working risk register, reprioritized alert queue, before/after audit and current-state JSON exports. Its loopback HTTP/API workflow is tested; browser rehearsal remains necessary.
-
-## What is not implemented here
-
-The older v0.3 FastAPI/SQLite/Streamlit engine remains a separate bundle. The new `backend/` is a smaller adapter for this repository's exact three-source/session contract, not a drop-in merge of every legacy feature.
-
-Remaining work includes target-computer HTTP/browser verification, live SIEM/GRC connectors, enterprise user authentication, reliable external delivery, GRC-change-triggered re-evaluation and real-data validation. Shared lab role keys are not enterprise SSO or individual user identity. The [setup guide](docs/BACKEND_SETUP.md) states the exact current boundary.
-
-## Validation and safety
-
-All supplied training data is synthetic. It exercises the software; it does not establish real-world detection quality or control effectiveness.
-
-In the recorded sample run, Model 1's benign false-positive rate was **7/45 = 15.56%**, above the configured 5% limit. Model release remains blocked. ML candidates must be shown as **shadow/test predictions**, separate from primary rules-based advice.
-
-Model 2 has positive held-out examples for only six catalogue controls. Its synthetic micro-F1 does not establish complete catalogue coverage or actual control effectiveness.
-
-No security control is automatically executed. No official company GRC value is changed. **The active demo does change its own synthetic working risk records and alert priorities after the appropriate human approval**; this must not be confused with a live company connector or production release of the ML models.
-
-See [the verification report](IRIS_Models_v2/docs/THREE_INPUT_VERIFICATION.md) for actual counts, tests, metrics and limitations. Never load untrusted `joblib`/pickle files: loading them can execute code.
-
-## Repository layout
-
-```text
-IRIS_Models_v2/     Model source, tests, schemas, samples and recorded examples
-artifacts/          The user's pinned, synthetic Colab-trained model bundle
-backend/            Batch model adapter, SQLite store, API source, HTML UI, tests
-demo.py             One-command active demonstration launcher
-demo_app/           Local demo HTTP adapter, working records, approvals, UI, tests
-demo/               Three new synthetic demo inputs and verification record
-notebooks/          Google Colab training and shadow-prediction notebook
-docs/               Simple training, engine and demonstration guide
-```
-
-Do not commit real SIEM logs, credentials, private organizational inventories, or unapproved risk registers. Store authorized real datasets outside this repository.
+Keep `.local/` private and preserve it when updating. It holds local accounts,
+certificates and saved demonstration state. Do not commit real organizational
+telemetry or credentials. Load only model artifacts whose origin you trust;
+serialized joblib/pickle files can execute code when loaded.

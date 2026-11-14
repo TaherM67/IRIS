@@ -1,0 +1,54 @@
+{
+  "contract_id": "iris-expanded-input-v1",
+  "version": "1.0.0",
+  "issued_on": "2026-11-14",
+  "required_runtime_files": {
+    "asset_inventory": "asset_inventory.json",
+    "risk_register": "risk_register.json",
+    "siem_alerts": "siem_alerts.jsonl"
+  },
+  "model_profile": "iris_scenarios_20261109",
+  "model1_sha256": "8b451bd4fa15bd3cc7bc7de7abbaf96eb8d46aa9489f4753bd3bb88505f585c0",
+  "source_catalogue_sha256": "a137c8d50e4751b4960a356e28000ecfc17118d4d6f1f303870ee9a078bfddfa",
+  "catalogue_reference_sha256": "470c7396df43a7c15742aba58652e5dbbc93e1e5bcc662aaeedd4a5826d2dbb6",
+  "session_inactivity_seconds": 60,
+  "maximum_sessions": 5000,
+  "maximum_alert_rows": 50000,
+  "maximum_file_bytes": {
+    "asset_inventory": 5242880,
+    "risk_register": 5242880,
+    "siem_alerts": 20971520
+  },
+  "forbidden_runtime_fields": [
+    "scenario_class",
+    "true_class",
+    "label",
+    "label_verified",
+    "recommended_control_ids",
+    "ground_truth",
+    "target",
+    "is_attack",
+    "attack_success"
+  ],
+  "schemas": {
+    "asset_inventory": "schemas/asset_inventory.schema.json",
+    "risk_register": "schemas/risk_register.schema.json",
+    "siem_alert": "schemas/siem_alert.schema.json",
+    "training_label": "schemas/training_label.schema.json"
+  },
+  "offline_annotations": "training_labels.jsonl (optional for runtime; required, separately reviewed, before supervised retraining)",
+  "generation_request": {
+    "assets": 40,
+    "current_risks_per_asset": 6,
+    "logical_current_risks": 240,
+    "campaigns": 60,
+    "sessions_per_class_per_campaign": 3,
+    "classes": 7,
+    "expected_sessions": 1260,
+    "seed": 20261114,
+    "at_least_historical_assets": 8,
+    "at_least_historical_risks": 48
+  },
+  "grounding_policy": "iris-control-evidence-gate-v1",
+  "weights_retrained": false
+}

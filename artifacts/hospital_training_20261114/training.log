@@ -1,0 +1,344 @@
+{
+  "output": "/workspace/scratch/e8c2c00eb6fe/IRIS/artifacts/model_versions/iris_hospital_20261114",
+  "split_rows": {
+    "fit": 1868,
+    "test": 622
+  },
+  "model1": {
+    "n": 622,
+    "coverage": 0.9935691318327974,
+    "accuracy_all_sessions": 0.9437299035369775,
+    "accepted_accuracy": 0.9498381877022654,
+    "macro_f1": 0.94887855971515,
+    "benign_false_positive_rate": 0.16666666666666666,
+    "benign_false_alarms": 20,
+    "benign_support": 120,
+    "per_class": {
+      "benign": {
+        "precision": 0.9,
+        "recall": 0.825,
+        "f1-score": 0.8608695652173913,
+        "support": 120.0
+      },
+      "credential_access": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 120.0
+      },
+      "reconnaissance": {
+        "precision": 0.9807692307692307,
+        "recall": 1.0,
+        "f1-score": 0.9902912621359223,
+        "support": 51.0
+      },
+      "malicious_execution": {
+        "precision": 0.8666666666666667,
+        "recall": 0.9285714285714286,
+        "f1-score": 0.896551724137931,
+        "support": 70.0
+      },
+      "privilege_escalation": {
+        "precision": 0.9369369369369369,
+        "recall": 0.9369369369369369,
+        "f1-score": 0.9369369369369369,
+        "support": 111.0
+      },
+      "web_exploitation": {
+        "precision": 0.9743589743589743,
+        "recall": 0.95,
+        "f1-score": 0.9620253164556962,
+        "support": 40.0
+      },
+      "data_exfiltration": {
+        "precision": 0.990990990990991,
+        "recall": 1.0,
+        "f1-score": 0.995475113122172,
+        "support": 110.0
+      },
+      "micro avg": {
+        "precision": 0.9498381877022654,
+        "recall": 0.9437299035369775,
+        "f1-score": 0.9467741935483871,
+        "support": 622.0
+      },
+      "macro avg": {
+        "precision": 0.9499603999603999,
+        "recall": 0.9486440522154809,
+        "f1-score": 0.94887855971515,
+        "support": 622.0
+      },
+      "weighted avg": {
+        "precision": 0.9496290440824203,
+        "recall": 0.9437299035369775,
+        "f1-score": 0.9462236302031204,
+        "support": 622.0
+      }
+    },
+    "confusion_labels": [
+      "benign",
+      "credential_access",
+      "reconnaissance",
+      "malicious_execution",
+      "privilege_escalation",
+      "web_exploitation",
+      "data_exfiltration",
+      "ABSTAINED"
+    ],
+    "confusion_matrix": [
+      [
+        99,
+        0,
+        1,
+        10,
+        7,
+        1,
+        1,
+        1
+      ],
+      [
+        0,
+        120,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        51,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        4,
+        0,
+        0,
+        65,
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        7,
+        0,
+        0,
+        0,
+        104,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        38,
+        0,
+        2
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        110,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "validation_scope": "Group-disjoint synthetic holdout with unreviewed generator annotations; not real-world accuracy",
+    "metric_semantics": "Abstentions remain false negatives in class recall/F1 and count as incorrect in all-session accuracy."
+  },
+  "previous_model_same_holdout": {
+    "n": 622,
+    "coverage": 0.8520900321543409,
+    "accuracy_all_sessions": 0.3536977491961415,
+    "accepted_accuracy": 0.41509433962264153,
+    "macro_f1": 0.32096508919383027,
+    "benign_false_positive_rate": 0.0,
+    "benign_false_alarms": 0,
+    "benign_support": 120,
+    "per_class": {
+      "benign": {
+        "precision": 0.3157894736842105,
+        "recall": 1.0,
+        "f1-score": 0.48,
+        "support": 120.0
+      },
+      "credential_access": {
+        "precision": 1.0,
+        "recall": 0.10833333333333334,
+        "f1-score": 0.19548872180451127,
+        "support": 120.0
+      },
+      "reconnaissance": {
+        "precision": 0.358974358974359,
+        "recall": 0.5490196078431373,
+        "f1-score": 0.43410852713178294,
+        "support": 51.0
+      },
+      "malicious_execution": {
+        "precision": 1.0,
+        "recall": 0.17142857142857143,
+        "f1-score": 0.2926829268292683,
+        "support": 70.0
+      },
+      "privilege_escalation": {
+        "precision": 1.0,
+        "recall": 0.2702702702702703,
+        "f1-score": 0.425531914893617,
+        "support": 111.0
+      },
+      "web_exploitation": {
+        "precision": 1.0,
+        "recall": 0.125,
+        "f1-score": 0.2222222222222222,
+        "support": 40.0
+      },
+      "data_exfiltration": {
+        "precision": 1.0,
+        "recall": 0.10909090909090909,
+        "f1-score": 0.19672131147540983,
+        "support": 110.0
+      },
+      "micro avg": {
+        "precision": 0.41509433962264153,
+        "recall": 0.3536977491961415,
+        "f1-score": 0.3819444444444444,
+        "support": 622.0
+      },
+      "macro avg": {
+        "precision": 0.8106805475226528,
+        "recall": 0.3333060988523173,
+        "f1-score": 0.32096508919383027,
+        "support": 622.0
+      },
+      "weighted avg": {
+        "precision": 0.8154379889868129,
+        "recall": 0.3536977491961415,
+        "f1-score": 0.32387180399145743,
+        "support": 622.0
+      }
+    },
+    "confusion_labels": [
+      "benign",
+      "credential_access",
+      "reconnaissance",
+      "malicious_execution",
+      "privilege_escalation",
+      "web_exploitation",
+      "data_exfiltration",
+      "ABSTAINED"
+    ],
+    "confusion_matrix": [
+      [
+        120,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        27,
+        13,
+        49,
+        0,
+        0,
+        0,
+        0,
+        31
+      ],
+      [
+        8,
+        0,
+        28,
+        0,
+        0,
+        0,
+        0,
+        15
+      ],
+      [
+        38,
+        0,
+        0,
+        12,
+        0,
+        0,
+        0,
+        20
+      ],
+      [
+        76,
+        0,
+        0,
+        0,
+        30,
+        0,
+        0,
+        5
+      ],
+      [
+        34,
+        0,
+        0,
+        0,
+        0,
+        5,
+        0,
+        1
+      ],
+      [
+        77,
+        0,
+        1,
+        0,
+        0,
+        0,
+        12,
+        20
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "validation_scope": "Group-disjoint synthetic holdout with unreviewed generator annotations; not real-world accuracy",
+    "metric_semantics": "Abstentions remain false negatives in class recall/F1 and count as incorrect in all-session accuracy."
+  },
+  "model2": {
+    "status": "retained_existing_grounded_model",
+    "refitted": false,
+    "reason": "No independently reviewed control targets; synthetic associations do not establish effectiveness"
+  }
+}

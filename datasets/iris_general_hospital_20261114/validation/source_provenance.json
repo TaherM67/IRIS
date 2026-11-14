@@ -1,0 +1,22 @@
+{
+  "base_commit": "4289c59cbea80c41f635c8893fe738de40e24c7f",
+  "supplied_patch_sha256": "bdb00ee5e30c950de2734fb892283b5084d46e4695276895df521f80c9366555",
+  "expected_branch_from_pack": "iris-input-agreement-20261114",
+  "expected_branch_commit_from_pack": "cdd036e53337fc813fd5a7a672a4e374a591055c",
+  "model_profile": "iris_scenarios_20261109",
+  "pinned_model1_sha256": "8b451bd4fa15bd3cc7bc7de7abbaf96eb8d46aa9489f4753bd3bb88505f585c0",
+  "model1_hash_matches_contract": true,
+  "tool_sha256": {
+    "tools/validate_inputs.py": "04c46623a3dcb04bbc7b6e6f3f4f2486edcdbaf68226fe51fe0473b5dbef2e63",
+    "tools/prepare_expanded_training.py": "4d17b0f78dff42b54627d363d705fabf2a36744ee7c025870bf8064ffdd595cf",
+    "tools/check_input_coverage.py": "f38cdfd5967964eb42a91f5dce22a4ce3f354367fc62171dabdda028920c4e33",
+    "backend/input_contract.py": "9b842fec7663111c10519c5957ca9659475ba73a85232cfb7bec54c4851caf80",
+    "backend/training_handoff.py": "f733bebd446033c9cca0f8e116532e129f17581db3e6dff1fc1c194d726dac32",
+    "backend/policy.py": "8d229f1e5b39c0ad3b647466d2c524a669cfd02a9c245ede65cfdf8feea4fcc9"
+  },
+  "python_version": "3.12.14",
+  "runtime_sources_changed_by_audit": false,
+  "model_weights_changed": false,
+  "thresholds_changed": false,
+  "real_approvals_changed": false
+}

@@ -1,0 +1,75 @@
+{
+  "contract_id": "iris-expanded-input-v1",
+  "sessions": 2490,
+  "features": 23,
+  "classes": [
+    "benign",
+    "credential_access",
+    "reconnaissance",
+    "malicious_execution",
+    "privilege_escalation",
+    "web_exploitation",
+    "data_exfiltration"
+  ],
+  "independent_campaign_template_groups": 14,
+  "source_sha256": {
+    "asset_inventory": "3126fc5d3b620e8d584074756f7e9f6ba2a8c9d93f48a5f398330fcec1367093",
+    "risk_register": "3d85a9280541c18d707ec8df95a2e38fc35b6d601702f4086533f4fc2353fb13",
+    "siem_alerts": "61542ace43cfa81bcd86ff1aac89697511a88066ce463e65b548533bfa31abb2"
+  },
+  "labels_sha256": "4d59f6c8e55877c1186e9e258b550ea0dcf002be868019a67d34ab63037770a5",
+  "model1_ready_for_reviewed_synthetic_fitting": false,
+  "all_scenario_labels_independently_reviewed": false,
+  "minimum_10_per_class_in_each_role": false,
+  "class_support_by_partition": {
+    "fit": {
+      "benign": 390,
+      "credential_access": 390,
+      "reconnaissance": 107,
+      "malicious_execution": 260,
+      "privilege_escalation": 325,
+      "web_exploitation": 100,
+      "data_exfiltration": 425
+    },
+    "selection": {
+      "benign": 10,
+      "credential_access": 10,
+      "reconnaissance": 10,
+      "malicious_execution": 0,
+      "privilege_escalation": 10,
+      "web_exploitation": 0,
+      "data_exfiltration": 0
+    },
+    "calibration": {
+      "benign": 20,
+      "credential_access": 20,
+      "reconnaissance": 21,
+      "malicious_execution": 0,
+      "privilege_escalation": 35,
+      "web_exploitation": 0,
+      "data_exfiltration": 0
+    },
+    "threshold": {
+      "benign": 20,
+      "credential_access": 20,
+      "reconnaissance": 0,
+      "malicious_execution": 20,
+      "privilege_escalation": 20,
+      "web_exploitation": 0,
+      "data_exfiltration": 20
+    },
+    "test": {
+      "benign": 60,
+      "credential_access": 60,
+      "reconnaissance": 62,
+      "malicious_execution": 0,
+      "privilege_escalation": 75,
+      "web_exploitation": 0,
+      "data_exfiltration": 0
+    }
+  },
+  "model2_control_targets_reviewed": false,
+  "model_weights_fitted": false,
+  "production_release_eligible": false,
+  "note": "Preparation is not fitting or independent validation. The legacy train-three CLI is three-class; do not use it for these seven-class records."
+}

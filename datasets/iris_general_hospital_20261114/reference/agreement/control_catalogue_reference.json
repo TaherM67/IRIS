@@ -1,0 +1,1389 @@
+[
+  {
+    "control_id": "CTL-IAM-001",
+    "name": "Enforce MFA for privileged accounts",
+    "family": "Identity and access",
+    "applies_to": [
+      "identity",
+      "server"
+    ],
+    "mitigates_attack_techniques": [
+      "T1078",
+      "T1110"
+    ]
+  },
+  {
+    "control_id": "CTL-IAM-002",
+    "name": "Enforce MFA for remote access (VPN)",
+    "family": "Identity and access",
+    "applies_to": [
+      "network"
+    ],
+    "mitigates_attack_techniques": [
+      "T1078",
+      "T1110",
+      "T1133"
+    ]
+  },
+  {
+    "control_id": "CTL-IAM-003",
+    "name": "Account lockout after 5 failed logins",
+    "family": "Identity and access",
+    "applies_to": [
+      "all"
+    ],
+    "mitigates_attack_techniques": [
+      "T1110.001",
+      "T1110.003"
+    ]
+  },
+  {
+    "control_id": "CTL-IAM-004",
+    "name": "Quarterly privileged access review",
+    "family": "Identity and access",
+    "applies_to": [
+      "identity",
+      "server"
+    ],
+    "mitigates_attack_techniques": [
+      "T1078",
+      "T1098"
+    ]
+  },
+  {
+    "control_id": "CTL-IAM-005",
+    "name": "Privileged access management vault",
+    "family": "Identity and access",
+    "applies_to": [
+      "identity",
+      "server"
+    ],
+    "mitigates_attack_techniques": [
+      "T1078",
+      "T1003"
+    ]
+  },
+  {
+    "control_id": "CTL-IAM-006",
+    "name": "Just-in-time administrative access",
+    "family": "Identity and access",
+    "applies_to": [
+      "server",
+      "cloud"
+    ],
+    "mitigates_attack_techniques": [
+      "T1078"
+    ]
+  },
+  {
+    "control_id": "CTL-IAM-007",
+    "name": "Local administrator password solution (LAPS)",
+    "family": "Identity and access",
+    "applies_to": [
+      "endpoint",
+      "server"
+    ],
+    "mitigates_attack_techniques": [
+      "T1078.003",
+      "T1021.002"
+    ]
+  },
+  {
+    "control_id": "CTL-IAM-008",
+    "name": "Service account password rotation (90 days)",
+    "family": "Identity and access",
+    "applies_to": [
+      "identity"
+    ],
+    "mitigates_attack_techniques": [
+      "T1558.003",
+      "T1078"
+    ]
+  },
+  {
+    "control_id": "CTL-IAM-009",
+    "name": "Enforce AES-only Kerberos encryption",
+    "family": "Identity and access",
+    "applies_to": [
+      "identity"
+    ],
+    "mitigates_attack_techniques": [
+      "T1558.003"
+    ]
+  },
+  {
+    "control_id": "CTL-IAM-010",
+    "name": "Disable NTLMv1 and legacy authentication",
+    "family": "Identity and access",
+    "applies_to": [
+      "identity",
+      "endpoint"
+    ],
+    "mitigates_attack_techniques": [
+      "T1110",
+      "T1557"
+    ]
+  },
+  {
+    "control_id": "CTL-IAM-011",
+    "name": "Joiner-mover-leaver account process",
+    "family": "Identity and access",
+    "applies_to": [
+      "all"
+    ],
+    "mitigates_attack_techniques": [
+      "T1078"
+    ]
+  },
+  {
+    "control_id": "CTL-IAM-012",
+    "name": "Password policy (14+ characters, banned-password list)",
+    "family": "Identity and access",
+    "applies_to": [
+      "all"
+    ],
+    "mitigates_attack_techniques": [
+      "T1110"
+    ]
+  },
+  {
+    "control_id": "CTL-NET-001",
+    "name": "Segment the network zone",
+    "family": "Network security",
+    "applies_to": [
+      "all"
+    ],
+    "mitigates_attack_techniques": [
+      "T1046",
+      "T1021"
+    ]
+  },
+  {
+    "control_id": "CTL-NET-002",
+    "name": "Restrict inbound management ports",
+    "family": "Network security",
+    "applies_to": [
+      "server",
+      "network"
+    ],
+    "mitigates_attack_techniques": [
+      "T1046",
+      "T1021.001",
+      "T1133"
+    ]
+  },
+  {
+    "control_id": "CTL-NET-003",
+    "name": "Tune IDS scan signatures",
+    "family": "Network security",
+    "applies_to": [
+      "network",
+      "server"
+    ],
+    "mitigates_attack_techniques": [
+      "T1046",
+      "T1595"
+    ]
+  },
+  {
+    "control_id": "CTL-NET-004",
+    "name": "IPS blocking for known scanners",
+    "family": "Network security",
+    "applies_to": [
+      "network",
+      "web"
+    ],
+    "mitigates_attack_techniques": [
+      "T1595",
+      "T1190"
+    ]
+  },
+  {
+    "control_id": "CTL-NET-005",
+    "name": "Restrict DNS zone transfers",
+    "family": "Network security",
+    "applies_to": [
+      "network",
+      "identity"
+    ],
+    "mitigates_attack_techniques": [
+      "T1590.002"
+    ]
+  },
+  {
+    "control_id": "CTL-NET-006",
+    "name": "Network access control (802.1X)",
+    "family": "Network security",
+    "applies_to": [
+      "endpoint",
+      "iot",
+      "network"
+    ],
+    "mitigates_attack_techniques": [
+      "T1200"
+    ]
+  },
+  {
+    "control_id": "CTL-NET-007",
+    "name": "Egress filtering by allowlist",
+    "family": "Network security",
+    "applies_to": [
+      "server",
+      "cloud"
+    ],
+    "mitigates_attack_techniques": [
+      "T1048",
+      "T1071"
+    ]
+  },
+  {
+    "control_id": "CTL-NET-008",
+    "name": "Web application firewall",
+    "family": "Network security",
+    "applies_to": [
+      "web"
+    ],
+    "mitigates_attack_techniques": [
+      "T1190",
+      "T1595.002"
+    ]
+  },
+  {
+    "control_id": "CTL-NET-009",
+    "name": "VPN geo-restriction and IP reputation filtering",
+    "family": "Network security",
+    "applies_to": [
+      "network"
+    ],
+    "mitigates_attack_techniques": [
+      "T1133",
+      "T1110.003"
+    ]
+  },
+  {
+    "control_id": "CTL-NET-010",
+    "name": "East-west firewall rules between server tiers",
+    "family": "Network security",
+    "applies_to": [
+      "server"
+    ],
+    "mitigates_attack_techniques": [
+      "T1021",
+      "T1046"
+    ]
+  },
+  {
+    "control_id": "CTL-NET-011",
+    "name": "DDoS protection service",
+    "family": "Network security",
+    "applies_to": [
+      "web",
+      "network"
+    ],
+    "mitigates_attack_techniques": [
+      "T1498"
+    ]
+  },
+  {
+    "control_id": "CTL-NET-012",
+    "name": "Rate limiting on authentication endpoints",
+    "family": "Network security",
+    "applies_to": [
+      "web",
+      "network"
+    ],
+    "mitigates_attack_techniques": [
+      "T1110"
+    ]
+  },
+  {
+    "control_id": "CTL-VUL-001",
+    "name": "Monthly patch cycle",
+    "family": "Vulnerability and configuration",
+    "applies_to": [
+      "all"
+    ],
+    "mitigates_attack_techniques": [
+      "T1190",
+      "T1068"
+    ]
+  },
+  {
+    "control_id": "CTL-VUL-002",
+    "name": "Critical patch SLA (14 days)",
+    "family": "Vulnerability and configuration",
+    "applies_to": [
+      "all"
+    ],
+    "mitigates_attack_techniques": [
+      "T1190"
+    ]
+  },
+  {
+    "control_id": "CTL-VUL-003",
+    "name": "Authenticated vulnerability scanning (weekly)",
+    "family": "Vulnerability and configuration",
+    "applies_to": [
+      "all"
+    ],
+    "mitigates_attack_techniques": [
+      "T1190",
+      "T1068"
+    ]
+  },
+  {
+    "control_id": "CTL-VUL-004",
+    "name": "External attack surface scanning",
+    "family": "Vulnerability and configuration",
+    "applies_to": [
+      "web",
+      "network"
+    ],
+    "mitigates_attack_techniques": [
+      "T1595",
+      "T1190"
+    ]
+  },
+  {
+    "control_id": "CTL-VUL-005",
+    "name": "CIS hardened baseline configuration",
+    "family": "Vulnerability and configuration",
+    "applies_to": [
+      "server",
+      "endpoint"
+    ],
+    "mitigates_attack_techniques": [
+      "T1046",
+      "T1021"
+    ]
+  },
+  {
+    "control_id": "CTL-VUL-006",
+    "name": "Disable unused services and ports",
+    "family": "Vulnerability and configuration",
+    "applies_to": [
+      "server",
+      "iot"
+    ],
+    "mitigates_attack_techniques": [
+      "T1046"
+    ]
+  },
+  {
+    "control_id": "CTL-VUL-007",
+    "name": "Hardened golden images",
+    "family": "Vulnerability and configuration",
+    "applies_to": [
+      "cloud",
+      "server"
+    ],
+    "mitigates_attack_techniques": [
+      "T1190"
+    ]
+  },
+  {
+    "control_id": "CTL-VUL-008",
+    "name": "Configuration drift monitoring",
+    "family": "Vulnerability and configuration",
+    "applies_to": [
+      "server",
+      "cloud"
+    ],
+    "mitigates_attack_techniques": [
+      "T1098"
+    ]
+  },
+  {
+    "control_id": "CTL-VUL-009",
+    "name": "Firmware update program for devices",
+    "family": "Vulnerability and configuration",
+    "applies_to": [
+      "iot",
+      "network"
+    ],
+    "mitigates_attack_techniques": [
+      "T1190"
+    ]
+  },
+  {
+    "control_id": "CTL-VUL-010",
+    "name": "Change default device credentials",
+    "family": "Vulnerability and configuration",
+    "applies_to": [
+      "iot",
+      "network"
+    ],
+    "mitigates_attack_techniques": [
+      "T1078.001"
+    ]
+  },
+  {
+    "control_id": "CTL-VUL-011",
+    "name": "Secure software development review",
+    "family": "Vulnerability and configuration",
+    "applies_to": [
+      "web"
+    ],
+    "mitigates_attack_techniques": [
+      "T1190"
+    ]
+  },
+  {
+    "control_id": "CTL-VUL-012",
+    "name": "Database hardening and least-privilege roles",
+    "family": "Vulnerability and configuration",
+    "applies_to": [
+      "db"
+    ],
+    "mitigates_attack_techniques": [
+      "T1190",
+      "T1078"
+    ]
+  },
+  {
+    "control_id": "CTL-MON-001",
+    "name": "Centralized log collection to SIEM",
+    "family": "Logging and monitoring",
+    "applies_to": [
+      "all"
+    ],
+    "mitigates_attack_techniques": [
+      "T1110",
+      "T1046"
+    ]
+  },
+  {
+    "control_id": "CTL-MON-002",
+    "name": "Alert on repeated failed logons",
+    "family": "Logging and monitoring",
+    "applies_to": [
+      "all"
+    ],
+    "mitigates_attack_techniques": [
+      "T1110"
+    ]
+  },
+  {
+    "control_id": "CTL-MON-003",
+    "name": "Alert on logon success after failures",
+    "family": "Logging and monitoring",
+    "applies_to": [
+      "all"
+    ],
+    "mitigates_attack_techniques": [
+      "T1110",
+      "T1078"
+    ]
+  },
+  {
+    "control_id": "CTL-MON-004",
+    "name": "Impossible-travel sign-in detection",
+    "family": "Logging and monitoring",
+    "applies_to": [
+      "identity",
+      "network"
+    ],
+    "mitigates_attack_techniques": [
+      "T1078"
+    ]
+  },
+  {
+    "control_id": "CTL-MON-005",
+    "name": "Kerberos service ticket anomaly detection",
+    "family": "Logging and monitoring",
+    "applies_to": [
+      "identity"
+    ],
+    "mitigates_attack_techniques": [
+      "T1558.003"
+    ]
+  },
+  {
+    "control_id": "CTL-MON-006",
+    "name": "Port-scan threshold detection",
+    "family": "Logging and monitoring",
+    "applies_to": [
+      "network",
+      "server"
+    ],
+    "mitigates_attack_techniques": [
+      "T1046",
+      "T1595"
+    ]
+  },
+  {
+    "control_id": "CTL-MON-007",
+    "name": "File integrity monitoring",
+    "family": "Logging and monitoring",
+    "applies_to": [
+      "server"
+    ],
+    "mitigates_attack_techniques": [
+      "T1565"
+    ]
+  },
+  {
+    "control_id": "CTL-MON-008",
+    "name": "User and entity behavior analytics",
+    "family": "Logging and monitoring",
+    "applies_to": [
+      "all"
+    ],
+    "mitigates_attack_techniques": [
+      "T1078"
+    ]
+  },
+  {
+    "control_id": "CTL-MON-009",
+    "name": "Honeytoken accounts",
+    "family": "Logging and monitoring",
+    "applies_to": [
+      "identity"
+    ],
+    "mitigates_attack_techniques": [
+      "T1087",
+      "T1110"
+    ]
+  },
+  {
+    "control_id": "CTL-MON-010",
+    "name": "Security log retention (12 months)",
+    "family": "Logging and monitoring",
+    "applies_to": [
+      "all"
+    ],
+    "mitigates_attack_techniques": []
+  },
+  {
+    "control_id": "CTL-MON-011",
+    "name": "NTP time synchronization",
+    "family": "Logging and monitoring",
+    "applies_to": [
+      "all"
+    ],
+    "mitigates_attack_techniques": []
+  },
+  {
+    "control_id": "CTL-MON-012",
+    "name": "Quarterly SIEM use-case review",
+    "family": "Logging and monitoring",
+    "applies_to": [
+      "all"
+    ],
+    "mitigates_attack_techniques": [
+      "T1110",
+      "T1046"
+    ]
+  },
+  {
+    "control_id": "CTL-DAT-001",
+    "name": "Encryption at rest (AES-256)",
+    "family": "Data protection",
+    "applies_to": [
+      "server",
+      "db",
+      "cloud",
+      "endpoint"
+    ],
+    "mitigates_attack_techniques": [
+      "T1005",
+      "T1530"
+    ]
+  },
+  {
+    "control_id": "CTL-DAT-002",
+    "name": "TLS 1.2 or later for data in transit",
+    "family": "Data protection",
+    "applies_to": [
+      "all"
+    ],
+    "mitigates_attack_techniques": [
+      "T1557",
+      "T1040"
+    ]
+  },
+  {
+    "control_id": "CTL-DAT-003",
+    "name": "Data loss prevention",
+    "family": "Data protection",
+    "applies_to": [
+      "endpoint",
+      "server"
+    ],
+    "mitigates_attack_techniques": [
+      "T1048",
+      "T1567"
+    ]
+  },
+  {
+    "control_id": "CTL-DAT-004",
+    "name": "Daily backups (3-2-1 rule)",
+    "family": "Data protection",
+    "applies_to": [
+      "server",
+      "db"
+    ],
+    "mitigates_attack_techniques": [
+      "T1486",
+      "T1490"
+    ]
+  },
+  {
+    "control_id": "CTL-DAT-005",
+    "name": "Immutable offline backup copy",
+    "family": "Data protection",
+    "applies_to": [
+      "server",
+      "db"
+    ],
+    "mitigates_attack_techniques": [
+      "T1486",
+      "T1490"
+    ]
+  },
+  {
+    "control_id": "CTL-DAT-006",
+    "name": "Quarterly backup restore testing",
+    "family": "Data protection",
+    "applies_to": [
+      "server",
+      "db"
+    ],
+    "mitigates_attack_techniques": [
+      "T1486"
+    ]
+  },
+  {
+    "control_id": "CTL-DAT-007",
+    "name": "Data classification and labeling",
+    "family": "Data protection",
+    "applies_to": [
+      "all"
+    ],
+    "mitigates_attack_techniques": [
+      "T1048"
+    ]
+  },
+  {
+    "control_id": "CTL-DAT-008",
+    "name": "Key management service",
+    "family": "Data protection",
+    "applies_to": [
+      "cloud",
+      "server"
+    ],
+    "mitigates_attack_techniques": [
+      "T1552"
+    ]
+  },
+  {
+    "control_id": "CTL-DAT-009",
+    "name": "Database activity monitoring",
+    "family": "Data protection",
+    "applies_to": [
+      "db"
+    ],
+    "mitigates_attack_techniques": [
+      "T1005",
+      "T1213"
+    ]
+  },
+  {
+    "control_id": "CTL-DAT-010",
+    "name": "Secure file transfer only (SFTP)",
+    "family": "Data protection",
+    "applies_to": [
+      "server"
+    ],
+    "mitigates_attack_techniques": [
+      "T1040"
+    ]
+  },
+  {
+    "control_id": "CTL-DAT-011",
+    "name": "Data retention and disposal schedule",
+    "family": "Data protection",
+    "applies_to": [
+      "all"
+    ],
+    "mitigates_attack_techniques": [
+      "T1005"
+    ]
+  },
+  {
+    "control_id": "CTL-DAT-012",
+    "name": "Approval for restricted data access",
+    "family": "Data protection",
+    "applies_to": [
+      "db",
+      "server"
+    ],
+    "mitigates_attack_techniques": [
+      "T1213"
+    ]
+  },
+  {
+    "control_id": "CTL-END-001",
+    "name": "Endpoint detection and response (EDR)",
+    "family": "Endpoint security",
+    "applies_to": [
+      "endpoint",
+      "server"
+    ],
+    "mitigates_attack_techniques": [
+      "T1059.001",
+      "T1003",
+      "T1486"
+    ]
+  },
+  {
+    "control_id": "CTL-END-002",
+    "name": "Next-generation antivirus",
+    "family": "Endpoint security",
+    "applies_to": [
+      "endpoint",
+      "server"
+    ],
+    "mitigates_attack_techniques": [
+      "T1204"
+    ]
+  },
+  {
+    "control_id": "CTL-END-003",
+    "name": "Application allowlisting",
+    "family": "Endpoint security",
+    "applies_to": [
+      "endpoint",
+      "server"
+    ],
+    "mitigates_attack_techniques": [
+      "T1204",
+      "T1059"
+    ]
+  },
+  {
+    "control_id": "CTL-END-004",
+    "name": "Remove local administrator rights",
+    "family": "Endpoint security",
+    "applies_to": [
+      "endpoint"
+    ],
+    "mitigates_attack_techniques": [
+      "T1068",
+      "T1078.003"
+    ]
+  },
+  {
+    "control_id": "CTL-END-005",
+    "name": "Block Office macros from the internet",
+    "family": "Endpoint security",
+    "applies_to": [
+      "endpoint"
+    ],
+    "mitigates_attack_techniques": [
+      "T1204.002",
+      "T1566.001"
+    ]
+  },
+  {
+    "control_id": "CTL-END-006",
+    "name": "USB storage control",
+    "family": "Endpoint security",
+    "applies_to": [
+      "endpoint"
+    ],
+    "mitigates_attack_techniques": [
+      "T1091",
+      "T1052"
+    ]
+  },
+  {
+    "control_id": "CTL-END-007",
+    "name": "Full disk encryption",
+    "family": "Endpoint security",
+    "applies_to": [
+      "endpoint"
+    ],
+    "mitigates_attack_techniques": [
+      "T1005"
+    ]
+  },
+  {
+    "control_id": "CTL-END-008",
+    "name": "LSASS protection (Credential Guard)",
+    "family": "Endpoint security",
+    "applies_to": [
+      "endpoint",
+      "identity"
+    ],
+    "mitigates_attack_techniques": [
+      "T1003.001"
+    ]
+  },
+  {
+    "control_id": "CTL-END-009",
+    "name": "PowerShell logging and constrained language mode",
+    "family": "Endpoint security",
+    "applies_to": [
+      "endpoint",
+      "server"
+    ],
+    "mitigates_attack_techniques": [
+      "T1059.001"
+    ]
+  },
+  {
+    "control_id": "CTL-END-010",
+    "name": "Browser hardening and isolation",
+    "family": "Endpoint security",
+    "applies_to": [
+      "endpoint"
+    ],
+    "mitigates_attack_techniques": [
+      "T1189"
+    ]
+  },
+  {
+    "control_id": "CTL-END-011",
+    "name": "Host firewall enabled",
+    "family": "Endpoint security",
+    "applies_to": [
+      "endpoint",
+      "server"
+    ],
+    "mitigates_attack_techniques": [
+      "T1021",
+      "T1046"
+    ]
+  },
+  {
+    "control_id": "CTL-END-012",
+    "name": "Mobile device management",
+    "family": "Endpoint security",
+    "applies_to": [
+      "endpoint"
+    ],
+    "mitigates_attack_techniques": [
+      "T1078"
+    ]
+  },
+  {
+    "control_id": "CTL-CLD-001",
+    "name": "Cloud security posture management",
+    "family": "Cloud and container",
+    "applies_to": [
+      "cloud"
+    ],
+    "mitigates_attack_techniques": [
+      "T1530",
+      "T1078.004"
+    ]
+  },
+  {
+    "control_id": "CTL-CLD-002",
+    "name": "Least-privilege cloud IAM roles",
+    "family": "Cloud and container",
+    "applies_to": [
+      "cloud"
+    ],
+    "mitigates_attack_techniques": [
+      "T1078.004"
+    ]
+  },
+  {
+    "control_id": "CTL-CLD-003",
+    "name": "Monthly security group review",
+    "family": "Cloud and container",
+    "applies_to": [
+      "cloud"
+    ],
+    "mitigates_attack_techniques": [
+      "T1046",
+      "T1190"
+    ]
+  },
+  {
+    "control_id": "CTL-CLD-004",
+    "name": "Container image scanning",
+    "family": "Cloud and container",
+    "applies_to": [
+      "cloud"
+    ],
+    "mitigates_attack_techniques": [
+      "T1610",
+      "T1190"
+    ]
+  },
+  {
+    "control_id": "CTL-CLD-005",
+    "name": "Kubernetes RBAC and namespace isolation",
+    "family": "Cloud and container",
+    "applies_to": [
+      "cloud"
+    ],
+    "mitigates_attack_techniques": [
+      "T1611",
+      "T1078"
+    ]
+  },
+  {
+    "control_id": "CTL-CLD-006",
+    "name": "Secrets management vault",
+    "family": "Cloud and container",
+    "applies_to": [
+      "cloud",
+      "server"
+    ],
+    "mitigates_attack_techniques": [
+      "T1552"
+    ]
+  },
+  {
+    "control_id": "CTL-CLD-007",
+    "name": "Block public storage buckets",
+    "family": "Cloud and container",
+    "applies_to": [
+      "cloud"
+    ],
+    "mitigates_attack_techniques": [
+      "T1530"
+    ]
+  },
+  {
+    "control_id": "CTL-CLD-008",
+    "name": "Cloud audit logging enabled",
+    "family": "Cloud and container",
+    "applies_to": [
+      "cloud"
+    ],
+    "mitigates_attack_techniques": [
+      "T1078.004"
+    ]
+  },
+  {
+    "control_id": "CTL-CLD-009",
+    "name": "Runtime container security monitoring",
+    "family": "Cloud and container",
+    "applies_to": [
+      "cloud"
+    ],
+    "mitigates_attack_techniques": [
+      "T1610",
+      "T1611"
+    ]
+  },
+  {
+    "control_id": "CTL-CLD-010",
+    "name": "Infrastructure-as-code security checks",
+    "family": "Cloud and container",
+    "applies_to": [
+      "cloud"
+    ],
+    "mitigates_attack_techniques": [
+      "T1190"
+    ]
+  },
+  {
+    "control_id": "CTL-CLD-011",
+    "name": "Private endpoints for data services",
+    "family": "Cloud and container",
+    "applies_to": [
+      "cloud",
+      "db"
+    ],
+    "mitigates_attack_techniques": [
+      "T1530"
+    ]
+  },
+  {
+    "control_id": "CTL-CLD-012",
+    "name": "Cloud workload backup policy",
+    "family": "Cloud and container",
+    "applies_to": [
+      "cloud"
+    ],
+    "mitigates_attack_techniques": [
+      "T1485",
+      "T1490"
+    ]
+  },
+  {
+    "control_id": "CTL-GOV-001",
+    "name": "Information security policy (annual review)",
+    "family": "Governance and awareness",
+    "applies_to": [
+      "all"
+    ],
+    "mitigates_attack_techniques": []
+  },
+  {
+    "control_id": "CTL-GOV-002",
+    "name": "Annual risk assessment",
+    "family": "Governance and awareness",
+    "applies_to": [
+      "all"
+    ],
+    "mitigates_attack_techniques": []
+  },
+  {
+    "control_id": "CTL-GOV-003",
+    "name": "Security awareness training",
+    "family": "Governance and awareness",
+    "applies_to": [
+      "all"
+    ],
+    "mitigates_attack_techniques": [
+      "T1566",
+      "T1078"
+    ]
+  },
+  {
+    "control_id": "CTL-GOV-004",
+    "name": "Quarterly phishing simulation",
+    "family": "Governance and awareness",
+    "applies_to": [
+      "endpoint"
+    ],
+    "mitigates_attack_techniques": [
+      "T1566"
+    ]
+  },
+  {
+    "control_id": "CTL-GOV-005",
+    "name": "Third-party access review",
+    "family": "Governance and awareness",
+    "applies_to": [
+      "all"
+    ],
+    "mitigates_attack_techniques": [
+      "T1199"
+    ]
+  },
+  {
+    "control_id": "CTL-GOV-006",
+    "name": "Monthly asset inventory reconciliation",
+    "family": "Governance and awareness",
+    "applies_to": [
+      "all"
+    ],
+    "mitigates_attack_techniques": []
+  },
+  {
+    "control_id": "CTL-GOV-007",
+    "name": "Risk acceptance sign-off",
+    "family": "Governance and awareness",
+    "applies_to": [
+      "all"
+    ],
+    "mitigates_attack_techniques": []
+  },
+  {
+    "control_id": "CTL-GOV-008",
+    "name": "Security exceptions register",
+    "family": "Governance and awareness",
+    "applies_to": [
+      "all"
+    ],
+    "mitigates_attack_techniques": []
+  },
+  {
+    "control_id": "CTL-GOV-009",
+    "name": "Acceptable use policy",
+    "family": "Governance and awareness",
+    "applies_to": [
+      "endpoint"
+    ],
+    "mitigates_attack_techniques": [
+      "T1078"
+    ]
+  },
+  {
+    "control_id": "CTL-GOV-010",
+    "name": "Supplier security clauses in contracts",
+    "family": "Governance and awareness",
+    "applies_to": [
+      "all"
+    ],
+    "mitigates_attack_techniques": [
+      "T1195",
+      "T1199"
+    ]
+  },
+  {
+    "control_id": "CTL-GOV-011",
+    "name": "Security metrics reporting to management",
+    "family": "Governance and awareness",
+    "applies_to": [
+      "all"
+    ],
+    "mitigates_attack_techniques": []
+  },
+  {
+    "control_id": "CTL-GOV-012",
+    "name": "Internal audit of security controls",
+    "family": "Governance and awareness",
+    "applies_to": [
+      "all"
+    ],
+    "mitigates_attack_techniques": []
+  },
+  {
+    "control_id": "CTL-IR-001",
+    "name": "Incident response plan",
+    "family": "Incident response and recovery",
+    "applies_to": [
+      "all"
+    ],
+    "mitigates_attack_techniques": []
+  },
+  {
+    "control_id": "CTL-IR-002",
+    "name": "Credential compromise playbook",
+    "family": "Incident response and recovery",
+    "applies_to": [
+      "all"
+    ],
+    "mitigates_attack_techniques": [
+      "T1078",
+      "T1110"
+    ]
+  },
+  {
+    "control_id": "CTL-IR-003",
+    "name": "Reconnaissance triage playbook",
+    "family": "Incident response and recovery",
+    "applies_to": [
+      "all"
+    ],
+    "mitigates_attack_techniques": [
+      "T1046",
+      "T1595"
+    ]
+  },
+  {
+    "control_id": "CTL-IR-004",
+    "name": "Account disable on confirmed compromise (approval required)",
+    "family": "Incident response and recovery",
+    "applies_to": [
+      "identity"
+    ],
+    "mitigates_attack_techniques": [
+      "T1078"
+    ]
+  },
+  {
+    "control_id": "CTL-IR-005",
+    "name": "Host isolation through EDR (approval required)",
+    "family": "Incident response and recovery",
+    "applies_to": [
+      "endpoint",
+      "server"
+    ],
+    "mitigates_attack_techniques": [
+      "T1021",
+      "T1486"
+    ]
+  },
+  {
+    "control_id": "CTL-IR-006",
+    "name": "Block malicious source IP at the perimeter",
+    "family": "Incident response and recovery",
+    "applies_to": [
+      "network"
+    ],
+    "mitigates_attack_techniques": [
+      "T1595",
+      "T1110"
+    ]
+  },
+  {
+    "control_id": "CTL-IR-007",
+    "name": "Forensic readiness and evidence handling",
+    "family": "Incident response and recovery",
+    "applies_to": [
+      "server",
+      "endpoint"
+    ],
+    "mitigates_attack_techniques": []
+  },
+  {
+    "control_id": "CTL-IR-008",
+    "name": "Incident escalation matrix",
+    "family": "Incident response and recovery",
+    "applies_to": [
+      "all"
+    ],
+    "mitigates_attack_techniques": []
+  },
+  {
+    "control_id": "CTL-IR-009",
+    "name": "Biannual tabletop exercises",
+    "family": "Incident response and recovery",
+    "applies_to": [
+      "all"
+    ],
+    "mitigates_attack_techniques": []
+  },
+  {
+    "control_id": "CTL-IR-010",
+    "name": "Post-incident lessons learned",
+    "family": "Incident response and recovery",
+    "applies_to": [
+      "all"
+    ],
+    "mitigates_attack_techniques": []
+  },
+  {
+    "control_id": "CTL-IR-011",
+    "name": "Ransomware recovery runbook",
+    "family": "Incident response and recovery",
+    "applies_to": [
+      "server",
+      "db"
+    ],
+    "mitigates_attack_techniques": [
+      "T1486"
+    ]
+  },
+  {
+    "control_id": "CTL-IR-012",
+    "name": "Business continuity and disaster recovery plan",
+    "family": "Incident response and recovery",
+    "applies_to": [
+      "all"
+    ],
+    "mitigates_attack_techniques": [
+      "T1485",
+      "T1486",
+      "T1498"
+    ]
+  },
+  {
+    "control_id": "CTL-PHY-001",
+    "name": "IoT network isolation (dedicated VLAN)",
+    "family": "Physical, OT and IoT",
+    "applies_to": [
+      "iot"
+    ],
+    "mitigates_attack_techniques": [
+      "T1046",
+      "T1021"
+    ]
+  },
+  {
+    "control_id": "CTL-PHY-002",
+    "name": "Device certificate authentication",
+    "family": "Physical, OT and IoT",
+    "applies_to": [
+      "iot",
+      "network"
+    ],
+    "mitigates_attack_techniques": [
+      "T1200"
+    ]
+  },
+  {
+    "control_id": "CTL-PHY-003",
+    "name": "Data center physical access control",
+    "family": "Physical, OT and IoT",
+    "applies_to": [
+      "server",
+      "network"
+    ],
+    "mitigates_attack_techniques": [
+      "T1200"
+    ]
+  },
+  {
+    "control_id": "CTL-PHY-004",
+    "name": "CCTV recording retention (90 days)",
+    "family": "Physical, OT and IoT",
+    "applies_to": [
+      "iot"
+    ],
+    "mitigates_attack_techniques": []
+  },
+  {
+    "control_id": "CTL-PHY-005",
+    "name": "Building management system access review",
+    "family": "Physical, OT and IoT",
+    "applies_to": [
+      "iot"
+    ],
+    "mitigates_attack_techniques": [
+      "T1078"
+    ]
+  },
+  {
+    "control_id": "CTL-PHY-006",
+    "name": "Printer secure configuration",
+    "family": "Physical, OT and IoT",
+    "applies_to": [
+      "iot"
+    ],
+    "mitigates_attack_techniques": [
+      "T1046"
+    ]
+  },
+  {
+    "control_id": "CTL-PHY-007",
+    "name": "OT and IoT passive network monitoring",
+    "family": "Physical, OT and IoT",
+    "applies_to": [
+      "iot"
+    ],
+    "mitigates_attack_techniques": [
+      "T1046"
+    ]
+  },
+  {
+    "control_id": "CTL-PHY-008",
+    "name": "Server room environmental monitoring",
+    "family": "Physical, OT and IoT",
+    "applies_to": [
+      "server"
+    ],
+    "mitigates_attack_techniques": []
+  },
+  {
+    "control_id": "CTL-PHY-009",
+    "name": "Redundant power (UPS and generator)",
+    "family": "Physical, OT and IoT",
+    "applies_to": [
+      "server",
+      "network"
+    ],
+    "mitigates_attack_techniques": []
+  },
+  {
+    "control_id": "CTL-PHY-010",
+    "name": "Visitor management",
+    "family": "Physical, OT and IoT",
+    "applies_to": [
+      "all"
+    ],
+    "mitigates_attack_techniques": []
+  },
+  {
+    "control_id": "CTL-PHY-011",
+    "name": "Secure disposal of hardware",
+    "family": "Physical, OT and IoT",
+    "applies_to": [
+      "all"
+    ],
+    "mitigates_attack_techniques": [
+      "T1005"
+    ]
+  },
+  {
+    "control_id": "CTL-PHY-012",
+    "name": "Network device configuration backup",
+    "family": "Physical, OT and IoT",
+    "applies_to": [
+      "network"
+    ],
+    "mitigates_attack_techniques": [
+      "T1485"
+    ]
+  }
+]

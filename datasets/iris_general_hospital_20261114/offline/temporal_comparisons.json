@@ -1,0 +1,1874 @@
+[
+  {
+    "comparison_id": "ec5da155125255e9bfd7481ca9336760",
+    "asset_id": "eb873022fe9558c288e8872f5d2bee56",
+    "risk_id": "491378a7f88256e4b277fe6e5307f777",
+    "phases": [
+      {
+        "case_id": "fa72538ec6ae5d0ab48155450c68ac7b",
+        "phase": "before",
+        "asset_version_id": "cb1c6e92c2ea50cbab58967ac676e939",
+        "risk_version_id": "1a86c5b3d0f355e99bed933e459d4925"
+      },
+      {
+        "case_id": "dbb5d2f6df975bb4950fc21cb446e152",
+        "phase": "after_inventory",
+        "asset_version_id": "a93fa8a5a5985bb8aa22e5ce8a151569",
+        "risk_version_id": "fdea287a8bc55c51a928753e97bbeaa6"
+      },
+      {
+        "case_id": "c4fe20ee92de5be093e320d20e17d725",
+        "phase": "after_risk_review",
+        "asset_version_id": "a93fa8a5a5985bb8aa22e5ce8a151569",
+        "risk_version_id": "56c2e3c1e856598a8c8beed0965ff175"
+      }
+    ],
+    "evidence_basis": "Same measured pattern replayed in separate source runs under time-valid context versions",
+    "review_status": "unreviewed_synthetic_reference",
+    "data_provenance": "synthetic"
+  },
+  {
+    "comparison_id": "ab52a67598cf569792c0484f553f4115",
+    "asset_id": "6dfb822b4a205a32936a3207f5318147",
+    "risk_id": "4183c7636b11513cafa0d535bd35c894",
+    "phases": [
+      {
+        "case_id": "fd3ba86e842d5b7f93bd66501bc7abdb",
+        "phase": "before",
+        "asset_version_id": "3ca5a8d6f0595fd8adce7a3218af7b02",
+        "risk_version_id": "902016f10f3a5acf84d7252c2d861e2c"
+      },
+      {
+        "case_id": "275de4c9fec2541cbb3dc2d6c6335793",
+        "phase": "after_inventory",
+        "asset_version_id": "037f22a4f52e514ab791537f0e36beb1",
+        "risk_version_id": "4adf7dd6ef095e43890d69ef756eaaab"
+      },
+      {
+        "case_id": "9d96f43ad08455769a7ff144c0d7ee4b",
+        "phase": "after_risk_review",
+        "asset_version_id": "037f22a4f52e514ab791537f0e36beb1",
+        "risk_version_id": "dd7e3ba9359f5e5abf86fb161687282e"
+      }
+    ],
+    "evidence_basis": "Same measured pattern replayed in separate source runs under time-valid context versions",
+    "review_status": "unreviewed_synthetic_reference",
+    "data_provenance": "synthetic"
+  },
+  {
+    "comparison_id": "6d9c1d5c26cd54258386b88e2afc0be7",
+    "asset_id": "e170a98283b659d3a983670e541e37da",
+    "risk_id": "21c85560387c5f5da1e098568b2cdaac",
+    "phases": [
+      {
+        "case_id": "7f3dbbb2338c53318558699e67bc8f3b",
+        "phase": "before",
+        "asset_version_id": "049bf22651d05d4caf894256502b19e7",
+        "risk_version_id": "e86c0fe2a3b55f9bb2ce84898e4c2339"
+      },
+      {
+        "case_id": "b8ab65672eb15e0aab402f550845f59b",
+        "phase": "after_inventory",
+        "asset_version_id": "76fd782ba7445bb0bbdd4e4880b6e743",
+        "risk_version_id": "aacad566f1a05441b897bda73b59b55e"
+      },
+      {
+        "case_id": "05e1e2fa76345883a6909966fe0b653b",
+        "phase": "after_risk_review",
+        "asset_version_id": "76fd782ba7445bb0bbdd4e4880b6e743",
+        "risk_version_id": "d40f7542e8a054329896963402159929"
+      }
+    ],
+    "evidence_basis": "Same measured pattern replayed in separate source runs under time-valid context versions",
+    "review_status": "unreviewed_synthetic_reference",
+    "data_provenance": "synthetic"
+  },
+  {
+    "comparison_id": "2eec7f85b4445452a8b1a2b4f44530df",
+    "asset_id": "7a6ac6306f9c5daa8d20c3a86c8d0f74",
+    "risk_id": "deda879d916b512fbfbc65c50fe0d019",
+    "phases": [
+      {
+        "case_id": "fe9d68da3eac5479b0aa7d5f03ec1ddb",
+        "phase": "before",
+        "asset_version_id": "386e96eae4ce56658c53d64562670bca",
+        "risk_version_id": "da50d10e50d2559491866c73ea4e181e"
+      },
+      {
+        "case_id": "affde75e89af54b5b4f9da3cd0be997a",
+        "phase": "after_inventory",
+        "asset_version_id": "e813cbb22a155b0ea16a1896b7f2b0d3",
+        "risk_version_id": "78e4eb87ca495b5b82df88b1805a5699"
+      },
+      {
+        "case_id": "a5742088a00d5aff8aaf66e2a73b6b1c",
+        "phase": "after_risk_review",
+        "asset_version_id": "e813cbb22a155b0ea16a1896b7f2b0d3",
+        "risk_version_id": "7fe217cdbeae5e38848ca9fb2349dd29"
+      }
+    ],
+    "evidence_basis": "Same measured pattern replayed in separate source runs under time-valid context versions",
+    "review_status": "unreviewed_synthetic_reference",
+    "data_provenance": "synthetic"
+  },
+  {
+    "comparison_id": "7e15c8bc324851cc8a8a94881f7138a0",
+    "asset_id": "b492713f4fc3599196b6c2a5155d8ad1",
+    "risk_id": "16a721b6592658ffb03e3712c2608056",
+    "phases": [
+      {
+        "case_id": "b7e314b5d295538283bc80aa27d11308",
+        "phase": "before",
+        "asset_version_id": "4dc82ee859915a8ab9a97a3e0b4c48ce",
+        "risk_version_id": "c7f7b754b7f6575fbab507d597570116"
+      },
+      {
+        "case_id": "1b675281e5ef59c4b17a13a8ea3568b4",
+        "phase": "after_inventory",
+        "asset_version_id": "75df8c8078b057f1b93e3971f3ba37b3",
+        "risk_version_id": "9f7438e07ac053138e65189025b7006d"
+      },
+      {
+        "case_id": "31f8ad9b3f2a50f8baf3da1b6c3526fc",
+        "phase": "after_risk_review",
+        "asset_version_id": "75df8c8078b057f1b93e3971f3ba37b3",
+        "risk_version_id": "16180ae24ac551588d46c429eed40230"
+      }
+    ],
+    "evidence_basis": "Same measured pattern replayed in separate source runs under time-valid context versions",
+    "review_status": "unreviewed_synthetic_reference",
+    "data_provenance": "synthetic"
+  },
+  {
+    "comparison_id": "c929c9c6824958529ce239a4ce864839",
+    "asset_id": "40833d53710952b283f6b209ab729ac3",
+    "risk_id": "4b0cacd6ddd8536b9b46be511070c0f4",
+    "phases": [
+      {
+        "case_id": "60f2c1d40a095c60aec8a3bb9cc890cd",
+        "phase": "before",
+        "asset_version_id": "f32aade709bb521594323551d9315ef8",
+        "risk_version_id": "93645987d0665108a3267b56ded539b2"
+      },
+      {
+        "case_id": "ebd697694591567ba5f38b1db3bb0a7d",
+        "phase": "after_inventory",
+        "asset_version_id": "2ff152a548375c989d0ff92feaf8de35",
+        "risk_version_id": "0653bf8707b250a385fc336c4ff36643"
+      },
+      {
+        "case_id": "8247b53027045ed994e4de37faddad99",
+        "phase": "after_risk_review",
+        "asset_version_id": "2ff152a548375c989d0ff92feaf8de35",
+        "risk_version_id": "1e6e159b25d6548d88fa2677bdc6b14d"
+      }
+    ],
+    "evidence_basis": "Same measured pattern replayed in separate source runs under time-valid context versions",
+    "review_status": "unreviewed_synthetic_reference",
+    "data_provenance": "synthetic"
+  },
+  {
+    "comparison_id": "9dbdfcac79d456068e00d37ec67c2092",
+    "asset_id": "ca7913ea971c5560b63afb94bbe6256e",
+    "risk_id": "291121f5c9df56e8bb9e71653bd564f7",
+    "phases": [
+      {
+        "case_id": "458a449f67055657bbdccfa29a9b3dd0",
+        "phase": "before",
+        "asset_version_id": "38ecbfa7f0dc569dac3d5396371b5351",
+        "risk_version_id": "708db61ea3c45dd989ef48d812a9d78a"
+      },
+      {
+        "case_id": "65b02c7ad270570889ae20d88d9aa911",
+        "phase": "after_inventory",
+        "asset_version_id": "1635d9f37ef95b48acdfe9c9d60a09eb",
+        "risk_version_id": "d17aed69c84756aabbb9aeabd3281b09"
+      }
+    ],
+    "evidence_basis": "Same measured pattern replayed in separate source runs under time-valid context versions",
+    "review_status": "unreviewed_synthetic_reference",
+    "data_provenance": "synthetic"
+  },
+  {
+    "comparison_id": "73fc70cfc20850d9b7084bda9781ac37",
+    "asset_id": "02ccda12fc125d769389cdb3395f8106",
+    "risk_id": "170f842961945ee69409b72fef0c5d7d",
+    "phases": [
+      {
+        "case_id": "864d2d550c5a5e958228e1b90be29717",
+        "phase": "before",
+        "asset_version_id": "8b2cfded9a195373b05c828515ee8169",
+        "risk_version_id": "b59265cd957350b3b4144e9392359c32"
+      },
+      {
+        "case_id": "94676f7edfd65101b8c8edac2d512b19",
+        "phase": "after_inventory",
+        "asset_version_id": "0b54a82bab0b5ccaab0ed781a1986fb2",
+        "risk_version_id": "48cf6439689a586e9f245a4b14daa516"
+      }
+    ],
+    "evidence_basis": "Same measured pattern replayed in separate source runs under time-valid context versions",
+    "review_status": "unreviewed_synthetic_reference",
+    "data_provenance": "synthetic"
+  },
+  {
+    "comparison_id": "ce286e4e8c6553fbbeea0c0f021d4f4a",
+    "asset_id": "aa12b824a47f570a8db94659f2537f29",
+    "risk_id": "90dcf2f1cbd35838b061c3953f3b645e",
+    "phases": [
+      {
+        "case_id": "89d0065387b95b8db4de8ac636baf8be",
+        "phase": "before",
+        "asset_version_id": "851de0007783527ab704d575661799a8",
+        "risk_version_id": "fc623cb2b47959ea93e64ded6e36d84f"
+      },
+      {
+        "case_id": "755232e80477512591ea2be943ecd3c1",
+        "phase": "after_inventory",
+        "asset_version_id": "ef05ec50b74154f8b3fe912bcb93b89f",
+        "risk_version_id": "0707071c3bc450368dae744d6fb5e26a"
+      }
+    ],
+    "evidence_basis": "Same measured pattern replayed in separate source runs under time-valid context versions",
+    "review_status": "unreviewed_synthetic_reference",
+    "data_provenance": "synthetic"
+  },
+  {
+    "comparison_id": "7a9fb2b72b945eba85a2fe9743d4cf8c",
+    "asset_id": "0969cb2527c35b9d82262287765fbb5f",
+    "risk_id": "3ec257a5f3825360bfc02955de9385c6",
+    "phases": [
+      {
+        "case_id": "9312ec6891bc5b15b19610305bdd96d3",
+        "phase": "before",
+        "asset_version_id": "88f7e4ecd0ab5a07b77b2996fdc5da70",
+        "risk_version_id": "6ad0e03a811a5309b0cf051e59a0f557"
+      },
+      {
+        "case_id": "dd2f7d2ecb705a41850829430d175ded",
+        "phase": "after_inventory",
+        "asset_version_id": "44c8c21a508c58b5b2c5ec1b2215d52e",
+        "risk_version_id": "181cb9c9308a5bb1a7339c600f66b93d"
+      },
+      {
+        "case_id": "d44233829a61531794c4923e56c828b8",
+        "phase": "after_risk_review",
+        "asset_version_id": "44c8c21a508c58b5b2c5ec1b2215d52e",
+        "risk_version_id": "d8217f882d6a58acb471527b0a087cb4"
+      }
+    ],
+    "evidence_basis": "Same measured pattern replayed in separate source runs under time-valid context versions",
+    "review_status": "unreviewed_synthetic_reference",
+    "data_provenance": "synthetic"
+  },
+  {
+    "comparison_id": "935a1917043c57aaa33e9f050f58a362",
+    "asset_id": "f75a6cfc372e54ceb8f9f64dbaa03b91",
+    "risk_id": "7b76b4f1c60e51508f125de82881268a",
+    "phases": [
+      {
+        "case_id": "c7ca04afbe925395a1f2c0cc7c386ec8",
+        "phase": "before",
+        "asset_version_id": "137d9e88f8c75717928824a1f747997f",
+        "risk_version_id": "363cd0e22da35fb0862f4ee0e72a82e8"
+      },
+      {
+        "case_id": "3c255e4aa22752988d3e66ac44c1e557",
+        "phase": "after_inventory",
+        "asset_version_id": "10f9727229555c2fa5a566c0b513a8cd",
+        "risk_version_id": "48f828124b6258fead9bc2067f96227d"
+      },
+      {
+        "case_id": "c8ba0dce52e959d3a3dd27ab774bd842",
+        "phase": "after_risk_review",
+        "asset_version_id": "10f9727229555c2fa5a566c0b513a8cd",
+        "risk_version_id": "d1dc850559615b298f59f65bc86cf487"
+      }
+    ],
+    "evidence_basis": "Same measured pattern replayed in separate source runs under time-valid context versions",
+    "review_status": "unreviewed_synthetic_reference",
+    "data_provenance": "synthetic"
+  },
+  {
+    "comparison_id": "fce3a05c1d2f5e5d9ea1c4e762df12ed",
+    "asset_id": "a2dbcd13c2875dc195110bdefccef803",
+    "risk_id": "63bd6b332585535cae4f515d3c3261bc",
+    "phases": [
+      {
+        "case_id": "7e1e539aaf225260b560eb27a4773d15",
+        "phase": "before",
+        "asset_version_id": "070984ee998459a4943605943a6c4e2c",
+        "risk_version_id": "0a6057958d6354e6a3a8b24300959406"
+      },
+      {
+        "case_id": "164e38d4664e52f89697b7440aa45051",
+        "phase": "after_inventory",
+        "asset_version_id": "e6f08d63c97b5ac8a775ba346b6ce8d9",
+        "risk_version_id": "fba0caa35a9b5e148183a9c38a4ccc28"
+      },
+      {
+        "case_id": "622bd0223c53541c89532e70769d2ab8",
+        "phase": "after_risk_review",
+        "asset_version_id": "e6f08d63c97b5ac8a775ba346b6ce8d9",
+        "risk_version_id": "069185ca91895491a6bc648833a0578d"
+      }
+    ],
+    "evidence_basis": "Same measured pattern replayed in separate source runs under time-valid context versions",
+    "review_status": "unreviewed_synthetic_reference",
+    "data_provenance": "synthetic"
+  },
+  {
+    "comparison_id": "9e986a5285dc575f9dacb003a16ef020",
+    "asset_id": "612f8583c7c856c19f3f746c386420af",
+    "risk_id": "3ff0f0790afb536e9800ed4a931831f5",
+    "phases": [
+      {
+        "case_id": "05d56fa9f03d583ab28428caa36b55c7",
+        "phase": "before",
+        "asset_version_id": "7b74b2cb95dd50ab8c398f1d89db5f15",
+        "risk_version_id": "b3432a78d16c5901baa35a1a3086e1b6"
+      },
+      {
+        "case_id": "8b68fd5ae41957f3a3bbb768bfd47d41",
+        "phase": "after_inventory",
+        "asset_version_id": "4feb2a9397765cdf941c96943c3c96a4",
+        "risk_version_id": "4eb0363d4e8957bab1e4ecb55776ec47"
+      },
+      {
+        "case_id": "25ea8a5a3ff552c087438a847517e661",
+        "phase": "after_risk_review",
+        "asset_version_id": "4feb2a9397765cdf941c96943c3c96a4",
+        "risk_version_id": "aeada7c46ae65a1ea235e07d9dbcea02"
+      }
+    ],
+    "evidence_basis": "Same measured pattern replayed in separate source runs under time-valid context versions",
+    "review_status": "unreviewed_synthetic_reference",
+    "data_provenance": "synthetic"
+  },
+  {
+    "comparison_id": "12d95e6eba74552884a22ba2299bda27",
+    "asset_id": "b688ac3baac155ba815e25df422461fb",
+    "risk_id": "f078ac59df6a586ea96cacb7a07263cf",
+    "phases": [
+      {
+        "case_id": "fc7b63c07a8e587eb07e56de1e06a03d",
+        "phase": "before",
+        "asset_version_id": "580c54c32bbc586b8a0d8ad6616ac8ba",
+        "risk_version_id": "09e93fb15503521dab57f88d73d7ac1a"
+      },
+      {
+        "case_id": "79390b1d621b5953a5bed88f3e3eb92f",
+        "phase": "after_inventory",
+        "asset_version_id": "de1ee2041b035db39bd2ced333fd245a",
+        "risk_version_id": "746cc2a7ff8e5c6a9a20611de7e200f2"
+      },
+      {
+        "case_id": "c696506c569c5e4e86f567f5b7e4ba76",
+        "phase": "after_risk_review",
+        "asset_version_id": "de1ee2041b035db39bd2ced333fd245a",
+        "risk_version_id": "d242cddb06e65f30b343b1569fc72732"
+      }
+    ],
+    "evidence_basis": "Same measured pattern replayed in separate source runs under time-valid context versions",
+    "review_status": "unreviewed_synthetic_reference",
+    "data_provenance": "synthetic"
+  },
+  {
+    "comparison_id": "1b2f94302e6a575d989f4120128bf1cc",
+    "asset_id": "9c36e685cc2b55489c6ce05c0d4797b8",
+    "risk_id": "a59353cb0eaa51459cce58236783af8d",
+    "phases": [
+      {
+        "case_id": "43b4d6dabe5e58da96a2b921d2b298ae",
+        "phase": "before",
+        "asset_version_id": "f12d9c4b580f5137bb4e28290c03402e",
+        "risk_version_id": "1b10b426a64b5097a8dc9c9d6d4cae02"
+      },
+      {
+        "case_id": "a246a888641b541bb4c67fc74af6e5f0",
+        "phase": "after_inventory",
+        "asset_version_id": "f3b549ffa5ff524586033ec9fd3a6ec1",
+        "risk_version_id": "6bca2353749d5cc89c30a1b5a877495e"
+      },
+      {
+        "case_id": "74134e5ad14c52c59b99141d33b3f916",
+        "phase": "after_risk_review",
+        "asset_version_id": "f3b549ffa5ff524586033ec9fd3a6ec1",
+        "risk_version_id": "245ae7b350c65ddba9c005e0f84a15c4"
+      }
+    ],
+    "evidence_basis": "Same measured pattern replayed in separate source runs under time-valid context versions",
+    "review_status": "unreviewed_synthetic_reference",
+    "data_provenance": "synthetic"
+  },
+  {
+    "comparison_id": "3ac5e715e519578ba7f5949614859632",
+    "asset_id": "0b4a38c285345255aea2c1c1f546fa69",
+    "risk_id": "fbe5b0ff67fa59ea968f0dec9541ce66",
+    "phases": [
+      {
+        "case_id": "36780126e631542bb2e00c27d08b5e4b",
+        "phase": "before",
+        "asset_version_id": "f7e07caaae6e5a2886b7a7d1fea6e5d9",
+        "risk_version_id": "d2d91c8151d25c78a0031bc5419663ed"
+      },
+      {
+        "case_id": "1d2d2468c0335679832ab35b9c116c45",
+        "phase": "after_inventory",
+        "asset_version_id": "9fc133f3e8b95577b2da080c75426bbd",
+        "risk_version_id": "e59d24e0f16850c3988bcf37cbe110e1"
+      }
+    ],
+    "evidence_basis": "Same measured pattern replayed in separate source runs under time-valid context versions",
+    "review_status": "unreviewed_synthetic_reference",
+    "data_provenance": "synthetic"
+  },
+  {
+    "comparison_id": "731a9e0d3d4a5ea98686b1383b4fd739",
+    "asset_id": "aceee85493945c9eb5fd0feed060e18e",
+    "risk_id": "3e37b9850b35565aa6bf4decb09ce697",
+    "phases": [
+      {
+        "case_id": "22fc6dbfd769530581a5a3166d6ddf5c",
+        "phase": "before",
+        "asset_version_id": "7581a6cf5ab0571fa02be9899310dd40",
+        "risk_version_id": "5dd6ab19de81515cb9c0d61bf37d6df4"
+      },
+      {
+        "case_id": "7c35382978ba507eadf408eb0143a621",
+        "phase": "after_inventory",
+        "asset_version_id": "bf954c2a3047590e946c4e0af36fe1fd",
+        "risk_version_id": "19b6f2e12a805bd3959877e9d3289998"
+      }
+    ],
+    "evidence_basis": "Same measured pattern replayed in separate source runs under time-valid context versions",
+    "review_status": "unreviewed_synthetic_reference",
+    "data_provenance": "synthetic"
+  },
+  {
+    "comparison_id": "96f2e51f5bad515295fb049f2c4861eb",
+    "asset_id": "3410ff4bf2c4599b892b0747209daae3",
+    "risk_id": "6dc71aeb41d658f7878c79c8194b6825",
+    "phases": [
+      {
+        "case_id": "47ef6e0a318d537ba551eaee4b4956e8",
+        "phase": "before",
+        "asset_version_id": "47bbdc5cab665eed89d986ff7060b250",
+        "risk_version_id": "141ddd764ffc5619a575637c1d79c61a"
+      },
+      {
+        "case_id": "551a6eee9e4e5015b33c0ff7095ff61e",
+        "phase": "after_inventory",
+        "asset_version_id": "10dda393d54b50f0be98f04ed48480cf",
+        "risk_version_id": "27155b01952c56bf8977713759313110"
+      }
+    ],
+    "evidence_basis": "Same measured pattern replayed in separate source runs under time-valid context versions",
+    "review_status": "unreviewed_synthetic_reference",
+    "data_provenance": "synthetic"
+  },
+  {
+    "comparison_id": "b060933bc4f75299814aafabb9dbd781",
+    "asset_id": "d7776539f7cc550c900d1c6bcd036082",
+    "risk_id": "280f2acc429c5bd5b992cb8192975511",
+    "phases": [
+      {
+        "case_id": "ff1b93a70fe056eaa5b97b16439152f3",
+        "phase": "before",
+        "asset_version_id": "a61587371cdc58aa86ce146f1aeea955",
+        "risk_version_id": "d9ccb641bb9d5d9f9783a26e800dca37"
+      },
+      {
+        "case_id": "066523a3ed3256d3b4ccd871f395c7ff",
+        "phase": "after_inventory",
+        "asset_version_id": "f954b8ab57275436a70e6f12bd4f4ef6",
+        "risk_version_id": "28069bc0417f51fe900da089bcdc0911"
+      },
+      {
+        "case_id": "76f73b867a895a6c86e54765b66ae89e",
+        "phase": "after_risk_review",
+        "asset_version_id": "f954b8ab57275436a70e6f12bd4f4ef6",
+        "risk_version_id": "214537544d5b5c349568175061f5a3fd"
+      }
+    ],
+    "evidence_basis": "Same measured pattern replayed in separate source runs under time-valid context versions",
+    "review_status": "unreviewed_synthetic_reference",
+    "data_provenance": "synthetic"
+  },
+  {
+    "comparison_id": "697e379911b450b0af73dbd6298b6f47",
+    "asset_id": "bead54649d5759d3bbc5541a26c6bae5",
+    "risk_id": "69b496fb03d95b939d903cabf6d0c4d9",
+    "phases": [
+      {
+        "case_id": "897b4324c8c2576892edca516a2d5a5d",
+        "phase": "before",
+        "asset_version_id": "69a896df217352758fe6b6ecacd35ad8",
+        "risk_version_id": "1d4d61a9825753c584195972e16d8072"
+      },
+      {
+        "case_id": "11439dc07b3d5a89bacd2d4aafa2d774",
+        "phase": "after_inventory",
+        "asset_version_id": "4dc11299bb61512799a9213752c8faf7",
+        "risk_version_id": "6d1e930f353f5331beb66ec9da42d936"
+      },
+      {
+        "case_id": "0b53e2f52e3d5e388a0fee76a2aaab28",
+        "phase": "after_risk_review",
+        "asset_version_id": "4dc11299bb61512799a9213752c8faf7",
+        "risk_version_id": "ac6c77b4d08a5e91af41140f52b6f48e"
+      }
+    ],
+    "evidence_basis": "Same measured pattern replayed in separate source runs under time-valid context versions",
+    "review_status": "unreviewed_synthetic_reference",
+    "data_provenance": "synthetic"
+  },
+  {
+    "comparison_id": "4d6acdcd3b6c519387cc710b07773784",
+    "asset_id": "edc73c43e6f151c49cdc402263787d13",
+    "risk_id": "5e73f7f2c5d95aaca79f4ead55d4bd13",
+    "phases": [
+      {
+        "case_id": "f317809164905966b3cfa9adf01dd6db",
+        "phase": "before",
+        "asset_version_id": "b3b3eb9b90e55c9bb3962738b7a8b41e",
+        "risk_version_id": "a1154f71665c5281af18234db702f71f"
+      },
+      {
+        "case_id": "98ed0ff7c54b5b2a9fafaa8f4f028cbf",
+        "phase": "after_inventory",
+        "asset_version_id": "5d822a8003b055f6b8e82032bb49311b",
+        "risk_version_id": "cd5c4e0f69cd5c61897c72e9ac6afcff"
+      },
+      {
+        "case_id": "9226ed0650a25f5883bcf0245e8c8f38",
+        "phase": "after_risk_review",
+        "asset_version_id": "5d822a8003b055f6b8e82032bb49311b",
+        "risk_version_id": "937b23ac54e05b41a09cac4479c2216b"
+      }
+    ],
+    "evidence_basis": "Same measured pattern replayed in separate source runs under time-valid context versions",
+    "review_status": "unreviewed_synthetic_reference",
+    "data_provenance": "synthetic"
+  },
+  {
+    "comparison_id": "99e2e0e2a71b5d5d944e9b67833f89e3",
+    "asset_id": "386faf8ba44c57f3850aedb8ed26961e",
+    "risk_id": "66c957d0bb1a5956bcb87428bddb66a2",
+    "phases": [
+      {
+        "case_id": "3e27e2fbe5ac5aebb0355bdcbce574fa",
+        "phase": "before",
+        "asset_version_id": "79c9bb02cccd5a9f9f4bd87db14d21da",
+        "risk_version_id": "7ad6073253a2596eb2c01314a73db884"
+      },
+      {
+        "case_id": "9cd61433de165f5083d0e1ebe661c0ee",
+        "phase": "after_inventory",
+        "asset_version_id": "603ca8d081dc5858b8ca1fabf51f3b5f",
+        "risk_version_id": "28b5b68d94f657368ef9d353144f0cad"
+      },
+      {
+        "case_id": "d0578b8add115a8ba939d32a0bf3a841",
+        "phase": "after_risk_review",
+        "asset_version_id": "603ca8d081dc5858b8ca1fabf51f3b5f",
+        "risk_version_id": "78bcb193ed325f26a0341920ddf6974a"
+      }
+    ],
+    "evidence_basis": "Same measured pattern replayed in separate source runs under time-valid context versions",
+    "review_status": "unreviewed_synthetic_reference",
+    "data_provenance": "synthetic"
+  },
+  {
+    "comparison_id": "a8d8312fe42b5e3982d2f300f6c74bb6",
+    "asset_id": "9318b0e2052f5ce4841fb0d9a4de2867",
+    "risk_id": "b2793cd08d525980b2089eb6d0593a35",
+    "phases": [
+      {
+        "case_id": "d74e7b4c2d24596d9ad8bbf34d4445d1",
+        "phase": "before",
+        "asset_version_id": "780f54b7fc28540fb5dd1946bad1d498",
+        "risk_version_id": "931a8161d5f75ad7a2cb59358f5070e1"
+      },
+      {
+        "case_id": "6c802a414ff354b896cc55e787359985",
+        "phase": "after_inventory",
+        "asset_version_id": "49bf6c14bf9752b49cb77066cbd3365b",
+        "risk_version_id": "844dd24171a953d68f209c9fa8b6128b"
+      },
+      {
+        "case_id": "ca3a7d82cc7850dc9f5793752d80853c",
+        "phase": "after_risk_review",
+        "asset_version_id": "49bf6c14bf9752b49cb77066cbd3365b",
+        "risk_version_id": "2b747f84977056dc835da438ab189e9b"
+      }
+    ],
+    "evidence_basis": "Same measured pattern replayed in separate source runs under time-valid context versions",
+    "review_status": "unreviewed_synthetic_reference",
+    "data_provenance": "synthetic"
+  },
+  {
+    "comparison_id": "9f5867091180568a875b21a356e0e494",
+    "asset_id": "b36dfb8883325e35b9fe28da312cb464",
+    "risk_id": "324bd379e2e555dd944d2fbdb1ea8f95",
+    "phases": [
+      {
+        "case_id": "f0e0541044315e038cf6bd04fd4aa03a",
+        "phase": "before",
+        "asset_version_id": "5461b884c84c5c3f9370f4903a89d51b",
+        "risk_version_id": "8f1365b1e5755cd5b04c3fd1e4020365"
+      },
+      {
+        "case_id": "dfd04dc4a04052fd8c9330bc2790c95e",
+        "phase": "after_inventory",
+        "asset_version_id": "55f6487a35b95ce2a3e90e74b7b5ac07",
+        "risk_version_id": "15f3ee98f97f582c8063dd55c7e18cba"
+      },
+      {
+        "case_id": "296e92537c5f5fc69d150ecaa6699093",
+        "phase": "after_risk_review",
+        "asset_version_id": "55f6487a35b95ce2a3e90e74b7b5ac07",
+        "risk_version_id": "a892899179875303a3e103b176f23144"
+      }
+    ],
+    "evidence_basis": "Same measured pattern replayed in separate source runs under time-valid context versions",
+    "review_status": "unreviewed_synthetic_reference",
+    "data_provenance": "synthetic"
+  },
+  {
+    "comparison_id": "d06f227d587056729455590ffcd835f5",
+    "asset_id": "00fefc8a016a5999aeb5e02ebef5f2ba",
+    "risk_id": "d95251a481c257908fd951aa5da4304e",
+    "phases": [
+      {
+        "case_id": "9b70dccb9e5a5fb89f5636dae936b36e",
+        "phase": "before",
+        "asset_version_id": "2766c9d450ee56df8ed4a503d34ea3c8",
+        "risk_version_id": "5b9e5b12aae35055ae58f1b946e5f0f3"
+      },
+      {
+        "case_id": "10f573dfb95e5a2790c54ff999fa6eeb",
+        "phase": "after_inventory",
+        "asset_version_id": "37ac93486b9a51a8b32a40775c7925bb",
+        "risk_version_id": "8a344dbdc06c5b1885ecbe92b088c247"
+      }
+    ],
+    "evidence_basis": "Same measured pattern replayed in separate source runs under time-valid context versions",
+    "review_status": "unreviewed_synthetic_reference",
+    "data_provenance": "synthetic"
+  },
+  {
+    "comparison_id": "a049c5ae679c53d9ba2073a86213f974",
+    "asset_id": "47e70b541b0f5ef7b672eda0b3d255cc",
+    "risk_id": "fb13b4cfce285c5a9994fef63c59a221",
+    "phases": [
+      {
+        "case_id": "fcb0f57e5788569fa42768e9a431b6be",
+        "phase": "before",
+        "asset_version_id": "5fd578331f445208931df9bfbf7e200f",
+        "risk_version_id": "65bd712e3ac95fb996ea46f482645fbc"
+      },
+      {
+        "case_id": "1fb290ca5d9e503080aa7b57ea0f8855",
+        "phase": "after_inventory",
+        "asset_version_id": "9bd7d9712f795f769919804da494094a",
+        "risk_version_id": "cb19ae77e3b356ccb02796da3bfdc426"
+      }
+    ],
+    "evidence_basis": "Same measured pattern replayed in separate source runs under time-valid context versions",
+    "review_status": "unreviewed_synthetic_reference",
+    "data_provenance": "synthetic"
+  },
+  {
+    "comparison_id": "253278978f1b52bcbe13d68ad19ccb2e",
+    "asset_id": "ff7b009b5367560ea86fae138952b29f",
+    "risk_id": "f0cf599fb58857b4a15dfa2f2f068e64",
+    "phases": [
+      {
+        "case_id": "0195dac82ab652a9811450bccfffeab0",
+        "phase": "before",
+        "asset_version_id": "9e2b5caefb725183b9f2b13399003586",
+        "risk_version_id": "7f2b730f7f195a76ae8f987e7244b12a"
+      },
+      {
+        "case_id": "b22beca3b3695be78aeb6edf42080e94",
+        "phase": "after_inventory",
+        "asset_version_id": "3c8e3a3b34f45b2ba4269547bbd9626a",
+        "risk_version_id": "31ff4e5b80d75a9181bcf98188ffc861"
+      }
+    ],
+    "evidence_basis": "Same measured pattern replayed in separate source runs under time-valid context versions",
+    "review_status": "unreviewed_synthetic_reference",
+    "data_provenance": "synthetic"
+  },
+  {
+    "comparison_id": "009bf683e3335a24ad385254ec19f0fd",
+    "asset_id": "7374d4af79fa5b2c95b2ae03aed5b780",
+    "risk_id": "2ef7804b052551919e19332595b43226",
+    "phases": [
+      {
+        "case_id": "f4805054d8565772b1b37cf2efa380eb",
+        "phase": "before",
+        "asset_version_id": "2898eac0a8105163bee9dcf96485ab82",
+        "risk_version_id": "3a10fe1fb81b501fa9ccd0168de419f0"
+      },
+      {
+        "case_id": "75b8204fe53f5c40b85f4a0c973cc975",
+        "phase": "after_inventory",
+        "asset_version_id": "6c75dbbde80d571aace0fabdda037e8b",
+        "risk_version_id": "c029fa17b77e5e46935d7513c6e9bd1a"
+      },
+      {
+        "case_id": "0d1d781ebff25b9087fb97df0972f010",
+        "phase": "after_risk_review",
+        "asset_version_id": "6c75dbbde80d571aace0fabdda037e8b",
+        "risk_version_id": "ca26b2d9e51d5872bb25a83735ba0b8e"
+      }
+    ],
+    "evidence_basis": "Same measured pattern replayed in separate source runs under time-valid context versions",
+    "review_status": "unreviewed_synthetic_reference",
+    "data_provenance": "synthetic"
+  },
+  {
+    "comparison_id": "6a79d4cc581558c8a8fe363ae913617b",
+    "asset_id": "061c75ed9be35f75b9a8c3ee995c644b",
+    "risk_id": "77538fb9d8785877958bf0ea37102f63",
+    "phases": [
+      {
+        "case_id": "f7d27da2dcf15a8cb9fdb260468b680b",
+        "phase": "before",
+        "asset_version_id": "5e7796ef455d5df5a5e597d40757374b",
+        "risk_version_id": "69811623ff495be9b569f702e3156b11"
+      },
+      {
+        "case_id": "7415e52d1fad5af0b6e841d883153bc1",
+        "phase": "after_inventory",
+        "asset_version_id": "58826e54910d5836945a1ce3d5d8c9aa",
+        "risk_version_id": "2c1a30f37c045d0790772c8062128372"
+      },
+      {
+        "case_id": "a2449dbe6fed58aba2c77d9498ffb922",
+        "phase": "after_risk_review",
+        "asset_version_id": "58826e54910d5836945a1ce3d5d8c9aa",
+        "risk_version_id": "faa8cf39f8635dc38266e8628e5af6e5"
+      }
+    ],
+    "evidence_basis": "Same measured pattern replayed in separate source runs under time-valid context versions",
+    "review_status": "unreviewed_synthetic_reference",
+    "data_provenance": "synthetic"
+  },
+  {
+    "comparison_id": "39d3c240fd695f2b81af81fa46605ea4",
+    "asset_id": "c1e193d0e736519b8e71917200c889e2",
+    "risk_id": "73a8f442226552e59b6109a89225584a",
+    "phases": [
+      {
+        "case_id": "b591e84f66835d45ac413b96479f933d",
+        "phase": "before",
+        "asset_version_id": "1884c652b83f5a4db07190fb17a2e67d",
+        "risk_version_id": "628fa70828855cd39e223ff30a91494a"
+      },
+      {
+        "case_id": "d05490bd8d8d5a41b132c368d400558e",
+        "phase": "after_inventory",
+        "asset_version_id": "d8abf848d0d35268a865a906cb8837a5",
+        "risk_version_id": "eb1c96913a8f5481b5a8b502888afab9"
+      },
+      {
+        "case_id": "32a46c9b70035a57aeef826abe482900",
+        "phase": "after_risk_review",
+        "asset_version_id": "d8abf848d0d35268a865a906cb8837a5",
+        "risk_version_id": "9bfa93cf89bd57349cb0fa5cafccbed9"
+      }
+    ],
+    "evidence_basis": "Same measured pattern replayed in separate source runs under time-valid context versions",
+    "review_status": "unreviewed_synthetic_reference",
+    "data_provenance": "synthetic"
+  },
+  {
+    "comparison_id": "ed3a8d4ef21056e7bf2d3cff08ef91de",
+    "asset_id": "12c860a295095d0f8d3531f3dbf51903",
+    "risk_id": "e975954af3c5527cbf81c4571ef809c0",
+    "phases": [
+      {
+        "case_id": "2e03f052e0a054949c1ac22ceac2b51b",
+        "phase": "before",
+        "asset_version_id": "b179e0d128605a14b7d39544fe6b9542",
+        "risk_version_id": "4967759527c2554aba37cdfbbe882c74"
+      },
+      {
+        "case_id": "0251df7ab6ac5f06b974bfbe5954dcd9",
+        "phase": "after_inventory",
+        "asset_version_id": "e5a5ee7538a15b0cb80eb48de5e030b4",
+        "risk_version_id": "87adad6e0f9155cba8965761e7ace124"
+      },
+      {
+        "case_id": "405aeab03d4f5b69a33b04ebd3c6768a",
+        "phase": "after_risk_review",
+        "asset_version_id": "e5a5ee7538a15b0cb80eb48de5e030b4",
+        "risk_version_id": "277d5937c2ee5f8aa0f4c71961904777"
+      }
+    ],
+    "evidence_basis": "Same measured pattern replayed in separate source runs under time-valid context versions",
+    "review_status": "unreviewed_synthetic_reference",
+    "data_provenance": "synthetic"
+  },
+  {
+    "comparison_id": "8adc359475075b699a32b6882862e8eb",
+    "asset_id": "d283076e610258ef843e1d664b19eaca",
+    "risk_id": "0105d15518075ced9d862deb32e831a4",
+    "phases": [
+      {
+        "case_id": "1f5ed4e33acd568ba164020cb827fe9b",
+        "phase": "before",
+        "asset_version_id": "e8a47ed56ebc5a01824aab753cae7a00",
+        "risk_version_id": "b270ecdc40e85e3abc6331d63839a5bc"
+      },
+      {
+        "case_id": "7c5c65bf401e5c0093b82ec50fe6c1a3",
+        "phase": "after_inventory",
+        "asset_version_id": "28262109d92154da8217490d4a863a87",
+        "risk_version_id": "36f88a9698ce5b24bf63b51c09645ad3"
+      },
+      {
+        "case_id": "8c2d6f2c9889590e9bbdfe4410f6f0f7",
+        "phase": "after_risk_review",
+        "asset_version_id": "28262109d92154da8217490d4a863a87",
+        "risk_version_id": "ad33503c58d65e5caeb237e1515b7031"
+      }
+    ],
+    "evidence_basis": "Same measured pattern replayed in separate source runs under time-valid context versions",
+    "review_status": "unreviewed_synthetic_reference",
+    "data_provenance": "synthetic"
+  },
+  {
+    "comparison_id": "34b76e684c35582c909976944784f1bd",
+    "asset_id": "7f675f86292a5e23907992c683787104",
+    "risk_id": "b56fcad2b9d657e59887b882c33300a2",
+    "phases": [
+      {
+        "case_id": "f4d30b26f1715beba1d0e8211fc458ef",
+        "phase": "before",
+        "asset_version_id": "2071cbf68e9e5d5ca957ab333dab6f2c",
+        "risk_version_id": "d83154db3e945acbbaffdf595bae60a6"
+      },
+      {
+        "case_id": "7d504e110a8f56768e268509968d4696",
+        "phase": "after_inventory",
+        "asset_version_id": "ef43240eb69a5ab5bbc952c3ad15b9f3",
+        "risk_version_id": "3f95caaf16f95bd9a1a24b40a55d1eb9"
+      },
+      {
+        "case_id": "7a5c4aba14af5b95b5af854bd650d1b3",
+        "phase": "after_risk_review",
+        "asset_version_id": "ef43240eb69a5ab5bbc952c3ad15b9f3",
+        "risk_version_id": "b5325db8b68953f98b95414b3d7edcf3"
+      }
+    ],
+    "evidence_basis": "Same measured pattern replayed in separate source runs under time-valid context versions",
+    "review_status": "unreviewed_synthetic_reference",
+    "data_provenance": "synthetic"
+  },
+  {
+    "comparison_id": "e5d9830ed93d59479633b84a37f7856b",
+    "asset_id": "4a6bc6a8f9145cdbadf407aa8cbd3eb3",
+    "risk_id": "5ce98ac4a5d35de8b7d0f5d9554bb401",
+    "phases": [
+      {
+        "case_id": "fe9689daa3065a14b405371f9ff0ae89",
+        "phase": "before",
+        "asset_version_id": "07816a9c9b6a573584e42076a707aa50",
+        "risk_version_id": "4bfbc6e4561859e38bc8c3c30cd2031e"
+      },
+      {
+        "case_id": "b82cb11b24965839bc746b03b616deb6",
+        "phase": "after_inventory",
+        "asset_version_id": "943aa681a7665117bf21302808d4942a",
+        "risk_version_id": "0bf4c30762285887b288ef9c5820c30a"
+      }
+    ],
+    "evidence_basis": "Same measured pattern replayed in separate source runs under time-valid context versions",
+    "review_status": "unreviewed_synthetic_reference",
+    "data_provenance": "synthetic"
+  },
+  {
+    "comparison_id": "7d7f7c603dc659019ca674fb9ee7ccd9",
+    "asset_id": "5f9676c3700f50cfa4eb1a11384a1cd3",
+    "risk_id": "b24b26bda4c4570b82fefd9ecce4867a",
+    "phases": [
+      {
+        "case_id": "05b5f5323f5e5dde9baa4b0e9740c6a9",
+        "phase": "before",
+        "asset_version_id": "418767d922c5558ab201d10cfc1fc616",
+        "risk_version_id": "2c01fbb1794d5123ae2a5033771bb374"
+      },
+      {
+        "case_id": "eba852b817b552aea355c3aea62d3196",
+        "phase": "after_inventory",
+        "asset_version_id": "a780f88f42415c408f030849118535ff",
+        "risk_version_id": "b094783caf915933a746cd37b65ff88b"
+      }
+    ],
+    "evidence_basis": "Same measured pattern replayed in separate source runs under time-valid context versions",
+    "review_status": "unreviewed_synthetic_reference",
+    "data_provenance": "synthetic"
+  },
+  {
+    "comparison_id": "00729107991c5225aaaa49d7b1150beb",
+    "asset_id": "263d11f3d3d357ad9a37cdce07662bbf",
+    "risk_id": "7cd14ce6275359a387f1eb8689e46a87",
+    "phases": [
+      {
+        "case_id": "d652b1210e0057409ca1fa9ce13f6f27",
+        "phase": "before",
+        "asset_version_id": "4a9751fab3235a609f2b45118a0b2276",
+        "risk_version_id": "de245aea366651a4b13a35860a817753"
+      },
+      {
+        "case_id": "7e328a3b33155b0b892596070ede17f4",
+        "phase": "after_inventory",
+        "asset_version_id": "641d64494a975ab2abd0469199a63d5c",
+        "risk_version_id": "f2e816b5e722553499e425bdca7d1688"
+      }
+    ],
+    "evidence_basis": "Same measured pattern replayed in separate source runs under time-valid context versions",
+    "review_status": "unreviewed_synthetic_reference",
+    "data_provenance": "synthetic"
+  },
+  {
+    "comparison_id": "2504ba3c01ac536e8066206c6aa26a29",
+    "asset_id": "9654511796965a61a0a0033fc7f0276a",
+    "risk_id": "518d0194be1e5515956d9fe0e17d940f",
+    "phases": [
+      {
+        "case_id": "02d23d2b4a0d534fa2f068dc94ca434a",
+        "phase": "before",
+        "asset_version_id": "926bbd070efe50e1a94169d8fb9f11e4",
+        "risk_version_id": "d1f015e12e1d5378a20df0becccd0a2d"
+      },
+      {
+        "case_id": "ad81df1e01d95703a4b3244a8a6946d8",
+        "phase": "after_inventory",
+        "asset_version_id": "9335f8ed2de958fabdcde025ba3df77e",
+        "risk_version_id": "063f24eadec0514d98e34d0c09616987"
+      },
+      {
+        "case_id": "ae0d4c96ce6c514ea1bb40d0df926ceb",
+        "phase": "after_risk_review",
+        "asset_version_id": "9335f8ed2de958fabdcde025ba3df77e",
+        "risk_version_id": "654038cf37ec59afa5567aa1fc8fe08b"
+      }
+    ],
+    "evidence_basis": "Same measured pattern replayed in separate source runs under time-valid context versions",
+    "review_status": "unreviewed_synthetic_reference",
+    "data_provenance": "synthetic"
+  },
+  {
+    "comparison_id": "964cb256472a51539cc52497106e929d",
+    "asset_id": "5ac44171dae95e958c9821b1df8e0838",
+    "risk_id": "88ef4458196d59798a917832121be710",
+    "phases": [
+      {
+        "case_id": "6ad1820d297e53f48898b1016289071d",
+        "phase": "before",
+        "asset_version_id": "62f8c40381d85a439366340e036d519f",
+        "risk_version_id": "34cb851ed4a45e27ac1de4ef94a98a6a"
+      },
+      {
+        "case_id": "f408dbce60be574ca969e9f708e8f3ac",
+        "phase": "after_inventory",
+        "asset_version_id": "9c0f1308618159669e1efbed6d0b6296",
+        "risk_version_id": "958fc91b4989543a82bce23a5a7ea482"
+      },
+      {
+        "case_id": "596f5d9917f65e2aa9726a139db89782",
+        "phase": "after_risk_review",
+        "asset_version_id": "9c0f1308618159669e1efbed6d0b6296",
+        "risk_version_id": "f9e53f551f0159c39202ee9a9ec2cc28"
+      }
+    ],
+    "evidence_basis": "Same measured pattern replayed in separate source runs under time-valid context versions",
+    "review_status": "unreviewed_synthetic_reference",
+    "data_provenance": "synthetic"
+  },
+  {
+    "comparison_id": "5535e660ef645d30a127d82116f7c596",
+    "asset_id": "0dd6a309a49f5da8b762031a5dcdd919",
+    "risk_id": "b5f85fef7c6d587ab8f6c14ba4376e49",
+    "phases": [
+      {
+        "case_id": "cc17a5623e2554ca8e95d43c68c534bc",
+        "phase": "before",
+        "asset_version_id": "86f780459cbb5106aa7d40579728acc7",
+        "risk_version_id": "9f7dfc7f2dae54de916759e4d15e379e"
+      },
+      {
+        "case_id": "25206be8aba9509a8230a4d2d1e12310",
+        "phase": "after_inventory",
+        "asset_version_id": "ffdcb72e0b0856f4962b08373d56b343",
+        "risk_version_id": "1653bdbc34d15fd2bc53b23102e25f1e"
+      },
+      {
+        "case_id": "f1acd8ad5482549bb5b96ee4338f56c1",
+        "phase": "after_risk_review",
+        "asset_version_id": "ffdcb72e0b0856f4962b08373d56b343",
+        "risk_version_id": "1ec3f09a71f55844a1ac9d36a8ff6a4a"
+      }
+    ],
+    "evidence_basis": "Same measured pattern replayed in separate source runs under time-valid context versions",
+    "review_status": "unreviewed_synthetic_reference",
+    "data_provenance": "synthetic"
+  },
+  {
+    "comparison_id": "4bffcfde0fc35bda88099a4a1d265a05",
+    "asset_id": "8f39701419725977ae2b658186f9d651",
+    "risk_id": "2515f76c8c715626b38cc39faab6c33b",
+    "phases": [
+      {
+        "case_id": "886de71508945722b341874966560c3c",
+        "phase": "before",
+        "asset_version_id": "38904433ab3259e6845892adea7614fc",
+        "risk_version_id": "206a6897cd3a5f5aacbed3bf823f074c"
+      },
+      {
+        "case_id": "4d396287739d583ebdcca56b630c848f",
+        "phase": "after_inventory",
+        "asset_version_id": "a3831513ee0553ab9ca1c110cd655a5c",
+        "risk_version_id": "e0585e6f54d85d83b925528547ba80ed"
+      },
+      {
+        "case_id": "3d23f0849a2a5862a96ac80241137f07",
+        "phase": "after_risk_review",
+        "asset_version_id": "a3831513ee0553ab9ca1c110cd655a5c",
+        "risk_version_id": "19ac5e1d97ac5e8a923c13d66fb6fddb"
+      }
+    ],
+    "evidence_basis": "Same measured pattern replayed in separate source runs under time-valid context versions",
+    "review_status": "unreviewed_synthetic_reference",
+    "data_provenance": "synthetic"
+  },
+  {
+    "comparison_id": "1a962e9abaff5ae69b3257c6cfff76e1",
+    "asset_id": "69df6a6148b35c179ba4bc2ee113aa6a",
+    "risk_id": "a5c0e943c3bf585f85c9c5f33ed4a6ad",
+    "phases": [
+      {
+        "case_id": "791c0009c7ba504ebf76be80b6f3b44b",
+        "phase": "before",
+        "asset_version_id": "218f2fd4826b5641a8b6731f2b9edebe",
+        "risk_version_id": "8b3e75f6712d51409d03d8e1ae1a5cd8"
+      },
+      {
+        "case_id": "1a5d25b9472b5a88846bc98049ec6b53",
+        "phase": "after_inventory",
+        "asset_version_id": "e383fc216aab513db0e52c2f184148be",
+        "risk_version_id": "7e59755b021850749c302981a272a96d"
+      },
+      {
+        "case_id": "fb771042df055d65b853c803b84ed8e5",
+        "phase": "after_risk_review",
+        "asset_version_id": "e383fc216aab513db0e52c2f184148be",
+        "risk_version_id": "cdb443b4d1e15bd1a7b435dda4385a0c"
+      }
+    ],
+    "evidence_basis": "Same measured pattern replayed in separate source runs under time-valid context versions",
+    "review_status": "unreviewed_synthetic_reference",
+    "data_provenance": "synthetic"
+  },
+  {
+    "comparison_id": "ac6dc8faab955f4e8c2d34845ffe5c8c",
+    "asset_id": "ee2b203786285ababb663c7dc580e24f",
+    "risk_id": "82ead93148465761b38429e3ba2a9af4",
+    "phases": [
+      {
+        "case_id": "f3278ede8b4455b0ab91bbffdefbd4b7",
+        "phase": "before",
+        "asset_version_id": "6c673b78f2bb5781a731ae5ef664a72d",
+        "risk_version_id": "e7a478de9e295459b86b27a812f6369a"
+      },
+      {
+        "case_id": "4f1fabd10efa5115b7e16c5dd1221022",
+        "phase": "after_inventory",
+        "asset_version_id": "cd40b6ffd9d45389952e6afd6db003e0",
+        "risk_version_id": "44c92a98d00a5d4bae32b69844c8eeeb"
+      },
+      {
+        "case_id": "de0a9ea8614e58d4ab003104ed2e3d98",
+        "phase": "after_risk_review",
+        "asset_version_id": "cd40b6ffd9d45389952e6afd6db003e0",
+        "risk_version_id": "b4014ad1199e5bb5bb76d226b897e0da"
+      }
+    ],
+    "evidence_basis": "Same measured pattern replayed in separate source runs under time-valid context versions",
+    "review_status": "unreviewed_synthetic_reference",
+    "data_provenance": "synthetic"
+  },
+  {
+    "comparison_id": "1fd13f01c1f65e33897617f542958072",
+    "asset_id": "73aa54777a8f5ba7a983021a5d07f0c6",
+    "risk_id": "a596e15141cd51d3b5b71f1bb95338d0",
+    "phases": [
+      {
+        "case_id": "4eb11bdbeaa655f0a48b8067e7002e71",
+        "phase": "before",
+        "asset_version_id": "4816d959eeaf5c678d56f9a9a8d5db1b",
+        "risk_version_id": "ae10695f21a35322aba07a621cb545c5"
+      },
+      {
+        "case_id": "68a27f8bcdf4530f9bf554760838f6a0",
+        "phase": "after_inventory",
+        "asset_version_id": "d2e248f781755e12b7193cc320fa551c",
+        "risk_version_id": "55570add79b755169ff3b200123828e5"
+      }
+    ],
+    "evidence_basis": "Same measured pattern replayed in separate source runs under time-valid context versions",
+    "review_status": "unreviewed_synthetic_reference",
+    "data_provenance": "synthetic"
+  },
+  {
+    "comparison_id": "c32d4aa5e1eb566e8810089ba60781c7",
+    "asset_id": "1e03b5afea2758d6bc5d503609845dc6",
+    "risk_id": "e77bba4cd1db521e89be1993a4a10ed9",
+    "phases": [
+      {
+        "case_id": "81c3e2a7c1995bfca3a1f6eb660e75d2",
+        "phase": "before",
+        "asset_version_id": "08fbde9e3db751e291de917ab5198b42",
+        "risk_version_id": "5dc061a3e8c953c8b27cf1e485c70419"
+      },
+      {
+        "case_id": "5803aa7efcdf516894bcd5b4b5cc6cee",
+        "phase": "after_inventory",
+        "asset_version_id": "0b054f4acbe9539ab6098be8f0af7f68",
+        "risk_version_id": "701900e2d3a153c1b494e9d2934596f1"
+      }
+    ],
+    "evidence_basis": "Same measured pattern replayed in separate source runs under time-valid context versions",
+    "review_status": "unreviewed_synthetic_reference",
+    "data_provenance": "synthetic"
+  },
+  {
+    "comparison_id": "e00b5db3a2225789b8a51d9735494de8",
+    "asset_id": "5c7852e9d7cc5b24a5c07828702d0e20",
+    "risk_id": "9af1bf5bab90544cbca3987f0372569f",
+    "phases": [
+      {
+        "case_id": "dd4dc4b41bd95a868d2f89b0f7a34ad2",
+        "phase": "before",
+        "asset_version_id": "bcede48c50c950f2aa1eba47e8c3aaaf",
+        "risk_version_id": "6ddf6d8daf9654059bff9ede867496d2"
+      },
+      {
+        "case_id": "74c75f2348ac55e2a550afa0e644a7c8",
+        "phase": "after_inventory",
+        "asset_version_id": "8f9be970477953bdafdcda511daa9a7d",
+        "risk_version_id": "33e0577beafa5dd28064cda3e8420aaf"
+      }
+    ],
+    "evidence_basis": "Same measured pattern replayed in separate source runs under time-valid context versions",
+    "review_status": "unreviewed_synthetic_reference",
+    "data_provenance": "synthetic"
+  },
+  {
+    "comparison_id": "870a0e9f9ac953c6b8419a4b5a5c704f",
+    "asset_id": "0a2db5c92df45d59bd1c78deb4042455",
+    "risk_id": "9769ee50772b5b3e86d23d4010654b4c",
+    "phases": [
+      {
+        "case_id": "8a8861dd6a615cd2931ddd397a074d9c",
+        "phase": "before",
+        "asset_version_id": "a9174a0a5df5575480e0f1814f6d3a46",
+        "risk_version_id": "b9209d1414d7578aae5592a725c80e06"
+      },
+      {
+        "case_id": "deb88c7126af5fab94e9013b48ab095a",
+        "phase": "after_inventory",
+        "asset_version_id": "9caae3069ab158ef91112b6767a916c6",
+        "risk_version_id": "f0f793dfc30d56b1adbdc08e0837cdd6"
+      },
+      {
+        "case_id": "9dc0439c00a45d27896b915a2fcb9088",
+        "phase": "after_risk_review",
+        "asset_version_id": "9caae3069ab158ef91112b6767a916c6",
+        "risk_version_id": "02c0268f7dff515e89971c41022787b9"
+      }
+    ],
+    "evidence_basis": "Same measured pattern replayed in separate source runs under time-valid context versions",
+    "review_status": "unreviewed_synthetic_reference",
+    "data_provenance": "synthetic"
+  },
+  {
+    "comparison_id": "f2a00d3aa58b55dcb79755c7bd3768dc",
+    "asset_id": "c74d2108ed125864bd098656120e335e",
+    "risk_id": "4e01177e7f215c3a8b9e1e10689b7e45",
+    "phases": [
+      {
+        "case_id": "b34063818a125af9b4bc4003d56b64b4",
+        "phase": "before",
+        "asset_version_id": "4f510a94379c588a812f7380267f217b",
+        "risk_version_id": "728d030c7ecb5f109ade2cdc7cbe5c2a"
+      },
+      {
+        "case_id": "97b19db16c10525bb96d11d7fd488dfa",
+        "phase": "after_inventory",
+        "asset_version_id": "f2d3a79b791e5a9283317ea726518523",
+        "risk_version_id": "cf6f48c9f7575150909c5f8940cef06d"
+      },
+      {
+        "case_id": "3a148bc49972575c9bc18eae22c13f98",
+        "phase": "after_risk_review",
+        "asset_version_id": "f2d3a79b791e5a9283317ea726518523",
+        "risk_version_id": "6847bb5b2590511bb06c9c0ec6a8ddc5"
+      }
+    ],
+    "evidence_basis": "Same measured pattern replayed in separate source runs under time-valid context versions",
+    "review_status": "unreviewed_synthetic_reference",
+    "data_provenance": "synthetic"
+  },
+  {
+    "comparison_id": "efd07ac513d25368a816b0098085f545",
+    "asset_id": "67746ad8b6865eb39ab65b3f18ecee53",
+    "risk_id": "e5dad2c858865801915d4d915e02718e",
+    "phases": [
+      {
+        "case_id": "a72111707a1f5b6f989f70013d8c48f8",
+        "phase": "before",
+        "asset_version_id": "ad7a5e42c1945f8d8488ab8791b1160e",
+        "risk_version_id": "3eae60f0189451369d04e7b9805e2083"
+      },
+      {
+        "case_id": "3c0f3a5c67b8536abc1b8df08af8860c",
+        "phase": "after_inventory",
+        "asset_version_id": "c5941283c8e2578b865ed20e75985511",
+        "risk_version_id": "78ceab70ddca5eefbba6fb8e474001d5"
+      },
+      {
+        "case_id": "8ff3bf8ab32a57beb5a3a6121bfca62b",
+        "phase": "after_risk_review",
+        "asset_version_id": "c5941283c8e2578b865ed20e75985511",
+        "risk_version_id": "9a8d7ba2781f5ec786d466b4fff564af"
+      }
+    ],
+    "evidence_basis": "Same measured pattern replayed in separate source runs under time-valid context versions",
+    "review_status": "unreviewed_synthetic_reference",
+    "data_provenance": "synthetic"
+  },
+  {
+    "comparison_id": "8a96f2e8b42350c48926e97eb55f28c6",
+    "asset_id": "535f5479338153c2af8cace4c8e37c39",
+    "risk_id": "336ff9cea63d5f0eba0c95b662015ec7",
+    "phases": [
+      {
+        "case_id": "25845e24e1e7523db891945f688491dd",
+        "phase": "before",
+        "asset_version_id": "44cde9c9a66357b7866dcb5bf0ed2b51",
+        "risk_version_id": "82191e79f5595e528b515a5ba9cdf3bf"
+      },
+      {
+        "case_id": "796ce23482bc5dbebc7499195b2c99ea",
+        "phase": "after_inventory",
+        "asset_version_id": "34b977dd17205a7bbf2593b720341866",
+        "risk_version_id": "9a51731fd89450c183ba0c0a2f411f80"
+      },
+      {
+        "case_id": "dedf4224f875563c90e02daf23c8b972",
+        "phase": "after_risk_review",
+        "asset_version_id": "34b977dd17205a7bbf2593b720341866",
+        "risk_version_id": "1687755006a656488beaaeb6ab83d14a"
+      }
+    ],
+    "evidence_basis": "Same measured pattern replayed in separate source runs under time-valid context versions",
+    "review_status": "unreviewed_synthetic_reference",
+    "data_provenance": "synthetic"
+  },
+  {
+    "comparison_id": "4f141c9b95865654a6c4e67bf767ea8a",
+    "asset_id": "182fa9bcfb715f0fb50d2d97dbb34a1d",
+    "risk_id": "29560eb3dd385d3f8dd95ad5037c9d00",
+    "phases": [
+      {
+        "case_id": "7671cb5fa6a7508c8ff7c0cbff837864",
+        "phase": "before",
+        "asset_version_id": "d7696e76a20251cc8f4eb1f1effa6bd7",
+        "risk_version_id": "b5cb6f3f296e545d991a8e753d02e950"
+      },
+      {
+        "case_id": "f8bd43b024e352b28d6f39a82ff1a8ec",
+        "phase": "after_inventory",
+        "asset_version_id": "8c716d7c743058bf85e77e33ebd09175",
+        "risk_version_id": "a4894a3a32bd5155830533363425a26a"
+      },
+      {
+        "case_id": "7bb58131382053f099cdee9ae96b3717",
+        "phase": "after_risk_review",
+        "asset_version_id": "8c716d7c743058bf85e77e33ebd09175",
+        "risk_version_id": "f7491be6a2285fdda2b212da6a15e619"
+      }
+    ],
+    "evidence_basis": "Same measured pattern replayed in separate source runs under time-valid context versions",
+    "review_status": "unreviewed_synthetic_reference",
+    "data_provenance": "synthetic"
+  },
+  {
+    "comparison_id": "7244f993fb9d56bb897b46f481ee596e",
+    "asset_id": "2280aa2d860b5831b1c9a28a5a099767",
+    "risk_id": "702a2b9b9e28525e81669f387211de68",
+    "phases": [
+      {
+        "case_id": "c36757c40d8752c79667e2de484b6139",
+        "phase": "before",
+        "asset_version_id": "086cbdb652fb50579a7131187bea9ae2",
+        "risk_version_id": "32636c2e81bf50cdb2a37b2c63d5e388"
+      },
+      {
+        "case_id": "9284dc45ca2258879d9c443d9f170a7d",
+        "phase": "after_inventory",
+        "asset_version_id": "9974ed30aa945a018758edeb7c93b1ed",
+        "risk_version_id": "0b680e69459259c8908e29fea3a63b24"
+      },
+      {
+        "case_id": "2dd7193ac1285defbbb8853b3efa7f1b",
+        "phase": "after_risk_review",
+        "asset_version_id": "9974ed30aa945a018758edeb7c93b1ed",
+        "risk_version_id": "698e633dfa8f5362837b264afb08a689"
+      }
+    ],
+    "evidence_basis": "Same measured pattern replayed in separate source runs under time-valid context versions",
+    "review_status": "unreviewed_synthetic_reference",
+    "data_provenance": "synthetic"
+  },
+  {
+    "comparison_id": "5a5bce9567b753b1a0c95bd9abe85f2e",
+    "asset_id": "abc3f09b0332532a80f6d8bb73836d3f",
+    "risk_id": "a6f340fd981f53efbd7f69c4f1df9bf2",
+    "phases": [
+      {
+        "case_id": "18e583e3e13258bcbd28cb72c683252c",
+        "phase": "before",
+        "asset_version_id": "b6b94f3768bb5bb6b65b8ae6104b0842",
+        "risk_version_id": "694197069f935ee6958d5e70cda53b42"
+      },
+      {
+        "case_id": "38b5fd97bedc5c0ebd86765d11274f93",
+        "phase": "after_inventory",
+        "asset_version_id": "033207e3c1fa5b479c213b971b96a65b",
+        "risk_version_id": "51d0c16cd18b537fb5e6974444447080"
+      }
+    ],
+    "evidence_basis": "Same measured pattern replayed in separate source runs under time-valid context versions",
+    "review_status": "unreviewed_synthetic_reference",
+    "data_provenance": "synthetic"
+  },
+  {
+    "comparison_id": "3e4ac40d22b35dc484fe2b58778dffae",
+    "asset_id": "7884b9386d2552adbc343140a08de640",
+    "risk_id": "9fac08592dff5b64bd5c8100d3785b6d",
+    "phases": [
+      {
+        "case_id": "3f534ff821015a9f9cb285f5fc55f27a",
+        "phase": "before",
+        "asset_version_id": "0ffa05d8162a527aa9c20b570e6408da",
+        "risk_version_id": "3bde7fd6364a5c3ab45b964a3d1c03f6"
+      },
+      {
+        "case_id": "8954d135d06a5d49a397f42e06909a9d",
+        "phase": "after_inventory",
+        "asset_version_id": "903311a123cb51ec8061da984347a43f",
+        "risk_version_id": "766551d23e4b55e684ddcd55b82978b1"
+      }
+    ],
+    "evidence_basis": "Same measured pattern replayed in separate source runs under time-valid context versions",
+    "review_status": "unreviewed_synthetic_reference",
+    "data_provenance": "synthetic"
+  },
+  {
+    "comparison_id": "b114fdcd76ee5b5e9ff10169f65366ba",
+    "asset_id": "39686859f9f153e28eff38ccac7c70f8",
+    "risk_id": "77a47b2be9c65d13a2ffd25832569ab4",
+    "phases": [
+      {
+        "case_id": "5d775f0aaef45daca6c5fc4721ff4a2e",
+        "phase": "before",
+        "asset_version_id": "88678609e0485b81b8e45ccefe458a8f",
+        "risk_version_id": "c892b432945e5bcfb3d9c0d2219d4d39"
+      },
+      {
+        "case_id": "d1f22bf135815f1abb891b602d889bb3",
+        "phase": "after_inventory",
+        "asset_version_id": "32a8fecd3a4750d89dd472a3ad38812f",
+        "risk_version_id": "0a5cfd210177594a921939dd04c8a277"
+      }
+    ],
+    "evidence_basis": "Same measured pattern replayed in separate source runs under time-valid context versions",
+    "review_status": "unreviewed_synthetic_reference",
+    "data_provenance": "synthetic"
+  },
+  {
+    "comparison_id": "5004e4463ad650a8a04e21f9e866f517",
+    "asset_id": "13fe03b8855a575c943c91e8f51af4e2",
+    "risk_id": "5cbb493d6f9a57e4b1d85c291f78b7b2",
+    "phases": [
+      {
+        "case_id": "95560d11a6885f6cbce0dc9fecd86c8b",
+        "phase": "before",
+        "asset_version_id": "064fd28b86b153e699f52434e6f1db78",
+        "risk_version_id": "bf36117b1db457398dfc2ae27fc4a66f"
+      },
+      {
+        "case_id": "6e075feb10815be9ac33cbd0e618a6cd",
+        "phase": "after_inventory",
+        "asset_version_id": "c5f2c99e3ca150ed96d05b04ec0e2082",
+        "risk_version_id": "a76a2fd4764c5c3cbc740946e0cfc010"
+      },
+      {
+        "case_id": "98aae7beffc05d64befdac19d9762d42",
+        "phase": "after_risk_review",
+        "asset_version_id": "c5f2c99e3ca150ed96d05b04ec0e2082",
+        "risk_version_id": "bf5cf3afa47c508e866f1b21166645c8"
+      }
+    ],
+    "evidence_basis": "Same measured pattern replayed in separate source runs under time-valid context versions",
+    "review_status": "unreviewed_synthetic_reference",
+    "data_provenance": "synthetic"
+  },
+  {
+    "comparison_id": "dc99e0df2db65146b537f5b0be53bbe2",
+    "asset_id": "ee82abc9a2d8589395fbe907d25c797d",
+    "risk_id": "bc414aec20a75da7b1c2ac89a15675ac",
+    "phases": [
+      {
+        "case_id": "1d56e59b035852cb9cbeac1890a1038e",
+        "phase": "before",
+        "asset_version_id": "664b62002a9153edad62f8a5cc4eb520",
+        "risk_version_id": "a664ea02a10252d3a212402ceb4e26a2"
+      },
+      {
+        "case_id": "e1e35ecea42f5b819b1622d4e18646a7",
+        "phase": "after_inventory",
+        "asset_version_id": "cd20355ddffe57f5883c05e6ca93a4c4",
+        "risk_version_id": "a5b9228039b65848987c3ff9535af851"
+      },
+      {
+        "case_id": "1f3971ac6e9d5d2ea47b4c3eae5dd172",
+        "phase": "after_risk_review",
+        "asset_version_id": "cd20355ddffe57f5883c05e6ca93a4c4",
+        "risk_version_id": "2ee128755fc755158a82a415594c2ac4"
+      }
+    ],
+    "evidence_basis": "Same measured pattern replayed in separate source runs under time-valid context versions",
+    "review_status": "unreviewed_synthetic_reference",
+    "data_provenance": "synthetic"
+  },
+  {
+    "comparison_id": "f001bbe1e2955727b7d2118a47e16bc9",
+    "asset_id": "93e77722c4e75a36964157fe72db7cd0",
+    "risk_id": "768a1416a5e15dbf8cab9cae3faaf072",
+    "phases": [
+      {
+        "case_id": "829f94770507559fadf30f9482ce2599",
+        "phase": "before",
+        "asset_version_id": "93af538b77d453f3af9c45c0fda0f03c",
+        "risk_version_id": "a48608559b40570294415ecc6117a8d5"
+      },
+      {
+        "case_id": "9b65bb378c565a49bf584e9e2676e839",
+        "phase": "after_inventory",
+        "asset_version_id": "7ec972e426c257e98e07f42a6475b888",
+        "risk_version_id": "0c29d17a539a512093275aa1ca384ad2"
+      },
+      {
+        "case_id": "ade3ec6121435617a6a900e300bcc3ae",
+        "phase": "after_risk_review",
+        "asset_version_id": "7ec972e426c257e98e07f42a6475b888",
+        "risk_version_id": "d5b8c2fa4fd85746a8d5142484fa9273"
+      }
+    ],
+    "evidence_basis": "Same measured pattern replayed in separate source runs under time-valid context versions",
+    "review_status": "unreviewed_synthetic_reference",
+    "data_provenance": "synthetic"
+  },
+  {
+    "comparison_id": "13a145fcc7f454fda848697a5ff6ef58",
+    "asset_id": "525a603a75fc559aac43359d269da30f",
+    "risk_id": "a8189a3ac27f58b1b838a29b33ec736a",
+    "phases": [
+      {
+        "case_id": "41b3ce774c0a5e1cbcd406e81b43244a",
+        "phase": "before",
+        "asset_version_id": "4d20e6a4c9ce5be4a620cb273eb17639",
+        "risk_version_id": "339d329542465b0b9d73762f54c40510"
+      },
+      {
+        "case_id": "12569d3310a85a9e842770b35e767b29",
+        "phase": "after_inventory",
+        "asset_version_id": "73f67485c5225857953a1c693835f786",
+        "risk_version_id": "d5abda824c2d548685d152d57bd3fbfb"
+      },
+      {
+        "case_id": "8d0151b3b0e552fbaf98c6303587b2bf",
+        "phase": "after_risk_review",
+        "asset_version_id": "73f67485c5225857953a1c693835f786",
+        "risk_version_id": "26cc606f751c569fb0ea4cc027731ba0"
+      }
+    ],
+    "evidence_basis": "Same measured pattern replayed in separate source runs under time-valid context versions",
+    "review_status": "unreviewed_synthetic_reference",
+    "data_provenance": "synthetic"
+  },
+  {
+    "comparison_id": "34dfe6e36d665c7fb74a53ef46c31fbe",
+    "asset_id": "cb5cd1d7bc9458af81a4bae8ffe525fb",
+    "risk_id": "a6ce103c287c52229d82f81bd473e113",
+    "phases": [
+      {
+        "case_id": "0b24b46e44fb5c888394035bbfecf00a",
+        "phase": "before",
+        "asset_version_id": "d272f3b466325196a6e18c9432c581b3",
+        "risk_version_id": "dbb7e64b8dba586d85862cba3b56081d"
+      },
+      {
+        "case_id": "0a67e6a9a3ad59e2bcc6ece743e2a06b",
+        "phase": "after_inventory",
+        "asset_version_id": "6b071e31b2185f398a80402b153b4b90",
+        "risk_version_id": "4c2b83564cd758e6b58ad9716a7f38f4"
+      },
+      {
+        "case_id": "8427fbe0ada15302aff3c32ca429cbaa",
+        "phase": "after_risk_review",
+        "asset_version_id": "6b071e31b2185f398a80402b153b4b90",
+        "risk_version_id": "065cab69814b571b96a1d533a88bc132"
+      }
+    ],
+    "evidence_basis": "Same measured pattern replayed in separate source runs under time-valid context versions",
+    "review_status": "unreviewed_synthetic_reference",
+    "data_provenance": "synthetic"
+  },
+  {
+    "comparison_id": "c15bbc68114c5c9b9e0d54e3956a1fc6",
+    "asset_id": "bd4e41ac4c435c0eaa7883879d1a5596",
+    "risk_id": "b94fbb3df36a5ea284bef0c33f298c2e",
+    "phases": [
+      {
+        "case_id": "32c6227b9865555db146537b2e7bbbab",
+        "phase": "before",
+        "asset_version_id": "144da23876dd581f90b4200d7b65a94a",
+        "risk_version_id": "676571662bdc5692b291dd47e7ff322e"
+      },
+      {
+        "case_id": "1df6c55968a9521890b8c38e659228ea",
+        "phase": "after_inventory",
+        "asset_version_id": "a539d08ba90f5a89bd98f92e2cd068e2",
+        "risk_version_id": "25e382db95dd5898845c63a4438fd426"
+      },
+      {
+        "case_id": "0341e60a7de852f58a7ccbf1d245383b",
+        "phase": "after_risk_review",
+        "asset_version_id": "a539d08ba90f5a89bd98f92e2cd068e2",
+        "risk_version_id": "5de1173b9a09549aa970dcc85320b1c1"
+      }
+    ],
+    "evidence_basis": "Same measured pattern replayed in separate source runs under time-valid context versions",
+    "review_status": "unreviewed_synthetic_reference",
+    "data_provenance": "synthetic"
+  },
+  {
+    "comparison_id": "d9a64242d4e45120a4fe9ba29bcdc010",
+    "asset_id": "2feb25ea035f588696170b4c3e8d5282",
+    "risk_id": "e09da899020c52c8ad58546285471b10",
+    "phases": [
+      {
+        "case_id": "615b0c7a3fac5803be11d338060cdece",
+        "phase": "before",
+        "asset_version_id": "7aa4c50a65da52fa9f0d03a73a049c5b",
+        "risk_version_id": "d7e7ed4fc9c85836b88250cb23b7f9d2"
+      },
+      {
+        "case_id": "074baf8815cc561888df3df2953de89b",
+        "phase": "after_inventory",
+        "asset_version_id": "ce70be3554205252ac659a10167207c1",
+        "risk_version_id": "f6b3dde3f5085808afee03e5cd5de1d3"
+      }
+    ],
+    "evidence_basis": "Same measured pattern replayed in separate source runs under time-valid context versions",
+    "review_status": "unreviewed_synthetic_reference",
+    "data_provenance": "synthetic"
+  },
+  {
+    "comparison_id": "dfb882061a1e5935b131cb01416b8718",
+    "asset_id": "33a7a266e93757adb75b886cd1106af7",
+    "risk_id": "bc6c9a98e622544bb625b5e6d2fae270",
+    "phases": [
+      {
+        "case_id": "0ea222a7d3b1531c8d5c45a89e91d39a",
+        "phase": "before",
+        "asset_version_id": "ad43a28208f45408b1b91340966ee3b1",
+        "risk_version_id": "d6c5433484f25bd1abb3bb5687ef2f9c"
+      },
+      {
+        "case_id": "5e638847e5375bd29a10abe30bbf9233",
+        "phase": "after_inventory",
+        "asset_version_id": "703cf9540c0952109898eaa57bd574f7",
+        "risk_version_id": "e1633c7de32857aab84c3c04e818d360"
+      }
+    ],
+    "evidence_basis": "Same measured pattern replayed in separate source runs under time-valid context versions",
+    "review_status": "unreviewed_synthetic_reference",
+    "data_provenance": "synthetic"
+  },
+  {
+    "comparison_id": "2edd23f2ed475a7696a16b90b4280b5b",
+    "asset_id": "598599425cb9588c83442a79c7c60628",
+    "risk_id": "e863895374d159248531e600f64e0b15",
+    "phases": [
+      {
+        "case_id": "fe9c5e61aa60527baef7eb72cb2bef39",
+        "phase": "before",
+        "asset_version_id": "09fc3cb908775767bfc224c4fd7aecbf",
+        "risk_version_id": "b100e2f0c914588997e439e415e0892c"
+      },
+      {
+        "case_id": "b77791fbddf55733aa6754a657931f51",
+        "phase": "after_inventory",
+        "asset_version_id": "58307fba2294511c821add0949d4c794",
+        "risk_version_id": "4b8aff33d8de522cad7032ee1a2e9c77"
+      }
+    ],
+    "evidence_basis": "Same measured pattern replayed in separate source runs under time-valid context versions",
+    "review_status": "unreviewed_synthetic_reference",
+    "data_provenance": "synthetic"
+  },
+  {
+    "comparison_id": "5fa2f87a4a485c1d9534f43fcabf0513",
+    "asset_id": "f1e6e26bae5352d59908ad11734ea34a",
+    "risk_id": "2ae7939f28ec522a8935eb14311291ba",
+    "phases": [
+      {
+        "case_id": "c715466a85d559baa508e126094cfbd5",
+        "phase": "before",
+        "asset_version_id": "020bfa6263105fa1afe95951837f597a",
+        "risk_version_id": "fa2031eeca5954729e79e9f5628f46b1"
+      },
+      {
+        "case_id": "e961ff941eb45bfeb9b43cfbb9ad3b7c",
+        "phase": "after_inventory",
+        "asset_version_id": "bedee2b0e6115254add326811a9f57a3",
+        "risk_version_id": "d26e0f3738d85407a30d609ad37b9ec8"
+      },
+      {
+        "case_id": "a99a163cc4215935a9f31e79ac094612",
+        "phase": "after_risk_review",
+        "asset_version_id": "bedee2b0e6115254add326811a9f57a3",
+        "risk_version_id": "c1ff398beda452aca4b90b8b156a49c2"
+      }
+    ],
+    "evidence_basis": "Same measured pattern replayed in separate source runs under time-valid context versions",
+    "review_status": "unreviewed_synthetic_reference",
+    "data_provenance": "synthetic"
+  },
+  {
+    "comparison_id": "57493ef712f9571fa5f9fa964a51ae56",
+    "asset_id": "6de45cc791925fd8a1afa9d9f45ed000",
+    "risk_id": "6dff8174e1195b55852940bee8535b5d",
+    "phases": [
+      {
+        "case_id": "02b9ea2534e95182a3ed8c2f352db4a8",
+        "phase": "before",
+        "asset_version_id": "b413485582955c03b309aa3fc4657db2",
+        "risk_version_id": "da170c9cbec75b18a2a5b5362ae60f13"
+      },
+      {
+        "case_id": "2a11ebb399745882ac701caf93ba391a",
+        "phase": "after_inventory",
+        "asset_version_id": "ebacaec2aacb50e4b78040108a9b0343",
+        "risk_version_id": "511135d2407a56acba797b6baad718f5"
+      },
+      {
+        "case_id": "070e7115512e5e6dbb474746d9bbb489",
+        "phase": "after_risk_review",
+        "asset_version_id": "ebacaec2aacb50e4b78040108a9b0343",
+        "risk_version_id": "f4927c14a7ac56e7b40979e6c03ad5a3"
+      }
+    ],
+    "evidence_basis": "Same measured pattern replayed in separate source runs under time-valid context versions",
+    "review_status": "unreviewed_synthetic_reference",
+    "data_provenance": "synthetic"
+  },
+  {
+    "comparison_id": "484890489abc591c905edb2326f2ec11",
+    "asset_id": "b181bd92ad7a545a9aedef079cb4b0f1",
+    "risk_id": "718df82bc3e65280b974124391baf9ec",
+    "phases": [
+      {
+        "case_id": "a0c4d23ba5e15235bcd7bba0951d63d8",
+        "phase": "before",
+        "asset_version_id": "5c8db46418a75f20bdeae1f0990e2d88",
+        "risk_version_id": "3c18acc98f675ebb9f02d7fba2f09c6c"
+      },
+      {
+        "case_id": "7d78477352975b2abd7196086e377981",
+        "phase": "after_inventory",
+        "asset_version_id": "1e6d4f9a222b50c1a20aa951269d4ec0",
+        "risk_version_id": "a7b63cf07b0d5ec6869df34570050ad2"
+      },
+      {
+        "case_id": "a5d0bde4bfc45493b7d412dd40e86b51",
+        "phase": "after_risk_review",
+        "asset_version_id": "1e6d4f9a222b50c1a20aa951269d4ec0",
+        "risk_version_id": "1ab66897c4545b37895ab911591cebba"
+      }
+    ],
+    "evidence_basis": "Same measured pattern replayed in separate source runs under time-valid context versions",
+    "review_status": "unreviewed_synthetic_reference",
+    "data_provenance": "synthetic"
+  },
+  {
+    "comparison_id": "847f7c36a28a5bec95289749175f26ab",
+    "asset_id": "4f5b3874a9aa54269300d30ccdefcf2f",
+    "risk_id": "e0afb7e3f3505611bea9559b96b04632",
+    "phases": [
+      {
+        "case_id": "d782c4af6da35340b13af641f32a631a",
+        "phase": "before",
+        "asset_version_id": "5ef016bab7df56bd819abcd352453399",
+        "risk_version_id": "cb6b05cb6eeb5dab9b8a838dc7eced3a"
+      },
+      {
+        "case_id": "56b92067bb1e581bb0e9b479c6da02d4",
+        "phase": "after_inventory",
+        "asset_version_id": "68f12c9af230558fb44ad01679b3e612",
+        "risk_version_id": "17b393c1599258c8ba58941c117f8b50"
+      },
+      {
+        "case_id": "a800b606b62355a9ab9825dfc2d7e38d",
+        "phase": "after_risk_review",
+        "asset_version_id": "68f12c9af230558fb44ad01679b3e612",
+        "risk_version_id": "24e6bb3a422a507e8dd9d2b5de593c1e"
+      }
+    ],
+    "evidence_basis": "Same measured pattern replayed in separate source runs under time-valid context versions",
+    "review_status": "unreviewed_synthetic_reference",
+    "data_provenance": "synthetic"
+  },
+  {
+    "comparison_id": "3a181ffac712504185dbdc14c8ae33d2",
+    "asset_id": "50292ed67fa355b48bf28c8ea4a382cb",
+    "risk_id": "3dfee89317c75178a21d0c9c397e0cc8",
+    "phases": [
+      {
+        "case_id": "869daeeabe3d5e1dab165c2cc88c8ece",
+        "phase": "before",
+        "asset_version_id": "b59826982fc75ff29c2839356f2b5f12",
+        "risk_version_id": "eb16ac5f4eae532d9d09ae9cd8fda5dc"
+      },
+      {
+        "case_id": "51a7e6ec1ca557f0a908d08676ad12ec",
+        "phase": "after_inventory",
+        "asset_version_id": "07a61478176e53b89d64e7278042f2ef",
+        "risk_version_id": "0f1dbe6a46655cab895c077c9d97316e"
+      },
+      {
+        "case_id": "00515796df2854cd8bef6148e60c2d8c",
+        "phase": "after_risk_review",
+        "asset_version_id": "07a61478176e53b89d64e7278042f2ef",
+        "risk_version_id": "092e398f6cbe5f42a4da8f7043110323"
+      }
+    ],
+    "evidence_basis": "Same measured pattern replayed in separate source runs under time-valid context versions",
+    "review_status": "unreviewed_synthetic_reference",
+    "data_provenance": "synthetic"
+  },
+  {
+    "comparison_id": "b01096d7833d5f50b6d8a3c5720bffe5",
+    "asset_id": "d1d470c531255f1a8e6aad45e485a12a",
+    "risk_id": "7d3aa83a16e753c8a3272d8f0a276880",
+    "phases": [
+      {
+        "case_id": "83b4078a14175d96bb27cec4ef7b63ae",
+        "phase": "before",
+        "asset_version_id": "b424775423885d7ea854d95a9fb56f4b",
+        "risk_version_id": "7fc912f9b358514d86d6e5ce9ace43be"
+      },
+      {
+        "case_id": "1f67eec0797d511eb88b4767c4dbd5b1",
+        "phase": "after_inventory",
+        "asset_version_id": "95263e34a0f65f969c36edb1ba824853",
+        "risk_version_id": "65481af93bae54398761ecf432f556b1"
+      },
+      {
+        "case_id": "58046c618e7455fbb1218476bc5113dc",
+        "phase": "after_risk_review",
+        "asset_version_id": "95263e34a0f65f969c36edb1ba824853",
+        "risk_version_id": "fefb540178c656198af261337ac7caad"
+      }
+    ],
+    "evidence_basis": "Same measured pattern replayed in separate source runs under time-valid context versions",
+    "review_status": "unreviewed_synthetic_reference",
+    "data_provenance": "synthetic"
+  },
+  {
+    "comparison_id": "528b531b3e6352b68a1a726d35ca9cc7",
+    "asset_id": "7321707de4ca5f739695633702ab7203",
+    "risk_id": "a23f0ed57ab35d2c9edf9c6e8be77fcd",
+    "phases": [
+      {
+        "case_id": "0439c7fabb9e5f24b4962d6b6a02a56d",
+        "phase": "before",
+        "asset_version_id": "7b8d55b9496b506a8dc25e3415b4fb5f",
+        "risk_version_id": "d6d0186f59f65f81b2c1f1f1d648be03"
+      },
+      {
+        "case_id": "28ccd709cfb55a7e809513e443b274dc",
+        "phase": "after_inventory",
+        "asset_version_id": "608e9d880fda52018e8ddc48443a7329",
+        "risk_version_id": "ec90f24dd3185809a90425a1ace9274b"
+      }
+    ],
+    "evidence_basis": "Same measured pattern replayed in separate source runs under time-valid context versions",
+    "review_status": "unreviewed_synthetic_reference",
+    "data_provenance": "synthetic"
+  },
+  {
+    "comparison_id": "a57dc4402a9551b4aa339cc8db961024",
+    "asset_id": "6283c1566c2657acb061521e0e160529",
+    "risk_id": "4f2ba3534eb05b5e9c5791c192088a9f",
+    "phases": [
+      {
+        "case_id": "e20a9c7d205555459c2dc3c6d443db6f",
+        "phase": "before",
+        "asset_version_id": "ef281c090bed5bfbae565e774df3745b",
+        "risk_version_id": "d9cf2cacd3d6584eb0b6b6d2e8b5ed74"
+      },
+      {
+        "case_id": "c44691d9c8415a26b3027203620a35a9",
+        "phase": "after_inventory",
+        "asset_version_id": "5de276c96a665ab29bcc929533ee331b",
+        "risk_version_id": "3c1ad9725ef85b76bf88ef2680d91417"
+      }
+    ],
+    "evidence_basis": "Same measured pattern replayed in separate source runs under time-valid context versions",
+    "review_status": "unreviewed_synthetic_reference",
+    "data_provenance": "synthetic"
+  },
+  {
+    "comparison_id": "4c5fbae75ad25d8d8313fff1be0a8d66",
+    "asset_id": "2cc3f9877baf5d7b9a653841b8f4e6f2",
+    "risk_id": "cd3cff3c00da5d4ab678b9f940553008",
+    "phases": [
+      {
+        "case_id": "cdaf8934803a54a7985f935be0d18b4d",
+        "phase": "before",
+        "asset_version_id": "26652b0e01c75ec992252d744df925a5",
+        "risk_version_id": "bd02802bfef251d58d99d017c47db35c"
+      },
+      {
+        "case_id": "12a98e1e108259f4a12875bc4870d876",
+        "phase": "after_inventory",
+        "asset_version_id": "df4c8e78890959a0af831ca21dd8020b",
+        "risk_version_id": "41477ace94d654a6acc4ff19847ccf7d"
+      }
+    ],
+    "evidence_basis": "Same measured pattern replayed in separate source runs under time-valid context versions",
+    "review_status": "unreviewed_synthetic_reference",
+    "data_provenance": "synthetic"
+  }
+]

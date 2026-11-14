@@ -57,9 +57,9 @@ def main():
     # IRIS EXPLAIN: Call parser.add_argument('--port', type=int, default=8010): declare the existing CLI option and its
     # IRIS EXPLAIN: type/default/validation.
     parser.add_argument('--port', type=int, default=8010)
-    parser.add_argument('--dataset', choices=('expanded', 'legacy'), default='expanded',
-                        help='Expanded seven-class scenarios (default), or the original demo inputs')
-    parser.add_argument('--model-profile', choices=('auto', 'iris_scenarios_20261109', 'iris_models_20261030', 'legacy'),
+    parser.add_argument('--dataset', choices=('hospital', 'expanded', 'legacy'), default='hospital',
+                        help='IRIS General Hospital (default), expanded scenarios, or original demo inputs')
+    parser.add_argument('--model-profile', choices=('auto', 'iris_hospital_20261114', 'iris_scenarios_20261109', 'iris_models_20261030', 'legacy'),
                         default=os.environ.get('IRIS_MODEL_PROFILE', 'auto'),
                         help='Match the observed input contract by default; explicit profiles remain available')
     parser.add_argument('--https', action='store_true', default=True, help='HTTPS is enabled by default for account sign-in')
@@ -124,7 +124,8 @@ def main():
         from demo_app.engine import DemoEngine
         # IRIS EXPLAIN: Store the result of DemoEngine(config) in engine; later lines use this named result.
         from backend.model_adapter import ModelAdapter
-        data_dir = ROOT / 'demo' / ('scenarios_v2' if args.dataset == 'expanded' else 'data')
+        data_dir = (ROOT / 'datasets/iris_general_hospital_20261114/data' if args.dataset == 'hospital'
+                    else ROOT / 'demo' / ('scenarios_v2' if args.dataset == 'expanded' else 'data'))
         from backend.core import INPUTS
         from backend.source_inputs import select_profile
         profile = (select_profile({key: data_dir/name for key, name in INPUTS.items()})

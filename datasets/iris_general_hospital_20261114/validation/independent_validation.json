@@ -1,0 +1,118 @@
+{
+  "status": "PASS",
+  "scope": "Independent validation with the unmodified supplied JSON schemas plus hospital business links, historical integrity and reproducibility",
+  "check_evaluations": 157612,
+  "checks": {
+    "fixed_catalogue_hash": 1,
+    "normative_schema_asset_inventory": 1,
+    "normative_schema_risk_register": 1,
+    "normative_schema_siem_alert": 15000,
+    "normative_schema_training_label": 2490,
+    "requested_counts": 1,
+    "three_or_four_risks_each_asset": 1,
+    "hospital_asset_context_coverage": 1,
+    "hospital_risk_statements_coverage": 1,
+    "asset_unique_versions": 1,
+    "asset_single_current": 500,
+    "asset_nonoverlap": 72,
+    "risk_unique_versions": 1,
+    "risk_single_current": 1860,
+    "risk_nonoverlap": 309,
+    "stable_risk_asset": 1860,
+    "unique_valid_known_snapshot": 47385,
+    "nonempty_registered_disjoint_control_memberships": 2169,
+    "control_state_membership": 2169,
+    "catalogue_asset_applicability": 6811,
+    "catalogue_registered_technique_match": 6811,
+    "unique_event_ids": 1,
+    "hostname_join": 15000,
+    "inbound_endpoints": 9747,
+    "local_outbound_endpoints": 5253,
+    "local_process_semantics": 3467,
+    "every_asset_observed": 1,
+    "historical_assets_observed_each_side": 72,
+    "constant_source_run": 2490,
+    "session_gap": 2490,
+    "no_inventory_boundary_crossing": 2490,
+    "annotation_exact_prepared_session": 2490,
+    "no_fabricated_label_review": 2490,
+    "every_event_annotated_once": 1,
+    "accurate_observation_summary": 2490,
+    "accurate_observed_techniques": 2490,
+    "no_risk_boundary_crossing": 1990,
+    "offline_targets_registered_and_supported": 1990,
+    "every_risk_has_linked_attack_observations": 1,
+    "twenty_percent_difficult_per_class": 7,
+    "offline_event_join_complete": 1,
+    "offline_event_annotation_join": 15000,
+    "evidence_precedes_risk_update": 48,
+    "no_future_alerts_in_risk_update": 48,
+    "simulation_approval_status_honest": 48,
+    "change_journal_matches_register": 48,
+    "incident_triggered_risk_update_count": 1,
+    "seed_reproducible_bytes": 13
+  },
+  "errors": [],
+  "error_count": 0,
+  "current_risks": 1860,
+  "events": 15000,
+  "sessions": 2490,
+  "all_risks_exercised": true,
+  "offline_unreviewed_control_target_count": 1783,
+  "reproducibility": {
+    "data/siem_alerts.jsonl": {
+      "identical": true,
+      "sha256": "61542ace43cfa81bcd86ff1aac89697511a88066ce463e65b548533bfa31abb2"
+    },
+    "data/risk_register.json": {
+      "identical": true,
+      "sha256": "3d85a9280541c18d707ec8df95a2e38fc35b6d601702f4086533f4fc2353fb13"
+    },
+    "data/asset_inventory.json": {
+      "identical": true,
+      "sha256": "3126fc5d3b620e8d584074756f7e9f6ba2a8c9d93f48a5f398330fcec1367093"
+    },
+    "offline/generation_summary.json": {
+      "identical": true,
+      "sha256": "f321dff6f5d2c33bc15dc216474c10e8c6a31be6e323d80b5d1190b2159cb4f1"
+    },
+    "offline/hospital_context.json": {
+      "identical": true,
+      "sha256": "9e6645ad6a8f2ac99c41fccde9ac4b96fae65155799b9036ea5125e073fd5035"
+    },
+    "offline/risk_levels.json": {
+      "identical": true,
+      "sha256": "cbf65edc0135cc4b59118d9d9111882355757d41a3ae77c1cdd17f9920d23f49"
+    },
+    "offline/temporal_comparisons.json": {
+      "identical": true,
+      "sha256": "3e2b395488061c0815f2d2df402fa29d6d11073c4190f4a02fa80c0c438416ea"
+    },
+    "offline/change_journal.jsonl": {
+      "identical": true,
+      "sha256": "fc0649ee3cc9697c75733dab0494c36a8335d94a39591b232e488250249b4cb2"
+    },
+    "offline/asset_contexts.json": {
+      "identical": true,
+      "sha256": "03abb6b73bf6100e6580c85ebf07bce869960d8852a131d1986531053667ad0b"
+    },
+    "offline/risk_contexts.jsonl": {
+      "identical": true,
+      "sha256": "d25483505d9e2d93ae44dcc484b3d83751bdaaf063d6b8709dde60e943ab15a7"
+    },
+    "offline/event_associations.jsonl": {
+      "identical": true,
+      "sha256": "2d5ecf2142478c69d1bded79d8eef2d0cd9b2fa36feaa074b314edddf3dd240c"
+    },
+    "offline/scenario_details.jsonl": {
+      "identical": true,
+      "sha256": "c83d14bf2f3d4955478c9f6bf1816db4ef76e6025f185b1086c5bcc5a22bb94e"
+    },
+    "offline/training_labels.jsonl": {
+      "identical": true,
+      "sha256": "4d59f6c8e55877c1186e9e258b550ea0dcf002be868019a67d34ab63037770a5"
+    }
+  },
+  "labels_independently_reviewed": false,
+  "model_accuracy_claimed": false
+}

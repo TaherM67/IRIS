@@ -78,7 +78,7 @@ class ScenarioModelAdapter(GroundedModelAdapter):
                 threshold = self.metadata['model1']['threshold']
                 result['shadow_candidate'] = dict(scenario_class=label if score >= threshold else None,top_candidate=label,
                     confidence=score,status='ASSESSED' if score >= threshold else 'ABSTAINED',
-                    method='calibrated_model1',threshold=threshold,
+                    method=self.metadata['model1'].get('prediction_method', 'calibrated_model1'),threshold=threshold,
                     class_probabilities={str(c):float(p) for c,p in zip(self.scenario.classes_,probabilities)},
                     controls=result['model2_review'],explanation=dict(kind='observed_evidence_only',note='Synthetic model comparison; not a causal explanation.'))
             self._primary_controls(result,session)

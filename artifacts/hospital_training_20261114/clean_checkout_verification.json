@@ -1,0 +1,32 @@
+{
+  "source_tree_before_verification_record": "2092cfad571866e84ae8453c5a88f1942e1714e7",
+  "status": "PASS",
+  "tracked_files_only": true,
+  "prior_local_state_present": false,
+  "commands": [
+    {
+      "command": [
+        "-m",
+        "unittest",
+        "backend.tests.test_hospital_training",
+        "-v"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "test_original_profiles_remain_available_and_hospital_is_hash_selected (backend.tests.test_hospital_training.HospitalTrainingTests.test_original_profiles_remain_available_and_hospital_is_hash_selected) ... ok\ntest_saved_holdout_has_no_campaign_template_feature_or_event_overlap (backend.tests.test_hospital_training.HospitalTrainingTests.test_saved_holdout_has_no_campaign_template_feature_or_event_overlap) ... ok\ntest_unreviewed_fitting_requires_explicit_experimental_opt_in (backend.tests.test_hospital_training.HospitalTrainingTests.test_unreviewed_fitting_requires_explicit_experimental_opt_in) ... ok\ntest_whole_groups_are_split_deterministically_with_all_classes (backend.tests.test_hospital_training.HospitalTrainingTests.test_whole_groups_are_split_deterministically_with_all_classes) ... ok\n\n----------------------------------------------------------------------\nRan 4 tests in 0.158s\n\nOK\n"
+    },
+    {
+      "command": [
+        "demo.py",
+        "check",
+        "--dataset",
+        "hospital",
+        "--model-profile",
+        "iris_hospital_20261114"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"exercise_id\": \"DEMO-e086e69022934782\",\n  \"counts\": {\n    \"risks\": 1860,\n    \"alerts\": 15000,\n    \"changed_risks\": 0,\n    \"reprioritized_alerts\": 0,\n    \"pending_soc\": 0,\n    \"pending_grc\": 0\n  },\n  \"demo_only\": true,\n  \"external_writes\": false\n}\nTrusted models and synthetic data loaded. Run python -m unittest demo_app.tests.test_demo -v to test HTTP and approval writes.\n",
+      "stderr": ""
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "original_archive": "IRIS_General_Hospital_Dataset(1).zip",
+  "archive_sha256": "417308762c56cd81570533e6ead50173e202b15c9a322f29bed014d4675bbbc2",
+  "original_operational_sources_unchanged": true,
+  "label_review_status": "unreviewed",
+  "additional_runtime_file": "data/demo_manifest.json",
+  "fresh_results": "artifacts/hospital_training_20261114"
+}
